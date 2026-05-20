@@ -28,6 +28,19 @@ jobs:
         run: |
           set -euo pipefail
 
+          echo "::group::testevent triggers (cicd-sensor/testevent ruleset)"
+          # testevent_domain_lookup: resolve the canary domain so the agent
+          # sees a `domain` event for testevent.cicd-sensor.com.
+          getent hosts testevent.cicd-sensor.com || true
+          dig +short testevent.cicd-sensor.com || true
+          # testevent_file_write: write to a path ending in
+          # /cicd-sensor-testevent.txt so the agent sees a write `file_open` event.
+          canary="${RUNNER_TEMP:-/tmp}/cicd-sensor-testevent.txt"
+          echo "cicd-sensor canary" > "$canary"
+          ls -la "$canary"
+          rm -f "$canary"
+          echo "::endgroup::"
+
           echo "::group::process and system info"
           uname -a
           id
