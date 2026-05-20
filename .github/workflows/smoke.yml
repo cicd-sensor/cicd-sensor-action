@@ -1,0 +1,72 @@
+---
+name: smoke
+
+"on":
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Start cicd-sensor
+        id: sensor
+        uses: ./
+        with:
+          enable-html-report: "true"
+          enable-attestation-artifact: "true"
+          enable-debug: "true"
+
+      - name: Workload
+        run: |
+          set -euo pipefail
+
+          echo "::group::process and system info"
+          uname -a
+          id
+          ps -eo pid,comm | head -20
+          echo "::endgroup::"
+
+          echo "::group::filesystem activity"
+          tmpfile="$(mktemp)"
+          echo "smoke-test payload" > "$tmpfile"
+          cat "$tmpfile"
+          ls -la "$tmpfile"
+          rm -f "$tmpfile"
+          echo "::endgroup::"
+
+          echo "::group::DNS resolution"
+          getent hosts api.github.com || true
+          dig +short github.com || true
+          echo "::endgroup::"
+
+          echo "::group::HTTP/HTTPS"
+          curl --silent --show-error --max-time 5 https://api.github.com/zen || true
+          echo
+          curl --silent --show-error --max-time 5 -o /dev/null -w "status=%{http_code}\n" https://example.com
+          wget --quiet --timeout=5 --tries=1 -O /dev/null https://example.com && echo "wget ok" || true
+          echo "::endgroup::"
+
+          echo "::group::raw TCP via nc"
+          nc -zv -w 5 github.com 443 || true
+          echo "::endgroup::"
+
+          echo "::group::toolchain versions"
+          node --version
+          npm --version
+          echo "::endgroup::"
+
+          echo "smoke workload completed"
+
+      - name: Echo attestation outputs
+        if: always()
+        run: |
+          echo "attestation-artifact-id=${{ steps.sensor.outputs.attestation-artifact-id }}"
+          echo "attestation-artifact-url=${{ steps.sensor.outputs.attestation-artifact-url }}"
