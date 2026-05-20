@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: cicd-sensor/cicd-sensor-action@v0.0.1
+      - uses: cicd-sensor/cicd-sensor-action@v0.0.2
       - uses: actions/checkout@v6
 
       - name: Build
