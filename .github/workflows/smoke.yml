@@ -21,7 +21,6 @@ jobs:
         uses: ./
         with:
           enable-html-report: "true"
-          enable-attestation-artifact: "true"
           enable-debug: "true"
 
       - name: Workload

@@ -4,7 +4,7 @@
 
 GitHub Action for running [cicd-sensor](https://github.com/cicd-sensor/cicd-sensor) on a Linux GitHub Actions runner.
 
-With the default settings, it starts the cicd-sensor agent before your workload, records runtime activity, and uploads the HTML report after the job. Optional inputs can enable attestation artifacts, cicd-sensor Manager for centralized configuration, and cloud delivery for Job Result Log, Detection Log, and Runtime Telemetry Log.
+With the default settings, it starts the cicd-sensor agent before your workload, records runtime activity, and uploads the HTML report and `cicd-sensor-attestation` predicate artifact after the job. Optional inputs can enable cicd-sensor Manager for centralized configuration, and cloud delivery for Job Result Log, Detection Log, and Runtime Telemetry Log.
 
 ## Usage
 
@@ -48,7 +48,7 @@ If no project rules are present, baseline rules are still applied.
 | `manager-url` | `""` | Optional cicd-sensor manager URL. |
 | `manager-token` | `""` | Bearer token for the manager. Required when `manager-url` is set. |
 | `enable-html-report` | `true` | Upload the `cicd-sensor-report` HTML artifact. |
-| `enable-attestation-artifact` | `false` | Upload the `cicd-sensor-attestation` predicate artifact. |
+| `enable-attestation-artifact` | `true` | Upload the `cicd-sensor-attestation` predicate artifact. |
 | `enable-debug` | `false` | Upload debug logs and raw result data. |
 | `socket-path` | `/run/cicd-sensor/agent.sock` | Agent control socket path. |
 

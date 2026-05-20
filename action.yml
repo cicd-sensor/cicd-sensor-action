@@ -66,7 +66,7 @@ inputs:
       and runs in a downstream step or job (e.g. actions/attest@v3
       after actions/download-artifact). Accepts true / false.
     required: false
-    default: "false"
+    default: "true"
 
   enable-debug:
     description: >-
