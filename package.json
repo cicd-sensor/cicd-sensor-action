@@ -1,0 +1,20 @@
+{
+  "name": "cicd-sensor-action",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "ncc build src/main.js -o dist/main --license licenses.txt && ncc build src/post.js -o dist/post --license licenses.txt",
+    "lint": "node --check src/main.js && node --check src/post.js && node --check test/main.test.js && node --check test/post.test.js",
+    "test": "node --test",
+    "audit": "npm audit --omit=dev --audit-level=high",
+    "check-dist": "npm run build && git diff --exit-code dist/main dist/post",
+    "check": "npm run lint && npm test && npm run audit && npm run check-dist"
+  },
+  "dependencies": {
+    "@actions/artifact": "6.2.1",
+    "@actions/core": "3.0.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "0.38.4"
+  }
+}

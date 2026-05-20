@@ -1,0 +1,101 @@
+---
+name: "cicd-sensor"
+description: >-
+  Secure your GitHub Actions workflows with real-time runtime
+  detection and behavior monitoring. cicd-sensor watches process,
+  network, and file activity during the job, alerts on policy
+  violations as they happen, and publishes a per-run trace report
+  when the job ends.
+
+branding:
+  icon: shield
+  color: green
+
+# ---------------------------------------------------------------------
+# Inputs
+# ---------------------------------------------------------------------
+inputs:
+  github-token:
+    description: >-
+      Token used to fetch `.cicd-sensor/config.yaml` and
+      `.cicd-sensor/rules/` from the calling repo via the GitHub
+      Contents API. Defaults to the workflow's automatic GITHUB_TOKEN;
+      only set this if your workflow strips the default.
+    required: false
+    default: ${{ github.token }}
+
+  socket-path:
+    description: >-
+      Path to the agent control socket. Override for self-hosted
+      runners that already run cicd-sensor under a non-default
+      socket; when the path already points to a live socket, the
+      action skips download / install and reuses the existing agent.
+    required: false
+    default: "/run/cicd-sensor/agent.sock"
+
+  manager-url:
+    description: >-
+      Optional manager URL for host- and project-scope config. When set,
+      manager-token is also required, and project-local `.cicd-sensor/`
+      config is ignored (config is fetched from the manager).
+    required: false
+    default: ""
+
+  manager-token:
+    description: >-
+      Bearer token for the manager. Registered with `core.setSecret`
+      and staged to a 0600 file under $RUNNER_TEMP; the raw value
+      never crosses the agent's command line. The post step unlinks
+      the staged file before exiting.
+    required: false
+    default: ""
+
+  enable-html-report:
+    description: >-
+      Render the runtime-trace HTML report in the post step and
+      upload it as the `cicd-sensor-report` artifact (single-file,
+      opens inline in the Actions UI). Accepts true / false.
+    required: false
+    default: "true"
+
+  enable-attestation-artifact:
+    description: >-
+      Generate the in-toto predicate body (predicate.json) in the
+      post step and upload it as the `cicd-sensor-attestation`
+      artifact. Signing the predicate is the caller's responsibility
+      and runs in a downstream step or job (e.g. actions/attest@v3
+      after actions/download-artifact). Accepts true / false.
+    required: false
+    default: "false"
+
+  enable-debug:
+    description: >-
+      Upload a forensics bundle (journalctl output, raw result-log.json,
+      `systemctl show` snapshot) as the `cicd-sensor-debug` artifact.
+      Useful for investigating tampering detections or agent crashes.
+      Accepts true / false.
+    required: false
+    default: "false"
+
+# Only the attestation pair is exposed as outputs (html-report and
+# debug-bundle are consumed by humans through the UI). See README
+# "Outputs" for cross-job forwarding semantics. README also documents
+# the fixed conventions (release source, install paths, socket,
+# artifact names, asset base, placement, matrix caveat).
+outputs:
+  attestation-artifact-id:
+    description: >-
+      ID of the uploaded `cicd-sensor-attestation` artifact. Empty
+      string when enable-attestation-artifact is false or when upload
+      failed.
+
+  attestation-artifact-url:
+    description: >-
+      Run-scoped URL of the uploaded `cicd-sensor-attestation`
+      artifact. Empty string when enable-attestation-artifact is false
+      or when upload failed.
+
+runs:
+  using: "node24"
+  main: "dist/main/index.js"
+  post: "dist/post/index.js"
