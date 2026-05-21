@@ -31607,9 +31607,9 @@ async function main() {
     if (projectRulesPath) projectArgs.push('--rules', projectRulesPath);
   }
 
-  // Agent socket is root-owned; sudo + absolute path defeats sudo's
-  // secure_path PATH stripping.
-  run('sudo', [external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), ...projectArgs]);
+  // project start authenticates via SO_PEERCRED PID against the tracked
+  // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
+  run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs);
 
   info('==> cicd-sensor-action main: ready');
 }

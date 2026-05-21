@@ -131953,7 +131953,7 @@ function checkAgentHealth(socket, checkSystemd = true) {
     }
   }
   // (3) agent answers `job health` for this job
-  const h = (0,external_node_child_process_namespaceObject.spawnSync)('sudo', [BIN, 'job', 'health', ...jobIdentityArgs(socket)],
+  const h = (0,external_node_child_process_namespaceObject.spawnSync)(BIN, ['job', 'health', ...jobIdentityArgs(socket)],
     { encoding: 'utf8' });
   if (h.status !== 0) {
     core_error(`cicd-sensor job health exited with status ${h.status}`);
@@ -131997,9 +131997,9 @@ function finishProjectAndEmitResultLog(socket, outputPath) {
   // `project result` is the action's final message to the agent for
   // this job. It closes the project-side tracking state and writes the
   // result document used by report / attestation generation.
-  const args = [BIN, 'project', 'result', ...jobIdentityArgs(socket),
+  const args = ['project', 'result', ...jobIdentityArgs(socket),
     '--output-path', outputPath];
-  const r = (0,external_node_child_process_namespaceObject.spawnSync)('sudo', args, { stdio: 'inherit' });
+  const r = (0,external_node_child_process_namespaceObject.spawnSync)(BIN, args, { stdio: 'inherit' });
   if (r.status !== 0) {
     warning(`cicd-sensor project result exited with status ${r.status}`);
     return false;
