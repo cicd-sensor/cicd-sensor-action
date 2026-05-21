@@ -1,0 +1,41 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "dependencyDashboard": false,
+  "internalChecksFilter": "strict",
+  "labels": [
+    "dependencies"
+  ],
+  "minimumReleaseAge": "7 days",
+  "separateMajorMinor": false,
+  "separateMinorPatch": false,
+  "rangeStrategy": "pin",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 4am on monday"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": "Group npm dependency updates (action source + bundled dist must be rebuilt with npm run build)",
+      "matchManagers": [
+        "npm"
+      ],
+      "groupName": "npm dependencies",
+      "postUpdateOptions": [
+        "npmDedupe"
+      ]
+    },
+    {
+      "description": "Group GitHub Actions workflow updates",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "github actions"
+    }
+  ]
+}

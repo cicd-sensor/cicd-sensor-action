@@ -4,25 +4,7 @@
 
 GitHub Action for running [cicd-sensor](https://github.com/cicd-sensor/cicd-sensor) on a Linux GitHub Actions runner.
 
-With the default settings, it starts the cicd-sensor agent before your workload, records runtime activity, and uploads the HTML report and `cicd-sensor-attestation` predicate artifact after the job. Optional inputs can enable cicd-sensor Manager for centralized configuration, and cloud delivery for Job Result Log, Detection Log, and Runtime Telemetry Log.
-
-## Usage
-
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: cicd-sensor/cicd-sensor-action@v0.0.2
-      - uses: actions/checkout@v6
-
-      - name: Build
-        run: make test
-```
-
-- The action supports GitHub-hosted Linux VM runners, including x64 and arm64 labels such as `ubuntu-latest`, `ubuntu-24.04`, `ubuntu-22.04`,
-`ubuntu-24.04-arm`, and `ubuntu-22.04-arm`.
-- `ubuntu-slim` is not supported because it runs in a container on a shared VM and does not provide the host eBPF environment cicd-sensor needs. See [Choosing the runner for a job](https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job) for the current GitHub runner labels.
+Published as `cicd-sensor/cicd-sensor-action`. See the [GitHub-hosted runner guide](https://cicd-sensor.github.io/user-guide/github-hosted.html) for usage.
 
 ## Config and Rules
 
