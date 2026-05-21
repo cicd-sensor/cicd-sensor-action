@@ -33,6 +33,16 @@ jobs:
       - name: Check
         run: npm run check
 
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "Hiroki Suezawa"
+          git config user.email "suezawa@gmail.com"
+
       - name: Create tag and GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
