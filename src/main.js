@@ -18,7 +18,7 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
 // Bumped together with each action release — users pin one thing.
-const AGENT_VERSION = 'v0.0.12';
+const AGENT_VERSION = 'v0.0.13';
 const PROJECT_CONFIG_REPO_PATH = '.cicd-sensor/config.yaml';
 const PROJECT_RULES_REPO_PATH = '.cicd-sensor/rules';
 const PROVIDER = 'github';
@@ -362,7 +362,7 @@ function bundleProjectRules(rulesDir, outputPath) {
   run(ctl, [
     'rule', 'bundle',
     '--input-dir', rulesDir,
-    '--output', outputPath,
+    '--output-file', outputPath,
   ]);
   run(ctl, ['rule', 'validate', outputPath]);
 }
@@ -650,8 +650,8 @@ async function main() {
   if (managerUrl) {
     projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
   } else {
-    if (projectConfigPath) projectArgs.push('--config', projectConfigPath);
-    if (projectRulesPath) projectArgs.push('--rules', projectRulesPath);
+    if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
+    if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
   }
   appendDebugOutputDirArg(projectArgs, debugOutputDir);
 

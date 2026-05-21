@@ -132000,7 +132000,7 @@ function finishProjectAndEmitResultLog(socket, outputPath) {
   // this job. It closes the project-side tracking state and writes the
   // result document used by report / attestation generation.
   const args = ['project', 'result', ...jobIdentityArgs(socket),
-    '--output-path', outputPath];
+    '--output-file', outputPath];
   const r = (0,external_node_child_process_namespaceObject.spawnSync)(BIN, args, { stdio: 'inherit' });
   if (r.status !== 0) {
     warning(`cicd-sensor project result exited with status ${r.status}`);
@@ -132012,7 +132012,7 @@ function finishProjectAndEmitResultLog(socket, outputPath) {
 function pipeIntoCtl(subcommand, resultLogPath, outputPath) {
   const input = external_node_fs_.openSync(resultLogPath, 'r');
   try {
-    const r = (0,external_node_child_process_namespaceObject.spawnSync)(CTL, ['report', subcommand, '--output-path', outputPath], {
+    const r = (0,external_node_child_process_namespaceObject.spawnSync)(CTL, ['report', subcommand, '--output-file', outputPath], {
       stdio: [input, 'inherit', 'inherit'],
     });
     if (r.status !== 0) {

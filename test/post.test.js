@@ -42,9 +42,9 @@ describe('step summary command', () => {
     );
   });
 
-  it('does not include output path or asset base flags', () => {
+  it('does not include output file or asset base flags', () => {
     const args = stepSummaryArgs({ htmlArtifactId: 987, debugArtifactId: 654, healthFailed: true });
-    assert.equal(args.includes('--output-path'), false);
+    assert.equal(args.includes('--output-file'), false);
     assert.equal(args.includes('--asset-base-url'), false);
   });
 });
