@@ -1,11 +1,8 @@
 ---
 name: "cicd-sensor"
 description: >-
-  Secure your GitHub Actions workflows with real-time runtime
-  detection and behavior monitoring. cicd-sensor watches process,
-  network, and file activity during the job, alerts on policy
-  violations as they happen, and publishes a per-run trace report
-  when the job ends.
+  eBPF-powered CI/CD runtime security sensor for GitHub Actions
+  — detect attacks and suspicious activity at runtime.
 
 branding:
   icon: shield
