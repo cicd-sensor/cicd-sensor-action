@@ -70,10 +70,11 @@ inputs:
 
   enable-debug:
     description: >-
-      Upload a forensics bundle (journalctl output, raw result-log.json,
-      `systemctl show` snapshot) as the `cicd-sensor-debug` artifact.
-      Useful for investigating tampering detections or agent crashes.
-      Accepts true / false.
+      Upload a forensics bundle as the `cicd-sensor-debug` artifact.
+      The bundle includes Runtime Telemetry Log output when available,
+      plus journalctl output, raw result-log.json, and a `systemctl show`
+      snapshot. Useful for investigating tampering detections or agent
+      crashes. Accepts true / false.
     required: false
     default: "false"
 

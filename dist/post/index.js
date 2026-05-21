@@ -131864,6 +131864,7 @@ const STATE = {
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
+  debugOutputDir: 'debugOutputDir',
   reusedExistingAgent: 'reusedExistingAgent',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
@@ -131880,6 +131881,7 @@ const PROVIDER = 'github';
 const BIN = '/usr/local/bin/cicd-sensor';
 const CTL = 'cicd-sensorctl';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
+const DEBUG_RUNTIME_TELEMETRY_LOG = 'job_runtime_telemetry_log.json.gz';
 
 // ─────────────────────────────────────────────────────────────────
 // helpers
@@ -132060,6 +132062,11 @@ function writeSystemctlShow(outputPath, snapshotText) {
   external_node_fs_.writeFileSync(outputPath, snapshotText || snapshotSystemd('cicd-sensor'));
 }
 
+function runtimeTelemetryDebugPath(outDir) {
+  const debugOutputDir = getState(STATE.debugOutputDir) || external_node_path_.join(outDir, 'debug');
+  return external_node_path_.join(debugOutputDir, DEBUG_RUNTIME_TELEMETRY_LOG);
+}
+
 async function uploadOne(client, name, outDir, files, options = {}) {
   const existing = files.filter((f) => external_node_fs_.existsSync(f) && external_node_fs_.statSync(f).size > 0);
   if (existing.length === 0) return null;
@@ -132140,6 +132147,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   const journalPath = external_node_path_.join(outDir, 'cicd-sensor-agent.log');
   const proxyJournalPath = external_node_path_.join(outDir, 'cicd-sensor-proxy.log');
   const systemctlPath = external_node_path_.join(outDir, 'systemctl-show.txt');
+  const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
   captureJournal(journalPath);
   if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
   if (includeSystemd) {
@@ -132150,7 +132158,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
 
   let debugArtifact = null;
   const client = new DefaultArtifactClient();
-  const bundle = [journalPath, proxyJournalPath, systemctlPath]
+  const bundle = [journalPath, proxyJournalPath, systemctlPath, runtimeTelemetryPath]
     .filter((p) => external_node_fs_.existsSync(p) && external_node_fs_.statSync(p).size > 0);
   if (bundle.length > 0) {
     try {
@@ -132232,6 +132240,7 @@ async function main() {
     const htmlPath = external_node_path_.join(outDir, 'cicd-sensor-report.html');
     const predicatePath = external_node_path_.join(outDir, 'predicate.json');
     const systemctlPath = external_node_path_.join(outDir, 'systemctl-show.txt');
+    const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
 
     const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
 
@@ -132271,7 +132280,7 @@ async function main() {
       }
     }
     if (enableDebug) {
-      const bundle = [journalPath, proxyJournalPath, resultLogPath, systemctlPath]
+      const bundle = [journalPath, proxyJournalPath, resultLogPath, systemctlPath, runtimeTelemetryPath]
         .filter((p) => external_node_fs_.existsSync(p) && external_node_fs_.statSync(p).size > 0);
       if (bundle.length > 0) {
         try {

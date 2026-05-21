@@ -27997,6 +27997,7 @@ var __webpack_exports__ = {};
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
   s4: () => (/* binding */ appArmorLSMEnabled),
+  S8: () => (/* binding */ appendDebugOutputDirArg),
   dg: () => (/* binding */ fetchRepoDirectoryFiles),
   vi: () => (/* binding */ renderAgentSystemdRunArgs),
   kx: () => (/* binding */ renderAppArmorProfile),
@@ -31118,6 +31119,7 @@ const STATE = {
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
+  debugOutputDir: 'debugOutputDir',
   reusedExistingAgent: 'reusedExistingAgent',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
@@ -31331,6 +31333,11 @@ function bundleProjectRules(rulesDir, outputPath) {
   run(ctl, ['rule', 'validate', outputPath]);
 }
 
+function appendDebugOutputDirArg(args, debugOutputDir) {
+  if (debugOutputDir) args.push('--debug-output-dir', debugOutputDir);
+  return args;
+}
+
 // Hijack /run/docker.sock so every container create traverses
 // cicd-sensor. The proxy runs as a transient systemd unit with a
 // restart policy because it is only a socket relay. Skipped on
@@ -31503,6 +31510,11 @@ async function main() {
   if (managerToken) core_setSecret(managerToken);
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
+  const debugOutputDir = enableDebug ? external_node_path_namespaceObject.join(tmp, 'cicd-sensor-output', 'debug') : '';
+  if (debugOutputDir) {
+    external_node_fs_namespaceObject.mkdirSync(debugOutputDir, { recursive: true });
+    validateAbsolutePath(debugOutputDir, 'debug-output-dir');
+  }
 
   // Hosted runners are ephemeral, so a leftover socket here is stale
   // state rather than a pre-installed agent. Self-hosted only.
@@ -31542,6 +31554,7 @@ async function main() {
   saveState(STATE.enableHtmlReport, enableHtmlReport ? 'true' : 'false');
   saveState(STATE.enableAttestationArtifact, enableAttestationArtifact ? 'true' : 'false');
   saveState(STATE.enableDebug, enableDebug ? 'true' : 'false');
+  saveState(STATE.debugOutputDir, debugOutputDir);
 
   // Project config / rules fetched via Contents API so the action can
   // run before `actions/checkout`.
@@ -31606,6 +31619,7 @@ async function main() {
     if (projectConfigPath) projectArgs.push('--config', projectConfigPath);
     if (projectRulesPath) projectArgs.push('--rules', projectRulesPath);
   }
+  appendDebugOutputDirArg(projectArgs, debugOutputDir);
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
@@ -31627,6 +31641,7 @@ if (isDirectRun()) {
 
 
 var __webpack_exports__appArmorLSMEnabled = __webpack_exports__.s4;
+var __webpack_exports__appendDebugOutputDirArg = __webpack_exports__.S8;
 var __webpack_exports__fetchRepoDirectoryFiles = __webpack_exports__.dg;
 var __webpack_exports__renderAgentSystemdRunArgs = __webpack_exports__.vi;
 var __webpack_exports__renderAppArmorProfile = __webpack_exports__.kx;
@@ -31636,4 +31651,4 @@ var __webpack_exports__setupDockerProxy = __webpack_exports__.ce;
 var __webpack_exports__validateManagerUrl = __webpack_exports__.L_;
 var __webpack_exports__validateSocketPath = __webpack_exports__.d8;
 var __webpack_exports__writeRepoDirectoryFiles = __webpack_exports__.qP;
-export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
+export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__appendDebugOutputDirArg as appendDebugOutputDirArg, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
