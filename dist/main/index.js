@@ -30983,7 +30983,7 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
 // Bumped together with each action release — users pin one thing.
-const AGENT_VERSION = 'v0.0.6';
+const AGENT_VERSION = 'v0.0.10';
 const PROJECT_CONFIG_REPO_PATH = '.cicd-sensor/config.yaml';
 const PROJECT_RULES_REPO_PATH = '.cicd-sensor/rules';
 const PROVIDER = 'github';
