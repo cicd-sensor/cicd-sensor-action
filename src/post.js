@@ -42,8 +42,6 @@ const STATE = {
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
-const DOCKER_SOCKET = '/run/docker.sock';
-const DOCKER_UPSTREAM_SOCKET = '/run/docker-upstream.sock';
 const PROXY_UNIT_NAME = 'cicd-sensor-proxy.service';
 
 const ARTIFACT_REPORT = 'cicd-sensor-report';
@@ -253,20 +251,6 @@ function unlinkSilently(p) {
   try { fs.unlinkSync(p); } catch {}
 }
 
-// Reverse setupDockerProxy: stop the proxy unit, drop its socket,
-// restore the upstream rename. Safe to call when the proxy wasn't
-// started — the unit stop is idempotent and the rename guard is
-// path-conditional.
-function teardownDockerProxy() {
-  spawnSync('sudo', ['systemctl', 'stop', PROXY_UNIT_NAME], { stdio: 'inherit' });
-  if (fs.existsSync(DOCKER_SOCKET)) {
-    spawnSync('sudo', ['rm', '-f', DOCKER_SOCKET], { stdio: 'inherit' });
-  }
-  if (fs.existsSync(DOCKER_UPSTREAM_SOCKET)) {
-    spawnSync('sudo', ['mv', DOCKER_UPSTREAM_SOCKET, DOCKER_SOCKET], { stdio: 'inherit' });
-  }
-}
-
 // ─────────────────────────────────────────────────────────────────
 // step summary
 // ─────────────────────────────────────────────────────────────────
@@ -370,129 +354,121 @@ async function main() {
   const outDir = path.join(tmp, 'cicd-sensor-output');
   fs.mkdirSync(outDir, { recursive: true });
 
-  try {
-    // 1. Early health check. Existing-agent mode deliberately skips
-    // systemd because the host owns that lifecycle.
-    const checkSystemd = !reusedExistingAgent;
-    if (!checkAgentHealth(socket, checkSystemd)) {
-      return await failWithDebugBundle({
-        outDir,
-        reason: 'cicd-sensor agent health check failed at post step',
-        snapshotText: '',
-        dockerProxyEnabled,
-        includeSystemd: !reusedExistingAgent,
-      });
-    }
+  // 1. Early health check. Existing-agent mode deliberately skips
+  // systemd because the host owns that lifecycle.
+  const checkSystemd = !reusedExistingAgent;
+  if (!checkAgentHealth(socket, checkSystemd)) {
+    return await failWithDebugBundle({
+      outDir,
+      reason: 'cicd-sensor agent health check failed at post step',
+      snapshotText: '',
+      dockerProxyEnabled,
+      includeSystemd: !reusedExistingAgent,
+    });
+  }
 
-    // 2. Managed mode verifies the systemd snapshot taken in main.
-    // Existing-agent mode is intentionally just socket protocol: start
-    // was sent in main, result/end is sent below, and no systemd
-    // invariant is assumed.
-    let tamperResult = { tampered: false, drift: [], current: {}, nowText: '' };
+  // 2. Managed mode verifies the systemd snapshot taken in main.
+  // Existing-agent mode is intentionally just socket protocol: start
+  // was sent in main, result/end is sent below, and no systemd
+  // invariant is assumed.
+  let tamperResult = { tampered: false, drift: [], current: {}, nowText: '' };
+  if (!reusedExistingAgent) {
+    tamperResult = verifyTamper();
+  } else {
+    core.info('cicd-sensor post: existing-agent mode, skipping systemd tamper check');
+  }
+  let tamperErr = null;
+  if (tamperResult.tampered) {
+    core.error('cicd-sensor post: tampering detected');
+    for (const d of tamperResult.drift) core.error(`  - ${d}`);
+    tamperErr = new Error('cicd-sensor agent tampering detected');
+  } else if (tamperResult.current.ActiveState) {
+    core.info(
+      `cicd-sensor post: state OK (MainPID=${tamperResult.current.MainPID} ` +
+      `NRestarts=${tamperResult.current.NRestarts} ActiveState=${tamperResult.current.ActiveState})`,
+    );
+  }
+
+  // 3. Emit result log + conditional artifact generation.
+  const journalPath = path.join(outDir, 'cicd-sensor-agent.log');
+  const proxyJournalPath = path.join(outDir, 'cicd-sensor-proxy.log');
+  const resultLogPath = path.join(outDir, 'cicd-sensor-result-log.json');
+  const htmlPath = path.join(outDir, 'cicd-sensor-report.html');
+  const predicatePath = path.join(outDir, 'predicate.json');
+  const systemctlPath = path.join(outDir, 'systemctl-show.txt');
+  const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
+
+  const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
+
+  let htmlOk = false;
+  if (enableHtmlReport && resultOk) htmlOk = pipeIntoCtl('html', resultLogPath, htmlPath);
+  let predicateOk = false;
+  if (enableAttestation && resultOk) predicateOk = pipeIntoCtl('attest', resultLogPath, predicatePath);
+
+  if (enableDebug) {
+    captureJournal(journalPath);
+    if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
     if (!reusedExistingAgent) {
-      tamperResult = verifyTamper();
-    } else {
-      core.info('cicd-sensor post: existing-agent mode, skipping systemd tamper check');
-    }
-    let tamperErr = null;
-    if (tamperResult.tampered) {
-      core.error('cicd-sensor post: tampering detected');
-      for (const d of tamperResult.drift) core.error(`  - ${d}`);
-      tamperErr = new Error('cicd-sensor agent tampering detected');
-    } else if (tamperResult.current.ActiveState) {
-      core.info(
-        `cicd-sensor post: state OK (MainPID=${tamperResult.current.MainPID} ` +
-        `NRestarts=${tamperResult.current.NRestarts} ActiveState=${tamperResult.current.ActiveState})`,
-      );
-    }
-
-    // 3. Emit result log + conditional artifact generation.
-    const journalPath = path.join(outDir, 'cicd-sensor-agent.log');
-    const proxyJournalPath = path.join(outDir, 'cicd-sensor-proxy.log');
-    const resultLogPath = path.join(outDir, 'cicd-sensor-result-log.json');
-    const htmlPath = path.join(outDir, 'cicd-sensor-report.html');
-    const predicatePath = path.join(outDir, 'predicate.json');
-    const systemctlPath = path.join(outDir, 'systemctl-show.txt');
-    const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
-
-    const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
-
-    let htmlOk = false;
-    if (enableHtmlReport && resultOk) htmlOk = pipeIntoCtl('html', resultLogPath, htmlPath);
-    let predicateOk = false;
-    if (enableAttestation && resultOk) predicateOk = pipeIntoCtl('attest', resultLogPath, predicatePath);
-
-    if (enableDebug) {
-      captureJournal(journalPath);
-      if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
-      if (!reusedExistingAgent) {
-        try { writeSystemctlShow(systemctlPath, tamperResult.nowText); } catch (err) {
-          core.warning(`systemctl show snapshot failed: ${err && err.message ? err.message : err}`);
-        }
-      }
-    }
-
-    // 4. Upload each artifact independently.
-    const client = new DefaultArtifactClient();
-    let htmlArtifact = null;
-    let attestationArtifact = null;
-    let debugArtifact = null;
-    if (enableHtmlReport && htmlOk) {
-      try {
-        // skipArchive keeps the HTML as a single file the UI opens inline.
-        htmlArtifact = await uploadOne(client, ARTIFACT_REPORT, outDir, [htmlPath], { skipArchive: true });
-      } catch (err) {
-        core.warning(`html artifact upload failed: ${err && err.message ? err.message : err}`);
-      }
-    }
-    if (enableAttestation && predicateOk) {
-      try {
-        attestationArtifact = await uploadOne(client, ARTIFACT_ATTESTATION, outDir, [predicatePath]);
-      } catch (err) {
-        core.warning(`attestation artifact upload failed: ${err && err.message ? err.message : err}`);
-      }
-    }
-    if (enableDebug) {
-      const bundle = [journalPath, proxyJournalPath, resultLogPath, systemctlPath, runtimeTelemetryPath]
-        .filter((p) => fs.existsSync(p) && fs.statSync(p).size > 0);
-      if (bundle.length > 0) {
-        try {
-          debugArtifact = await uploadOne(client, ARTIFACT_DEBUG, outDir, bundle);
-        } catch (err) {
-          core.warning(`debug artifact upload failed: ${err && err.message ? err.message : err}`);
-        }
-      }
-    }
-
-    // 5. Step summary. The action passes only trusted artifact URLs;
-    // result-log rendering belongs to cicd-sensorctl, not JavaScript.
-    try {
-      writeStepSummaryWithCtl({
-        resultLogPath: resultOk ? resultLogPath : '',
-        healthFailed: tamperResult.tampered,
-        htmlArtifactId: htmlArtifact?.id,
-        debugArtifactId: debugArtifact?.id,
-      });
-    } catch (err) {
-      core.warning(`step summary write failed: ${err && err.message ? err.message : err}`);
-    }
-
-    // 6. Outputs — always set so consumers get '' rather than undefined.
-    core.setOutput('attestation-artifact-id', attestationArtifact?.id ? String(attestationArtifact.id) : '');
-    core.setOutput('attestation-artifact-url', artifactUrl(attestationArtifact?.id) || '');
-
-    // 7. Unlink the staged manager token file.
-    const managerTokenFile = core.getState(STATE.managerTokenFile);
-    if (managerTokenFile) unlinkSilently(managerTokenFile);
-
-    if (tamperErr) throw tamperErr;
-  } finally {
-    if (dockerProxyEnabled) {
-      try { teardownDockerProxy(); } catch (err) {
-        core.warning(`docker proxy teardown failed: ${err && err.message ? err.message : err}`);
+      try { writeSystemctlShow(systemctlPath, tamperResult.nowText); } catch (err) {
+        core.warning(`systemctl show snapshot failed: ${err && err.message ? err.message : err}`);
       }
     }
   }
+
+  // 4. Upload each artifact independently.
+  const client = new DefaultArtifactClient();
+  let htmlArtifact = null;
+  let attestationArtifact = null;
+  let debugArtifact = null;
+  if (enableHtmlReport && htmlOk) {
+    try {
+      // skipArchive keeps the HTML as a single file the UI opens inline.
+      htmlArtifact = await uploadOne(client, ARTIFACT_REPORT, outDir, [htmlPath], { skipArchive: true });
+    } catch (err) {
+      core.warning(`html artifact upload failed: ${err && err.message ? err.message : err}`);
+    }
+  }
+  if (enableAttestation && predicateOk) {
+    try {
+      attestationArtifact = await uploadOne(client, ARTIFACT_ATTESTATION, outDir, [predicatePath]);
+    } catch (err) {
+      core.warning(`attestation artifact upload failed: ${err && err.message ? err.message : err}`);
+    }
+  }
+  if (enableDebug) {
+    const bundle = [journalPath, proxyJournalPath, resultLogPath, systemctlPath, runtimeTelemetryPath]
+      .filter((p) => fs.existsSync(p) && fs.statSync(p).size > 0);
+    if (bundle.length > 0) {
+      try {
+        debugArtifact = await uploadOne(client, ARTIFACT_DEBUG, outDir, bundle);
+      } catch (err) {
+        core.warning(`debug artifact upload failed: ${err && err.message ? err.message : err}`);
+      }
+    }
+  }
+
+  // 5. Step summary. The action passes only trusted artifact URLs;
+  // result-log rendering belongs to cicd-sensorctl, not JavaScript.
+  try {
+    writeStepSummaryWithCtl({
+      resultLogPath: resultOk ? resultLogPath : '',
+      healthFailed: tamperResult.tampered,
+      htmlArtifactId: htmlArtifact?.id,
+      debugArtifactId: debugArtifact?.id,
+    });
+  } catch (err) {
+    core.warning(`step summary write failed: ${err && err.message ? err.message : err}`);
+  }
+
+  // 6. Outputs — always set so consumers get '' rather than undefined.
+  core.setOutput('attestation-artifact-id', attestationArtifact?.id ? String(attestationArtifact.id) : '');
+  core.setOutput('attestation-artifact-url', artifactUrl(attestationArtifact?.id) || '');
+
+  // 7. Unlink the staged manager token file.
+  const managerTokenFile = core.getState(STATE.managerTokenFile);
+  if (managerTokenFile) unlinkSilently(managerTokenFile);
+
+  if (tamperErr) throw tamperErr;
 }
 
 function isDirectRun() {

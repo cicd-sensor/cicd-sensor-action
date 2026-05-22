@@ -31401,7 +31401,6 @@ async function setupDockerProxy(socketPath) {
   } catch (err) {
     warning(`docker proxy did not bind ${DOCKER_SOCKET}: ${err.message}`);
     logRecentJournal(PROXY_UNIT_NAME);
-    (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['systemctl', 'stop', PROXY_UNIT_NAME]);
     (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['rm', '-f', DOCKER_SOCKET]);
     (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['mv', DOCKER_UPSTREAM_SOCKET, DOCKER_SOCKET]);
     return { enabled: false };

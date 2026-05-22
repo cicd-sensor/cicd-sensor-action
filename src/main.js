@@ -435,7 +435,6 @@ async function setupDockerProxy(socketPath) {
   } catch (err) {
     core.warning(`docker proxy did not bind ${DOCKER_SOCKET}: ${err.message}`);
     logRecentJournal(PROXY_UNIT_NAME);
-    spawnSync('sudo', ['systemctl', 'stop', PROXY_UNIT_NAME]);
     spawnSync('sudo', ['rm', '-f', DOCKER_SOCKET]);
     spawnSync('sudo', ['mv', DOCKER_UPSTREAM_SOCKET, DOCKER_SOCKET]);
     return { enabled: false };
