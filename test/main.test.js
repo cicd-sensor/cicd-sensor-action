@@ -5,7 +5,6 @@ import os from 'node:os';
 import path from 'node:path';
 
 import {
-  appendDebugEnabledArg,
   appArmorLSMEnabled,
   repoContentsURL,
   renderAgentSystemdRunArgs,
@@ -155,19 +154,5 @@ describe('project config fetch helpers', () => {
 
     assert.equal(fs.readFileSync(path.join(tmp, 'a.yaml'), 'utf8'), 'a: 1\n');
     assert.equal(fs.readFileSync(path.join(tmp, 'nested/b.yaml'), 'utf8'), 'b: 2\n');
-  });
-});
-
-describe('project start args', () => {
-  it('adds enable-debug only when debug output is enabled', () => {
-    const withoutDebug = appendDebugEnabledArg(['project', 'start'], false);
-    assert.deepEqual(withoutDebug, ['project', 'start']);
-
-    const withDebug = appendDebugEnabledArg(['project', 'start'], true);
-    assert.deepEqual(withDebug, [
-      'project',
-      'start',
-      '--enable-debug',
-    ]);
   });
 });

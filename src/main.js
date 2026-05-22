@@ -375,11 +375,6 @@ function bundleProjectRules(rulesDir, outputPath) {
   run(ctl, ['rule', 'validate', outputPath]);
 }
 
-function appendDebugEnabledArg(args, enableDebug) {
-  if (enableDebug) args.push('--enable-debug');
-  return args;
-}
-
 // Hijack /run/docker.sock so every container create traverses
 // cicd-sensor. The proxy runs as a transient systemd unit with a
 // restart policy because it is only a socket relay. Skipped on
@@ -655,7 +650,7 @@ async function main() {
     if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
     if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
   }
-  appendDebugEnabledArg(projectArgs, enableDebug);
+  if (enableDebug) projectArgs.push('--enable-debug');
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
@@ -676,7 +671,6 @@ if (isDirectRun()) {
 
 export {
   appArmorLSMEnabled,
-  appendDebugEnabledArg,
   renderAgentSystemdRunArgs,
   renderAppArmorProfile,
   renderProxySystemdRunArgs,
