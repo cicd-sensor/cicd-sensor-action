@@ -4,8 +4,9 @@
     "config:recommended",
     "helpers:pinGitHubActionDigests"
   ],
-  "dependencyDashboard": false,
+  "dependencyDashboard": true,
   "internalChecksFilter": "strict",
+  "rebaseWhen": "behind-base-branch",
   "labels": [
     "dependencies"
   ],
@@ -36,6 +37,30 @@
         "github-actions"
       ],
       "groupName": "github actions"
+    },
+    {
+      "description": "Bump cicd-sensor agent version immediately on release (in-house dependency, kicked from the cicd-sensor release workflow)",
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "cicd-sensor/cicd-sensor"
+      ],
+      "minimumReleaseAge": "0 days"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^action\\.yml$/"
+      ],
+      "matchStrings": [
+        "cicd-sensor-version:[\\s\\S]*?default:\\s*\"(?<currentValue>v\\d+\\.\\d+\\.\\d+)\""
+      ],
+      "depNameTemplate": "cicd-sensor/cicd-sensor",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^releases/(?<version>v\\d+\\.\\d+\\.\\d+)$"
     }
   ]
 }

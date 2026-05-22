@@ -30983,8 +30983,17 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
-// Bumped together with each action release — users pin one thing.
-const AGENT_VERSION = 'v0.0.13';
+
+// Read lazily so importing this module under tests does not require
+// INPUT_CICD-SENSOR-VERSION to be set. Renovate bumps the value via
+// action.yml's `cicd-sensor-version` input default.
+function getAgentVersion() {
+  const v = getInput('cicd-sensor-version').trim();
+  if (!/^v\d+\.\d+\.\d+$/.test(v)) {
+    throw new Error(`cicd-sensor-version must match vX.Y.Z, got '${v}'`);
+  }
+  return v;
+}
 const PROJECT_CONFIG_REPO_PATH = '.cicd-sensor/config.yaml';
 const PROJECT_RULES_REPO_PATH = '.cicd-sensor/rules';
 const PROVIDER = 'github';
@@ -31412,8 +31421,9 @@ function stageReleaseBinaries(tmp) {
   const extractDir = external_node_path_namespaceObject.join(stagedDir, 'extracted');
   external_node_fs_namespaceObject.mkdirSync(extractDir, { recursive: true });
 
-  const versionNoV = AGENT_VERSION.startsWith('v') ? AGENT_VERSION.slice(1) : AGENT_VERSION;
-  const releaseTag = `${TAG_PREFIX}${AGENT_VERSION}`;
+  const agentVersion = getAgentVersion();
+  const versionNoV = agentVersion.slice(1);
+  const releaseTag = `${TAG_PREFIX}${agentVersion}`;
   const tarball = `cicd-sensor_${versionNoV}_linux_${arch}.tar.gz`;
   const tarballPath = external_node_path_namespaceObject.join(stagedDir, tarball);
   const downloadBase = `https://github.com/${REPO}/releases/download/${releaseTag}`;

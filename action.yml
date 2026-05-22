@@ -12,6 +12,15 @@ branding:
 # Inputs
 # ---------------------------------------------------------------------
 inputs:
+  cicd-sensor-version:
+    description: >-
+      cicd-sensor agent version this action installs. Bumped
+      automatically by Renovate when a new cicd-sensor/cicd-sensor
+      releases/v* tag is published. Override only to pin to a
+      different release (for example, to test a pre-release).
+    required: false
+    default: "v0.0.13"
+
   github-token:
     description: >-
       Token used to fetch `.cicd-sensor/config.yaml` and
