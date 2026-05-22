@@ -28000,6 +28000,7 @@ __nccwpck_require__.d(__webpack_exports__, {
   dg: () => (/* binding */ fetchRepoDirectoryFiles),
   vi: () => (/* binding */ renderAgentSystemdRunArgs),
   kx: () => (/* binding */ renderAppArmorProfile),
+  Hs: () => (/* binding */ renderProjectStartArgs),
   EY: () => (/* binding */ renderProxySystemdRunArgs),
   G2: () => (/* binding */ repoContentsURL),
   ce: () => (/* binding */ setupDockerProxy),
@@ -31250,6 +31251,51 @@ function deriveProviderHost() {
     .toLowerCase();
 }
 
+function renderProjectStartArgs({
+  socketPath,
+  providerHost = deriveProviderHost(),
+  projectConfigPath = '',
+  projectRulesPath = '',
+  managerUrl = '',
+  managerTokenFile = '',
+  enableDebug = false,
+  env = process.env,
+}) {
+  const projectArgs = [
+    'project', 'start',
+    '--socket', socketPath,
+    '--provider', PROVIDER,
+    '--provider-host', providerHost,
+    '--project-path', env.GITHUB_REPOSITORY || '',
+    '--github-run-id', env.GITHUB_RUN_ID || '',
+    '--github-job', env.GITHUB_JOB || '',
+    '--github-run-attempt', env.GITHUB_RUN_ATTEMPT || '',
+    '--github-runner-tracking-id', env.RUNNER_TRACKING_ID || '',
+  ];
+  const metadataPairs = [
+    ['--commit-sha', env.GITHUB_SHA],
+    ['--ref-name', env.GITHUB_REF_NAME],
+    ['--trigger', env.GITHUB_EVENT_NAME],
+    ['--actor-id', env.GITHUB_ACTOR_ID],
+    ['--actor-name', env.GITHUB_ACTOR],
+    ['--github-workflow-ref', env.GITHUB_WORKFLOW_REF],
+    ['--github-workflow-sha', env.GITHUB_WORKFLOW_SHA],
+    ['--github-workflow', env.GITHUB_WORKFLOW],
+  ];
+  for (const [flag, value] of metadataPairs) {
+    if (value) projectArgs.push(flag, value);
+  }
+
+  if (managerUrl) {
+    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
+  } else {
+    if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
+    if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
+  }
+  if (enableDebug) projectArgs.push('--enable-debug');
+  return projectArgs;
+}
+
 // Hosted runners are ephemeral; reusing a stale agent socket here is
 // always a bug. Self-hosted runners set RUNNER_ENVIRONMENT=self-hosted.
 function isGitHubHostedRunner() {
@@ -31585,37 +31631,14 @@ async function main() {
   }
 
   info('==> Registering project start');
-  const projectArgs = [
-    'project', 'start',
-    '--socket', socketPath,
-    '--provider', PROVIDER,
-    '--provider-host', deriveProviderHost(),
-    '--project-path', process.env.GITHUB_REPOSITORY || '',
-    '--github-run-id', process.env.GITHUB_RUN_ID || '',
-    '--github-run-attempt', process.env.GITHUB_RUN_ATTEMPT || '',
-    '--github-job', process.env.GITHUB_JOB || '',
-    '--github-runner-tracking-id', process.env.RUNNER_TRACKING_ID || '',
-  ];
-  const metadataPairs = [
-    ['--commit-sha', process.env.GITHUB_SHA],
-    ['--branch', process.env.GITHUB_REF_NAME || process.env.GITHUB_REF],
-    ['--trigger', process.env.GITHUB_EVENT_NAME],
-    ['--workflow', process.env.GITHUB_WORKFLOW],
-    ['--workflow-ref', process.env.GITHUB_WORKFLOW_REF],
-    ['--workflow-sha', process.env.GITHUB_WORKFLOW_SHA],
-    ['--actor', process.env.GITHUB_ACTOR],
-  ];
-  for (const [flag, value] of metadataPairs) {
-    if (value) projectArgs.push(flag, value);
-  }
-
-  if (managerUrl) {
-    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
-  } else {
-    if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
-    if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
-  }
-  if (enableDebug) projectArgs.push('--enable-debug');
+  const projectArgs = renderProjectStartArgs({
+    socketPath,
+    projectConfigPath,
+    projectRulesPath,
+    managerUrl,
+    managerTokenFile,
+    enableDebug,
+  });
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
@@ -31640,10 +31663,11 @@ var __webpack_exports__appArmorLSMEnabled = __webpack_exports__.s4;
 var __webpack_exports__fetchRepoDirectoryFiles = __webpack_exports__.dg;
 var __webpack_exports__renderAgentSystemdRunArgs = __webpack_exports__.vi;
 var __webpack_exports__renderAppArmorProfile = __webpack_exports__.kx;
+var __webpack_exports__renderProjectStartArgs = __webpack_exports__.Hs;
 var __webpack_exports__renderProxySystemdRunArgs = __webpack_exports__.EY;
 var __webpack_exports__repoContentsURL = __webpack_exports__.G2;
 var __webpack_exports__setupDockerProxy = __webpack_exports__.ce;
 var __webpack_exports__validateManagerUrl = __webpack_exports__.L_;
 var __webpack_exports__validateSocketPath = __webpack_exports__.d8;
 var __webpack_exports__writeRepoDirectoryFiles = __webpack_exports__.qP;
-export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
+export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };

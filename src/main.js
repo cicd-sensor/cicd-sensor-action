@@ -285,6 +285,51 @@ function deriveProviderHost() {
     .toLowerCase();
 }
 
+function renderProjectStartArgs({
+  socketPath,
+  providerHost = deriveProviderHost(),
+  projectConfigPath = '',
+  projectRulesPath = '',
+  managerUrl = '',
+  managerTokenFile = '',
+  enableDebug = false,
+  env = process.env,
+}) {
+  const projectArgs = [
+    'project', 'start',
+    '--socket', socketPath,
+    '--provider', PROVIDER,
+    '--provider-host', providerHost,
+    '--project-path', env.GITHUB_REPOSITORY || '',
+    '--github-run-id', env.GITHUB_RUN_ID || '',
+    '--github-job', env.GITHUB_JOB || '',
+    '--github-run-attempt', env.GITHUB_RUN_ATTEMPT || '',
+    '--github-runner-tracking-id', env.RUNNER_TRACKING_ID || '',
+  ];
+  const metadataPairs = [
+    ['--commit-sha', env.GITHUB_SHA],
+    ['--ref-name', env.GITHUB_REF_NAME],
+    ['--trigger', env.GITHUB_EVENT_NAME],
+    ['--actor-id', env.GITHUB_ACTOR_ID],
+    ['--actor-name', env.GITHUB_ACTOR],
+    ['--github-workflow-ref', env.GITHUB_WORKFLOW_REF],
+    ['--github-workflow-sha', env.GITHUB_WORKFLOW_SHA],
+    ['--github-workflow', env.GITHUB_WORKFLOW],
+  ];
+  for (const [flag, value] of metadataPairs) {
+    if (value) projectArgs.push(flag, value);
+  }
+
+  if (managerUrl) {
+    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
+  } else {
+    if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
+    if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
+  }
+  if (enableDebug) projectArgs.push('--enable-debug');
+  return projectArgs;
+}
+
 // Hosted runners are ephemeral; reusing a stale agent socket here is
 // always a bug. Self-hosted runners set RUNNER_ENVIRONMENT=self-hosted.
 function isGitHubHostedRunner() {
@@ -620,37 +665,14 @@ async function main() {
   }
 
   core.info('==> Registering project start');
-  const projectArgs = [
-    'project', 'start',
-    '--socket', socketPath,
-    '--provider', PROVIDER,
-    '--provider-host', deriveProviderHost(),
-    '--project-path', process.env.GITHUB_REPOSITORY || '',
-    '--github-run-id', process.env.GITHUB_RUN_ID || '',
-    '--github-run-attempt', process.env.GITHUB_RUN_ATTEMPT || '',
-    '--github-job', process.env.GITHUB_JOB || '',
-    '--github-runner-tracking-id', process.env.RUNNER_TRACKING_ID || '',
-  ];
-  const metadataPairs = [
-    ['--commit-sha', process.env.GITHUB_SHA],
-    ['--branch', process.env.GITHUB_REF_NAME || process.env.GITHUB_REF],
-    ['--trigger', process.env.GITHUB_EVENT_NAME],
-    ['--workflow', process.env.GITHUB_WORKFLOW],
-    ['--workflow-ref', process.env.GITHUB_WORKFLOW_REF],
-    ['--workflow-sha', process.env.GITHUB_WORKFLOW_SHA],
-    ['--actor', process.env.GITHUB_ACTOR],
-  ];
-  for (const [flag, value] of metadataPairs) {
-    if (value) projectArgs.push(flag, value);
-  }
-
-  if (managerUrl) {
-    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
-  } else {
-    if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
-    if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
-  }
-  if (enableDebug) projectArgs.push('--enable-debug');
+  const projectArgs = renderProjectStartArgs({
+    socketPath,
+    projectConfigPath,
+    projectRulesPath,
+    managerUrl,
+    managerTokenFile,
+    enableDebug,
+  });
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
@@ -673,6 +695,7 @@ export {
   appArmorLSMEnabled,
   renderAgentSystemdRunArgs,
   renderAppArmorProfile,
+  renderProjectStartArgs,
   renderProxySystemdRunArgs,
   setupDockerProxy,
   fetchRepoDirectoryFiles,

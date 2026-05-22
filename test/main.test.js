@@ -9,6 +9,7 @@ import {
   repoContentsURL,
   renderAgentSystemdRunArgs,
   renderAppArmorProfile,
+  renderProjectStartArgs,
   renderProxySystemdRunArgs,
   validateManagerUrl,
   validateSocketPath,
@@ -115,6 +116,77 @@ describe('systemd-run rendering', () => {
       appArmorProfile: 'cicd-sensor-action-agent',
     });
     assert.equal(withProfile.includes('--property=AppArmorProfile=cicd-sensor-action-agent'), true);
+  });
+});
+
+describe('project start args', () => {
+  it('uses JobLogContext flag names for identity and optional metadata', () => {
+    const args = renderProjectStartArgs({
+      socketPath: '/run/cicd-sensor/agent.sock',
+      providerHost: 'github.example.com',
+      projectConfigPath: '/tmp/config.yaml',
+      projectRulesPath: '/tmp/rules.bundle.yaml',
+      enableDebug: true,
+      env: {
+        GITHUB_REPOSITORY: 'acme/example',
+        GITHUB_RUN_ID: '123',
+        GITHUB_JOB: 'build',
+        GITHUB_RUN_ATTEMPT: '2',
+        RUNNER_TRACKING_ID: 'runner-1',
+        GITHUB_SHA: 'abc123',
+        GITHUB_REF_NAME: 'main',
+        GITHUB_REF: 'refs/heads/ignored',
+        GITHUB_EVENT_NAME: 'push',
+        GITHUB_ACTOR_ID: '1001',
+        GITHUB_ACTOR: 'alice',
+        GITHUB_WORKFLOW_REF: 'acme/example/.github/workflows/build.yml@refs/heads/main',
+        GITHUB_WORKFLOW_SHA: 'def456',
+        GITHUB_WORKFLOW: 'build',
+      },
+    });
+
+    assert.deepEqual(args, [
+      'project', 'start',
+      '--socket', '/run/cicd-sensor/agent.sock',
+      '--provider', 'github',
+      '--provider-host', 'github.example.com',
+      '--project-path', 'acme/example',
+      '--github-run-id', '123',
+      '--github-job', 'build',
+      '--github-run-attempt', '2',
+      '--github-runner-tracking-id', 'runner-1',
+      '--commit-sha', 'abc123',
+      '--ref-name', 'main',
+      '--trigger', 'push',
+      '--actor-id', '1001',
+      '--actor-name', 'alice',
+      '--github-workflow-ref', 'acme/example/.github/workflows/build.yml@refs/heads/main',
+      '--github-workflow-sha', 'def456',
+      '--github-workflow', 'build',
+      '--config-file', '/tmp/config.yaml',
+      '--rules-file', '/tmp/rules.bundle.yaml',
+      '--enable-debug',
+    ]);
+    for (const oldFlag of ['--branch', '--actor', '--workflow', '--workflow-ref', '--workflow-sha']) {
+      assert.equal(args.includes(oldFlag), false);
+    }
+  });
+
+  it('does not fall back from GITHUB_REF to ref_name metadata', () => {
+    const args = renderProjectStartArgs({
+      socketPath: '/run/cicd-sensor/agent.sock',
+      providerHost: 'github.com',
+      env: {
+        GITHUB_REPOSITORY: 'acme/example',
+        GITHUB_RUN_ID: '123',
+        GITHUB_JOB: 'build',
+        GITHUB_RUN_ATTEMPT: '2',
+        RUNNER_TRACKING_ID: 'runner-1',
+        GITHUB_REF: 'refs/heads/main',
+      },
+    });
+
+    assert.equal(args.includes('--ref-name'), false);
   });
 });
 
