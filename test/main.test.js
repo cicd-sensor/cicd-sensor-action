@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 import {
-  appendDebugOutputDirArg,
+  appendDebugEnabledArg,
   appArmorLSMEnabled,
   repoContentsURL,
   renderAgentSystemdRunArgs,
@@ -159,16 +159,15 @@ describe('project config fetch helpers', () => {
 });
 
 describe('project start args', () => {
-  it('adds debug-output-dir only when debug output is enabled', () => {
-    const withoutDebug = appendDebugOutputDirArg(['project', 'start'], '');
+  it('adds enable-debug only when debug output is enabled', () => {
+    const withoutDebug = appendDebugEnabledArg(['project', 'start'], false);
     assert.deepEqual(withoutDebug, ['project', 'start']);
 
-    const withDebug = appendDebugOutputDirArg(['project', 'start'], '/tmp/cicd-sensor-output/debug');
+    const withDebug = appendDebugEnabledArg(['project', 'start'], true);
     assert.deepEqual(withDebug, [
       'project',
       'start',
-      '--debug-output-dir',
-      '/tmp/cicd-sensor-output/debug',
+      '--enable-debug',
     ]);
   });
 });

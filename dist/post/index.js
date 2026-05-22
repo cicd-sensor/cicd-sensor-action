@@ -77797,7 +77797,9 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
-  A: () => (/* binding */ stepSummaryArgs)
+  lL: () => (/* binding */ runtimeTelemetryDebugSourcePath),
+  Bp: () => (/* binding */ stageRuntimeTelemetryDebugFile),
+  A9: () => (/* binding */ stepSummaryArgs)
 });
 
 // NAMESPACE OBJECT: ./node_modules/@azure/storage-blob/dist/esm/generated/src/models/mappers.js
@@ -131864,7 +131866,6 @@ const STATE = {
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
-  debugOutputDir: 'debugOutputDir',
   reusedExistingAgent: 'reusedExistingAgent',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
@@ -131879,6 +131880,7 @@ const PROVIDER = 'github';
 const BIN = '/usr/local/bin/cicd-sensor';
 const CTL = 'cicd-sensorctl';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
+const DEBUG_OUTPUT_DIR = '/home/runner/work/_temp/cicd_sensor_debug';
 const DEBUG_RUNTIME_TELEMETRY_LOG = 'job_runtime_telemetry_log.json.gz';
 
 // ─────────────────────────────────────────────────────────────────
@@ -132060,9 +132062,21 @@ function writeSystemctlShow(outputPath, snapshotText) {
   external_node_fs_.writeFileSync(outputPath, snapshotText || snapshotSystemd('cicd-sensor'));
 }
 
-function runtimeTelemetryDebugPath(outDir) {
-  const debugOutputDir = getState(STATE.debugOutputDir) || external_node_path_.join(outDir, 'debug');
-  return external_node_path_.join(debugOutputDir, DEBUG_RUNTIME_TELEMETRY_LOG);
+function runtimeTelemetryDebugSourcePath() {
+  return external_node_path_.join(DEBUG_OUTPUT_DIR, DEBUG_RUNTIME_TELEMETRY_LOG);
+}
+
+function stageRuntimeTelemetryDebugFile(outDir, src = runtimeTelemetryDebugSourcePath(), runCommand = external_node_child_process_namespaceObject.spawnSync) {
+  const dst = external_node_path_.join(outDir, DEBUG_RUNTIME_TELEMETRY_LOG);
+  const exists = runCommand('sudo', ['test', '-s', src], { stdio: 'ignore' });
+  if (exists.status !== 0) return '';
+
+  const staged = runCommand('sudo', ['install', '-m', '644', src, dst], { encoding: 'utf8' });
+  if (staged.status !== 0) {
+    warning(`runtime telemetry debug copy failed: ${staged.stderr || staged.stdout || `status ${staged.status}`}`);
+    return '';
+  }
+  return dst;
 }
 
 async function uploadOne(client, name, outDir, files, options = {}) {
@@ -132131,7 +132145,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   const journalPath = external_node_path_.join(outDir, 'cicd-sensor-agent.log');
   const proxyJournalPath = external_node_path_.join(outDir, 'cicd-sensor-proxy.log');
   const systemctlPath = external_node_path_.join(outDir, 'systemctl-show.txt');
-  const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
+  const runtimeTelemetryPath = stageRuntimeTelemetryDebugFile(outDir);
   captureJournal(journalPath);
   if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
   if (includeSystemd) {
@@ -132223,7 +132237,7 @@ async function main() {
   const htmlPath = external_node_path_.join(outDir, 'cicd-sensor-report.html');
   const predicatePath = external_node_path_.join(outDir, 'predicate.json');
   const systemctlPath = external_node_path_.join(outDir, 'systemctl-show.txt');
-  const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
+  const runtimeTelemetryPath = enableDebug ? stageRuntimeTelemetryDebugFile(outDir) : '';
 
   const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
 
@@ -132310,5 +132324,7 @@ if (isDirectRun()) {
 
 
 
-var __webpack_exports__stepSummaryArgs = __webpack_exports__.A;
-export { __webpack_exports__stepSummaryArgs as stepSummaryArgs };
+var __webpack_exports__runtimeTelemetryDebugSourcePath = __webpack_exports__.lL;
+var __webpack_exports__stageRuntimeTelemetryDebugFile = __webpack_exports__.Bp;
+var __webpack_exports__stepSummaryArgs = __webpack_exports__.A9;
+export { __webpack_exports__runtimeTelemetryDebugSourcePath as runtimeTelemetryDebugSourcePath, __webpack_exports__stageRuntimeTelemetryDebugFile as stageRuntimeTelemetryDebugFile, __webpack_exports__stepSummaryArgs as stepSummaryArgs };

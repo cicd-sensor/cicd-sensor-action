@@ -162,7 +162,6 @@ const STATE = {
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
-  debugOutputDir: 'debugOutputDir',
   reusedExistingAgent: 'reusedExistingAgent',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
@@ -376,8 +375,8 @@ function bundleProjectRules(rulesDir, outputPath) {
   run(ctl, ['rule', 'validate', outputPath]);
 }
 
-function appendDebugOutputDirArg(args, debugOutputDir) {
-  if (debugOutputDir) args.push('--debug-output-dir', debugOutputDir);
+function appendDebugEnabledArg(args, enableDebug) {
+  if (enableDebug) args.push('--enable-debug');
   return args;
 }
 
@@ -553,11 +552,6 @@ async function main() {
   if (managerToken) core.setSecret(managerToken);
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
-  const debugOutputDir = enableDebug ? path.join(tmp, 'cicd-sensor-output', 'debug') : '';
-  if (debugOutputDir) {
-    fs.mkdirSync(debugOutputDir, { recursive: true });
-    validateAbsolutePath(debugOutputDir, 'debug-output-dir');
-  }
 
   // Hosted runners are ephemeral, so a leftover socket here is stale
   // state rather than a pre-installed agent. Self-hosted only.
@@ -597,7 +591,6 @@ async function main() {
   core.saveState(STATE.enableHtmlReport, enableHtmlReport ? 'true' : 'false');
   core.saveState(STATE.enableAttestationArtifact, enableAttestationArtifact ? 'true' : 'false');
   core.saveState(STATE.enableDebug, enableDebug ? 'true' : 'false');
-  core.saveState(STATE.debugOutputDir, debugOutputDir);
 
   // Project config / rules fetched via Contents API so the action can
   // run before `actions/checkout`.
@@ -662,7 +655,7 @@ async function main() {
     if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
     if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
   }
-  appendDebugOutputDirArg(projectArgs, debugOutputDir);
+  appendDebugEnabledArg(projectArgs, enableDebug);
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
@@ -683,7 +676,7 @@ if (isDirectRun()) {
 
 export {
   appArmorLSMEnabled,
-  appendDebugOutputDirArg,
+  appendDebugEnabledArg,
   renderAgentSystemdRunArgs,
   renderAppArmorProfile,
   renderProxySystemdRunArgs,

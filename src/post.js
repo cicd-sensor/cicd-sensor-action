@@ -37,7 +37,6 @@ const STATE = {
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
-  debugOutputDir: 'debugOutputDir',
   reusedExistingAgent: 'reusedExistingAgent',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
@@ -52,6 +51,7 @@ const PROVIDER = 'github';
 const BIN = '/usr/local/bin/cicd-sensor';
 const CTL = 'cicd-sensorctl';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
+const DEBUG_OUTPUT_DIR = '/home/runner/work/_temp/cicd_sensor_debug';
 const DEBUG_RUNTIME_TELEMETRY_LOG = 'job_runtime_telemetry_log.json.gz';
 
 // ─────────────────────────────────────────────────────────────────
@@ -233,9 +233,21 @@ function writeSystemctlShow(outputPath, snapshotText) {
   fs.writeFileSync(outputPath, snapshotText || snapshotSystemd('cicd-sensor'));
 }
 
-function runtimeTelemetryDebugPath(outDir) {
-  const debugOutputDir = core.getState(STATE.debugOutputDir) || path.join(outDir, 'debug');
-  return path.join(debugOutputDir, DEBUG_RUNTIME_TELEMETRY_LOG);
+function runtimeTelemetryDebugSourcePath() {
+  return path.join(DEBUG_OUTPUT_DIR, DEBUG_RUNTIME_TELEMETRY_LOG);
+}
+
+function stageRuntimeTelemetryDebugFile(outDir, src = runtimeTelemetryDebugSourcePath(), runCommand = spawnSync) {
+  const dst = path.join(outDir, DEBUG_RUNTIME_TELEMETRY_LOG);
+  const exists = runCommand('sudo', ['test', '-s', src], { stdio: 'ignore' });
+  if (exists.status !== 0) return '';
+
+  const staged = runCommand('sudo', ['install', '-m', '644', src, dst], { encoding: 'utf8' });
+  if (staged.status !== 0) {
+    core.warning(`runtime telemetry debug copy failed: ${staged.stderr || staged.stdout || `status ${staged.status}`}`);
+    return '';
+  }
+  return dst;
 }
 
 async function uploadOne(client, name, outDir, files, options = {}) {
@@ -304,7 +316,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   const journalPath = path.join(outDir, 'cicd-sensor-agent.log');
   const proxyJournalPath = path.join(outDir, 'cicd-sensor-proxy.log');
   const systemctlPath = path.join(outDir, 'systemctl-show.txt');
-  const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
+  const runtimeTelemetryPath = stageRuntimeTelemetryDebugFile(outDir);
   captureJournal(journalPath);
   if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
   if (includeSystemd) {
@@ -396,7 +408,7 @@ async function main() {
   const htmlPath = path.join(outDir, 'cicd-sensor-report.html');
   const predicatePath = path.join(outDir, 'predicate.json');
   const systemctlPath = path.join(outDir, 'systemctl-show.txt');
-  const runtimeTelemetryPath = runtimeTelemetryDebugPath(outDir);
+  const runtimeTelemetryPath = enableDebug ? stageRuntimeTelemetryDebugFile(outDir) : '';
 
   const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
 
@@ -482,5 +494,7 @@ if (isDirectRun()) {
 }
 
 export {
+  runtimeTelemetryDebugSourcePath,
+  stageRuntimeTelemetryDebugFile,
   stepSummaryArgs,
 };
