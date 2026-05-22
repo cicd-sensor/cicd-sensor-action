@@ -1,4 +1,5 @@
-> 🚧 Currently under development. Not yet ready for use.
+> 🚧 **Pre-release: Active development.**
+> cicd-sensor-action is currently in pre-release and under active development. Feedback is very welcome.
 
 # cicd-sensor-action
 
