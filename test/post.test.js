@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 
 import { stepSummaryArgs } from '../src/post.js';
 
@@ -46,5 +47,21 @@ describe('step summary command', () => {
     const args = stepSummaryArgs({ htmlArtifactId: 987, debugArtifactId: 654, healthFailed: true });
     assert.equal(args.includes('--output-file'), false);
     assert.equal(args.includes('--asset-base-url'), false);
+  });
+});
+
+describe('debug runtime telemetry artifact ordering', () => {
+  it('moves runtime telemetry only after project result has returned', () => {
+    const source = fs.readFileSync(new URL('../src/post.js', import.meta.url), 'utf8');
+    const mainSource = source.slice(source.indexOf('async function main()'));
+    const resultIndex = mainSource.indexOf('const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);');
+    const moveIndex = mainSource.indexOf('fs.renameSync(DEBUG_RUNTIME_TELEMETRY_PATH, runtimeTelemetryPath)');
+    assert.notEqual(resultIndex, -1);
+    assert.notEqual(moveIndex, -1);
+    assert.ok(resultIndex < moveIndex);
+
+    const runtimeTelemetryPathIndex = mainSource.indexOf('const runtimeTelemetryPath =');
+    const beforeResult = mainSource.slice(runtimeTelemetryPathIndex, resultIndex);
+    assert.equal(/fs\.(copyFileSync|renameSync)\(DEBUG_RUNTIME_TELEMETRY_PATH/.test(beforeResult), false);
   });
 });
