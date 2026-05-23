@@ -41,6 +41,7 @@ const STATE = {
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
+const AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
 const PROXY_UNIT_NAME = 'cicd-sensor-proxy.service';
 
 const ARTIFACT_REPORT = 'cicd-sensor-report';
@@ -117,10 +118,10 @@ function checkAgentHealth(socket, checkSystemd = true) {
   }
   // (2) systemd reports active
   if (checkSystemd) {
-    const sd = spawnSync('systemctl', ['is-active', 'cicd-sensor'], { encoding: 'utf8' });
+    const sd = spawnSync('systemctl', ['is-active', AGENT_UNIT_NAME], { encoding: 'utf8' });
     const sdState = (sd.stdout || '').trim();
     if (sdState !== 'active') {
-      core.error(`systemctl is-active cicd-sensor = '${sdState}' (expected 'active')`);
+      core.error(`systemctl is-active ${AGENT_UNIT_NAME} = '${sdState}' (expected 'active')`);
       return false;
     }
   }
@@ -146,7 +147,7 @@ function verifyTamper() {
   }
 
   const startState = parseShow(fs.readFileSync(snapshotPath, 'utf8'));
-  const nowText = snapshotSystemd('cicd-sensor');
+  const nowText = snapshotSystemd(AGENT_UNIT_NAME);
   const nowState = parseShow(nowText);
 
   const drift = [];
@@ -203,7 +204,7 @@ function captureJournal(outputPath) {
   // Filter to JSON lines only; systemd's own unit lifecycle messages
   // would confuse downstream jq parsing.
   const r = runOutput('sudo', [
-    'journalctl', '-u', 'cicd-sensor',
+    'journalctl', '-u', AGENT_UNIT_NAME,
     '--output=cat', '--no-pager',
   ]);
   if (r.status !== 0) {
@@ -229,7 +230,7 @@ function captureProxyJournal(outputPath) {
 }
 
 function writeSystemctlShow(outputPath, snapshotText) {
-  fs.writeFileSync(outputPath, snapshotText || snapshotSystemd('cicd-sensor'));
+  fs.writeFileSync(outputPath, snapshotText || snapshotSystemd(AGENT_UNIT_NAME));
 }
 
 async function uploadOne(client, name, outDir, files, options = {}) {

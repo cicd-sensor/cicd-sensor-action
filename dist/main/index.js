@@ -31000,7 +31000,7 @@ const PROVIDER = 'github';
 const RUNNER = 'machine';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
 const BIN_DIR = '/usr/local/bin';
-const AGENT_UNIT_NAME = 'cicd-sensor.service';
+const AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
 const PROXY_UNIT_NAME = 'cicd-sensor-proxy.service';
 const APPARMOR_PROFILE_NAME = 'cicd-sensor-action-agent';
 const APPARMOR_PROFILE_PATH = `/etc/apparmor.d/${APPARMOR_PROFILE_NAME}`;
@@ -31160,7 +31160,7 @@ async function waitForSocket(socketPath, timeoutMs) {
   }
   throw new Error(
     `agent socket ${socketPath} did not appear within ${timeoutMs}ms; ` +
-    `check 'journalctl -u cicd-sensor'`,
+    `check 'journalctl -u ${AGENT_UNIT_NAME}'`,
   );
 }
 
@@ -31514,8 +31514,8 @@ async function startManagedAgent({ socketPath, tmp }) {
     await waitForSocket(socketPath, SOCKET_TIMEOUT_MS);
   } catch (err) {
     error('agent socket did not appear; dumping journal:');
-    logRecentJournal('cicd-sensor');
-    (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['systemctl', 'status', 'cicd-sensor', '--no-pager'], { stdio: 'inherit' });
+    logRecentJournal(AGENT_UNIT_NAME);
+    (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['systemctl', 'status', AGENT_UNIT_NAME, '--no-pager'], { stdio: 'inherit' });
     throw err;
   }
 }
