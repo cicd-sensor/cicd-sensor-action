@@ -133,7 +133,7 @@ jobs:
     needs: [validate, build]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
-    environment: releases
+    environment: action-releases/approval
     permissions:
       contents: read
       id-token: write
@@ -273,3 +273,53 @@ jobs:
         run: |
           git tag -f "$MAJOR" "$VERSION"
           git push -f origin "$MAJOR"
+
+  bump-sensor-docs:
+    name: Kick Renovate on cicd-sensor docs
+    needs: [finalize]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment: action-releases/bump-sensor-docs
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      # Kick Renovate on cicd-sensor so the SHA-pinned cicd-sensor-action
+      # references in README and docs get bumped to this release without
+      # waiting for the Mend Renovate App's default poll cycle.
+      # Toggles the "manual job" checkbox on the Dependency Dashboard
+      # issue via the cicd-sensor-docs-bump GitHub App.
+      - name: Mint GitHub App token (cicd-sensor-docs-bump)
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.DOCS_BUMP_APP_CLIENT_ID }}
+          private-key: ${{ secrets.DOCS_BUMP_APP_PRIVATE_KEY }}
+          owner: cicd-sensor
+          repositories: cicd-sensor
+
+      - name: Kick Renovate on cicd-sensor
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          VERSION: ${{ inputs.version }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -eu
+          target="cicd-sensor/cicd-sensor"
+          issue_num=$(gh issue list --repo "$target" --state open \
+            --search 'in:title "Dependency Dashboard"' \
+            --json number,title \
+            --jq '.[] | select(.title == "Dependency Dashboard") | .number' \
+            | head -1)
+          if [ -z "$issue_num" ]; then
+            echo "::warning::no Renovate Dashboard issue on ${target} yet; Mend may still be initialising"
+            exit 0
+          fi
+          body=$(gh issue view "$issue_num" --repo "$target" --json body --jq .body)
+          new_body=$(printf '%s' "$body" | sed 's|- \[ \] <!-- manual job -->|- [x] <!-- manual job -->|')
+          if [ "$body" = "$new_body" ]; then
+            echo "::notice::manual job checkbox already toggled or marker missing on ${target}"
+            exit 0
+          fi
+          printf '%s' "$new_body" | gh issue edit "$issue_num" --repo "$target" --body-file -
+          echo "::notice::kicked Renovate on ${target} for ${VERSION} (from ${RUN_URL})"
