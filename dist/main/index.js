@@ -31047,25 +31047,25 @@ function validateAbsolutePath(value, label) {
   return value;
 }
 
-function agentCommandArgs({ socketPath, managerUrl, managerTokenFile }) {
-  const args = [
+// The manager is a project-scope concern carried in `project start`.
+// Agent start stays manager-agnostic so the action behaves the same
+// whether it owns the agent lifecycle or reuses one started by a host
+// operator.
+function agentCommandArgs({ socketPath }) {
+  return [
     external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'),
     'agent', 'start',
     '--socket', socketPath,
     '--provider', PROVIDER,
     '--runner', RUNNER,
   ];
-  if (managerUrl) {
-    args.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
-  }
-  return args;
 }
 
 // Transient units keep CI cleanup simple: no unit files remain on the
 // host, but post can still inspect systemd state for action-managed
 // agents. The agent deliberately has no Restart= policy; if it dies,
 // post should report that fact rather than hide the gap.
-function renderAgentSystemdRunArgs({ socketPath, managerUrl, managerTokenFile, appArmorProfile }) {
+function renderAgentSystemdRunArgs({ socketPath, appArmorProfile }) {
   const args = [
     'systemd-run',
     `--unit=${AGENT_UNIT_NAME}`,
@@ -31083,7 +31083,7 @@ function renderAgentSystemdRunArgs({ socketPath, managerUrl, managerTokenFile, a
   if (appArmorProfile) {
     args.push(`--property=AppArmorProfile=${appArmorProfile}`);
   }
-  return [...args, ...agentCommandArgs({ socketPath, managerUrl, managerTokenFile })];
+  return [...args, ...agentCommandArgs({ socketPath })];
 }
 
 // The proxy is a recoverable socket relay, unlike the sensor itself.
@@ -31501,14 +31501,12 @@ function writeManagerTokenFile({ managerUrl, managerToken, tmp }) {
   return managerTokenFile;
 }
 
-async function startManagedAgent({ socketPath, managerUrl, managerTokenFile, tmp }) {
+async function startManagedAgent({ socketPath, tmp }) {
   const appArmorProfile = setupAppArmorProfile(tmp);
 
   info('==> Starting cicd-sensor');
   run('sudo', renderAgentSystemdRunArgs({
     socketPath,
-    managerUrl,
-    managerTokenFile,
     appArmorProfile,
   }));
 
@@ -31522,21 +31520,13 @@ async function startManagedAgent({ socketPath, managerUrl, managerTokenFile, tmp
   }
 }
 
-async function installAndStartManagedAgent({
-  socketPath,
-  managerUrl,
-  managerToken,
-  tmp,
-}) {
+async function installAndStartManagedAgent({ socketPath, tmp }) {
   // Keep all release download / binary install work before AppArmor
   // and systemd-run setup. If a release fetch fails, the host service
   // policy and Docker socket are untouched.
   const binaries = stageReleaseBinaries(tmp);
-  const managerTokenFile = writeManagerTokenFile({ managerUrl, managerToken, tmp });
   installBinaries(binaries);
-  await startManagedAgent({ socketPath, managerUrl, managerTokenFile, tmp });
-
-  return { managerTokenFile };
+  await startManagedAgent({ socketPath, tmp });
 }
 
 async function main() {
@@ -31562,7 +31552,12 @@ async function main() {
   // Hosted runners are ephemeral, so a leftover socket here is stale
   // state rather than a pre-installed agent. Self-hosted only.
   const reuseAgent = !isGitHubHostedRunner() && socketIsLive(socketPath);
-  let managerTokenFile = '';
+
+  // Token file is needed by `cicd-sensor project start --manager-token-file`
+  // regardless of whether this step starts a managed agent or reuses one
+  // that the host operator already started — the CLI forwards it into
+  // the project-start request body.
+  const managerTokenFile = writeManagerTokenFile({ managerUrl, managerToken, tmp });
 
   saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
 
@@ -31570,12 +31565,7 @@ async function main() {
     info(`==> Reusing existing cicd-sensor socket at ${socketPath}`);
     saveState(STATE.dockerProxyEnabled, 'false');
   } else {
-    ({ managerTokenFile } = await installAndStartManagedAgent({
-      socketPath,
-      managerUrl,
-      managerToken,
-      tmp,
-    }));
+    await installAndStartManagedAgent({ socketPath, tmp });
 
     const snapshotPath = external_node_path_namespaceObject.join(tmp, 'cicd-sensor-start.txt');
     external_node_fs_namespaceObject.writeFileSync(snapshotPath, snapshotSystemd(AGENT_UNIT_NAME));

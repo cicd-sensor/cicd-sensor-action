@@ -33,29 +33,19 @@ describe('input validation', () => {
 });
 
 describe('systemd-run rendering', () => {
-  it('does not use CICD_SENSOR_EXTRA_ARGS in agent transient units', () => {
-    const withoutManager = renderAgentSystemdRunArgs({
+  it('keeps agent transient units manager-agnostic', () => {
+    // The manager is a project-scope concern; agent start must never
+    // carry it, so that the action behaves identically whether it owns
+    // the agent lifecycle or reuses one started by the host operator.
+    const args = renderAgentSystemdRunArgs({
       socketPath: '/run/cicd-sensor/agent.sock',
-      managerUrl: '',
-      managerTokenFile: '',
       appArmorProfile: '',
     });
-    assert.equal(withoutManager.includes('CICD_SENSOR_EXTRA_ARGS'), false);
-    assert.equal(withoutManager.includes('--socket'), true);
-    assert.equal(withoutManager.includes('/run/cicd-sensor/agent.sock'), true);
-    assert.equal(withoutManager.includes('--manager-url'), false);
-
-    const withManager = renderAgentSystemdRunArgs({
-      socketPath: '/run/cicd-sensor/agent.sock',
-      managerUrl: 'https://manager.example.com/',
-      managerTokenFile: '/tmp/cicd-sensor-manager.token',
-      appArmorProfile: '',
-    });
-    assert.equal(withManager.includes('CICD_SENSOR_EXTRA_ARGS'), false);
-    assert.equal(withManager.includes('--manager-url'), true);
-    assert.equal(withManager.includes('https://manager.example.com/'), true);
-    assert.equal(withManager.includes('--manager-token-file'), true);
-    assert.equal(withManager.includes('/tmp/cicd-sensor-manager.token'), true);
+    assert.equal(args.includes('CICD_SENSOR_EXTRA_ARGS'), false);
+    assert.equal(args.includes('--socket'), true);
+    assert.equal(args.includes('/run/cicd-sensor/agent.sock'), true);
+    assert.equal(args.includes('--manager-url'), false);
+    assert.equal(args.includes('--manager-token-file'), false);
   });
 
   it('renders proxy transient unit with the validated agent socket path', () => {
@@ -68,8 +58,6 @@ describe('systemd-run rendering', () => {
   it('does not ask systemd to restart the agent automatically', () => {
     const agent = renderAgentSystemdRunArgs({
       socketPath: '/run/cicd-sensor/agent.sock',
-      managerUrl: '',
-      managerTokenFile: '',
       appArmorProfile: '',
     });
 
@@ -87,8 +75,6 @@ describe('systemd-run rendering', () => {
   it('uses stop/isolate/OOM hardening for transient units', () => {
     const agent = renderAgentSystemdRunArgs({
       socketPath: '/run/cicd-sensor/agent.sock',
-      managerUrl: '',
-      managerTokenFile: '',
       appArmorProfile: '',
     });
     const proxy = renderProxySystemdRunArgs({ socketPath: '/run/cicd-sensor/agent.sock' });
@@ -103,16 +89,12 @@ describe('systemd-run rendering', () => {
   it('adds AppArmorProfile only when a profile is provided', () => {
     const withoutProfile = renderAgentSystemdRunArgs({
       socketPath: '/run/cicd-sensor/agent.sock',
-      managerUrl: '',
-      managerTokenFile: '',
       appArmorProfile: '',
     });
     assert.equal(withoutProfile.some((arg) => arg.startsWith('--property=AppArmorProfile=')), false);
 
     const withProfile = renderAgentSystemdRunArgs({
       socketPath: '/run/cicd-sensor/agent.sock',
-      managerUrl: '',
-      managerTokenFile: '',
       appArmorProfile: 'cicd-sensor-action-agent',
     });
     assert.equal(withProfile.includes('--property=AppArmorProfile=cicd-sensor-action-agent'), true);
