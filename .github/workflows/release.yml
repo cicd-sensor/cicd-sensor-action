@@ -100,10 +100,9 @@ jobs:
           set -eu
           mkdir -p release
           tarball="release/cicd-sensor-action_${VERSION}.tar.gz"
-          # Only ship what the action actually loads at runtime:
-          # action.yml + dist/. node_modules, src, test, package*.json
-          # are not referenced by `uses: ...`.
-          tar -czf "$tarball" action.yml dist
+          # git archive (not tar of workspace) so build steps can't leak
+          # files into the signed artifact.
+          git archive --format=tar.gz -o "$tarball" HEAD -- action.yml dist
           ls -lh "$tarball"
 
       - name: Generate SBOM (CycloneDX)
