@@ -393,9 +393,6 @@ async function main() {
   const predicatePath = path.join(outDir, 'predicate.json');
   const systemctlPath = path.join(outDir, 'systemctl-show.txt');
   const runtimeTelemetryPath = path.join(outDir, path.basename(DEBUG_RUNTIME_TELEMETRY_PATH));
-  if (enableDebug) {
-    try { fs.copyFileSync(DEBUG_RUNTIME_TELEMETRY_PATH, runtimeTelemetryPath); } catch {}
-  }
 
   const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
 
@@ -405,6 +402,9 @@ async function main() {
   if (enableAttestation && resultOk) predicateOk = pipeIntoCtl('attest', resultLogPath, predicatePath);
 
   if (enableDebug) {
+    // Telemetry move runs after project result so the agent has
+    // finalized the gzip stream and closed its fd.
+    try { fs.renameSync(DEBUG_RUNTIME_TELEMETRY_PATH, runtimeTelemetryPath); } catch {}
     captureJournal(journalPath);
     if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
     if (!reusedExistingAgent) {
