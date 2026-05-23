@@ -210,7 +210,6 @@ jobs:
     needs: [validate, sign-and-attest]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
-    environment: releases
     permissions:
       contents: write
     steps:
