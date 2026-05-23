@@ -210,3 +210,67 @@ describe('project config fetch helpers', () => {
     assert.equal(fs.readFileSync(path.join(tmp, 'nested/b.yaml'), 'utf8'), 'b: 2\n');
   });
 });
+
+describe('cicd-sensorctl staging invariants', () => {
+  function readMainSource() {
+    return fs.readFileSync(new URL('../src/main.js', import.meta.url), 'utf8');
+  }
+
+  function matchingBrace(s, openIndex) {
+    let depth = 0;
+    for (let i = openIndex; i < s.length; i++) {
+      if (s[i] === '{') depth++;
+      else if (s[i] === '}') {
+        depth--;
+        if (depth === 0) return i;
+      }
+    }
+    return -1;
+  }
+
+  it('reuse branch stages release binaries so ctl is available', () => {
+    const source = readMainSource();
+    const reuseStart = source.indexOf('if (reuseAgent) {');
+    assert.notEqual(reuseStart, -1);
+    const elseIndex = source.indexOf('} else {', reuseStart);
+    assert.notEqual(elseIndex, -1);
+    const reuseBranch = source.slice(reuseStart, elseIndex);
+    assert.ok(
+      reuseBranch.includes('stageReleaseBinaries(tmp)'),
+      'reuse branch must call stageReleaseBinaries to stage ctl',
+    );
+  });
+
+  it('saves STATE.ctlPath unconditionally after the mode branch', () => {
+    const source = readMainSource();
+    const ifReuseStart = source.indexOf('if (reuseAgent) {');
+    const ifBraceOpen = source.indexOf('{', ifReuseStart);
+    const ifBraceClose = matchingBrace(source, ifBraceOpen);
+    const elseKw = source.indexOf('else', ifBraceClose);
+    const elseBraceOpen = source.indexOf('{', elseKw);
+    const elseBraceClose = matchingBrace(source, elseBraceOpen);
+
+    const saveCtl = source.indexOf('core.saveState(STATE.ctlPath');
+    assert.notEqual(saveCtl, -1);
+    assert.ok(
+      saveCtl > elseBraceClose,
+      'STATE.ctlPath save must sit after the if/else so post step always sees ctl',
+    );
+    assert.equal(
+      source.match(/core\.saveState\(STATE\.ctlPath/g).length, 1,
+      'STATE.ctlPath should be saved exactly once, not per-branch',
+    );
+  });
+
+  it('does not system-install ctl into BIN_DIR', () => {
+    const source = readMainSource();
+    assert.equal(
+      /install['"]\s*,\s*['"]-m['"]\s*,\s*['"]755['"]\s*,\s*ctlBin/.test(source), false,
+      'ctl must not be copied into /usr/local/bin; it runs from its staged path',
+    );
+    assert.equal(
+      source.includes("BIN_DIR, 'cicd-sensorctl'"), false,
+      'no code path should resolve cicd-sensorctl under BIN_DIR',
+    );
+  });
+});

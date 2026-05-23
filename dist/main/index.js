@@ -31124,6 +31124,7 @@ const SNAPSHOT_PROPERTIES = [
 const STATE = {
   snapshotPath: 'snapshotPath',
   socket: 'socket',
+  ctlPath: 'ctlPath',
   managerTokenFile: 'managerTokenFile',
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
@@ -31376,8 +31377,7 @@ function writeRepoDirectoryFiles(files, repoRootPath, dstDir) {
   }
 }
 
-function bundleProjectRules(rulesDir, outputPath) {
-  const ctl = external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensorctl');
+function bundleProjectRules(rulesDir, outputPath, ctl) {
   run(ctl, [
     'rule', 'bundle',
     '--input-dir', rulesDir,
@@ -31478,15 +31478,19 @@ function stageReleaseBinaries(tmp) {
   const ctlBin = external_node_path_namespaceObject.join(extractDir, `cicd-sensorctl-linux-${arch}`);
   for (const f of [agentBin, ctlBin]) {
     if (!external_node_fs_namespaceObject.existsSync(f)) throw new Error(`expected file missing from release tarball: ${external_node_path_namespaceObject.basename(f)}`);
+    external_node_fs_namespaceObject.chmodSync(f, 0o755);
   }
 
   return { agentBin, ctlBin };
 }
 
-function installBinaries({ agentBin, ctlBin }) {
-  info('==> Installing binaries');
+// Only the agent gets system-installed: systemd-run's ExecStart needs
+// a stable absolute path. ctl is invoked directly from the staged copy
+// so concurrent jobs on a shared self-hosted host never race on
+// /usr/local/bin/cicd-sensorctl.
+function installAgentBinary(agentBin) {
+  info('==> Installing agent binary');
   run('sudo', ['install', '-m', '755', agentBin, external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor')]);
-  run('sudo', ['install', '-m', '755', ctlBin, external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensorctl')]);
 }
 
 function writeManagerTokenFile({ managerUrl, managerToken, tmp }) {
@@ -31524,9 +31528,10 @@ async function installAndStartManagedAgent({ socketPath, tmp }) {
   // Keep all release download / binary install work before AppArmor
   // and systemd-run setup. If a release fetch fails, the host service
   // policy and Docker socket are untouched.
-  const binaries = stageReleaseBinaries(tmp);
-  installBinaries(binaries);
+  const { agentBin, ctlBin } = stageReleaseBinaries(tmp);
+  installAgentBinary(agentBin);
   await startManagedAgent({ socketPath, tmp });
+  return { ctlBin };
 }
 
 async function main() {
@@ -31561,11 +31566,16 @@ async function main() {
 
   saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
 
+  let ctlPath;
   if (reuseAgent) {
     info(`==> Reusing existing cicd-sensor socket at ${socketPath}`);
     saveState(STATE.dockerProxyEnabled, 'false');
+    // ctl is staged into RUNNER_TEMP even in reuse mode so the post
+    // step never depends on host-installed paths and concurrent jobs
+    // on the same self-hosted host don't race on /usr/local/bin.
+    ({ ctlBin: ctlPath } = stageReleaseBinaries(tmp));
   } else {
-    await installAndStartManagedAgent({ socketPath, tmp });
+    ({ ctlBin: ctlPath } = await installAndStartManagedAgent({ socketPath, tmp }));
 
     const snapshotPath = external_node_path_namespaceObject.join(tmp, 'cicd-sensor-start.txt');
     external_node_fs_namespaceObject.writeFileSync(snapshotPath, snapshotSystemd(AGENT_UNIT_NAME));
@@ -31583,6 +31593,7 @@ async function main() {
   }
 
   saveState(STATE.socket, socketPath);
+  saveState(STATE.ctlPath, ctlPath);
   saveState(STATE.managerTokenFile, managerTokenFile);
   saveState(STATE.enableHtmlReport, enableHtmlReport ? 'true' : 'false');
   saveState(STATE.enableAttestationArtifact, enableAttestationArtifact ? 'true' : 'false');
@@ -31611,7 +31622,7 @@ async function main() {
           const rulesDir = external_node_path_namespaceObject.join(configDir, 'rules');
           writeRepoDirectoryFiles(ruleFiles, PROJECT_RULES_REPO_PATH, rulesDir);
           projectRulesPath = external_node_path_namespaceObject.join(configDir, 'rules.bundle.yaml');
-          bundleProjectRules(rulesDir, projectRulesPath);
+          bundleProjectRules(rulesDir, projectRulesPath, ctlPath);
           info(`==> Loaded ${ruleFiles.length} project rule file(s) from ${PROJECT_RULES_REPO_PATH}`);
         }
       } catch (err) {

@@ -158,6 +158,7 @@ const SNAPSHOT_PROPERTIES = [
 const STATE = {
   snapshotPath: 'snapshotPath',
   socket: 'socket',
+  ctlPath: 'ctlPath',
   managerTokenFile: 'managerTokenFile',
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
@@ -410,8 +411,7 @@ function writeRepoDirectoryFiles(files, repoRootPath, dstDir) {
   }
 }
 
-function bundleProjectRules(rulesDir, outputPath) {
-  const ctl = path.join(BIN_DIR, 'cicd-sensorctl');
+function bundleProjectRules(rulesDir, outputPath, ctl) {
   run(ctl, [
     'rule', 'bundle',
     '--input-dir', rulesDir,
@@ -512,15 +512,19 @@ function stageReleaseBinaries(tmp) {
   const ctlBin = path.join(extractDir, `cicd-sensorctl-linux-${arch}`);
   for (const f of [agentBin, ctlBin]) {
     if (!fs.existsSync(f)) throw new Error(`expected file missing from release tarball: ${path.basename(f)}`);
+    fs.chmodSync(f, 0o755);
   }
 
   return { agentBin, ctlBin };
 }
 
-function installBinaries({ agentBin, ctlBin }) {
-  core.info('==> Installing binaries');
+// Only the agent gets system-installed: systemd-run's ExecStart needs
+// a stable absolute path. ctl is invoked directly from the staged copy
+// so concurrent jobs on a shared self-hosted host never race on
+// /usr/local/bin/cicd-sensorctl.
+function installAgentBinary(agentBin) {
+  core.info('==> Installing agent binary');
   run('sudo', ['install', '-m', '755', agentBin, path.join(BIN_DIR, 'cicd-sensor')]);
-  run('sudo', ['install', '-m', '755', ctlBin, path.join(BIN_DIR, 'cicd-sensorctl')]);
 }
 
 function writeManagerTokenFile({ managerUrl, managerToken, tmp }) {
@@ -558,9 +562,10 @@ async function installAndStartManagedAgent({ socketPath, tmp }) {
   // Keep all release download / binary install work before AppArmor
   // and systemd-run setup. If a release fetch fails, the host service
   // policy and Docker socket are untouched.
-  const binaries = stageReleaseBinaries(tmp);
-  installBinaries(binaries);
+  const { agentBin, ctlBin } = stageReleaseBinaries(tmp);
+  installAgentBinary(agentBin);
   await startManagedAgent({ socketPath, tmp });
+  return { ctlBin };
 }
 
 async function main() {
@@ -595,11 +600,16 @@ async function main() {
 
   core.saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
 
+  let ctlPath;
   if (reuseAgent) {
     core.info(`==> Reusing existing cicd-sensor socket at ${socketPath}`);
     core.saveState(STATE.dockerProxyEnabled, 'false');
+    // ctl is staged into RUNNER_TEMP even in reuse mode so the post
+    // step never depends on host-installed paths and concurrent jobs
+    // on the same self-hosted host don't race on /usr/local/bin.
+    ({ ctlBin: ctlPath } = stageReleaseBinaries(tmp));
   } else {
-    await installAndStartManagedAgent({ socketPath, tmp });
+    ({ ctlBin: ctlPath } = await installAndStartManagedAgent({ socketPath, tmp }));
 
     const snapshotPath = path.join(tmp, 'cicd-sensor-start.txt');
     fs.writeFileSync(snapshotPath, snapshotSystemd(AGENT_UNIT_NAME));
@@ -617,6 +627,7 @@ async function main() {
   }
 
   core.saveState(STATE.socket, socketPath);
+  core.saveState(STATE.ctlPath, ctlPath);
   core.saveState(STATE.managerTokenFile, managerTokenFile);
   core.saveState(STATE.enableHtmlReport, enableHtmlReport ? 'true' : 'false');
   core.saveState(STATE.enableAttestationArtifact, enableAttestationArtifact ? 'true' : 'false');
@@ -645,7 +656,7 @@ async function main() {
           const rulesDir = path.join(configDir, 'rules');
           writeRepoDirectoryFiles(ruleFiles, PROJECT_RULES_REPO_PATH, rulesDir);
           projectRulesPath = path.join(configDir, 'rules.bundle.yaml');
-          bundleProjectRules(rulesDir, projectRulesPath);
+          bundleProjectRules(rulesDir, projectRulesPath, ctlPath);
           core.info(`==> Loaded ${ruleFiles.length} project rule file(s) from ${PROJECT_RULES_REPO_PATH}`);
         }
       } catch (err) {

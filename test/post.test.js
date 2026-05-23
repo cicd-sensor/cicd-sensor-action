@@ -50,6 +50,15 @@ describe('step summary command', () => {
   });
 });
 
+describe('cicd-sensorctl source path', () => {
+  it('post.js resolves ctl from STATE, not a hardcoded system path', () => {
+    const source = fs.readFileSync(new URL('../src/post.js', import.meta.url), 'utf8');
+    assert.equal(/['"]\/usr\/local\/bin\/cicd-sensorctl['"]/.test(source), false);
+    assert.equal(/const\s+CTL\s*=\s*['"]/.test(source), false);
+    assert.ok(/STATE\.ctlPath/.test(source));
+  });
+});
+
 describe('debug runtime telemetry artifact ordering', () => {
   it('moves runtime telemetry only after project result has returned', () => {
     const source = fs.readFileSync(new URL('../src/post.js', import.meta.url), 'utf8');

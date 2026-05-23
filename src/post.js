@@ -33,6 +33,7 @@ const TAMPER_FIELDS = [
 const STATE = {
   snapshotPath: 'snapshotPath',
   socket: 'socket',
+  ctlPath: 'ctlPath',
   managerTokenFile: 'managerTokenFile',
   enableHtmlReport: 'enableHtmlReport',
   enableAttestationArtifact: 'enableAttestationArtifact',
@@ -50,7 +51,6 @@ const ARTIFACT_DEBUG = 'cicd-sensor-debug';
 
 const PROVIDER = 'github';
 const BIN = '/usr/local/bin/cicd-sensor';
-const CTL = 'cicd-sensorctl';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
 const DEBUG_RUNTIME_TELEMETRY_PATH = '/home/runner/work/_temp/cicd_sensor_debug/job_runtime_telemetry_log.json.gz';
 
@@ -180,14 +180,14 @@ function finishProjectAndEmitResultLog(socket, outputPath) {
   return true;
 }
 
-function pipeIntoCtl(subcommand, resultLogPath, outputPath) {
+function pipeIntoCtl(ctl, subcommand, resultLogPath, outputPath) {
   const input = fs.openSync(resultLogPath, 'r');
   try {
-    const r = spawnSync(CTL, ['report', subcommand, '--output-file', outputPath], {
+    const r = spawnSync(ctl, ['report', subcommand, '--output-file', outputPath], {
       stdio: [input, 'inherit', 'inherit'],
     });
     if (r.status !== 0) {
-      core.warning(`${CTL} report ${subcommand} exited with status ${r.status}`);
+      core.warning(`${ctl} report ${subcommand} exited with status ${r.status}`);
       return false;
     }
   } finally {
@@ -266,7 +266,7 @@ function stepSummaryArgs({ htmlArtifactId, debugArtifactId, healthFailed }) {
   return args;
 }
 
-function writeStepSummaryWithCtl({ resultLogPath, htmlArtifactId, debugArtifactId, healthFailed }) {
+function writeStepSummaryWithCtl({ ctl, resultLogPath, htmlArtifactId, debugArtifactId, healthFailed }) {
   let input = 'ignore';
   let fd = null;
   if (resultLogPath && fs.existsSync(resultLogPath)) {
@@ -275,12 +275,12 @@ function writeStepSummaryWithCtl({ resultLogPath, htmlArtifactId, debugArtifactI
   }
   try {
     const args = stepSummaryArgs({ htmlArtifactId, debugArtifactId, healthFailed });
-    const r = spawnSync(CTL, args, {
+    const r = spawnSync(ctl, args, {
       encoding: 'utf8',
       stdio: [input, 'pipe', 'inherit'],
     });
     if (r.status !== 0) {
-      core.warning(`${CTL} report stepsummary exited with status ${r.status}`);
+      core.warning(`${ctl} report stepsummary exited with status ${r.status}`);
       return false;
     }
     appendStepSummaryMarkdown(r.stdout);
@@ -294,7 +294,7 @@ function writeStepSummaryWithCtl({ resultLogPath, htmlArtifactId, debugArtifactI
 // main
 // ─────────────────────────────────────────────────────────────────
 
-async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEnabled, includeSystemd }) {
+async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEnabled, includeSystemd, ctl }) {
   core.error(reason);
   const journalPath = path.join(outDir, 'cicd-sensor-agent.log');
   const proxyJournalPath = path.join(outDir, 'cicd-sensor-proxy.log');
@@ -323,6 +323,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
 
   try {
     writeStepSummaryWithCtl({
+      ctl,
       debugArtifactId: debugArtifact?.id,
       healthFailed: true,
     });
@@ -341,6 +342,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
 
 async function main() {
   const socket = core.getState(STATE.socket) || DEFAULT_SOCKET;
+  const ctl = core.getState(STATE.ctlPath);
   const enableHtmlReport = core.getState(STATE.enableHtmlReport) === 'true';
   const enableAttestation = core.getState(STATE.enableAttestationArtifact) === 'true';
   const enableDebug = core.getState(STATE.enableDebug) === 'true';
@@ -360,6 +362,7 @@ async function main() {
       snapshotText: '',
       dockerProxyEnabled,
       includeSystemd: !reusedExistingAgent,
+      ctl,
     });
   }
 
@@ -397,9 +400,9 @@ async function main() {
   const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
 
   let htmlOk = false;
-  if (enableHtmlReport && resultOk) htmlOk = pipeIntoCtl('html', resultLogPath, htmlPath);
+  if (enableHtmlReport && resultOk) htmlOk = pipeIntoCtl(ctl, 'html', resultLogPath, htmlPath);
   let predicateOk = false;
-  if (enableAttestation && resultOk) predicateOk = pipeIntoCtl('attest', resultLogPath, predicatePath);
+  if (enableAttestation && resultOk) predicateOk = pipeIntoCtl(ctl, 'attest', resultLogPath, predicatePath);
 
   if (enableDebug) {
     // Telemetry move runs after project result so the agent has
@@ -450,6 +453,7 @@ async function main() {
   // result-log rendering belongs to cicd-sensorctl, not JavaScript.
   try {
     writeStepSummaryWithCtl({
+      ctl,
       resultLogPath: resultOk ? resultLogPath : '',
       healthFailed: tamperResult.tampered,
       htmlArtifactId: htmlArtifact?.id,
