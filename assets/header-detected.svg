@@ -13,8 +13,7 @@
     <path d="M345 704q14-1 26-4h1a273 273 0 0 0 253 189 266 266 0 0 0 253-174l5-13 1-2 2 1 24 3 1 1a303 303 0 0 1-205 201c-71 19-148 11-213-23a305 305 0 0 1-148-179"></path>
   </g>
   <text x="96" y="36" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.1">cicd-sensor</text>
-  <text x="96" y="57" fill="#9da3aa" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Helvetica, Arial, sans-serif" font-size="13">CI/CD Runtime Security Sensor</text>
+  <text x="96" y="57" fill="#9da3aa" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Helvetica, Arial, sans-serif" font-size="13">CI/CD Runtime Security Agent</text>
   <rect x="486" y="25" width="116" height="30" rx="15" ry="15" fill="#cf222e"></rect>
-  <circle cx="500" cy="40" r="4" fill="#ffffff"></circle>
-  <text x="549" y="45" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.3">DETECTED</text>
+  <text x="544" y="45" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.3">DETECTED</text>
 </svg>
