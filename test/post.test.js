@@ -58,14 +58,14 @@ describe('cicd-sensorctl source path', () => {
 });
 
 describe('debug runtime event artifact ordering', () => {
-  it('moves runtime event only after project result has returned', () => {
+  it('copies runtime event only after project result has returned', () => {
     const source = fs.readFileSync(new URL('../src/post.js', import.meta.url), 'utf8');
     const mainSource = source.slice(source.indexOf('async function main()'));
     const resultIndex = mainSource.indexOf('const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);');
-    const moveIndex = mainSource.indexOf('fs.renameSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath)');
+    const copyIndex = mainSource.indexOf('fs.copyFileSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath)');
     assert.notEqual(resultIndex, -1);
-    assert.notEqual(moveIndex, -1);
-    assert.ok(resultIndex < moveIndex);
+    assert.notEqual(copyIndex, -1);
+    assert.ok(resultIndex < copyIndex);
 
     const runtimeEventPathIndex = mainSource.indexOf('const runtimeEventPath =');
     const beforeResult = mainSource.slice(runtimeEventPathIndex, resultIndex);

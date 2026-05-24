@@ -132228,9 +132228,9 @@ async function main() {
   if (enableAttestation && resultOk) predicateOk = pipeIntoCtl(ctl, 'attest', resultLogPath, predicatePath);
 
   if (enableDebug) {
-    // Telemetry move runs after project result so the agent has
-    // finalized the gzip stream and closed its fd.
-    try { external_node_fs_.renameSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath); } catch {}
+    // Copy (not rename) because the agent runs as root and the
+    // debug dir is root-owned; rename(2) would need write on it.
+    try { external_node_fs_.copyFileSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath); } catch {}
     captureJournal(journalPath);
     if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
     if (!reusedExistingAgent) {
