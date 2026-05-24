@@ -30,21 +30,19 @@ describe('step summary command', () => {
     );
   });
 
-  it('passes health failure and debug artifact URL for failure summaries', () => {
+  it('passes only the health-failed flag for failure summaries', () => {
     assert.deepEqual(
-      stepSummaryArgs({ debugArtifactId: 654, healthFailed: true }),
+      stepSummaryArgs({ healthFailed: true }),
       [
         'report',
         'stepsummary',
-        '--debug-url',
-        'https://github.com/octo/repo/actions/runs/123456/artifacts/654',
         '--health-failed',
       ],
     );
   });
 
   it('does not include output file or asset base flags', () => {
-    const args = stepSummaryArgs({ htmlArtifactId: 987, debugArtifactId: 654, healthFailed: true });
+    const args = stepSummaryArgs({ htmlArtifactId: 987, healthFailed: true });
     assert.equal(args.includes('--output-file'), false);
     assert.equal(args.includes('--asset-base-url'), false);
   });

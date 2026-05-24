@@ -132083,17 +132083,15 @@ function appendStepSummaryMarkdown(markdown) {
   external_node_fs_.appendFileSync(summaryFile, markdown);
 }
 
-function stepSummaryArgs({ htmlArtifactId, debugArtifactId, healthFailed }) {
+function stepSummaryArgs({ htmlArtifactId, healthFailed }) {
   const args = ['report', 'stepsummary'];
   const htmlUrl = artifactUrl(htmlArtifactId);
-  const debugUrl = artifactUrl(debugArtifactId);
   if (htmlUrl) args.push('--html-url', htmlUrl);
-  if (debugUrl) args.push('--debug-url', debugUrl);
   if (healthFailed) args.push('--health-failed');
   return args;
 }
 
-function writeStepSummaryWithCtl({ ctl, resultLogPath, htmlArtifactId, debugArtifactId, healthFailed }) {
+function writeStepSummaryWithCtl({ ctl, resultLogPath, htmlArtifactId, healthFailed }) {
   let input = 'ignore';
   let fd = null;
   if (resultLogPath && external_node_fs_.existsSync(resultLogPath)) {
@@ -132101,7 +132099,7 @@ function writeStepSummaryWithCtl({ ctl, resultLogPath, htmlArtifactId, debugArti
     input = fd;
   }
   try {
-    const args = stepSummaryArgs({ htmlArtifactId, debugArtifactId, healthFailed });
+    const args = stepSummaryArgs({ htmlArtifactId, healthFailed });
     const r = (0,external_node_child_process_namespaceObject.spawnSync)(ctl, args, {
       encoding: 'utf8',
       stdio: [input, 'pipe', 'inherit'],
@@ -132136,13 +132134,12 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
     }
   }
 
-  let debugArtifact = null;
   const client = new DefaultArtifactClient();
   const bundle = [journalPath, proxyJournalPath, systemctlPath, runtimeEventPath]
     .filter((p) => external_node_fs_.existsSync(p) && external_node_fs_.statSync(p).size > 0);
   if (bundle.length > 0) {
     try {
-      debugArtifact = await uploadOne(client, ARTIFACT_DEBUG, outDir, bundle);
+      await uploadOne(client, ARTIFACT_DEBUG, outDir, bundle);
     } catch (err) {
       warning(`debug artifact upload failed: ${err && err.message ? err.message : err}`);
     }
@@ -132151,7 +132148,6 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   try {
     writeStepSummaryWithCtl({
       ctl,
-      debugArtifactId: debugArtifact?.id,
       healthFailed: true,
     });
   } catch (err) {
@@ -132248,7 +132244,6 @@ async function main() {
   const client = new DefaultArtifactClient();
   let htmlArtifact = null;
   let attestationArtifact = null;
-  let debugArtifact = null;
   if (enableHtmlReport && htmlOk) {
     try {
       // skipArchive keeps the HTML as a single file the UI opens inline.
@@ -132269,7 +132264,7 @@ async function main() {
       .filter((p) => external_node_fs_.existsSync(p) && external_node_fs_.statSync(p).size > 0);
     if (bundle.length > 0) {
       try {
-        debugArtifact = await uploadOne(client, ARTIFACT_DEBUG, outDir, bundle);
+        await uploadOne(client, ARTIFACT_DEBUG, outDir, bundle);
       } catch (err) {
         warning(`debug artifact upload failed: ${err && err.message ? err.message : err}`);
       }
@@ -132284,7 +132279,6 @@ async function main() {
       resultLogPath: resultOk ? resultLogPath : '',
       healthFailed: tamperResult.tampered,
       htmlArtifactId: htmlArtifact?.id,
-      debugArtifactId: debugArtifact?.id,
     });
   } catch (err) {
     warning(`step summary write failed: ${err && err.message ? err.message : err}`);
