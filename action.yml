@@ -19,7 +19,7 @@ inputs:
       releases/v* tag is published. Override only to pin to a
       different release (for example, to test a pre-release).
     required: false
-    default: "v0.0.28"
+    default: "v0.0.29"
 
   github-token:
     description: >-
