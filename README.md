@@ -32,7 +32,7 @@ If no project rules are present, baseline rules are still applied.
 | `manager-token` | `""` | Bearer token for the manager. Required when `manager-url` is set. |
 | `enable-html-report` | `true` | Upload the `cicd-sensor-report` HTML artifact. |
 | `enable-attestation-artifact` | `true` | Upload the `cicd-sensor-attestation` predicate artifact. |
-| `enable-debug` | `false` | Upload debug logs, Runtime Telemetry Log output, and raw result data. |
+| `enable-debug` | `false` | Upload debug logs, Runtime Event Log output, and raw result data. |
 | `socket-path` | `/run/cicd-sensor/agent.sock` | Agent control socket path. |
 
 ## Outputs

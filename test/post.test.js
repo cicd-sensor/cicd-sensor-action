@@ -59,18 +59,18 @@ describe('cicd-sensorctl source path', () => {
   });
 });
 
-describe('debug runtime telemetry artifact ordering', () => {
-  it('moves runtime telemetry only after project result has returned', () => {
+describe('debug runtime event artifact ordering', () => {
+  it('moves runtime event only after project result has returned', () => {
     const source = fs.readFileSync(new URL('../src/post.js', import.meta.url), 'utf8');
     const mainSource = source.slice(source.indexOf('async function main()'));
     const resultIndex = mainSource.indexOf('const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);');
-    const moveIndex = mainSource.indexOf('fs.renameSync(DEBUG_RUNTIME_TELEMETRY_PATH, runtimeTelemetryPath)');
+    const moveIndex = mainSource.indexOf('fs.renameSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath)');
     assert.notEqual(resultIndex, -1);
     assert.notEqual(moveIndex, -1);
     assert.ok(resultIndex < moveIndex);
 
-    const runtimeTelemetryPathIndex = mainSource.indexOf('const runtimeTelemetryPath =');
-    const beforeResult = mainSource.slice(runtimeTelemetryPathIndex, resultIndex);
-    assert.equal(/fs\.(copyFileSync|renameSync)\(DEBUG_RUNTIME_TELEMETRY_PATH/.test(beforeResult), false);
+    const runtimeEventPathIndex = mainSource.indexOf('const runtimeEventPath =');
+    const beforeResult = mainSource.slice(runtimeEventPathIndex, resultIndex);
+    assert.equal(/fs\.(copyFileSync|renameSync)\(DEBUG_RUNTIME_EVENT_PATH/.test(beforeResult), false);
   });
 });

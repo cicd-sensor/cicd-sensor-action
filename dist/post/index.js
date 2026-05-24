@@ -131879,7 +131879,7 @@ const ARTIFACT_DEBUG = 'cicd-sensor-debug';
 const PROVIDER = 'github';
 const BIN = '/usr/local/bin/cicd-sensor';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
-const DEBUG_RUNTIME_TELEMETRY_PATH = '/home/runner/work/_temp/cicd_sensor_debug/job_runtime_telemetry_log.json.gz';
+const DEBUG_RUNTIME_EVENT_PATH = '/home/runner/work/_temp/cicd_sensor_debug/runtime_event_log.json.gz';
 
 // ─────────────────────────────────────────────────────────────────
 // helpers
@@ -132126,9 +132126,9 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   const journalPath = external_node_path_.join(outDir, 'cicd-sensor-agent.log');
   const proxyJournalPath = external_node_path_.join(outDir, 'cicd-sensor-proxy.log');
   const systemctlPath = external_node_path_.join(outDir, 'systemctl-show.txt');
-  const runtimeTelemetryPath = external_node_path_.join(outDir, external_node_path_.basename(DEBUG_RUNTIME_TELEMETRY_PATH));
+  const runtimeEventPath = external_node_path_.join(outDir, external_node_path_.basename(DEBUG_RUNTIME_EVENT_PATH));
   captureJournal(journalPath);
-  try { external_node_fs_.copyFileSync(DEBUG_RUNTIME_TELEMETRY_PATH, runtimeTelemetryPath); } catch {}
+  try { external_node_fs_.copyFileSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath); } catch {}
   if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
   if (includeSystemd) {
     try { writeSystemctlShow(systemctlPath, snapshotText); } catch (err) {
@@ -132138,7 +132138,7 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
 
   let debugArtifact = null;
   const client = new DefaultArtifactClient();
-  const bundle = [journalPath, proxyJournalPath, systemctlPath, runtimeTelemetryPath]
+  const bundle = [journalPath, proxyJournalPath, systemctlPath, runtimeEventPath]
     .filter((p) => external_node_fs_.existsSync(p) && external_node_fs_.statSync(p).size > 0);
   if (bundle.length > 0) {
     try {
@@ -132222,7 +132222,7 @@ async function main() {
   const htmlPath = external_node_path_.join(outDir, 'cicd-sensor-report.html');
   const predicatePath = external_node_path_.join(outDir, 'predicate.json');
   const systemctlPath = external_node_path_.join(outDir, 'systemctl-show.txt');
-  const runtimeTelemetryPath = external_node_path_.join(outDir, external_node_path_.basename(DEBUG_RUNTIME_TELEMETRY_PATH));
+  const runtimeEventPath = external_node_path_.join(outDir, external_node_path_.basename(DEBUG_RUNTIME_EVENT_PATH));
 
   const resultOk = finishProjectAndEmitResultLog(socket, resultLogPath);
 
@@ -132234,7 +132234,7 @@ async function main() {
   if (enableDebug) {
     // Telemetry move runs after project result so the agent has
     // finalized the gzip stream and closed its fd.
-    try { external_node_fs_.renameSync(DEBUG_RUNTIME_TELEMETRY_PATH, runtimeTelemetryPath); } catch {}
+    try { external_node_fs_.renameSync(DEBUG_RUNTIME_EVENT_PATH, runtimeEventPath); } catch {}
     captureJournal(journalPath);
     if (dockerProxyEnabled) captureProxyJournal(proxyJournalPath);
     if (!reusedExistingAgent) {
@@ -132265,7 +132265,7 @@ async function main() {
     }
   }
   if (enableDebug) {
-    const bundle = [journalPath, proxyJournalPath, resultLogPath, systemctlPath, runtimeTelemetryPath]
+    const bundle = [journalPath, proxyJournalPath, resultLogPath, systemctlPath, runtimeEventPath]
       .filter((p) => external_node_fs_.existsSync(p) && external_node_fs_.statSync(p).size > 0);
     if (bundle.length > 0) {
       try {

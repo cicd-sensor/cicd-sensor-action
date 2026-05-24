@@ -102,7 +102,7 @@ describe('systemd-run rendering', () => {
 });
 
 describe('project start args', () => {
-  it('uses JobLogContext flag names for identity and optional metadata', () => {
+  it('uses LogContext flag names for identity and optional metadata', () => {
     const args = renderProjectStartArgs({
       socketPath: '/run/cicd-sensor/agent.sock',
       providerHost: 'github.example.com',
