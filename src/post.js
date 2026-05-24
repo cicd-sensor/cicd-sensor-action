@@ -52,7 +52,7 @@ const ARTIFACT_DEBUG = 'cicd-sensor-debug';
 const PROVIDER = 'github';
 const BIN = '/usr/local/bin/cicd-sensor';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
-const DEBUG_RUNTIME_EVENT_PATH = '/home/runner/work/_temp/cicd_sensor_debug/runtime_event_log.json.gz';
+const DEBUG_RUNTIME_EVENT_PATH = '/home/runner/work/_temp/cicd_sensor_debug/runtime_event.json.gz';
 
 // ─────────────────────────────────────────────────────────────────
 // helpers
