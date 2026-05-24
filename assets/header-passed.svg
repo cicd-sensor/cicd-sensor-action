@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="80" viewBox="0 0 620 80" role="img" aria-label="cicd-sensor — no alert">
-  <title>cicd-sensor — no alert</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="80" viewBox="0 0 620 80" role="img" aria-label="cicd-sensor — workload passed">
+  <title>cicd-sensor — workload passed</title>
   <rect x="0.5" y="0.5" width="619" height="79" rx="10" ry="10" fill="#1f2328"></rect>
   <g transform="translate(20, 8) scale(0.055)" fill="#019f5f">
     <path d="M992 566q0 2 0 0-12-18-30-31l-1-1V393l-4-2-320-192-11-5-333 200v140l-1 2a88 88 0 0 0-30 31V380q0-6 6-9l53-32 302-181q4-1 9 1a10191 10191 0 0 1 360 220z"></path>
