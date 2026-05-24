@@ -10,13 +10,6 @@ permissions:
 
 jobs:
   smoke:
-    # TEMPORARILY DISABLED for the schema-rename release:
-    # the published cicd-sensor binary still expects the old
-    # event_kind schema, so .cicd-sensor/rules/testevent.yaml
-    # (event_type) fails validation. Re-enable after a new
-    # cicd-sensor release with the renamed schema ships and the
-    # action's pinned cicd-sensor-version is bumped.
-    if: false
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
