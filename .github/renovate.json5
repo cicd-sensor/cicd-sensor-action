@@ -14,6 +14,9 @@
   "separateMajorMinor": false,
   "separateMinorPatch": false,
   "rangeStrategy": "pin",
+  // Route Renovate's npm package fetches through Flatt Security's Takumi Guard secure proxy.
+  // https://shisho.dev/docs/t/guard/quickstart/npm/
+  "npmrc": "registry=https://npm.flatt.tech/\n",
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
