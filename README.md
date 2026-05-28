@@ -22,7 +22,7 @@ repo
 
 Use one or more YAML files under `rules/`.
 
-If no project rules are present, baseline rules are still applied.
+If no project rules are present, baseline rules are still applied unless disabled in `.cicd-sensor/config.yaml`.
 
 ## Inputs
 
