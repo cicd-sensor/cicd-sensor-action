@@ -22,7 +22,14 @@ repo
 
 Use one or more YAML files under `rules/`.
 
-If no project rules are present, baseline rules are still applied unless disabled in `.cicd-sensor/config.yaml`.
+Use `config.yaml` for project-local settings:
+
+```yaml
+default_max_alerts_per_rule: 10
+disable_baseline_rules: true
+```
+
+If no project rules are present, baseline rules are still applied unless disabled in `config.yaml`.
 
 ## Inputs
 
