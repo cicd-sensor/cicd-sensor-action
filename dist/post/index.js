@@ -16513,7 +16513,7 @@ function expand(str, max, isTop) {
 
       N = [];
 
-      for (var i = x; test(i, y); i += incr) {
+      for (var i = x; test(i, y) && N.length < max; i += incr) {
         var c;
         if (isAlphaSequence) {
           c = String.fromCharCode(i);
@@ -36577,11 +36577,10 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const { EventEmitter } = __nccwpck_require__(9580)
-const STREAM_DESTROYED = new Error('Stream was destroyed')
-const PREMATURE_CLOSE = new Error('Premature close')
-
 const FIFO = __nccwpck_require__(3867)
 const TextDecoder = __nccwpck_require__(7934)
+
+const StreamError = __nccwpck_require__(5657)
 
 // if we do a future major, expect queue microtask to be there always, for now a bit defensive
 const qmt =
@@ -36747,8 +36746,12 @@ class WritableState {
   }
 
   end(data) {
-    if (typeof data === 'function') this.stream.once('finish', data)
-    else if (data !== undefined && data !== null) this.push(data)
+    if (typeof data === 'function') {
+      this.stream.once('finish', data)
+    } else if (data !== undefined && data !== null) {
+      this.push(data)
+    }
+
     this.stream._duplexState = (this.stream._duplexState | WRITE_FINISHING) & WRITE_NON_PRIMARY
   }
 
@@ -36813,8 +36816,11 @@ class WritableState {
   }
 
   updateCallback() {
-    if ((this.stream._duplexState & WRITE_UPDATE_SYNC_STATUS) === WRITE_PRIMARY) this.update()
-    else this.updateNextTick()
+    if ((this.stream._duplexState & WRITE_UPDATE_SYNC_STATUS) === WRITE_PRIMARY) {
+      this.update()
+    } else {
+      this.updateNextTick()
+    }
   }
 
   updateNextTick() {
@@ -36907,7 +36913,10 @@ class ReadableState {
     const data = this.queue.shift()
 
     this.buffered -= this.byteLength(data)
-    if (this.buffered === 0) this.stream._duplexState &= READ_NOT_QUEUED
+    if (this.buffered === 0) {
+      this.stream._duplexState &= READ_NOT_QUEUED
+    }
+
     return data
   }
 
@@ -36929,9 +36938,15 @@ class ReadableState {
 
     if ((stream._duplexState & READ_STATUS) === READ_QUEUED) {
       const data = this.shift()
-      if (this.pipeTo !== null && this.pipeTo.write(data) === false)
+
+      if (this.pipeTo !== null && this.pipeTo.write(data) === false) {
         stream._duplexState &= READ_PIPE_NOT_DRAINED
-      if ((stream._duplexState & READ_EMIT_DATA) !== 0) stream.emit('data', data)
+      }
+
+      if ((stream._duplexState & READ_EMIT_DATA) !== 0) {
+        stream.emit('data', data)
+      }
+
       return data
     }
 
@@ -36951,9 +36966,14 @@ class ReadableState {
       (stream._duplexState & READ_FLOWING) !== 0
     ) {
       const data = this.shift()
-      if (this.pipeTo !== null && this.pipeTo.write(data) === false)
+
+      if (this.pipeTo !== null && this.pipeTo.write(data) === false) {
         stream._duplexState &= READ_PIPE_NOT_DRAINED
-      if ((stream._duplexState & READ_EMIT_DATA) !== 0) stream.emit('data', data)
+      }
+
+      if ((stream._duplexState & READ_EMIT_DATA) !== 0) {
+        stream.emit('data', data)
+      }
     }
   }
 
@@ -36979,7 +36999,9 @@ class ReadableState {
         stream.emit('readable')
       }
 
-      if ((stream._duplexState & READ_PRIMARY_AND_ACTIVE) === 0) this.updateNonPrimary()
+      if ((stream._duplexState & READ_PRIMARY_AND_ACTIVE) === 0) {
+        this.updateNonPrimary()
+      }
     } while (this.continueUpdate() === true)
 
     stream._duplexState &= READ_NOT_UPDATING
@@ -36991,8 +37013,14 @@ class ReadableState {
     if ((stream._duplexState & READ_ENDING_STATUS) === READ_ENDING) {
       stream._duplexState = (stream._duplexState | READ_DONE) & READ_NOT_ENDING
       stream.emit('end')
-      if ((stream._duplexState & AUTO_DESTROY) === DONE) stream._duplexState |= DESTROYING
-      if (this.pipeTo !== null) this.pipeTo.end()
+
+      if ((stream._duplexState & AUTO_DESTROY) === DONE) {
+        stream._duplexState |= DESTROYING
+      }
+
+      if (this.pipeTo !== null) {
+        this.pipeTo.end()
+      }
     }
 
     if ((stream._duplexState & DESTROY_STATUS) === DESTROYING) {
@@ -37016,8 +37044,11 @@ class ReadableState {
   }
 
   updateCallback() {
-    if ((this.stream._duplexState & READ_UPDATE_SYNC_STATUS) === READ_PRIMARY) this.update()
-    else this.updateNextTick()
+    if ((this.stream._duplexState & READ_UPDATE_SYNC_STATUS) === READ_PRIMARY) {
+      this.update()
+    } else {
+      this.updateNextTick()
+    }
   }
 
   updateNextTickIfOpen() {
@@ -37092,10 +37123,12 @@ function afterDrain() {
 function afterFinal(err) {
   const stream = this.stream
   if (err) stream.destroy(err)
+
   if ((stream._duplexState & DESTROY_STATUS) === 0) {
     stream._duplexState |= WRITE_DONE
     stream.emit('finish')
   }
+
   if ((stream._duplexState & AUTO_DESTROY) === DONE) {
     stream._duplexState |= DESTROYING
   }
@@ -37103,26 +37136,37 @@ function afterFinal(err) {
   stream._duplexState &= WRITE_NOT_FINISHING
 
   // no need to wait the extra tick here, so we short circuit that
-  if ((stream._duplexState & WRITE_UPDATING) === 0) this.update()
-  else this.updateNextTick()
+  if ((stream._duplexState & WRITE_UPDATING) === 0) {
+    this.update()
+  } else {
+    this.updateNextTick()
+  }
 }
 
 function afterDestroy(err) {
   const stream = this.stream
 
-  if (!err && this.error !== STREAM_DESTROYED) err = this.error
+  if (!err && !StreamError.isStreamDestroyed(this.error)) err = this.error
   if (err) stream.emit('error', err)
+
   stream._duplexState |= DESTROYED
   stream.emit('close')
 
   const rs = stream._readableState
   const ws = stream._writableState
 
-  if (rs !== null && rs.pipeline !== null) rs.pipeline.done(stream, err)
+  if (rs !== null && rs.pipeline !== null) {
+    rs.pipeline.done(stream, err)
+  }
 
   if (ws !== null) {
-    while (ws.drains !== null && ws.drains.length > 0) ws.drains.shift().resolve(false)
-    if (ws.pipeline !== null) ws.pipeline.done(stream, err)
+    while (ws.drains !== null && ws.drains.length > 0) {
+      ws.drains.shift().resolve(false)
+    }
+
+    if (ws.pipeline !== null) {
+      ws.pipeline.done(stream, err)
+    }
   }
 }
 
@@ -37136,6 +37180,7 @@ function afterWrite(err) {
 
   if ((stream._duplexState & WRITE_DRAIN_STATUS) === WRITE_UNDRAINED) {
     stream._duplexState &= WRITE_DRAINED
+
     if ((stream._duplexState & WRITE_EMIT_DRAIN) === WRITE_EMIT_DRAIN) {
       stream.emit('drain')
     }
@@ -37147,8 +37192,11 @@ function afterWrite(err) {
 function afterRead(err) {
   if (err) this.stream.destroy(err)
   this.stream._duplexState &= READ_NOT_ACTIVE
-  if (this.readAhead === false && (this.stream._duplexState & READ_RESUMED) === 0)
+
+  if (this.readAhead === false && (this.stream._duplexState & READ_RESUMED) === 0) {
     this.stream._duplexState &= READ_NO_READ_AHEAD
+  }
+
   this.updateCallback()
 }
 
@@ -37182,8 +37230,14 @@ function afterOpen(err) {
   if (err) stream.destroy(err)
 
   if ((stream._duplexState & DESTROYING) === 0) {
-    if ((stream._duplexState & READ_PRIMARY_STATUS) === 0) stream._duplexState |= READ_PRIMARY
-    if ((stream._duplexState & WRITE_PRIMARY_STATUS) === 0) stream._duplexState |= WRITE_PRIMARY
+    if ((stream._duplexState & READ_PRIMARY_STATUS) === 0) {
+      stream._duplexState |= READ_PRIMARY
+    }
+
+    if ((stream._duplexState & WRITE_PRIMARY_STATUS) === 0) {
+      stream._duplexState |= WRITE_PRIMARY
+    }
+
     stream.emit('open')
   }
 
@@ -37235,9 +37289,7 @@ class Stream extends EventEmitter {
       if (opts.open) this._open = opts.open
       if (opts.destroy) this._destroy = opts.destroy
       if (opts.predestroy) this._predestroy = opts.predestroy
-      if (opts.signal) {
-        opts.signal.addEventListener('abort', abort.bind(this))
-      }
+      if (opts.signal) opts.signal.addEventListener('abort', abort.bind(this))
     }
 
     this.on('newListener', newListener)
@@ -37273,13 +37325,14 @@ class Stream extends EventEmitter {
 
   destroy(err) {
     if ((this._duplexState & DESTROY_STATUS) === 0) {
-      if (!err) err = STREAM_DESTROYED
+      if (!err) err = StreamError.STREAM_DESTROYED()
       this._duplexState = (this._duplexState | DESTROYING) & NON_PRIMARY
 
       if (this._readableState !== null) {
         this._readableState.highWaterMark = 0
         this._readableState.error = err
       }
+
       if (this._writableState !== null) {
         this._writableState.highWaterMark = 0
         this._writableState.error = err
@@ -37289,8 +37342,13 @@ class Stream extends EventEmitter {
       this._predestroy()
       this._duplexState &= NOT_PREDESTROYING
 
-      if (this._readableState !== null) this._readableState.updateNextTick()
-      if (this._writableState !== null) this._writableState.updateNextTick()
+      if (this._readableState !== null) {
+        this._readableState.updateNextTick()
+      }
+
+      if (this._writableState !== null) {
+        this._writableState.updateNextTick()
+      }
     }
   }
 }
@@ -37308,6 +37366,20 @@ class Readable extends Stream {
       if (opts.eagerOpen) this._readableState.updateNextTick()
       if (opts.encoding) this.setEncoding(opts.encoding)
     }
+  }
+
+  static deferred(fn, opts) {
+    const out = new PassThrough(opts)
+
+    fn()
+      .then((src) => {
+        if (src === null) return out.end()
+        if (out.destroying) return
+        pipeline(src, out, noop)
+      })
+      .catch((err) => out.destroy(err))
+
+    return out
   }
 
   setEncoding(encoding) {
@@ -37454,10 +37526,13 @@ class Readable extends Stream {
 
     function ondata(data) {
       if (promiseReject === null) return
-      if (error) promiseReject(error)
-      else if (data === null && (stream._duplexState & READ_DONE) === 0)
-        promiseReject(STREAM_DESTROYED)
-      else promiseResolve({ value: data, done: data === null })
+      if (error) {
+        promiseReject(error)
+      } else if (data === null && (stream._duplexState & READ_DONE) === 0) {
+        promiseReject(StreamError.STREAM_DESTROYED())
+      } else {
+        promiseResolve({ value: data, done: data === null })
+      }
       promiseReject = promiseResolve = null
     }
 
@@ -37516,10 +37591,12 @@ class Writable extends Stream {
 
   static drained(ws) {
     if (ws.destroyed) return Promise.resolve(false)
+
     const state = ws._writableState
     const pending = isWritev(ws) ? Math.min(1, state.queue.length) : state.queue.length
     const writes = pending + (ws._duplexState & WRITE_WRITING ? 1 : 0)
     if (writes === 0) return Promise.resolve(true)
+
     if (state.drains === null) state.drains = []
     return new Promise((resolve) => {
       state.drains.push({ writes, resolve })
@@ -37643,6 +37720,7 @@ class PassThrough extends Transform {}
 function transformAfterFlush(err, data) {
   const cb = this._transformState.afterFinal
   if (err) return cb(err)
+
   if (data !== null && data !== undefined) this.push(data)
   this.push(null)
   cb(null)
@@ -37696,7 +37774,7 @@ function pipeline(stream, ...streams) {
     })
 
     if (autoDestroy) {
-      dest.on('close', () => done(error || (fin ? null : PREMATURE_CLOSE)))
+      dest.on('close', () => done(error || (fin ? null : StreamError.PREMATURE_CLOSE())))
     }
   }
 
@@ -37707,8 +37785,12 @@ function pipeline(stream, ...streams) {
     s.on('close', onclose)
 
     function onclose() {
-      if (rd && s._readableState && !s._readableState.ended) return onerror(PREMATURE_CLOSE)
-      if (wr && s._writableState && !s._writableState.ended) return onerror(PREMATURE_CLOSE)
+      if (rd && s._readableState && !s._readableState.ended) {
+        return onerror(StreamError.PREMATURE_CLOSE())
+      }
+      if (wr && s._writableState && !s._writableState.ended) {
+        return onerror(StreamError.PREMATURE_CLOSE())
+      }
     }
   }
 
@@ -37756,7 +37838,7 @@ function getStreamError(stream, opts = {}) {
     (stream._writableState && stream._writableState.error)
 
   // avoid implicit errors by default
-  return !opts.all && err === STREAM_DESTROYED ? null : err
+  return !opts.all && StreamError.isStreamDestroyed(err) ? null : err
 }
 
 function isReadStreamx(stream) {
@@ -37782,7 +37864,7 @@ function defaultByteLength(data) {
 function noop() {}
 
 function abort() {
-  this.destroy(new Error('Stream aborted.'))
+  this.destroy(StreamError.ABORTED())
 }
 
 function isWritev(s) {
@@ -37807,6 +37889,52 @@ module.exports = {
   Transform,
   // Export PassThrough for compatibility with Node.js core's stream module
   PassThrough
+}
+
+
+/***/ }),
+
+/***/ 5657:
+/***/ ((module) => {
+
+module.exports = class StreamError extends Error {
+  constructor(msg, code, fn = StreamError) {
+    super(msg)
+
+    this.code = code
+
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, fn)
+    }
+  }
+
+  static isStreamDestroyed(err) {
+    return err && err.code === 'STREAM_DESTROYED'
+  }
+
+  static isPrematureClose(err) {
+    return err && err.code === 'PREMATURE_CLOSE'
+  }
+
+  static isAborted(err) {
+    return err && err.code === 'ABORTED'
+  }
+
+  get name() {
+    return 'StreamError'
+  }
+
+  static STREAM_DESTROYED() {
+    return new StreamError('Stream was destroyed', 'STREAM_DESTROYED', StreamError.STREAM_DESTROYED)
+  }
+
+  static PREMATURE_CLOSE() {
+    return new StreamError('Premature close', 'PREMATURE_CLOSE', StreamError.PREMATURE_CLOSE)
+  }
+
+  static ABORTED() {
+    return new StreamError('Stream aborted', 'ABORTED', StreamError.ABORTED)
+  }
 }
 
 
@@ -44184,7 +44312,6 @@ function defaultFactory (origin, opts) {
 
 class Agent extends DispatcherBase {
   constructor ({ factory = defaultFactory, maxRedirections = 0, connect, ...options } = {}) {
-
     if (typeof factory !== 'function') {
       throw new InvalidArgumentError('factory must be a function.')
     }
@@ -44792,27 +44919,69 @@ class Parser {
 
       const offset = llhttp.llhttp_get_error_pos(this.ptr) - currentBufferPtr
 
-      if (ret === constants.ERROR.PAUSED_UPGRADE) {
-        this.onUpgrade(data.slice(offset))
-      } else if (ret === constants.ERROR.PAUSED) {
-        this.paused = true
-        socket.unshift(data.slice(offset))
-      } else if (ret !== constants.ERROR.OK) {
-        const ptr = llhttp.llhttp_get_error_reason(this.ptr)
-        let message = ''
-        /* istanbul ignore else: difficult to make a test case for */
-        if (ptr) {
-          const len = new Uint8Array(llhttp.memory.buffer, ptr).indexOf(0)
-          message =
-            'Response does not match the HTTP/1.1 protocol (' +
-            Buffer.from(llhttp.memory.buffer, ptr, len).toString() +
-            ')'
+      if (ret !== constants.ERROR.OK) {
+        const body = data.subarray(offset)
+
+        if (ret === constants.ERROR.PAUSED_UPGRADE) {
+          this.onUpgrade(body)
+        } else if (ret === constants.ERROR.PAUSED) {
+          this.paused = true
+          socket.unshift(body)
+        } else {
+          throw this.createError(ret, body)
         }
-        throw new HTTPParserError(message, constants.ERROR[ret], data.slice(offset))
       }
     } catch (err) {
       util.destroy(socket, err)
     }
+  }
+
+  finish () {
+    assert(currentParser === null)
+    assert(this.ptr != null)
+    assert(!this.paused)
+
+    const { llhttp } = this
+
+    let ret
+
+    try {
+      currentParser = this
+      ret = llhttp.llhttp_finish(this.ptr)
+    } finally {
+      currentParser = null
+    }
+
+    if (ret === constants.ERROR.OK) {
+      return null
+    }
+
+    if (ret === constants.ERROR.PAUSED || ret === constants.ERROR.PAUSED_UPGRADE) {
+      this.paused = true
+      return null
+    }
+
+    return this.createError(ret, EMPTY_BUF)
+  }
+
+  createError (ret, data) {
+    const { llhttp, contentLength, bytesRead } = this
+
+    if (contentLength && bytesRead !== parseInt(contentLength, 10)) {
+      return new ResponseContentLengthMismatchError()
+    }
+
+    const ptr = llhttp.llhttp_get_error_reason(this.ptr)
+    let message = ''
+    if (ptr) {
+      const len = new Uint8Array(llhttp.memory.buffer, ptr).indexOf(0)
+      message =
+        'Response does not match the HTTP/1.1 protocol (' +
+        Buffer.from(llhttp.memory.buffer, ptr, len).toString() +
+        ')'
+    }
+
+    return new HTTPParserError(message, constants.ERROR[ret], data)
   }
 
   destroy () {
@@ -45186,8 +45355,11 @@ async function connectH1 (client, socket) {
     // On Mac OS, we get an ECONNRESET even if there is a full body to be forwarded
     // to the user.
     if (err.code === 'ECONNRESET' && parser.statusCode && !parser.shouldKeepAlive) {
-      // We treat all incoming data so for as a valid response.
-      parser.onMessageComplete()
+      const parserErr = parser.finish()
+      if (parserErr) {
+        this[kError] = parserErr
+        this[kClient][kOnError](parserErr)
+      }
       return
     }
 
@@ -45206,8 +45378,10 @@ async function connectH1 (client, socket) {
     const parser = this[kParser]
 
     if (parser.statusCode && !parser.shouldKeepAlive) {
-      // We treat all incoming data so far as a valid response.
-      parser.onMessageComplete()
+      const parserErr = parser.finish()
+      if (parserErr) {
+        util.destroy(this, parserErr)
+      }
       return
     }
 
@@ -45219,8 +45393,7 @@ async function connectH1 (client, socket) {
 
     if (parser) {
       if (!this[kError] && parser.statusCode && !parser.shouldKeepAlive) {
-        // We treat all incoming data so far as a valid response.
-        parser.onMessageComplete()
+        this[kError] = parser.finish() || this[kError]
       }
 
       this[kParser].destroy()
@@ -95106,7 +95279,6 @@ const BASIC_LATIN = {
   num: '#',
   dollar: '$',
   percent: '%',
-  amp: '&',
   ast: '*',
   commat: '@',
   lowbar: '_',
@@ -95538,9 +95710,6 @@ const CYRILLIC = {
  */
 const MATH = {
   plus: '+',
-  minus: '−',
-  mnplus: '∓',
-  mp: '∓',
   pm: '±',
   times: '×',
   div: '÷',
@@ -95613,10 +95782,6 @@ const MATH = {
   bumpe: '≏',
   bumpeq: '≏',
   HumpEqual: '≏',
-  dotminus: '∸',
-  minusd: '∸',
-  plusdo: '∔',
-  dotplus: '∔',
   le: '≤',
   LessEqual: '≤',
   ge: '≥',
@@ -95732,7 +95897,6 @@ const MATH_ADVANCED = {
   wr: '≀',
   wreath: '≀',
   nsime: '≄',
-  nsimeq: '≄',
   nsimeq: '≄',
   ncong: '≇',
   simne: '≆',
@@ -95850,10 +96014,6 @@ const ARROWS = {
   mapsto: '↦',
   mapstodown: '↧',
   crarr: '↵',
-  nwarrow: '↖',
-  nearrow: '↗',
-  searrow: '↘',
-  swarrow: '↙',
   nleftarrow: '↚',
   nleftrightarrow: '↮',
   nrightarrow: '↛',
@@ -95894,7 +96054,6 @@ const ARROWS = {
   ldrushar: '⥋',
   rdldhar: '⥩',
   lrhard: '⥭',
-  rlhar: '⇌',
   uharr: '↾',
   uharl: '↿',
   dharr: '⇂',
@@ -95910,7 +96069,6 @@ const ARROWS = {
   nhArr: '⇎',
   nlarr: '↚',
   nlArr: '⇍',
-  nrarr: '↛',
   nrArr: '⇏',
   larrb: '⇤',
   LeftArrowBar: '⇤',
@@ -96072,7 +96230,6 @@ const PUNCTUATION = {
   DiacriticalDot: '˙',
   DiacriticalDoubleAcute: '˝',
   grave: '`',
-  acute: '´',
 };
 
 /**
@@ -96086,7 +96243,6 @@ const CURRENCY = {
   yen: '¥',
   euro: '€',
   dollar: '$',
-  euro: '€',
   fnof: 'ƒ',
   inr: '₹',
   af: '؋',
@@ -96186,7 +96342,6 @@ const MISC_SYMBOLS = {
   Vdash: '⊩',
   dashv: '⊣',
   vDash: '⊨',
-  Vdash: '⊩',
   Vvdash: '⊪',
   nvdash: '⊬',
   nvDash: '⊭',
@@ -96543,7 +96698,7 @@ class EntityDecoder {
   decode(str) {
     if (typeof str !== 'string' || str.length === 0) return str;
     //TODO: check if needed
-    //if (str.indexOf('&') === -1) return str; // fast path — no entities at all
+    if (str.indexOf('&') === -1) return str; // fast path — no entities at all
 
     const original = str;
     const chunks = [];
@@ -127539,7 +127694,7 @@ class RequestError extends Error {
 
 
 // pkg/dist-src/version.js
-var dist_bundle_VERSION = "10.0.9";
+var dist_bundle_VERSION = "10.0.10";
 
 // pkg/dist-src/defaults.js
 var defaults_default = {
