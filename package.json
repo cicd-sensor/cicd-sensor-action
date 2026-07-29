@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "@vercel/ncc": "0.44.1"
+  },
+  "overrides": {
+    "minimatch": "^10.2.6"
   }
 }
