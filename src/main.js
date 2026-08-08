@@ -39,6 +39,10 @@ const PROXY_UNIT_NAME = 'cicd-sensor-proxy.service';
 const APPARMOR_PROFILE_NAME = 'cicd-sensor-action-agent';
 const APPARMOR_PROFILE_PATH = `/etc/apparmor.d/${APPARMOR_PROFILE_NAME}`;
 const SOCKET_TIMEOUT_MS = 10_000;
+// systemd must leave more time than the Agent's best-effort drain window;
+// otherwise it can SIGKILL the Agent while manager logs are still flushing.
+const AGENT_SHUTDOWN_GRACE_SECONDS = 20;
+const AGENT_STOP_TIMEOUT_SECONDS = 30;
 
 // Canonical paths for the dockerd takeover. The action hijacks
 // /run/docker.sock via rename(2) so plain `docker` CLI keeps
@@ -92,6 +96,7 @@ function agentCommandArgs({ socketPath }) {
     '--socket', socketPath,
     '--provider', PROVIDER,
     '--runner', RUNNER,
+    '--shutdown-grace', `${AGENT_SHUTDOWN_GRACE_SECONDS}s`,
   ];
 }
 
@@ -112,7 +117,7 @@ function renderAgentSystemdRunArgs({ socketPath, appArmorProfile }) {
     '--property=IgnoreOnIsolate=yes',
     '--property=OOMScoreAdjust=-1000',
     '--property=KillMode=mixed',
-    '--property=TimeoutStopSec=5s',
+    `--property=TimeoutStopSec=${AGENT_STOP_TIMEOUT_SECONDS}s`,
   ];
   if (appArmorProfile) {
     args.push(`--property=AppArmorProfile=${appArmorProfile}`);
