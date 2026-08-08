@@ -59,8 +59,8 @@ describe('systemd-run rendering', () => {
     const timeout = args.find((arg) => arg.startsWith('--property=TimeoutStopSec='));
     const timeoutSeconds = Number.parseInt(timeout.split('=')[2], 10);
 
-    assert.equal(graceSeconds, 8);
-    assert.equal(timeoutSeconds, 12);
+    assert.equal(graceSeconds, 20);
+    assert.equal(timeoutSeconds, 30);
     assert.ok(timeoutSeconds > graceSeconds);
   });
 

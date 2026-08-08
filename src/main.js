@@ -41,8 +41,8 @@ const APPARMOR_PROFILE_PATH = `/etc/apparmor.d/${APPARMOR_PROFILE_NAME}`;
 const SOCKET_TIMEOUT_MS = 10_000;
 // systemd must leave more time than the Agent's best-effort drain window;
 // otherwise it can SIGKILL the Agent while manager logs are still flushing.
-const AGENT_SHUTDOWN_GRACE_SECONDS = 8;
-const AGENT_STOP_TIMEOUT_SECONDS = 12;
+const AGENT_SHUTDOWN_GRACE_SECONDS = 20;
+const AGENT_STOP_TIMEOUT_SECONDS = 30;
 
 // Canonical paths for the dockerd takeover. The action hijacks
 // /run/docker.sock via rename(2) so plain `docker` CLI keeps
