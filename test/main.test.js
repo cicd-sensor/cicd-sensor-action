@@ -48,11 +48,28 @@ describe('systemd-run rendering', () => {
     assert.equal(args.includes('--manager-token-file'), false);
   });
 
+  it('gives the agent time to finish its shutdown drain', () => {
+    const args = renderAgentSystemdRunArgs({
+      socketPath: '/run/cicd-sensor/agent.sock',
+      appArmorProfile: '',
+    });
+    const graceIndex = args.indexOf('--shutdown-grace');
+    assert.notEqual(graceIndex, -1);
+    const graceSeconds = Number.parseInt(args[graceIndex + 1], 10);
+    const timeout = args.find((arg) => arg.startsWith('--property=TimeoutStopSec='));
+    const timeoutSeconds = Number.parseInt(timeout.split('=')[2], 10);
+
+    assert.equal(graceSeconds, 8);
+    assert.equal(timeoutSeconds, 12);
+    assert.ok(timeoutSeconds > graceSeconds);
+  });
+
   it('renders proxy transient unit with the validated agent socket path', () => {
     const args = renderProxySystemdRunArgs({ socketPath: '/run/cicd-sensor/agent.sock' });
     assert.equal(args.includes('--agent-socket'), true);
     assert.equal(args.includes('/run/cicd-sensor/agent.sock'), true);
     assert.equal(args.includes('${CICD_SENSOR_SOCKET}'), false);
+    assert.equal(args.includes('--property=TimeoutStopSec=5s'), true);
   });
 
   it('does not ask systemd to restart the agent automatically', () => {
