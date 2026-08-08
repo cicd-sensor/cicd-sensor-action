@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
-import { stepSummaryArgs } from '../src/post.js';
+import { managedServiceStopOrder, stepSummaryArgs } from '../src/post.js';
 
 let oldEnv;
 
@@ -70,5 +70,21 @@ describe('debug runtime event artifact ordering', () => {
     const runtimeEventPathIndex = mainSource.indexOf('const runtimeEventPath =');
     const beforeResult = mainSource.slice(runtimeEventPathIndex, resultIndex);
     assert.equal(/fs\.(copyFileSync|renameSync)\(DEBUG_RUNTIME_EVENT_PATH/.test(beforeResult), false);
+  });
+});
+
+describe('managed service shutdown', () => {
+  it('stops the proxy before the agent when the proxy is enabled', () => {
+    assert.deepEqual(
+      managedServiceStopOrder(true),
+      ['cicd-sensor-proxy.service', 'cicd-sensor-agent.service'],
+    );
+  });
+
+  it('stops only the agent when the proxy is disabled', () => {
+    assert.deepEqual(
+      managedServiceStopOrder(false),
+      ['cicd-sensor-agent.service'],
+    );
   });
 });

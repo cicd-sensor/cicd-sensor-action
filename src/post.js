@@ -180,6 +180,24 @@ function finishProjectAndEmitResultLog(socket, outputPath) {
   return true;
 }
 
+function managedServiceStopOrder(dockerProxyEnabled) {
+  const units = [];
+  if (dockerProxyEnabled) units.push(PROXY_UNIT_NAME);
+  units.push(AGENT_UNIT_NAME);
+  return units;
+}
+
+function stopManagedServices(dockerProxyEnabled) {
+  // Stop the proxy first so no new container attribution requests can
+  // arrive while the Agent drains its manager output during shutdown.
+  for (const unit of managedServiceStopOrder(dockerProxyEnabled)) {
+    const r = spawnSync('sudo', ['systemctl', 'stop', unit], { stdio: 'inherit' });
+    if (r.status !== 0) {
+      core.warning(`systemctl stop ${unit} exited with status ${r.status}`);
+    }
+  }
+}
+
 function pipeIntoCtl(ctl, subcommand, resultLogPath, outputPath) {
   const input = fs.openSync(resultLogPath, 'r');
   try {
@@ -465,6 +483,11 @@ async function main() {
   const managerTokenFile = core.getState(STATE.managerTokenFile);
   if (managerTokenFile) unlinkSilently(managerTokenFile);
 
+  // GitHub-hosted runners may tear down the VM immediately after the
+  // post step. Wait for the managed Agent's graceful shutdown here so
+  // manager output is drained before control returns to the runner.
+  if (!reusedExistingAgent) stopManagedServices(dockerProxyEnabled);
+
   if (tamperErr) throw tamperErr;
 }
 
@@ -480,4 +503,5 @@ if (isDirectRun()) {
 
 export {
   stepSummaryArgs,
+  managedServiceStopOrder,
 };

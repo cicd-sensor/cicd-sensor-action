@@ -77480,6 +77480,7 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
+  b: () => (/* binding */ managedServiceStopOrder),
   A: () => (/* binding */ stepSummaryArgs)
 });
 
@@ -137739,6 +137740,24 @@ function finishProjectAndEmitResultLog(socket, outputPath) {
   return true;
 }
 
+function managedServiceStopOrder(dockerProxyEnabled) {
+  const units = [];
+  if (dockerProxyEnabled) units.push(PROXY_UNIT_NAME);
+  units.push(AGENT_UNIT_NAME);
+  return units;
+}
+
+function stopManagedServices(dockerProxyEnabled) {
+  // Stop the proxy first so no new container attribution requests can
+  // arrive while the Agent drains its manager output during shutdown.
+  for (const unit of managedServiceStopOrder(dockerProxyEnabled)) {
+    const r = (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['systemctl', 'stop', unit], { stdio: 'inherit' });
+    if (r.status !== 0) {
+      warning(`systemctl stop ${unit} exited with status ${r.status}`);
+    }
+  }
+}
+
 function pipeIntoCtl(ctl, subcommand, resultLogPath, outputPath) {
   const input = external_node_fs_.openSync(resultLogPath, 'r');
   try {
@@ -138024,6 +138043,11 @@ async function main() {
   const managerTokenFile = getState(STATE.managerTokenFile);
   if (managerTokenFile) unlinkSilently(managerTokenFile);
 
+  // GitHub-hosted runners may tear down the VM immediately after the
+  // post step. Wait for the managed Agent's graceful shutdown here so
+  // manager output is drained before control returns to the runner.
+  if (!reusedExistingAgent) stopManagedServices(dockerProxyEnabled);
+
   if (tamperErr) throw tamperErr;
 }
 
@@ -138039,5 +138063,6 @@ if (isDirectRun()) {
 
 
 
+var __webpack_exports__managedServiceStopOrder = __webpack_exports__.b;
 var __webpack_exports__stepSummaryArgs = __webpack_exports__.A;
-export { __webpack_exports__stepSummaryArgs as stepSummaryArgs };
+export { __webpack_exports__managedServiceStopOrder as managedServiceStopOrder, __webpack_exports__stepSummaryArgs as stepSummaryArgs };
