@@ -77789,8 +77789,9 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
-  a: () => (/* binding */ runPost),
-  A: () => (/* binding */ stepSummaryArgs)
+  a2: () => (/* binding */ runPost),
+  A9: () => (/* binding */ stepSummaryArgs),
+  Zr: () => (/* binding */ stopManagedAgent)
 });
 
 // NAMESPACE OBJECT: ./node_modules/@azure/storage-blob/dist/esm/generated/src/models/mappers.js
@@ -77984,6 +77985,8 @@ var external_node_fs_ = __nccwpck_require__(3024);
 var external_node_path_ = __nccwpck_require__(6760);
 ;// CONCATENATED MODULE: external "node:child_process"
 const external_node_child_process_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:child_process");
+;// CONCATENATED MODULE: external "node:timers/promises"
+const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:timers/promises");
 // EXTERNAL MODULE: external "node:url"
 var external_node_url_ = __nccwpck_require__(3136);
 ;// CONCATENATED MODULE: external "os"
@@ -80933,84 +80936,6 @@ function getIDToken(aud) {
  */
 
 //# sourceMappingURL=core.js.map
-;// CONCATENATED MODULE: external "node:timers/promises"
-const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:timers/promises");
-;// CONCATENATED MODULE: ./src/lifecycle.js
-// Only the invocation started by this action belongs to its post step.
-
-
-
-
-const AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
-const OWNED_INVOCATION_STATE = 'managedAgentInvocationID';
-const SHUTDOWN_TIMEOUT_MS = 30_000;
-const COMMAND_TIMEOUT_MS = 5_000;
-
-function readAgentState(timeout = COMMAND_TIMEOUT_MS) {
-  const r = (0,external_node_child_process_namespaceObject.spawnSync)('systemctl', [
-    'show', AGENT_UNIT_NAME,
-    '--property=LoadState,ActiveState,InvocationID,Transient,Restart,Result',
-  ], { encoding: 'utf8', timeout });
-  if (r.error) throw r.error;
-  const state = Object.fromEntries((r.stdout || '').trim().split('\n')
-    .filter((line) => line.includes('='))
-    .map((line) => { const i = line.indexOf('='); return [line.slice(0, i), line.slice(i + 1)]; }));
-  // --collect removes inactive transient units. systemctl may return nonzero
-  // for a missing unit, but transport/query errors must not imply exit.
-  if (state.LoadState === 'not-found') return state;
-  if (r.status !== 0 || !state.ActiveState) {
-    throw new Error(`cannot inspect ${AGENT_UNIT_NAME}: ${r.stderr || r.stdout || r.status}`);
-  }
-  return state;
-}
-
-function rememberManagedAgent({ read = readAgentState, save = core.saveState } = {}) {
-  const state = read();
-  if (!state.InvocationID || state.Transient !== 'yes' || state.Restart !== 'no') {
-    throw new Error('cannot establish ownership of the managed agent invocation');
-  }
-  save(OWNED_INVOCATION_STATE, state.InvocationID);
-}
-
-function signalAgent(timeout) {
-  // RefuseManualStop=yes deliberately prevents `systemctl stop`. SIGTERM
-  // enters the Agent's existing finalize/drain path without weakening it.
-  const r = (0,external_node_child_process_namespaceObject.spawnSync)('sudo', [
-    '-n', 'systemctl', 'kill', '--kill-who=main', '--signal=SIGTERM', AGENT_UNIT_NAME,
-  ], { encoding: 'utf8', timeout });
-  if (r.error) throw r.error;
-  if (r.status !== 0) throw new Error(`agent SIGTERM failed: ${r.stderr || r.stdout || r.status}`);
-}
-
-async function stopManagedAgent(invocationID, {
-  read = readAgentState, signal = signalAgent, wait = promises_namespaceObject.setTimeout, now = Date.now,
-  timeoutMs = SHUTDOWN_TIMEOUT_MS,
-} = {}) {
-  if (!invocationID) return; // Reused Agent, skipped main, or never launched.
-  const deadline = now() + timeoutMs;
-  let signalled = false;
-  while (now() < deadline) {
-    const state = read(Math.max(1, Math.min(COMMAND_TIMEOUT_MS, deadline - now())));
-    if (state.LoadState === 'not-found') return;
-    if (state.InvocationID && state.InvocationID !== invocationID) {
-      throw new Error('managed agent invocation changed; refusing to signal a replacement');
-    }
-    if (state.ActiveState === 'failed' || (state.Result && state.Result !== 'success')) {
-      throw new Error(`managed agent exited unsuccessfully: ${state.Result || state.ActiveState}`);
-    }
-    if (state.ActiveState === 'inactive') return;
-    if (state.InvocationID !== invocationID || state.Transient !== 'yes' || state.Restart !== 'no') {
-      throw new Error('managed agent ownership or service policy changed; refusing to signal');
-    }
-    if (!signalled) {
-      signal(Math.max(1, Math.min(COMMAND_TIMEOUT_MS, deadline - now())));
-      signalled = true;
-    }
-    await wait(Math.min(200, Math.max(0, deadline - now())));
-  }
-  throw new Error(`managed agent did not exit within ${timeoutMs}ms after SIGTERM; logs may be incomplete`);
-}
-
 ;// CONCATENATED MODULE: ./node_modules/@actions/artifact/lib/internal/shared/config.js
 
 
@@ -137987,10 +137912,11 @@ const STATE = {
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
   reusedExistingAgent: 'reusedExistingAgent',
+  managedAgentStarted: 'managedAgentStarted',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
-const post_AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
+const AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
 const PROXY_UNIT_NAME = 'cicd-sensor-proxy.service';
 
 const ARTIFACT_REPORT = 'cicd-sensor-report';
@@ -138066,10 +137992,10 @@ function checkAgentHealth(socket, checkSystemd = true) {
   }
   // (2) systemd reports active
   if (checkSystemd) {
-    const sd = (0,external_node_child_process_namespaceObject.spawnSync)('systemctl', ['is-active', post_AGENT_UNIT_NAME], { encoding: 'utf8' });
+    const sd = (0,external_node_child_process_namespaceObject.spawnSync)('systemctl', ['is-active', AGENT_UNIT_NAME], { encoding: 'utf8' });
     const sdState = (sd.stdout || '').trim();
     if (sdState !== 'active') {
-      core_error(`systemctl is-active ${post_AGENT_UNIT_NAME} = '${sdState}' (expected 'active')`);
+      core_error(`systemctl is-active ${AGENT_UNIT_NAME} = '${sdState}' (expected 'active')`);
       return false;
     }
   }
@@ -138095,7 +138021,7 @@ function verifyTamper() {
   }
 
   const startState = parseShow(external_node_fs_.readFileSync(snapshotPath, 'utf8'));
-  const nowText = snapshotSystemd(post_AGENT_UNIT_NAME);
+  const nowText = snapshotSystemd(AGENT_UNIT_NAME);
   const nowState = parseShow(nowText);
 
   const drift = [];
@@ -138152,7 +138078,7 @@ function captureJournal(outputPath) {
   // Filter to JSON lines only; systemd's own unit lifecycle messages
   // would confuse downstream jq parsing.
   const r = runOutput('sudo', [
-    'journalctl', '-u', post_AGENT_UNIT_NAME,
+    'journalctl', '-u', AGENT_UNIT_NAME,
     '--output=cat', '--no-pager',
   ]);
   if (r.status !== 0) {
@@ -138178,7 +138104,7 @@ function captureProxyJournal(outputPath) {
 }
 
 function writeSystemctlShow(outputPath, snapshotText) {
-  external_node_fs_.writeFileSync(outputPath, snapshotText || snapshotSystemd(post_AGENT_UNIT_NAME));
+  external_node_fs_.writeFileSync(outputPath, snapshotText || snapshotSystemd(AGENT_UNIT_NAME));
 }
 
 async function uploadOne(client, name, outDir, files, options = {}) {
@@ -138409,30 +138335,59 @@ async function main() {
   if (tamperErr) throw tamperErr;
 }
 
-// Always finalize an owned Agent, including after startup, health or report
-// failures. Keep the token until finalization has had its chance to complete.
-async function runPost({ processResults = main, stop = stopManagedAgent } = {}) {
-  let failure;
+function agentIsRunning() {
+  const r = (0,external_node_child_process_namespaceObject.spawnSync)('systemctl', ['is-active', AGENT_UNIT_NAME], {
+    encoding: 'utf8', timeout: 5_000,
+  });
+  if (r.error) throw r.error;
+  const state = (r.stdout || '').trim();
+  // --collect can unload the transient unit after it exits.
+  if (state === 'inactive' || state === 'unknown') return false;
+  if (['active', 'activating', 'deactivating', 'reloading'].includes(state)) return true;
+  throw new Error(`cannot wait for agent exit: ${state || r.stderr || r.status}`);
+}
+
+async function stopManagedAgent() {
+  if (getState(STATE.reusedExistingAgent) !== 'false' ||
+      getState(STATE.managedAgentStarted) !== 'true') return;
+  if (!agentIsRunning()) return;
+
+  info('==> Sending SIGTERM to managed agent and waiting for exit');
+  // RefuseManualStop=yes prevents systemctl stop; SIGTERM uses the existing
+  // Agent shutdown path. Keep the existing 20-second drain budget intact.
+  const r = (0,external_node_child_process_namespaceObject.spawnSync)('sudo', [
+    '-n', 'systemctl', 'kill', '--kill-who=main', '--signal=SIGTERM', AGENT_UNIT_NAME,
+  ], { encoding: 'utf8', timeout: 5_000 });
+  if (r.error) throw r.error;
+  if (r.status !== 0) throw new Error(`agent SIGTERM failed: ${r.stderr || r.status}`);
+
+  const deadline = Date.now() + 30_000;
+  while (Date.now() < deadline) {
+    if (!agentIsRunning()) {
+      info('Managed agent shutdown wait completed');
+      return;
+    }
+    await (0,promises_namespaceObject.setTimeout)(200);
+  }
+  throw new Error('managed agent did not exit within 30s after SIGTERM; logs may be incomplete');
+}
+
+// Finalize even after setup/report failure, and retain the token until then.
+async function runPost() {
   try {
-    if (getState(STATE.socket)) await processResults();
-    else info('cicd-sensor post: main did not finish setup; skipping report generation');
+    if (getState(STATE.socket)) await main();
   } catch (err) {
-    failure = err;
+    setFailed(err.message);
   } finally {
     try {
-      const invocationID = getState(OWNED_INVOCATION_STATE);
-      if (invocationID) info('==> Finalizing managed agent with SIGTERM and waiting for exit');
-      await stop(invocationID);
-      if (invocationID) info('Managed agent shutdown wait completed');
+      await stopManagedAgent();
     } catch (err) {
-      if (failure) core_error(`agent finalization also failed: ${err.message}`);
-      else failure = err;
+      setFailed(err.message);
     } finally {
       const tokenFile = getState(STATE.managerTokenFile);
       if (tokenFile) unlinkSilently(tokenFile);
     }
   }
-  if (failure) throw failure;
 }
 
 function isDirectRun() {
@@ -138447,6 +138402,7 @@ if (isDirectRun()) {
 
 
 
-var __webpack_exports__runPost = __webpack_exports__.a;
-var __webpack_exports__stepSummaryArgs = __webpack_exports__.A;
-export { __webpack_exports__runPost as runPost, __webpack_exports__stepSummaryArgs as stepSummaryArgs };
+var __webpack_exports__runPost = __webpack_exports__.a2;
+var __webpack_exports__stepSummaryArgs = __webpack_exports__.A9;
+var __webpack_exports__stopManagedAgent = __webpack_exports__.Zr;
+export { __webpack_exports__runPost as runPost, __webpack_exports__stepSummaryArgs as stepSummaryArgs, __webpack_exports__stopManagedAgent as stopManagedAgent };

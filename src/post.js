@@ -10,9 +10,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { pathToFileURL } from 'node:url';
 import * as core from '@actions/core';
-import { OWNED_INVOCATION_STATE, stopManagedAgent } from './lifecycle.js';
 import { DefaultArtifactClient } from '@actions/artifact';
 
 const SNAPSHOT_PROPERTIES = [
@@ -40,6 +40,7 @@ const STATE = {
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
   reusedExistingAgent: 'reusedExistingAgent',
+  managedAgentStarted: 'managedAgentStarted',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
@@ -462,30 +463,59 @@ async function main() {
   if (tamperErr) throw tamperErr;
 }
 
-// Always finalize an owned Agent, including after startup, health or report
-// failures. Keep the token until finalization has had its chance to complete.
-export async function runPost({ processResults = main, stop = stopManagedAgent } = {}) {
-  let failure;
+function agentIsRunning() {
+  const r = spawnSync('systemctl', ['is-active', AGENT_UNIT_NAME], {
+    encoding: 'utf8', timeout: 5_000,
+  });
+  if (r.error) throw r.error;
+  const state = (r.stdout || '').trim();
+  // --collect can unload the transient unit after it exits.
+  if (state === 'inactive' || state === 'unknown') return false;
+  if (['active', 'activating', 'deactivating', 'reloading'].includes(state)) return true;
+  throw new Error(`cannot wait for agent exit: ${state || r.stderr || r.status}`);
+}
+
+export async function stopManagedAgent() {
+  if (core.getState(STATE.reusedExistingAgent) !== 'false' ||
+      core.getState(STATE.managedAgentStarted) !== 'true') return;
+  if (!agentIsRunning()) return;
+
+  core.info('==> Sending SIGTERM to managed agent and waiting for exit');
+  // RefuseManualStop=yes prevents systemctl stop; SIGTERM uses the existing
+  // Agent shutdown path. Keep the existing 20-second drain budget intact.
+  const r = spawnSync('sudo', [
+    '-n', 'systemctl', 'kill', '--kill-who=main', '--signal=SIGTERM', AGENT_UNIT_NAME,
+  ], { encoding: 'utf8', timeout: 5_000 });
+  if (r.error) throw r.error;
+  if (r.status !== 0) throw new Error(`agent SIGTERM failed: ${r.stderr || r.status}`);
+
+  const deadline = Date.now() + 30_000;
+  while (Date.now() < deadline) {
+    if (!agentIsRunning()) {
+      core.info('Managed agent shutdown wait completed');
+      return;
+    }
+    await sleep(200);
+  }
+  throw new Error('managed agent did not exit within 30s after SIGTERM; logs may be incomplete');
+}
+
+// Finalize even after setup/report failure, and retain the token until then.
+export async function runPost() {
   try {
-    if (core.getState(STATE.socket)) await processResults();
-    else core.info('cicd-sensor post: main did not finish setup; skipping report generation');
+    if (core.getState(STATE.socket)) await main();
   } catch (err) {
-    failure = err;
+    core.setFailed(err.message);
   } finally {
     try {
-      const invocationID = core.getState(OWNED_INVOCATION_STATE);
-      if (invocationID) core.info('==> Finalizing managed agent with SIGTERM and waiting for exit');
-      await stop(invocationID);
-      if (invocationID) core.info('Managed agent shutdown wait completed');
+      await stopManagedAgent();
     } catch (err) {
-      if (failure) core.error(`agent finalization also failed: ${err.message}`);
-      else failure = err;
+      core.setFailed(err.message);
     } finally {
       const tokenFile = core.getState(STATE.managerTokenFile);
       if (tokenFile) unlinkSilently(tokenFile);
     }
   }
-  if (failure) throw failure;
 }
 
 function isDirectRun() {

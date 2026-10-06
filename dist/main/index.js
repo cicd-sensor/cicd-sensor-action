@@ -31489,82 +31489,6 @@ function getIDToken(aud) {
  */
 
 //# sourceMappingURL=core.js.map
-;// CONCATENATED MODULE: ./src/lifecycle.js
-// Only the invocation started by this action belongs to its post step.
-
-
-
-
-const AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
-const OWNED_INVOCATION_STATE = 'managedAgentInvocationID';
-const SHUTDOWN_TIMEOUT_MS = 30_000;
-const COMMAND_TIMEOUT_MS = 5_000;
-
-function readAgentState(timeout = COMMAND_TIMEOUT_MS) {
-  const r = (0,external_node_child_process_namespaceObject.spawnSync)('systemctl', [
-    'show', AGENT_UNIT_NAME,
-    '--property=LoadState,ActiveState,InvocationID,Transient,Restart,Result',
-  ], { encoding: 'utf8', timeout });
-  if (r.error) throw r.error;
-  const state = Object.fromEntries((r.stdout || '').trim().split('\n')
-    .filter((line) => line.includes('='))
-    .map((line) => { const i = line.indexOf('='); return [line.slice(0, i), line.slice(i + 1)]; }));
-  // --collect removes inactive transient units. systemctl may return nonzero
-  // for a missing unit, but transport/query errors must not imply exit.
-  if (state.LoadState === 'not-found') return state;
-  if (r.status !== 0 || !state.ActiveState) {
-    throw new Error(`cannot inspect ${AGENT_UNIT_NAME}: ${r.stderr || r.stdout || r.status}`);
-  }
-  return state;
-}
-
-function rememberManagedAgent({ read = readAgentState, save = saveState } = {}) {
-  const state = read();
-  if (!state.InvocationID || state.Transient !== 'yes' || state.Restart !== 'no') {
-    throw new Error('cannot establish ownership of the managed agent invocation');
-  }
-  save(OWNED_INVOCATION_STATE, state.InvocationID);
-}
-
-function signalAgent(timeout) {
-  // RefuseManualStop=yes deliberately prevents `systemctl stop`. SIGTERM
-  // enters the Agent's existing finalize/drain path without weakening it.
-  const r = spawnSync('sudo', [
-    '-n', 'systemctl', 'kill', '--kill-who=main', '--signal=SIGTERM', AGENT_UNIT_NAME,
-  ], { encoding: 'utf8', timeout });
-  if (r.error) throw r.error;
-  if (r.status !== 0) throw new Error(`agent SIGTERM failed: ${r.stderr || r.stdout || r.status}`);
-}
-
-async function stopManagedAgent(invocationID, {
-  read = readAgentState, signal = signalAgent, wait = sleep, now = Date.now,
-  timeoutMs = SHUTDOWN_TIMEOUT_MS,
-} = {}) {
-  if (!invocationID) return; // Reused Agent, skipped main, or never launched.
-  const deadline = now() + timeoutMs;
-  let signalled = false;
-  while (now() < deadline) {
-    const state = read(Math.max(1, Math.min(COMMAND_TIMEOUT_MS, deadline - now())));
-    if (state.LoadState === 'not-found') return;
-    if (state.InvocationID && state.InvocationID !== invocationID) {
-      throw new Error('managed agent invocation changed; refusing to signal a replacement');
-    }
-    if (state.ActiveState === 'failed' || (state.Result && state.Result !== 'success')) {
-      throw new Error(`managed agent exited unsuccessfully: ${state.Result || state.ActiveState}`);
-    }
-    if (state.ActiveState === 'inactive') return;
-    if (state.InvocationID !== invocationID || state.Transient !== 'yes' || state.Restart !== 'no') {
-      throw new Error('managed agent ownership or service policy changed; refusing to signal');
-    }
-    if (!signalled) {
-      signal(Math.max(1, Math.min(COMMAND_TIMEOUT_MS, deadline - now())));
-      signalled = true;
-    }
-    await wait(Math.min(200, Math.max(0, deadline - now())));
-  }
-  throw new Error(`managed agent did not exit within ${timeoutMs}ms after SIGTERM; logs may be incomplete`);
-}
-
 ;// CONCATENATED MODULE: ./src/main.js
 // cicd-sensor-action — main step.
 //
@@ -31572,7 +31496,6 @@ async function stopManagedAgent(invocationID, {
 // starts the agent under systemd. When the configured
 // socket already points at a running agent (self-hosted), reuses it
 // instead of re-installing.
-
 
 
 
@@ -31602,7 +31525,7 @@ const PROVIDER = 'github';
 const RUNNER = 'machine';
 const DEFAULT_SOCKET = '/run/cicd-sensor/agent.sock';
 const BIN_DIR = '/usr/local/bin';
-const main_AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
+const AGENT_UNIT_NAME = 'cicd-sensor-agent.service';
 const PROXY_UNIT_NAME = 'cicd-sensor-proxy.service';
 const APPARMOR_PROFILE_NAME = 'cicd-sensor-action-agent';
 const APPARMOR_PROFILE_PATH = `/etc/apparmor.d/${APPARMOR_PROFILE_NAME}`;
@@ -31675,7 +31598,7 @@ function agentCommandArgs({ socketPath }) {
 function renderAgentSystemdRunArgs({ socketPath, appArmorProfile }) {
   const args = [
     'systemd-run',
-    `--unit=${main_AGENT_UNIT_NAME}`,
+    `--unit=${AGENT_UNIT_NAME}`,
     '--collect',
     '--property=NoNewPrivileges=yes',
     '--property=PrivateTmp=yes',
@@ -31701,8 +31624,8 @@ function renderProxySystemdRunArgs({ socketPath }) {
     'systemd-run',
     `--unit=${PROXY_UNIT_NAME}`,
     '--collect',
-    `--property=Requires=${main_AGENT_UNIT_NAME}`,
-    `--property=After=${main_AGENT_UNIT_NAME}`,
+    `--property=Requires=${AGENT_UNIT_NAME}`,
+    `--property=After=${AGENT_UNIT_NAME}`,
     '--property=Restart=on-failure',
     '--property=RestartSec=100ms',
     '--property=RefuseManualStop=yes',
@@ -31737,6 +31660,7 @@ const STATE = {
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
   reusedExistingAgent: 'reusedExistingAgent',
+  managedAgentStarted: 'managedAgentStarted',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
@@ -31768,7 +31692,7 @@ async function waitForSocket(socketPath, timeoutMs) {
   }
   throw new Error(
     `agent socket ${socketPath} did not appear within ${timeoutMs}ms; ` +
-    `check 'journalctl -u ${main_AGENT_UNIT_NAME}'`,
+    `check 'journalctl -u ${AGENT_UNIT_NAME}'`,
   );
 }
 
@@ -32121,14 +32045,14 @@ async function startManagedAgent({ socketPath, tmp }) {
     appArmorProfile,
   }));
 
-  rememberManagedAgent();
+  saveState(STATE.managedAgentStarted, 'true');
 
   try {
     await waitForSocket(socketPath, SOCKET_TIMEOUT_MS);
   } catch (err) {
     error('agent socket did not appear; dumping journal:');
-    logRecentJournal(main_AGENT_UNIT_NAME);
-    (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['systemctl', 'status', main_AGENT_UNIT_NAME, '--no-pager'], { stdio: 'inherit' });
+    logRecentJournal(AGENT_UNIT_NAME);
+    (0,external_node_child_process_namespaceObject.spawnSync)('sudo', ['systemctl', 'status', AGENT_UNIT_NAME, '--no-pager'], { stdio: 'inherit' });
     throw err;
   }
 }
@@ -32188,7 +32112,7 @@ async function main() {
     ({ ctlBin: ctlPath } = await installAndStartManagedAgent({ socketPath, tmp }));
 
     const snapshotPath = external_node_path_namespaceObject.join(tmp, 'cicd-sensor-start.txt');
-    external_node_fs_namespaceObject.writeFileSync(snapshotPath, snapshotSystemd(main_AGENT_UNIT_NAME));
+    external_node_fs_namespaceObject.writeFileSync(snapshotPath, snapshotSystemd(AGENT_UNIT_NAME));
     saveState(STATE.snapshotPath, snapshotPath);
 
     // Managed mode owns the docker proxy lifecycle. Existing-agent

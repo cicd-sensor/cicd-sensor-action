@@ -1,157 +1,131 @@
-import { afterEach, beforeEach, describe, it } from 'node:test';
+import { afterEach, beforeEach, describe, it, mock } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
-import {
-  AGENT_UNIT_NAME, OWNED_INVOCATION_STATE, readAgentState, rememberManagedAgent, stopManagedAgent,
-} from '../src/lifecycle.js';
-import { runPost } from '../src/post.js';
+import childProcess from 'node:child_process';
+import { syncBuiltinESMExports } from 'node:module';
+import { runPost, stopManagedAgent } from '../src/post.js';
 
-let oldEnv;
-beforeEach(() => { oldEnv = { ...process.env }; });
-afterEach(() => { process.env = oldEnv; });
+let oldEnv, oldExitCode;
+beforeEach(() => {
+  oldEnv = { ...process.env };
+  oldExitCode = process.exitCode;
+  process.env.STATE_reusedExistingAgent = 'false';
+  process.env.STATE_managedAgentStarted = 'true';
+  process.env.STATE_socket = '';
+  process.env.STATE_managerTokenFile = '';
+});
+afterEach(() => {
+  mock.restoreAll();
+  syncBuiltinESMExports();
+  process.env = oldEnv;
+  process.exitCode = oldExitCode;
+});
 
-const active = {
-  LoadState: 'loaded', ActiveState: 'active', InvocationID: 'original',
-  Transient: 'yes', Restart: 'no', Result: 'success',
-};
-const absent = { LoadState: 'not-found', ActiveState: 'inactive' };
-
-describe('managed invocation ownership', () => {
-  it('saves the invocation before later setup can fail', () => {
-    const saved = [];
-    rememberManagedAgent({ read: () => active, save: (...args) => saved.push(args) });
-    assert.deepEqual(saved, [[OWNED_INVOCATION_STATE, 'original']]);
+// Mock the command boundary, without adding injection options to production code.
+function systemd(states, signalResult = { status: 0 }) {
+  const calls = [];
+  let reads = 0;
+  mock.method(childProcess, 'spawnSync', (cmd, args) => {
+    calls.push([cmd, args]);
+    if (cmd === 'sudo') return signalResult;
+    assert.equal(cmd, 'systemctl');
+    const value = states[Math.min(reads++, states.length - 1)];
+    assert.ok(value, 'unexpected systemd query');
+    return typeof value === 'string' ? { status: value === 'active' ? 0 : 3, stdout: value } : value;
   });
-  for (const [name, change] of [
-    ['missing identity', { InvocationID: '' }],
-    ['installed service', { Transient: 'no' }],
-    ['restart policy', { Restart: 'always' }],
-  ]) {
-    it(`does not claim ${name}`, () => {
-      assert.throws(() => rememberManagedAgent({
-        read: () => ({ ...active, ...change }), save: () => assert.fail('saved unsafe owner'),
-      }));
-    });
-  }
-});
+  syncBuiltinESMExports();
+  return calls;
+}
 
-describe('managed Agent SIGTERM and wait', () => {
-  const cases = [
-    { name: 'reused or never started Agent does not access systemd', id: '', states: [], signals: 0 },
-    { name: 'waits for delayed drain after a single signal', states: [active, active, absent], signals: 1 },
-    { name: 'accepts successful inactive exit', states: [active, { ...active, ActiveState: 'inactive' }], signals: 1 },
-    { name: 'already collected Agent needs no signal', states: [absent], signals: 0 },
-    { name: 'already inactive Agent needs no signal', states: [{ ...active, ActiveState: 'inactive' }], signals: 0 },
-    { name: 'replacement is not signalled', states: [{ ...active, InvocationID: 'other' }], signals: 0, error: /invocation changed/ },
-    { name: 'replacement during wait is detected', states: [active, { ...active, InvocationID: 'other' }], signals: 1, error: /invocation changed/ },
-    { name: 'missing identity cannot authorize a signal', states: [{ ...active, InvocationID: '' }], signals: 0, error: /ownership/ },
-    { name: 'installed service is not signalled', states: [{ ...active, Transient: 'no' }], signals: 0, error: /ownership/ },
-    { name: 'restarting service is not signalled', states: [{ ...active, Restart: 'always' }], signals: 0, error: /ownership/ },
-    { name: 'failed service surfaces failure', states: [{ ...active, ActiveState: 'failed', Result: 'exit-code' }], signals: 0, error: /unsuccessfully/ },
-    { name: 'failed exit during drain surfaces failure', states: [active, { ...active, ActiveState: 'inactive', Result: 'signal' }], signals: 1, error: /unsuccessfully/ },
-    { name: 'query error is not treated as exit', states: [new Error('query failed')], signals: 0, error: /query failed/ },
-    { name: 'signal failure is reported without retry', states: [active], signalError: true, signals: 1, error: /signal failed/ },
-    { name: 'deadline stops waiting without SIGKILL', states: [active], signals: 1, error: /did not exit/ },
-  ];
-  for (const c of cases) {
-    it(c.name, async () => {
-      let calls = 0, signals = 0, clock = 0;
-      const promise = stopManagedAgent(c.id ?? 'original', {
-        read: (timeout) => {
-          assert.ok(timeout > 0 && timeout <= 5000);
-          const state = c.states[Math.min(calls++, c.states.length - 1)];
-          assert.ok(state, 'unexpected systemd query');
-          if (state instanceof Error) throw state;
-          return state;
-        },
-        signal: () => { signals++; if (c.signalError) throw new Error('signal failed'); },
-        wait: async (ms) => { clock += ms; }, now: () => clock, timeoutMs: 600,
-      });
-      if (c.error) await assert.rejects(promise, c.error);
-      else await promise;
-      assert.equal(signals, c.signals);
-      if (c.id === '') assert.equal(calls, 0);
-      assert.ok(clock <= 600);
-    });
-  }
-});
-
-describe('post cleanup on every path', () => {
+describe('managed Agent shutdown', () => {
   for (const c of [
-    { name: 'reports finish before shutdown', socket: true },
-    { name: 'report or health failure still shuts down', socket: true, reportFails: true },
-    { name: 'failed main still shuts down its owned Agent', socket: false },
-    { name: 'shutdown failure fails post', socket: true, stopFails: true },
-    { name: 'original error survives an additional shutdown failure', socket: true, reportFails: true, stopFails: true },
+    { name: 'reused Agent never touches systemd', reuse: 'true', states: [], signals: 0 },
+    { name: 'skipped main never touches systemd', reuse: '', started: '', states: [], signals: 0 },
+    { name: 'failed launch never touches systemd', started: '', states: [], signals: 0 },
+    { name: 'waits for drain after exactly one SIGTERM', states: ['active', 'deactivating', 'inactive'], signals: 1 },
+    { name: 'collected unit counts as exited', states: ['active', 'unknown'], signals: 1 },
+    { name: 'already exited needs no signal', states: ['inactive'], signals: 0 },
+    { name: 'failed unit surfaces failure', states: ['failed'], signals: 0, error: /cannot wait/ },
+    { name: 'query failure is not treated as exit', states: [{ status: 1, stderr: 'bus unavailable' }], signals: 0, error: /bus unavailable/ },
+    { name: 'query timeout surfaces failure', states: [{ error: new Error('query timeout') }], signals: 0, error: /query timeout/ },
+    { name: 'signal failure surfaces failure', states: ['active'], signalResult: { status: 1 }, signals: 1, error: /SIGTERM failed/ },
+    { name: 'signal timeout surfaces failure', states: ['active'], signalResult: { error: new Error('signal timeout') }, signals: 1, error: /signal timeout/ },
+    { name: 'deadline ends the wait without SIGKILL', states: ['active'], timeout: true, signals: 1, error: /within 30s/ },
+  ]) {
+    it(c.name, async () => {
+      if (c.reuse !== undefined) process.env.STATE_reusedExistingAgent = c.reuse;
+      if (c.started !== undefined) process.env.STATE_managedAgentStarted = c.started;
+      const calls = systemd(c.states, c.signalResult);
+      if (c.timeout) {
+        let ticks = 0;
+        mock.method(Date, 'now', () => ticks++ === 0 ? 0 : 30_000);
+      }
+      if (c.error) await assert.rejects(stopManagedAgent(), c.error);
+      else await stopManagedAgent();
+      const signals = calls.filter(([cmd]) => cmd === 'sudo');
+      assert.equal(signals.length, c.signals);
+      for (const [, args] of signals) assert.deepEqual(args, [
+        '-n', 'systemctl', 'kill', '--kill-who=main', '--signal=SIGTERM', 'cicd-sensor-agent.service',
+      ]);
+      if (c.states.length === 0) assert.equal(calls.length, 0);
+    });
+  }
+});
+
+describe('post cleanup', () => {
+  for (const c of [
+    { name: 'startup failure still stops a successfully launched Agent' },
+    { name: 'report failure still stops the Agent', reportFails: true },
+    { name: 'shutdown failure still removes the token', stopFails: true },
+    { name: 'both failures fail post and still remove the token', reportFails: true, stopFails: true },
   ]) {
     it(c.name, async () => {
       const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'sensor-post-'));
       const token = path.join(tmp, 'token');
       fs.writeFileSync(token, 'test-only');
-      process.env.STATE_socket = c.socket ? '/test.sock' : '';
-      process.env[`STATE_${OWNED_INVOCATION_STATE}`] = 'original';
       process.env.STATE_managerTokenFile = token;
-      const order = [];
-      const original = new Error('report failed');
+      const calls = systemd(['active', 'inactive'], c.stopFails ? { status: 1 } : undefined);
+      if (c.reportFails) {
+        process.env.STATE_socket = '/test.sock';
+        mock.method(fs, 'mkdirSync', () => { throw new Error('report directory unavailable'); });
+      }
       try {
-        const promise = runPost({
-          processResults: async () => { order.push('report'); if (c.reportFails) throw original; },
-          stop: async (id) => {
-            assert.equal(id, 'original');
-            assert.ok(fs.existsSync(token), 'token must survive until finalization');
-            order.push('stop');
-            if (c.stopFails) throw new Error('stop failed');
-          },
-        });
-        if (c.reportFails) await assert.rejects(promise, (err) => err === original);
-        else if (c.stopFails) await assert.rejects(promise, /stop failed/);
-        else await promise;
-        assert.deepEqual(order, c.socket ? ['report', 'stop'] : ['stop']);
+        await runPost();
+        assert.equal(calls.filter(([cmd]) => cmd === 'sudo').length, 1);
         assert.equal(fs.existsSync(token), false);
+        assert.equal(process.exitCode, c.reportFails || c.stopFails ? 1 : oldExitCode);
       } finally {
         fs.rmSync(tmp, { recursive: true, force: true });
       }
     });
   }
-
-  it('pre without main performs no report request or signal', async () => {
-    process.env.STATE_socket = '';
-    process.env[`STATE_${OWNED_INVOCATION_STATE}`] = '';
-    process.env.STATE_managerTokenFile = '';
-    await runPost({ processResults: () => assert.fail('main was skipped') });
-  });
 });
 
-// Explicit opt-in: runs only on the disposable Ubuntu CI VM, never on a
-// developer's host or a runner with an existing cicd-sensor service.
+// Explicit opt-in: a disposable Ubuntu CI VM with no existing Agent.
 it('real systemd waits for SIGTERM drain on a protected transient unit', {
   skip: process.env.CICD_SENSOR_SYSTEMD_TEST !== '1',
 }, async () => {
-  assert.equal(readAgentState().LoadState, 'not-found', 'test needs an unused service name');
+  const unit = 'cicd-sensor-agent.service';
+  const state = () => childProcess.spawnSync('systemctl', ['is-active', unit], { encoding: 'utf8' }).stdout.trim();
+  assert.ok(['inactive', 'unknown'].includes(state()), 'test needs an unused service name');
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'sensor-systemd-'));
   const script = path.join(tmp, 'agent.sh');
   const ready = path.join(tmp, 'ready');
   const drained = path.join(tmp, 'drained');
   fs.writeFileSync(script, `#!/bin/bash\ntrap 'sleep 1; touch "$2"; exit 0' TERM\ntouch "$1"\nwhile :; do sleep 0.1; done\n`, { mode: 0o755 });
-  const run = (...args) => {
-    const result = spawnSync('sudo', ['-n', ...args], { encoding: 'utf8', timeout: 10_000 });
-    assert.equal(result.status, 0, result.stderr);
-  };
   try {
-    run('systemd-run', `--unit=${AGENT_UNIT_NAME}`, '--collect', '--property=RefuseManualStop=yes', script, ready, drained);
+    const launched = childProcess.spawnSync('sudo', ['-n', 'systemd-run', `--unit=${unit}`, '--collect',
+      '--property=RefuseManualStop=yes', script, ready, drained], { encoding: 'utf8', timeout: 10_000 });
+    assert.equal(launched.status, 0, launched.stderr);
     for (let i = 0; i < 100 && !fs.existsSync(ready); i++) await new Promise((r) => setTimeout(r, 50));
     assert.ok(fs.existsSync(ready));
-    let id;
-    rememberManagedAgent({ save: (_, value) => { id = value; } });
-    await stopManagedAgent(id);
+    await stopManagedAgent();
     assert.ok(fs.existsSync(drained), 'must return after the TERM handler completed');
-    assert.equal(readAgentState().LoadState, 'not-found');
+    assert.ok(['inactive', 'unknown'].includes(state()));
   } finally {
-    // Only this opt-in test's isolated fixture, if an assertion failed.
-    spawnSync('sudo', ['-n', 'systemctl', 'kill', '--signal=SIGKILL', AGENT_UNIT_NAME], { timeout: 5000 });
+    childProcess.spawnSync('sudo', ['-n', 'systemctl', 'kill', '--signal=SIGKILL', unit], { timeout: 5000 });
     fs.rmSync(tmp, { recursive: true, force: true });
   }
 });

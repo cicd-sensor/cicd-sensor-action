@@ -12,7 +12,6 @@ import { spawnSync } from 'node:child_process';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { pathToFileURL } from 'node:url';
 import * as core from '@actions/core';
-import { rememberManagedAgent } from './lifecycle.js';
 
 const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
@@ -170,6 +169,7 @@ const STATE = {
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
   reusedExistingAgent: 'reusedExistingAgent',
+  managedAgentStarted: 'managedAgentStarted',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
@@ -554,7 +554,7 @@ async function startManagedAgent({ socketPath, tmp }) {
     appArmorProfile,
   }));
 
-  rememberManagedAgent();
+  core.saveState(STATE.managedAgentStarted, 'true');
 
   try {
     await waitForSocket(socketPath, SOCKET_TIMEOUT_MS);
