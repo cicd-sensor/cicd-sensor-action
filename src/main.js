@@ -12,6 +12,7 @@ import { spawnSync } from 'node:child_process';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { pathToFileURL } from 'node:url';
 import * as core from '@actions/core';
+import { rememberManagedAgent } from './lifecycle.js';
 
 const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
@@ -553,6 +554,8 @@ async function startManagedAgent({ socketPath, tmp }) {
     appArmorProfile,
   }));
 
+  rememberManagedAgent();
+
   try {
     await waitForSocket(socketPath, SOCKET_TIMEOUT_MS);
   } catch (err) {
@@ -602,6 +605,7 @@ async function main() {
   // that the host operator already started — the CLI forwards it into
   // the project-start request body.
   const managerTokenFile = writeManagerTokenFile({ managerUrl, managerToken, tmp });
+  core.saveState(STATE.managerTokenFile, managerTokenFile);
 
   core.saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
 
@@ -633,7 +637,6 @@ async function main() {
 
   core.saveState(STATE.socket, socketPath);
   core.saveState(STATE.ctlPath, ctlPath);
-  core.saveState(STATE.managerTokenFile, managerTokenFile);
   core.saveState(STATE.enableHtmlReport, enableHtmlReport ? 'true' : 'false');
   core.saveState(STATE.enableAttestationArtifact, enableAttestationArtifact ? 'true' : 'false');
   core.saveState(STATE.enableDebug, enableDebug ? 'true' : 'false');

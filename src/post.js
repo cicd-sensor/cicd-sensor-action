@@ -2,7 +2,7 @@
 // cicd-sensor-action — post step.
 //
 // Runs after the user's workload. Existing-agent mode only talks to
-// the configured socket: health check, project result/end, artifacts.
+// the configured socket: health check, project result, artifacts.
 // Managed mode additionally checks systemd state because the action
 // installed that agent. On health failure, uploads a debug bundle and
 // throws without producing the normal report/attestation artifacts.
@@ -12,6 +12,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import * as core from '@actions/core';
+import { OWNED_INVOCATION_STATE, stopManagedAgent } from './lifecycle.js';
 import { DefaultArtifactClient } from '@actions/artifact';
 
 const SNAPSHOT_PROPERTIES = [
@@ -168,8 +169,8 @@ function verifyTamper() {
 
 function finishProjectAndEmitResultLog(socket, outputPath) {
   // `project result` is the action's final message to the agent for
-  // this job. It closes the project-side tracking state and writes the
-  // result document used by report / attestation generation.
+  // this job. It flushes buffered logs and writes the report/attestation
+  // result document; it does not finalize the Job or emit its Summary.
   const args = ['project', 'result', ...jobIdentityArgs(socket),
     '--output-file', outputPath];
   const r = spawnSync(BIN, args, { stdio: 'inherit' });
@@ -330,9 +331,6 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   core.setOutput('attestation-artifact-id', '');
   core.setOutput('attestation-artifact-url', '');
 
-  const managerTokenFile = core.getState(STATE.managerTokenFile);
-  if (managerTokenFile) unlinkSilently(managerTokenFile);
-
   throw new Error(reason);
 }
 
@@ -364,7 +362,7 @@ async function main() {
 
   // 2. Managed mode verifies the systemd snapshot taken in main.
   // Existing-agent mode is intentionally just socket protocol: start
-  // was sent in main, result/end is sent below, and no systemd
+  // was sent in main, result is requested below, and no systemd
   // invariant is assumed.
   let tamperResult = { tampered: false, drift: [], current: {}, nowText: '' };
   if (!reusedExistingAgent) {
@@ -461,11 +459,33 @@ async function main() {
   core.setOutput('attestation-artifact-id', attestationArtifact?.id ? String(attestationArtifact.id) : '');
   core.setOutput('attestation-artifact-url', artifactUrl(attestationArtifact?.id) || '');
 
-  // 7. Unlink the staged manager token file.
-  const managerTokenFile = core.getState(STATE.managerTokenFile);
-  if (managerTokenFile) unlinkSilently(managerTokenFile);
-
   if (tamperErr) throw tamperErr;
+}
+
+// Always finalize an owned Agent, including after startup, health or report
+// failures. Keep the token until finalization has had its chance to complete.
+export async function runPost({ processResults = main, stop = stopManagedAgent } = {}) {
+  let failure;
+  try {
+    if (core.getState(STATE.socket)) await processResults();
+    else core.info('cicd-sensor post: main did not finish setup; skipping report generation');
+  } catch (err) {
+    failure = err;
+  } finally {
+    try {
+      const invocationID = core.getState(OWNED_INVOCATION_STATE);
+      if (invocationID) core.info('==> Finalizing managed agent with SIGTERM and waiting for exit');
+      await stop(invocationID);
+      if (invocationID) core.info('Managed agent shutdown wait completed');
+    } catch (err) {
+      if (failure) core.error(`agent finalization also failed: ${err.message}`);
+      else failure = err;
+    } finally {
+      const tokenFile = core.getState(STATE.managerTokenFile);
+      if (tokenFile) unlinkSilently(tokenFile);
+    }
+  }
+  if (failure) throw failure;
 }
 
 function isDirectRun() {
@@ -473,7 +493,7 @@ function isDirectRun() {
 }
 
 if (isDirectRun()) {
-  main().catch((err) => {
+  runPost().catch((err) => {
     core.setFailed(err && err.message ? err.message : String(err));
   });
 }

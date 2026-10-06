@@ -7,6 +7,23 @@ GitHub Action for running [cicd-sensor](https://github.com/cicd-sensor/cicd-sens
 
 Published as `cicd-sensor/cicd-sensor-action`. See the [GitHub-hosted runner guide](https://cicd-sensor.github.io/user-guide/github-hosted.html) for usage.
 
+## Placement and shutdown
+
+Place this action as the **first step**, before checkout and other actions. Its
+`pre` registers cleanup early so its `post` runs after cleanup registered by later
+actions, including actions with their own `pre` steps.
+
+After reports and artifacts are processed, the action sends SIGTERM to the Agent
+it started and waits up to 30 seconds for it to exit. This lets the Agent finalize
+the job and send its Summary before runners such as Blacksmith tear down the VM.
+Cleanup is also attempted if setup or report generation fails. An existing Agent
+reused through its socket is never stopped.
+
+Monitoring ends during this action's post step; later runner/provider cleanup is
+outside that window. Forced cancellation or VM loss can still interrupt delivery.
+Agent exit confirms process termination, not Manager receipt: current Agent
+versions can log delivery errors without returning a failing exit status.
+
 ## Config and Rules
 
 Project-local config and rules live under `.cicd-sensor/`:
