@@ -2,7 +2,7 @@
 // cicd-sensor-action — post step.
 //
 // Runs after the user's workload. Existing-agent mode only talks to
-// the configured socket: health check, project result/end, artifacts.
+// the configured socket: health check, project result, artifacts.
 // Managed mode additionally checks systemd state because the action
 // installed that agent. On health failure, uploads a debug bundle and
 // throws without producing the normal report/attestation artifacts.
@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { pathToFileURL } from 'node:url';
 import * as core from '@actions/core';
 import { DefaultArtifactClient } from '@actions/artifact';
@@ -39,6 +40,7 @@ const STATE = {
   enableAttestationArtifact: 'enableAttestationArtifact',
   enableDebug: 'enableDebug',
   reusedExistingAgent: 'reusedExistingAgent',
+  managedAgentStarted: 'managedAgentStarted',
   dockerProxyEnabled: 'dockerProxyEnabled',
 };
 
@@ -168,8 +170,8 @@ function verifyTamper() {
 
 function finishProjectAndEmitResultLog(socket, outputPath) {
   // `project result` is the action's final message to the agent for
-  // this job. It closes the project-side tracking state and writes the
-  // result document used by report / attestation generation.
+  // this job. It flushes buffered logs and writes the report/attestation
+  // result document; it does not finalize the Job or emit its Summary.
   const args = ['project', 'result', ...jobIdentityArgs(socket),
     '--output-file', outputPath];
   const r = spawnSync(BIN, args, { stdio: 'inherit' });
@@ -330,9 +332,6 @@ async function failWithDebugBundle({ outDir, reason, snapshotText, dockerProxyEn
   core.setOutput('attestation-artifact-id', '');
   core.setOutput('attestation-artifact-url', '');
 
-  const managerTokenFile = core.getState(STATE.managerTokenFile);
-  if (managerTokenFile) unlinkSilently(managerTokenFile);
-
   throw new Error(reason);
 }
 
@@ -364,7 +363,7 @@ async function main() {
 
   // 2. Managed mode verifies the systemd snapshot taken in main.
   // Existing-agent mode is intentionally just socket protocol: start
-  // was sent in main, result/end is sent below, and no systemd
+  // was sent in main, result is requested below, and no systemd
   // invariant is assumed.
   let tamperResult = { tampered: false, drift: [], current: {}, nowText: '' };
   if (!reusedExistingAgent) {
@@ -461,11 +460,62 @@ async function main() {
   core.setOutput('attestation-artifact-id', attestationArtifact?.id ? String(attestationArtifact.id) : '');
   core.setOutput('attestation-artifact-url', artifactUrl(attestationArtifact?.id) || '');
 
-  // 7. Unlink the staged manager token file.
-  const managerTokenFile = core.getState(STATE.managerTokenFile);
-  if (managerTokenFile) unlinkSilently(managerTokenFile);
-
   if (tamperErr) throw tamperErr;
+}
+
+function agentIsRunning() {
+  const r = spawnSync('systemctl', ['is-active', AGENT_UNIT_NAME], {
+    encoding: 'utf8', timeout: 5_000,
+  });
+  if (r.error) throw r.error;
+  const state = (r.stdout || '').trim();
+  // --collect can unload the transient unit after it exits.
+  if (state === 'inactive' || state === 'unknown') return false;
+  if (['active', 'activating', 'deactivating', 'reloading'].includes(state)) return true;
+  throw new Error(`cannot wait for agent exit: ${state || r.stderr || r.status}`);
+}
+
+export async function stopManagedAgent() {
+  if (core.getState(STATE.reusedExistingAgent) !== 'false' ||
+      core.getState(STATE.managedAgentStarted) !== 'true') return;
+  if (!agentIsRunning()) return;
+
+  core.info('==> Sending SIGTERM to managed agent and waiting for exit');
+  // RefuseManualStop=yes prevents systemctl stop; SIGTERM uses the existing
+  // Agent shutdown path. Keep the existing 20-second drain budget intact.
+  const r = spawnSync('sudo', [
+    '-n', 'systemctl', 'kill', '--kill-who=main', '--signal=SIGTERM', AGENT_UNIT_NAME,
+  ], { encoding: 'utf8', timeout: 5_000 });
+  if (r.error) throw r.error;
+  if (r.status !== 0) throw new Error(`agent SIGTERM failed: ${r.stderr || r.status}`);
+
+  const deadline = Date.now() + 30_000;
+  while (Date.now() < deadline) {
+    if (!agentIsRunning()) {
+      core.info('Managed agent shutdown wait completed');
+      return;
+    }
+    await sleep(200);
+  }
+  throw new Error('managed agent did not exit within 30s after SIGTERM; logs may be incomplete');
+}
+
+// Finalize even after setup/report failure, and retain the token until then.
+export async function runPost() {
+  try {
+    if (core.getState(STATE.socket)) await main();
+  } catch (err) {
+    core.setFailed(err.message);
+  } finally {
+    try {
+      await stopManagedAgent();
+    } catch (err) {
+      core.setFailed(err.message);
+    } finally {
+      const tokenFile = core.getState(STATE.managerTokenFile);
+      if (tokenFile) unlinkSilently(tokenFile);
+    }
+  }
 }
 
 function isDirectRun() {
@@ -473,7 +523,7 @@ function isDirectRun() {
 }
 
 if (isDirectRun()) {
-  main().catch((err) => {
+  runPost().catch((err) => {
     core.setFailed(err && err.message ? err.message : String(err));
   });
 }

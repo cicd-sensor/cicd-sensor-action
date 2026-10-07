@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "ncc build src/main.js -o dist/main --license licenses.txt && ncc build src/post.js -o dist/post --license licenses.txt",
-    "lint": "node --check src/main.js && node --check src/post.js && node --check test/main.test.js && node --check test/post.test.js",
+    "build": "ncc build src/pre.js -o dist/pre --license licenses.txt && ncc build src/main.js -o dist/main --license licenses.txt && ncc build src/post.js -o dist/post --license licenses.txt",
+    "lint": "node --check src/main.js && node --check src/post.js && node --check test/main.test.js && node --check test/post.test.js && node --check src/pre.js && node --check test/lifecycle.test.js",
     "test": "node --test",
     "audit": "npm audit --omit=dev --audit-level=high",
-    "check-dist": "npm run build && git diff --exit-code dist/main dist/post",
+    "check-dist": "npm run build && git diff --exit-code dist/pre dist/main dist/post",
     "check": "npm run lint && npm test && npm run audit && npm run check-dist"
   },
   "dependencies": {

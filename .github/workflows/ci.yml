@@ -29,3 +29,8 @@ jobs:
 
       - name: Check
         run: npm run check
+
+      - name: Verify systemd shutdown
+        run: node --test test/lifecycle.test.js
+        env:
+          CICD_SENSOR_SYSTEMD_TEST: "1"
