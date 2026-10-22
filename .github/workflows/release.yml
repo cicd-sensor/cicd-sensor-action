@@ -37,7 +37,7 @@ permissions:
 jobs:
   validate:
     name: Validate inputs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     outputs:
       version: ${{ steps.parse.outputs.version }}
@@ -64,7 +64,7 @@ jobs:
   build:
     name: Build release tarball
     needs: [validate]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     permissions:
       contents: read
@@ -82,9 +82,9 @@ jobs:
         uses: ./
 
       - name: Setup Node
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 24.21.0
+          node-version: 24.22.0
           cache: npm
 
       - name: Install dependencies
@@ -115,14 +115,14 @@ jobs:
           upload-release-assets: false
 
       - name: Upload release tarball
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: release-bundle
           path: release/cicd-sensor-action_*.tar.gz
           if-no-files-found: error
 
       - name: Upload SBOM
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: release-sbom
           path: release/cicd-sensor-action_*_sbom.cdx.json
@@ -131,7 +131,7 @@ jobs:
   sign-and-attest:
     name: Sign and attest release tarball
     needs: [validate, build]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     environment: action-releases/approval
     permissions:
@@ -141,19 +141,19 @@ jobs:
       artifact-metadata: write
     steps:
       - name: Download release tarball
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: release-bundle
           path: dist
 
       - name: Download SBOM
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: release-sbom
           path: dist
 
       - name: Download cicd-sensor runtime-trace predicate
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: cicd-sensor-attestation
           path: trace
@@ -194,7 +194,7 @@ jobs:
           predicate-path: trace/predicate.json
 
       - name: Upload signed release assets
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: release-signed
           path: |
@@ -207,7 +207,7 @@ jobs:
   finalize:
     name: Tag and publish GitHub Release
     needs: [validate, sign-and-attest]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: write
@@ -219,7 +219,7 @@ jobs:
           persist-credentials: true
 
       - name: Download signed release assets
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: release-signed
           path: dist
@@ -277,7 +277,7 @@ jobs:
   bump-sensor-docs:
     name: Kick Renovate on cicd-sensor docs
     needs: [finalize]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     environment: action-releases/bump-sensor-docs
     continue-on-error: true
@@ -291,7 +291,7 @@ jobs:
       # issue via the cicd-sensor-docs-bump GitHub App.
       - name: Mint GitHub App token (cicd-sensor-docs-bump)
         id: app-token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         with:
           client-id: ${{ vars.DOCS_BUMP_APP_CLIENT_ID }}
           private-key: ${{ secrets.DOCS_BUMP_APP_PRIVATE_KEY }}
