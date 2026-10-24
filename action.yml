@@ -19,7 +19,7 @@ inputs:
       releases/v* tag is published. Override only to pin to a
       different release (for example, to test a pre-release).
     required: false
-    default: "v0.0.48"
+    default: "v0.0.49"
 
   github-token:
     description: >-
@@ -41,15 +41,34 @@ inputs:
 
   manager-url:
     description: >-
-      Optional manager URL for host- and project-scope config. When set,
-      manager-token is also required, and project-local `.cicd-sensor/`
+      Optional manager URL for config. When set, authenticate with
+      manager-token or manager-auth: oidc, and project-local `.cicd-sensor/`
       config is ignored (config is fetched from the manager).
+    required: false
+    default: ""
+
+  manager-auth:
+    description: >-
+      Manager authentication: manager-token (default) or oidc. OIDC requires
+      manager-url, permissions: id-token: write, and Agent/CLI v0.0.49 or newer;
+      cannot be combined with manager-token. The Manager must enable OIDC
+      and allow the calling repository. Reused Agents must also be upgraded
+      and restarted by the host operator.
+    required: false
+    default: "manager-token"
+
+  id-token-audience:
+    description: >-
+      Optional audience for manager-auth: oidc. When omitted, the Agent uses
+      the Manager URL origin. Must match the Manager's configured OIDC audience.
+      Invalid with manager-auth: manager-token.
     required: false
     default: ""
 
   manager-token:
     description: >-
-      Bearer token for the manager. Registered with `core.setSecret`
+      Bearer token for manager-auth: manager-token (required with manager-url).
+      Cannot be combined with OIDC. Registered with `core.setSecret`
       and staged to a 0600 file under $RUNNER_TEMP; the raw value
       never crosses the agent's command line. The post step unlinks
       the staged file before exiting.

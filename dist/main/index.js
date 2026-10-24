@@ -4454,7 +4454,7 @@ function defaultFactory (origin, opts) {
 }
 
 class Agent extends DispatcherBase {
-  constructor ({ factory = defaultFactory, maxRedirections = 0, connect, ...options } = {}) {
+  constructor ({ factory = defaultFactory, maxRedirections = 0, connect, tls, ...options } = {}) {
     if (typeof factory !== 'function') {
       throw new InvalidArgumentError('factory must be a function.')
     }
@@ -4473,11 +4473,15 @@ class Agent extends DispatcherBase {
       connect = { ...connect }
     }
 
+    if (tls && typeof tls !== 'function') {
+      tls = { ...tls }
+    }
+
     this[kInterceptors] = options.interceptors?.Agent && Array.isArray(options.interceptors.Agent)
       ? options.interceptors.Agent
       : [createRedirectInterceptor({ maxRedirections })]
 
-    this[kOptions] = { ...util.deepClone(options), connect }
+    this[kOptions] = { ...util.deepClone(options), connect, tls }
     this[kOptions].interceptors = options.interceptors
       ? { ...options.interceptors }
       : undefined
@@ -5510,8 +5514,6 @@ async function connectH1 (client, socket) {
   socket[kParser] = new Parser(client, socket, llhttpInstance)
 
   addListener(socket, 'error', function (err) {
-    assert(err.code !== 'ERR_TLS_CERT_ALTNAME_INVALID')
-
     const parser = this[kParser]
 
     // On Mac OS, we get an ECONNRESET even if there is a full body to be forwarded
@@ -6441,8 +6443,6 @@ async function connectH2 (client, socket) {
   socket[kHTTP2Session] = session
 
   util.addListener(socket, 'error', function (err) {
-    assert(err.code !== 'ERR_TLS_CERT_ALTNAME_INVALID')
-
     this[kError] = err
 
     this[kClient][kOnError](err)
@@ -6516,8 +6516,6 @@ function resumeH2 (client) {
 }
 
 function onHttp2SessionError (err) {
-  assert(err.code !== 'ERR_TLS_CERT_ALTNAME_INVALID')
-
   this[kSocket][kError] = err
   this[kClient][kOnError](err)
 }
@@ -7215,9 +7213,10 @@ class Client extends DispatcherBase {
     // h2
     maxConcurrentStreams,
     allowH2,
-    webSocket
+    webSocket,
+    eventSource
   } = {}) {
-    super({ webSocket })
+    super({ webSocket, eventSource })
 
     if (keepAlive !== undefined) {
       throw new InvalidArgumentError('unsupported keepAlive, use pipelining=0 instead')
@@ -7738,6 +7737,7 @@ module.exports = Client
 
 
 
+const buffer = __nccwpck_require__(4573)
 const Dispatcher = __nccwpck_require__(883)
 const {
   ClientDestroyedError,
@@ -7750,6 +7750,7 @@ const kOnDestroyed = Symbol('onDestroyed')
 const kOnClosed = Symbol('onClosed')
 const kInterceptedDispatch = Symbol('Intercepted Dispatch')
 const kWebSocketOptions = Symbol('webSocketOptions')
+const kEventSourceOptions = Symbol('eventSourceOptions')
 
 class DispatcherBase extends Dispatcher {
   constructor (opts) {
@@ -7760,12 +7761,19 @@ class DispatcherBase extends Dispatcher {
     this[kClosed] = false
     this[kOnClosed] = []
     this[kWebSocketOptions] = opts?.webSocket ?? {}
+    this[kEventSourceOptions] = opts?.eventSource ?? {}
   }
 
   get webSocketOptions () {
     return {
       maxFragments: this[kWebSocketOptions].maxFragments ?? 131072,
       maxPayloadSize: this[kWebSocketOptions].maxPayloadSize ?? 128 * 1024 * 1024
+    }
+  }
+
+  get eventSourceOptions () {
+    return {
+      maxEventSize: this[kEventSourceOptions].maxEventSize ?? buffer.kStringMaxLength
     }
   }
 
@@ -14127,6 +14135,7 @@ module.exports = {
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
+const buffer = __nccwpck_require__(4573)
 const { Transform } = __nccwpck_require__(7075)
 const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(4811)
 
@@ -14151,10 +14160,18 @@ const COLON = 0x3A
  */
 const SPACE = 0x20
 
+const defaultMaxEventSize = buffer.kStringMaxLength
+
 const DATA = Buffer.from('data')
 const EVENT = Buffer.from('event')
 const ID = Buffer.from('id')
 const RETRY = Buffer.from('retry')
+
+// Each data field creates a string node, and each unconsumed input chunk keeps
+// a Buffer wrapper. The absolute ceiling protects the large default byte limit.
+const minParserItems = 1024
+const maxParserItems = 131072
+const bytesPerParserItem = 128
 
 function isASCIINumberBytes (buffer, start) {
   if (start >= buffer.length) {
@@ -14192,6 +14209,12 @@ function isFieldName (line, length, field) {
   }
 
   return true
+}
+
+function createMaxEventSizeExceededError () {
+  const error = new Error('EventSource message size exceeded')
+  error.aborted = false
+  return error
 }
 
 /**
@@ -14242,6 +14265,13 @@ class EventSourceStream extends Transform {
   pos = 0
   lineChunkIndex = 0
   linePos = 0
+  lineLength = 0
+  eventSize = 0
+  eventFieldSizes = { data: 0, event: 0, id: 0, retry: 0 }
+  dataLineCount = 0
+  maxEventSize
+  maxDataLines
+  maxBufferedChunks
 
   event = {
     data: undefined,
@@ -14252,6 +14282,7 @@ class EventSourceStream extends Transform {
 
   /**
    * @param {object} options
+   * @param {number} [options.maxEventSize]
    * @param {eventSourceSettings} options.eventSourceSettings
    * @param {Function} [options.push]
    */
@@ -14263,6 +14294,12 @@ class EventSourceStream extends Transform {
     super(options)
 
     this.state = options.eventSourceSettings || {}
+    this.maxEventSize = options.maxEventSize ?? defaultMaxEventSize
+    const parserItemLimit = this.maxEventSize > 0
+      ? Math.min(maxParserItems, Math.max(minParserItems, Math.floor(this.maxEventSize / bytesPerParserItem)))
+      : 0
+    this.maxDataLines = parserItemLimit
+    this.maxBufferedChunks = parserItemLimit
     if (options.push) {
       this.push = options.push
     }
@@ -14280,6 +14317,14 @@ class EventSourceStream extends Transform {
       return
     }
 
+    // A leading line ending can immediately release the currently buffered
+    // line, even when it uses the final allowed chunk slot.
+    if (this.maxEventSize > 0 &&
+        this.chunks.length >= this.maxBufferedChunks &&
+        chunk[0] !== LF && chunk[0] !== CR) {
+      callback(createMaxEventSizeExceededError())
+      return
+    }
     this.chunks.push(chunk)
 
     // Strip leading byte-order-mark if we opened the stream and started
@@ -14358,7 +14403,12 @@ class EventSourceStream extends Transform {
 
         // In any case, we can process the line as we reached an
         // end-of-line character
-        this.parseLine(this.readLine(), this.event)
+        try {
+          this.parseLine(this.readLine(), this.event)
+        } catch (error) {
+          callback(error)
+          return
+        }
         this.consumeCurrentByte()
         // A line was processed and this could be the end of the event. We need
         // to check if the next line is empty to determine if the event is
@@ -14367,15 +14417,28 @@ class EventSourceStream extends Transform {
         continue
       }
 
+      // readLine() is only called after CR or LF. Reject an unfinished line
+      // before it can retain an unbounded number of decoded chunks. The seven
+      // extra bytes allow the longest field prefix ("event: " or "retry: ").
+      if (this.maxEventSize > 0 && ++this.lineLength > this.maxEventSize + 7) {
+        callback(createMaxEventSizeExceededError())
+        return
+      }
       this.advanceCursor()
     }
 
     callback()
   }
 
+  _destroy (error, callback) {
+    this.chunks.length = 0
+    this.clearEvent()
+    super._destroy(error, callback)
+  }
+
   /**
    * @param {Buffer} line
-   * @param {EventStreamEvent} event
+   * @param {EventSourceStreamEvent} event
    */
   parseLine (line, event) {
     // If the line is empty (a blank line)
@@ -14409,6 +14472,13 @@ class EventSourceStream extends Transform {
     }
 
     if (isFieldName(line, fieldLength, DATA)) {
+      if (this.maxEventSize > 0 && this.dataLineCount >= this.maxDataLines) {
+        throw createMaxEventSizeExceededError()
+      }
+      const valueBytes = line.length - valueStart
+      const dataSize = this.eventFieldSizes.data + (event.data === undefined ? 0 : 1) + valueBytes
+      this.setEventFieldSize('data', dataSize)
+
       const value = line.toString('utf8', valueStart)
 
       if (event.data === undefined) {
@@ -14416,11 +14486,13 @@ class EventSourceStream extends Transform {
       } else {
         event.data += `\n${value}`
       }
+      this.dataLineCount++
       return
     }
 
     if (isFieldName(line, fieldLength, RETRY)) {
       if (isASCIINumberBytes(line, valueStart)) {
+        this.setEventFieldSize('retry', line.length - valueStart)
         event.retry = line.toString('utf8', valueStart)
       }
       return
@@ -14428,18 +14500,27 @@ class EventSourceStream extends Transform {
 
     if (isFieldName(line, fieldLength, ID)) {
       if (isValidLastEventIdBytes(line, valueStart)) {
+        this.setEventFieldSize('id', line.length - valueStart)
         event.id = line.toString('utf8', valueStart)
       }
       return
     }
 
     if (isFieldName(line, fieldLength, EVENT)) {
-      const value = line.toString('utf8', valueStart)
-
-      if (value.length > 0) {
-        event.event = value
+      if (valueStart < line.length) {
+        this.setEventFieldSize('event', line.length - valueStart)
+        event.event = line.toString('utf8', valueStart)
       }
     }
+  }
+
+  setEventFieldSize (field, size) {
+    const eventSize = this.eventSize - this.eventFieldSizes[field] + size
+    if (this.maxEventSize > 0 && eventSize > this.maxEventSize) {
+      throw createMaxEventSizeExceededError()
+    }
+    this.eventSize = eventSize
+    this.eventFieldSizes[field] = size
   }
 
   /**
@@ -14472,6 +14553,12 @@ class EventSourceStream extends Transform {
     this.event.event = undefined
     this.event.id = undefined
     this.event.retry = undefined
+    this.eventSize = 0
+    this.dataLineCount = 0
+    this.eventFieldSizes.data = 0
+    this.eventFieldSizes.event = 0
+    this.eventFieldSizes.id = 0
+    this.eventFieldSizes.retry = 0
   }
 
   hasPendingEvent () {
@@ -14507,14 +14594,16 @@ class EventSourceStream extends Transform {
   syncLineStartToCursor () {
     this.lineChunkIndex = this.chunkIndex
     this.linePos = this.pos
+    this.lineLength = 0
     this.dropConsumedChunks()
   }
 
   dropConsumedChunks () {
-    while (this.lineChunkIndex > 0) {
-      this.chunks.shift()
-      this.lineChunkIndex--
-      this.chunkIndex--
+    if (this.lineChunkIndex > 0) {
+      const consumed = this.lineChunkIndex
+      this.chunks.splice(0, consumed)
+      this.lineChunkIndex = 0
+      this.chunkIndex -= consumed
     }
 
     if (this.chunkIndex === this.chunks.length) {
@@ -14639,6 +14728,7 @@ const { isNetworkError } = __nccwpck_require__(9051)
 const { delay } = __nccwpck_require__(4811)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
 const { environmentSettingsObject } = __nccwpck_require__(3168)
+const { getGlobalDispatcher } = __nccwpck_require__(2581)
 
 let experimentalWarned = false
 
@@ -14920,6 +15010,7 @@ class EventSource extends EventTarget {
 
       const eventSourceStream = new EventSourceStream({
         eventSourceSettings: this.#state,
+        maxEventSize: this.#dispatcher.eventSourceOptions?.maxEventSize,
         push: (event) => {
           this.dispatchEvent(createFastMessageEvent(
             event.type,
@@ -15098,7 +15189,8 @@ webidl.converters.EventSourceInitDict = webidl.dictionaryConverter([
   },
   {
     key: 'dispatcher', // undici only
-    converter: webidl.converters.any
+    converter: webidl.converters.any,
+    defaultValue: () => getGlobalDispatcher()
   }
 ])
 
@@ -20194,8 +20286,10 @@ async function httpNetworkFetch (
   // 19. Run these steps in parallel:
 
   //    1. Run these steps, but abort when fetchParams is canceled:
-  fetchParams.controller.onAborted = onAborted
-  fetchParams.controller.on('terminated', onAborted)
+  if (!fetchParams.controller.resume) {
+    fetchParams.controller.on('terminated', onAborted)
+  }
+
   fetchParams.controller.resume = async () => {
     // 1. While true
     while (true) {
@@ -20364,8 +20458,6 @@ async function httpNetworkFetch (
           }
           location = headersList.get('location', true)
 
-          this.body = new Readable({ read: resume })
-
           const decoders = []
 
           const willFollow = location && request.redirect === 'follow' &&
@@ -20383,7 +20475,7 @@ async function httpNetworkFetch (
             // CVE fix similar to urllib3 (GHSA-gm62-xv2j-4w53) and curl (CVE-2022-32206).
             const maxContentEncodings = 5
             if (codings.length > maxContentEncodings) {
-              reject(new Error(`too many content-encodings in response: ${codings.length}, maximum allowed is ${maxContentEncodings}`))
+              this.abort(new Error(`too many content-encodings in response: ${codings.length}, maximum allowed is ${maxContentEncodings}`))
               return true
             }
 
@@ -20415,6 +20507,8 @@ async function httpNetworkFetch (
               }
             }
           }
+
+          this.body = new Readable({ read: resume })
 
           const onError = this.onError.bind(this)
 
@@ -20460,10 +20554,6 @@ async function httpNetworkFetch (
         onComplete () {
           if (this.abort) {
             fetchParams.controller.off('terminated', this.abort)
-          }
-
-          if (fetchParams.controller.onAborted) {
-            fetchParams.controller.off('terminated', fetchParams.controller.onAborted)
           }
 
           fetchParams.controller.ended = true
@@ -26940,6 +27030,20 @@ class ByteParser extends Writable {
         if (isControlFrame(this.#info.opcode)) {
           this.#loop = this.parseControlFrame(body)
           this.#state = parserStates.INFO
+
+          // If the automatic PONG/CLOSE reply filled the socket's write buffer,
+          // stop parsing and resume on drain so a PING flood cannot grow the
+          // outbound queue without bound.
+          const socket = this.ws[kResponse].socket
+          if (this.#loop && socket.writableNeedDrain) {
+            this.#loop = false
+            socket.once('drain', () => {
+              if (this.destroyed) return
+              this.#loop = true
+              this.run(callback)
+            })
+            return
+          }
         } else {
           if (!this.#info.compressed) {
             if (!this.writeFragments(body)) {
@@ -28523,12 +28627,15 @@ var __webpack_exports__ = {};
 __nccwpck_require__.d(__webpack_exports__, {
   s4: () => (/* binding */ appArmorLSMEnabled),
   dg: () => (/* binding */ fetchRepoDirectoryFiles),
+  iW: () => (/* binding */ main),
   vi: () => (/* binding */ renderAgentSystemdRunArgs),
   kx: () => (/* binding */ renderAppArmorProfile),
   Hs: () => (/* binding */ renderProjectStartArgs),
   EY: () => (/* binding */ renderProxySystemdRunArgs),
   G2: () => (/* binding */ repoContentsURL),
+  dd: () => (/* binding */ requireOIDCVersion),
   ce: () => (/* binding */ setupDockerProxy),
+  k5: () => (/* binding */ validateManagerAuth),
   L_: () => (/* binding */ validateManagerUrl),
   d8: () => (/* binding */ validateSocketPath),
   qP: () => (/* binding */ writeRepoDirectoryFiles)
@@ -31508,6 +31615,7 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
+const MIN_OIDC_AGENT_VERSION = 'v0.0.49';
 
 // Read lazily so importing this module under tests does not require
 // INPUT_CICD-SENSOR-VERSION to be set. Renovate bumps the value via
@@ -31563,11 +31671,40 @@ function validateSocketPath(value) {
 function validateManagerUrl(value) {
   let url;
   try { url = new URL(value); } catch (err) {
-    throw new Error(`manager-url is not a valid URL: ${value}`);
+    throw new Error('manager-url is not a valid URL');
   }
   if (url.protocol !== 'https:') throw new Error(`manager-url must use https:// (got ${url.protocol})`);
   rejectUnsafeArgValue(value, 'manager-url');
   return url.toString();
+}
+
+function requireOIDCVersion(version, label) {
+  const match = /^v(\d+)\.(\d+)\.(\d+)$/.exec(version);
+  if (!match || !(Number(match[1]) > 0 || Number(match[2]) > 0 || Number(match[3]) >= 49)) {
+    throw new Error(`OIDC requires ${label} ${MIN_OIDC_AGENT_VERSION} or newer; upgrade the CLI and running Agent`);
+  }
+}
+
+function validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience, env = process.env }) {
+  if (!['manager-token', 'oidc'].includes(managerAuth)) {
+    throw new Error('manager-auth must be manager-token or oidc');
+  }
+  if (idTokenAudience && managerAuth !== 'oidc') {
+    throw new Error('id-token-audience requires manager-auth: oidc');
+  }
+  if (idTokenAudience) rejectUnsafeArgValue(idTokenAudience, 'id-token-audience');
+  if (managerAuth === 'oidc') {
+    if (!managerUrl) throw new Error('manager-auth: oidc requires manager-url');
+    if (managerToken) throw new Error('manager-token cannot be combined with manager-auth: oidc');
+    for (const name of ['ACTIONS_ID_TOKEN_REQUEST_URL', 'ACTIONS_ID_TOKEN_REQUEST_TOKEN']) {
+      if (!env[name]?.trim()) {
+        throw new Error(`manager-auth: oidc requires ${name}; set permissions: id-token: write in the workflow job`);
+      }
+    }
+  } else {
+    if (managerToken && !managerUrl) throw new Error("'manager-token' set but 'manager-url' is empty");
+    if (managerUrl && !managerToken) throw new Error("'manager-url' set but 'manager-token' is empty");
+  }
 }
 
 function validateAbsolutePath(value, label) {
@@ -31790,6 +31927,8 @@ function renderProjectStartArgs({
   projectRulesPath = '',
   managerUrl = '',
   managerTokenFile = '',
+  managerAuth = 'manager-token',
+  idTokenAudience = '',
   enableDebug = false,
   env = process.env,
 }) {
@@ -31819,7 +31958,14 @@ function renderProjectStartArgs({
   }
 
   if (managerUrl) {
-    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
+    projectArgs.push('--manager-url', managerUrl);
+    if (managerAuth === 'oidc') {
+      projectArgs.push('--manager-auth', 'oidc');
+      if (idTokenAudience) projectArgs.push('--id-token-audience', idTokenAudience);
+    } else {
+      // Keep the legacy argv compatible with pinned pre-OIDC releases.
+      projectArgs.push('--manager-token-file', managerTokenFile);
+    }
   } else {
     if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
     if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
@@ -32073,17 +32219,20 @@ async function main() {
   // setSecret protects custom PAT / GitHub App tokens against accidental
   // surfaces in error messages (e.g. Contents API response body).
   if (githubToken) core_setSecret(githubToken);
+  const managerToken = getInput('manager-token');
+  if (managerToken) core_setSecret(managerToken);
+  if (process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN) core_setSecret(process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN);
   const socketPath = validateSocketPath(getInput('socket-path') || DEFAULT_SOCKET);
   const managerUrlRaw = getInput('manager-url');
   const managerUrl = managerUrlRaw ? validateManagerUrl(managerUrlRaw) : '';
-  const managerToken = getInput('manager-token');
+  const managerAuth = getInput('manager-auth') || 'manager-token';
+  const idTokenAudience = getInput('id-token-audience');
   const enableHtmlReport = getBooleanInput('enable-html-report');
   const enableAttestationArtifact = getBooleanInput('enable-attestation-artifact');
   const enableDebug = getBooleanInput('enable-debug');
 
-  if (managerToken && !managerUrl) throw new Error("'manager-token' set but 'manager-url' is empty");
-  if (managerUrl && !managerToken) throw new Error("'manager-url' set but 'manager-token' is empty");
-  if (managerToken) core_setSecret(managerToken);
+  validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience });
+  if (managerAuth === 'oidc') requireOIDCVersion(getAgentVersion(), 'cicd-sensor-version');
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
 
@@ -32091,11 +32240,19 @@ async function main() {
   // state rather than a pre-installed agent. Self-hosted only.
   const reuseAgent = !isGitHubHostedRunner() && socketIsLive(socketPath);
 
+  if (reuseAgent && managerAuth === 'oidc') {
+    // Downloading a new ctl does not upgrade this CLI or the running Agent.
+    const version = (0,external_node_child_process_namespaceObject.spawnSync)(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), ['--version'], {
+      encoding: 'utf8', timeout: 10_000,
+    });
+    requireOIDCVersion(version.status === 0 ? version.stdout.trim() : '', 'installed cicd-sensor CLI');
+  }
+
   // Token file is needed by `cicd-sensor project start --manager-token-file`
   // regardless of whether this step starts a managed agent or reuses one
   // that the host operator already started — the CLI forwards it into
   // the project-start request body.
-  const managerTokenFile = writeManagerTokenFile({ managerUrl, managerToken, tmp });
+  const managerTokenFile = managerAuth === 'oidc' ? '' : writeManagerTokenFile({ managerUrl, managerToken, tmp });
   saveState(STATE.managerTokenFile, managerTokenFile);
 
   saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
@@ -32171,12 +32328,27 @@ async function main() {
     projectRulesPath,
     managerUrl,
     managerTokenFile,
+    managerAuth,
+    idTokenAudience,
     enableDebug,
   });
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
-  run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs);
+  // Preserve the runner request URL/token across the child boundary, never
+  // through argv, state, or systemd. The CLI forwards them over the socket;
+  // the Agent owns minting and renewal through final streaming/Summary sends.
+  try {
+    run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
+  } catch (err) {
+    if (reuseAgent && managerAuth === 'oidc') {
+      // Older listeners reject the OIDC fields (DisallowUnknownFields).
+      // A CLI version alone cannot prove the live process was restarted.
+      throw new Error(`OIDC project start failed; ensure the running Agent is ${MIN_OIDC_AGENT_VERSION} or newer ` +
+        `and was restarted after upgrade, and check Manager OIDC configuration. ${err.message}`);
+    }
+    throw err;
+  }
 
   info('==> cicd-sensor-action main: ready');
 }
@@ -32195,13 +32367,16 @@ if (isDirectRun()) {
 
 var __webpack_exports__appArmorLSMEnabled = __webpack_exports__.s4;
 var __webpack_exports__fetchRepoDirectoryFiles = __webpack_exports__.dg;
+var __webpack_exports__main = __webpack_exports__.iW;
 var __webpack_exports__renderAgentSystemdRunArgs = __webpack_exports__.vi;
 var __webpack_exports__renderAppArmorProfile = __webpack_exports__.kx;
 var __webpack_exports__renderProjectStartArgs = __webpack_exports__.Hs;
 var __webpack_exports__renderProxySystemdRunArgs = __webpack_exports__.EY;
 var __webpack_exports__repoContentsURL = __webpack_exports__.G2;
+var __webpack_exports__requireOIDCVersion = __webpack_exports__.dd;
 var __webpack_exports__setupDockerProxy = __webpack_exports__.ce;
+var __webpack_exports__validateManagerAuth = __webpack_exports__.k5;
 var __webpack_exports__validateManagerUrl = __webpack_exports__.L_;
 var __webpack_exports__validateSocketPath = __webpack_exports__.d8;
 var __webpack_exports__writeRepoDirectoryFiles = __webpack_exports__.qP;
-export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
+export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__main as main, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__requireOIDCVersion as requireOIDCVersion, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerAuth as validateManagerAuth, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };

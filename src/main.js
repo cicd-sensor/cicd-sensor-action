@@ -17,6 +17,7 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
+const MIN_OIDC_AGENT_VERSION = 'v0.0.49';
 
 // Read lazily so importing this module under tests does not require
 // INPUT_CICD-SENSOR-VERSION to be set. Renovate bumps the value via
@@ -72,11 +73,40 @@ function validateSocketPath(value) {
 function validateManagerUrl(value) {
   let url;
   try { url = new URL(value); } catch (err) {
-    throw new Error(`manager-url is not a valid URL: ${value}`);
+    throw new Error('manager-url is not a valid URL');
   }
   if (url.protocol !== 'https:') throw new Error(`manager-url must use https:// (got ${url.protocol})`);
   rejectUnsafeArgValue(value, 'manager-url');
   return url.toString();
+}
+
+function requireOIDCVersion(version, label) {
+  const match = /^v(\d+)\.(\d+)\.(\d+)$/.exec(version);
+  if (!match || !(Number(match[1]) > 0 || Number(match[2]) > 0 || Number(match[3]) >= 49)) {
+    throw new Error(`OIDC requires ${label} ${MIN_OIDC_AGENT_VERSION} or newer; upgrade the CLI and running Agent`);
+  }
+}
+
+function validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience, env = process.env }) {
+  if (!['manager-token', 'oidc'].includes(managerAuth)) {
+    throw new Error('manager-auth must be manager-token or oidc');
+  }
+  if (idTokenAudience && managerAuth !== 'oidc') {
+    throw new Error('id-token-audience requires manager-auth: oidc');
+  }
+  if (idTokenAudience) rejectUnsafeArgValue(idTokenAudience, 'id-token-audience');
+  if (managerAuth === 'oidc') {
+    if (!managerUrl) throw new Error('manager-auth: oidc requires manager-url');
+    if (managerToken) throw new Error('manager-token cannot be combined with manager-auth: oidc');
+    for (const name of ['ACTIONS_ID_TOKEN_REQUEST_URL', 'ACTIONS_ID_TOKEN_REQUEST_TOKEN']) {
+      if (!env[name]?.trim()) {
+        throw new Error(`manager-auth: oidc requires ${name}; set permissions: id-token: write in the workflow job`);
+      }
+    }
+  } else {
+    if (managerToken && !managerUrl) throw new Error("'manager-token' set but 'manager-url' is empty");
+    if (managerUrl && !managerToken) throw new Error("'manager-url' set but 'manager-token' is empty");
+  }
 }
 
 function validateAbsolutePath(value, label) {
@@ -299,6 +329,8 @@ function renderProjectStartArgs({
   projectRulesPath = '',
   managerUrl = '',
   managerTokenFile = '',
+  managerAuth = 'manager-token',
+  idTokenAudience = '',
   enableDebug = false,
   env = process.env,
 }) {
@@ -328,7 +360,14 @@ function renderProjectStartArgs({
   }
 
   if (managerUrl) {
-    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
+    projectArgs.push('--manager-url', managerUrl);
+    if (managerAuth === 'oidc') {
+      projectArgs.push('--manager-auth', 'oidc');
+      if (idTokenAudience) projectArgs.push('--id-token-audience', idTokenAudience);
+    } else {
+      // Keep the legacy argv compatible with pinned pre-OIDC releases.
+      projectArgs.push('--manager-token-file', managerTokenFile);
+    }
   } else {
     if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
     if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
@@ -582,17 +621,20 @@ async function main() {
   // setSecret protects custom PAT / GitHub App tokens against accidental
   // surfaces in error messages (e.g. Contents API response body).
   if (githubToken) core.setSecret(githubToken);
+  const managerToken = core.getInput('manager-token');
+  if (managerToken) core.setSecret(managerToken);
+  if (process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN) core.setSecret(process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN);
   const socketPath = validateSocketPath(core.getInput('socket-path') || DEFAULT_SOCKET);
   const managerUrlRaw = core.getInput('manager-url');
   const managerUrl = managerUrlRaw ? validateManagerUrl(managerUrlRaw) : '';
-  const managerToken = core.getInput('manager-token');
+  const managerAuth = core.getInput('manager-auth') || 'manager-token';
+  const idTokenAudience = core.getInput('id-token-audience');
   const enableHtmlReport = core.getBooleanInput('enable-html-report');
   const enableAttestationArtifact = core.getBooleanInput('enable-attestation-artifact');
   const enableDebug = core.getBooleanInput('enable-debug');
 
-  if (managerToken && !managerUrl) throw new Error("'manager-token' set but 'manager-url' is empty");
-  if (managerUrl && !managerToken) throw new Error("'manager-url' set but 'manager-token' is empty");
-  if (managerToken) core.setSecret(managerToken);
+  validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience });
+  if (managerAuth === 'oidc') requireOIDCVersion(getAgentVersion(), 'cicd-sensor-version');
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
 
@@ -600,11 +642,19 @@ async function main() {
   // state rather than a pre-installed agent. Self-hosted only.
   const reuseAgent = !isGitHubHostedRunner() && socketIsLive(socketPath);
 
+  if (reuseAgent && managerAuth === 'oidc') {
+    // Downloading a new ctl does not upgrade this CLI or the running Agent.
+    const version = spawnSync(path.join(BIN_DIR, 'cicd-sensor'), ['--version'], {
+      encoding: 'utf8', timeout: 10_000,
+    });
+    requireOIDCVersion(version.status === 0 ? version.stdout.trim() : '', 'installed cicd-sensor CLI');
+  }
+
   // Token file is needed by `cicd-sensor project start --manager-token-file`
   // regardless of whether this step starts a managed agent or reuses one
   // that the host operator already started — the CLI forwards it into
   // the project-start request body.
-  const managerTokenFile = writeManagerTokenFile({ managerUrl, managerToken, tmp });
+  const managerTokenFile = managerAuth === 'oidc' ? '' : writeManagerTokenFile({ managerUrl, managerToken, tmp });
   core.saveState(STATE.managerTokenFile, managerTokenFile);
 
   core.saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
@@ -680,12 +730,27 @@ async function main() {
     projectRulesPath,
     managerUrl,
     managerTokenFile,
+    managerAuth,
+    idTokenAudience,
     enableDebug,
   });
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
-  run(path.join(BIN_DIR, 'cicd-sensor'), projectArgs);
+  // Preserve the runner request URL/token across the child boundary, never
+  // through argv, state, or systemd. The CLI forwards them over the socket;
+  // the Agent owns minting and renewal through final streaming/Summary sends.
+  try {
+    run(path.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
+  } catch (err) {
+    if (reuseAgent && managerAuth === 'oidc') {
+      // Older listeners reject the OIDC fields (DisallowUnknownFields).
+      // A CLI version alone cannot prove the live process was restarted.
+      throw new Error(`OIDC project start failed; ensure the running Agent is ${MIN_OIDC_AGENT_VERSION} or newer ` +
+        `and was restarted after upgrade, and check Manager OIDC configuration. ${err.message}`);
+    }
+    throw err;
+  }
 
   core.info('==> cicd-sensor-action main: ready');
 }
@@ -701,6 +766,9 @@ if (isDirectRun()) {
 }
 
 export {
+  main,
+  requireOIDCVersion,
+  validateManagerAuth,
   appArmorLSMEnabled,
   renderAgentSystemdRunArgs,
   renderAppArmorProfile,
