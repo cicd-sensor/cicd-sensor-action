@@ -28627,12 +28627,14 @@ var __webpack_exports__ = {};
 __nccwpck_require__.d(__webpack_exports__, {
   s4: () => (/* binding */ appArmorLSMEnabled),
   dg: () => (/* binding */ fetchRepoDirectoryFiles),
+  iW: () => (/* binding */ main),
   vi: () => (/* binding */ renderAgentSystemdRunArgs),
   kx: () => (/* binding */ renderAppArmorProfile),
   Hs: () => (/* binding */ renderProjectStartArgs),
   EY: () => (/* binding */ renderProxySystemdRunArgs),
   G2: () => (/* binding */ repoContentsURL),
   ce: () => (/* binding */ setupDockerProxy),
+  k5: () => (/* binding */ validateManagerAuth),
   L_: () => (/* binding */ validateManagerUrl),
   d8: () => (/* binding */ validateSocketPath),
   qP: () => (/* binding */ writeRepoDirectoryFiles)
@@ -31667,11 +31669,33 @@ function validateSocketPath(value) {
 function validateManagerUrl(value) {
   let url;
   try { url = new URL(value); } catch (err) {
-    throw new Error(`manager-url is not a valid URL: ${value}`);
+    throw new Error('manager-url is not a valid URL');
   }
   if (url.protocol !== 'https:') throw new Error(`manager-url must use https:// (got ${url.protocol})`);
   rejectUnsafeArgValue(value, 'manager-url');
   return url.toString();
+}
+
+function validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience, env = process.env }) {
+  if (!['manager-token', 'oidc'].includes(managerAuth)) {
+    throw new Error('manager-auth must be manager-token or oidc');
+  }
+  if (idTokenAudience && managerAuth !== 'oidc') {
+    throw new Error('id-token-audience requires manager-auth: oidc');
+  }
+  if (idTokenAudience) rejectUnsafeArgValue(idTokenAudience, 'id-token-audience');
+  if (managerAuth === 'oidc') {
+    if (!managerUrl) throw new Error('manager-auth: oidc requires manager-url');
+    if (managerToken) throw new Error('manager-token cannot be combined with manager-auth: oidc');
+    for (const name of ['ACTIONS_ID_TOKEN_REQUEST_URL', 'ACTIONS_ID_TOKEN_REQUEST_TOKEN']) {
+      if (!env[name]?.trim()) {
+        throw new Error(`manager-auth: oidc requires ${name}; set permissions: id-token: write in the workflow job`);
+      }
+    }
+  } else {
+    if (managerToken && !managerUrl) throw new Error("'manager-token' set but 'manager-url' is empty");
+    if (managerUrl && !managerToken) throw new Error("'manager-url' set but 'manager-token' is empty");
+  }
 }
 
 function validateAbsolutePath(value, label) {
@@ -31894,6 +31918,8 @@ function renderProjectStartArgs({
   projectRulesPath = '',
   managerUrl = '',
   managerTokenFile = '',
+  managerAuth = 'manager-token',
+  idTokenAudience = '',
   enableDebug = false,
   env = process.env,
 }) {
@@ -31923,7 +31949,14 @@ function renderProjectStartArgs({
   }
 
   if (managerUrl) {
-    projectArgs.push('--manager-url', managerUrl, '--manager-token-file', managerTokenFile);
+    projectArgs.push('--manager-url', managerUrl);
+    if (managerAuth === 'oidc') {
+      projectArgs.push('--manager-auth', 'oidc');
+      if (idTokenAudience) projectArgs.push('--id-token-audience', idTokenAudience);
+    } else {
+      // Keep the legacy argv compatible with pinned pre-OIDC releases.
+      projectArgs.push('--manager-token-file', managerTokenFile);
+    }
   } else {
     if (projectConfigPath) projectArgs.push('--config-file', projectConfigPath);
     if (projectRulesPath) projectArgs.push('--rules-file', projectRulesPath);
@@ -32177,17 +32210,19 @@ async function main() {
   // setSecret protects custom PAT / GitHub App tokens against accidental
   // surfaces in error messages (e.g. Contents API response body).
   if (githubToken) core_setSecret(githubToken);
+  const managerToken = getInput('manager-token');
+  if (managerToken) core_setSecret(managerToken);
+  if (process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN) core_setSecret(process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN);
   const socketPath = validateSocketPath(getInput('socket-path') || DEFAULT_SOCKET);
   const managerUrlRaw = getInput('manager-url');
   const managerUrl = managerUrlRaw ? validateManagerUrl(managerUrlRaw) : '';
-  const managerToken = getInput('manager-token');
+  const managerAuth = getInput('manager-auth') || 'manager-token';
+  const idTokenAudience = getInput('id-token-audience');
   const enableHtmlReport = getBooleanInput('enable-html-report');
   const enableAttestationArtifact = getBooleanInput('enable-attestation-artifact');
   const enableDebug = getBooleanInput('enable-debug');
 
-  if (managerToken && !managerUrl) throw new Error("'manager-token' set but 'manager-url' is empty");
-  if (managerUrl && !managerToken) throw new Error("'manager-url' set but 'manager-token' is empty");
-  if (managerToken) core_setSecret(managerToken);
+  validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience });
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
 
@@ -32199,7 +32234,7 @@ async function main() {
   // regardless of whether this step starts a managed agent or reuses one
   // that the host operator already started — the CLI forwards it into
   // the project-start request body.
-  const managerTokenFile = writeManagerTokenFile({ managerUrl, managerToken, tmp });
+  const managerTokenFile = managerAuth === 'oidc' ? '' : writeManagerTokenFile({ managerUrl, managerToken, tmp });
   saveState(STATE.managerTokenFile, managerTokenFile);
 
   saveState(STATE.reusedExistingAgent, reuseAgent ? 'true' : 'false');
@@ -32275,12 +32310,17 @@ async function main() {
     projectRulesPath,
     managerUrl,
     managerTokenFile,
+    managerAuth,
+    idTokenAudience,
     enableDebug,
   });
 
   // project start authenticates via SO_PEERCRED PID against the tracked
   // Job's cgroup, not by UID; the agent socket is mode 0777, so no sudo.
-  run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs);
+  // Preserve the runner request URL/token across the child boundary, never
+  // through argv, state, or systemd. The CLI forwards them over the socket;
+  // the Agent owns minting and renewal through final streaming/Summary sends.
+  run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
 
   info('==> cicd-sensor-action main: ready');
 }
@@ -32299,13 +32339,15 @@ if (isDirectRun()) {
 
 var __webpack_exports__appArmorLSMEnabled = __webpack_exports__.s4;
 var __webpack_exports__fetchRepoDirectoryFiles = __webpack_exports__.dg;
+var __webpack_exports__main = __webpack_exports__.iW;
 var __webpack_exports__renderAgentSystemdRunArgs = __webpack_exports__.vi;
 var __webpack_exports__renderAppArmorProfile = __webpack_exports__.kx;
 var __webpack_exports__renderProjectStartArgs = __webpack_exports__.Hs;
 var __webpack_exports__renderProxySystemdRunArgs = __webpack_exports__.EY;
 var __webpack_exports__repoContentsURL = __webpack_exports__.G2;
 var __webpack_exports__setupDockerProxy = __webpack_exports__.ce;
+var __webpack_exports__validateManagerAuth = __webpack_exports__.k5;
 var __webpack_exports__validateManagerUrl = __webpack_exports__.L_;
 var __webpack_exports__validateSocketPath = __webpack_exports__.d8;
 var __webpack_exports__writeRepoDirectoryFiles = __webpack_exports__.qP;
-export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
+export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__main as main, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerAuth as validateManagerAuth, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
