@@ -11,7 +11,7 @@
     "check": "npm run lint && npm test && npm run audit && npm run check-dist"
   },
   "dependencies": {
-    "@actions/artifact": "6.2.1",
+    "@actions/artifact": "6.3.1",
     "@actions/core": "3.0.1"
   },
   "devDependencies": {
