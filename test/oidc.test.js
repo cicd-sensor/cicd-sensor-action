@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import childProcess from 'node:child_process';
 import { syncBuiltinESMExports } from 'node:module';
-import { main, renderProjectStartArgs, requireOIDCVersion, validateManagerAuth } from '../src/main.js';
+import { main, renderProjectStartArgs, validateManagerAuth } from '../src/main.js';
 import { runPost } from '../src/post.js';
 
 const requestToken = 'test-only-request-secret';
@@ -40,12 +40,6 @@ describe('Manager authentication validation', () => {
       if (error) assert.throws(check, error);
       else assert.doesNotThrow(check);
     });
-  }
-  for (const version of ['v0.0.49', 'v0.0.50', 'v0.1.0', 'v1.0.0']) {
-    it(`accepts ${version}`, () => assert.doesNotThrow(() => requireOIDCVersion(version, 'test')));
-  }
-  for (const version of ['v0.0.48', 'v0.0.9', 'dev', '', 'v0.0.49-rc1', 'not-a-version']) {
-    it(`rejects unverified version ${version}`, () => assert.throws(() => requireOIDCVersion(version, 'test'), /v0.0.49 or newer/));
   }
 });
 
@@ -99,7 +93,7 @@ afterEach(() => {
   fs.rmSync(tmp, { recursive: true, force: true });
 });
 
-function boundaries({ reuse = false, version = 'v0.0.49', versionStatus = 0, startFails = false, launchFails = false, reportFails = false } = {}) {
+function boundaries({ reuse = false, startFails = false, launchFails = false, reportFails = false } = {}) {
   let launched = reuse, stopped = false;
   const stat = fs.statSync.bind(fs), exists = fs.existsSync.bind(fs), read = fs.readFileSync.bind(fs), write = fs.writeFileSync.bind(fs);
   mock.method(fs, 'statSync', (file, ...args) => file === '/test.sock' ? { isSocket: () => launched } : stat(file, ...args));
@@ -109,7 +103,6 @@ function boundaries({ reuse = false, version = 'v0.0.49', versionStatus = 0, sta
   mock.method(globalThis, 'fetch', async (...args) => { fetches.push(args); return { status: 404 }; });
   mock.method(childProcess, 'spawnSync', (cmd, args, opts) => {
     calls.push({ cmd, args, opts });
-    if (args[0] === '--version') return { status: versionStatus, stdout: version + '\n' };
     if (cmd === 'tar') {
       for (const name of ['cicd-sensor', 'cicd-sensorctl']) {
         write(path.join(args.at(-1), `${name}-linux-${process.arch === 'arm64' ? 'arm64' : 'amd64'}`), 'fake binary');
@@ -183,7 +176,7 @@ describe('main/post integration', () => {
           } else assert.equal(writes.some(([file]) => file.endsWith('.token')), false);
           assert.equal(process.env.STATE_managedAgentStarted, reuse ? undefined : 'true');
           assert.equal(process.env.STATE_reusedExistingAgent, String(reuse));
-          assert.equal(calls.some(({ args }) => args[0] === '--version'), reuse && mode === 'oidc');
+          assert.equal(calls.some(({ args }) => args[0] === '--version'), false);
           if (reuse) assert.equal(calls.some(({ cmd }) => cmd === 'sudo'), false);
           await runPost();
           const resultIndex = calls.findIndex(({ args }) => args[0] === 'project' && args[1] === 'result');
@@ -207,7 +200,6 @@ describe('main/post integration', () => {
     ['audience in token mode', { 'manager-auth': 'manager-token', 'manager-token': managerToken, 'id-token-audience': 'a' }, {}, /audience requires/],
     ['no runner URL', {}, { ACTIONS_ID_TOKEN_REQUEST_URL: '' }, /permissions: id-token: write/],
     ['no runner token', {}, { ACTIONS_ID_TOKEN_REQUEST_TOKEN: '' }, /permissions: id-token: write/],
-    ['old selected release', { 'cicd-sensor-version': 'v0.0.48' }, {}, /v0.0.49 or newer/],
   ]) {
     it(`rejects ${name} before side effects, then post is harmless`, async () => {
       for (const [key, value] of Object.entries(inputs)) process.env[`INPUT_${key.toUpperCase()}`] = value;
@@ -222,26 +214,17 @@ describe('main/post integration', () => {
     });
   }
 
-  for (const options of [{ version: 'v0.0.48' }, { version: 'dev' }, { versionStatus: 1 }]) {
-    it(`rejects unsupported installed CLI ${JSON.stringify(options)}`, async () => {
-      process.env.RUNNER_ENVIRONMENT = 'self-hosted';
-      boundaries({ reuse: true, ...options });
-      await assert.rejects(main(), /installed cicd-sensor CLI v0.0.49 or newer/);
-      restoreStateForPost();
-      await runPost();
-      assert.equal(calls.length, 1);
-      assert.deepEqual(calls[0].args, ['--version']);
-      assert.equal(writes.length, 0);
-    });
-  }
-
   for (const reuse of [false, true]) {
     for (const failure of ['start', 'report']) {
       it(`${reuse ? 'reused' : 'managed'} ${failure} failure preserves cleanup ownership`, async () => {
         process.env.RUNNER_ENVIRONMENT = reuse ? 'self-hosted' : 'github-hosted';
         boundaries({ reuse, startFails: failure === 'start', reportFails: failure === 'report' });
         if (failure === 'start') {
-          await assert.rejects(main(), reuse ? /running Agent.*restarted after upgrade/ : /exited with status/);
+          // An unsupported release reaches project start; its failure still preserves post ownership.
+          process.env['INPUT_CICD-SENSOR-VERSION'] = 'v0.0.48';
+          await assert.rejects(main(), /exited with status/);
+          assert.ok(calls.some(({ args }) => args[0] === 'project' && args[1] === 'start'));
+          assert.equal(calls.some(({ args }) => args[0] === '--version'), false);
           assert.equal(output.some((line) => line.includes('main: ready')), false);
         } else await main();
         const state = restoreStateForPost();

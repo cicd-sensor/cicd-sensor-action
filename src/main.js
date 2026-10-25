@@ -17,7 +17,6 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
-const MIN_OIDC_AGENT_VERSION = 'v0.0.49';
 
 // Read lazily so importing this module under tests does not require
 // INPUT_CICD-SENSOR-VERSION to be set. Renovate bumps the value via
@@ -78,13 +77,6 @@ function validateManagerUrl(value) {
   if (url.protocol !== 'https:') throw new Error(`manager-url must use https:// (got ${url.protocol})`);
   rejectUnsafeArgValue(value, 'manager-url');
   return url.toString();
-}
-
-function requireOIDCVersion(version, label) {
-  const match = /^v(\d+)\.(\d+)\.(\d+)$/.exec(version);
-  if (!match || !(Number(match[1]) > 0 || Number(match[2]) > 0 || Number(match[3]) >= 49)) {
-    throw new Error(`OIDC requires ${label} ${MIN_OIDC_AGENT_VERSION} or newer; upgrade the CLI and running Agent`);
-  }
 }
 
 function validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience, env = process.env }) {
@@ -634,21 +626,12 @@ async function main() {
   const enableDebug = core.getBooleanInput('enable-debug');
 
   validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience });
-  if (managerAuth === 'oidc') requireOIDCVersion(getAgentVersion(), 'cicd-sensor-version');
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
 
   // Hosted runners are ephemeral, so a leftover socket here is stale
   // state rather than a pre-installed agent. Self-hosted only.
   const reuseAgent = !isGitHubHostedRunner() && socketIsLive(socketPath);
-
-  if (reuseAgent && managerAuth === 'oidc') {
-    // Downloading a new ctl does not upgrade this CLI or the running Agent.
-    const version = spawnSync(path.join(BIN_DIR, 'cicd-sensor'), ['--version'], {
-      encoding: 'utf8', timeout: 10_000,
-    });
-    requireOIDCVersion(version.status === 0 ? version.stdout.trim() : '', 'installed cicd-sensor CLI');
-  }
 
   // Token file is needed by `cicd-sensor project start --manager-token-file`
   // regardless of whether this step starts a managed agent or reuses one
@@ -740,17 +723,7 @@ async function main() {
   // Preserve the runner request URL/token across the child boundary, never
   // through argv, state, or systemd. The CLI forwards them over the socket;
   // the Agent owns minting and renewal through final streaming/Summary sends.
-  try {
-    run(path.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
-  } catch (err) {
-    if (reuseAgent && managerAuth === 'oidc') {
-      // Older listeners reject the OIDC fields (DisallowUnknownFields).
-      // A CLI version alone cannot prove the live process was restarted.
-      throw new Error(`OIDC project start failed; ensure the running Agent is ${MIN_OIDC_AGENT_VERSION} or newer ` +
-        `and was restarted after upgrade, and check Manager OIDC configuration. ${err.message}`);
-    }
-    throw err;
-  }
+  run(path.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
 
   core.info('==> cicd-sensor-action main: ready');
 }
@@ -767,7 +740,6 @@ if (isDirectRun()) {
 
 export {
   main,
-  requireOIDCVersion,
   validateManagerAuth,
   appArmorLSMEnabled,
   renderAgentSystemdRunArgs,

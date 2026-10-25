@@ -28633,7 +28633,6 @@ __nccwpck_require__.d(__webpack_exports__, {
   Hs: () => (/* binding */ renderProjectStartArgs),
   EY: () => (/* binding */ renderProxySystemdRunArgs),
   G2: () => (/* binding */ repoContentsURL),
-  dd: () => (/* binding */ requireOIDCVersion),
   ce: () => (/* binding */ setupDockerProxy),
   k5: () => (/* binding */ validateManagerAuth),
   L_: () => (/* binding */ validateManagerUrl),
@@ -31615,7 +31614,6 @@ const REPO = 'cicd-sensor/cicd-sensor';
 // Binary releases share the repo with rules releases under disjoint
 // tag namespaces, so binary tags carry a `releases/` prefix.
 const TAG_PREFIX = 'releases/';
-const MIN_OIDC_AGENT_VERSION = 'v0.0.49';
 
 // Read lazily so importing this module under tests does not require
 // INPUT_CICD-SENSOR-VERSION to be set. Renovate bumps the value via
@@ -31676,13 +31674,6 @@ function validateManagerUrl(value) {
   if (url.protocol !== 'https:') throw new Error(`manager-url must use https:// (got ${url.protocol})`);
   rejectUnsafeArgValue(value, 'manager-url');
   return url.toString();
-}
-
-function requireOIDCVersion(version, label) {
-  const match = /^v(\d+)\.(\d+)\.(\d+)$/.exec(version);
-  if (!match || !(Number(match[1]) > 0 || Number(match[2]) > 0 || Number(match[3]) >= 49)) {
-    throw new Error(`OIDC requires ${label} ${MIN_OIDC_AGENT_VERSION} or newer; upgrade the CLI and running Agent`);
-  }
 }
 
 function validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience, env = process.env }) {
@@ -32232,21 +32223,12 @@ async function main() {
   const enableDebug = getBooleanInput('enable-debug');
 
   validateManagerAuth({ managerAuth, managerUrl, managerToken, idTokenAudience });
-  if (managerAuth === 'oidc') requireOIDCVersion(getAgentVersion(), 'cicd-sensor-version');
 
   const tmp = process.env.RUNNER_TEMP || '/tmp';
 
   // Hosted runners are ephemeral, so a leftover socket here is stale
   // state rather than a pre-installed agent. Self-hosted only.
   const reuseAgent = !isGitHubHostedRunner() && socketIsLive(socketPath);
-
-  if (reuseAgent && managerAuth === 'oidc') {
-    // Downloading a new ctl does not upgrade this CLI or the running Agent.
-    const version = (0,external_node_child_process_namespaceObject.spawnSync)(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), ['--version'], {
-      encoding: 'utf8', timeout: 10_000,
-    });
-    requireOIDCVersion(version.status === 0 ? version.stdout.trim() : '', 'installed cicd-sensor CLI');
-  }
 
   // Token file is needed by `cicd-sensor project start --manager-token-file`
   // regardless of whether this step starts a managed agent or reuses one
@@ -32338,17 +32320,7 @@ async function main() {
   // Preserve the runner request URL/token across the child boundary, never
   // through argv, state, or systemd. The CLI forwards them over the socket;
   // the Agent owns minting and renewal through final streaming/Summary sends.
-  try {
-    run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
-  } catch (err) {
-    if (reuseAgent && managerAuth === 'oidc') {
-      // Older listeners reject the OIDC fields (DisallowUnknownFields).
-      // A CLI version alone cannot prove the live process was restarted.
-      throw new Error(`OIDC project start failed; ensure the running Agent is ${MIN_OIDC_AGENT_VERSION} or newer ` +
-        `and was restarted after upgrade, and check Manager OIDC configuration. ${err.message}`);
-    }
-    throw err;
-  }
+  run(external_node_path_namespaceObject.join(BIN_DIR, 'cicd-sensor'), projectArgs, { env: { ...process.env } });
 
   info('==> cicd-sensor-action main: ready');
 }
@@ -32373,10 +32345,9 @@ var __webpack_exports__renderAppArmorProfile = __webpack_exports__.kx;
 var __webpack_exports__renderProjectStartArgs = __webpack_exports__.Hs;
 var __webpack_exports__renderProxySystemdRunArgs = __webpack_exports__.EY;
 var __webpack_exports__repoContentsURL = __webpack_exports__.G2;
-var __webpack_exports__requireOIDCVersion = __webpack_exports__.dd;
 var __webpack_exports__setupDockerProxy = __webpack_exports__.ce;
 var __webpack_exports__validateManagerAuth = __webpack_exports__.k5;
 var __webpack_exports__validateManagerUrl = __webpack_exports__.L_;
 var __webpack_exports__validateSocketPath = __webpack_exports__.d8;
 var __webpack_exports__writeRepoDirectoryFiles = __webpack_exports__.qP;
-export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__main as main, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__requireOIDCVersion as requireOIDCVersion, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerAuth as validateManagerAuth, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };
+export { __webpack_exports__appArmorLSMEnabled as appArmorLSMEnabled, __webpack_exports__fetchRepoDirectoryFiles as fetchRepoDirectoryFiles, __webpack_exports__main as main, __webpack_exports__renderAgentSystemdRunArgs as renderAgentSystemdRunArgs, __webpack_exports__renderAppArmorProfile as renderAppArmorProfile, __webpack_exports__renderProjectStartArgs as renderProjectStartArgs, __webpack_exports__renderProxySystemdRunArgs as renderProxySystemdRunArgs, __webpack_exports__repoContentsURL as repoContentsURL, __webpack_exports__setupDockerProxy as setupDockerProxy, __webpack_exports__validateManagerAuth as validateManagerAuth, __webpack_exports__validateManagerUrl as validateManagerUrl, __webpack_exports__validateSocketPath as validateSocketPath, __webpack_exports__writeRepoDirectoryFiles as writeRepoDirectoryFiles };

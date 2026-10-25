@@ -125,10 +125,10 @@ in Actions state.
 
 On self-hosted runners with an existing socket, `cicd-sensor-version` does not
 upgrade the running Agent or `/usr/local/bin/cicd-sensor`. Upgrade both to at
-least v0.0.49 and restart the Agent before using OIDC. The Action checks the
-installed CLI version; the live Agent must accept the OIDC `project start`
-request. Older Agents reject its fields, causing setup to fail without falling
-back to token authentication. There is no live Agent version endpoint.
+least v0.0.49 and restart the Agent before using OIDC. The Action does not
+precheck versions; the installed CLI and running Agent must support the OIDC
+`project start` request. Unsupported versions cause setup to fail without
+falling back to token authentication.
 Reused Agents remain running after post; their host operator owns finalization
 and Summary delivery through the existing job lifecycle.
 
