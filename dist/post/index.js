@@ -2,7 +2,7 @@
 import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
 /******/ var __webpack_modules__ = ({
 
-/***/ 9659:
+/***/ 89659:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -53,11 +53,11 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.HttpClientResponse = exports.HttpClientError = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
 exports.getProxyUrl = getProxyUrl;
 exports.isHttps = isHttps;
-const http = __importStar(__nccwpck_require__(8611));
-const https = __importStar(__nccwpck_require__(5692));
-const pm = __importStar(__nccwpck_require__(3335));
-const tunnel = __importStar(__nccwpck_require__(770));
-const undici_1 = __nccwpck_require__(6752);
+const http = __importStar(__nccwpck_require__(58611));
+const https = __importStar(__nccwpck_require__(65692));
+const pm = __importStar(__nccwpck_require__(83335));
+const tunnel = __importStar(__nccwpck_require__(20770));
+const undici_1 = __nccwpck_require__(46752);
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -745,7 +745,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 3335:
+/***/ 83335:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -845,7 +845,7 @@ class DecodedURL extends URL {
 
 /***/ }),
 
-/***/ 7889:
+/***/ 37889:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -902,7 +902,7 @@ exports.ClientStreamingCall = ClientStreamingCall;
 
 /***/ }),
 
-/***/ 1409:
+/***/ 71409:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -995,7 +995,7 @@ exports.Deferred = Deferred;
 
 /***/ }),
 
-/***/ 6826:
+/***/ 36826:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -1051,7 +1051,7 @@ exports.DuplexStreamingCall = DuplexStreamingCall;
 
 /***/ }),
 
-/***/ 4420:
+/***/ 44420:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 var __webpack_unused_export__;
@@ -1060,50 +1060,50 @@ var __webpack_unused_export__;
 // Note: we do not use `export * from ...` to help tree shakers,
 // webpack verbose output hints that this should be useful
 __webpack_unused_export__ = ({ value: true });
-var service_type_1 = __nccwpck_require__(6892);
+var service_type_1 = __nccwpck_require__(56892);
 Object.defineProperty(exports, "C0", ({ enumerable: true, get: function () { return service_type_1.ServiceType; } }));
-var reflection_info_1 = __nccwpck_require__(2496);
+var reflection_info_1 = __nccwpck_require__(62496);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return reflection_info_1.readMethodOptions; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return reflection_info_1.readMethodOption; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return reflection_info_1.readServiceOption; } });
-var rpc_error_1 = __nccwpck_require__(8636);
+var rpc_error_1 = __nccwpck_require__(78636);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_error_1.RpcError; } });
-var rpc_options_1 = __nccwpck_require__(8576);
+var rpc_options_1 = __nccwpck_require__(28576);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_options_1.mergeRpcOptions; } });
-var rpc_output_stream_1 = __nccwpck_require__(2726);
+var rpc_output_stream_1 = __nccwpck_require__(72726);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_output_stream_1.RpcOutputStreamController; } });
-var test_transport_1 = __nccwpck_require__(9122);
+var test_transport_1 = __nccwpck_require__(79122);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return test_transport_1.TestTransport; } });
-var deferred_1 = __nccwpck_require__(1409);
+var deferred_1 = __nccwpck_require__(71409);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return deferred_1.Deferred; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return deferred_1.DeferredState; } });
-var duplex_streaming_call_1 = __nccwpck_require__(6826);
+var duplex_streaming_call_1 = __nccwpck_require__(36826);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return duplex_streaming_call_1.DuplexStreamingCall; } });
-var client_streaming_call_1 = __nccwpck_require__(7889);
+var client_streaming_call_1 = __nccwpck_require__(37889);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return client_streaming_call_1.ClientStreamingCall; } });
-var server_streaming_call_1 = __nccwpck_require__(6173);
+var server_streaming_call_1 = __nccwpck_require__(46173);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return server_streaming_call_1.ServerStreamingCall; } });
-var unary_call_1 = __nccwpck_require__(9288);
+var unary_call_1 = __nccwpck_require__(29288);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return unary_call_1.UnaryCall; } });
-var rpc_interceptor_1 = __nccwpck_require__(2849);
+var rpc_interceptor_1 = __nccwpck_require__(52849);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_interceptor_1.stackIntercept; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_interceptor_1.stackDuplexStreamingInterceptors; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_interceptor_1.stackClientStreamingInterceptors; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_interceptor_1.stackServerStreamingInterceptors; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return rpc_interceptor_1.stackUnaryInterceptors; } });
-var server_call_context_1 = __nccwpck_require__(3352);
+var server_call_context_1 = __nccwpck_require__(43352);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return server_call_context_1.ServerCallContextController; } });
 
 
 /***/ }),
 
-/***/ 2496:
+/***/ 62496:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.readServiceOption = exports.readMethodOption = exports.readMethodOptions = exports.normalizeMethodInfo = void 0;
-const runtime_1 = __nccwpck_require__(8886);
+const runtime_1 = __nccwpck_require__(68886);
 /**
  * Turns PartialMethodInfo into MethodInfo.
  */
@@ -1161,7 +1161,7 @@ exports.readServiceOption = readServiceOption;
 
 /***/ }),
 
-/***/ 8636:
+/***/ 78636:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -1204,13 +1204,13 @@ exports.RpcError = RpcError;
 
 /***/ }),
 
-/***/ 2849:
+/***/ 52849:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.stackDuplexStreamingInterceptors = exports.stackClientStreamingInterceptors = exports.stackServerStreamingInterceptors = exports.stackUnaryInterceptors = exports.stackIntercept = void 0;
-const runtime_1 = __nccwpck_require__(8886);
+const runtime_1 = __nccwpck_require__(68886);
 /**
  * Creates a "stack" of of all interceptors specified in the given `RpcOptions`.
  * Used by generated client implementations.
@@ -1285,13 +1285,13 @@ exports.stackDuplexStreamingInterceptors = stackDuplexStreamingInterceptors;
 
 /***/ }),
 
-/***/ 8576:
+/***/ 28576:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.mergeRpcOptions = void 0;
-const runtime_1 = __nccwpck_require__(8886);
+const runtime_1 = __nccwpck_require__(68886);
 /**
  * Merges custom RPC options with defaults. Returns a new instance and keeps
  * the "defaults" and the "options" unmodified.
@@ -1358,14 +1358,14 @@ function copy(a, into) {
 
 /***/ }),
 
-/***/ 2726:
+/***/ 72726:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.RpcOutputStreamController = void 0;
-const deferred_1 = __nccwpck_require__(1409);
-const runtime_1 = __nccwpck_require__(8886);
+const deferred_1 = __nccwpck_require__(71409);
+const runtime_1 = __nccwpck_require__(68886);
 /**
  * A `RpcOutputStream` that you control.
  */
@@ -1535,7 +1535,7 @@ exports.RpcOutputStreamController = RpcOutputStreamController;
 
 /***/ }),
 
-/***/ 3352:
+/***/ 43352:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -1602,7 +1602,7 @@ exports.ServerCallContextController = ServerCallContextController;
 
 /***/ }),
 
-/***/ 6173:
+/***/ 46173:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -1659,13 +1659,13 @@ exports.ServerStreamingCall = ServerStreamingCall;
 
 /***/ }),
 
-/***/ 6892:
+/***/ 56892:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ServiceType = void 0;
-const reflection_info_1 = __nccwpck_require__(2496);
+const reflection_info_1 = __nccwpck_require__(62496);
 class ServiceType {
     constructor(typeName, methods, options) {
         this.typeName = typeName;
@@ -1678,7 +1678,7 @@ exports.ServiceType = ServiceType;
 
 /***/ }),
 
-/***/ 9122:
+/***/ 79122:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1693,14 +1693,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.TestTransport = void 0;
-const rpc_error_1 = __nccwpck_require__(8636);
-const runtime_1 = __nccwpck_require__(8886);
-const rpc_output_stream_1 = __nccwpck_require__(2726);
-const rpc_options_1 = __nccwpck_require__(8576);
-const unary_call_1 = __nccwpck_require__(9288);
-const server_streaming_call_1 = __nccwpck_require__(6173);
-const client_streaming_call_1 = __nccwpck_require__(7889);
-const duplex_streaming_call_1 = __nccwpck_require__(6826);
+const rpc_error_1 = __nccwpck_require__(78636);
+const runtime_1 = __nccwpck_require__(68886);
+const rpc_output_stream_1 = __nccwpck_require__(72726);
+const rpc_options_1 = __nccwpck_require__(28576);
+const unary_call_1 = __nccwpck_require__(29288);
+const server_streaming_call_1 = __nccwpck_require__(46173);
+const client_streaming_call_1 = __nccwpck_require__(37889);
+const duplex_streaming_call_1 = __nccwpck_require__(36826);
 /**
  * Transport for testing.
  */
@@ -2006,7 +2006,7 @@ class TestInputStream {
 
 /***/ }),
 
-/***/ 9288:
+/***/ 29288:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -2112,7 +2112,7 @@ exports.assertFloat32 = assertFloat32;
 
 /***/ }),
 
-/***/ 6335:
+/***/ 26335:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -2237,7 +2237,7 @@ exports.base64encode = base64encode;
 
 /***/ }),
 
-/***/ 4816:
+/***/ 54816:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -2344,15 +2344,15 @@ var WireType;
 
 /***/ }),
 
-/***/ 2889:
+/***/ 92889:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.BinaryReader = exports.binaryReadOptions = void 0;
-const binary_format_contract_1 = __nccwpck_require__(4816);
-const pb_long_1 = __nccwpck_require__(1753);
-const goog_varint_1 = __nccwpck_require__(3223);
+const binary_format_contract_1 = __nccwpck_require__(54816);
+const pb_long_1 = __nccwpck_require__(61753);
+const goog_varint_1 = __nccwpck_require__(93223);
 const defaultsRead = {
     readUnknownField: true,
     readerFactory: bytes => new BinaryReader(bytes),
@@ -2534,14 +2534,14 @@ exports.BinaryReader = BinaryReader;
 
 /***/ }),
 
-/***/ 3957:
+/***/ 23957:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.BinaryWriter = exports.binaryWriteOptions = void 0;
-const pb_long_1 = __nccwpck_require__(1753);
-const goog_varint_1 = __nccwpck_require__(3223);
+const pb_long_1 = __nccwpck_require__(61753);
+const goog_varint_1 = __nccwpck_require__(93223);
 const assert_1 = __nccwpck_require__(8602);
 const defaultsWrite = {
     writeUnknownFields: true,
@@ -2773,7 +2773,7 @@ exports.BinaryWriter = BinaryWriter;
 
 /***/ }),
 
-/***/ 257:
+/***/ 70257:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -2867,7 +2867,7 @@ exports.listEnumNumbers = listEnumNumbers;
 
 /***/ }),
 
-/***/ 3223:
+/***/ 93223:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -3148,7 +3148,7 @@ exports.varint32read = varint32read;
 
 /***/ }),
 
-/***/ 8886:
+/***/ 68886:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -3157,46 +3157,46 @@ exports.varint32read = varint32read;
 // webpack verbose output hints that this should be useful
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 // Convenience JSON typings and corresponding type guards
-var json_typings_1 = __nccwpck_require__(9999);
+var json_typings_1 = __nccwpck_require__(49999);
 Object.defineProperty(exports, "typeofJsonValue", ({ enumerable: true, get: function () { return json_typings_1.typeofJsonValue; } }));
 Object.defineProperty(exports, "isJsonObject", ({ enumerable: true, get: function () { return json_typings_1.isJsonObject; } }));
 // Base 64 encoding
-var base64_1 = __nccwpck_require__(6335);
+var base64_1 = __nccwpck_require__(26335);
 Object.defineProperty(exports, "base64decode", ({ enumerable: true, get: function () { return base64_1.base64decode; } }));
 Object.defineProperty(exports, "base64encode", ({ enumerable: true, get: function () { return base64_1.base64encode; } }));
 // UTF8 encoding
-var protobufjs_utf8_1 = __nccwpck_require__(8950);
+var protobufjs_utf8_1 = __nccwpck_require__(58950);
 Object.defineProperty(exports, "utf8read", ({ enumerable: true, get: function () { return protobufjs_utf8_1.utf8read; } }));
 // Binary format contracts, options for reading and writing, for example
-var binary_format_contract_1 = __nccwpck_require__(4816);
+var binary_format_contract_1 = __nccwpck_require__(54816);
 Object.defineProperty(exports, "WireType", ({ enumerable: true, get: function () { return binary_format_contract_1.WireType; } }));
 Object.defineProperty(exports, "mergeBinaryOptions", ({ enumerable: true, get: function () { return binary_format_contract_1.mergeBinaryOptions; } }));
 Object.defineProperty(exports, "UnknownFieldHandler", ({ enumerable: true, get: function () { return binary_format_contract_1.UnknownFieldHandler; } }));
 // Standard IBinaryReader implementation
-var binary_reader_1 = __nccwpck_require__(2889);
+var binary_reader_1 = __nccwpck_require__(92889);
 Object.defineProperty(exports, "BinaryReader", ({ enumerable: true, get: function () { return binary_reader_1.BinaryReader; } }));
 Object.defineProperty(exports, "binaryReadOptions", ({ enumerable: true, get: function () { return binary_reader_1.binaryReadOptions; } }));
 // Standard IBinaryWriter implementation
-var binary_writer_1 = __nccwpck_require__(3957);
+var binary_writer_1 = __nccwpck_require__(23957);
 Object.defineProperty(exports, "BinaryWriter", ({ enumerable: true, get: function () { return binary_writer_1.BinaryWriter; } }));
 Object.defineProperty(exports, "binaryWriteOptions", ({ enumerable: true, get: function () { return binary_writer_1.binaryWriteOptions; } }));
 // Int64 and UInt64 implementations required for the binary format
-var pb_long_1 = __nccwpck_require__(1753);
+var pb_long_1 = __nccwpck_require__(61753);
 Object.defineProperty(exports, "PbLong", ({ enumerable: true, get: function () { return pb_long_1.PbLong; } }));
 Object.defineProperty(exports, "PbULong", ({ enumerable: true, get: function () { return pb_long_1.PbULong; } }));
 // JSON format contracts, options for reading and writing, for example
-var json_format_contract_1 = __nccwpck_require__(9367);
+var json_format_contract_1 = __nccwpck_require__(29367);
 Object.defineProperty(exports, "jsonReadOptions", ({ enumerable: true, get: function () { return json_format_contract_1.jsonReadOptions; } }));
 Object.defineProperty(exports, "jsonWriteOptions", ({ enumerable: true, get: function () { return json_format_contract_1.jsonWriteOptions; } }));
 Object.defineProperty(exports, "mergeJsonOptions", ({ enumerable: true, get: function () { return json_format_contract_1.mergeJsonOptions; } }));
 // Message type contract
-var message_type_contract_1 = __nccwpck_require__(3785);
+var message_type_contract_1 = __nccwpck_require__(43785);
 Object.defineProperty(exports, "MESSAGE_TYPE", ({ enumerable: true, get: function () { return message_type_contract_1.MESSAGE_TYPE; } }));
 // Message type implementation via reflection
-var message_type_1 = __nccwpck_require__(5106);
+var message_type_1 = __nccwpck_require__(15106);
 Object.defineProperty(exports, "MessageType", ({ enumerable: true, get: function () { return message_type_1.MessageType; } }));
 // Reflection info, generated by the plugin, exposed to the user, used by reflection ops
-var reflection_info_1 = __nccwpck_require__(7910);
+var reflection_info_1 = __nccwpck_require__(67910);
 Object.defineProperty(exports, "ScalarType", ({ enumerable: true, get: function () { return reflection_info_1.ScalarType; } }));
 Object.defineProperty(exports, "LongType", ({ enumerable: true, get: function () { return reflection_info_1.LongType; } }));
 Object.defineProperty(exports, "RepeatType", ({ enumerable: true, get: function () { return reflection_info_1.RepeatType; } }));
@@ -3205,35 +3205,35 @@ Object.defineProperty(exports, "readFieldOptions", ({ enumerable: true, get: fun
 Object.defineProperty(exports, "readFieldOption", ({ enumerable: true, get: function () { return reflection_info_1.readFieldOption; } }));
 Object.defineProperty(exports, "readMessageOption", ({ enumerable: true, get: function () { return reflection_info_1.readMessageOption; } }));
 // Message operations via reflection
-var reflection_type_check_1 = __nccwpck_require__(5167);
+var reflection_type_check_1 = __nccwpck_require__(25167);
 Object.defineProperty(exports, "ReflectionTypeCheck", ({ enumerable: true, get: function () { return reflection_type_check_1.ReflectionTypeCheck; } }));
-var reflection_create_1 = __nccwpck_require__(5726);
+var reflection_create_1 = __nccwpck_require__(75726);
 Object.defineProperty(exports, "reflectionCreate", ({ enumerable: true, get: function () { return reflection_create_1.reflectionCreate; } }));
-var reflection_scalar_default_1 = __nccwpck_require__(9526);
+var reflection_scalar_default_1 = __nccwpck_require__(19526);
 Object.defineProperty(exports, "reflectionScalarDefault", ({ enumerable: true, get: function () { return reflection_scalar_default_1.reflectionScalarDefault; } }));
-var reflection_merge_partial_1 = __nccwpck_require__(8044);
+var reflection_merge_partial_1 = __nccwpck_require__(98044);
 Object.defineProperty(exports, "reflectionMergePartial", ({ enumerable: true, get: function () { return reflection_merge_partial_1.reflectionMergePartial; } }));
 var reflection_equals_1 = __nccwpck_require__(4827);
 Object.defineProperty(exports, "reflectionEquals", ({ enumerable: true, get: function () { return reflection_equals_1.reflectionEquals; } }));
-var reflection_binary_reader_1 = __nccwpck_require__(9611);
+var reflection_binary_reader_1 = __nccwpck_require__(89611);
 Object.defineProperty(exports, "ReflectionBinaryReader", ({ enumerable: true, get: function () { return reflection_binary_reader_1.ReflectionBinaryReader; } }));
-var reflection_binary_writer_1 = __nccwpck_require__(6907);
+var reflection_binary_writer_1 = __nccwpck_require__(66907);
 Object.defineProperty(exports, "ReflectionBinaryWriter", ({ enumerable: true, get: function () { return reflection_binary_writer_1.ReflectionBinaryWriter; } }));
-var reflection_json_reader_1 = __nccwpck_require__(6790);
+var reflection_json_reader_1 = __nccwpck_require__(46790);
 Object.defineProperty(exports, "ReflectionJsonReader", ({ enumerable: true, get: function () { return reflection_json_reader_1.ReflectionJsonReader; } }));
-var reflection_json_writer_1 = __nccwpck_require__(1094);
+var reflection_json_writer_1 = __nccwpck_require__(11094);
 Object.defineProperty(exports, "ReflectionJsonWriter", ({ enumerable: true, get: function () { return reflection_json_writer_1.ReflectionJsonWriter; } }));
-var reflection_contains_message_type_1 = __nccwpck_require__(9946);
+var reflection_contains_message_type_1 = __nccwpck_require__(59946);
 Object.defineProperty(exports, "containsMessageType", ({ enumerable: true, get: function () { return reflection_contains_message_type_1.containsMessageType; } }));
 // Oneof helpers
-var oneof_1 = __nccwpck_require__(8063);
+var oneof_1 = __nccwpck_require__(18063);
 Object.defineProperty(exports, "isOneofGroup", ({ enumerable: true, get: function () { return oneof_1.isOneofGroup; } }));
 Object.defineProperty(exports, "setOneofValue", ({ enumerable: true, get: function () { return oneof_1.setOneofValue; } }));
 Object.defineProperty(exports, "getOneofValue", ({ enumerable: true, get: function () { return oneof_1.getOneofValue; } }));
 Object.defineProperty(exports, "clearOneofValue", ({ enumerable: true, get: function () { return oneof_1.clearOneofValue; } }));
 Object.defineProperty(exports, "getSelectedOneofValue", ({ enumerable: true, get: function () { return oneof_1.getSelectedOneofValue; } }));
 // Enum object type guard and reflection util, may be interesting to the user.
-var enum_object_1 = __nccwpck_require__(257);
+var enum_object_1 = __nccwpck_require__(70257);
 Object.defineProperty(exports, "listEnumValues", ({ enumerable: true, get: function () { return enum_object_1.listEnumValues; } }));
 Object.defineProperty(exports, "listEnumNames", ({ enumerable: true, get: function () { return enum_object_1.listEnumNames; } }));
 Object.defineProperty(exports, "listEnumNumbers", ({ enumerable: true, get: function () { return enum_object_1.listEnumNumbers; } }));
@@ -3252,7 +3252,7 @@ Object.defineProperty(exports, "assertFloat32", ({ enumerable: true, get: functi
 
 /***/ }),
 
-/***/ 9367:
+/***/ 29367:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -3294,7 +3294,7 @@ exports.mergeJsonOptions = mergeJsonOptions;
 
 /***/ }),
 
-/***/ 9999:
+/***/ 49999:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -3368,7 +3368,7 @@ exports.lowerCamelCase = lowerCamelCase;
 
 /***/ }),
 
-/***/ 3785:
+/***/ 43785:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -3385,26 +3385,26 @@ exports.MESSAGE_TYPE = Symbol.for("protobuf-ts/message-type");
 
 /***/ }),
 
-/***/ 5106:
+/***/ 15106:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.MessageType = void 0;
-const message_type_contract_1 = __nccwpck_require__(3785);
-const reflection_info_1 = __nccwpck_require__(7910);
-const reflection_type_check_1 = __nccwpck_require__(5167);
-const reflection_json_reader_1 = __nccwpck_require__(6790);
-const reflection_json_writer_1 = __nccwpck_require__(1094);
-const reflection_binary_reader_1 = __nccwpck_require__(9611);
-const reflection_binary_writer_1 = __nccwpck_require__(6907);
-const reflection_create_1 = __nccwpck_require__(5726);
-const reflection_merge_partial_1 = __nccwpck_require__(8044);
-const json_typings_1 = __nccwpck_require__(9999);
-const json_format_contract_1 = __nccwpck_require__(9367);
+const message_type_contract_1 = __nccwpck_require__(43785);
+const reflection_info_1 = __nccwpck_require__(67910);
+const reflection_type_check_1 = __nccwpck_require__(25167);
+const reflection_json_reader_1 = __nccwpck_require__(46790);
+const reflection_json_writer_1 = __nccwpck_require__(11094);
+const reflection_binary_reader_1 = __nccwpck_require__(89611);
+const reflection_binary_writer_1 = __nccwpck_require__(66907);
+const reflection_create_1 = __nccwpck_require__(75726);
+const reflection_merge_partial_1 = __nccwpck_require__(98044);
+const json_typings_1 = __nccwpck_require__(49999);
+const json_format_contract_1 = __nccwpck_require__(29367);
 const reflection_equals_1 = __nccwpck_require__(4827);
-const binary_writer_1 = __nccwpck_require__(3957);
-const binary_reader_1 = __nccwpck_require__(2889);
+const binary_writer_1 = __nccwpck_require__(23957);
+const binary_reader_1 = __nccwpck_require__(92889);
 const baseDescriptors = Object.getOwnPropertyDescriptors(Object.getPrototypeOf({}));
 const messageTypeDescriptor = baseDescriptors[message_type_contract_1.MESSAGE_TYPE] = {};
 /**
@@ -3569,7 +3569,7 @@ exports.MessageType = MessageType;
 
 /***/ }),
 
-/***/ 8063:
+/***/ 18063:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -3690,13 +3690,13 @@ exports.getSelectedOneofValue = getSelectedOneofValue;
 
 /***/ }),
 
-/***/ 1753:
+/***/ 61753:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PbLong = exports.PbULong = exports.detectBi = void 0;
-const goog_varint_1 = __nccwpck_require__(3223);
+const goog_varint_1 = __nccwpck_require__(93223);
 let BI;
 function detectBi() {
     const dv = new DataView(new ArrayBuffer(8));
@@ -3935,7 +3935,7 @@ PbLong.ZERO = new PbLong(0, 0);
 
 /***/ }),
 
-/***/ 8950:
+/***/ 58950:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -4017,16 +4017,16 @@ exports.utf8read = utf8read;
 
 /***/ }),
 
-/***/ 9611:
+/***/ 89611:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReflectionBinaryReader = void 0;
-const binary_format_contract_1 = __nccwpck_require__(4816);
-const reflection_info_1 = __nccwpck_require__(7910);
-const reflection_long_convert_1 = __nccwpck_require__(3402);
-const reflection_scalar_default_1 = __nccwpck_require__(9526);
+const binary_format_contract_1 = __nccwpck_require__(54816);
+const reflection_info_1 = __nccwpck_require__(67910);
+const reflection_long_convert_1 = __nccwpck_require__(63402);
+const reflection_scalar_default_1 = __nccwpck_require__(19526);
 /**
  * Reads proto3 messages in binary format using reflection information.
  *
@@ -4207,16 +4207,16 @@ exports.ReflectionBinaryReader = ReflectionBinaryReader;
 
 /***/ }),
 
-/***/ 6907:
+/***/ 66907:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReflectionBinaryWriter = void 0;
-const binary_format_contract_1 = __nccwpck_require__(4816);
-const reflection_info_1 = __nccwpck_require__(7910);
+const binary_format_contract_1 = __nccwpck_require__(54816);
+const reflection_info_1 = __nccwpck_require__(67910);
 const assert_1 = __nccwpck_require__(8602);
-const pb_long_1 = __nccwpck_require__(1753);
+const pb_long_1 = __nccwpck_require__(61753);
 /**
  * Writes proto3 messages in binary format using reflection information.
  *
@@ -4447,13 +4447,13 @@ exports.ReflectionBinaryWriter = ReflectionBinaryWriter;
 
 /***/ }),
 
-/***/ 9946:
+/***/ 59946:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.containsMessageType = void 0;
-const message_type_contract_1 = __nccwpck_require__(3785);
+const message_type_contract_1 = __nccwpck_require__(43785);
 /**
  * Check if the provided object is a proto message.
  *
@@ -4468,14 +4468,14 @@ exports.containsMessageType = containsMessageType;
 
 /***/ }),
 
-/***/ 5726:
+/***/ 75726:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.reflectionCreate = void 0;
-const reflection_scalar_default_1 = __nccwpck_require__(9526);
-const message_type_contract_1 = __nccwpck_require__(3785);
+const reflection_scalar_default_1 = __nccwpck_require__(19526);
+const message_type_contract_1 = __nccwpck_require__(43785);
 /**
  * Creates an instance of the generic message, using the field
  * information.
@@ -4529,7 +4529,7 @@ exports.reflectionCreate = reflectionCreate;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.reflectionEquals = void 0;
-const reflection_info_1 = __nccwpck_require__(7910);
+const reflection_info_1 = __nccwpck_require__(67910);
 /**
  * Determines whether two message of the same type have the same field values.
  * Checks for deep equality, traversing repeated fields, oneof groups, maps
@@ -4607,7 +4607,7 @@ function repeatedMsgEq(type, a, b) {
 
 /***/ }),
 
-/***/ 7910:
+/***/ 67910:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -4772,18 +4772,18 @@ exports.readMessageOption = readMessageOption;
 
 /***/ }),
 
-/***/ 6790:
+/***/ 46790:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReflectionJsonReader = void 0;
-const json_typings_1 = __nccwpck_require__(9999);
-const base64_1 = __nccwpck_require__(6335);
-const reflection_info_1 = __nccwpck_require__(7910);
-const pb_long_1 = __nccwpck_require__(1753);
+const json_typings_1 = __nccwpck_require__(49999);
+const base64_1 = __nccwpck_require__(26335);
+const reflection_info_1 = __nccwpck_require__(67910);
+const pb_long_1 = __nccwpck_require__(61753);
 const assert_1 = __nccwpck_require__(8602);
-const reflection_long_convert_1 = __nccwpck_require__(3402);
+const reflection_long_convert_1 = __nccwpck_require__(63402);
 /**
  * Reads proto3 messages in canonical JSON format using reflection information.
  *
@@ -5096,15 +5096,15 @@ exports.ReflectionJsonReader = ReflectionJsonReader;
 
 /***/ }),
 
-/***/ 1094:
+/***/ 11094:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReflectionJsonWriter = void 0;
-const base64_1 = __nccwpck_require__(6335);
-const pb_long_1 = __nccwpck_require__(1753);
-const reflection_info_1 = __nccwpck_require__(7910);
+const base64_1 = __nccwpck_require__(26335);
+const pb_long_1 = __nccwpck_require__(61753);
+const reflection_info_1 = __nccwpck_require__(67910);
 const assert_1 = __nccwpck_require__(8602);
 /**
  * Writes proto3 messages in canonical JSON format using reflection
@@ -5333,13 +5333,13 @@ exports.ReflectionJsonWriter = ReflectionJsonWriter;
 
 /***/ }),
 
-/***/ 3402:
+/***/ 63402:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.reflectionLongConvert = void 0;
-const reflection_info_1 = __nccwpck_require__(7910);
+const reflection_info_1 = __nccwpck_require__(67910);
 /**
  * Utility method to convert a PbLong or PbUlong to a JavaScript
  * representation during runtime.
@@ -5364,7 +5364,7 @@ exports.reflectionLongConvert = reflectionLongConvert;
 
 /***/ }),
 
-/***/ 8044:
+/***/ 98044:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -5461,15 +5461,15 @@ exports.reflectionMergePartial = reflectionMergePartial;
 
 /***/ }),
 
-/***/ 9526:
+/***/ 19526:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.reflectionScalarDefault = void 0;
-const reflection_info_1 = __nccwpck_require__(7910);
-const reflection_long_convert_1 = __nccwpck_require__(3402);
-const pb_long_1 = __nccwpck_require__(1753);
+const reflection_info_1 = __nccwpck_require__(67910);
+const reflection_long_convert_1 = __nccwpck_require__(63402);
+const pb_long_1 = __nccwpck_require__(61753);
 /**
  * Creates the default value for a scalar type.
  */
@@ -5505,14 +5505,14 @@ exports.reflectionScalarDefault = reflectionScalarDefault;
 
 /***/ }),
 
-/***/ 5167:
+/***/ 25167:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReflectionTypeCheck = void 0;
-const reflection_info_1 = __nccwpck_require__(7910);
-const oneof_1 = __nccwpck_require__(8063);
+const reflection_info_1 = __nccwpck_require__(67910);
+const oneof_1 = __nccwpck_require__(18063);
 // noinspection JSMethodCanBeStatic
 class ReflectionTypeCheck {
     constructor(info) {
@@ -5742,7 +5742,7 @@ exports.ReflectionTypeCheck = ReflectionTypeCheck;
 
 /***/ }),
 
-/***/ 7413:
+/***/ 17413:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /**
@@ -5753,7 +5753,7 @@ exports.ReflectionTypeCheck = ReflectionTypeCheck;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var eventTargetShim = __nccwpck_require__(6577);
+var eventTargetShim = __nccwpck_require__(16577);
 
 /**
  * The signal class.
@@ -5876,263 +5876,7 @@ module.exports.AbortSignal = AbortSignal
 
 /***/ }),
 
-/***/ 5183:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.req = exports.json = exports.toBuffer = void 0;
-const http = __importStar(__nccwpck_require__(8611));
-const https = __importStar(__nccwpck_require__(5692));
-async function toBuffer(stream) {
-    let length = 0;
-    const chunks = [];
-    for await (const chunk of stream) {
-        length += chunk.length;
-        chunks.push(chunk);
-    }
-    return Buffer.concat(chunks, length);
-}
-exports.toBuffer = toBuffer;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function json(stream) {
-    const buf = await toBuffer(stream);
-    const str = buf.toString('utf8');
-    try {
-        return JSON.parse(str);
-    }
-    catch (_err) {
-        const err = _err;
-        err.message += ` (input: ${str})`;
-        throw err;
-    }
-}
-exports.json = json;
-function req(url, opts = {}) {
-    const href = typeof url === 'string' ? url : url.href;
-    const req = (href.startsWith('https:') ? https : http).request(url, opts);
-    const promise = new Promise((resolve, reject) => {
-        req
-            .once('response', resolve)
-            .once('error', reject)
-            .end();
-    });
-    req.then = promise.then.bind(promise);
-    return req;
-}
-exports.req = req;
-//# sourceMappingURL=helpers.js.map
-
-/***/ }),
-
-/***/ 8894:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Agent = void 0;
-const net = __importStar(__nccwpck_require__(9278));
-const http = __importStar(__nccwpck_require__(8611));
-const https_1 = __nccwpck_require__(5692);
-__exportStar(__nccwpck_require__(5183), exports);
-const INTERNAL = Symbol('AgentBaseInternalState');
-class Agent extends http.Agent {
-    constructor(opts) {
-        super(opts);
-        this[INTERNAL] = {};
-    }
-    /**
-     * Determine whether this is an `http` or `https` request.
-     */
-    isSecureEndpoint(options) {
-        if (options) {
-            // First check the `secureEndpoint` property explicitly, since this
-            // means that a parent `Agent` is "passing through" to this instance.
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            if (typeof options.secureEndpoint === 'boolean') {
-                return options.secureEndpoint;
-            }
-            // If no explicit `secure` endpoint, check if `protocol` property is
-            // set. This will usually be the case since using a full string URL
-            // or `URL` instance should be the most common usage.
-            if (typeof options.protocol === 'string') {
-                return options.protocol === 'https:';
-            }
-        }
-        // Finally, if no `protocol` property was set, then fall back to
-        // checking the stack trace of the current call stack, and try to
-        // detect the "https" module.
-        const { stack } = new Error();
-        if (typeof stack !== 'string')
-            return false;
-        return stack
-            .split('\n')
-            .some((l) => l.indexOf('(https.js:') !== -1 ||
-            l.indexOf('node:https:') !== -1);
-    }
-    // In order to support async signatures in `connect()` and Node's native
-    // connection pooling in `http.Agent`, the array of sockets for each origin
-    // has to be updated synchronously. This is so the length of the array is
-    // accurate when `addRequest()` is next called. We achieve this by creating a
-    // fake socket and adding it to `sockets[origin]` and incrementing
-    // `totalSocketCount`.
-    incrementSockets(name) {
-        // If `maxSockets` and `maxTotalSockets` are both Infinity then there is no
-        // need to create a fake socket because Node.js native connection pooling
-        // will never be invoked.
-        if (this.maxSockets === Infinity && this.maxTotalSockets === Infinity) {
-            return null;
-        }
-        // All instances of `sockets` are expected TypeScript errors. The
-        // alternative is to add it as a private property of this class but that
-        // will break TypeScript subclassing.
-        if (!this.sockets[name]) {
-            // @ts-expect-error `sockets` is readonly in `@types/node`
-            this.sockets[name] = [];
-        }
-        const fakeSocket = new net.Socket({ writable: false });
-        this.sockets[name].push(fakeSocket);
-        // @ts-expect-error `totalSocketCount` isn't defined in `@types/node`
-        this.totalSocketCount++;
-        return fakeSocket;
-    }
-    decrementSockets(name, socket) {
-        if (!this.sockets[name] || socket === null) {
-            return;
-        }
-        const sockets = this.sockets[name];
-        const index = sockets.indexOf(socket);
-        if (index !== -1) {
-            sockets.splice(index, 1);
-            // @ts-expect-error  `totalSocketCount` isn't defined in `@types/node`
-            this.totalSocketCount--;
-            if (sockets.length === 0) {
-                // @ts-expect-error `sockets` is readonly in `@types/node`
-                delete this.sockets[name];
-            }
-        }
-    }
-    // In order to properly update the socket pool, we need to call `getName()` on
-    // the core `https.Agent` if it is a secureEndpoint.
-    getName(options) {
-        const secureEndpoint = this.isSecureEndpoint(options);
-        if (secureEndpoint) {
-            // @ts-expect-error `getName()` isn't defined in `@types/node`
-            return https_1.Agent.prototype.getName.call(this, options);
-        }
-        // @ts-expect-error `getName()` isn't defined in `@types/node`
-        return super.getName(options);
-    }
-    createSocket(req, options, cb) {
-        const connectOpts = {
-            ...options,
-            secureEndpoint: this.isSecureEndpoint(options),
-        };
-        const name = this.getName(connectOpts);
-        const fakeSocket = this.incrementSockets(name);
-        Promise.resolve()
-            .then(() => this.connect(req, connectOpts))
-            .then((socket) => {
-            this.decrementSockets(name, fakeSocket);
-            if (socket instanceof http.Agent) {
-                try {
-                    // @ts-expect-error `addRequest()` isn't defined in `@types/node`
-                    return socket.addRequest(req, connectOpts);
-                }
-                catch (err) {
-                    return cb(err);
-                }
-            }
-            this[INTERNAL].currentSocket = socket;
-            // @ts-expect-error `createSocket()` isn't defined in `@types/node`
-            super.createSocket(req, options, cb);
-        }, (err) => {
-            this.decrementSockets(name, fakeSocket);
-            cb(err);
-        });
-    }
-    createConnection() {
-        const socket = this[INTERNAL].currentSocket;
-        this[INTERNAL].currentSocket = undefined;
-        if (!socket) {
-            throw new Error('No socket was returned in the `connect()` function');
-        }
-        return socket;
-    }
-    get defaultPort() {
-        return (this[INTERNAL].defaultPort ??
-            (this.protocol === 'https:' ? 443 : 80));
-    }
-    set defaultPort(v) {
-        if (this[INTERNAL]) {
-            this[INTERNAL].defaultPort = v;
-        }
-    }
-    get protocol() {
-        return (this[INTERNAL].protocol ??
-            (this.isSecureEndpoint() ? 'https:' : 'http:'));
-    }
-    set protocol(v) {
-        if (this[INTERNAL]) {
-            this[INTERNAL].protocol = v;
-        }
-    }
-}
-exports.Agent = Agent;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 8816:
+/***/ 38816:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -6142,15 +5886,15 @@ exports.Agent = Agent;
  * Licensed under the MIT license.
  * https://github.com/archiverjs/node-archiver/blob/master/LICENSE-MIT
  */
-var fs = __nccwpck_require__(5744);
-var path = __nccwpck_require__(6928);
+var fs = __nccwpck_require__(35744);
+var path = __nccwpck_require__(16928);
 
-var flatten = __nccwpck_require__(7047);
-var difference = __nccwpck_require__(7294);
-var union = __nccwpck_require__(3270);
-var isPlainObject = __nccwpck_require__(6542);
+var flatten = __nccwpck_require__(97047);
+var difference = __nccwpck_require__(57294);
+var union = __nccwpck_require__(73270);
+var isPlainObject = __nccwpck_require__(36542);
 
-var glob = __nccwpck_require__(1363);
+var glob = __nccwpck_require__(21363);
 
 var file = module.exports = {};
 
@@ -6348,7 +6092,7 @@ file.normalizeFilesArray = function(data) {
 
 /***/ }),
 
-/***/ 3296:
+/***/ 53296:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -6358,18 +6102,18 @@ file.normalizeFilesArray = function(data) {
  * Licensed under the MIT license.
  * https://github.com/archiverjs/archiver-utils/blob/master/LICENSE
  */
-var fs = __nccwpck_require__(5744);
-var path = __nccwpck_require__(6928);
-var isStream = __nccwpck_require__(6543);
-var lazystream = __nccwpck_require__(2126);
-var normalizePath = __nccwpck_require__(6133);
+var fs = __nccwpck_require__(35744);
+var path = __nccwpck_require__(16928);
+var isStream = __nccwpck_require__(96543);
+var lazystream = __nccwpck_require__(32126);
+var normalizePath = __nccwpck_require__(56133);
 var defaults = __nccwpck_require__(7511);
 
 var Stream = (__nccwpck_require__(2203).Stream);
-var PassThrough = (__nccwpck_require__(9963).PassThrough);
+var PassThrough = (__nccwpck_require__(29963).PassThrough);
 
 var utils = module.exports = {};
-utils.file = __nccwpck_require__(8816);
+utils.file = __nccwpck_require__(38816);
 
 utils.collectStream = function(source, callback) {
   var collection = [];
@@ -6510,7 +6254,7 @@ utils.walkdir = function(dirpath, base, callback) {
 
 /***/ }),
 
-/***/ 9392:
+/***/ 99392:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -6520,7 +6264,7 @@ utils.walkdir = function(dirpath, base, callback) {
  * @license [MIT]{@link https://github.com/archiverjs/node-archiver/blob/master/LICENSE}
  * @copyright (c) 2012-2014 Chris Talkington, contributors.
  */
-var Archiver = __nccwpck_require__(549);
+var Archiver = __nccwpck_require__(50549);
 
 var formats = {};
 
@@ -6592,15 +6336,15 @@ vending.isRegisteredFormat = function (format) {
   return false;
 };
 
-vending.registerFormat('zip', __nccwpck_require__(2836));
-vending.registerFormat('tar', __nccwpck_require__(396));
-vending.registerFormat('json', __nccwpck_require__(4693));
+vending.registerFormat('zip', __nccwpck_require__(22836));
+vending.registerFormat('tar', __nccwpck_require__(10396));
+vending.registerFormat('json', __nccwpck_require__(54693));
 
 module.exports = vending;
 
 /***/ }),
 
-/***/ 549:
+/***/ 50549:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -6610,15 +6354,15 @@ module.exports = vending;
  * @license [MIT]{@link https://github.com/archiverjs/node-archiver/blob/master/LICENSE}
  * @copyright (c) 2012-2014 Chris Talkington, contributors.
  */
-var fs = __nccwpck_require__(9896);
-var glob = __nccwpck_require__(1364);
-var async = __nccwpck_require__(7329);
-var path = __nccwpck_require__(6928);
-var util = __nccwpck_require__(3296);
+var fs = __nccwpck_require__(79896);
+var glob = __nccwpck_require__(51364);
+var async = __nccwpck_require__(97329);
+var path = __nccwpck_require__(16928);
+var util = __nccwpck_require__(53296);
 
-var inherits = (__nccwpck_require__(9023).inherits);
-var ArchiverError = __nccwpck_require__(3110);
-var Transform = (__nccwpck_require__(9963).Transform);
+var inherits = (__nccwpck_require__(39023).inherits);
+var ArchiverError = __nccwpck_require__(13110);
+var Transform = (__nccwpck_require__(29963).Transform);
 
 var win32 = process.platform === 'win32';
 
@@ -7581,7 +7325,7 @@ module.exports = Archiver;
 
 /***/ }),
 
-/***/ 3110:
+/***/ 13110:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /**
@@ -7592,7 +7336,7 @@ module.exports = Archiver;
  * @copyright (c) 2012-2014 Chris Talkington, contributors.
  */
 
-var util = __nccwpck_require__(9023);
+var util = __nccwpck_require__(39023);
 
 const ERROR_CODES = {
   'ABORTED': 'archive was aborted',
@@ -7627,7 +7371,7 @@ exports = module.exports = ArchiverError;
 
 /***/ }),
 
-/***/ 4693:
+/***/ 54693:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -7637,11 +7381,11 @@ exports = module.exports = ArchiverError;
  * @license [MIT]{@link https://github.com/archiverjs/node-archiver/blob/master/LICENSE}
  * @copyright (c) 2012-2014 Chris Talkington, contributors.
  */
-var inherits = (__nccwpck_require__(9023).inherits);
-var Transform = (__nccwpck_require__(9963).Transform);
+var inherits = (__nccwpck_require__(39023).inherits);
+var Transform = (__nccwpck_require__(29963).Transform);
 
-var crc32 = __nccwpck_require__(4928);
-var util = __nccwpck_require__(3296);
+var crc32 = __nccwpck_require__(84928);
+var util = __nccwpck_require__(53296);
 
 /**
  * @constructor
@@ -7744,7 +7488,7 @@ module.exports = Json;
 
 /***/ }),
 
-/***/ 396:
+/***/ 10396:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -7754,10 +7498,10 @@ module.exports = Json;
  * @license [MIT]{@link https://github.com/archiverjs/node-archiver/blob/master/LICENSE}
  * @copyright (c) 2012-2014 Chris Talkington, contributors.
  */
-var zlib = __nccwpck_require__(725);
+var zlib = __nccwpck_require__(43106);
 
-var engine = __nccwpck_require__(6118);
-var util = __nccwpck_require__(3296);
+var engine = __nccwpck_require__(56118);
+var util = __nccwpck_require__(53296);
 
 /**
  * @constructor
@@ -7918,7 +7662,7 @@ module.exports = Tar;
 
 /***/ }),
 
-/***/ 2836:
+/***/ 22836:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -7928,8 +7672,8 @@ module.exports = Tar;
  * @license [MIT]{@link https://github.com/archiverjs/node-archiver/blob/master/LICENSE}
  * @copyright (c) 2012-2014 Chris Talkington, contributors.
  */
-var engine = __nccwpck_require__(1622);
-var util = __nccwpck_require__(3296);
+var engine = __nccwpck_require__(41622);
+var util = __nccwpck_require__(53296);
 
 /**
  * @constructor
@@ -8045,7 +7789,43 @@ module.exports = Zip;
 
 /***/ }),
 
-/***/ 7329:
+/***/ 49290:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+var $byteLength = callBound('ArrayBuffer.prototype.byteLength', true);
+
+var isArrayBuffer = __nccwpck_require__(96429);
+
+/** @type {import('.')} */
+module.exports = function byteLength(ab) {
+	if (!isArrayBuffer(ab)) {
+		return NaN;
+	}
+	return $byteLength ? $byteLength(ab) : ab.byteLength;
+}; // in node < 0.11, byteLength is an own nonconfigurable property
+
+
+/***/ }),
+
+/***/ 51491:
+/***/ ((module) => {
+
+
+
+// eslint-disable-next-line no-extra-parens, no-empty-function
+const cached = /** @type {import('.').AsyncFunctionConstructor} */ (async function () {}.constructor);
+
+/** @type {import('.')} */
+module.exports = () => cached;
+
+
+
+/***/ }),
+
+/***/ 97329:
 /***/ (function(__unused_webpack_module, exports) {
 
 (function (global, factory) {
@@ -14112,7 +13892,7 @@ module.exports = Zip;
 
 /***/ }),
 
-/***/ 3057:
+/***/ 73057:
 /***/ ((module) => {
 
 function isBuffer(value) {
@@ -14194,6 +13974,10 @@ function toBuffer(buffer) {
 
 function toString(buffer, encoding, start, end) {
   return toBuffer(buffer).toString(encoding, start, end)
+}
+
+function toHex(buffer, start, end) {
+  return toBuffer(buffer).toString('hex', start, end)
 }
 
 function write(buffer, string, offset, length, encoding) {
@@ -14285,6 +14069,7 @@ module.exports = {
   swap64,
   toBuffer,
   toString,
+  toHex,
   write,
   readDoubleBE,
   readDoubleLE,
@@ -14307,13 +14092,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8769:
+/***/ 58769:
 /***/ ((module, exports, __nccwpck_require__) => {
 
-var Chainsaw = __nccwpck_require__(1710);
-var EventEmitter = (__nccwpck_require__(4434).EventEmitter);
-var Buffers = __nccwpck_require__(6627);
-var Vars = __nccwpck_require__(1259);
+var Chainsaw = __nccwpck_require__(71710);
+var EventEmitter = (__nccwpck_require__(24434).EventEmitter);
+var Buffers = __nccwpck_require__(86627);
+var Vars = __nccwpck_require__(91259);
 var Stream = (__nccwpck_require__(2203).Stream);
 
 exports = module.exports = function (bufOrEm, eventName) {
@@ -14711,7 +14496,7 @@ function words (decode) {
 
 /***/ }),
 
-/***/ 1259:
+/***/ 91259:
 /***/ ((module) => {
 
 module.exports = function (store) {
@@ -14746,7 +14531,7 @@ module.exports = function (store) {
 
 /***/ }),
 
-/***/ 3251:
+/***/ 63251:
 /***/ (function(module) {
 
 /**
@@ -16276,7 +16061,7 @@ module.exports = function (store) {
 
 /***/ }),
 
-/***/ 6627:
+/***/ 86627:
 /***/ ((module) => {
 
 module.exports = Buffers;
@@ -16552,11 +16337,157 @@ Buffers.prototype.toString = function(encoding, start, end) {
 
 /***/ }),
 
-/***/ 1710:
+/***/ 22639:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Traverse = __nccwpck_require__(2958);
-var EventEmitter = (__nccwpck_require__(4434).EventEmitter);
+
+
+var bind = __nccwpck_require__(37564);
+
+var $apply = __nccwpck_require__(33945);
+var $call = __nccwpck_require__(88093);
+var $reflectApply = __nccwpck_require__(31330);
+
+/** @type {import('./actualApply')} */
+module.exports = $reflectApply || bind.call($call, $apply);
+
+
+/***/ }),
+
+/***/ 76002:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var bind = __nccwpck_require__(37564);
+var $apply = __nccwpck_require__(33945);
+var actualApply = __nccwpck_require__(22639);
+
+/** @type {import('./applyBind')} */
+module.exports = function applyBind() {
+	return actualApply(bind, $apply, arguments);
+};
+
+
+/***/ }),
+
+/***/ 33945:
+/***/ ((module) => {
+
+
+
+/** @type {import('./functionApply')} */
+module.exports = Function.prototype.apply;
+
+
+/***/ }),
+
+/***/ 88093:
+/***/ ((module) => {
+
+
+
+/** @type {import('./functionCall')} */
+module.exports = Function.prototype.call;
+
+
+/***/ }),
+
+/***/ 88705:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var bind = __nccwpck_require__(37564);
+var $TypeError = __nccwpck_require__(73314);
+
+var $call = __nccwpck_require__(88093);
+var $actualApply = __nccwpck_require__(22639);
+
+/** @type {(args: [Function, thisArg?: unknown, ...args: unknown[]]) => Function} TODO FIXME, find a way to use import('.') */
+module.exports = function callBindBasic(args) {
+	if (args.length < 1 || typeof args[0] !== 'function') {
+		throw new $TypeError('a function is required');
+	}
+	return $actualApply(bind, $call, args);
+};
+
+
+/***/ }),
+
+/***/ 31330:
+/***/ ((module) => {
+
+
+
+/** @type {import('./reflectApply')} */
+module.exports = typeof Reflect !== 'undefined' && Reflect && Reflect.apply;
+
+
+/***/ }),
+
+/***/ 53844:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var setFunctionLength = __nccwpck_require__(49346);
+
+var $defineProperty = __nccwpck_require__(79094);
+
+var callBindBasic = __nccwpck_require__(88705);
+var applyBind = __nccwpck_require__(76002);
+
+module.exports = function callBind(originalFunction) {
+	var func = callBindBasic(arguments);
+	var adjustedLength = 1 + originalFunction.length - (arguments.length - 1);
+	return setFunctionLength(
+		func,
+		adjustedLength > 0 ? adjustedLength : 0,
+		true
+	);
+};
+
+if ($defineProperty) {
+	$defineProperty(module.exports, 'apply', { value: applyBind });
+} else {
+	module.exports.apply = applyBind;
+}
+
+
+/***/ }),
+
+/***/ 23105:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var callBindBasic = __nccwpck_require__(88705);
+
+/** @type {(thisArg: string, searchString: string, position?: number) => number} */
+var $indexOf = callBindBasic([GetIntrinsic('%String.prototype.indexOf%')]);
+
+/** @type {import('.')} */
+module.exports = function callBoundIntrinsic(name, allowMissing) {
+	/* eslint no-extra-parens: 0 */
+
+	var intrinsic = /** @type {(this: unknown, ...args: unknown[]) => unknown} */ (GetIntrinsic(name, !!allowMissing));
+	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
+		return callBindBasic(/** @type {const} */ ([intrinsic]));
+	}
+	return intrinsic;
+};
+
+
+/***/ }),
+
+/***/ 71710:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+var Traverse = __nccwpck_require__(62958);
+var EventEmitter = (__nccwpck_require__(24434).EventEmitter);
 
 module.exports = Chainsaw;
 function Chainsaw (builder) {
@@ -16704,7 +16635,7 @@ function upgradeChainsaw(saw) {
 
 /***/ }),
 
-/***/ 6070:
+/***/ 96070:
 /***/ ((module) => {
 
 /**
@@ -16726,7 +16657,7 @@ ArchiveEntry.prototype.isDirectory = function() {};
 
 /***/ }),
 
-/***/ 6306:
+/***/ 36306:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -16736,12 +16667,12 @@ ArchiveEntry.prototype.isDirectory = function() {};
  * Licensed under the MIT license.
  * https://github.com/archiverjs/node-compress-commons/blob/master/LICENSE-MIT
  */
-var inherits = (__nccwpck_require__(9023).inherits);
-var isStream = __nccwpck_require__(6543);
-var Transform = (__nccwpck_require__(9963).Transform);
+var inherits = (__nccwpck_require__(39023).inherits);
+var isStream = __nccwpck_require__(96543);
+var Transform = (__nccwpck_require__(29963).Transform);
 
-var ArchiveEntry = __nccwpck_require__(6070);
-var util = __nccwpck_require__(8300);
+var ArchiveEntry = __nccwpck_require__(96070);
+var util = __nccwpck_require__(18300);
 
 var ArchiveOutputStream = module.exports = function(options) {
   if (!(this instanceof ArchiveOutputStream)) {
@@ -16850,7 +16781,7 @@ ArchiveOutputStream.prototype.write = function(chunk, cb) {
 
 /***/ }),
 
-/***/ 4908:
+/***/ 94908:
 /***/ ((module) => {
 
 /**
@@ -16928,7 +16859,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7632:
+/***/ 97632:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -17035,7 +16966,7 @@ GeneralPurposeBit.prototype.usesUTF8ForNames = function() {
 
 /***/ }),
 
-/***/ 3810:
+/***/ 23810:
 /***/ ((module) => {
 
 /**
@@ -17174,7 +17105,7 @@ util.toDosTime = function(d) {
 
 /***/ }),
 
-/***/ 3380:
+/***/ 73380:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -17184,14 +17115,14 @@ util.toDosTime = function(d) {
  * Licensed under the MIT license.
  * https://github.com/archiverjs/node-compress-commons/blob/master/LICENSE-MIT
  */
-var inherits = (__nccwpck_require__(9023).inherits);
-var normalizePath = __nccwpck_require__(6133);
+var inherits = (__nccwpck_require__(39023).inherits);
+var normalizePath = __nccwpck_require__(56133);
 
-var ArchiveEntry = __nccwpck_require__(6070);
-var GeneralPurposeBit = __nccwpck_require__(7632);
-var UnixStat = __nccwpck_require__(3810);
+var ArchiveEntry = __nccwpck_require__(96070);
+var GeneralPurposeBit = __nccwpck_require__(97632);
+var UnixStat = __nccwpck_require__(23810);
 
-var constants = __nccwpck_require__(4908);
+var constants = __nccwpck_require__(94908);
 var zipUtil = __nccwpck_require__(6453);
 
 var ZipArchiveEntry = module.exports = function(name) {
@@ -17594,7 +17525,7 @@ ZipArchiveEntry.prototype.isZip64 = function() {
 
 /***/ }),
 
-/***/ 2132:
+/***/ 82132:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -17604,17 +17535,17 @@ ZipArchiveEntry.prototype.isZip64 = function() {
  * Licensed under the MIT license.
  * https://github.com/archiverjs/node-compress-commons/blob/master/LICENSE-MIT
  */
-var inherits = (__nccwpck_require__(9023).inherits);
-var crc32 = __nccwpck_require__(4891);
-var {CRC32Stream} = __nccwpck_require__(2770);
-var {DeflateCRC32Stream} = __nccwpck_require__(2770);
+var inherits = (__nccwpck_require__(39023).inherits);
+var crc32 = __nccwpck_require__(84891);
+var {CRC32Stream} = __nccwpck_require__(82770);
+var {DeflateCRC32Stream} = __nccwpck_require__(82770);
 
-var ArchiveOutputStream = __nccwpck_require__(6306);
-var ZipArchiveEntry = __nccwpck_require__(3380);
-var GeneralPurposeBit = __nccwpck_require__(7632);
+var ArchiveOutputStream = __nccwpck_require__(36306);
+var ZipArchiveEntry = __nccwpck_require__(73380);
+var GeneralPurposeBit = __nccwpck_require__(97632);
 
-var constants = __nccwpck_require__(4908);
-var util = __nccwpck_require__(8300);
+var constants = __nccwpck_require__(94908);
+var util = __nccwpck_require__(18300);
 var zipUtil = __nccwpck_require__(6453);
 
 var ZipArchiveOutputStream = module.exports = function(options) {
@@ -18038,7 +17969,7 @@ ZipArchiveOutputStream.prototype.setComment = function(comment) {
 
 /***/ }),
 
-/***/ 7544:
+/***/ 47544:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -18049,15 +17980,15 @@ ZipArchiveOutputStream.prototype.setComment = function(comment) {
  * https://github.com/archiverjs/node-compress-commons/blob/master/LICENSE-MIT
  */
 module.exports = {
-  ArchiveEntry: __nccwpck_require__(6070),
-  ZipArchiveEntry: __nccwpck_require__(3380),
-  ArchiveOutputStream: __nccwpck_require__(6306),
-  ZipArchiveOutputStream: __nccwpck_require__(2132)
+  ArchiveEntry: __nccwpck_require__(96070),
+  ZipArchiveEntry: __nccwpck_require__(73380),
+  ArchiveOutputStream: __nccwpck_require__(36306),
+  ZipArchiveOutputStream: __nccwpck_require__(82132)
 };
 
 /***/ }),
 
-/***/ 8300:
+/***/ 18300:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -18068,8 +17999,8 @@ module.exports = {
  * https://github.com/archiverjs/node-compress-commons/blob/master/LICENSE-MIT
  */
 var Stream = (__nccwpck_require__(2203).Stream);
-var PassThrough = (__nccwpck_require__(9963).PassThrough);
-var isStream = __nccwpck_require__(6543);
+var PassThrough = (__nccwpck_require__(29963).PassThrough);
+var isStream = __nccwpck_require__(96543);
 
 var util = module.exports = {};
 
@@ -18090,7 +18021,7 @@ util.normalizeInputSource = function(source) {
 
 /***/ }),
 
-/***/ 5481:
+/***/ 45481:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -18195,7 +18126,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __nccwpck_require__(181).Buffer.isBuffer;
+exports.isBuffer = __nccwpck_require__(20181).Buffer.isBuffer;
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -18204,7 +18135,7 @@ function objectToString(o) {
 
 /***/ }),
 
-/***/ 4891:
+/***/ 84891:
 /***/ ((__unused_webpack_module, exports) => {
 
 /*! crc32.js (C) 2014-present SheetJS -- http://sheetjs.com */
@@ -18331,9 +18262,9 @@ CRC32.str = crc32_str;
 
  
 
-const {Transform} = __nccwpck_require__(9963);
+const {Transform} = __nccwpck_require__(29963);
 
-const crc32 = __nccwpck_require__(4891);
+const crc32 = __nccwpck_require__(84891);
 
 class CRC32Stream extends Transform {
   constructor(options) {
@@ -18373,7 +18304,7 @@ module.exports = CRC32Stream;
 
 /***/ }),
 
-/***/ 6252:
+/***/ 76252:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -18386,9 +18317,9 @@ module.exports = CRC32Stream;
 
 
 
-const {DeflateRaw} = __nccwpck_require__(725);
+const {DeflateRaw} = __nccwpck_require__(43106);
 
-const crc32 = __nccwpck_require__(4891);
+const crc32 = __nccwpck_require__(84891);
 
 class DeflateCRC32Stream extends DeflateRaw {
   constructor(options) {
@@ -18442,7 +18373,7 @@ module.exports = DeflateCRC32Stream;
 
 /***/ }),
 
-/***/ 2770:
+/***/ 82770:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -18457,7 +18388,7 @@ module.exports = DeflateCRC32Stream;
 
 module.exports = {
   CRC32Stream: __nccwpck_require__(3662),
-  DeflateCRC32Stream: __nccwpck_require__(6252)
+  DeflateCRC32Stream: __nccwpck_require__(76252)
 }
 
 
@@ -18723,7 +18654,7 @@ function localstorage() {
 	}
 }
 
-module.exports = __nccwpck_require__(897)(exports);
+module.exports = __nccwpck_require__(40897)(exports);
 
 const {formatters} = module.exports;
 
@@ -18742,7 +18673,7 @@ formatters.j = function (v) {
 
 /***/ }),
 
-/***/ 897:
+/***/ 40897:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -18758,7 +18689,7 @@ function setup(env) {
 	createDebug.disable = disable;
 	createDebug.enable = enable;
 	createDebug.enabled = enabled;
-	createDebug.humanize = __nccwpck_require__(744);
+	createDebug.humanize = __nccwpck_require__(70744);
 	createDebug.destroy = destroy;
 
 	Object.keys(env).forEach(key => {
@@ -19052,21 +18983,21 @@ module.exports = setup;
 if (typeof process === 'undefined' || process.type === 'renderer' || process.browser === true || process.__nwjs) {
 	module.exports = __nccwpck_require__(6110);
 } else {
-	module.exports = __nccwpck_require__(5108);
+	module.exports = __nccwpck_require__(95108);
 }
 
 
 /***/ }),
 
-/***/ 5108:
+/***/ 95108:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /**
  * Module dependencies.
  */
 
-const tty = __nccwpck_require__(2018);
-const util = __nccwpck_require__(9023);
+const tty = __nccwpck_require__(52018);
+const util = __nccwpck_require__(39023);
 
 /**
  * This is the Node.js implementation of `debug()`.
@@ -19092,7 +19023,7 @@ exports.colors = [6, 2, 3, 4, 5, 1];
 try {
 	// Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
 	// eslint-disable-next-line import/no-extraneous-dependencies
-	const supportsColor = __nccwpck_require__(75);
+	const supportsColor = __nccwpck_require__(60075);
 
 	if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
 		exports.colors = [
@@ -19300,7 +19231,7 @@ function init(debug) {
 	}
 }
 
-module.exports = __nccwpck_require__(897)(exports);
+module.exports = __nccwpck_require__(40897)(exports);
 
 const {formatters} = module.exports;
 
@@ -19328,7 +19259,490 @@ formatters.O = function (v) {
 
 /***/ }),
 
-/***/ 6577:
+/***/ 31316:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $defineProperty = __nccwpck_require__(79094);
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+
+var gopd = __nccwpck_require__(33170);
+
+/** @type {import('.')} */
+module.exports = function defineDataProperty(
+	obj,
+	property,
+	value
+) {
+	if (!obj || (typeof obj !== 'object' && typeof obj !== 'function')) {
+		throw new $TypeError('`obj` must be an object or a function`');
+	}
+	if (typeof property !== 'string' && typeof property !== 'symbol') {
+		throw new $TypeError('`property` must be a string or a symbol`');
+	}
+	if (arguments.length > 3 && typeof arguments[3] !== 'boolean' && arguments[3] !== null) {
+		throw new $TypeError('`nonEnumerable`, if provided, must be a boolean or null');
+	}
+	if (arguments.length > 4 && typeof arguments[4] !== 'boolean' && arguments[4] !== null) {
+		throw new $TypeError('`nonWritable`, if provided, must be a boolean or null');
+	}
+	if (arguments.length > 5 && typeof arguments[5] !== 'boolean' && arguments[5] !== null) {
+		throw new $TypeError('`nonConfigurable`, if provided, must be a boolean or null');
+	}
+	if (arguments.length > 6 && typeof arguments[6] !== 'boolean') {
+		throw new $TypeError('`loose`, if provided, must be a boolean');
+	}
+
+	var nonEnumerable = arguments.length > 3 ? arguments[3] : null;
+	var nonWritable = arguments.length > 4 ? arguments[4] : null;
+	var nonConfigurable = arguments.length > 5 ? arguments[5] : null;
+	var loose = arguments.length > 6 ? arguments[6] : false;
+
+	/* @type {false | TypedPropertyDescriptor<unknown>} */
+	var desc = !!gopd && gopd(obj, property);
+
+	if ($defineProperty) {
+		$defineProperty(obj, property, {
+			configurable: nonConfigurable === null && desc ? desc.configurable : !nonConfigurable,
+			enumerable: nonEnumerable === null && desc ? desc.enumerable : !nonEnumerable,
+			value: value,
+			writable: nonWritable === null && desc ? desc.writable : !nonWritable
+		});
+	} else if (loose || (!nonEnumerable && !nonWritable && !nonConfigurable)) {
+		// must fall back to [[Set]], and was not explicitly asked to make non-enumerable, non-writable, or non-configurable
+		obj[property] = value; // eslint-disable-line no-param-reassign
+	} else {
+		throw new $SyntaxError('This environment does not support defining a property as non-configurable, non-writable, or non-enumerable.');
+	}
+};
+
+
+/***/ }),
+
+/***/ 50191:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var keys = __nccwpck_require__(62682);
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
+
+var toStr = Object.prototype.toString;
+var concat = Array.prototype.concat;
+var defineDataProperty = __nccwpck_require__(31316);
+
+var isFunction = function (fn) {
+	return typeof fn === 'function' && toStr.call(fn) === '[object Function]';
+};
+
+var supportsDescriptors = __nccwpck_require__(60497)();
+
+var defineProperty = function (object, name, value, predicate) {
+	if (name in object) {
+		if (predicate === true) {
+			if (object[name] === value) {
+				return;
+			}
+		} else if (!isFunction(predicate) || !predicate()) {
+			return;
+		}
+	}
+
+	if (supportsDescriptors) {
+		defineDataProperty(object, name, value, true);
+	} else {
+		defineDataProperty(object, name, value);
+	}
+};
+
+var defineProperties = function (object, map) {
+	var predicates = arguments.length > 2 ? arguments[2] : {};
+	var props = keys(map);
+	if (hasSymbols) {
+		props = concat.call(props, Object.getOwnPropertySymbols(map));
+	}
+	for (var i = 0; i < props.length; i += 1) {
+		defineProperty(object, props[i], map[props[i]], predicates[props[i]]);
+	}
+};
+
+defineProperties.supportsDescriptors = !!supportsDescriptors;
+
+module.exports = defineProperties;
+
+
+/***/ }),
+
+/***/ 26669:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBind = __nccwpck_require__(88705);
+var gOPD = __nccwpck_require__(33170);
+
+var hasProtoAccessor;
+try {
+	// eslint-disable-next-line no-extra-parens, no-proto
+	hasProtoAccessor = /** @type {{ __proto__?: typeof Array.prototype }} */ ([]).__proto__ === Array.prototype;
+} catch (e) {
+	if (!e || typeof e !== 'object' || !('code' in e) || e.code !== 'ERR_PROTO_ACCESS') {
+		throw e;
+	}
+}
+
+// eslint-disable-next-line no-extra-parens
+var desc = !!hasProtoAccessor && gOPD && gOPD(Object.prototype, /** @type {keyof typeof Object.prototype} */ ('__proto__'));
+
+var $Object = Object;
+var $getPrototypeOf = $Object.getPrototypeOf;
+
+/** @type {import('./get')} */
+module.exports = desc && typeof desc.get === 'function'
+	? callBind([desc.get])
+	: typeof $getPrototypeOf === 'function'
+		? /** @type {import('./get')} */ function getDunder(value) {
+			// eslint-disable-next-line eqeqeq
+			return $getPrototypeOf(value == null ? value : $Object(value));
+		}
+		: false;
+
+
+/***/ }),
+
+/***/ 24765:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var isCallable = __nccwpck_require__(69203);
+
+var inspect = __nccwpck_require__(60506);
+
+var GetV = __nccwpck_require__(47996);
+var isPropertyKey = __nccwpck_require__(29336);
+
+// https://262.ecma-international.org/6.0/#sec-getmethod
+
+/** @type {import('./GetMethod')} */
+module.exports = function GetMethod(O, P) {
+	// 7.3.9.1
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: P is not a Property Key');
+	}
+
+	// 7.3.9.2
+	var func = GetV(O, P);
+
+	// 7.3.9.4
+	if (func == null) {
+		return void 0;
+	}
+
+	// 7.3.9.5
+	if (!isCallable(func)) {
+		throw new $TypeError(inspect(P) + ' is not a function: ' + inspect(func));
+	}
+
+	// 7.3.9.6
+	return func;
+};
+
+
+/***/ }),
+
+/***/ 47996:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var inspect = __nccwpck_require__(60506);
+
+var isPropertyKey = __nccwpck_require__(29336);
+
+// https://262.ecma-international.org/6.0/#sec-getv
+
+/** @type {import('./GetV')} */
+module.exports = function GetV(V, P) {
+	// 7.3.2.1
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: P is not a Property Key, got ' + inspect(P));
+	}
+
+	// 7.3.2.2-3
+	// var O = ToObject(V);
+
+	// 7.3.2.4
+	return /** @type {Record<typeof P, unknown>} */ (V)[P]; // O.[[Get]](P, V)
+};
+
+
+/***/ }),
+
+/***/ 29336:
+/***/ ((module) => {
+
+
+
+/** @type {import('./isPropertyKey')} */
+module.exports = function isPropertyKey(argument) {
+	return typeof argument === 'string' || typeof argument === 'symbol';
+};
+
+
+/***/ }),
+
+/***/ 79094:
+/***/ ((module) => {
+
+
+
+/** @type {import('.')} */
+var $defineProperty = Object.defineProperty || false;
+if ($defineProperty) {
+	try {
+		$defineProperty({}, 'a', { value: 1 });
+	} catch (e) {
+		// IE 8 has a broken defineProperty
+		$defineProperty = false;
+	}
+}
+
+module.exports = $defineProperty;
+
+
+/***/ }),
+
+/***/ 33056:
+/***/ ((module) => {
+
+
+
+/** @type {import('./eval')} */
+module.exports = EvalError;
+
+
+/***/ }),
+
+/***/ 31620:
+/***/ ((module) => {
+
+
+
+/** @type {import('.')} */
+module.exports = Error;
+
+
+/***/ }),
+
+/***/ 14585:
+/***/ ((module) => {
+
+
+
+/** @type {import('./range')} */
+module.exports = RangeError;
+
+
+/***/ }),
+
+/***/ 46905:
+/***/ ((module) => {
+
+
+
+/** @type {import('./ref')} */
+module.exports = ReferenceError;
+
+
+/***/ }),
+
+/***/ 80105:
+/***/ ((module) => {
+
+
+
+/** @type {import('./syntax')} */
+module.exports = SyntaxError;
+
+
+/***/ }),
+
+/***/ 73314:
+/***/ ((module) => {
+
+
+
+/** @type {import('./type')} */
+module.exports = TypeError;
+
+
+/***/ }),
+
+/***/ 32578:
+/***/ ((module) => {
+
+
+
+/** @type {import('./uri')} */
+module.exports = URIError;
+
+
+/***/ }),
+
+/***/ 19601:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+/** @type {import('./RequireObjectCoercible')} */
+module.exports = function RequireObjectCoercible(value) {
+	if (value == null) {
+		throw new $TypeError((arguments.length > 0 && arguments[1]) || ('Cannot call method on ' + value));
+	}
+	return value;
+};
+
+
+/***/ }),
+
+/***/ 95399:
+/***/ ((module) => {
+
+
+
+/** @type {import('.')} */
+module.exports = Object;
+
+
+/***/ }),
+
+/***/ 21040:
+/***/ ((module) => {
+
+
+
+/** @type {import('./isObject')} */
+module.exports = function isObject(x) {
+	return !!x && (typeof x === 'function' || typeof x === 'object');
+};
+
+
+/***/ }),
+
+/***/ 75604:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
+
+var isCallable = __nccwpck_require__(69203);
+var isDate = __nccwpck_require__(86253);
+var isSymbol = __nccwpck_require__(63927);
+var $TypeError = __nccwpck_require__(73314);
+
+var isPrimitive = __nccwpck_require__(26925);
+
+/** @import { primitiveES6 } from './es2015' */
+
+/** @type {(O: { valueOf?: () => unknown, toString?: () => unknown }, hint: 'number' | 'string') => primitiveES6} */
+function OrdinaryToPrimitive(O, hint) {
+	if (typeof O === 'undefined' || O === null) {
+		throw new $TypeError('Cannot call method on ' + O);
+	}
+	if (typeof hint !== 'string' || (hint !== 'number' && hint !== 'string')) {
+		throw new $TypeError('hint must be "string" or "number"');
+	}
+	/** @type {('toString' | 'valueOf')[]} */
+	var methodNames = hint === 'string' ? ['toString', 'valueOf'] : ['valueOf', 'toString'];
+	var method, result, i;
+	for (i = 0; i < methodNames.length; ++i) {
+		method = O[methodNames[i]];
+		if (isCallable(method)) {
+			result = method.call(O);
+			if (isPrimitive(result)) {
+				return /** @type {primitiveES6} */ (result);
+			}
+		}
+	}
+	throw new $TypeError('No default value');
+}
+
+var GetMethod = __nccwpck_require__(24765);
+
+/** @type {import('./es2015')} */
+// http://www.ecma-international.org/ecma-262/6.0/#sec-toprimitive
+module.exports = function ToPrimitive(input) {
+	if (isPrimitive(input)) {
+		return /** @type {primitiveES6} */ (input);
+	}
+	/** @type {'default' | 'string' | 'number'} */
+	var hint = 'default';
+	if (arguments.length > 1) {
+		if (arguments[1] === String) {
+			hint = 'string';
+		} else if (arguments[1] === Number) {
+			hint = 'number';
+		}
+	}
+
+	var exoticToPrim;
+	if (hasSymbols) {
+		if (Symbol.toPrimitive) {
+
+			exoticToPrim = GetMethod(
+				/** @type {{ [k in SymbolConstructor['toPrimitive']]?: Function }} */
+				(input),
+				Symbol.toPrimitive
+			);
+		} else if (isSymbol(input)) {
+			exoticToPrim = Symbol.prototype.valueOf;
+		}
+	}
+	if (typeof exoticToPrim !== 'undefined') {
+		var result = exoticToPrim.call(input, hint);
+		if (isPrimitive(result)) {
+			return /** @type {primitiveES6} */ (result);
+		}
+		throw new $TypeError('unable to convert exotic object to primitive');
+	}
+	if (hint === 'default' && (isDate(input) || isSymbol(input))) {
+		hint = /** @type {const} */ ('string');
+	}
+
+	return OrdinaryToPrimitive(input, hint === 'default' ? 'number' : hint);
+};
+
+
+/***/ }),
+
+/***/ 26925:
+/***/ ((module) => {
+
+
+
+/** @import { primitive } from '../' */
+/** @import { primitiveES5 } from '../es5' */
+
+/** @type {<T extends primitive | primitiveES5>(value: unknown) => value is T} */
+module.exports = function isPrimitive(value) {
+	return value === null || (typeof value !== 'function' && typeof value !== 'object');
+};
+
+
+/***/ }),
+
+/***/ 16577:
 /***/ ((module, exports) => {
 
 /**
@@ -20206,15 +20620,15 @@ module.exports.defineEventAttribute = defineEventAttribute
 
 /***/ }),
 
-/***/ 9580:
+/***/ 29580:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(4434)
+module.exports = __nccwpck_require__(24434)
 
 
 /***/ }),
 
-/***/ 3587:
+/***/ 13587:
 /***/ ((module) => {
 
 module.exports = class FixedFIFO {
@@ -20260,10 +20674,10 @@ module.exports = class FixedFIFO {
 
 /***/ }),
 
-/***/ 3867:
+/***/ 83867:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const FixedFIFO = __nccwpck_require__(3587)
+const FixedFIFO = __nccwpck_require__(13587)
 
 module.exports = class FastFIFO {
   constructor (hwm) {
@@ -20315,7 +20729,855 @@ module.exports = class FastFIFO {
 
 /***/ }),
 
-/***/ 3964:
+/***/ 14963:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var isCallable = __nccwpck_require__(69203);
+
+var toStr = Object.prototype.toString;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+/** @type {<This, A extends readonly unknown[]>(arr: A, iterator: (this: This | void, value: A[number], index: number, arr: A) => void, receiver: This | undefined) => void} */
+var forEachArray = function forEachArray(array, iterator, receiver) {
+    for (var i = 0, len = array.length; i < len; i++) {
+        if (hasOwnProperty.call(array, i)) {
+            if (receiver == null) {
+                iterator(array[i], i, array);
+            } else {
+                iterator.call(receiver, array[i], i, array);
+            }
+        }
+    }
+};
+
+/** @type {<This, S extends string>(string: S, iterator: (this: This | void, value: S[number], index: number, string: S) => void, receiver: This | undefined) => void} */
+var forEachString = function forEachString(string, iterator, receiver) {
+    for (var i = 0, len = string.length; i < len; i++) {
+        // no such thing as a sparse string.
+        if (receiver == null) {
+            iterator(string.charAt(i), i, string);
+        } else {
+            iterator.call(receiver, string.charAt(i), i, string);
+        }
+    }
+};
+
+/** @type {<This, O>(obj: O, iterator: (this: This | void, value: O[keyof O], index: keyof O, obj: O) => void, receiver: This | undefined) => void} */
+var forEachObject = function forEachObject(object, iterator, receiver) {
+    for (var k in object) {
+        if (hasOwnProperty.call(object, k)) {
+            if (receiver == null) {
+                iterator(object[k], k, object);
+            } else {
+                iterator.call(receiver, object[k], k, object);
+            }
+        }
+    }
+};
+
+/** @type {(x: unknown) => x is readonly unknown[]} */
+function isArray(x) {
+    return toStr.call(x) === '[object Array]';
+}
+
+/** @type {import('.')._internal} */
+module.exports = function forEach(list, iterator, thisArg) {
+    if (!isCallable(iterator)) {
+        throw new TypeError('iterator must be a function');
+    }
+
+    var receiver;
+    if (arguments.length >= 3) {
+        receiver = thisArg;
+    }
+
+    if (isArray(list)) {
+        forEachArray(list, iterator, receiver);
+    } else if (typeof list === 'string') {
+        forEachString(list, iterator, receiver);
+    } else {
+        forEachObject(list, iterator, receiver);
+    }
+};
+
+
+/***/ }),
+
+/***/ 99808:
+/***/ ((module) => {
+
+
+
+/* eslint no-invalid-this: 1 */
+
+var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+var toStr = Object.prototype.toString;
+var max = Math.max;
+var funcType = '[object Function]';
+
+var concatty = function concatty(a, b) {
+    var arr = [];
+
+    for (var i = 0; i < a.length; i += 1) {
+        arr[i] = a[i];
+    }
+    for (var j = 0; j < b.length; j += 1) {
+        arr[j + a.length] = b[j];
+    }
+
+    return arr;
+};
+
+var slicy = function slicy(arrLike, offset) {
+    var arr = [];
+    for (var i = offset || 0, j = 0; i < arrLike.length; i += 1, j += 1) {
+        arr[j] = arrLike[i];
+    }
+    return arr;
+};
+
+var joiny = function (arr, joiner) {
+    var str = '';
+    for (var i = 0; i < arr.length; i += 1) {
+        str += arr[i];
+        if (i + 1 < arr.length) {
+            str += joiner;
+        }
+    }
+    return str;
+};
+
+module.exports = function bind(that) {
+    var target = this;
+    if (typeof target !== 'function' || toStr.apply(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
+    }
+    var args = slicy(arguments, 1);
+
+    var bound;
+    var binder = function () {
+        if (this instanceof bound) {
+            var result = target.apply(
+                this,
+                concatty(args, arguments)
+            );
+            if (Object(result) === result) {
+                return result;
+            }
+            return this;
+        }
+        return target.apply(
+            that,
+            concatty(args, arguments)
+        );
+
+    };
+
+    var boundLength = max(0, target.length - args.length);
+    var boundArgs = [];
+    for (var i = 0; i < boundLength; i++) {
+        boundArgs[i] = '$' + i;
+    }
+
+    bound = Function('binder', 'return function (' + joiny(boundArgs, ',') + '){ return binder.apply(this,arguments); }')(binder);
+
+    if (target.prototype) {
+        var Empty = function Empty() {};
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+    }
+
+    return bound;
+};
+
+
+/***/ }),
+
+/***/ 37564:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var implementation = __nccwpck_require__(99808);
+
+module.exports = Function.prototype.bind || implementation;
+
+
+/***/ }),
+
+/***/ 89947:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var IsCallable = __nccwpck_require__(69203);
+var hasOwn = __nccwpck_require__(54076);
+var functionsHaveNames = __nccwpck_require__(21327)();
+var $TypeError = __nccwpck_require__(73314);
+var callBound = __nccwpck_require__(23105);
+var isDDA = __nccwpck_require__(10647);
+
+var $functionToString = callBound('Function.prototype.toString');
+var $stringMatch = callBound('String.prototype.match');
+
+var classRegex = /^class /;
+
+/** @param {unknown} fn */
+var isClass = function isClassConstructor(fn) {
+	if (IsCallable(fn)) {
+		return false;
+	}
+	if (typeof fn !== 'function') {
+		return false;
+	}
+	try {
+		var match = $stringMatch($functionToString(fn), classRegex);
+		return !!match;
+	} catch (e) {}
+	return false;
+};
+
+var regex = /\s*function\s+([^(\s]*)\s*/;
+
+var functionProto = Function.prototype;
+
+/** @type {import('./implementation')} */
+module.exports = function getName() {
+	if (isDDA(this) || (!isClass(this) && !IsCallable(this))) {
+		throw new $TypeError('Function.prototype.name sham getter called on non-function');
+	}
+	if (functionsHaveNames && hasOwn(this, 'name')) {
+		return this.name;
+	}
+	if (this === functionProto) {
+		return '';
+	}
+	var str = $functionToString(this);
+	var match = $stringMatch(str, regex);
+	var name = match && match[1];
+
+	return /** @type {string} */ (name);
+};
+
+
+/***/ }),
+
+/***/ 82069:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBind = __nccwpck_require__(53844);
+
+var implementation = __nccwpck_require__(89947);
+var getPolyfill = __nccwpck_require__(85202);
+var shim = __nccwpck_require__(70016);
+
+var bound = callBind(implementation);
+
+/** @type {import('.')} */
+module.exports = bound;
+
+module.exports.getPolyfill = getPolyfill;
+module.exports.implementation = implementation;
+module.exports.shim = shim;
+
+
+/***/ }),
+
+/***/ 85202:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var implementation = __nccwpck_require__(89947);
+
+/** @type {import('./polyfill')} */
+module.exports = function getPolyfill() {
+	return implementation;
+};
+
+
+/***/ }),
+
+/***/ 70016:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var supportsDescriptors = __nccwpck_require__(60497)();
+var functionsHaveNames = __nccwpck_require__(21327)();
+var $TypeError = __nccwpck_require__(73314);
+
+var getPolyfill = __nccwpck_require__(85202);
+var defineProperty = __nccwpck_require__(79094);
+
+/** @type {import('./shim')} */
+module.exports = function shimName() {
+	var polyfill = getPolyfill();
+	if (functionsHaveNames) {
+		return polyfill;
+	}
+	if (!supportsDescriptors || !defineProperty) {
+		throw new $TypeError('Shimming Function.prototype.name support requires ES5 property descriptor support.');
+	}
+
+	var functionProto = Function.prototype;
+	defineProperty(functionProto, 'name', {
+		configurable: true,
+		enumerable: false,
+		get: function () {
+			var name = polyfill.call(this);
+			if (this !== functionProto) {
+				/** @type {Exclude<typeof defineProperty, false>} */ (defineProperty)(this, 'name', {
+					configurable: true,
+					enumerable: false,
+					value: name,
+					writable: false
+				});
+			}
+			return name;
+		}
+	});
+	return polyfill;
+};
+
+
+/***/ }),
+
+/***/ 21327:
+/***/ ((module) => {
+
+
+
+var functionsHaveNames = function functionsHaveNames() {
+	return typeof function f() {}.name === 'string';
+};
+
+var gOPD = Object.getOwnPropertyDescriptor;
+if (gOPD) {
+	try {
+		gOPD([], 'length');
+	} catch (e) {
+		// IE 8 has a broken gOPD
+		gOPD = null;
+	}
+}
+
+functionsHaveNames.functionsHaveConfigurableNames = function functionsHaveConfigurableNames() {
+	if (!functionsHaveNames() || !gOPD) {
+		return false;
+	}
+	var desc = gOPD(function () {}, 'name');
+	return !!desc && !!desc.configurable;
+};
+
+var $bind = Function.prototype.bind;
+
+functionsHaveNames.boundFunctionsHaveNames = function boundFunctionsHaveNames() {
+	return functionsHaveNames() && typeof $bind === 'function' && function f() {}.bind().name !== '';
+};
+
+module.exports = functionsHaveNames;
+
+
+/***/ }),
+
+/***/ 47228:
+/***/ ((module) => {
+
+
+
+// eslint-disable-next-line no-extra-parens, no-empty-function
+const cached = /** @type {GeneratorFunctionConstructor} */ (function* () {}.constructor);
+
+/** @type {import('.')} */
+module.exports = () => cached;
+
+
+
+/***/ }),
+
+/***/ 60470:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var undefined;
+
+var $Object = __nccwpck_require__(95399);
+
+var $Error = __nccwpck_require__(31620);
+var $EvalError = __nccwpck_require__(33056);
+var $RangeError = __nccwpck_require__(14585);
+var $ReferenceError = __nccwpck_require__(46905);
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+var $URIError = __nccwpck_require__(32578);
+
+var abs = __nccwpck_require__(55641);
+var floor = __nccwpck_require__(96171);
+var max = __nccwpck_require__(57147);
+var min = __nccwpck_require__(41017);
+var pow = __nccwpck_require__(56947);
+var round = __nccwpck_require__(42621);
+var sign = __nccwpck_require__(30156);
+
+var $Function = Function;
+
+// eslint-disable-next-line consistent-return
+var getEvalledConstructor = function (expressionSyntax) {
+	try {
+		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
+	} catch (e) {}
+};
+
+var $gOPD = __nccwpck_require__(33170);
+var $defineProperty = __nccwpck_require__(79094);
+
+var throwTypeError = function () {
+	throw new $TypeError();
+};
+var ThrowTypeError = $gOPD
+	? (function () {
+		try {
+			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
+			arguments.callee; // IE 8 does not throw here
+			return throwTypeError;
+		} catch (calleeThrows) {
+			try {
+				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
+				return $gOPD(arguments, 'callee').get;
+			} catch (gOPDthrows) {
+				return throwTypeError;
+			}
+		}
+	}())
+	: throwTypeError;
+
+var hasSymbols = __nccwpck_require__(23336)();
+
+var getProto = __nccwpck_require__(81967);
+var $ObjectGPO = __nccwpck_require__(91311);
+var $ReflectGPO = __nccwpck_require__(48681);
+
+var $apply = __nccwpck_require__(33945);
+var $call = __nccwpck_require__(88093);
+
+var needsEval = {};
+
+var TypedArray = typeof Uint8Array === 'undefined' || !getProto ? undefined : getProto(Uint8Array);
+
+var INTRINSICS = {
+	__proto__: null,
+	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined : AggregateError,
+	'%Array%': Array,
+	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined : ArrayBuffer,
+	'%ArrayIteratorPrototype%': hasSymbols && getProto ? getProto([][Symbol.iterator]()) : undefined,
+	'%AsyncFromSyncIteratorPrototype%': undefined,
+	'%AsyncFunction%': needsEval,
+	'%AsyncGenerator%': needsEval,
+	'%AsyncGeneratorFunction%': needsEval,
+	'%AsyncIteratorPrototype%': needsEval,
+	'%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
+	'%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
+	'%BigInt64Array%': typeof BigInt64Array === 'undefined' ? undefined : BigInt64Array,
+	'%BigUint64Array%': typeof BigUint64Array === 'undefined' ? undefined : BigUint64Array,
+	'%Boolean%': Boolean,
+	'%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
+	'%Date%': Date,
+	'%decodeURI%': decodeURI,
+	'%decodeURIComponent%': decodeURIComponent,
+	'%encodeURI%': encodeURI,
+	'%encodeURIComponent%': encodeURIComponent,
+	'%Error%': $Error,
+	'%eval%': eval, // eslint-disable-line no-eval
+	'%EvalError%': $EvalError,
+	'%Float16Array%': typeof Float16Array === 'undefined' ? undefined : Float16Array,
+	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined : Float32Array,
+	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined : Float64Array,
+	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined : FinalizationRegistry,
+	'%Function%': $Function,
+	'%GeneratorFunction%': needsEval,
+	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined : Int8Array,
+	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined : Int16Array,
+	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined : Int32Array,
+	'%isFinite%': isFinite,
+	'%isNaN%': isNaN,
+	'%IteratorPrototype%': hasSymbols && getProto ? getProto(getProto([][Symbol.iterator]())) : undefined,
+	'%JSON%': typeof JSON === 'object' ? JSON : undefined,
+	'%Map%': typeof Map === 'undefined' ? undefined : Map,
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols || !getProto ? undefined : getProto(new Map()[Symbol.iterator]()),
+	'%Math%': Math,
+	'%Number%': Number,
+	'%Object%': $Object,
+	'%Object.getOwnPropertyDescriptor%': $gOPD,
+	'%parseFloat%': parseFloat,
+	'%parseInt%': parseInt,
+	'%Promise%': typeof Promise === 'undefined' ? undefined : Promise,
+	'%Proxy%': typeof Proxy === 'undefined' ? undefined : Proxy,
+	'%RangeError%': $RangeError,
+	'%ReferenceError%': $ReferenceError,
+	'%Reflect%': typeof Reflect === 'undefined' ? undefined : Reflect,
+	'%RegExp%': RegExp,
+	'%Set%': typeof Set === 'undefined' ? undefined : Set,
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols || !getProto ? undefined : getProto(new Set()[Symbol.iterator]()),
+	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined : SharedArrayBuffer,
+	'%String%': String,
+	'%StringIteratorPrototype%': hasSymbols && getProto ? getProto(''[Symbol.iterator]()) : undefined,
+	'%Symbol%': hasSymbols ? Symbol : undefined,
+	'%SyntaxError%': $SyntaxError,
+	'%ThrowTypeError%': ThrowTypeError,
+	'%TypedArray%': TypedArray,
+	'%TypeError%': $TypeError,
+	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined : Uint8Array,
+	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined : Uint8ClampedArray,
+	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined : Uint16Array,
+	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined : Uint32Array,
+	'%URIError%': $URIError,
+	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined : WeakMap,
+	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
+	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet,
+
+	'%Function.prototype.call%': $call,
+	'%Function.prototype.apply%': $apply,
+	'%Object.defineProperty%': $defineProperty,
+	'%Object.getPrototypeOf%': $ObjectGPO,
+	'%Math.abs%': abs,
+	'%Math.floor%': floor,
+	'%Math.max%': max,
+	'%Math.min%': min,
+	'%Math.pow%': pow,
+	'%Math.round%': round,
+	'%Math.sign%': sign,
+	'%Reflect.getPrototypeOf%': $ReflectGPO
+};
+
+if (getProto) {
+	try {
+		null.error; // eslint-disable-line no-unused-expressions
+	} catch (e) {
+		// https://github.com/tc39/proposal-shadowrealm/pull/384#issuecomment-1364264229
+		var errorProto = getProto(getProto(e));
+		INTRINSICS['%Error.prototype%'] = errorProto;
+	}
+}
+
+var doEval = function doEval(name) {
+	var value;
+	if (name === '%AsyncFunction%') {
+		value = getEvalledConstructor('async function () {}');
+	} else if (name === '%GeneratorFunction%') {
+		value = getEvalledConstructor('function* () {}');
+	} else if (name === '%AsyncGeneratorFunction%') {
+		value = getEvalledConstructor('async function* () {}');
+	} else if (name === '%AsyncGenerator%') {
+		var fn = doEval('%AsyncGeneratorFunction%');
+		if (fn) {
+			value = fn.prototype;
+		}
+	} else if (name === '%AsyncIteratorPrototype%') {
+		var gen = doEval('%AsyncGenerator%');
+		if (gen && getProto) {
+			value = getProto(gen.prototype);
+		}
+	}
+
+	INTRINSICS[name] = value;
+
+	return value;
+};
+
+var LEGACY_ALIASES = {
+	__proto__: null,
+	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
+	'%ArrayPrototype%': ['Array', 'prototype'],
+	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
+	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
+	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
+	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
+	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
+	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
+	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
+	'%BooleanPrototype%': ['Boolean', 'prototype'],
+	'%DataViewPrototype%': ['DataView', 'prototype'],
+	'%DatePrototype%': ['Date', 'prototype'],
+	'%ErrorPrototype%': ['Error', 'prototype'],
+	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
+	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
+	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
+	'%FunctionPrototype%': ['Function', 'prototype'],
+	'%Generator%': ['GeneratorFunction', 'prototype'],
+	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
+	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
+	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
+	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
+	'%JSONParse%': ['JSON', 'parse'],
+	'%JSONStringify%': ['JSON', 'stringify'],
+	'%MapPrototype%': ['Map', 'prototype'],
+	'%NumberPrototype%': ['Number', 'prototype'],
+	'%ObjectPrototype%': ['Object', 'prototype'],
+	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
+	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
+	'%PromisePrototype%': ['Promise', 'prototype'],
+	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
+	'%Promise_all%': ['Promise', 'all'],
+	'%Promise_reject%': ['Promise', 'reject'],
+	'%Promise_resolve%': ['Promise', 'resolve'],
+	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
+	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
+	'%RegExpPrototype%': ['RegExp', 'prototype'],
+	'%SetPrototype%': ['Set', 'prototype'],
+	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
+	'%StringPrototype%': ['String', 'prototype'],
+	'%SymbolPrototype%': ['Symbol', 'prototype'],
+	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
+	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
+	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
+	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
+	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
+	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
+	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
+	'%URIErrorPrototype%': ['URIError', 'prototype'],
+	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
+	'%WeakSetPrototype%': ['WeakSet', 'prototype']
+};
+
+var bind = __nccwpck_require__(37564);
+var hasOwn = __nccwpck_require__(54076);
+var $concat = bind.call($call, Array.prototype.concat);
+var $spliceApply = bind.call($apply, Array.prototype.splice);
+var $replace = bind.call($call, String.prototype.replace);
+var $strSlice = bind.call($call, String.prototype.slice);
+var $exec = bind.call($call, RegExp.prototype.exec);
+
+/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
+var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
+var stringToPath = function stringToPath(string) {
+	var first = $strSlice(string, 0, 1);
+	var last = $strSlice(string, -1);
+	if (first === '%' && last !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
+	} else if (last === '%' && first !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
+	}
+	var result = [];
+	$replace(string, rePropName, function (match, number, quote, subString) {
+		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
+	});
+	return result;
+};
+/* end adaptation */
+
+var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
+	var intrinsicName = name;
+	var alias;
+	if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
+		alias = LEGACY_ALIASES[intrinsicName];
+		intrinsicName = '%' + alias[0] + '%';
+	}
+
+	if (hasOwn(INTRINSICS, intrinsicName)) {
+		var value = INTRINSICS[intrinsicName];
+		if (value === needsEval) {
+			value = doEval(intrinsicName);
+		}
+		if (typeof value === 'undefined' && !allowMissing) {
+			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
+		}
+
+		return {
+			alias: alias,
+			name: intrinsicName,
+			value: value
+		};
+	}
+
+	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
+};
+
+module.exports = function GetIntrinsic(name, allowMissing) {
+	if (typeof name !== 'string' || name.length === 0) {
+		throw new $TypeError('intrinsic name must be a non-empty string');
+	}
+	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
+		throw new $TypeError('"allowMissing" argument must be a boolean');
+	}
+
+	if ($exec(/^%?[^%]*%?$/, name) === null) {
+		throw new $SyntaxError('`%` may not be present anywhere but at the beginning and end of the intrinsic name');
+	}
+	var parts = stringToPath(name);
+	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
+
+	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
+	var intrinsicRealName = intrinsic.name;
+	var value = intrinsic.value;
+	var skipFurtherCaching = false;
+
+	var alias = intrinsic.alias;
+	if (alias) {
+		intrinsicBaseName = alias[0];
+		$spliceApply(parts, $concat([0, 1], alias));
+	}
+
+	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
+		var part = parts[i];
+		var first = $strSlice(part, 0, 1);
+		var last = $strSlice(part, -1);
+		if (
+			(
+				(first === '"' || first === "'" || first === '`')
+				|| (last === '"' || last === "'" || last === '`')
+			)
+			&& first !== last
+		) {
+			throw new $SyntaxError('property names with quotes must have matching quotes');
+		}
+		if (part === 'constructor' || !isOwn) {
+			skipFurtherCaching = true;
+		}
+
+		intrinsicBaseName += '.' + part;
+		intrinsicRealName = '%' + intrinsicBaseName + '%';
+
+		if (hasOwn(INTRINSICS, intrinsicRealName)) {
+			value = INTRINSICS[intrinsicRealName];
+		} else if (value != null) {
+			if (!(part in value)) {
+				if (!allowMissing) {
+					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
+				}
+				return void undefined;
+			}
+			if ($gOPD && (i + 1) >= parts.length) {
+				var desc = $gOPD(value, part);
+				isOwn = !!desc;
+
+				// By convention, when a data property is converted to an accessor
+				// property to emulate a data property that does not suffer from
+				// the override mistake, that accessor's getter is marked with
+				// an `originalValue` property. Here, when we detect this, we
+				// uphold the illusion by pretending to see that original data
+				// property, i.e., returning the value rather than the getter
+				// itself.
+				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
+					value = desc.get;
+				} else {
+					value = value[part];
+				}
+			} else {
+				isOwn = hasOwn(value, part);
+				value = value[part];
+			}
+
+			if (isOwn && !skipFurtherCaching) {
+				INTRINSICS[intrinsicRealName] = value;
+			}
+		}
+	}
+	return value;
+};
+
+
+/***/ }),
+
+/***/ 91311:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $Object = __nccwpck_require__(95399);
+
+/** @type {import('./Object.getPrototypeOf')} */
+module.exports = $Object.getPrototypeOf || null;
+
+
+/***/ }),
+
+/***/ 48681:
+/***/ ((module) => {
+
+
+
+/** @type {import('./Reflect.getPrototypeOf')} */
+module.exports = (typeof Reflect !== 'undefined' && Reflect.getPrototypeOf) || null;
+
+
+/***/ }),
+
+/***/ 81967:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var reflectGetProto = __nccwpck_require__(48681);
+var originalGetProto = __nccwpck_require__(91311);
+
+var getDunderProto = __nccwpck_require__(26669);
+
+/** @type {import('.')} */
+module.exports = reflectGetProto
+	? function getProto(O) {
+		// @ts-expect-error TS can't narrow inside a closure, for some reason
+		return reflectGetProto(O);
+	}
+	: originalGetProto
+		? function getProto(O) {
+			if (!O || (typeof O !== 'object' && typeof O !== 'function')) {
+				throw new TypeError('getProto: not an object');
+			}
+			// @ts-expect-error TS can't narrow inside a closure, for some reason
+			return originalGetProto(O);
+		}
+		: getDunderProto
+			? function getProto(O) {
+				// @ts-expect-error TS can't narrow inside a closure, for some reason
+				return getDunderProto(O);
+			}
+			: null;
+
+
+/***/ }),
+
+/***/ 1174:
+/***/ ((module) => {
+
+
+
+/** @type {import('./gOPD')} */
+module.exports = Object.getOwnPropertyDescriptor;
+
+
+/***/ }),
+
+/***/ 33170:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+/** @type {import('.')} */
+var $gOPD = __nccwpck_require__(1174);
+
+if ($gOPD) {
+	try {
+		$gOPD([], 'length');
+	} catch (e) {
+		// IE 8 has a broken gOPD
+		$gOPD = null;
+	}
+}
+
+module.exports = $gOPD;
+
+
+/***/ }),
+
+/***/ 73964:
 /***/ ((module) => {
 
 
@@ -20345,15 +21607,15 @@ function clone (obj) {
 
 /***/ }),
 
-/***/ 5744:
+/***/ 35744:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var fs = __nccwpck_require__(9896)
-var polyfills = __nccwpck_require__(3501)
-var legacy = __nccwpck_require__(2270)
-var clone = __nccwpck_require__(3964)
+var fs = __nccwpck_require__(79896)
+var polyfills = __nccwpck_require__(83501)
+var legacy = __nccwpck_require__(12270)
+var clone = __nccwpck_require__(73964)
 
-var util = __nccwpck_require__(9023)
+var util = __nccwpck_require__(39023)
 
 /* istanbul ignore next - node 0.x polyfill */
 var gracefulQueue
@@ -20434,7 +21696,7 @@ if (!fs[gracefulQueue]) {
   if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || '')) {
     process.on('exit', function() {
       debug(fs[gracefulQueue])
-      __nccwpck_require__(2613).equal(fs[gracefulQueue].length, 0)
+      __nccwpck_require__(42613).equal(fs[gracefulQueue].length, 0)
     })
   }
 }
@@ -20800,7 +22062,7 @@ function retry () {
 
 /***/ }),
 
-/***/ 2270:
+/***/ 12270:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var Stream = (__nccwpck_require__(2203).Stream)
@@ -20925,10 +22187,10 @@ function legacy (fs) {
 
 /***/ }),
 
-/***/ 3501:
+/***/ 83501:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var constants = __nccwpck_require__(9140)
+var constants = __nccwpck_require__(49140)
 
 var origCwd = process.cwd
 var cwd = null
@@ -21287,470 +22549,173 @@ function patch (fs) {
 
 /***/ }),
 
-/***/ 1970:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 36629:
+/***/ ((module) => {
 
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+
+var $BigInt = typeof BigInt !== 'undefined' && BigInt;
+
+/** @type {import('.')} */
+module.exports = function hasNativeBigInts() {
+	return typeof $BigInt === 'function'
+		&& typeof BigInt === 'function'
+		&& typeof $BigInt(42) === 'bigint' // eslint-disable-line no-magic-numbers
+		&& typeof BigInt(42) === 'bigint'; // eslint-disable-line no-magic-numbers
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.HttpProxyAgent = void 0;
-const net = __importStar(__nccwpck_require__(9278));
-const tls = __importStar(__nccwpck_require__(4756));
-const debug_1 = __importDefault(__nccwpck_require__(2830));
-const events_1 = __nccwpck_require__(4434);
-const agent_base_1 = __nccwpck_require__(8894);
-const url_1 = __nccwpck_require__(7016);
-const debug = (0, debug_1.default)('http-proxy-agent');
-/**
- * The `HttpProxyAgent` implements an HTTP Agent subclass that connects
- * to the specified "HTTP proxy server" in order to proxy HTTP requests.
- */
-class HttpProxyAgent extends agent_base_1.Agent {
-    constructor(proxy, opts) {
-        super(opts);
-        this.proxy = typeof proxy === 'string' ? new url_1.URL(proxy) : proxy;
-        this.proxyHeaders = opts?.headers ?? {};
-        debug('Creating new HttpProxyAgent instance: %o', this.proxy.href);
-        // Trim off the brackets from IPv6 addresses
-        const host = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, '');
-        const port = this.proxy.port
-            ? parseInt(this.proxy.port, 10)
-            : this.proxy.protocol === 'https:'
-                ? 443
-                : 80;
-        this.connectOpts = {
-            ...(opts ? omit(opts, 'headers') : null),
-            host,
-            port,
-        };
-    }
-    addRequest(req, opts) {
-        req._header = null;
-        this.setRequestProps(req, opts);
-        // @ts-expect-error `addRequest()` isn't defined in `@types/node`
-        super.addRequest(req, opts);
-    }
-    setRequestProps(req, opts) {
-        const { proxy } = this;
-        const protocol = opts.secureEndpoint ? 'https:' : 'http:';
-        const hostname = req.getHeader('host') || 'localhost';
-        const base = `${protocol}//${hostname}`;
-        const url = new url_1.URL(req.path, base);
-        if (opts.port !== 80) {
-            url.port = String(opts.port);
-        }
-        // Change the `http.ClientRequest` instance's "path" field
-        // to the absolute path of the URL that will be requested.
-        req.path = String(url);
-        // Inject the `Proxy-Authorization` header if necessary.
-        const headers = typeof this.proxyHeaders === 'function'
-            ? this.proxyHeaders()
-            : { ...this.proxyHeaders };
-        if (proxy.username || proxy.password) {
-            const auth = `${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password)}`;
-            headers['Proxy-Authorization'] = `Basic ${Buffer.from(auth).toString('base64')}`;
-        }
-        if (!headers['Proxy-Connection']) {
-            headers['Proxy-Connection'] = this.keepAlive
-                ? 'Keep-Alive'
-                : 'close';
-        }
-        for (const name of Object.keys(headers)) {
-            const value = headers[name];
-            if (value) {
-                req.setHeader(name, value);
-            }
-        }
-    }
-    async connect(req, opts) {
-        req._header = null;
-        if (!req.path.includes('://')) {
-            this.setRequestProps(req, opts);
-        }
-        // At this point, the http ClientRequest's internal `_header` field
-        // might have already been set. If this is the case then we'll need
-        // to re-generate the string since we just changed the `req.path`.
-        let first;
-        let endOfHeaders;
-        debug('Regenerating stored HTTP header string for request');
-        req._implicitHeader();
-        if (req.outputData && req.outputData.length > 0) {
-            debug('Patching connection write() output buffer with updated header');
-            first = req.outputData[0].data;
-            endOfHeaders = first.indexOf('\r\n\r\n') + 4;
-            req.outputData[0].data =
-                req._header + first.substring(endOfHeaders);
-            debug('Output buffer: %o', req.outputData[0].data);
-        }
-        // Create a socket connection to the proxy server.
-        let socket;
-        if (this.proxy.protocol === 'https:') {
-            debug('Creating `tls.Socket`: %o', this.connectOpts);
-            socket = tls.connect(this.connectOpts);
-        }
-        else {
-            debug('Creating `net.Socket`: %o', this.connectOpts);
-            socket = net.connect(this.connectOpts);
-        }
-        // Wait for the socket's `connect` event, so that this `callback()`
-        // function throws instead of the `http` request machinery. This is
-        // important for i.e. `PacProxyAgent` which determines a failed proxy
-        // connection via the `callback()` function throwing.
-        await (0, events_1.once)(socket, 'connect');
-        return socket;
-    }
-}
-HttpProxyAgent.protocols = ['http', 'https'];
-exports.HttpProxyAgent = HttpProxyAgent;
-function omit(obj, ...keys) {
-    const ret = {};
-    let key;
-    for (key in obj) {
-        if (!keys.includes(key)) {
-            ret[key] = obj[key];
-        }
-    }
-    return ret;
-}
-//# sourceMappingURL=index.js.map
+
 
 /***/ }),
 
-/***/ 3669:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 60497:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+
+var $defineProperty = __nccwpck_require__(79094);
+
+var hasPropertyDescriptors = function hasPropertyDescriptors() {
+	return !!$defineProperty;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+
+hasPropertyDescriptors.hasArrayLengthDefineBug = function hasArrayLengthDefineBug() {
+	// node v0.6 has a bug where array lengths can be Set but not Defined
+	if (!$defineProperty) {
+		return null;
+	}
+	try {
+		return $defineProperty([], 'length', { value: 1 }).length !== 1;
+	} catch (e) {
+		// In Firefox 4-22, defining length on an array throws an exception.
+		return true;
+	}
 };
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.HttpsProxyAgent = void 0;
-const net = __importStar(__nccwpck_require__(9278));
-const tls = __importStar(__nccwpck_require__(4756));
-const assert_1 = __importDefault(__nccwpck_require__(2613));
-const debug_1 = __importDefault(__nccwpck_require__(2830));
-const agent_base_1 = __nccwpck_require__(8894);
-const url_1 = __nccwpck_require__(7016);
-const parse_proxy_response_1 = __nccwpck_require__(7943);
-const debug = (0, debug_1.default)('https-proxy-agent');
-const setServernameFromNonIpHost = (options) => {
-    if (options.servername === undefined &&
-        options.host &&
-        !net.isIP(options.host)) {
-        return {
-            ...options,
-            servername: options.host,
-        };
-    }
-    return options;
-};
-/**
- * The `HttpsProxyAgent` implements an HTTP Agent subclass that connects to
- * the specified "HTTP(s) proxy server" in order to proxy HTTPS requests.
- *
- * Outgoing HTTP requests are first tunneled through the proxy server using the
- * `CONNECT` HTTP request method to establish a connection to the proxy server,
- * and then the proxy server connects to the destination target and issues the
- * HTTP request from the proxy server.
- *
- * `https:` requests have their socket connection upgraded to TLS once
- * the connection to the proxy server has been established.
- */
-class HttpsProxyAgent extends agent_base_1.Agent {
-    constructor(proxy, opts) {
-        super(opts);
-        this.options = { path: undefined };
-        this.proxy = typeof proxy === 'string' ? new url_1.URL(proxy) : proxy;
-        this.proxyHeaders = opts?.headers ?? {};
-        debug('Creating new HttpsProxyAgent instance: %o', this.proxy.href);
-        // Trim off the brackets from IPv6 addresses
-        const host = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, '');
-        const port = this.proxy.port
-            ? parseInt(this.proxy.port, 10)
-            : this.proxy.protocol === 'https:'
-                ? 443
-                : 80;
-        this.connectOpts = {
-            // Attempt to negotiate http/1.1 for proxy servers that support http/2
-            ALPNProtocols: ['http/1.1'],
-            ...(opts ? omit(opts, 'headers') : null),
-            host,
-            port,
-        };
-    }
-    /**
-     * Called when the node-core HTTP client library is creating a
-     * new HTTP request.
-     */
-    async connect(req, opts) {
-        const { proxy } = this;
-        if (!opts.host) {
-            throw new TypeError('No "host" provided');
-        }
-        // Create a socket connection to the proxy server.
-        let socket;
-        if (proxy.protocol === 'https:') {
-            debug('Creating `tls.Socket`: %o', this.connectOpts);
-            socket = tls.connect(setServernameFromNonIpHost(this.connectOpts));
-        }
-        else {
-            debug('Creating `net.Socket`: %o', this.connectOpts);
-            socket = net.connect(this.connectOpts);
-        }
-        const headers = typeof this.proxyHeaders === 'function'
-            ? this.proxyHeaders()
-            : { ...this.proxyHeaders };
-        const host = net.isIPv6(opts.host) ? `[${opts.host}]` : opts.host;
-        let payload = `CONNECT ${host}:${opts.port} HTTP/1.1\r\n`;
-        // Inject the `Proxy-Authorization` header if necessary.
-        if (proxy.username || proxy.password) {
-            const auth = `${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password)}`;
-            headers['Proxy-Authorization'] = `Basic ${Buffer.from(auth).toString('base64')}`;
-        }
-        headers.Host = `${host}:${opts.port}`;
-        if (!headers['Proxy-Connection']) {
-            headers['Proxy-Connection'] = this.keepAlive
-                ? 'Keep-Alive'
-                : 'close';
-        }
-        for (const name of Object.keys(headers)) {
-            payload += `${name}: ${headers[name]}\r\n`;
-        }
-        const proxyResponsePromise = (0, parse_proxy_response_1.parseProxyResponse)(socket);
-        socket.write(`${payload}\r\n`);
-        const { connect, buffered } = await proxyResponsePromise;
-        req.emit('proxyConnect', connect);
-        this.emit('proxyConnect', connect, req);
-        if (connect.statusCode === 200) {
-            req.once('socket', resume);
-            if (opts.secureEndpoint) {
-                // The proxy is connecting to a TLS server, so upgrade
-                // this socket connection to a TLS connection.
-                debug('Upgrading socket connection to TLS');
-                return tls.connect({
-                    ...omit(setServernameFromNonIpHost(opts), 'host', 'path', 'port'),
-                    socket,
-                });
-            }
-            return socket;
-        }
-        // Some other status code that's not 200... need to re-play the HTTP
-        // header "data" events onto the socket once the HTTP machinery is
-        // attached so that the node core `http` can parse and handle the
-        // error status code.
-        // Close the original socket, and a new "fake" socket is returned
-        // instead, so that the proxy doesn't get the HTTP request
-        // written to it (which may contain `Authorization` headers or other
-        // sensitive data).
-        //
-        // See: https://hackerone.com/reports/541502
-        socket.destroy();
-        const fakeSocket = new net.Socket({ writable: false });
-        fakeSocket.readable = true;
-        // Need to wait for the "socket" event to re-play the "data" events.
-        req.once('socket', (s) => {
-            debug('Replaying proxy buffer for failed request');
-            (0, assert_1.default)(s.listenerCount('data') > 0);
-            // Replay the "buffered" Buffer onto the fake `socket`, since at
-            // this point the HTTP module machinery has been hooked up for
-            // the user.
-            s.push(buffered);
-            s.push(null);
-        });
-        return fakeSocket;
-    }
-}
-HttpsProxyAgent.protocols = ['http', 'https'];
-exports.HttpsProxyAgent = HttpsProxyAgent;
-function resume(socket) {
-    socket.resume();
-}
-function omit(obj, ...keys) {
-    const ret = {};
-    let key;
-    for (key in obj) {
-        if (!keys.includes(key)) {
-            ret[key] = obj[key];
-        }
-    }
-    return ret;
-}
-//# sourceMappingURL=index.js.map
+
+module.exports = hasPropertyDescriptors;
+
 
 /***/ }),
 
-/***/ 7943:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 23336:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+
+var origSymbol = typeof Symbol !== 'undefined' && Symbol;
+var hasSymbolSham = __nccwpck_require__(61114);
+
+/** @type {import('.')} */
+module.exports = function hasNativeSymbols() {
+	if (typeof origSymbol !== 'function') { return false; }
+	if (typeof Symbol !== 'function') { return false; }
+	if (typeof origSymbol('foo') !== 'symbol') { return false; }
+	if (typeof Symbol('bar') !== 'symbol') { return false; }
+
+	return hasSymbolSham();
 };
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.parseProxyResponse = void 0;
-const debug_1 = __importDefault(__nccwpck_require__(2830));
-const debug = (0, debug_1.default)('https-proxy-agent:parse-proxy-response');
-function parseProxyResponse(socket) {
-    return new Promise((resolve, reject) => {
-        // we need to buffer any HTTP traffic that happens with the proxy before we get
-        // the CONNECT response, so that if the response is anything other than an "200"
-        // response code, then we can re-play the "data" events on the socket once the
-        // HTTP parser is hooked up...
-        let buffersLength = 0;
-        const buffers = [];
-        function read() {
-            const b = socket.read();
-            if (b)
-                ondata(b);
-            else
-                socket.once('readable', read);
-        }
-        function cleanup() {
-            socket.removeListener('end', onend);
-            socket.removeListener('error', onerror);
-            socket.removeListener('readable', read);
-        }
-        function onend() {
-            cleanup();
-            debug('onend');
-            reject(new Error('Proxy connection ended before receiving CONNECT response'));
-        }
-        function onerror(err) {
-            cleanup();
-            debug('onerror %o', err);
-            reject(err);
-        }
-        function ondata(b) {
-            buffers.push(b);
-            buffersLength += b.length;
-            const buffered = Buffer.concat(buffers, buffersLength);
-            const endOfHeaders = buffered.indexOf('\r\n\r\n');
-            if (endOfHeaders === -1) {
-                // keep buffering
-                debug('have not received end of HTTP headers yet...');
-                read();
-                return;
-            }
-            const headerParts = buffered
-                .slice(0, endOfHeaders)
-                .toString('ascii')
-                .split('\r\n');
-            const firstLine = headerParts.shift();
-            if (!firstLine) {
-                socket.destroy();
-                return reject(new Error('No header received from proxy CONNECT response'));
-            }
-            const firstLineParts = firstLine.split(' ');
-            const statusCode = +firstLineParts[1];
-            const statusText = firstLineParts.slice(2).join(' ');
-            const headers = {};
-            for (const header of headerParts) {
-                if (!header)
-                    continue;
-                const firstColon = header.indexOf(':');
-                if (firstColon === -1) {
-                    socket.destroy();
-                    return reject(new Error(`Invalid header from proxy CONNECT response: "${header}"`));
-                }
-                const key = header.slice(0, firstColon).toLowerCase();
-                const value = header.slice(firstColon + 1).trimStart();
-                const current = headers[key];
-                if (typeof current === 'string') {
-                    headers[key] = [current, value];
-                }
-                else if (Array.isArray(current)) {
-                    current.push(value);
-                }
-                else {
-                    headers[key] = value;
-                }
-            }
-            debug('got proxy server response: %o %o', firstLine, headers);
-            cleanup();
-            resolve({
-                connect: {
-                    statusCode,
-                    statusText,
-                    headers,
-                },
-                buffered,
-            });
-        }
-        socket.on('error', onerror);
-        socket.on('end', onend);
-        read();
-    });
-}
-exports.parseProxyResponse = parseProxyResponse;
-//# sourceMappingURL=parse-proxy-response.js.map
+
 
 /***/ }),
 
-/***/ 9598:
+/***/ 61114:
+/***/ ((module) => {
+
+
+
+/** @type {import('./shams')} */
+/* eslint complexity: [2, 18], max-statements: [2, 33] */
+module.exports = function hasSymbols() {
+	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
+	if (typeof Symbol.iterator === 'symbol') { return true; }
+
+	/** @type {{ [k in symbol]?: unknown }} */
+	var obj = {};
+	var sym = Symbol('test');
+	var symObj = Object(sym);
+	if (typeof sym === 'string') { return false; }
+
+	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
+	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
+
+	// temp disabled per https://github.com/ljharb/object.assign/issues/17
+	// if (sym instanceof Symbol) { return false; }
+	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
+	// if (!(symObj instanceof Symbol)) { return false; }
+
+	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
+	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
+
+	var symVal = 42;
+	obj[sym] = symVal;
+	for (var _ in obj) { return false; } // eslint-disable-line no-restricted-syntax, no-unreachable-loop
+	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
+
+	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
+
+	var syms = Object.getOwnPropertySymbols(obj);
+	if (syms.length !== 1 || syms[0] !== sym) { return false; }
+
+	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
+
+	if (typeof Object.getOwnPropertyDescriptor === 'function') {
+		// eslint-disable-next-line no-extra-parens
+		var descriptor = /** @type {PropertyDescriptor} */ (Object.getOwnPropertyDescriptor(obj, sym));
+		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
+	}
+
+	return true;
+};
+
+
+/***/ }),
+
+/***/ 85479:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var hasSymbols = __nccwpck_require__(61114);
+
+/** @type {import('.')} */
+module.exports = function hasToStringTagShams() {
+	return hasSymbols() && !!Symbol.toStringTag;
+};
+
+
+/***/ }),
+
+/***/ 54076:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var call = Function.prototype.call;
+var $hasOwn = Object.prototype.hasOwnProperty;
+var bind = __nccwpck_require__(37564);
+
+/** @type {import('.')} */
+module.exports = bind.call(call, $hasOwn);
+
+
+/***/ }),
+
+/***/ 39598:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 try {
-  var util = __nccwpck_require__(9023);
+  var util = __nccwpck_require__(39023);
   /* istanbul ignore next */
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
 } catch (e) {
   /* istanbul ignore next */
-  module.exports = __nccwpck_require__(6589);
+  module.exports = __nccwpck_require__(26589);
 }
 
 
 /***/ }),
 
-/***/ 6589:
+/***/ 26589:
 /***/ ((module) => {
 
 if (typeof Object.create === 'function') {
@@ -21784,7 +22749,685 @@ if (typeof Object.create === 'function') {
 
 /***/ }),
 
-/***/ 6543:
+/***/ 96429:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBind = __nccwpck_require__(53844);
+var callBound = __nccwpck_require__(23105);
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $ArrayBuffer = GetIntrinsic('%ArrayBuffer%', true);
+/** @type {undefined | ((receiver: ArrayBuffer) => number) | ((receiver: unknown) => never)} */
+var $byteLength = callBound('ArrayBuffer.prototype.byteLength', true);
+var $toString = callBound('Object.prototype.toString');
+
+// in node 0.10, ArrayBuffers have no prototype methods, but have an own slot-checking `slice` method
+var abSlice = !!$ArrayBuffer && !$byteLength && new $ArrayBuffer(0).slice;
+var $abSlice = !!abSlice && callBind(abSlice);
+
+/** @type {import('.')} */
+module.exports = $byteLength || $abSlice
+	? function isArrayBuffer(obj) {
+		if (!obj || typeof obj !== 'object') {
+			return false;
+		}
+		try {
+			if ($byteLength) {
+				// @ts-expect-error no idea why TS can't handle the overload
+				$byteLength(obj);
+			} else {
+				// @ts-expect-error TS chooses not to type-narrow inside a closure
+				$abSlice(obj, 0);
+			}
+			return true;
+		} catch (e) {
+			return false;
+		}
+	}
+	: $ArrayBuffer
+		// in node 0.8, ArrayBuffers have no prototype or own methods, but also no Symbol.toStringTag
+		? function isArrayBuffer(obj) {
+			return $toString(obj) === '[object ArrayBuffer]';
+		}
+		// @ts-expect-error
+		: function isArrayBuffer(obj) { // eslint-disable-line no-unused-vars
+			return false;
+		};
+
+
+/***/ }),
+
+/***/ 14856:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+var safeRegexTest = __nccwpck_require__(93470);
+
+var toStr = callBound('Object.prototype.toString');
+var fnToStr = callBound('Function.prototype.toString');
+var isFnRegex = safeRegexTest(/^\s*async(?:\s+function(?:\s+|\()|\s*\()/);
+
+var hasToStringTag = __nccwpck_require__(85479)();
+var getProto = __nccwpck_require__(81967);
+
+var getAsyncFunc = __nccwpck_require__(51491);
+
+/** @type {import('.')} */
+module.exports = function isAsyncFunction(fn) {
+	if (typeof fn !== 'function') {
+		return false;
+	}
+	if (isFnRegex(fnToStr(fn))) {
+		return true;
+	}
+	if (!hasToStringTag) {
+		var str = toStr(fn);
+		return str === '[object AsyncFunction]';
+	}
+	if (!getProto) {
+		return false;
+	}
+	var asyncFunc = getAsyncFunc();
+	return asyncFunc && asyncFunc.prototype === getProto(fn);
+};
+
+
+/***/ }),
+
+/***/ 17788:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var hasBigInts = __nccwpck_require__(36629)();
+
+if (hasBigInts) {
+	var bigIntValueOf = BigInt.prototype.valueOf;
+	/** @type {(value: object) => value is BigInt} */
+	var tryBigInt = function tryBigIntObject(value) {
+		try {
+			bigIntValueOf.call(value);
+			return true;
+		} catch (e) {
+		}
+		return false;
+	};
+
+	/** @type {import('.')} */
+	module.exports = function isBigInt(value) {
+		if (
+			value === null
+			|| typeof value === 'undefined'
+			|| typeof value === 'boolean'
+			|| typeof value === 'string'
+			|| typeof value === 'number'
+			|| typeof value === 'symbol'
+			|| typeof value === 'function'
+		) {
+			return false;
+		}
+		if (typeof value === 'bigint') {
+			return true;
+		}
+
+		return tryBigInt(value);
+	};
+} else {
+	/** @type {import('.')} */
+	module.exports = function isBigInt(value) {
+		return  false && 0;
+	};
+}
+
+
+/***/ }),
+
+/***/ 10823:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+var $boolToStr = callBound('Boolean.prototype.toString');
+var $toString = callBound('Object.prototype.toString');
+
+/** @type {import('.')} */
+var tryBooleanObject = function booleanBrandCheck(value) {
+	try {
+		$boolToStr(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+var boolClass = '[object Boolean]';
+var hasToStringTag = __nccwpck_require__(85479)();
+
+/** @type {import('.')} */
+module.exports = function isBoolean(value) {
+	if (typeof value === 'boolean') {
+		return true;
+	}
+	if (value === null || typeof value !== 'object') {
+		return false;
+	}
+	return hasToStringTag ? tryBooleanObject(value) : $toString(value) === boolClass;
+};
+
+
+/***/ }),
+
+/***/ 69203:
+/***/ ((module) => {
+
+
+
+var fnToStr = Function.prototype.toString;
+var reflectApply = typeof Reflect === 'object' && Reflect !== null && Reflect.apply;
+var badArrayLike;
+var isCallableMarker;
+if (typeof reflectApply === 'function' && typeof Object.defineProperty === 'function') {
+	try {
+		badArrayLike = Object.defineProperty({}, 'length', {
+			get: function () {
+				throw isCallableMarker;
+			}
+		});
+		isCallableMarker = {};
+		// eslint-disable-next-line no-throw-literal
+		reflectApply(function () { throw 42; }, null, badArrayLike);
+	} catch (_) {
+		if (_ !== isCallableMarker) {
+			reflectApply = null;
+		}
+	}
+} else {
+	reflectApply = null;
+}
+
+var constructorRegex = /^\s*class\b/;
+var isES6ClassFn = function isES6ClassFunction(value) {
+	try {
+		var fnStr = fnToStr.call(value);
+		return constructorRegex.test(fnStr);
+	} catch (e) {
+		return false; // not a function
+	}
+};
+
+var tryFunctionObject = function tryFunctionToStr(value) {
+	try {
+		if (isES6ClassFn(value)) { return false; }
+		fnToStr.call(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+var toStr = Object.prototype.toString;
+var objectClass = '[object Object]';
+var fnClass = '[object Function]';
+var genClass = '[object GeneratorFunction]';
+var ddaClass = '[object HTMLAllCollection]'; // IE 11
+var ddaClass2 = '[object HTML document.all class]';
+var ddaClass3 = '[object HTMLCollection]'; // IE 9-10
+var hasToStringTag = typeof Symbol === 'function' && !!Symbol.toStringTag; // better: use `has-tostringtag`
+
+var isIE68 = !(0 in [,]); // eslint-disable-line no-sparse-arrays, comma-spacing
+
+var isDDA = function isDocumentDotAll() { return false; };
+if (typeof document === 'object') {
+	// Firefox 3 canonicalizes DDA to undefined when it's not accessed directly
+	var all = document.all;
+	if (toStr.call(all) === toStr.call(document.all)) {
+		isDDA = function isDocumentDotAll(value) {
+			/* globals document: false */
+			// in IE 6-8, typeof document.all is "object" and it's truthy
+			if ((isIE68 || !value) && (typeof value === 'undefined' || typeof value === 'object')) {
+				try {
+					var str = toStr.call(value);
+					return (
+						str === ddaClass
+						|| str === ddaClass2
+						|| str === ddaClass3 // opera 12.16
+						|| str === objectClass // IE 6-8
+					) && value('') == null; // eslint-disable-line eqeqeq
+				} catch (e) { /**/ }
+			}
+			return false;
+		};
+	}
+}
+
+module.exports = reflectApply
+	? function isCallable(value) {
+		if (isDDA(value)) { return true; }
+		if (!value) { return false; }
+		if (typeof value !== 'function' && typeof value !== 'object') { return false; }
+		try {
+			reflectApply(value, null, badArrayLike);
+		} catch (e) {
+			if (e !== isCallableMarker) { return false; }
+		}
+		return !isES6ClassFn(value) && tryFunctionObject(value);
+	}
+	: function isCallable(value) {
+		if (isDDA(value)) { return true; }
+		if (!value) { return false; }
+		if (typeof value !== 'function' && typeof value !== 'object') { return false; }
+		if (hasToStringTag) { return tryFunctionObject(value); }
+		if (isES6ClassFn(value)) { return false; }
+		var strClass = toStr.call(value);
+		if (strClass !== fnClass && strClass !== genClass && !(/^\[object HTML/).test(strClass)) { return false; }
+		return tryFunctionObject(value);
+	};
+
+
+/***/ }),
+
+/***/ 86253:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+var getDay = callBound('Date.prototype.getDay');
+/** @type {import('.')} */
+var tryDateObject = function tryDateGetDayCall(value) {
+	try {
+		getDay(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+
+/** @type {(value: unknown) => string} */
+var toStr = callBound('Object.prototype.toString');
+var dateClass = '[object Date]';
+var hasToStringTag = __nccwpck_require__(85479)();
+
+/** @type {import('.')} */
+module.exports = function isDateObject(value) {
+	if (typeof value !== 'object' || value === null) {
+		return false;
+	}
+	return hasToStringTag ? tryDateObject(value) : toStr(value) === dateClass;
+};
+
+
+/***/ }),
+
+/***/ 10647:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+var toStr = callBound('Object.prototype.toString');
+
+var isIE68 = !(0 in [,]); // eslint-disable-line no-sparse-arrays, no-magic-numbers
+
+var objectClass = '[object Object]';
+var ddaClass = '[object HTMLAllCollection]';
+
+/** @type {(() => false) | ((value: unknown) => value is HTMLAllCollection)} */
+var isDDA = function isDocumentDotAll() {
+	return /** @type {const} */ (false);
+};
+if (typeof document === 'object') {
+	// Firefox 3 canonicalizes DDA to undefined when it's not accessed directly
+	var all = document.all;
+	if (toStr(all) === toStr(document.all)) {
+		isDDA = /** @type {import('.')} */ (function isDocumentDotAll(value) {
+			/* globals document: false */
+			// in IE 6-8, typeof document.all is "object" and it's truthy
+			if ((isIE68 || !value) && (typeof value === 'undefined' || typeof value === 'object')) {
+				try {
+					// @ts-expect-error nullish will throw
+					var str = toStr(value);
+					// IE 6-8 uses `objectClass`
+					return (str === ddaClass || str === objectClass)
+						&& /** @type {Function} */ (value)('') == null; // eslint-disable-line eqeqeq
+				} catch (e) { /**/ }
+			}
+			return false;
+		});
+	}
+}
+
+module.exports = isDDA;
+
+
+/***/ }),
+
+/***/ 93816:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+/** @type {undefined | ((value: ThisParameterType<typeof FinalizationRegistry.prototype.register>, ...args: Parameters<typeof FinalizationRegistry.prototype.register>) => ReturnType<typeof FinalizationRegistry.prototype.register>)} */
+var $register = callBound('FinalizationRegistry.prototype.register', true);
+
+/** @type {import('.')} */
+module.exports = $register
+	? function isFinalizationRegistry(value) {
+		if (!value || typeof value !== 'object') {
+			return false;
+		}
+		try {
+			// @ts-expect-error TS can't figure out that it's always truthy here
+			$register(value, {}, null);
+			return true;
+		} catch (e) {
+			return false;
+		}
+	}
+	// @ts-ignore unused var
+	: function isFinalizationRegistry(value) { // eslint-disable-line no-unused-vars
+		return false;
+	};
+
+
+/***/ }),
+
+/***/ 55659:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+var safeRegexTest = __nccwpck_require__(93470);
+var isFnRegex = safeRegexTest(/^\s*(?:function)?\*/);
+var hasToStringTag = __nccwpck_require__(85479)();
+var getProto = __nccwpck_require__(81967);
+
+var toStr = callBound('Object.prototype.toString');
+var fnToStr = callBound('Function.prototype.toString');
+
+var getGeneratorFunction = __nccwpck_require__(47228);
+
+/** @type {import('.')} */
+module.exports = function isGeneratorFunction(fn) {
+	if (typeof fn !== 'function') {
+		return false;
+	}
+	if (isFnRegex(fnToStr(fn))) {
+		return true;
+	}
+	if (!hasToStringTag) {
+		var str = toStr(fn);
+		return str === '[object GeneratorFunction]';
+	}
+	if (!getProto) {
+		return false;
+	}
+	var GeneratorFunction = getGeneratorFunction();
+	return GeneratorFunction && getProto(fn) === GeneratorFunction.prototype;
+};
+
+
+/***/ }),
+
+/***/ 69311:
+/***/ ((module) => {
+
+
+
+/** @const */
+var $Map = typeof Map === 'function' && Map.prototype ? Map : null;
+var $Set = typeof Set === 'function' && Set.prototype ? Set : null;
+
+var exported;
+
+if (!$Map) {
+	/** @type {import('.')} */
+	// eslint-disable-next-line no-unused-vars
+	exported = function isMap(x) {
+		// `Map` is not present in this environment.
+		return false;
+	};
+}
+
+var $mapHas = $Map ? Map.prototype.has : null;
+var $setHas = $Set ? Set.prototype.has : null;
+if (!exported && !$mapHas) {
+	/** @type {import('.')} */
+	// eslint-disable-next-line no-unused-vars
+	exported = function isMap(x) {
+		// `Map` does not have a `has` method
+		return false;
+	};
+}
+
+/** @type {import('.')} */
+module.exports = exported || function isMap(x) {
+	if (!x || typeof x !== 'object') {
+		return false;
+	}
+	try {
+		$mapHas.call(x);
+		if ($setHas) {
+			try {
+				$setHas.call(x);
+			} catch (e) {
+				return true;
+			}
+		}
+		// @ts-expect-error TS can't figure out that $Map is always truthy here
+		return x instanceof $Map; // core-js workaround, pre-v2.5.0
+	} catch (e) {}
+	return false;
+};
+
+
+/***/ }),
+
+/***/ 33670:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+var $numToStr = callBound('Number.prototype.toString');
+
+/** @type {import('.')} */
+var tryNumberObject = function tryNumberObject(value) {
+	try {
+		$numToStr(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+var $toString = callBound('Object.prototype.toString');
+var numClass = '[object Number]';
+var hasToStringTag = __nccwpck_require__(85479)();
+
+/** @type {import('.')} */
+module.exports = function isNumberObject(value) {
+	if (typeof value === 'number') {
+		return true;
+	}
+	if (!value || typeof value !== 'object') {
+		return false;
+	}
+	return hasToStringTag ? tryNumberObject(value) : $toString(value) === numClass;
+};
+
+
+/***/ }),
+
+/***/ 86622:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+var hasToStringTag = __nccwpck_require__(85479)();
+var hasOwn = __nccwpck_require__(54076);
+var gOPD = __nccwpck_require__(33170);
+
+/** @type {import('.')} */
+var fn;
+
+if (hasToStringTag) {
+	/** @type {(receiver: ThisParameterType<typeof RegExp.prototype.exec>, ...args: Parameters<typeof RegExp.prototype.exec>) => ReturnType<typeof RegExp.prototype.exec>} */
+	var $exec = callBound('RegExp.prototype.exec');
+	/** @type {object} */
+	var isRegexMarker = {};
+
+	var throwRegexMarker = function () {
+		throw isRegexMarker;
+	};
+	/** @type {{ toString(): never, valueOf(): never, [Symbol.toPrimitive]?(): never }} */
+	var badStringifier = {
+		toString: throwRegexMarker,
+		valueOf: throwRegexMarker
+	};
+
+	if (typeof Symbol.toPrimitive === 'symbol') {
+		badStringifier[Symbol.toPrimitive] = throwRegexMarker;
+	}
+
+	/** @type {import('.')} */
+	// @ts-expect-error TS can't figure out that the $exec call always throws
+	// eslint-disable-next-line consistent-return
+	fn = function isRegex(value) {
+		if (!value || typeof value !== 'object') {
+			return false;
+		}
+
+		// eslint-disable-next-line no-extra-parens
+		var descriptor = /** @type {NonNullable<typeof gOPD>} */ (gOPD)(/** @type {{ lastIndex?: unknown }} */ (value), 'lastIndex');
+		var hasLastIndexDataProperty = descriptor && hasOwn(descriptor, 'value');
+		if (!hasLastIndexDataProperty) {
+			return false;
+		}
+
+		try {
+			// eslint-disable-next-line no-extra-parens
+			$exec(value, /** @type {string} */ (/** @type {unknown} */ (badStringifier)));
+		} catch (e) {
+			return e === isRegexMarker;
+		}
+	};
+} else {
+	/** @type {(receiver: ThisParameterType<typeof Object.prototype.toString>, ...args: Parameters<typeof Object.prototype.toString>) => ReturnType<typeof Object.prototype.toString>} */
+	var $toString = callBound('Object.prototype.toString');
+	/** @const @type {'[object RegExp]'} */
+	var regexClass = '[object RegExp]';
+
+	/** @type {import('.')} */
+	fn = function isRegex(value) {
+		// In older browsers, typeof regex incorrectly returns 'function'
+		if (!value || (typeof value !== 'object' && typeof value !== 'function')) {
+			return false;
+		}
+
+		return $toString(value) === regexClass;
+	};
+}
+
+module.exports = fn;
+
+
+/***/ }),
+
+/***/ 6513:
+/***/ ((module) => {
+
+
+
+var $Map = typeof Map === 'function' && Map.prototype ? Map : null;
+var $Set = typeof Set === 'function' && Set.prototype ? Set : null;
+
+var exported;
+
+if (!$Set) {
+	/** @type {import('.')} */
+	// eslint-disable-next-line no-unused-vars
+	exported = function isSet(x) {
+		// `Set` is not present in this environment.
+		return false;
+	};
+}
+
+var $mapHas = $Map ? Map.prototype.has : null;
+var $setHas = $Set ? Set.prototype.has : null;
+if (!exported && !$setHas) {
+	/** @type {import('.')} */
+	// eslint-disable-next-line no-unused-vars
+	exported = function isSet(x) {
+		// `Set` does not have a `has` method
+		return false;
+	};
+}
+
+/** @type {import('.')} */
+module.exports = exported || function isSet(x) {
+	if (!x || typeof x !== 'object') {
+		return false;
+	}
+	try {
+		$setHas.call(x);
+		if ($mapHas) {
+			try {
+				$mapHas.call(x);
+			} catch (e) {
+				return true;
+			}
+		}
+		// @ts-expect-error TS can't figure out that $Set is always truthy here
+		return x instanceof $Set; // core-js workaround, pre-v2.5.0
+	} catch (e) {}
+	return false;
+};
+
+
+/***/ }),
+
+/***/ 12403:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+/** @type {undefined | ((thisArg: SharedArrayBuffer) => number)} */
+var $byteLength = callBound('SharedArrayBuffer.prototype.byteLength', true);
+
+/** @type {import('.')} */
+module.exports = $byteLength
+	? function isSharedArrayBuffer(obj) {
+		if (!obj || typeof obj !== 'object') {
+			return false;
+		}
+		try {
+			// @ts-expect-error TS can't figure out this closed-over variable is non-nullable, and it's fine that `obj` might not be a SAB
+			$byteLength(obj);
+			return true;
+		} catch (e) {
+			return false;
+		}
+	}
+	: function isSharedArrayBuffer(_obj) { // eslint-disable-line no-unused-vars
+		return false;
+	};
+
+
+/***/ }),
+
+/***/ 96543:
 /***/ ((module) => {
 
 
@@ -21819,7 +23462,241 @@ module.exports = isStream;
 
 /***/ }),
 
-/***/ 2513:
+/***/ 57970:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+/** @type {(receiver: ThisParameterType<typeof String.prototype.valueOf>, ...args: Parameters<typeof String.prototype.valueOf>) => ReturnType<typeof String.prototype.valueOf>} */
+var $strValueOf = callBound('String.prototype.valueOf');
+
+/** @type {import('.')} */
+var tryStringObject = function tryStringObject(value) {
+	try {
+		$strValueOf(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+/** @type {(receiver: ThisParameterType<typeof Object.prototype.toString>, ...args: Parameters<typeof Object.prototype.toString>) => ReturnType<typeof Object.prototype.toString>} */
+var $toString = callBound('Object.prototype.toString');
+var strClass = '[object String]';
+var hasToStringTag = __nccwpck_require__(85479)();
+
+/** @type {import('.')} */
+module.exports = function isString(value) {
+	if (typeof value === 'string') {
+		return true;
+	}
+	if (!value || typeof value !== 'object') {
+		return false;
+	}
+	return hasToStringTag ? tryStringObject(value) : $toString(value) === strClass;
+};
+
+
+/***/ }),
+
+/***/ 63927:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+var $toString = callBound('Object.prototype.toString');
+var hasSymbols = __nccwpck_require__(23336)();
+var safeRegexTest = __nccwpck_require__(93470);
+
+if (hasSymbols) {
+	var $symToStr = callBound('Symbol.prototype.toString');
+	var isSymString = safeRegexTest(/^Symbol\(.*\)$/);
+
+	/** @type {(value: object) => value is Symbol} */
+	var isSymbolObject = function isRealSymbolObject(value) {
+		if (typeof value.valueOf() !== 'symbol') {
+			return false;
+		}
+		return isSymString($symToStr(value));
+	};
+
+	/** @type {import('.')} */
+	module.exports = function isSymbol(value) {
+		if (typeof value === 'symbol') {
+			return true;
+		}
+		if (!value || typeof value !== 'object' || $toString(value) !== '[object Symbol]') {
+			return false;
+		}
+		try {
+			return isSymbolObject(value);
+		} catch (e) {
+			return false;
+		}
+	};
+} else {
+	/** @type {import('.')} */
+	module.exports = function isSymbol(value) {
+		// this environment does not support Symbols.
+		return  false && 0;
+	};
+}
+
+
+/***/ }),
+
+/***/ 6405:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var whichTypedArray = __nccwpck_require__(54768);
+
+/** @type {import('.')} */
+module.exports = function isTypedArray(value) {
+	return !!whichTypedArray(value);
+};
+
+
+/***/ }),
+
+/***/ 33955:
+/***/ ((module) => {
+
+
+
+var $WeakMap = typeof WeakMap === 'function' && WeakMap.prototype ? WeakMap : null;
+var $WeakSet = typeof WeakSet === 'function' && WeakSet.prototype ? WeakSet : null;
+
+var exported;
+
+if (!$WeakMap) {
+	/** @type {import('.')} */
+	// eslint-disable-next-line no-unused-vars
+	exported = function isWeakMap(x) {
+		// `WeakMap` is not present in this environment.
+		return false;
+	};
+}
+
+var $mapHas = $WeakMap ? $WeakMap.prototype.has : null;
+var $setHas = $WeakSet ? $WeakSet.prototype.has : null;
+if (!exported && !$mapHas) {
+	/** @type {import('.')} */
+	// eslint-disable-next-line no-unused-vars
+	exported = function isWeakMap(x) {
+		// `WeakMap` does not have a `has` method
+		return false;
+	};
+}
+
+/** @type {import('.')} */
+module.exports = exported || function isWeakMap(x) {
+	if (!x || typeof x !== 'object') {
+		return false;
+	}
+	try {
+		$mapHas.call(x, $mapHas);
+		if ($setHas) {
+			try {
+				$setHas.call(x, $setHas);
+			} catch (e) {
+				return true;
+			}
+		}
+		// @ts-expect-error TS can't figure out that $WeakMap is always truthy here
+		return x instanceof $WeakMap; // core-js workaround, pre-v3
+	} catch (e) {}
+	return false;
+};
+
+
+/***/ }),
+
+/***/ 92880:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBound = __nccwpck_require__(23105);
+
+// eslint-disable-next-line no-extra-parens
+var $deref = /** @type {<T extends WeakKey>(thisArg: WeakRef<T>) => T | undefined} */ (callBound('WeakRef.prototype.deref', true));
+
+/** @type {import('.')} */
+module.exports = typeof WeakRef === 'undefined'
+	? function isWeakRef(_value) { // eslint-disable-line no-unused-vars
+		return false;
+	}
+	: function isWeakRef(value) {
+		if (!value || typeof value !== 'object') {
+			return false;
+		}
+		try {
+			// @ts-expect-error
+			$deref(value);
+			return true;
+		} catch (e) {
+			return false;
+		}
+	};
+
+
+/***/ }),
+
+/***/ 22237:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+var callBound = __nccwpck_require__(23105);
+
+var $WeakSet = GetIntrinsic('%WeakSet%', true);
+
+/** @type {undefined | (<V>(thisArg: Set<V>, value: V) => boolean)} */
+var $setHas = callBound('WeakSet.prototype.has', true);
+
+if ($setHas) {
+	/** @type {undefined | (<K extends object, V>(thisArg: WeakMap<K, V>, key: K) => boolean)} */
+	var $mapHas = callBound('WeakMap.prototype.has', true);
+
+	/** @type {import('.')} */
+	module.exports = function isWeakSet(x) {
+		if (!x || typeof x !== 'object') {
+			return false;
+		}
+		try {
+			// @ts-expect-error TS can't figure out that $setHas is always truthy here
+			$setHas(x, $setHas);
+			if ($mapHas) {
+				try {
+					// @ts-expect-error this indeed might not be a weak collection
+					$mapHas(x, $mapHas);
+				} catch (e) {
+					return true;
+				}
+			}
+			// @ts-expect-error TS can't figure out that $WeakSet is always truthy here
+			return x instanceof $WeakSet; // core-js workaround, pre-v3
+		} catch (e) {}
+		return false;
+	};
+} else {
+	/** @type {import('.')} */
+	// @ts-expect-error
+	module.exports = function isWeakSet(x) { // eslint-disable-line no-unused-vars
+		// `WeakSet` does not exist, or does not have a `has` method
+		return false;
+	};
+}
+
+
+/***/ }),
+
+/***/ 82513:
 /***/ ((module) => {
 
 var toString = {}.toString;
@@ -21831,10 +23708,10 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
-/***/ 2126:
+/***/ 32126:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var util = __nccwpck_require__(9023);
+var util = __nccwpck_require__(39023);
 var PassThrough = __nccwpck_require__(1835);
 
 module.exports = {
@@ -21892,7 +23769,19 @@ function Writable(fn, options) {
 
 /***/ }),
 
-/***/ 4793:
+/***/ 86215:
+/***/ ((module) => {
+
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ 34793:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -21925,7 +23814,7 @@ function Writable(fn, options) {
 
 /*<replacement>*/
 
-var pna = __nccwpck_require__(1564);
+var pna = __nccwpck_require__(41564);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -21940,12 +23829,12 @@ var objectKeys = Object.keys || function (obj) {
 module.exports = Duplex;
 
 /*<replacement>*/
-var util = Object.create(__nccwpck_require__(5481));
-util.inherits = __nccwpck_require__(9598);
+var util = Object.create(__nccwpck_require__(45481));
+util.inherits = __nccwpck_require__(39598);
 /*</replacement>*/
 
-var Readable = __nccwpck_require__(4559);
-var Writable = __nccwpck_require__(4579);
+var Readable = __nccwpck_require__(74559);
+var Writable = __nccwpck_require__(54579);
 
 util.inherits(Duplex, Readable);
 
@@ -22029,7 +23918,7 @@ Duplex.prototype._destroy = function (err, cb) {
 
 /***/ }),
 
-/***/ 2029:
+/***/ 72029:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -22061,11 +23950,11 @@ Duplex.prototype._destroy = function (err, cb) {
 
 module.exports = PassThrough;
 
-var Transform = __nccwpck_require__(9343);
+var Transform = __nccwpck_require__(69343);
 
 /*<replacement>*/
-var util = Object.create(__nccwpck_require__(5481));
-util.inherits = __nccwpck_require__(9598);
+var util = Object.create(__nccwpck_require__(45481));
+util.inherits = __nccwpck_require__(39598);
 /*</replacement>*/
 
 util.inherits(PassThrough, Transform);
@@ -22082,7 +23971,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 
 /***/ }),
 
-/***/ 4559:
+/***/ 74559:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -22110,13 +23999,13 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 
 /*<replacement>*/
 
-var pna = __nccwpck_require__(1564);
+var pna = __nccwpck_require__(41564);
 /*</replacement>*/
 
 module.exports = Readable;
 
 /*<replacement>*/
-var isArray = __nccwpck_require__(2513);
+var isArray = __nccwpck_require__(86215);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -22126,7 +24015,7 @@ var Duplex;
 Readable.ReadableState = ReadableState;
 
 /*<replacement>*/
-var EE = (__nccwpck_require__(4434).EventEmitter);
+var EE = (__nccwpck_require__(24434).EventEmitter);
 
 var EElistenerCount = function (emitter, type) {
   return emitter.listeners(type).length;
@@ -22134,12 +24023,12 @@ var EElistenerCount = function (emitter, type) {
 /*</replacement>*/
 
 /*<replacement>*/
-var Stream = __nccwpck_require__(7137);
+var Stream = __nccwpck_require__(87137);
 /*</replacement>*/
 
 /*<replacement>*/
 
-var Buffer = (__nccwpck_require__(3644).Buffer);
+var Buffer = (__nccwpck_require__(13644).Buffer);
 var OurUint8Array = (typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : typeof self !== 'undefined' ? self : {}).Uint8Array || function () {};
 function _uint8ArrayToBuffer(chunk) {
   return Buffer.from(chunk);
@@ -22151,12 +24040,12 @@ function _isUint8Array(obj) {
 /*</replacement>*/
 
 /*<replacement>*/
-var util = Object.create(__nccwpck_require__(5481));
-util.inherits = __nccwpck_require__(9598);
+var util = Object.create(__nccwpck_require__(45481));
+util.inherits = __nccwpck_require__(39598);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __nccwpck_require__(9023);
+var debugUtil = __nccwpck_require__(39023);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -22165,8 +24054,8 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __nccwpck_require__(6127);
-var destroyImpl = __nccwpck_require__(1031);
+var BufferList = __nccwpck_require__(46127);
+var destroyImpl = __nccwpck_require__(91031);
 var StringDecoder;
 
 util.inherits(Readable, Stream);
@@ -22186,7 +24075,7 @@ function prependListener(emitter, event, fn) {
 }
 
 function ReadableState(options, stream) {
-  Duplex = Duplex || __nccwpck_require__(4793);
+  Duplex = Duplex || __nccwpck_require__(34793);
 
   options = options || {};
 
@@ -22256,14 +24145,14 @@ function ReadableState(options, stream) {
   this.decoder = null;
   this.encoding = null;
   if (options.encoding) {
-    if (!StringDecoder) StringDecoder = (__nccwpck_require__(176)/* .StringDecoder */ .I);
+    if (!StringDecoder) StringDecoder = (__nccwpck_require__(50176)/* .StringDecoder */ .I);
     this.decoder = new StringDecoder(options.encoding);
     this.encoding = options.encoding;
   }
 }
 
 function Readable(options) {
-  Duplex = Duplex || __nccwpck_require__(4793);
+  Duplex = Duplex || __nccwpck_require__(34793);
 
   if (!(this instanceof Readable)) return new Readable(options);
 
@@ -22412,7 +24301,7 @@ Readable.prototype.isPaused = function () {
 
 // backwards compatibility.
 Readable.prototype.setEncoding = function (enc) {
-  if (!StringDecoder) StringDecoder = (__nccwpck_require__(176)/* .StringDecoder */ .I);
+  if (!StringDecoder) StringDecoder = (__nccwpck_require__(50176)/* .StringDecoder */ .I);
   this._readableState.decoder = new StringDecoder(enc);
   this._readableState.encoding = enc;
   return this;
@@ -23107,7 +24996,7 @@ function indexOf(xs, x) {
 
 /***/ }),
 
-/***/ 9343:
+/***/ 69343:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -23177,11 +25066,11 @@ function indexOf(xs, x) {
 
 module.exports = Transform;
 
-var Duplex = __nccwpck_require__(4793);
+var Duplex = __nccwpck_require__(34793);
 
 /*<replacement>*/
-var util = Object.create(__nccwpck_require__(5481));
-util.inherits = __nccwpck_require__(9598);
+var util = Object.create(__nccwpck_require__(45481));
+util.inherits = __nccwpck_require__(39598);
 /*</replacement>*/
 
 util.inherits(Transform, Duplex);
@@ -23327,7 +25216,7 @@ function done(stream, er, data) {
 
 /***/ }),
 
-/***/ 4579:
+/***/ 54579:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -23359,7 +25248,7 @@ function done(stream, er, data) {
 
 /*<replacement>*/
 
-var pna = __nccwpck_require__(1564);
+var pna = __nccwpck_require__(41564);
 /*</replacement>*/
 
 module.exports = Writable;
@@ -23396,23 +25285,23 @@ var Duplex;
 Writable.WritableState = WritableState;
 
 /*<replacement>*/
-var util = Object.create(__nccwpck_require__(5481));
-util.inherits = __nccwpck_require__(9598);
+var util = Object.create(__nccwpck_require__(45481));
+util.inherits = __nccwpck_require__(39598);
 /*</replacement>*/
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __nccwpck_require__(4488)
+  deprecate: __nccwpck_require__(24488)
 };
 /*</replacement>*/
 
 /*<replacement>*/
-var Stream = __nccwpck_require__(7137);
+var Stream = __nccwpck_require__(87137);
 /*</replacement>*/
 
 /*<replacement>*/
 
-var Buffer = (__nccwpck_require__(3644).Buffer);
+var Buffer = (__nccwpck_require__(13644).Buffer);
 var OurUint8Array = (typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : typeof self !== 'undefined' ? self : {}).Uint8Array || function () {};
 function _uint8ArrayToBuffer(chunk) {
   return Buffer.from(chunk);
@@ -23423,14 +25312,14 @@ function _isUint8Array(obj) {
 
 /*</replacement>*/
 
-var destroyImpl = __nccwpck_require__(1031);
+var destroyImpl = __nccwpck_require__(91031);
 
 util.inherits(Writable, Stream);
 
 function nop() {}
 
 function WritableState(options, stream) {
-  Duplex = Duplex || __nccwpck_require__(4793);
+  Duplex = Duplex || __nccwpck_require__(34793);
 
   options = options || {};
 
@@ -23580,7 +25469,7 @@ if (typeof Symbol === 'function' && Symbol.hasInstance && typeof Function.protot
 }
 
 function Writable(options) {
-  Duplex = Duplex || __nccwpck_require__(4793);
+  Duplex = Duplex || __nccwpck_require__(34793);
 
   // Writable ctor is applied to Duplexes, too.
   // `realHasInstance` is necessary because using plain `instanceof`
@@ -24018,15 +25907,15 @@ Writable.prototype._destroy = function (err, cb) {
 
 /***/ }),
 
-/***/ 6127:
+/***/ 46127:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Buffer = (__nccwpck_require__(3644).Buffer);
-var util = __nccwpck_require__(9023);
+var Buffer = (__nccwpck_require__(13644).Buffer);
+var util = __nccwpck_require__(39023);
 
 function copyBuffer(src, target, offset) {
   src.copy(target, offset);
@@ -24102,14 +25991,14 @@ if (util && util.inspect && util.inspect.custom) {
 
 /***/ }),
 
-/***/ 1031:
+/***/ 91031:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 /*<replacement>*/
 
-var pna = __nccwpck_require__(1564);
+var pna = __nccwpck_require__(41564);
 /*</replacement>*/
 
 // undocumented cb() API, needed for core, not for public API
@@ -24192,7 +26081,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7137:
+/***/ 87137:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = __nccwpck_require__(2203);
@@ -24203,12 +26092,12 @@ module.exports = __nccwpck_require__(2203);
 /***/ 1835:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(3109).PassThrough
+module.exports = __nccwpck_require__(73109).PassThrough
 
 
 /***/ }),
 
-/***/ 3109:
+/***/ 73109:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 var Stream = __nccwpck_require__(2203);
@@ -24222,23 +26111,23 @@ if (process.env.READABLE_STREAM === 'disable' && Stream) {
   exports.PassThrough = Stream.PassThrough;
   exports.Stream = Stream;
 } else {
-  exports = module.exports = __nccwpck_require__(4559);
+  exports = module.exports = __nccwpck_require__(74559);
   exports.Stream = Stream || exports;
   exports.Readable = exports;
-  exports.Writable = __nccwpck_require__(4579);
-  exports.Duplex = __nccwpck_require__(4793);
-  exports.Transform = __nccwpck_require__(9343);
-  exports.PassThrough = __nccwpck_require__(2029);
+  exports.Writable = __nccwpck_require__(54579);
+  exports.Duplex = __nccwpck_require__(34793);
+  exports.Transform = __nccwpck_require__(69343);
+  exports.PassThrough = __nccwpck_require__(72029);
 }
 
 
 /***/ }),
 
-/***/ 3644:
+/***/ 13644:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /* eslint-disable node/no-deprecated-api */
-var buffer = __nccwpck_require__(181)
+var buffer = __nccwpck_require__(20181)
 var Buffer = buffer.Buffer
 
 // alternative to using Object.keys for old browsers
@@ -24303,7 +26192,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 /***/ }),
 
-/***/ 176:
+/***/ 50176:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -24331,7 +26220,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 /*<replacement>*/
 
-var Buffer = (__nccwpck_require__(3644).Buffer);
+var Buffer = (__nccwpck_require__(13644).Buffer);
 /*</replacement>*/
 
 var isEncoding = Buffer.isEncoding || function (encoding) {
@@ -24605,14 +26494,14 @@ function simpleEnd(buf) {
 
 /***/ }),
 
-/***/ 6320:
+/***/ 66320:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var hashClear = __nccwpck_require__(8051),
-    hashDelete = __nccwpck_require__(5431),
-    hashGet = __nccwpck_require__(6934),
-    hashHas = __nccwpck_require__(4306),
-    hashSet = __nccwpck_require__(7226);
+var hashClear = __nccwpck_require__(48051),
+    hashDelete = __nccwpck_require__(15431),
+    hashGet = __nccwpck_require__(26934),
+    hashHas = __nccwpck_require__(64306),
+    hashSet = __nccwpck_require__(17226);
 
 /**
  * Creates a hash object.
@@ -24644,14 +26533,14 @@ module.exports = Hash;
 
 /***/ }),
 
-/***/ 8884:
+/***/ 68884:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var listCacheClear = __nccwpck_require__(9791),
-    listCacheDelete = __nccwpck_require__(4555),
-    listCacheGet = __nccwpck_require__(6634),
+var listCacheClear = __nccwpck_require__(99791),
+    listCacheDelete = __nccwpck_require__(24555),
+    listCacheGet = __nccwpck_require__(86634),
     listCacheHas = __nccwpck_require__(8430),
-    listCacheSet = __nccwpck_require__(6918);
+    listCacheSet = __nccwpck_require__(36918);
 
 /**
  * Creates an list cache object.
@@ -24683,10 +26572,10 @@ module.exports = ListCache;
 
 /***/ }),
 
-/***/ 8272:
+/***/ 98272:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var getNative = __nccwpck_require__(954),
+var getNative = __nccwpck_require__(68573),
     root = __nccwpck_require__(6748);
 
 /* Built-in method references that are verified to be native. */
@@ -24697,14 +26586,14 @@ module.exports = Map;
 
 /***/ }),
 
-/***/ 9660:
+/***/ 79660:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var mapCacheClear = __nccwpck_require__(8487),
-    mapCacheDelete = __nccwpck_require__(6275),
-    mapCacheGet = __nccwpck_require__(130),
-    mapCacheHas = __nccwpck_require__(9254),
-    mapCacheSet = __nccwpck_require__(9806);
+var mapCacheClear = __nccwpck_require__(88487),
+    mapCacheDelete = __nccwpck_require__(36275),
+    mapCacheGet = __nccwpck_require__(30130),
+    mapCacheHas = __nccwpck_require__(69254),
+    mapCacheSet = __nccwpck_require__(59806);
 
 /**
  * Creates a map cache object to store key-value pairs.
@@ -24736,10 +26625,10 @@ module.exports = MapCache;
 
 /***/ }),
 
-/***/ 4986:
+/***/ 84986:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var getNative = __nccwpck_require__(954),
+var getNative = __nccwpck_require__(68573),
     root = __nccwpck_require__(6748);
 
 /* Built-in method references that are verified to be native. */
@@ -24750,12 +26639,12 @@ module.exports = Set;
 
 /***/ }),
 
-/***/ 3706:
+/***/ 23706:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var MapCache = __nccwpck_require__(9660),
-    setCacheAdd = __nccwpck_require__(4671),
-    setCacheHas = __nccwpck_require__(1884);
+var MapCache = __nccwpck_require__(79660),
+    setCacheAdd = __nccwpck_require__(44671),
+    setCacheHas = __nccwpck_require__(71884);
 
 /**
  *
@@ -24784,7 +26673,7 @@ module.exports = SetCache;
 
 /***/ }),
 
-/***/ 8584:
+/***/ 38584:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var root = __nccwpck_require__(6748);
@@ -24797,7 +26686,7 @@ module.exports = Symbol;
 
 /***/ }),
 
-/***/ 9678:
+/***/ 59678:
 /***/ ((module) => {
 
 /**
@@ -24825,10 +26714,10 @@ module.exports = apply;
 
 /***/ }),
 
-/***/ 534:
+/***/ 70534:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseIndexOf = __nccwpck_require__(4760);
+var baseIndexOf = __nccwpck_require__(84760);
 
 /**
  * A specialized version of `_.includes` for arrays without support for
@@ -24849,7 +26738,7 @@ module.exports = arrayIncludes;
 
 /***/ }),
 
-/***/ 7314:
+/***/ 37314:
 /***/ ((module) => {
 
 /**
@@ -24878,15 +26767,15 @@ module.exports = arrayIncludesWith;
 
 /***/ }),
 
-/***/ 2000:
+/***/ 62000:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseTimes = __nccwpck_require__(1299),
-    isArguments = __nccwpck_require__(541),
-    isArray = __nccwpck_require__(2430),
-    isBuffer = __nccwpck_require__(3739),
-    isIndex = __nccwpck_require__(7446),
-    isTypedArray = __nccwpck_require__(5000);
+var baseTimes = __nccwpck_require__(21299),
+    isArguments = __nccwpck_require__(60541),
+    isArray = __nccwpck_require__(77192),
+    isBuffer = __nccwpck_require__(43739),
+    isIndex = __nccwpck_require__(37446),
+    isTypedArray = __nccwpck_require__(35000);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -24934,7 +26823,7 @@ module.exports = arrayLikeKeys;
 
 /***/ }),
 
-/***/ 6649:
+/***/ 56649:
 /***/ ((module) => {
 
 /**
@@ -24962,7 +26851,7 @@ module.exports = arrayMap;
 
 /***/ }),
 
-/***/ 827:
+/***/ 50827:
 /***/ ((module) => {
 
 /**
@@ -24989,10 +26878,10 @@ module.exports = arrayPush;
 
 /***/ }),
 
-/***/ 4024:
+/***/ 74024:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var eq = __nccwpck_require__(5199);
+var eq = __nccwpck_require__(75199);
 
 /**
  * Gets the index at which the `key` is found in `array` of key-value pairs.
@@ -25020,12 +26909,12 @@ module.exports = assocIndexOf;
 /***/ 3126:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var SetCache = __nccwpck_require__(3706),
-    arrayIncludes = __nccwpck_require__(534),
-    arrayIncludesWith = __nccwpck_require__(7314),
-    arrayMap = __nccwpck_require__(6649),
-    baseUnary = __nccwpck_require__(5506),
-    cacheHas = __nccwpck_require__(4486);
+var SetCache = __nccwpck_require__(23706),
+    arrayIncludes = __nccwpck_require__(70534),
+    arrayIncludesWith = __nccwpck_require__(37314),
+    arrayMap = __nccwpck_require__(56649),
+    baseUnary = __nccwpck_require__(55506),
+    cacheHas = __nccwpck_require__(64486);
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -25091,7 +26980,7 @@ module.exports = baseDifference;
 
 /***/ }),
 
-/***/ 5588:
+/***/ 35588:
 /***/ ((module) => {
 
 /**
@@ -25122,11 +27011,11 @@ module.exports = baseFindIndex;
 
 /***/ }),
 
-/***/ 3183:
+/***/ 63183:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var arrayPush = __nccwpck_require__(827),
-    isFlattenable = __nccwpck_require__(5088);
+var arrayPush = __nccwpck_require__(50827),
+    isFlattenable = __nccwpck_require__(45088);
 
 /**
  * The base implementation of `_.flatten` with support for restricting flattening.
@@ -25167,12 +27056,12 @@ module.exports = baseFlatten;
 
 /***/ }),
 
-/***/ 9117:
+/***/ 29117:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Symbol = __nccwpck_require__(8584),
-    getRawTag = __nccwpck_require__(5292),
-    objectToString = __nccwpck_require__(1723);
+var Symbol = __nccwpck_require__(38584),
+    getRawTag = __nccwpck_require__(95292),
+    objectToString = __nccwpck_require__(71723);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -25202,12 +27091,12 @@ module.exports = baseGetTag;
 
 /***/ }),
 
-/***/ 4760:
+/***/ 84760:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseFindIndex = __nccwpck_require__(5588),
-    baseIsNaN = __nccwpck_require__(4352),
-    strictIndexOf = __nccwpck_require__(5232);
+var baseFindIndex = __nccwpck_require__(35588),
+    baseIsNaN = __nccwpck_require__(34352),
+    strictIndexOf = __nccwpck_require__(95232);
 
 /**
  * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
@@ -25229,11 +27118,11 @@ module.exports = baseIndexOf;
 
 /***/ }),
 
-/***/ 3605:
+/***/ 93605:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseGetTag = __nccwpck_require__(9117),
-    isObjectLike = __nccwpck_require__(1645);
+var baseGetTag = __nccwpck_require__(29117),
+    isObjectLike = __nccwpck_require__(51645);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -25254,7 +27143,7 @@ module.exports = baseIsArguments;
 
 /***/ }),
 
-/***/ 4352:
+/***/ 34352:
 /***/ ((module) => {
 
 /**
@@ -25273,13 +27162,13 @@ module.exports = baseIsNaN;
 
 /***/ }),
 
-/***/ 2334:
+/***/ 92334:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var isFunction = __nccwpck_require__(4329),
-    isMasked = __nccwpck_require__(6613),
-    isObject = __nccwpck_require__(6482),
-    toSource = __nccwpck_require__(7192);
+var isFunction = __nccwpck_require__(34329),
+    isMasked = __nccwpck_require__(46613),
+    isObject = __nccwpck_require__(96482),
+    toSource = __nccwpck_require__(57192);
 
 /**
  * Used to match `RegExp`
@@ -25327,12 +27216,12 @@ module.exports = baseIsNative;
 
 /***/ }),
 
-/***/ 6880:
+/***/ 16880:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseGetTag = __nccwpck_require__(9117),
-    isLength = __nccwpck_require__(6657),
-    isObjectLike = __nccwpck_require__(1645);
+var baseGetTag = __nccwpck_require__(29117),
+    isLength = __nccwpck_require__(56657),
+    isObjectLike = __nccwpck_require__(51645);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -25394,12 +27283,12 @@ module.exports = baseIsTypedArray;
 
 /***/ }),
 
-/***/ 2094:
+/***/ 82094:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var isObject = __nccwpck_require__(6482),
-    isPrototype = __nccwpck_require__(5944),
-    nativeKeysIn = __nccwpck_require__(4008);
+var isObject = __nccwpck_require__(96482),
+    isPrototype = __nccwpck_require__(55944),
+    nativeKeysIn = __nccwpck_require__(94008);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -25434,12 +27323,12 @@ module.exports = baseKeysIn;
 
 /***/ }),
 
-/***/ 2035:
+/***/ 22035:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var identity = __nccwpck_require__(6851),
-    overRest = __nccwpck_require__(168),
-    setToString = __nccwpck_require__(9402);
+var identity = __nccwpck_require__(46851),
+    overRest = __nccwpck_require__(20168),
+    setToString = __nccwpck_require__(59402);
 
 /**
  * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -25458,12 +27347,12 @@ module.exports = baseRest;
 
 /***/ }),
 
-/***/ 4953:
+/***/ 64953:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var constant = __nccwpck_require__(5089),
-    defineProperty = __nccwpck_require__(3106),
-    identity = __nccwpck_require__(6851);
+var constant = __nccwpck_require__(85089),
+    defineProperty = __nccwpck_require__(83106),
+    identity = __nccwpck_require__(46851);
 
 /**
  * The base implementation of `setToString` without support for hot loop shorting.
@@ -25487,7 +27376,7 @@ module.exports = baseSetToString;
 
 /***/ }),
 
-/***/ 1299:
+/***/ 21299:
 /***/ ((module) => {
 
 /**
@@ -25514,7 +27403,7 @@ module.exports = baseTimes;
 
 /***/ }),
 
-/***/ 5506:
+/***/ 55506:
 /***/ ((module) => {
 
 /**
@@ -25535,15 +27424,15 @@ module.exports = baseUnary;
 
 /***/ }),
 
-/***/ 2772:
+/***/ 32772:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var SetCache = __nccwpck_require__(3706),
-    arrayIncludes = __nccwpck_require__(534),
-    arrayIncludesWith = __nccwpck_require__(7314),
-    cacheHas = __nccwpck_require__(4486),
-    createSet = __nccwpck_require__(8242),
-    setToArray = __nccwpck_require__(1894);
+var SetCache = __nccwpck_require__(23706),
+    arrayIncludes = __nccwpck_require__(70534),
+    arrayIncludesWith = __nccwpck_require__(37314),
+    cacheHas = __nccwpck_require__(64486),
+    createSet = __nccwpck_require__(48242),
+    setToArray = __nccwpck_require__(11894);
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -25614,7 +27503,7 @@ module.exports = baseUniq;
 
 /***/ }),
 
-/***/ 4486:
+/***/ 64486:
 /***/ ((module) => {
 
 /**
@@ -25634,7 +27523,7 @@ module.exports = cacheHas;
 
 /***/ }),
 
-/***/ 252:
+/***/ 60252:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var root = __nccwpck_require__(6748);
@@ -25647,12 +27536,12 @@ module.exports = coreJsData;
 
 /***/ }),
 
-/***/ 8242:
+/***/ 48242:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Set = __nccwpck_require__(4986),
-    noop = __nccwpck_require__(9029),
-    setToArray = __nccwpck_require__(1894);
+var Set = __nccwpck_require__(84986),
+    noop = __nccwpck_require__(89029),
+    setToArray = __nccwpck_require__(11894);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
@@ -25673,10 +27562,10 @@ module.exports = createSet;
 
 /***/ }),
 
-/***/ 3106:
+/***/ 83106:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var getNative = __nccwpck_require__(954);
+var getNative = __nccwpck_require__(68573);
 
 var defineProperty = (function() {
   try {
@@ -25691,7 +27580,7 @@ module.exports = defineProperty;
 
 /***/ }),
 
-/***/ 8997:
+/***/ 78997:
 /***/ ((module) => {
 
 /** Detect free variable `global` from Node.js. */
@@ -25705,7 +27594,7 @@ module.exports = freeGlobal;
 /***/ 1194:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var isKeyable = __nccwpck_require__(5626);
+var isKeyable = __nccwpck_require__(93245);
 
 /**
  * Gets the data for `map`.
@@ -25727,10 +27616,10 @@ module.exports = getMapData;
 
 /***/ }),
 
-/***/ 954:
+/***/ 68573:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseIsNative = __nccwpck_require__(2334),
+var baseIsNative = __nccwpck_require__(92334),
     getValue = __nccwpck_require__(8293);
 
 /**
@@ -25751,10 +27640,10 @@ module.exports = getNative;
 
 /***/ }),
 
-/***/ 6194:
+/***/ 86194:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var overArg = __nccwpck_require__(1128);
+var overArg = __nccwpck_require__(61128);
 
 /** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -25764,10 +27653,10 @@ module.exports = getPrototype;
 
 /***/ }),
 
-/***/ 5292:
+/***/ 95292:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Symbol = __nccwpck_require__(8584);
+var Symbol = __nccwpck_require__(38584);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -25837,10 +27726,10 @@ module.exports = getValue;
 
 /***/ }),
 
-/***/ 8051:
+/***/ 48051:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var nativeCreate = __nccwpck_require__(1563);
+var nativeCreate = __nccwpck_require__(71563);
 
 /**
  * Removes all key-value entries from the hash.
@@ -25859,7 +27748,7 @@ module.exports = hashClear;
 
 /***/ }),
 
-/***/ 5431:
+/***/ 15431:
 /***/ ((module) => {
 
 /**
@@ -25883,10 +27772,10 @@ module.exports = hashDelete;
 
 /***/ }),
 
-/***/ 6934:
+/***/ 26934:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var nativeCreate = __nccwpck_require__(1563);
+var nativeCreate = __nccwpck_require__(71563);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -25920,10 +27809,10 @@ module.exports = hashGet;
 
 /***/ }),
 
-/***/ 4306:
+/***/ 64306:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var nativeCreate = __nccwpck_require__(1563);
+var nativeCreate = __nccwpck_require__(71563);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -25950,10 +27839,10 @@ module.exports = hashHas;
 
 /***/ }),
 
-/***/ 7226:
+/***/ 17226:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var nativeCreate = __nccwpck_require__(1563);
+var nativeCreate = __nccwpck_require__(71563);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -25980,12 +27869,12 @@ module.exports = hashSet;
 
 /***/ }),
 
-/***/ 5088:
+/***/ 45088:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Symbol = __nccwpck_require__(8584),
-    isArguments = __nccwpck_require__(541),
-    isArray = __nccwpck_require__(2430);
+var Symbol = __nccwpck_require__(38584),
+    isArguments = __nccwpck_require__(60541),
+    isArray = __nccwpck_require__(77192);
 
 /** Built-in value references. */
 var spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
@@ -26007,7 +27896,7 @@ module.exports = isFlattenable;
 
 /***/ }),
 
-/***/ 7446:
+/***/ 37446:
 /***/ ((module) => {
 
 /** Used as references for various `Number` constants. */
@@ -26042,10 +27931,10 @@ module.exports = isIndex;
 /***/ 3349:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var eq = __nccwpck_require__(5199),
-    isArrayLike = __nccwpck_require__(5119),
-    isIndex = __nccwpck_require__(7446),
-    isObject = __nccwpck_require__(6482);
+var eq = __nccwpck_require__(75199),
+    isArrayLike = __nccwpck_require__(75119),
+    isIndex = __nccwpck_require__(37446),
+    isObject = __nccwpck_require__(96482);
 
 /**
  * Checks if the given arguments are from an iteratee call.
@@ -26076,7 +27965,7 @@ module.exports = isIterateeCall;
 
 /***/ }),
 
-/***/ 5626:
+/***/ 93245:
 /***/ ((module) => {
 
 /**
@@ -26098,10 +27987,10 @@ module.exports = isKeyable;
 
 /***/ }),
 
-/***/ 6613:
+/***/ 46613:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var coreJsData = __nccwpck_require__(252);
+var coreJsData = __nccwpck_require__(60252);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -26125,7 +28014,7 @@ module.exports = isMasked;
 
 /***/ }),
 
-/***/ 5944:
+/***/ 55944:
 /***/ ((module) => {
 
 /** Used for built-in method references. */
@@ -26150,7 +28039,7 @@ module.exports = isPrototype;
 
 /***/ }),
 
-/***/ 9791:
+/***/ 99791:
 /***/ ((module) => {
 
 /**
@@ -26170,10 +28059,10 @@ module.exports = listCacheClear;
 
 /***/ }),
 
-/***/ 4555:
+/***/ 24555:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var assocIndexOf = __nccwpck_require__(4024);
+var assocIndexOf = __nccwpck_require__(74024);
 
 /** Used for built-in method references. */
 var arrayProto = Array.prototype;
@@ -26212,10 +28101,10 @@ module.exports = listCacheDelete;
 
 /***/ }),
 
-/***/ 6634:
+/***/ 86634:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var assocIndexOf = __nccwpck_require__(4024);
+var assocIndexOf = __nccwpck_require__(74024);
 
 /**
  * Gets the list cache value for `key`.
@@ -26241,7 +28130,7 @@ module.exports = listCacheGet;
 /***/ 8430:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var assocIndexOf = __nccwpck_require__(4024);
+var assocIndexOf = __nccwpck_require__(74024);
 
 /**
  * Checks if a list cache value for `key` exists.
@@ -26261,10 +28150,10 @@ module.exports = listCacheHas;
 
 /***/ }),
 
-/***/ 6918:
+/***/ 36918:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var assocIndexOf = __nccwpck_require__(4024);
+var assocIndexOf = __nccwpck_require__(74024);
 
 /**
  * Sets the list cache `key` to `value`.
@@ -26294,12 +28183,12 @@ module.exports = listCacheSet;
 
 /***/ }),
 
-/***/ 8487:
+/***/ 88487:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Hash = __nccwpck_require__(6320),
-    ListCache = __nccwpck_require__(8884),
-    Map = __nccwpck_require__(8272);
+var Hash = __nccwpck_require__(66320),
+    ListCache = __nccwpck_require__(68884),
+    Map = __nccwpck_require__(98272);
 
 /**
  * Removes all key-value entries from the map.
@@ -26322,7 +28211,7 @@ module.exports = mapCacheClear;
 
 /***/ }),
 
-/***/ 6275:
+/***/ 36275:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var getMapData = __nccwpck_require__(1194);
@@ -26347,7 +28236,7 @@ module.exports = mapCacheDelete;
 
 /***/ }),
 
-/***/ 130:
+/***/ 30130:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var getMapData = __nccwpck_require__(1194);
@@ -26370,7 +28259,7 @@ module.exports = mapCacheGet;
 
 /***/ }),
 
-/***/ 9254:
+/***/ 69254:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var getMapData = __nccwpck_require__(1194);
@@ -26393,7 +28282,7 @@ module.exports = mapCacheHas;
 
 /***/ }),
 
-/***/ 9806:
+/***/ 59806:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var getMapData = __nccwpck_require__(1194);
@@ -26422,10 +28311,10 @@ module.exports = mapCacheSet;
 
 /***/ }),
 
-/***/ 1563:
+/***/ 71563:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var getNative = __nccwpck_require__(954);
+var getNative = __nccwpck_require__(68573);
 
 /* Built-in method references that are verified to be native. */
 var nativeCreate = getNative(Object, 'create');
@@ -26435,7 +28324,7 @@ module.exports = nativeCreate;
 
 /***/ }),
 
-/***/ 4008:
+/***/ 94008:
 /***/ ((module) => {
 
 /**
@@ -26462,11 +28351,11 @@ module.exports = nativeKeysIn;
 
 /***/ }),
 
-/***/ 8724:
+/***/ 88724:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /* module decorator */ module = __nccwpck_require__.nmd(module);
-var freeGlobal = __nccwpck_require__(8997);
+var freeGlobal = __nccwpck_require__(78997);
 
 /** Detect free variable `exports`. */
 var freeExports =  true && exports && !exports.nodeType && exports;
@@ -26500,7 +28389,7 @@ module.exports = nodeUtil;
 
 /***/ }),
 
-/***/ 1723:
+/***/ 71723:
 /***/ ((module) => {
 
 /** Used for built-in method references. */
@@ -26529,7 +28418,7 @@ module.exports = objectToString;
 
 /***/ }),
 
-/***/ 1128:
+/***/ 61128:
 /***/ ((module) => {
 
 /**
@@ -26551,10 +28440,10 @@ module.exports = overArg;
 
 /***/ }),
 
-/***/ 168:
+/***/ 20168:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var apply = __nccwpck_require__(9678);
+var apply = __nccwpck_require__(59678);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -26597,7 +28486,7 @@ module.exports = overRest;
 /***/ 6748:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var freeGlobal = __nccwpck_require__(8997);
+var freeGlobal = __nccwpck_require__(78997);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -26610,7 +28499,7 @@ module.exports = root;
 
 /***/ }),
 
-/***/ 4671:
+/***/ 44671:
 /***/ ((module) => {
 
 /** Used to stand-in for `undefined` hash values. */
@@ -26636,7 +28525,7 @@ module.exports = setCacheAdd;
 
 /***/ }),
 
-/***/ 1884:
+/***/ 71884:
 /***/ ((module) => {
 
 /**
@@ -26657,7 +28546,7 @@ module.exports = setCacheHas;
 
 /***/ }),
 
-/***/ 1894:
+/***/ 11894:
 /***/ ((module) => {
 
 /**
@@ -26682,11 +28571,11 @@ module.exports = setToArray;
 
 /***/ }),
 
-/***/ 9402:
+/***/ 59402:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseSetToString = __nccwpck_require__(4953),
-    shortOut = __nccwpck_require__(3286);
+var baseSetToString = __nccwpck_require__(64953),
+    shortOut = __nccwpck_require__(83286);
 
 /**
  * Sets the `toString` method of `func` to return `string`.
@@ -26703,7 +28592,7 @@ module.exports = setToString;
 
 /***/ }),
 
-/***/ 3286:
+/***/ 83286:
 /***/ ((module) => {
 
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -26747,7 +28636,7 @@ module.exports = shortOut;
 
 /***/ }),
 
-/***/ 5232:
+/***/ 95232:
 /***/ ((module) => {
 
 /**
@@ -26777,7 +28666,7 @@ module.exports = strictIndexOf;
 
 /***/ }),
 
-/***/ 7192:
+/***/ 57192:
 /***/ ((module) => {
 
 /** Used for built-in method references. */
@@ -26810,7 +28699,7 @@ module.exports = toSource;
 
 /***/ }),
 
-/***/ 5089:
+/***/ 85089:
 /***/ ((module) => {
 
 /**
@@ -26846,10 +28735,10 @@ module.exports = constant;
 /***/ 7511:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseRest = __nccwpck_require__(2035),
-    eq = __nccwpck_require__(5199),
+var baseRest = __nccwpck_require__(22035),
+    eq = __nccwpck_require__(75199),
     isIterateeCall = __nccwpck_require__(3349),
-    keysIn = __nccwpck_require__(9430);
+    keysIn = __nccwpck_require__(19430);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -26914,13 +28803,13 @@ module.exports = defaults;
 
 /***/ }),
 
-/***/ 7294:
+/***/ 57294:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var baseDifference = __nccwpck_require__(3126),
-    baseFlatten = __nccwpck_require__(3183),
-    baseRest = __nccwpck_require__(2035),
-    isArrayLikeObject = __nccwpck_require__(7100);
+    baseFlatten = __nccwpck_require__(63183),
+    baseRest = __nccwpck_require__(22035),
+    isArrayLikeObject = __nccwpck_require__(97100);
 
 /**
  * Creates an array of `array` values not included in the other given arrays
@@ -26954,7 +28843,7 @@ module.exports = difference;
 
 /***/ }),
 
-/***/ 5199:
+/***/ 75199:
 /***/ ((module) => {
 
 /**
@@ -26998,10 +28887,10 @@ module.exports = eq;
 
 /***/ }),
 
-/***/ 7047:
+/***/ 97047:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseFlatten = __nccwpck_require__(3183);
+var baseFlatten = __nccwpck_require__(63183);
 
 /**
  * Flattens `array` a single level deep.
@@ -27027,7 +28916,7 @@ module.exports = flatten;
 
 /***/ }),
 
-/***/ 6851:
+/***/ 46851:
 /***/ ((module) => {
 
 /**
@@ -27055,11 +28944,11 @@ module.exports = identity;
 
 /***/ }),
 
-/***/ 541:
+/***/ 60541:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseIsArguments = __nccwpck_require__(3605),
-    isObjectLike = __nccwpck_require__(1645);
+var baseIsArguments = __nccwpck_require__(93605),
+    isObjectLike = __nccwpck_require__(51645);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -27098,7 +28987,7 @@ module.exports = isArguments;
 
 /***/ }),
 
-/***/ 2430:
+/***/ 77192:
 /***/ ((module) => {
 
 /**
@@ -27131,11 +29020,11 @@ module.exports = isArray;
 
 /***/ }),
 
-/***/ 5119:
+/***/ 75119:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var isFunction = __nccwpck_require__(4329),
-    isLength = __nccwpck_require__(6657);
+var isFunction = __nccwpck_require__(34329),
+    isLength = __nccwpck_require__(56657);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -27171,11 +29060,11 @@ module.exports = isArrayLike;
 
 /***/ }),
 
-/***/ 7100:
+/***/ 97100:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var isArrayLike = __nccwpck_require__(5119),
-    isObjectLike = __nccwpck_require__(1645);
+var isArrayLike = __nccwpck_require__(75119),
+    isObjectLike = __nccwpck_require__(51645);
 
 /**
  * This method is like `_.isArrayLike` except that it also checks if `value`
@@ -27211,12 +29100,12 @@ module.exports = isArrayLikeObject;
 
 /***/ }),
 
-/***/ 3739:
+/***/ 43739:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /* module decorator */ module = __nccwpck_require__.nmd(module);
 var root = __nccwpck_require__(6748),
-    stubFalse = __nccwpck_require__(2074);
+    stubFalse = __nccwpck_require__(92074);
 
 /** Detect free variable `exports`. */
 var freeExports =  true && exports && !exports.nodeType && exports;
@@ -27257,11 +29146,11 @@ module.exports = isBuffer;
 
 /***/ }),
 
-/***/ 4329:
+/***/ 34329:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseGetTag = __nccwpck_require__(9117),
-    isObject = __nccwpck_require__(6482);
+var baseGetTag = __nccwpck_require__(29117),
+    isObject = __nccwpck_require__(96482);
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
@@ -27301,7 +29190,7 @@ module.exports = isFunction;
 
 /***/ }),
 
-/***/ 6657:
+/***/ 56657:
 /***/ ((module) => {
 
 /** Used as references for various `Number` constants. */
@@ -27343,7 +29232,7 @@ module.exports = isLength;
 
 /***/ }),
 
-/***/ 6482:
+/***/ 96482:
 /***/ ((module) => {
 
 /**
@@ -27381,7 +29270,7 @@ module.exports = isObject;
 
 /***/ }),
 
-/***/ 1645:
+/***/ 51645:
 /***/ ((module) => {
 
 /**
@@ -27417,12 +29306,12 @@ module.exports = isObjectLike;
 
 /***/ }),
 
-/***/ 6542:
+/***/ 36542:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseGetTag = __nccwpck_require__(9117),
-    getPrototype = __nccwpck_require__(6194),
-    isObjectLike = __nccwpck_require__(1645);
+var baseGetTag = __nccwpck_require__(29117),
+    getPrototype = __nccwpck_require__(86194),
+    isObjectLike = __nccwpck_require__(51645);
 
 /** `Object#toString` result references. */
 var objectTag = '[object Object]';
@@ -27486,12 +29375,12 @@ module.exports = isPlainObject;
 
 /***/ }),
 
-/***/ 5000:
+/***/ 35000:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseIsTypedArray = __nccwpck_require__(6880),
-    baseUnary = __nccwpck_require__(5506),
-    nodeUtil = __nccwpck_require__(8724);
+var baseIsTypedArray = __nccwpck_require__(16880),
+    baseUnary = __nccwpck_require__(55506),
+    nodeUtil = __nccwpck_require__(88724);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -27520,12 +29409,12 @@ module.exports = isTypedArray;
 
 /***/ }),
 
-/***/ 9430:
+/***/ 19430:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var arrayLikeKeys = __nccwpck_require__(2000),
-    baseKeysIn = __nccwpck_require__(2094),
-    isArrayLike = __nccwpck_require__(5119);
+var arrayLikeKeys = __nccwpck_require__(62000),
+    baseKeysIn = __nccwpck_require__(82094),
+    isArrayLike = __nccwpck_require__(75119);
 
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.
@@ -27559,7 +29448,7 @@ module.exports = keysIn;
 
 /***/ }),
 
-/***/ 9029:
+/***/ 89029:
 /***/ ((module) => {
 
 /**
@@ -27583,7 +29472,7 @@ module.exports = noop;
 
 /***/ }),
 
-/***/ 2074:
+/***/ 92074:
 /***/ ((module) => {
 
 /**
@@ -27608,13 +29497,13 @@ module.exports = stubFalse;
 
 /***/ }),
 
-/***/ 3270:
+/***/ 73270:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var baseFlatten = __nccwpck_require__(3183),
-    baseRest = __nccwpck_require__(2035),
-    baseUniq = __nccwpck_require__(2772),
-    isArrayLikeObject = __nccwpck_require__(7100);
+var baseFlatten = __nccwpck_require__(63183),
+    baseRest = __nccwpck_require__(22035),
+    baseUniq = __nccwpck_require__(32772),
+    isArrayLikeObject = __nccwpck_require__(97100);
 
 /**
  * Creates an array of unique values, in order, from all given arrays using
@@ -27641,11 +29530,179 @@ module.exports = union;
 
 /***/ }),
 
+/***/ 55641:
+/***/ ((module) => {
+
+
+
+/** @type {import('./abs')} */
+module.exports = Math.abs;
+
+
+/***/ }),
+
+/***/ 96171:
+/***/ ((module) => {
+
+
+
+/** @type {import('./floor')} */
+module.exports = Math.floor;
+
+
+/***/ }),
+
+/***/ 3766:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $isNaN = __nccwpck_require__(77044);
+
+/** @type {import('./isFinite')} */
+module.exports = function isFinite(x) {
+	return (typeof x === 'number' || typeof x === 'bigint')
+        && !$isNaN(x)
+        && x !== Infinity
+        && x !== -Infinity;
+};
+
+
+
+/***/ }),
+
+/***/ 3647:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $abs = __nccwpck_require__(55641);
+var $floor = __nccwpck_require__(96171);
+
+var $isNaN = __nccwpck_require__(77044);
+var $isFinite = __nccwpck_require__(3766);
+
+/** @type {import('./isInteger')} */
+module.exports = function isInteger(argument) {
+	if (typeof argument !== 'number' || $isNaN(argument) || !$isFinite(argument)) {
+		return false;
+	}
+	var absValue = $abs(argument);
+	return $floor(absValue) === absValue;
+};
+
+
+/***/ }),
+
+/***/ 77044:
+/***/ ((module) => {
+
+
+
+/** @type {import('./isNaN')} */
+module.exports = Number.isNaN || function isNaN(a) {
+	return a !== a;
+};
+
+
+/***/ }),
+
+/***/ 1908:
+/***/ ((module) => {
+
+
+
+/** @type {import('./isNegativeZero')} */
+module.exports = function isNegativeZero(x) {
+	return x === 0 && 1 / x === 1 / -0;
+};
+
+
+/***/ }),
+
+/***/ 57147:
+/***/ ((module) => {
+
+
+
+/** @type {import('./max')} */
+module.exports = Math.max;
+
+
+/***/ }),
+
+/***/ 41017:
+/***/ ((module) => {
+
+
+
+/** @type {import('./min')} */
+module.exports = Math.min;
+
+
+/***/ }),
+
+/***/ 9521:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $floor = __nccwpck_require__(96171);
+
+/** @type {import('./mod')} */
+module.exports = function mod(number, modulo) {
+	var remain = number % modulo;
+	return $floor(remain >= 0 ? remain : remain + modulo);
+};
+
+
+/***/ }),
+
+/***/ 56947:
+/***/ ((module) => {
+
+
+
+/** @type {import('./pow')} */
+module.exports = Math.pow;
+
+
+/***/ }),
+
+/***/ 42621:
+/***/ ((module) => {
+
+
+
+/** @type {import('./round')} */
+module.exports = Math.round;
+
+
+/***/ }),
+
+/***/ 30156:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $isNaN = __nccwpck_require__(77044);
+
+/** @type {import('./sign')} */
+module.exports = function sign(number) {
+	if ($isNaN(number) || number === 0) {
+		return number;
+	}
+	return number < 0 ? -1 : +1;
+};
+
+
+/***/ }),
+
 /***/ 4469:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var path = __nccwpck_require__(6928);
-var fs = __nccwpck_require__(9896);
+var path = __nccwpck_require__(16928);
+var fs = __nccwpck_require__(79896);
 var _0777 = parseInt('0777', 8);
 
 module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
@@ -27750,7 +29807,7 @@ mkdirP.sync = function sync (p, opts, made) {
 
 /***/ }),
 
-/***/ 744:
+/***/ 70744:
 /***/ ((module) => {
 
 /**
@@ -27919,7 +29976,7 @@ function plural(ms, msAbs, n, name) {
 
 /***/ }),
 
-/***/ 6133:
+/***/ 56133:
 /***/ ((module) => {
 
 /*!
@@ -27961,7 +30018,782 @@ module.exports = function(path, stripTrailing) {
 
 /***/ }),
 
-/***/ 1564:
+/***/ 60506:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+var hasMap = typeof Map === 'function' && Map.prototype;
+var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, 'size') : null;
+var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === 'function' ? mapSizeDescriptor.get : null;
+var mapForEach = hasMap && Map.prototype.forEach;
+var hasSet = typeof Set === 'function' && Set.prototype;
+var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, 'size') : null;
+var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === 'function' ? setSizeDescriptor.get : null;
+var setForEach = hasSet && Set.prototype.forEach;
+var hasWeakMap = typeof WeakMap === 'function' && WeakMap.prototype;
+var weakMapHas = hasWeakMap ? WeakMap.prototype.has : null;
+var hasWeakSet = typeof WeakSet === 'function' && WeakSet.prototype;
+var weakSetHas = hasWeakSet ? WeakSet.prototype.has : null;
+var hasWeakRef = typeof WeakRef === 'function' && WeakRef.prototype;
+var weakRefDeref = hasWeakRef ? WeakRef.prototype.deref : null;
+var booleanValueOf = Boolean.prototype.valueOf;
+var objectToString = Object.prototype.toString;
+var functionToString = Function.prototype.toString;
+var $match = String.prototype.match;
+var $slice = String.prototype.slice;
+var $replace = String.prototype.replace;
+var $toUpperCase = String.prototype.toUpperCase;
+var $toLowerCase = String.prototype.toLowerCase;
+var $test = RegExp.prototype.test;
+var $concat = Array.prototype.concat;
+var $join = Array.prototype.join;
+var $arrSlice = Array.prototype.slice;
+var $floor = Math.floor;
+var bigIntValueOf = typeof BigInt === 'function' ? BigInt.prototype.valueOf : null;
+var gOPS = Object.getOwnPropertySymbols;
+var symToString = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? Symbol.prototype.toString : null;
+var hasShammedSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'object';
+// ie, `has-tostringtag/shams
+var toStringTag = typeof Symbol === 'function' && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? 'object' : 'symbol')
+    ? Symbol.toStringTag
+    : null;
+var isEnumerable = Object.prototype.propertyIsEnumerable;
+
+var gPO = (typeof Reflect === 'function' ? Reflect.getPrototypeOf : Object.getPrototypeOf) || (
+    [].__proto__ === Array.prototype // eslint-disable-line no-proto
+        ? function (O) {
+            return O.__proto__; // eslint-disable-line no-proto
+        }
+        : null
+);
+
+function addNumericSeparator(num, str) {
+    if (
+        num === Infinity
+        || num === -Infinity
+        || num !== num
+        || (num && num > -1000 && num < 1000)
+        || $test.call(/e/, str)
+    ) {
+        return str;
+    }
+    var sepRegex = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
+    if (typeof num === 'number') {
+        var int = num < 0 ? -$floor(-num) : $floor(num); // trunc(num)
+        if (int !== num) {
+            var intStr = String(int);
+            var dec = $slice.call(str, intStr.length + 1);
+            return $replace.call(intStr, sepRegex, '$&_') + '.' + $replace.call($replace.call(dec, /([0-9]{3})/g, '$&_'), /_$/, '');
+        }
+    }
+    return $replace.call(str, sepRegex, '$&_');
+}
+
+var utilInspect = __nccwpck_require__(58502);
+var inspectCustom = utilInspect.custom;
+var inspectSymbol = isSymbol(inspectCustom) ? inspectCustom : null;
+
+var quotes = {
+    __proto__: null,
+    'double': '"',
+    single: "'"
+};
+var quoteREs = {
+    __proto__: null,
+    'double': /(["\\])/g,
+    single: /(['\\])/g
+};
+
+module.exports = function inspect_(obj, options, depth, seen) {
+    var opts = options || {};
+
+    if (has(opts, 'quoteStyle') && !has(quotes, opts.quoteStyle)) {
+        throw new TypeError('option "quoteStyle" must be "single" or "double"');
+    }
+    if (
+        has(opts, 'maxStringLength') && (typeof opts.maxStringLength === 'number'
+            ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity
+            : opts.maxStringLength !== null
+        )
+    ) {
+        throw new TypeError('option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`');
+    }
+    var customInspect = has(opts, 'customInspect') ? opts.customInspect : true;
+    if (typeof customInspect !== 'boolean' && customInspect !== 'symbol') {
+        throw new TypeError('option "customInspect", if provided, must be `true`, `false`, or `\'symbol\'`');
+    }
+
+    if (
+        has(opts, 'indent')
+        && opts.indent !== null
+        && opts.indent !== '\t'
+        && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)
+    ) {
+        throw new TypeError('option "indent" must be "\\t", an integer > 0, or `null`');
+    }
+    if (has(opts, 'numericSeparator') && typeof opts.numericSeparator !== 'boolean') {
+        throw new TypeError('option "numericSeparator", if provided, must be `true` or `false`');
+    }
+    var numericSeparator = opts.numericSeparator;
+
+    if (typeof obj === 'undefined') {
+        return 'undefined';
+    }
+    if (obj === null) {
+        return 'null';
+    }
+    if (typeof obj === 'boolean') {
+        return obj ? 'true' : 'false';
+    }
+
+    if (typeof obj === 'string') {
+        return inspectString(obj, opts);
+    }
+    if (typeof obj === 'number') {
+        if (obj === 0) {
+            return Infinity / obj > 0 ? '0' : '-0';
+        }
+        var str = String(obj);
+        return numericSeparator ? addNumericSeparator(obj, str) : str;
+    }
+    if (typeof obj === 'bigint') {
+        var bigIntStr = String(obj) + 'n';
+        return numericSeparator ? addNumericSeparator(obj, bigIntStr) : bigIntStr;
+    }
+
+    var maxDepth = typeof opts.depth === 'undefined' ? 5 : opts.depth;
+    if (typeof depth === 'undefined') { depth = 0; }
+    if (depth >= maxDepth && maxDepth > 0 && typeof obj === 'object') {
+        return isArray(obj) ? '[Array]' : '[Object]';
+    }
+
+    var indent = getIndent(opts, depth);
+
+    if (typeof seen === 'undefined') {
+        seen = [];
+    } else if (indexOf(seen, obj) >= 0) {
+        return '[Circular]';
+    }
+
+    function inspect(value, from, noIndent) {
+        if (from) {
+            seen = $arrSlice.call(seen);
+            seen.push(from);
+        }
+        if (noIndent) {
+            var newOpts = {
+                depth: opts.depth
+            };
+            if (has(opts, 'quoteStyle')) {
+                newOpts.quoteStyle = opts.quoteStyle;
+            }
+            return inspect_(value, newOpts, depth + 1, seen);
+        }
+        return inspect_(value, opts, depth + 1, seen);
+    }
+
+    if (typeof obj === 'function' && !isRegExp(obj)) { // in older engines, regexes are callable
+        var name = nameOf(obj);
+        var keys = arrObjKeys(obj, inspect);
+        return '[Function' + (name ? ': ' + name : ' (anonymous)') + ']' + (keys.length > 0 ? ' { ' + $join.call(keys, ', ') + ' }' : '');
+    }
+    if (isSymbol(obj)) {
+        var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, '$1') : symToString.call(obj);
+        return typeof obj === 'object' && !hasShammedSymbols ? markBoxed(symString) : symString;
+    }
+    if (isElement(obj)) {
+        var s = '<' + $toLowerCase.call(String(obj.nodeName));
+        var attrs = obj.attributes || [];
+        for (var i = 0; i < attrs.length; i++) {
+            s += ' ' + attrs[i].name + '=' + wrapQuotes(quote(attrs[i].value), 'double', opts);
+        }
+        s += '>';
+        if (obj.childNodes && obj.childNodes.length) { s += '...'; }
+        s += '</' + $toLowerCase.call(String(obj.nodeName)) + '>';
+        return s;
+    }
+    if (isArray(obj)) {
+        if (obj.length === 0) { return '[]'; }
+        var xs = arrObjKeys(obj, inspect);
+        if (indent && !singleLineValues(xs)) {
+            return '[' + indentedJoin(xs, indent) + ']';
+        }
+        return '[ ' + $join.call(xs, ', ') + ' ]';
+    }
+    if (isError(obj)) {
+        var parts = arrObjKeys(obj, inspect);
+        if (!('cause' in Error.prototype) && 'cause' in obj && !isEnumerable.call(obj, 'cause')) {
+            return '{ [' + String(obj) + '] ' + $join.call($concat.call('[cause]: ' + inspect(obj.cause), parts), ', ') + ' }';
+        }
+        if (parts.length === 0) { return '[' + String(obj) + ']'; }
+        return '{ [' + String(obj) + '] ' + $join.call(parts, ', ') + ' }';
+    }
+    if (typeof obj === 'object' && customInspect) {
+        if (inspectSymbol && typeof obj[inspectSymbol] === 'function' && utilInspect) {
+            return utilInspect(obj, { depth: maxDepth - depth });
+        } else if (customInspect !== 'symbol' && typeof obj.inspect === 'function') {
+            return obj.inspect();
+        }
+    }
+    if (isMap(obj)) {
+        var mapParts = [];
+        if (mapForEach) {
+            mapForEach.call(obj, function (value, key) {
+                mapParts.push(inspect(key, obj, true) + ' => ' + inspect(value, obj));
+            });
+        }
+        return collectionOf('Map', mapSize.call(obj), mapParts, indent);
+    }
+    if (isSet(obj)) {
+        var setParts = [];
+        if (setForEach) {
+            setForEach.call(obj, function (value) {
+                setParts.push(inspect(value, obj));
+            });
+        }
+        return collectionOf('Set', setSize.call(obj), setParts, indent);
+    }
+    if (isWeakMap(obj)) {
+        return weakCollectionOf('WeakMap');
+    }
+    if (isWeakSet(obj)) {
+        return weakCollectionOf('WeakSet');
+    }
+    if (isWeakRef(obj)) {
+        return weakCollectionOf('WeakRef');
+    }
+    if (isNumber(obj)) {
+        return markBoxed(inspect(Number(obj)));
+    }
+    if (isBigInt(obj)) {
+        return markBoxed(inspect(bigIntValueOf.call(obj)));
+    }
+    if (isBoolean(obj)) {
+        return markBoxed(booleanValueOf.call(obj));
+    }
+    if (isString(obj)) {
+        return markBoxed(inspect(String(obj)));
+    }
+    // note: in IE 8, sometimes `global !== window` but both are the prototypes of each other
+    /* eslint-env browser */
+    if (typeof window !== 'undefined' && obj === window) {
+        return '{ [object Window] }';
+    }
+    if (
+        (typeof globalThis !== 'undefined' && obj === globalThis)
+        || (typeof global !== 'undefined' && obj === global)
+    ) {
+        return '{ [object globalThis] }';
+    }
+    if (!isDate(obj) && !isRegExp(obj)) {
+        var ys = arrObjKeys(obj, inspect);
+        var isPlainObject = gPO ? gPO(obj) === Object.prototype : obj instanceof Object || obj.constructor === Object;
+        var protoTag = obj instanceof Object ? '' : 'null prototype';
+        var stringTag = !isPlainObject && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? 'Object' : '';
+        var constructorTag = isPlainObject || typeof obj.constructor !== 'function' ? '' : obj.constructor.name ? obj.constructor.name + ' ' : '';
+        var tag = constructorTag + (stringTag || protoTag ? '[' + $join.call($concat.call([], stringTag || [], protoTag || []), ': ') + '] ' : '');
+        if (ys.length === 0) { return tag + '{}'; }
+        if (indent) {
+            return tag + '{' + indentedJoin(ys, indent) + '}';
+        }
+        return tag + '{ ' + $join.call(ys, ', ') + ' }';
+    }
+    return String(obj);
+};
+
+function wrapQuotes(s, defaultStyle, opts) {
+    var style = opts.quoteStyle || defaultStyle;
+    var quoteChar = quotes[style];
+    return quoteChar + s + quoteChar;
+}
+
+function quote(s) {
+    return $replace.call(String(s), /"/g, '&quot;');
+}
+
+function canTrustToString(obj) {
+    return !toStringTag || !(typeof obj === 'object' && (toStringTag in obj || typeof obj[toStringTag] !== 'undefined'));
+}
+function isArray(obj) { return toStr(obj) === '[object Array]' && canTrustToString(obj); }
+function isDate(obj) { return toStr(obj) === '[object Date]' && canTrustToString(obj); }
+function isRegExp(obj) { return toStr(obj) === '[object RegExp]' && canTrustToString(obj); }
+function isError(obj) { return toStr(obj) === '[object Error]' && canTrustToString(obj); }
+function isString(obj) { return toStr(obj) === '[object String]' && canTrustToString(obj); }
+function isNumber(obj) { return toStr(obj) === '[object Number]' && canTrustToString(obj); }
+function isBoolean(obj) { return toStr(obj) === '[object Boolean]' && canTrustToString(obj); }
+
+// Symbol and BigInt do have Symbol.toStringTag by spec, so that can't be used to eliminate false positives
+function isSymbol(obj) {
+    if (hasShammedSymbols) {
+        return obj && typeof obj === 'object' && obj instanceof Symbol;
+    }
+    if (typeof obj === 'symbol') {
+        return true;
+    }
+    if (!obj || typeof obj !== 'object' || !symToString) {
+        return false;
+    }
+    try {
+        symToString.call(obj);
+        return true;
+    } catch (e) {}
+    return false;
+}
+
+function isBigInt(obj) {
+    if (!obj || typeof obj !== 'object' || !bigIntValueOf) {
+        return false;
+    }
+    try {
+        bigIntValueOf.call(obj);
+        return true;
+    } catch (e) {}
+    return false;
+}
+
+var hasOwn = Object.prototype.hasOwnProperty || function (key) { return key in this; };
+function has(obj, key) {
+    return hasOwn.call(obj, key);
+}
+
+function toStr(obj) {
+    return objectToString.call(obj);
+}
+
+function nameOf(f) {
+    if (f.name) { return f.name; }
+    var m = $match.call(functionToString.call(f), /^function\s*([\w$]+)/);
+    if (m) { return m[1]; }
+    return null;
+}
+
+function indexOf(xs, x) {
+    if (xs.indexOf) { return xs.indexOf(x); }
+    for (var i = 0, l = xs.length; i < l; i++) {
+        if (xs[i] === x) { return i; }
+    }
+    return -1;
+}
+
+function isMap(x) {
+    if (!mapSize || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        mapSize.call(x);
+        try {
+            setSize.call(x);
+        } catch (s) {
+            return true;
+        }
+        return x instanceof Map; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isWeakMap(x) {
+    if (!weakMapHas || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        weakMapHas.call(x, weakMapHas);
+        try {
+            weakSetHas.call(x, weakSetHas);
+        } catch (s) {
+            return true;
+        }
+        return x instanceof WeakMap; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isWeakRef(x) {
+    if (!weakRefDeref || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        weakRefDeref.call(x);
+        return true;
+    } catch (e) {}
+    return false;
+}
+
+function isSet(x) {
+    if (!setSize || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        setSize.call(x);
+        try {
+            mapSize.call(x);
+        } catch (m) {
+            return true;
+        }
+        return x instanceof Set; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isWeakSet(x) {
+    if (!weakSetHas || !x || typeof x !== 'object') {
+        return false;
+    }
+    try {
+        weakSetHas.call(x, weakSetHas);
+        try {
+            weakMapHas.call(x, weakMapHas);
+        } catch (s) {
+            return true;
+        }
+        return x instanceof WeakSet; // core-js workaround, pre-v2.5.0
+    } catch (e) {}
+    return false;
+}
+
+function isElement(x) {
+    if (!x || typeof x !== 'object') { return false; }
+    if (typeof HTMLElement !== 'undefined' && x instanceof HTMLElement) {
+        return true;
+    }
+    return typeof x.nodeName === 'string' && typeof x.getAttribute === 'function';
+}
+
+function inspectString(str, opts) {
+    if (str.length > opts.maxStringLength) {
+        var remaining = str.length - opts.maxStringLength;
+        var trailer = '... ' + remaining + ' more character' + (remaining > 1 ? 's' : '');
+        return inspectString($slice.call(str, 0, opts.maxStringLength), opts) + trailer;
+    }
+    var quoteRE = quoteREs[opts.quoteStyle || 'single'];
+    quoteRE.lastIndex = 0;
+    // eslint-disable-next-line no-control-regex
+    var s = $replace.call($replace.call(str, quoteRE, '\\$1'), /[\x00-\x1f]/g, lowbyte);
+    return wrapQuotes(s, 'single', opts);
+}
+
+function lowbyte(c) {
+    var n = c.charCodeAt(0);
+    var x = {
+        8: 'b',
+        9: 't',
+        10: 'n',
+        12: 'f',
+        13: 'r'
+    }[n];
+    if (x) { return '\\' + x; }
+    return '\\x' + (n < 0x10 ? '0' : '') + $toUpperCase.call(n.toString(16));
+}
+
+function markBoxed(str) {
+    return 'Object(' + str + ')';
+}
+
+function weakCollectionOf(type) {
+    return type + ' { ? }';
+}
+
+function collectionOf(type, size, entries, indent) {
+    var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ', ');
+    return type + ' (' + size + ') {' + joinedEntries + '}';
+}
+
+function singleLineValues(xs) {
+    for (var i = 0; i < xs.length; i++) {
+        if (indexOf(xs[i], '\n') >= 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function getIndent(opts, depth) {
+    var baseIndent;
+    if (opts.indent === '\t') {
+        baseIndent = '\t';
+    } else if (typeof opts.indent === 'number' && opts.indent > 0) {
+        baseIndent = $join.call(Array(opts.indent + 1), ' ');
+    } else {
+        return null;
+    }
+    return {
+        base: baseIndent,
+        prev: $join.call(Array(depth + 1), baseIndent)
+    };
+}
+
+function indentedJoin(xs, indent) {
+    if (xs.length === 0) { return ''; }
+    var lineJoiner = '\n' + indent.prev + indent.base;
+    return lineJoiner + $join.call(xs, ',' + lineJoiner) + '\n' + indent.prev;
+}
+
+function arrObjKeys(obj, inspect) {
+    var isArr = isArray(obj);
+    var xs = [];
+    if (isArr) {
+        xs.length = obj.length;
+        for (var i = 0; i < obj.length; i++) {
+            xs[i] = has(obj, i) ? inspect(obj[i], obj) : '';
+        }
+    }
+    var syms = typeof gOPS === 'function' ? gOPS(obj) : [];
+    var symMap;
+    if (hasShammedSymbols) {
+        symMap = {};
+        for (var k = 0; k < syms.length; k++) {
+            symMap['$' + syms[k]] = syms[k];
+        }
+    }
+
+    for (var key in obj) { // eslint-disable-line no-restricted-syntax
+        if (!has(obj, key)) { continue; } // eslint-disable-line no-restricted-syntax, no-continue
+        if (isArr && String(Number(key)) === key && key < obj.length) { continue; } // eslint-disable-line no-restricted-syntax, no-continue
+        if (hasShammedSymbols && symMap['$' + key] instanceof Symbol) {
+            // this is to prevent shammed Symbols, which are stored as strings, from being included in the string key section
+            continue; // eslint-disable-line no-restricted-syntax, no-continue
+        } else if ($test.call(/[^\w$]/, key)) {
+            xs.push(inspect(key, obj) + ': ' + inspect(obj[key], obj));
+        } else {
+            xs.push(key + ': ' + inspect(obj[key], obj));
+        }
+    }
+    if (typeof gOPS === 'function') {
+        for (var j = 0; j < syms.length; j++) {
+            if (isEnumerable.call(obj, syms[j])) {
+                xs.push('[' + inspect(syms[j]) + ']: ' + inspect(obj[syms[j]], obj));
+            }
+        }
+    }
+    return xs;
+}
+
+
+/***/ }),
+
+/***/ 58502:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+module.exports = __nccwpck_require__(39023).inspect;
+
+
+/***/ }),
+
+/***/ 70226:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var keysShim;
+if (!Object.keys) {
+	// modified from https://github.com/es-shims/es5-shim
+	var has = Object.prototype.hasOwnProperty;
+	var toStr = Object.prototype.toString;
+	var isArgs = __nccwpck_require__(28598); // eslint-disable-line global-require
+	var isEnumerable = Object.prototype.propertyIsEnumerable;
+	var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
+	var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
+	var dontEnums = [
+		'toString',
+		'toLocaleString',
+		'valueOf',
+		'hasOwnProperty',
+		'isPrototypeOf',
+		'propertyIsEnumerable',
+		'constructor'
+	];
+	var equalsConstructorPrototype = function (o) {
+		var ctor = o.constructor;
+		return ctor && ctor.prototype === o;
+	};
+	var excludedKeys = {
+		$applicationCache: true,
+		$console: true,
+		$external: true,
+		$frame: true,
+		$frameElement: true,
+		$frames: true,
+		$innerHeight: true,
+		$innerWidth: true,
+		$onmozfullscreenchange: true,
+		$onmozfullscreenerror: true,
+		$outerHeight: true,
+		$outerWidth: true,
+		$pageXOffset: true,
+		$pageYOffset: true,
+		$parent: true,
+		$scrollLeft: true,
+		$scrollTop: true,
+		$scrollX: true,
+		$scrollY: true,
+		$self: true,
+		$webkitIndexedDB: true,
+		$webkitStorageInfo: true,
+		$window: true
+	};
+	var hasAutomationEqualityBug = (function () {
+		/* global window */
+		if (typeof window === 'undefined') { return false; }
+		for (var k in window) {
+			try {
+				if (!excludedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+					try {
+						equalsConstructorPrototype(window[k]);
+					} catch (e) {
+						return true;
+					}
+				}
+			} catch (e) {
+				return true;
+			}
+		}
+		return false;
+	}());
+	var equalsConstructorPrototypeIfNotBuggy = function (o) {
+		/* global window */
+		if (typeof window === 'undefined' || !hasAutomationEqualityBug) {
+			return equalsConstructorPrototype(o);
+		}
+		try {
+			return equalsConstructorPrototype(o);
+		} catch (e) {
+			return false;
+		}
+	};
+
+	keysShim = function keys(object) {
+		var isObject = object !== null && typeof object === 'object';
+		var isFunction = toStr.call(object) === '[object Function]';
+		var isArguments = isArgs(object);
+		var isString = isObject && toStr.call(object) === '[object String]';
+		var theKeys = [];
+
+		if (!isObject && !isFunction && !isArguments) {
+			throw new TypeError('Object.keys called on a non-object');
+		}
+
+		var skipProto = hasProtoEnumBug && isFunction;
+		if (isString && object.length > 0 && !has.call(object, 0)) {
+			for (var i = 0; i < object.length; ++i) {
+				theKeys.push(String(i));
+			}
+		}
+
+		if (isArguments && object.length > 0) {
+			for (var j = 0; j < object.length; ++j) {
+				theKeys.push(String(j));
+			}
+		} else {
+			for (var name in object) {
+				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+					theKeys.push(String(name));
+				}
+			}
+		}
+
+		if (hasDontEnumBug) {
+			var skipConstructor = equalsConstructorPrototypeIfNotBuggy(object);
+
+			for (var k = 0; k < dontEnums.length; ++k) {
+				if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
+					theKeys.push(dontEnums[k]);
+				}
+			}
+		}
+		return theKeys;
+	};
+}
+module.exports = keysShim;
+
+
+/***/ }),
+
+/***/ 62682:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var slice = Array.prototype.slice;
+var isArgs = __nccwpck_require__(28598);
+
+var origKeys = Object.keys;
+var keysShim = origKeys ? function keys(o) { return origKeys(o); } : __nccwpck_require__(70226);
+
+var originalKeys = Object.keys;
+
+keysShim.shim = function shimObjectKeys() {
+	if (Object.keys) {
+		var keysWorksWithArguments = (function () {
+			// Safari 5.0 bug
+			var args = Object.keys(arguments);
+			return args && args.length === arguments.length;
+		}(1, 2));
+		if (!keysWorksWithArguments) {
+			Object.keys = function keys(object) { // eslint-disable-line func-name-matching
+				if (isArgs(object)) {
+					return originalKeys(slice.call(object));
+				}
+				return originalKeys(object);
+			};
+		}
+	} else {
+		Object.keys = keysShim;
+	}
+	return Object.keys || keysShim;
+};
+
+module.exports = keysShim;
+
+
+/***/ }),
+
+/***/ 28598:
+/***/ ((module) => {
+
+
+
+var toStr = Object.prototype.toString;
+
+module.exports = function isArguments(value) {
+	var str = toStr.call(value);
+	var isArgs = str === '[object Arguments]';
+	if (!isArgs) {
+		isArgs = str !== '[object Array]' &&
+			value !== null &&
+			typeof value === 'object' &&
+			typeof value.length === 'number' &&
+			value.length >= 0 &&
+			toStr.call(value.callee) === '[object Function]';
+	}
+	return isArgs;
+};
+
+
+/***/ }),
+
+/***/ 18879:
+/***/ ((module) => {
+
+
+
+/** @type {import('.')} */
+module.exports = [
+	'Float16Array',
+	'Float32Array',
+	'Float64Array',
+	'Int8Array',
+	'Int16Array',
+	'Int32Array',
+	'Uint8Array',
+	'Uint8ClampedArray',
+	'Uint16Array',
+	'Uint32Array',
+	'BigInt64Array',
+	'BigUint64Array'
+];
+
+
+/***/ }),
+
+/***/ 41564:
 /***/ ((module) => {
 
 
@@ -28022,15 +30854,41 @@ module.exports = global.process;
 
 /***/ }),
 
-/***/ 652:
+/***/ 76417:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { SymbolDispose } = __nccwpck_require__(999)
-const { AbortError, codes } = __nccwpck_require__(9220)
-const { isNodeStream, isWebStream, kControllerErrorFunction } = __nccwpck_require__(3426)
-const eos = __nccwpck_require__(6815)
+/* wraps the internal process module, circumventing issues with some polyfills (see #539) */
+const process = ((base, esmKey, keys, isValid) => {
+  if (esmKey in base && base[esmKey] === true) {
+    let candidate
+    for (const key of keys) {
+      if (!(key in base)) {
+        continue
+      }
+      candidate = base[key]
+      if (isValid(candidate)) {
+        return candidate
+      }
+    }
+  }
+  return base
+})(__nccwpck_require__(7945), '__esModule', ['default', 'process'], (candidate) => 'nextTick' in candidate)
+module.exports = process
+
+
+/***/ }),
+
+/***/ 80652:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const { SymbolDispose } = __nccwpck_require__(50999)
+const { AbortError, codes } = __nccwpck_require__(69220)
+const { isNodeStream, isWebStream, kControllerErrorFunction } = __nccwpck_require__(83426)
+const eos = __nccwpck_require__(36815)
 const { ERR_INVALID_ARG_TYPE } = codes
 let addAbortListener
 
@@ -28071,7 +30929,7 @@ module.exports.addAbortSignalNoValidate = function (signal, stream) {
   if (signal.aborted) {
     onAbort()
   } else {
-    addAbortListener = addAbortListener || (__nccwpck_require__(3539).addAbortListener)
+    addAbortListener = addAbortListener || (__nccwpck_require__(23539).addAbortListener)
     const disposable = addAbortListener(signal, onAbort)
     eos(stream, disposable[SymbolDispose])
   }
@@ -28081,14 +30939,14 @@ module.exports.addAbortSignalNoValidate = function (signal, stream) {
 
 /***/ }),
 
-/***/ 7336:
+/***/ 77336:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { StringPrototypeSlice, SymbolIterator, TypedArrayPrototypeSet, Uint8Array } = __nccwpck_require__(999)
-const { Buffer } = __nccwpck_require__(181)
-const { inspect } = __nccwpck_require__(3539)
+const { StringPrototypeSlice, SymbolIterator, TypedArrayPrototypeSet, Uint8Array } = __nccwpck_require__(50999)
+const { Buffer } = __nccwpck_require__(20181)
+const { inspect } = __nccwpck_require__(23539)
 module.exports = class BufferList {
   constructor() {
     this.head = null
@@ -28245,14 +31103,14 @@ module.exports = class BufferList {
 
 /***/ }),
 
-/***/ 4999:
+/***/ 64999:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { pipeline } = __nccwpck_require__(6701)
-const Duplex = __nccwpck_require__(4449)
-const { destroyer } = __nccwpck_require__(7470)
+const { pipeline } = __nccwpck_require__(16701)
+const Duplex = __nccwpck_require__(94449)
+const { destroyer } = __nccwpck_require__(65089)
 const {
   isNodeStream,
   isReadable,
@@ -28261,12 +31119,12 @@ const {
   isTransformStream,
   isWritableStream,
   isReadableStream
-} = __nccwpck_require__(3426)
+} = __nccwpck_require__(83426)
 const {
   AbortError,
   codes: { ERR_INVALID_ARG_VALUE, ERR_MISSING_ARGS }
-} = __nccwpck_require__(9220)
-const eos = __nccwpck_require__(6815)
+} = __nccwpck_require__(69220)
+const eos = __nccwpck_require__(36815)
 module.exports = function compose(...streams) {
   if (streams.length === 0) {
     throw new ERR_MISSING_ARGS('streams')
@@ -28446,14 +31304,14 @@ module.exports = function compose(...streams) {
 
 /***/ }),
 
-/***/ 7470:
+/***/ 65089:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 
@@ -28461,9 +31319,9 @@ const {
   aggregateTwoErrors,
   codes: { ERR_MULTIPLE_CALLBACK },
   AbortError
-} = __nccwpck_require__(9220)
-const { Symbol } = __nccwpck_require__(999)
-const { kIsDestroyed, isDestroyed, isFinished, isServerRequest } = __nccwpck_require__(3426)
+} = __nccwpck_require__(69220)
+const { Symbol } = __nccwpck_require__(50999)
+const { kIsDestroyed, isDestroyed, isFinished, isServerRequest } = __nccwpck_require__(83426)
 const kDestroy = Symbol('kDestroy')
 const kConstruct = Symbol('kConstruct')
 function checkError(err, w, r) {
@@ -28743,7 +31601,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4449:
+/***/ 94449:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -28779,10 +31637,10 @@ const {
   ObjectGetOwnPropertyDescriptor,
   ObjectKeys,
   ObjectSetPrototypeOf
-} = __nccwpck_require__(999)
+} = __nccwpck_require__(50999)
 module.exports = Duplex
-const Readable = __nccwpck_require__(7783)
-const Writable = __nccwpck_require__(8939)
+const Readable = __nccwpck_require__(17783)
+const Writable = __nccwpck_require__(58939)
 ObjectSetPrototypeOf(Duplex.prototype, Readable.prototype)
 ObjectSetPrototypeOf(Duplex, Readable)
 {
@@ -28898,12 +31756,12 @@ Duplex.from = function (body) {
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 
 ;('use strict')
-const bufferModule = __nccwpck_require__(181)
+const bufferModule = __nccwpck_require__(20181)
 const {
   isReadable,
   isWritable,
@@ -28914,17 +31772,17 @@ const {
   isDuplexNodeStream,
   isReadableStream,
   isWritableStream
-} = __nccwpck_require__(3426)
-const eos = __nccwpck_require__(6815)
+} = __nccwpck_require__(83426)
+const eos = __nccwpck_require__(36815)
 const {
   AbortError,
   codes: { ERR_INVALID_ARG_TYPE, ERR_INVALID_RETURN_VALUE }
-} = __nccwpck_require__(9220)
-const { destroyer } = __nccwpck_require__(7470)
-const Duplex = __nccwpck_require__(4449)
-const Readable = __nccwpck_require__(7783)
-const Writable = __nccwpck_require__(8939)
-const { createDeferredPromise } = __nccwpck_require__(3539)
+} = __nccwpck_require__(69220)
+const { destroyer } = __nccwpck_require__(65089)
+const Duplex = __nccwpck_require__(94449)
+const Readable = __nccwpck_require__(17783)
+const Writable = __nccwpck_require__(58939)
+const { createDeferredPromise } = __nccwpck_require__(23539)
 const from = __nccwpck_require__(4659)
 const Blob = globalThis.Blob || bufferModule.Blob
 const isBlob =
@@ -28935,8 +31793,8 @@ const isBlob =
     : function isBlob(b) {
         return false
       }
-const AbortController = globalThis.AbortController || (__nccwpck_require__(7413).AbortController)
-const { FunctionPrototypeCall } = __nccwpck_require__(999)
+const AbortController = globalThis.AbortController || (__nccwpck_require__(17413).AbortController)
+const { FunctionPrototypeCall } = __nccwpck_require__(50999)
 
 // This is needed for pre node 17.
 class Duplexify extends Duplex {
@@ -29278,7 +32136,7 @@ function _duplexify(pair) {
 
 /***/ }),
 
-/***/ 6815:
+/***/ 36815:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Ported from https://github.com/mafintosh/end-of-stream with
@@ -29288,15 +32146,15 @@ function _duplexify(pair) {
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 
-const { AbortError, codes } = __nccwpck_require__(9220)
+const { AbortError, codes } = __nccwpck_require__(69220)
 const { ERR_INVALID_ARG_TYPE, ERR_STREAM_PREMATURE_CLOSE } = codes
-const { kEmptyObject, once } = __nccwpck_require__(3539)
-const { validateAbortSignal, validateFunction, validateObject, validateBoolean } = __nccwpck_require__(9554)
-const { Promise, PromisePrototypeThen, SymbolDispose } = __nccwpck_require__(999)
+const { kEmptyObject, once } = __nccwpck_require__(23539)
+const { validateAbortSignal, validateFunction, validateObject, validateBoolean } = __nccwpck_require__(49554)
+const { Promise, PromisePrototypeThen, SymbolDispose } = __nccwpck_require__(50999)
 const {
   isClosed,
   isReadable,
@@ -29312,7 +32170,7 @@ const {
   isNodeStream,
   willEmitClose: _willEmitClose,
   kIsClosedPromise
-} = __nccwpck_require__(3426)
+} = __nccwpck_require__(83426)
 let addAbortListener
 function isRequest(stream) {
   return stream.setHeader && typeof stream.abort === 'function'
@@ -29498,7 +32356,7 @@ function eos(stream, options, callback) {
     if (options.signal.aborted) {
       process.nextTick(abort)
     } else {
-      addAbortListener = addAbortListener || (__nccwpck_require__(3539).addAbortListener)
+      addAbortListener = addAbortListener || (__nccwpck_require__(23539).addAbortListener)
       const disposable = addAbortListener(options.signal, abort)
       const originalCallback = callback
       callback = once((...args) => {
@@ -29525,7 +32383,7 @@ function eosWeb(stream, options, callback) {
     if (options.signal.aborted) {
       process.nextTick(abort)
     } else {
-      addAbortListener = addAbortListener || (__nccwpck_require__(3539).addAbortListener)
+      addAbortListener = addAbortListener || (__nccwpck_require__(23539).addAbortListener)
       const disposable = addAbortListener(options.signal, abort)
       const originalCallback = callback
       callback = once((...args) => {
@@ -29578,13 +32436,13 @@ module.exports.finished = finished
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 
-const { PromisePrototypeThen, SymbolAsyncIterator, SymbolIterator } = __nccwpck_require__(999)
-const { Buffer } = __nccwpck_require__(181)
-const { ERR_INVALID_ARG_TYPE, ERR_STREAM_NULL_VALUES } = (__nccwpck_require__(9220).codes)
+const { PromisePrototypeThen, SymbolAsyncIterator, SymbolIterator } = __nccwpck_require__(50999)
+const { Buffer } = __nccwpck_require__(20181)
+const { ERR_INVALID_ARG_TYPE, ERR_STREAM_NULL_VALUES } = (__nccwpck_require__(69220).codes)
 function from(Readable, iterable, opts) {
   let iterator
   if (typeof iterable === 'string' || iterable instanceof Buffer) {
@@ -29676,13 +32534,13 @@ module.exports = from
 
 /***/ }),
 
-/***/ 4128:
+/***/ 84128:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { ArrayIsArray, ObjectSetPrototypeOf } = __nccwpck_require__(999)
-const { EventEmitter: EE } = __nccwpck_require__(4434)
+const { ArrayIsArray, ObjectSetPrototypeOf } = __nccwpck_require__(50999)
+const { EventEmitter: EE } = __nccwpck_require__(24434)
 function Stream(opts) {
   EE.call(this, opts)
 }
@@ -29723,8 +32581,13 @@ Stream.prototype.pipe = function (dest, options) {
 
   // Don't leave dangling pipes when there are errors.
   function onerror(er) {
+    var _this$listenerCount
     cleanup()
-    if (EE.listenerCount(this, 'error') === 0) {
+    if (
+      ((_this$listenerCount = this.listenerCount) === null || _this$listenerCount === undefined
+        ? undefined
+        : _this$listenerCount.call(this, 'error')) === 0
+    ) {
       this.emit('error', er)
     }
   }
@@ -29772,24 +32635,24 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1222:
+/***/ 11222:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const AbortController = globalThis.AbortController || (__nccwpck_require__(7413).AbortController)
+const AbortController = globalThis.AbortController || (__nccwpck_require__(17413).AbortController)
 const {
   codes: { ERR_INVALID_ARG_VALUE, ERR_INVALID_ARG_TYPE, ERR_MISSING_ARGS, ERR_OUT_OF_RANGE },
   AbortError
-} = __nccwpck_require__(9220)
-const { validateAbortSignal, validateInteger, validateObject } = __nccwpck_require__(9554)
-const kWeakHandler = (__nccwpck_require__(999).Symbol)('kWeak')
-const kResistStopPropagation = (__nccwpck_require__(999).Symbol)('kResistStopPropagation')
-const { finished } = __nccwpck_require__(6815)
-const staticCompose = __nccwpck_require__(4999)
-const { addAbortSignalNoValidate } = __nccwpck_require__(652)
-const { isWritable, isNodeStream } = __nccwpck_require__(3426)
-const { deprecate } = __nccwpck_require__(3539)
+} = __nccwpck_require__(69220)
+const { validateAbortSignal, validateInteger, validateObject } = __nccwpck_require__(49554)
+const kWeakHandler = (__nccwpck_require__(50999).Symbol)('kWeak')
+const kResistStopPropagation = (__nccwpck_require__(50999).Symbol)('kResistStopPropagation')
+const { finished } = __nccwpck_require__(36815)
+const staticCompose = __nccwpck_require__(64999)
+const { addAbortSignalNoValidate } = __nccwpck_require__(80652)
+const { isWritable, isNodeStream } = __nccwpck_require__(83426)
+const { deprecate } = __nccwpck_require__(23539)
 const {
   ArrayPrototypePush,
   Boolean,
@@ -29801,7 +32664,7 @@ const {
   PromiseResolve,
   PromisePrototypeThen,
   Symbol
-} = __nccwpck_require__(999)
+} = __nccwpck_require__(50999)
 const kEmpty = Symbol('kEmpty')
 const kEof = Symbol('kEof')
 function compose(stream, options) {
@@ -29843,7 +32706,7 @@ function map(fn, options) {
   validateInteger(highWaterMark, 'options.highWaterMark', 0)
   highWaterMark += concurrency
   return async function* map() {
-    const signal = (__nccwpck_require__(3539).AbortSignalAny)(
+    const signal = (__nccwpck_require__(23539).AbortSignalAny)(
       [options === null || options === undefined ? undefined : options.signal].filter(Boolean)
     )
     const stream = this
@@ -30236,7 +33099,7 @@ module.exports.promiseReturningOperators = {
 
 /***/ }),
 
-/***/ 9173:
+/***/ 19173:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -30266,9 +33129,9 @@ module.exports.promiseReturningOperators = {
 
 
 
-const { ObjectSetPrototypeOf } = __nccwpck_require__(999)
+const { ObjectSetPrototypeOf } = __nccwpck_require__(50999)
 module.exports = PassThrough
-const Transform = __nccwpck_require__(2135)
+const Transform = __nccwpck_require__(12135)
 ObjectSetPrototypeOf(PassThrough.prototype, Transform.prototype)
 ObjectSetPrototypeOf(PassThrough, Transform)
 function PassThrough(options) {
@@ -30282,23 +33145,23 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 
 /***/ }),
 
-/***/ 6701:
+/***/ 16701:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 // Ported from https://github.com/mafintosh/pump with
 // permission from the author, Mathias Buus (@mafintosh).
 
 ;('use strict')
-const { ArrayIsArray, Promise, SymbolAsyncIterator, SymbolDispose } = __nccwpck_require__(999)
-const eos = __nccwpck_require__(6815)
-const { once } = __nccwpck_require__(3539)
-const destroyImpl = __nccwpck_require__(7470)
-const Duplex = __nccwpck_require__(4449)
+const { ArrayIsArray, Promise, SymbolAsyncIterator, SymbolDispose } = __nccwpck_require__(50999)
+const eos = __nccwpck_require__(36815)
+const { once } = __nccwpck_require__(23539)
+const destroyImpl = __nccwpck_require__(65089)
+const Duplex = __nccwpck_require__(94449)
 const {
   aggregateTwoErrors,
   codes: {
@@ -30309,8 +33172,8 @@ const {
     ERR_STREAM_PREMATURE_CLOSE
   },
   AbortError
-} = __nccwpck_require__(9220)
-const { validateFunction, validateAbortSignal } = __nccwpck_require__(9554)
+} = __nccwpck_require__(69220)
+const { validateFunction, validateAbortSignal } = __nccwpck_require__(49554)
 const {
   isIterable,
   isReadable,
@@ -30320,8 +33183,8 @@ const {
   isWebStream,
   isReadableStream,
   isReadableFinished
-} = __nccwpck_require__(3426)
-const AbortController = globalThis.AbortController || (__nccwpck_require__(7413).AbortController)
+} = __nccwpck_require__(83426)
+const AbortController = globalThis.AbortController || (__nccwpck_require__(17413).AbortController)
 let PassThrough
 let Readable
 let addAbortListener
@@ -30367,7 +33230,7 @@ function makeAsyncIterable(val) {
 }
 async function* fromReadable(val) {
   if (!Readable) {
-    Readable = __nccwpck_require__(7783)
+    Readable = __nccwpck_require__(17783)
   }
   yield* Readable.prototype[SymbolAsyncIterator].call(val)
 }
@@ -30473,7 +33336,7 @@ function pipelineImpl(streams, callback, opts) {
   function abort() {
     finishImpl(new AbortError())
   }
-  addAbortListener = addAbortListener || (__nccwpck_require__(3539).addAbortListener)
+  addAbortListener = addAbortListener || (__nccwpck_require__(23539).addAbortListener)
   let disposable
   if (outerSignal) {
     disposable = addAbortListener(outerSignal, abort)
@@ -30564,7 +33427,7 @@ function pipelineImpl(streams, callback, opts) {
       } else {
         var _ret2
         if (!PassThrough) {
-          PassThrough = __nccwpck_require__(9173)
+          PassThrough = __nccwpck_require__(19173)
         }
 
         // If the last argument to pipeline is not a stream
@@ -30760,7 +33623,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7783:
+/***/ 17783:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -30788,7 +33651,7 @@ module.exports = {
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 
@@ -30805,20 +33668,20 @@ const {
   SymbolAsyncDispose,
   SymbolAsyncIterator,
   Symbol
-} = __nccwpck_require__(999)
+} = __nccwpck_require__(50999)
 module.exports = Readable
 Readable.ReadableState = ReadableState
-const { EventEmitter: EE } = __nccwpck_require__(4434)
-const { Stream, prependListener } = __nccwpck_require__(4128)
-const { Buffer } = __nccwpck_require__(181)
-const { addAbortSignal } = __nccwpck_require__(652)
-const eos = __nccwpck_require__(6815)
-let debug = (__nccwpck_require__(3539).debuglog)('stream', (fn) => {
+const { EventEmitter: EE } = __nccwpck_require__(24434)
+const { Stream, prependListener } = __nccwpck_require__(84128)
+const { Buffer } = __nccwpck_require__(20181)
+const { addAbortSignal } = __nccwpck_require__(80652)
+const eos = __nccwpck_require__(36815)
+let debug = (__nccwpck_require__(23539).debuglog)('stream', (fn) => {
   debug = fn
 })
-const BufferList = __nccwpck_require__(7336)
-const destroyImpl = __nccwpck_require__(7470)
-const { getHighWaterMark, getDefaultHighWaterMark } = __nccwpck_require__(4874)
+const BufferList = __nccwpck_require__(77336)
+const destroyImpl = __nccwpck_require__(65089)
+const { getHighWaterMark, getDefaultHighWaterMark } = __nccwpck_require__(54874)
 const {
   aggregateTwoErrors,
   codes: {
@@ -30829,10 +33692,10 @@ const {
     ERR_STREAM_UNSHIFT_AFTER_END_EVENT
   },
   AbortError
-} = __nccwpck_require__(9220)
-const { validateObject } = __nccwpck_require__(9554)
+} = __nccwpck_require__(69220)
+const { validateObject } = __nccwpck_require__(49554)
 const kPaused = Symbol('kPaused')
-const { StringDecoder } = __nccwpck_require__(634)
+const { StringDecoder } = __nccwpck_require__(80634)
 const from = __nccwpck_require__(4659)
 ObjectSetPrototypeOf(Readable.prototype, Stream.prototype)
 ObjectSetPrototypeOf(Readable, Stream)
@@ -30914,7 +33777,7 @@ function ReadableState(options, stream, isDuplex) {
   // However, some cases require setting options to different
   // values for the readable and the writable sides of the duplex stream.
   // These options can be provided separately as readableXXX and writableXXX.
-  if (typeof isDuplex !== 'boolean') isDuplex = stream instanceof __nccwpck_require__(4449)
+  if (typeof isDuplex !== 'boolean') isDuplex = stream instanceof __nccwpck_require__(94449)
 
   // Bit map field to store ReadableState more effciently with 1 bit per field
   // instead of a V8 slot per field.
@@ -30971,7 +33834,7 @@ function Readable(options) {
 
   // Checking for a Stream.Duplex instance is faster here instead of inside
   // the ReadableState constructor, at least with V8 6.5.
-  const isDuplex = this instanceof __nccwpck_require__(4449)
+  const isDuplex = this instanceof __nccwpck_require__(94449)
   this._readableState = new ReadableState(options, this, isDuplex)
   if (options) {
     if (typeof options.read === 'function') this._read = options.read
@@ -32057,14 +34920,14 @@ Readable.wrap = function (src, options) {
 
 /***/ }),
 
-/***/ 4874:
+/***/ 54874:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { MathFloor, NumberIsInteger } = __nccwpck_require__(999)
-const { validateInteger } = __nccwpck_require__(9554)
-const { ERR_INVALID_ARG_VALUE } = (__nccwpck_require__(9220).codes)
+const { MathFloor, NumberIsInteger } = __nccwpck_require__(50999)
+const { validateInteger } = __nccwpck_require__(49554)
+const { ERR_INVALID_ARG_VALUE } = (__nccwpck_require__(69220).codes)
 let defaultHighWaterMarkBytes = 16 * 1024
 let defaultHighWaterMarkObjectMode = 16
 function highWaterMarkFrom(options, isDuplex, duplexKey) {
@@ -32103,7 +34966,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2135:
+/***/ 12135:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -32171,11 +35034,11 @@ module.exports = {
 
 
 
-const { ObjectSetPrototypeOf, Symbol } = __nccwpck_require__(999)
+const { ObjectSetPrototypeOf, Symbol } = __nccwpck_require__(50999)
 module.exports = Transform
-const { ERR_METHOD_NOT_IMPLEMENTED } = (__nccwpck_require__(9220).codes)
-const Duplex = __nccwpck_require__(4449)
-const { getHighWaterMark } = __nccwpck_require__(4874)
+const { ERR_METHOD_NOT_IMPLEMENTED } = (__nccwpck_require__(69220).codes)
+const Duplex = __nccwpck_require__(94449)
+const { getHighWaterMark } = __nccwpck_require__(54874)
 ObjectSetPrototypeOf(Transform.prototype, Duplex.prototype)
 ObjectSetPrototypeOf(Transform, Duplex)
 const kCallback = Symbol('kCallback')
@@ -32290,12 +35153,12 @@ Transform.prototype._read = function () {
 
 /***/ }),
 
-/***/ 3426:
+/***/ 83426:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { SymbolAsyncIterator, SymbolIterator, SymbolFor } = __nccwpck_require__(999)
+const { SymbolAsyncIterator, SymbolIterator, SymbolFor } = __nccwpck_require__(50999)
 
 // We need to use SymbolFor to make these globally available
 // for interopt with readable-stream, i.e. readable-stream
@@ -32624,7 +35487,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8939:
+/***/ 58939:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -32656,7 +35519,7 @@ module.exports = {
 
 /* replacement start */
 
-const process = __nccwpck_require__(7945)
+const process = __nccwpck_require__(76417)
 
 /* replacement end */
 
@@ -32670,15 +35533,15 @@ const {
   StringPrototypeToLowerCase,
   Symbol,
   SymbolHasInstance
-} = __nccwpck_require__(999)
+} = __nccwpck_require__(50999)
 module.exports = Writable
 Writable.WritableState = WritableState
-const { EventEmitter: EE } = __nccwpck_require__(4434)
-const Stream = (__nccwpck_require__(4128).Stream)
-const { Buffer } = __nccwpck_require__(181)
-const destroyImpl = __nccwpck_require__(7470)
-const { addAbortSignal } = __nccwpck_require__(652)
-const { getHighWaterMark, getDefaultHighWaterMark } = __nccwpck_require__(4874)
+const { EventEmitter: EE } = __nccwpck_require__(24434)
+const Stream = (__nccwpck_require__(84128).Stream)
+const { Buffer } = __nccwpck_require__(20181)
+const destroyImpl = __nccwpck_require__(65089)
+const { addAbortSignal } = __nccwpck_require__(80652)
+const { getHighWaterMark, getDefaultHighWaterMark } = __nccwpck_require__(54874)
 const {
   ERR_INVALID_ARG_TYPE,
   ERR_METHOD_NOT_IMPLEMENTED,
@@ -32689,7 +35552,7 @@ const {
   ERR_STREAM_NULL_VALUES,
   ERR_STREAM_WRITE_AFTER_END,
   ERR_UNKNOWN_ENCODING
-} = (__nccwpck_require__(9220).codes)
+} = (__nccwpck_require__(69220).codes)
 const { errorOrDestroy } = destroyImpl
 ObjectSetPrototypeOf(Writable.prototype, Stream.prototype)
 ObjectSetPrototypeOf(Writable, Stream)
@@ -32701,7 +35564,7 @@ function WritableState(options, stream, isDuplex) {
   // However, some cases require setting options to different
   // values for the readable and the writable sides of the duplex stream,
   // e.g. options.readableObjectMode vs. options.writableObjectMode, etc.
-  if (typeof isDuplex !== 'boolean') isDuplex = stream instanceof __nccwpck_require__(4449)
+  if (typeof isDuplex !== 'boolean') isDuplex = stream instanceof __nccwpck_require__(94449)
 
   // Object stream flag to indicate whether or not this stream
   // contains buffers or objects.
@@ -32839,7 +35702,7 @@ function Writable(options) {
 
   // Checking for a Stream.Duplex instance is faster here instead of inside
   // the WritableState constructor, at least with V8 6.5.
-  const isDuplex = this instanceof __nccwpck_require__(4449)
+  const isDuplex = this instanceof __nccwpck_require__(94449)
   if (!isDuplex && !FunctionPrototypeSymbolHasInstance(Writable, this)) return new Writable(options)
   this._writableState = new WritableState(options, this, isDuplex)
   if (options) {
@@ -33450,7 +36313,7 @@ Writable.toWeb = function (streamWritable) {
 
 /***/ }),
 
-/***/ 9554:
+/***/ 49554:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /* eslint jsdoc/require-jsdoc: "error" */
@@ -33472,13 +36335,13 @@ const {
   String,
   StringPrototypeToUpperCase,
   StringPrototypeTrim
-} = __nccwpck_require__(999)
+} = __nccwpck_require__(50999)
 const {
   hideStackFrames,
   codes: { ERR_SOCKET_BAD_PORT, ERR_INVALID_ARG_TYPE, ERR_INVALID_ARG_VALUE, ERR_OUT_OF_RANGE, ERR_UNKNOWN_SIGNAL }
-} = __nccwpck_require__(9220)
-const { normalizeEncoding } = __nccwpck_require__(3539)
-const { isAsyncFunction, isArrayBufferView } = (__nccwpck_require__(3539).types)
+} = __nccwpck_require__(69220)
+const { normalizeEncoding } = __nccwpck_require__(23539)
+const { isAsyncFunction, isArrayBufferView } = (__nccwpck_require__(23539).types)
 const signals = {}
 
 /**
@@ -33987,13 +36850,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9220:
+/***/ 69220:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { format, inspect } = __nccwpck_require__(3536)
-const { AggregateError: CustomAggregateError } = __nccwpck_require__(999)
+const { format, inspect } = __nccwpck_require__(43536)
+const { AggregateError: CustomAggregateError } = __nccwpck_require__(50999)
 
 /*
   This file is a reduced and adapted version of the main lib/internal/errors.js file defined at
@@ -34337,7 +37200,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9963:
+/***/ 29963:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -34371,8 +37234,8 @@ if (Stream && process.env.READABLE_STREAM === 'disable') {
   })
   module.exports.Stream = Stream.Stream
 } else {
-  const CustomStream = __nccwpck_require__(2375)
-  const promises = __nccwpck_require__(5904)
+  const CustomStream = __nccwpck_require__(12375)
+  const promises = __nccwpck_require__(65904)
   const originalDestroy = CustomStream.Readable.destroy
   module.exports = CustomStream.Readable
 
@@ -34409,7 +37272,7 @@ module.exports["default"] = module.exports
 
 /***/ }),
 
-/***/ 999:
+/***/ 50999:
 /***/ ((module) => {
 
 
@@ -34540,19 +37403,19 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3539:
+/***/ 23539:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const bufferModule = __nccwpck_require__(181)
-const { format, inspect } = __nccwpck_require__(3536)
+const bufferModule = __nccwpck_require__(20181)
+const { format, inspect } = __nccwpck_require__(43536)
 const {
   codes: { ERR_INVALID_ARG_TYPE }
-} = __nccwpck_require__(9220)
-const { kResistStopPropagation, AggregateError, SymbolDispose } = __nccwpck_require__(999)
-const AbortSignal = globalThis.AbortSignal || (__nccwpck_require__(7413).AbortSignal)
-const AbortController = globalThis.AbortController || (__nccwpck_require__(7413).AbortController)
+} = __nccwpck_require__(69220)
+const { kResistStopPropagation, AggregateError, SymbolDispose } = __nccwpck_require__(50999)
+const AbortSignal = globalThis.AbortSignal || (__nccwpck_require__(17413).AbortSignal)
+const AbortController = globalThis.AbortController || (__nccwpck_require__(17413).AbortController)
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const Blob = globalThis.Blob || bufferModule.Blob
 /* eslint-disable indent */
@@ -34633,7 +37496,7 @@ module.exports = {
     return fn
   },
   addAbortListener:
-    (__nccwpck_require__(4434).addAbortListener) ||
+    (__nccwpck_require__(24434).addAbortListener) ||
     function addAbortListener(signal, listener) {
       if (signal === undefined) {
         throw new ERR_INVALID_ARG_TYPE('signal', 'AbortSignal', signal)
@@ -34695,7 +37558,7 @@ module.exports.promisify.custom = Symbol.for('nodejs.util.promisify.custom')
 
 /***/ }),
 
-/***/ 3536:
+/***/ 43536:
 /***/ ((module) => {
 
 
@@ -34757,7 +37620,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2375:
+/***/ 12375:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -34785,33 +37648,33 @@ module.exports = {
 
 /* replacement start */
 
-const { Buffer } = __nccwpck_require__(181)
+const { Buffer } = __nccwpck_require__(20181)
 
 /* replacement end */
 
-const { ObjectDefineProperty, ObjectKeys, ReflectApply } = __nccwpck_require__(999)
+const { ObjectDefineProperty, ObjectKeys, ReflectApply } = __nccwpck_require__(50999)
 const {
   promisify: { custom: customPromisify }
-} = __nccwpck_require__(3539)
-const { streamReturningOperators, promiseReturningOperators } = __nccwpck_require__(1222)
+} = __nccwpck_require__(23539)
+const { streamReturningOperators, promiseReturningOperators } = __nccwpck_require__(11222)
 const {
   codes: { ERR_ILLEGAL_CONSTRUCTOR }
-} = __nccwpck_require__(9220)
-const compose = __nccwpck_require__(4999)
-const { setDefaultHighWaterMark, getDefaultHighWaterMark } = __nccwpck_require__(4874)
-const { pipeline } = __nccwpck_require__(6701)
-const { destroyer } = __nccwpck_require__(7470)
-const eos = __nccwpck_require__(6815)
+} = __nccwpck_require__(69220)
+const compose = __nccwpck_require__(64999)
+const { setDefaultHighWaterMark, getDefaultHighWaterMark } = __nccwpck_require__(54874)
+const { pipeline } = __nccwpck_require__(16701)
+const { destroyer } = __nccwpck_require__(65089)
+const eos = __nccwpck_require__(36815)
 const internalBuffer = {}
-const promises = __nccwpck_require__(5904)
-const utils = __nccwpck_require__(3426)
-const Stream = (module.exports = __nccwpck_require__(4128).Stream)
+const promises = __nccwpck_require__(65904)
+const utils = __nccwpck_require__(83426)
+const Stream = (module.exports = __nccwpck_require__(84128).Stream)
 Stream.isDestroyed = utils.isDestroyed
 Stream.isDisturbed = utils.isDisturbed
 Stream.isErrored = utils.isErrored
 Stream.isReadable = utils.isReadable
 Stream.isWritable = utils.isWritable
-Stream.Readable = __nccwpck_require__(7783)
+Stream.Readable = __nccwpck_require__(17783)
 for (const key of ObjectKeys(streamReturningOperators)) {
   const op = streamReturningOperators[key]
   function fn(...args) {
@@ -34860,12 +37723,12 @@ for (const key of ObjectKeys(promiseReturningOperators)) {
     writable: true
   })
 }
-Stream.Writable = __nccwpck_require__(8939)
-Stream.Duplex = __nccwpck_require__(4449)
-Stream.Transform = __nccwpck_require__(2135)
-Stream.PassThrough = __nccwpck_require__(9173)
+Stream.Writable = __nccwpck_require__(58939)
+Stream.Duplex = __nccwpck_require__(94449)
+Stream.Transform = __nccwpck_require__(12135)
+Stream.PassThrough = __nccwpck_require__(19173)
 Stream.pipeline = pipeline
-const { addAbortSignal } = __nccwpck_require__(652)
+const { addAbortSignal } = __nccwpck_require__(80652)
 Stream.addAbortSignal = addAbortSignal
 Stream.finished = eos
 Stream.destroy = destroyer
@@ -34907,16 +37770,16 @@ Stream._uint8ArrayToBuffer = function _uint8ArrayToBuffer(chunk) {
 
 /***/ }),
 
-/***/ 5904:
+/***/ 65904:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { ArrayPrototypePop, Promise } = __nccwpck_require__(999)
-const { isIterable, isNodeStream, isWebStream } = __nccwpck_require__(3426)
-const { pipelineImpl: pl } = __nccwpck_require__(6701)
-const { finished } = __nccwpck_require__(6815)
-__nccwpck_require__(2375)
+const { ArrayPrototypePop, Promise } = __nccwpck_require__(50999)
+const { isIterable, isNodeStream, isWebStream } = __nccwpck_require__(83426)
+const { pipelineImpl: pl } = __nccwpck_require__(16701)
+const { finished } = __nccwpck_require__(36815)
+__nccwpck_require__(12375)
 function pipeline(...streams) {
   return new Promise((resolve, reject) => {
     let signal
@@ -34957,15 +37820,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1364:
+/***/ 51364:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = readdirGlob;
 
-const fs = __nccwpck_require__(9896);
-const { EventEmitter } = __nccwpck_require__(4434);
-const { Minimatch } = __nccwpck_require__(6507);
-const { resolve } = __nccwpck_require__(6928);
+const fs = __nccwpck_require__(79896);
+const { EventEmitter } = __nccwpck_require__(24434);
+const { Minimatch } = __nccwpck_require__(46507);
+const { resolve } = __nccwpck_require__(16928);
 
 function readdir(dir, strict) {
   return new Promise((resolve, reject) => {
@@ -35206,12 +38069,62 @@ readdirGlob.ReaddirGlob = ReaddirGlob;
 
 /***/ }),
 
-/***/ 3058:
+/***/ 22524:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+var $concat = GetIntrinsic('%Array.prototype.concat%');
+
+var callBind = __nccwpck_require__(53844);
+
+var callBound = __nccwpck_require__(23105);
+var $slice = callBound('Array.prototype.slice');
+
+var hasSymbols = __nccwpck_require__(61114)();
+var isConcatSpreadable = hasSymbols && Symbol.isConcatSpreadable;
+
+/** @type {never[]} */ var empty = [];
+var $concatApply = isConcatSpreadable ? callBind.apply($concat, empty) : null;
+
+// eslint-disable-next-line no-extra-parens
+var isArray = isConcatSpreadable ? /** @type {(value: unknown) => value is unknown[]} */ (__nccwpck_require__(82513)) : null;
+
+/** @type {import('.')} */
+module.exports = isConcatSpreadable
+	// eslint-disable-next-line no-unused-vars
+	? function safeArrayConcat(item) {
+		for (var i = 0; i < arguments.length; i += 1) {
+			/** @type {typeof item} */ var arg = arguments[i];
+			// @ts-expect-error ts(2538) see https://github.com/microsoft/TypeScript/issues/9998#issuecomment-1890787975; works if `const`
+			if (arg && typeof arg === 'object' && typeof arg[isConcatSpreadable] === 'boolean') {
+				// @ts-expect-error ts(7015) TS doesn't yet support Symbol indexing
+				if (!empty[isConcatSpreadable]) {
+					// @ts-expect-error ts(7015) TS doesn't yet support Symbol indexing
+					empty[isConcatSpreadable] = true;
+				}
+				// @ts-expect-error ts(2721) ts(18047) not sure why TS can't figure out this can't be null
+				var arr = isArray(arg) ? $slice(arg) : [arg];
+				// @ts-expect-error ts(7015) TS can't handle expandos on an array
+				arr[isConcatSpreadable] = true; // shadow the property. TODO: use [[Define]]
+				arguments[i] = arr;
+			}
+		}
+		// @ts-expect-error ts(2345) https://github.com/microsoft/TypeScript/issues/57164 TS doesn't understand that apply can take an arguments object
+		return $concatApply(arguments);
+	}
+	: callBind($concat, empty);
+
+
+/***/ }),
+
+/***/ 93058:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
-var buffer = __nccwpck_require__(181)
+var buffer = __nccwpck_require__(20181)
 var Buffer = buffer.Buffer
 
 // alternative to using Object.keys for old browsers
@@ -35278,14 +38191,87 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 /***/ }),
 
-/***/ 6204:
+/***/ 93470:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { EventEmitter } = __nccwpck_require__(9580)
-const FIFO = __nccwpck_require__(3867)
-const TextDecoder = __nccwpck_require__(7934)
 
-const StreamError = __nccwpck_require__(5657)
+
+var callBound = __nccwpck_require__(23105);
+var isRegex = __nccwpck_require__(86622);
+
+var $exec = callBound('RegExp.prototype.exec');
+var $TypeError = __nccwpck_require__(73314);
+
+/** @type {import('.')} */
+module.exports = function regexTester(regex) {
+	if (!isRegex(regex)) {
+		throw new $TypeError('`regex` must be a RegExp');
+	}
+	return function test(s) {
+		return $exec(regex, s) !== null;
+	};
+};
+
+
+/***/ }),
+
+/***/ 49346:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+var define = __nccwpck_require__(31316);
+var hasDescriptors = __nccwpck_require__(60497)();
+var gOPD = __nccwpck_require__(33170);
+
+var $TypeError = __nccwpck_require__(73314);
+var $floor = GetIntrinsic('%Math.floor%');
+
+/** @type {import('.')} */
+module.exports = function setFunctionLength(fn, length) {
+	if (typeof fn !== 'function') {
+		throw new $TypeError('`fn` is not a function');
+	}
+	if (typeof length !== 'number' || length < 0 || length > 0xFFFFFFFF || $floor(length) !== length) {
+		throw new $TypeError('`length` must be a positive 32-bit integer');
+	}
+
+	var loose = arguments.length > 2 && !!arguments[2];
+
+	var functionLengthIsConfigurable = true;
+	var functionLengthIsWritable = true;
+	if ('length' in fn && gOPD) {
+		var desc = gOPD(fn, 'length');
+		if (desc && !desc.configurable) {
+			functionLengthIsConfigurable = false;
+		}
+		if (desc && !desc.writable) {
+			functionLengthIsWritable = false;
+		}
+	}
+
+	if (functionLengthIsConfigurable || functionLengthIsWritable || !loose) {
+		if (hasDescriptors) {
+			define(/** @type {Parameters<define>[0]} */ (fn), 'length', length, true, true);
+		} else {
+			define(/** @type {Parameters<define>[0]} */ (fn), 'length', length);
+		}
+	}
+	return fn;
+};
+
+
+/***/ }),
+
+/***/ 36204:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const { EventEmitter } = __nccwpck_require__(29580)
+const FIFO = __nccwpck_require__(83867)
+const TextDecoder = __nccwpck_require__(97934)
+
+const StreamError = __nccwpck_require__(45657)
 
 // if we do a future major, expect queue microtask to be there always, for now a bit defensive
 const qmt =
@@ -36599,7 +39585,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5657:
+/***/ 45657:
 /***/ ((module) => {
 
 module.exports = class StreamError extends Error {
@@ -36653,7 +39639,127 @@ module.exports = class StreamError extends Error {
 
 /***/ }),
 
-/***/ 634:
+/***/ 49651:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var RequireObjectCoercible = __nccwpck_require__(19601);
+var ToString = __nccwpck_require__(35038);
+var callBound = __nccwpck_require__(23105);
+var safeRegexTester = __nccwpck_require__(93470);
+
+var $replace = callBound('String.prototype.replace');
+var $charAt = callBound('String.prototype.charAt');
+var $slice = callBound('String.prototype.slice');
+
+var mvsIsWS = (/^\s$/).test('\u180E');
+/* eslint-disable no-control-regex */
+var leftWhitespace = mvsIsWS
+	? /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/
+	: /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/;
+var isWhitespace = safeRegexTester(mvsIsWS
+	? /[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]$/
+	: /[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]$/);
+/* eslint-enable no-control-regex */
+
+module.exports = function trim() {
+	var S = $replace(ToString(RequireObjectCoercible(this)), leftWhitespace, '');
+	// scan back for the trailing whitespace boundary; a `$`-anchored regexp is quadratic on large internal whitespace runs
+	var end = S.length;
+	while (end > 0 && isWhitespace($charAt(S, end - 1))) {
+		end -= 1;
+	}
+	return $slice(S, 0, end);
+};
+
+
+/***/ }),
+
+/***/ 20941:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var callBind = __nccwpck_require__(53844);
+var define = __nccwpck_require__(50191);
+var RequireObjectCoercible = __nccwpck_require__(19601);
+
+var implementation = __nccwpck_require__(49651);
+var getPolyfill = __nccwpck_require__(58698);
+var shim = __nccwpck_require__(4872);
+
+var bound = callBind(getPolyfill());
+var boundMethod = function trim(receiver) {
+	RequireObjectCoercible(receiver);
+	return bound(receiver);
+};
+
+define(boundMethod, {
+	getPolyfill: getPolyfill,
+	implementation: implementation,
+	shim: shim
+});
+
+module.exports = boundMethod;
+
+
+/***/ }),
+
+/***/ 58698:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var implementation = __nccwpck_require__(49651);
+
+var zeroWidthSpace = '\u200b';
+var mongolianVowelSeparator = '\u180E';
+
+module.exports = function getPolyfill() {
+	if (
+		String.prototype.trim
+		&& zeroWidthSpace.trim() === zeroWidthSpace
+		&& mongolianVowelSeparator.trim() === mongolianVowelSeparator
+		&& ('_' + mongolianVowelSeparator).trim() === ('_' + mongolianVowelSeparator)
+		&& (mongolianVowelSeparator + '_').trim() === (mongolianVowelSeparator + '_')
+	) {
+		return String.prototype.trim;
+	}
+	return implementation;
+};
+
+
+/***/ }),
+
+/***/ 4872:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var supportsDescriptors = __nccwpck_require__(60497)();
+var defineDataProperty = __nccwpck_require__(31316);
+
+var getPolyfill = __nccwpck_require__(58698);
+
+module.exports = function shimStringTrim() {
+	var polyfill = getPolyfill();
+
+	if (String.prototype.trim !== polyfill) {
+		if (supportsDescriptors) {
+			defineDataProperty(String.prototype, 'trim', polyfill, true);
+		} else {
+			defineDataProperty(String.prototype, 'trim', polyfill);
+		}
+	}
+
+	return polyfill;
+};
+
+
+/***/ }),
+
+/***/ 80634:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -36681,7 +39787,7 @@ module.exports = class StreamError extends Error {
 
 /*<replacement>*/
 
-var Buffer = (__nccwpck_require__(3058).Buffer);
+var Buffer = (__nccwpck_require__(93058).Buffer);
 /*</replacement>*/
 
 var isEncoding = Buffer.isEncoding || function (encoding) {
@@ -36955,7 +40061,7 @@ function simpleEnd(buf) {
 
 /***/ }),
 
-/***/ 775:
+/***/ 20775:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const constants = { // just for envs without fs
@@ -36968,7 +40074,7 @@ const constants = { // just for envs without fs
 }
 
 try {
-  module.exports = (__nccwpck_require__(9896).constants) || constants
+  module.exports = (__nccwpck_require__(79896).constants) || constants
 } catch {
   module.exports = constants
 }
@@ -36976,13 +40082,13 @@ try {
 
 /***/ }),
 
-/***/ 5763:
+/***/ 35763:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { Writable, Readable, getStreamError } = __nccwpck_require__(6204)
-const FIFO = __nccwpck_require__(3867)
-const b4a = __nccwpck_require__(3057)
-const headers = __nccwpck_require__(8428)
+const { Writable, Readable, getStreamError } = __nccwpck_require__(36204)
+const FIFO = __nccwpck_require__(83867)
+const b4a = __nccwpck_require__(73057)
+const headers = __nccwpck_require__(88428)
 
 const EMPTY = b4a.alloc(0)
 const MAX_HEADER_SIZE = 4 * 1024 * 1024 // arbitrary big number
@@ -37401,10 +40507,10 @@ function overflow (size) {
 
 /***/ }),
 
-/***/ 8428:
+/***/ 88428:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-const b4a = __nccwpck_require__(3057)
+const b4a = __nccwpck_require__(73057)
 
 const ZEROS = '0000000000000000000'
 const SEVENS = '7777777777777777777'
@@ -37730,23 +40836,23 @@ function addLength (str) {
 
 /***/ }),
 
-/***/ 6118:
+/***/ 56118:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-exports.extract = __nccwpck_require__(5763)
-exports.pack = __nccwpck_require__(861)
+exports.extract = __nccwpck_require__(35763)
+exports.pack = __nccwpck_require__(80861)
 
 
 /***/ }),
 
-/***/ 861:
+/***/ 80861:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { Readable, Writable, getStreamError } = __nccwpck_require__(6204)
-const b4a = __nccwpck_require__(3057)
+const { Readable, Writable, getStreamError } = __nccwpck_require__(36204)
+const b4a = __nccwpck_require__(73057)
 
-const constants = __nccwpck_require__(775)
-const headers = __nccwpck_require__(8428)
+const constants = __nccwpck_require__(20775)
+const headers = __nccwpck_require__(88428)
 
 const DMODE = 0o755
 const FMODE = 0o644
@@ -38033,11 +41139,11 @@ function mapWritable (buf) {
 
 /***/ }),
 
-/***/ 7934:
+/***/ 97934:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const PassThroughDecoder = __nccwpck_require__(7256)
-const UTF8Decoder = __nccwpck_require__(6414)
+const PassThroughDecoder = __nccwpck_require__(47256)
+const UTF8Decoder = __nccwpck_require__(86414)
 
 module.exports = class TextDecoder {
   constructor(encoding = 'utf8') {
@@ -38104,10 +41210,10 @@ function normalizeEncoding(encoding) {
 
 /***/ }),
 
-/***/ 7256:
+/***/ 47256:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const b4a = __nccwpck_require__(3057)
+const b4a = __nccwpck_require__(73057)
 
 module.exports = class PassThroughDecoder {
   constructor(encoding) {
@@ -38130,10 +41236,10 @@ module.exports = class PassThroughDecoder {
 
 /***/ }),
 
-/***/ 6414:
+/***/ 86414:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const b4a = __nccwpck_require__(3057)
+const b4a = __nccwpck_require__(73057)
 
 /**
  * https://encoding.spec.whatwg.org/#utf-8-decoder
@@ -38322,355 +41428,680 @@ function trailingBytesSeen(data) {
 
 /***/ }),
 
-/***/ 2958:
-/***/ ((module) => {
+/***/ 62958:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = Traverse;
-function Traverse (obj) {
-    if (!(this instanceof Traverse)) return new Traverse(obj);
-    this.value = obj;
+var whichTypedArray = __nccwpck_require__(54768);
+var taSlice = __nccwpck_require__(39013);
+var gopd = __nccwpck_require__(33170);
+var defineDataProperty = __nccwpck_require__(31316);
+var ToPrimitive = __nccwpck_require__(75604);
+
+// TODO: use call-bind, is-date, is-regex, is-string, is-boolean-object, is-number-object
+function toS(obj) { return Object.prototype.toString.call(obj); }
+function isDate(obj) { return toS(obj) === '[object Date]'; }
+function isRegExp(obj) { return toS(obj) === '[object RegExp]'; }
+function isError(obj) { return toS(obj) === '[object Error]'; }
+function isBoolean(obj) { return toS(obj) === '[object Boolean]'; }
+function isNumber(obj) { return toS(obj) === '[object Number]'; }
+function isString(obj) { return toS(obj) === '[object String]'; }
+
+// TODO: use isarray
+var isArray = Array.isArray || function isArray(xs) {
+	return Object.prototype.toString.call(xs) === '[object Array]';
+};
+
+// TODO: use for-each?
+function forEach(xs, fn) {
+	if (xs.forEach) { return xs.forEach(fn); }
+	for (var i = 0; i < xs.length; i++) {
+		fn(xs[i], i, xs);
+	}
+	return void undefined;
 }
 
+// TODO: use object-keys
+var objectKeys = Object.keys || function keys(obj) {
+	var res = [];
+	for (var key in obj) { res[res.length] = key; } // eslint-disable-line no-restricted-syntax
+	return res;
+};
+
+var propertyIsEnumerable = Object.prototype.propertyIsEnumerable;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols; // eslint-disable-line id-length
+
+// TODO: use reflect.ownkeys and filter out non-enumerables
+function ownEnumerableKeys(obj) {
+	var res = objectKeys(obj);
+
+	// Include enumerable symbol properties.
+	if (getOwnPropertySymbols) {
+		var symbols = getOwnPropertySymbols(obj);
+		for (var i = 0; i < symbols.length; i++) {
+			if (propertyIsEnumerable.call(obj, symbols[i])) {
+				res[res.length] = symbols[i];
+			}
+		}
+	}
+	return res;
+}
+
+// TODO: use object.hasown
+var hasOwnProperty = Object.prototype.hasOwnProperty || function (obj, key) {
+	return key in obj;
+};
+
+function isWritable(object, key) {
+	if (typeof gopd !== 'function') {
+		return true;
+	}
+
+	var desc = gopd(object, key);
+	return !desc || !desc.writable;
+}
+
+var maxArrayLength = 4294967295;
+
+function isIndex(key) {
+	if (typeof key === 'symbol') {
+		return false;
+	}
+	var index = Number(key);
+	return index >= 0
+		&& index < maxArrayLength
+		&& index % 1 === 0
+		&& String(index) === String(key);
+}
+
+function countBelow(ascending, index) {
+	var low = 0;
+	var high = ascending.length;
+	while (low < high) {
+		var middle = Math.floor((low + high) / 2);
+		if (ascending[middle] < index) {
+			low = middle + 1;
+		} else {
+			high = middle;
+		}
+	}
+	return low;
+}
+
+// While an array's children are walked, `spliced` holds, in ascending order, the index that each
+// child spliced out of it so far had when that walk began. This is enough to tell which children
+// are gone, and where each remaining one is now, however many went away and in whatever order.
+// Nothing but a splice moves a child, so for every other kind of parent `spliced` stays empty.
+function wasSpliced(key, spliced) {
+	return spliced.length > 0
+		&& isIndex(key)
+		&& spliced[countBelow(spliced, Number(key))] === Number(key);
+}
+
+function shiftedKey(key, spliced) {
+	if (spliced.length === 0 || !isIndex(key)) {
+		return key;
+	}
+	var shifted = Number(key) - countBelow(spliced, Number(key));
+	return typeof key === 'number' ? shifted : String(shifted);
+}
+
+// where `__proto__` is an accessor on Object.prototype, assigning it on an object
+// that lacks it as an own property replaces the [[Prototype]], instead of creating it.
+// in older engines it is magic on every object, so there is no own `__proto__` to preserve.
+var hasProtoAccessor = typeof gopd === 'function' && !!gopd(Object.prototype, '__proto__');
+
+function setProperty(object, key, value) {
+	if (hasProtoAccessor && key === '__proto__' && !hasOwnProperty.call(object, key)) {
+		defineDataProperty(object, key, value);
+	} else {
+		object[key] = value; // eslint-disable-line no-param-reassign
+	}
+}
+
+// where `__proto__` is magic, reading or assigning it only ever reaches the [[Prototype]],
+// even on an object that has it as an own property.
+var hasMagicProto = !hasProtoAccessor && {}.__proto__ === Object.prototype;
+
+// TODO: use es-abstract's ToPropertyKey semantics
+function toSettableKey(segment) {
+	// a segment that is an object would otherwise be coerced anew on every use, and need not produce the same key each time
+	var primitive = ToPrimitive(segment, String);
+	var key = typeof primitive === 'symbol' ? primitive : String(primitive);
+	if (hasMagicProto && key === '__proto__') {
+		throw new TypeError('`__proto__` can not be set as a property in this engine');
+	}
+	return key;
+}
+
+function setOwnProperty(object, key, value) {
+	'use strict';
+
+	// this file is sloppy, so the assignment is repeated here, where a failed one throws
+	if (hasProtoAccessor && key === '__proto__' && !hasOwnProperty.call(object, key)) {
+		defineDataProperty(object, key, value);
+	} else {
+		object[key] = value; // eslint-disable-line no-param-reassign
+	}
+	// a primitive can not gain an own property; when assigning one does not throw,
+	// the property would be read from, or written to, a built-in prototype
+	if (Object(object) !== object) {
+		throw new TypeError('Cannot create property `' + String(key) + '` on a ' + typeof object);
+	}
+}
+
+var gPO = Object.getPrototypeOf;
+// TODO: use get-proto
+function getProto(obj) {
+	return gPO ? gPO(obj) : obj.__proto__;
+}
+
+var sPO = Object.setPrototypeOf;
+// TODO: use set-proto
+function setProto(obj, proto) {
+	if (sPO) {
+		sPO(obj, proto);
+	} else {
+		obj.__proto__ = proto; // eslint-disable-line no-param-reassign
+	}
+}
+
+function copyBoxed(src, valueOf) {
+	var primitive;
+	try {
+		primitive = valueOf.call(src);
+	} catch (e) {
+		// an object that only claims to be a boxed primitive, via Symbol.toStringTag, is handled as before
+		return Object(src);
+	}
+	var dst = Object(primitive);
+	var proto = getProto(src);
+	if (proto && proto !== getProto(dst)) {
+		setProto(dst, proto);
+	}
+	return dst;
+}
+
+// a String object's characters are its own read-only properties, which a copy made from its value already has
+function isStringCharacter(obj, key) {
+	return isString(obj) && isIndex(key) && Number(key) < obj.length;
+}
+
+function copy(src, options) {
+	if (typeof src === 'object' && src !== null) {
+		var dst;
+
+		if (isArray(src)) {
+			dst = [];
+		} else if (isDate(src)) {
+			dst = new Date(src.getTime ? src.getTime() : src);
+		} else if (isRegExp(src)) {
+			dst = new RegExp(src);
+		} else if (isBoolean(src)) {
+			dst = copyBoxed(src, Boolean.prototype.valueOf);
+		} else if (isNumber(src)) {
+			dst = copyBoxed(src, Number.prototype.valueOf);
+		} else if (isString(src)) {
+			dst = copyBoxed(src, String.prototype.valueOf);
+		} else {
+			var ta = whichTypedArray(src);
+			if (ta) {
+				return taSlice(src);
+			} else if (Object.create && Object.getPrototypeOf) {
+				dst = Object.create(Object.getPrototypeOf(src));
+			} else if (src.constructor === Object) {
+				dst = {};
+			} else {
+				var proto = (src.constructor && src.constructor.prototype)
+					|| src.__proto__
+					|| {};
+				var T = function T() {}; // eslint-disable-line func-style, func-name-matching
+				T.prototype = proto;
+				dst = new T();
+			}
+		}
+
+		// an Error's message is usually its own non-enumerable property,
+		// so the keys below leave it out
+		if (isError(src)) { defineDataProperty(dst, 'message', src.message); }
+
+		var iteratorFunction = options.includeSymbols ? ownEnumerableKeys : objectKeys;
+		forEach(iteratorFunction(src), function (key) {
+			if (!isStringCharacter(dst, key)) {
+				setProperty(dst, key, src[key]);
+			}
+		});
+		return dst;
+	}
+	return src;
+}
+
+/** @type {TraverseOptions} */
+var emptyNull = { __proto__: null };
+
+/** @type {(options: TraverseOptions | null | undefined) => TraverseOptions} */
+function getOptions(options) {
+	return options == null ? emptyNull : options;
+}
+
+function walk(root, cb) {
+	var path = [];
+	var parents = [];
+	var alive = true;
+	var options = arguments.length > 2 ? arguments[2] : emptyNull;
+	var iteratorFunction = options.includeSymbols ? ownEnumerableKeys : objectKeys;
+	var immutable = !!options.immutable;
+
+	return (function walker(node_, splicedSiblings, originalKey) {
+		var node = immutable ? copy(node_, options) : node_;
+		var modifiers = { __proto__: null };
+
+		var keepGoing = true;
+
+		var state = {
+			node: node,
+			node_: node_,
+			path: [].concat(path),
+			parent: parents[parents.length - 1],
+			parents: parents,
+			key: path[path.length - 1],
+			removedKeys: { __proto__: null },
+			isRoot: path.length === 0,
+			level: path.length,
+			circular: null,
+			update: function (x, stopHere) {
+				// once this node is spliced out, its key belongs to whichever sibling took its place
+				if (!state.isRoot && !wasSpliced(originalKey, splicedSiblings)) {
+					setProperty(state.parent.node, state.key, x);
+				}
+				state.node = x;
+				if (stopHere) { keepGoing = false; }
+			},
+			delete: function (stopHere) {
+				if (!wasSpliced(originalKey, splicedSiblings)) {
+					delete state.parent.node[state.key];
+					state.parent.removedKeys[state.key] = true;
+				}
+				if (stopHere) { keepGoing = false; }
+			},
+			remove: function (stopHere) {
+				if (isArray(state.parent.node) && isIndex(originalKey)) {
+					var index = Number(originalKey);
+					var at = countBelow(splicedSiblings, index);
+					// once this node is spliced out, its slot holds the next sibling still there,
+					// and removing again removes that one, as it always has
+					while (splicedSiblings[at] === index) {
+						index += 1;
+						at += 1;
+					}
+					if (index - at < state.parent.node.length) {
+						state.parent.node.splice(index - at, 1);
+						splicedSiblings.splice(at, 0, index);
+						state.parent.removedKeys[state.key] = true;
+					}
+					if (stopHere) { keepGoing = false; }
+				} else {
+					state.delete(stopHere);
+				}
+			},
+			keys: null,
+			before: function (f) { modifiers.before = f; },
+			after: function (f) { modifiers.after = f; },
+			pre: function (f) { modifiers.pre = f; },
+			post: function (f) { modifiers.post = f; },
+			stop: function () { alive = false; },
+			block: function () { keepGoing = false; },
+		};
+
+		if (!alive) { return state; }
+
+		function updateState() {
+			if (typeof state.node === 'object' && state.node !== null) {
+				var nodeKeys = iteratorFunction(state.node);
+				// keys assigned by the callback are kept unless it replaced the node with a new object
+				if (!state.keys || (state.node !== node && state.node !== node_)) {
+					state.keys = nodeKeys;
+				}
+
+				// a node whose children the callback chose not to visit is still not a leaf
+				state.isLeaf = nodeKeys.length === 0;
+
+				for (var i = 0; i < parents.length; i++) {
+					if (parents[i].node_ === node_) {
+						state.circular = parents[i];
+						break; // eslint-disable-line no-restricted-syntax
+					}
+				}
+			} else {
+				state.isLeaf = true;
+				state.keys = null;
+			}
+
+			state.notLeaf = !state.isLeaf;
+			state.notRoot = !state.isRoot;
+		}
+
+		updateState();
+
+		// use return values to update if defined
+		var ret = cb.call(state, state.node);
+		if (ret !== undefined && state.update) { state.update(ret); }
+
+		if (modifiers.before) { modifiers.before.call(state, state.node); }
+
+		if (!keepGoing) { return state; }
+
+		if (
+			typeof state.node === 'object'
+			&& state.node !== null
+			&& !state.circular
+		) {
+			// before this node is among the parents, so it is not its own circular
+			updateState();
+
+			parents[parents.length] = state;
+
+			var splicedChildren = [];
+
+			forEach(state.keys, function (listedKey, i) {
+				// a child can only be gone before its turn if custom `keys` list it more than once
+				if (wasSpliced(listedKey, splicedChildren)) { return; }
+
+				var key = shiftedKey(listedKey, splicedChildren);
+
+				path[path.length] = (key);
+
+				if (modifiers.pre) { modifiers.pre.call(state, state.node[key], key); }
+
+				var child = walker(state.node[key], splicedChildren, listedKey);
+
+				if (immutable && !wasSpliced(listedKey, splicedChildren)) {
+					// not `key`: a sibling spliced during this child's walk will have moved it
+					var writeKey = shiftedKey(listedKey, splicedChildren);
+					if (
+						hasOwnProperty.call(state.node, writeKey)
+						&& !isWritable(state.node, writeKey)
+					) {
+						state.node[writeKey] = child.node;
+					}
+				}
+
+				child.isLast = i === state.keys.length - 1;
+				child.isFirst = i === 0;
+
+				if (modifiers.post) { modifiers.post.call(state, child); }
+
+				path.pop();
+			});
+			parents.pop();
+		}
+
+		if (modifiers.after) { modifiers.after.call(state, state.node); }
+
+		return state;
+	}(root, [])).node;
+}
+
+/** @typedef {{ immutable?: boolean, includeSymbols?: boolean }} TraverseOptions */
+
+/**
+ * A traverse constructor
+ * @param {object} obj - the object to traverse
+ * @param {TraverseOptions | null | undefined} [options] - options for the traverse
+ * @constructor
+ */
+function Traverse(obj) {
+	if (!(this instanceof Traverse)) {
+		return new Traverse(obj, getOptions(arguments.length > 1 ? arguments[1] : null));
+	}
+	/** @type {TraverseOptions} */
+	this.options = getOptions(arguments.length > 1 ? arguments[1] : null);
+	this.value = obj;
+}
+
+/** @type {(ps: PropertyKey[]) => Traverse['value']} */
 Traverse.prototype.get = function (ps) {
-    var node = this.value;
-    for (var i = 0; i < ps.length; i ++) {
-        var key = ps[i];
-        if (!Object.hasOwnProperty.call(node, key)) {
-            node = undefined;
-            break;
-        }
-        node = node[key];
-    }
-    return node;
+	var node = this.value;
+	for (var i = 0; i < ps.length; i++) {
+		var key = ps[i];
+		// a symbol path segment is looked up whether or not `includeSymbols` is set
+		if (
+			node == null
+			|| !hasOwnProperty.call(node, key)
+		) {
+			return void undefined;
+		}
+		node = node[key];
+	}
+	return node;
+};
+
+/** @type {(ps: PropertyKey[]) => boolean} */
+Traverse.prototype.has = function (ps) {
+	var node = this.value;
+	// TODO: remove ps.length check
+	if (!node && ps.length > 0) {
+		return false;
+	}
+	for (var i = 0; i < ps.length; i++) {
+		var key = ps[i];
+		if (
+			node == null
+			|| !hasOwnProperty.call(node, key)
+		) {
+			return false;
+		}
+		node = node[key];
+	}
+	return true;
 };
 
 Traverse.prototype.set = function (ps, value) {
-    var node = this.value;
-    for (var i = 0; i < ps.length - 1; i ++) {
-        var key = ps[i];
-        if (!Object.hasOwnProperty.call(node, key)) node[key] = {};
-        node = node[key];
-    }
-    node[ps[i]] = value;
-    return value;
+	var node = this.value;
+	for (var i = 0; i < ps.length - 1; i++) {
+		var key = toSettableKey(ps[i]);
+		if (!hasOwnProperty.call(node, key)) {
+			setOwnProperty(node, key, {});
+			// an inherited setter, or a Proxy, can accept the assignment without creating the property;
+			// the next node would then be read from wherever the key is inherited from
+			if (!hasOwnProperty.call(node, key)) {
+				throw new TypeError('Cannot create property `' + String(key) + '` as an own property');
+			}
+		}
+		node = node[key];
+	}
+	setOwnProperty(node, toSettableKey(ps[i]), value);
+	return value;
 };
 
 Traverse.prototype.map = function (cb) {
-    return walk(this.value, cb, true);
+	return walk(this.value, cb, { __proto__: null, immutable: true, includeSymbols: !!this.options.includeSymbols });
 };
 
 Traverse.prototype.forEach = function (cb) {
-    this.value = walk(this.value, cb, false);
-    return this.value;
+	this.value = walk(this.value, cb, this.options);
+	return this.value;
 };
 
 Traverse.prototype.reduce = function (cb, init) {
-    var skip = arguments.length === 1;
-    var acc = skip ? this.value : init;
-    this.forEach(function (x) {
-        if (!this.isRoot || !skip) {
-            acc = cb.call(this, acc, x);
-        }
-    });
-    return acc;
+	var skip = arguments.length === 1;
+	var acc = skip ? this.value : init;
+	this.forEach(function (x) {
+		if (!this.isRoot || !skip) {
+			acc = cb.call(this, acc, x);
+		}
+	});
+	return acc;
 };
 
 Traverse.prototype.deepEqual = function (obj) {
-    if (arguments.length !== 1) {
-        throw new Error(
-            'deepEqual requires exactly one object to compare against'
-        );
-    }
-    
-    var equal = true;
-    var node = obj;
-    
-    this.forEach(function (y) {
-        var notEqual = (function () {
-            equal = false;
-            //this.stop();
-            return undefined;
-        }).bind(this);
-        
-        //if (node === undefined || node === null) return notEqual();
-        
-        if (!this.isRoot) {
-        /*
+	if (arguments.length !== 1) {
+		throw new Error('deepEqual requires exactly one object to compare against');
+	}
+
+	var equal = true;
+	function notEqual() {
+		equal = false;
+		// this.stop();
+		return undefined;
+	}
+
+	var node = obj;
+
+	this.forEach(function (y) { // eslint-disable-line consistent-return, max-statements
+
+		// if (node === undefined || node === null) return notEqual();
+
+		if (!this.isRoot) {
+			/*
             if (!Object.hasOwnProperty.call(node, this.key)) {
                 return notEqual();
             }
         */
-            if (typeof node !== 'object') return notEqual();
-            node = node[this.key];
-        }
-        
-        var x = node;
-        
-        this.post(function () {
-            node = x;
-        });
-        
-        var toS = function (o) {
-            return Object.prototype.toString.call(o);
-        };
-        
-        if (this.circular) {
-            if (Traverse(obj).get(this.circular.path) !== x) notEqual();
-        }
-        else if (typeof x !== typeof y) {
-            notEqual();
-        }
-        else if (x === null || y === null || x === undefined || y === undefined) {
-            if (x !== y) notEqual();
-        }
-        else if (x.__proto__ !== y.__proto__) {
-            notEqual();
-        }
-        else if (x === y) {
-            // nop
-        }
-        else if (typeof x === 'function') {
-            if (x instanceof RegExp) {
-                // both regexps on account of the __proto__ check
-                if (x.toString() != y.toString()) notEqual();
-            }
-            else if (x !== y) notEqual();
-        }
-        else if (typeof x === 'object') {
-            if (toS(y) === '[object Arguments]'
+			if (typeof node !== 'object') { return notEqual(); }
+			node = node[this.key];
+		}
+
+		var x = node;
+
+		this.post(function () {
+			node = x;
+		});
+
+		if (this.circular) {
+			if (new Traverse(obj).get(this.circular.path) !== x) { notEqual(); }
+		} else if (typeof x !== typeof y) {
+			notEqual();
+		} else if (x === null || y === null || x === undefined || y === undefined) {
+			if (x !== y) { notEqual(); }
+		} else if (x.__proto__ !== y.__proto__) {
+			notEqual();
+		} else if (x === y) {
+			// nop
+		} else if (typeof x === 'function') {
+			if (x instanceof RegExp) {
+				// both regexps on account of the __proto__ check
+				if (String(x) !== String(y)) { notEqual(); }
+			} else if (x !== y) { notEqual(); }
+		} else if (typeof x === 'object') {
+			if (toS(y) === '[object Arguments]'
             || toS(x) === '[object Arguments]') {
-                if (toS(x) !== toS(y)) {
-                    notEqual();
-                }
-            }
-            else if (x instanceof Date || y instanceof Date) {
-                if (!(x instanceof Date) || !(y instanceof Date)
+				if (toS(x) !== toS(y)) {
+					notEqual();
+				}
+			} else if (toS(y) === '[object RegExp]'
+            || toS(x) === '[object RegExp]') {
+				if (!x || !y || x.toString() !== y.toString()) { notEqual(); }
+			} else if (x instanceof Date || y instanceof Date) {
+				if (!(x instanceof Date) || !(y instanceof Date)
                 || x.getTime() !== y.getTime()) {
-                    notEqual();
-                }
-            }
-            else {
-                var kx = Object.keys(x);
-                var ky = Object.keys(y);
-                if (kx.length !== ky.length) return notEqual();
-                for (var i = 0; i < kx.length; i++) {
-                    var k = kx[i];
-                    if (!Object.hasOwnProperty.call(y, k)) {
-                        notEqual();
-                    }
-                }
-            }
-        }
-    });
-    
-    return equal;
+					notEqual();
+				}
+			} else {
+				var kx = Object.keys(x);
+				var ky = Object.keys(y);
+				if (kx.length !== ky.length) { return notEqual(); }
+				for (var i = 0; i < kx.length; i++) {
+					var k = kx[i];
+					if (!Object.hasOwnProperty.call(y, k)) {
+						notEqual();
+					}
+				}
+			}
+		}
+	});
+
+	return equal;
 };
 
 Traverse.prototype.paths = function () {
-    var acc = [];
-    this.forEach(function (x) {
-        acc.push(this.path); 
-    });
-    return acc;
+	var acc = [];
+	this.forEach(function () {
+		acc[acc.length] = this.path;
+	});
+	return acc;
 };
 
 Traverse.prototype.nodes = function () {
-    var acc = [];
-    this.forEach(function (x) {
-        acc.push(this.node);
-    });
-    return acc;
+	var acc = [];
+	this.forEach(function () {
+		acc[acc.length] = this.node;
+	});
+	return acc;
 };
 
 Traverse.prototype.clone = function () {
-    var parents = [], nodes = [];
-    
-    return (function clone (src) {
-        for (var i = 0; i < parents.length; i++) {
-            if (parents[i] === src) {
-                return nodes[i];
-            }
-        }
-        
-        if (typeof src === 'object' && src !== null) {
-            var dst = copy(src);
-            
-            parents.push(src);
-            nodes.push(dst);
-            
-            Object.keys(src).forEach(function (key) {
-                dst[key] = clone(src[key]);
-            });
-            
-            parents.pop();
-            nodes.pop();
-            return dst;
-        }
-        else {
-            return src;
-        }
-    })(this.value);
+	var parents = [];
+	var nodes = [];
+	var options = this.options;
+
+	if (whichTypedArray(this.value)) {
+		return taSlice(this.value);
+	}
+
+	return (function clone(src) {
+		for (var i = 0; i < parents.length; i++) {
+			if (parents[i] === src) {
+				return nodes[i];
+			}
+		}
+
+		if (typeof src === 'object' && src !== null) {
+			var dst = copy(src, options);
+
+			parents[parents.length] = (src);
+			nodes[nodes.length] = (dst);
+
+			var iteratorFunction = options.includeSymbols ? ownEnumerableKeys : objectKeys;
+			forEach(iteratorFunction(src), function (key) {
+				if (!isStringCharacter(dst, key)) {
+					setProperty(dst, key, clone(src[key]));
+				}
+			});
+
+			parents.pop();
+			nodes.pop();
+			return dst;
+		}
+
+		return src;
+
+	}(this.value));
 };
 
-function walk (root, cb, immutable) {
-    var path = [];
-    var parents = [];
-    var alive = true;
-    
-    return (function walker (node_) {
-        var node = immutable ? copy(node_) : node_;
-        var modifiers = {};
-        
-        var state = {
-            node : node,
-            node_ : node_,
-            path : [].concat(path),
-            parent : parents.slice(-1)[0],
-            key : path.slice(-1)[0],
-            isRoot : path.length === 0,
-            level : path.length,
-            circular : null,
-            update : function (x) {
-                if (!state.isRoot) {
-                    state.parent.node[state.key] = x;
-                }
-                state.node = x;
-            },
-            'delete' : function () {
-                delete state.parent.node[state.key];
-            },
-            remove : function () {
-                if (Array.isArray(state.parent.node)) {
-                    state.parent.node.splice(state.key, 1);
-                }
-                else {
-                    delete state.parent.node[state.key];
-                }
-            },
-            before : function (f) { modifiers.before = f },
-            after : function (f) { modifiers.after = f },
-            pre : function (f) { modifiers.pre = f },
-            post : function (f) { modifiers.post = f },
-            stop : function () { alive = false }
-        };
-        
-        if (!alive) return state;
-        
-        if (typeof node === 'object' && node !== null) {
-            state.isLeaf = Object.keys(node).length == 0;
-            
-            for (var i = 0; i < parents.length; i++) {
-                if (parents[i].node_ === node_) {
-                    state.circular = parents[i];
-                    break;
-                }
-            }
-        }
-        else {
-            state.isLeaf = true;
-        }
-        
-        state.notLeaf = !state.isLeaf;
-        state.notRoot = !state.isRoot;
-        
-        // use return values to update if defined
-        var ret = cb.call(state, state.node);
-        if (ret !== undefined && state.update) state.update(ret);
-        if (modifiers.before) modifiers.before.call(state, state.node);
-        
-        if (typeof state.node == 'object'
-        && state.node !== null && !state.circular) {
-            parents.push(state);
-            
-            var keys = Object.keys(state.node);
-            keys.forEach(function (key, i) {
-                path.push(key);
-                
-                if (modifiers.pre) modifiers.pre.call(state, state.node[key], key);
-                
-                var child = walker(state.node[key]);
-                if (immutable && Object.hasOwnProperty.call(state.node, key)) {
-                    state.node[key] = child.node;
-                }
-                
-                child.isLast = i == keys.length - 1;
-                child.isFirst = i == 0;
-                
-                if (modifiers.post) modifiers.post.call(state, child);
-                
-                path.pop();
-            });
-            parents.pop();
-        }
-        
-        if (modifiers.after) modifiers.after.call(state, state.node);
-        
-        return state;
-    })(root).node;
-}
-
-Object.keys(Traverse.prototype).forEach(function (key) {
-    Traverse[key] = function (obj) {
-        var args = [].slice.call(arguments, 1);
-        var t = Traverse(obj);
-        return t[key].apply(t, args);
-    };
+// TODO: replace with object.assign?
+forEach(ownEnumerableKeys(Traverse.prototype), function (key) {
+	Traverse[key] = function (obj) {
+		var args = [].slice.call(arguments, 1);
+		var t = new Traverse(obj);
+		return t[key].apply(t, args);
+	};
 });
 
-function copy (src) {
-    if (typeof src === 'object' && src !== null) {
-        var dst;
-        
-        if (Array.isArray(src)) {
-            dst = [];
-        }
-        else if (src instanceof Date) {
-            dst = new Date(src);
-        }
-        else if (src instanceof Boolean) {
-            dst = new Boolean(src);
-        }
-        else if (src instanceof Number) {
-            dst = new Number(src);
-        }
-        else if (src instanceof String) {
-            dst = new String(src);
-        }
-        else {
-            dst = Object.create(Object.getPrototypeOf(src));
-        }
-        
-        Object.keys(src).forEach(function (key) {
-            dst[key] = src[key];
-        });
-        return dst;
-    }
-    else return src;
-}
+module.exports = Traverse;
 
 
 /***/ }),
 
-/***/ 770:
+/***/ 20770:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(218);
+module.exports = __nccwpck_require__(20218);
 
 
 /***/ }),
 
-/***/ 218:
+/***/ 20218:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var net = __nccwpck_require__(9278);
-var tls = __nccwpck_require__(4756);
-var http = __nccwpck_require__(8611);
-var https = __nccwpck_require__(5692);
-var events = __nccwpck_require__(4434);
-var assert = __nccwpck_require__(2613);
-var util = __nccwpck_require__(9023);
+var net = __nccwpck_require__(69278);
+var tls = __nccwpck_require__(64756);
+var http = __nccwpck_require__(58611);
+var https = __nccwpck_require__(65692);
+var events = __nccwpck_require__(24434);
+var assert = __nccwpck_require__(42613);
+var util = __nccwpck_require__(39023);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -38930,33 +42361,410 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 6752:
+/***/ 58489:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const Client = __nccwpck_require__(3701)
-const Dispatcher = __nccwpck_require__(883)
-const Pool = __nccwpck_require__(628)
+var $TypeError = __nccwpck_require__(73314);
+
+var callBound = __nccwpck_require__(23105);
+
+/** @type {undefined | ((thisArg: import('.').TypedArray) => Buffer<ArrayBufferLike>)} */
+var $typedArrayBuffer = callBound('TypedArray.prototype.buffer', true);
+
+var isTypedArray = __nccwpck_require__(6405);
+
+/** @type {import('.')} */
+// node <= 0.10, < 0.11.4 has a nonconfigurable own property instead of a prototype getter
+module.exports = $typedArrayBuffer || function typedArrayBuffer(x) {
+	if (!isTypedArray(x)) {
+		throw new $TypeError('Not a Typed Array');
+	}
+	return x.buffer;
+};
+
+
+/***/ }),
+
+/***/ 23363:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var forEach = __nccwpck_require__(14963);
+var callBind = __nccwpck_require__(53844);
+var gPO = __nccwpck_require__(31360)();
+
+var typedArrays = __nccwpck_require__(51506)();
+
+/** @import { TypedArrayName, ByteOffsetGetter, Implementation } from '.' */
+
+/** @type {Record<TypedArrayName, ByteOffsetGetter>} */
+var getters = {
+	// @ts-expect-error TS can't handle __proto__ or `satisfies` in jsdoc
+	__proto__: null
+};
+
+var gOPD = __nccwpck_require__(33170);
+var oDP = Object.defineProperty;
+if (gOPD) {
+	/** @type {ByteOffsetGetter} */
+	var getByteOffset = function (x) {
+		return x.byteOffset;
+	};
+	forEach(typedArrays, function (typedArray) {
+		// In Safari 7, Typed Array constructors are typeof object
+		if (typeof global[typedArray] === 'function' || typeof global[typedArray] === 'object') {
+			var Proto = global[typedArray].prototype;
+			// @ts-expect-error TS can't guarantee the callback is invoked sync
+			var descriptor = gOPD(Proto, 'byteOffset');
+			if (!descriptor) {
+				var superProto = gPO(Proto);
+				// @ts-expect-error TS can't guarantee the callback is invoked sync
+				descriptor = gOPD(superProto, 'byteOffset');
+			}
+			// Opera 12.16 has a magic byteOffset data property on instances AND on Proto
+			if (descriptor && descriptor.get) {
+				getters[typedArray] = callBind(descriptor.get);
+			} else if (oDP) {
+				// this is likely an engine where instances have a magic byteOffset data property
+				var arr = new global[typedArray](2);
+				// @ts-expect-error TS can't guarantee the callback is invoked sync
+				descriptor = gOPD(arr, 'byteOffset');
+				if (descriptor && descriptor.configurable) {
+					oDP(arr, 'length', { value: 3 });
+				}
+				if (arr.length === 2) {
+					getters[typedArray] = getByteOffset;
+				}
+			}
+		}
+	});
+}
+
+/** @type {ByteOffsetGetter} */
+var tryTypedArrays = function tryAllTypedArrays(value) {
+	/** @type {number} */ var foundOffset;
+	forEach(getters, function (getter) {
+		if (typeof foundOffset !== 'number') {
+			try {
+				var offset = getter(value);
+				if (typeof offset === 'number') {
+					foundOffset = offset;
+				}
+			} catch (e) {}
+		}
+	});
+	// @ts-expect-error TS can't guarantee the callback is invoked sync
+	return foundOffset;
+};
+
+var isTypedArray = __nccwpck_require__(6405);
+
+/** @type {Implementation} */
+module.exports = function typedArrayByteOffset(value) {
+	if (!isTypedArray(value)) {
+		return false;
+	}
+	return tryTypedArrays(value);
+};
+
+
+/***/ }),
+
+/***/ 53655:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// / <reference types="node" />
+
+var callBind = __nccwpck_require__(53844);
+var forEach = __nccwpck_require__(14963);
+var gOPD = __nccwpck_require__(33170);
+var isTypedArray = __nccwpck_require__(6405);
+var typedArrays = __nccwpck_require__(18879);
+var gPO = __nccwpck_require__(31360)();
+
+/** @typedef {(value: import('.').TypedArray) => number} TypedArrayLengthGetter */
+/** @typedef {{ [k in `$${import('.').TypedArrayName}` | '__proto__']: k extends '__proto__' ? null : TypedArrayLengthGetter }} Cache */
+
+/** @type {Cache} */
+// @ts-expect-error TS `satisfies` doesn't work in jsdoc
+var getters = { __proto__: null };
+var oDP = Object.defineProperty;
+if (gOPD) {
+	var getLength = /** @type {TypedArrayLengthGetter} */ function (x) {
+		return x.length;
+	};
+	forEach(typedArrays, /** @type {(typedArray: import('.').TypedArrayName) => void} */ function (typedArray) {
+		var TA = global[typedArray];
+		// In Safari 7, Typed Array constructors are typeof object
+		if (typeof TA === 'function' || typeof TA === 'object') {
+			var Proto = TA.prototype;
+			// @ts-expect-error TS doesn't narrow types inside callbacks, which is weird
+			var descriptor = gOPD(Proto, 'length');
+			if (!descriptor) {
+				var superProto = gPO(Proto);
+				// @ts-expect-error TS doesn't narrow types inside callbacks, which is weird
+				descriptor = gOPD(superProto, 'length');
+			}
+			// Opera 12.16 has a magic length data property on instances AND on Proto
+			if (descriptor && descriptor.get) {
+				// eslint-disable-next-line no-extra-parens
+				getters[/** @type {`$${import('.').TypedArrayName}`} */ ('$' + typedArray)] = callBind(descriptor.get);
+			} else if (oDP) {
+				// this is likely an engine where instances have a magic length data property
+				var arr = new global[typedArray](2);
+				// @ts-expect-error TS doesn't narrow types inside callbacks, which is weird
+				descriptor = gOPD(arr, 'length');
+				if (descriptor && descriptor.configurable) {
+					oDP(arr, 'length', { value: 3 });
+				}
+				if (arr.length === 2) {
+				// eslint-disable-next-line no-extra-parens
+					getters[/** @type {`$${import('.').TypedArrayName}`} */ ('$' + typedArray)] = getLength;
+				}
+			}
+		}
+	});
+}
+
+/** @type {TypedArrayLengthGetter} */
+var tryTypedArrays = function tryAllTypedArrays(value) {
+	/** @type {number} */ var foundLength;
+	// @ts-expect-error not sure why this won't work
+	forEach(getters, /** @type {(getter: TypedArrayLengthGetter) => void} */ function (getter) {
+		if (typeof foundLength !== 'number') {
+			try {
+				var length = getter(value);
+				if (typeof length === 'number') {
+					foundLength = length;
+				}
+			} catch (e) {}
+		}
+	});
+	// @ts-expect-error TS can't guarantee the above callback is invoked sync
+	return foundLength;
+};
+
+/** @type {import('.')} */
+module.exports = function typedArrayLength(value) {
+	if (!isTypedArray(value)) {
+		return false;
+	}
+	return tryTypedArrays(value);
+};
+
+
+/***/ }),
+
+/***/ 4587:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var Get = __nccwpck_require__(68036);
+var GetValueFromBuffer = __nccwpck_require__(18329);
+var IsDetachedBuffer = __nccwpck_require__(26650);
+var max = __nccwpck_require__(57147);
+var min = __nccwpck_require__(41017);
+var Set = __nccwpck_require__(51328);
+var SetValueInBuffer = __nccwpck_require__(85758);
+var ToIntegerOrInfinity = __nccwpck_require__(57568);
+var ToString = __nccwpck_require__(35038);
+var TypedArrayElementSize = __nccwpck_require__(18866);
+var TypedArrayElementType = __nccwpck_require__(19927);
+var TypedArraySpeciesCreate = __nccwpck_require__(49733);
+var ValidateTypedArray = __nccwpck_require__(77425);
+
+var typedArrayBuffer = __nccwpck_require__(58489);
+var typedArrayByteOffset = __nccwpck_require__(23363);
+
+// https://tc39.es/ecma262/#sec-%typedarray%.prototype.slice
+
+module.exports = function slice(start, end) {
+	var O = this; // step 1
+
+	ValidateTypedArray(O, 'SEQ-CST'); // step 2
+
+	// 3. Let len be O.[[ArrayLength]].
+	var len = O.length; // steps 3
+
+	var relativeStart = ToIntegerOrInfinity(start); // step 4
+
+	var k;
+	if (relativeStart === -Infinity) {
+		k = 0; // step 5
+	} else if (relativeStart < 0) {
+		k = max(len + relativeStart, 0); // step 6
+	} else {
+		k = min(relativeStart, len); // step 7
+	}
+
+	var relativeEnd = typeof end === 'undefined' ? len : ToIntegerOrInfinity(end); // step 8
+
+	var final;
+	if (relativeEnd === -Infinity) {
+		final = 0; // step 9
+	} else if (relativeEnd < 0) {
+		final = max(len + relativeEnd, 0); // step 10
+	} else {
+		final = min(relativeEnd, len); // step 11
+	}
+
+	var count = max(final - k, 0); // step 12
+
+	var A = TypedArraySpeciesCreate(O, [count]); // step 13
+
+	if (count > 0) { // step 14
+		if (IsDetachedBuffer(typedArrayBuffer(O))) {
+			throw new $TypeError('Cannot use a Typed Array with an underlying ArrayBuffer that is detached'); // step 14.a
+		}
+		var srcType = TypedArrayElementType(O); // step 14.b
+		var targetType = TypedArrayElementType(A); // step 14.c
+		if (srcType === targetType) { // step 14.d
+			//  1. NOTE: The transfer must be performed in a manner that preserves the bit-level encoding of the source data.
+			var srcBuffer = typedArrayBuffer(O); // step 14.d.ii
+			var targetBuffer = typedArrayBuffer(A); // step 14.d.iii
+			var elementSize = TypedArrayElementSize(O); // step 14.d.iv
+			var srcByteOffset = typedArrayByteOffset(O); // step 14.d.v
+			var srcByteIndex = (k * elementSize) + srcByteOffset; // step 14.d.vi
+			var targetByteIndex = typedArrayByteOffset(A); // step 14.d.vii
+			var limit = targetByteIndex + (count * elementSize); // step 14.d.viii
+			while (targetByteIndex < limit) { // step 14.d.ix
+				var value = GetValueFromBuffer(srcBuffer, srcByteIndex, 'UINT8', true, 'UNORDERED'); // step 14.d.ix.1
+				SetValueInBuffer(targetBuffer, targetByteIndex, 'UINT8', value, true, 'UNORDERED'); // step 14.d.ix.2
+				srcByteIndex += 1; // step 14.d.ix.3
+				targetByteIndex += 1; // step 14.d.ix.4
+			}
+		} else { // step 14.e
+			var n = 0; // step 14.e.i
+			while (k < final) { // step 14.e.ii
+				var Pk = ToString(k); // step 14.e.ii.1
+				var kValue = Get(O, Pk); // step 14.e.ii.2
+				Set(A, ToString(n), kValue, true); // step 14.e.ii.3
+				k += 1; // step 14.e.ii.4
+				n += 1; // step 14.e.ii.5
+			}
+		}
+	}
+
+	return A; // step 15
+};
+
+
+/***/ }),
+
+/***/ 39013:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var define = __nccwpck_require__(50191);
+var callBind = __nccwpck_require__(53844);
+
+var implementation = __nccwpck_require__(4587);
+var getPolyfill = __nccwpck_require__(25762);
+var shim = __nccwpck_require__(27248);
+
+var bound = callBind(getPolyfill());
+
+define(bound, {
+	getPolyfill: getPolyfill,
+	implementation: implementation,
+	shim: shim
+});
+
+module.exports = bound;
+
+
+/***/ }),
+
+/***/ 25762:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var implementation = __nccwpck_require__(4587);
+
+module.exports = function getPolyfill() {
+	if (typeof Uint8Array === 'function' && Uint8Array.prototype.slice) {
+		// V8 4.5 and 4.6 (node 4 and 5) throw when `this.constructor` is not a Typed Array constructor, which includes every Buffer
+		var ta = new Uint8Array(1);
+		ta.constructor = function (length) {
+			return new Uint8Array(length);
+		};
+		try {
+			ta.slice();
+		} catch (e) {
+			return implementation;
+		}
+		return Uint8Array.prototype.slice;
+	}
+	return implementation;
+};
+
+
+/***/ }),
+
+/***/ 27248:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var define = __nccwpck_require__(50191);
+var getProto = __nccwpck_require__(81967);
+
+var getPolyfill = __nccwpck_require__(25762);
+
+module.exports = function shimTypedArraySlice() {
+	if (typeof Uint8Array === 'function') {
+		var polyfill = getPolyfill();
+		var proto = getProto(Uint8Array.prototype);
+		define(
+			proto,
+			{ slice: polyfill },
+			{ slice: function () { return proto.slice !== polyfill; } }
+		);
+	}
+
+	return polyfill;
+};
+
+
+/***/ }),
+
+/***/ 46752:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+const Client = __nccwpck_require__(23701)
+const Dispatcher = __nccwpck_require__(30883)
+const Pool = __nccwpck_require__(30628)
 const BalancedPool = __nccwpck_require__(837)
-const Agent = __nccwpck_require__(7405)
-const ProxyAgent = __nccwpck_require__(6672)
-const EnvHttpProxyAgent = __nccwpck_require__(3137)
-const RetryAgent = __nccwpck_require__(50)
-const errors = __nccwpck_require__(8707)
+const Agent = __nccwpck_require__(57405)
+const ProxyAgent = __nccwpck_require__(76672)
+const EnvHttpProxyAgent = __nccwpck_require__(53137)
+const RetryAgent = __nccwpck_require__(30050)
+const errors = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
 const { InvalidArgumentError } = errors
-const api = __nccwpck_require__(6615)
-const buildConnector = __nccwpck_require__(9136)
-const MockClient = __nccwpck_require__(7365)
-const MockAgent = __nccwpck_require__(7501)
-const MockPool = __nccwpck_require__(4004)
-const mockErrors = __nccwpck_require__(2429)
-const RetryHandler = __nccwpck_require__(7816)
-const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(2581)
-const DecoratorHandler = __nccwpck_require__(8155)
+const api = __nccwpck_require__(56615)
+const buildConnector = __nccwpck_require__(59136)
+const MockClient = __nccwpck_require__(47365)
+const MockAgent = __nccwpck_require__(47501)
+const MockPool = __nccwpck_require__(94004)
+const mockErrors = __nccwpck_require__(52429)
+const RetryHandler = __nccwpck_require__(17816)
+const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(32581)
+const DecoratorHandler = __nccwpck_require__(58155)
 const RedirectHandler = __nccwpck_require__(8754)
-const createRedirectInterceptor = __nccwpck_require__(5092)
+const createRedirectInterceptor = __nccwpck_require__(25092)
 
 Object.assign(Dispatcher.prototype, api)
 
@@ -38974,10 +42782,10 @@ module.exports.DecoratorHandler = DecoratorHandler
 module.exports.RedirectHandler = RedirectHandler
 module.exports.createRedirectInterceptor = createRedirectInterceptor
 module.exports.interceptors = {
-  redirect: __nccwpck_require__(1514),
-  retry: __nccwpck_require__(2026),
-  dump: __nccwpck_require__(8060),
-  dns: __nccwpck_require__(379)
+  redirect: __nccwpck_require__(21514),
+  retry: __nccwpck_require__(92026),
+  dump: __nccwpck_require__(88060),
+  dns: __nccwpck_require__(70379)
 }
 
 module.exports.buildConnector = buildConnector
@@ -39039,7 +42847,7 @@ function makeDispatcher (fn) {
 module.exports.setGlobalDispatcher = setGlobalDispatcher
 module.exports.getGlobalDispatcher = getGlobalDispatcher
 
-const fetchImpl = (__nccwpck_require__(4398).fetch)
+const fetchImpl = (__nccwpck_require__(54398).fetch)
 module.exports.fetch = async function fetch (init, options = undefined) {
   try {
     return await fetchImpl(init, options)
@@ -39051,39 +42859,39 @@ module.exports.fetch = async function fetch (init, options = undefined) {
     throw err
   }
 }
-module.exports.Headers = __nccwpck_require__(660).Headers
-module.exports.Response = __nccwpck_require__(9051).Response
+module.exports.Headers = __nccwpck_require__(60660).Headers
+module.exports.Response = __nccwpck_require__(99051).Response
 module.exports.Request = __nccwpck_require__(9967).Request
-module.exports.FormData = __nccwpck_require__(5910).FormData
+module.exports.FormData = __nccwpck_require__(35910).FormData
 module.exports.File = globalThis.File ?? (__nccwpck_require__(4573).File)
-module.exports.FileReader = __nccwpck_require__(8355).FileReader
+module.exports.FileReader = __nccwpck_require__(48355).FileReader
 
-const { setGlobalOrigin, getGlobalOrigin } = __nccwpck_require__(1059)
+const { setGlobalOrigin, getGlobalOrigin } = __nccwpck_require__(51059)
 
 module.exports.setGlobalOrigin = setGlobalOrigin
 module.exports.getGlobalOrigin = getGlobalOrigin
 
 const { CacheStorage } = __nccwpck_require__(3245)
-const { kConstruct } = __nccwpck_require__(109)
+const { kConstruct } = __nccwpck_require__(20109)
 
 // Cache & CacheStorage are tightly coupled with fetch. Even if it may run
 // in an older version of Node, it doesn't have any use without fetch.
 module.exports.caches = new CacheStorage(kConstruct)
 
-const { deleteCookie, getCookies, getSetCookies, setCookie } = __nccwpck_require__(9061)
+const { deleteCookie, getCookies, getSetCookies, setCookie } = __nccwpck_require__(79061)
 
 module.exports.deleteCookie = deleteCookie
 module.exports.getCookies = getCookies
 module.exports.getSetCookies = getSetCookies
 module.exports.setCookie = setCookie
 
-const { parseMIMEType, serializeAMimeType } = __nccwpck_require__(1900)
+const { parseMIMEType, serializeAMimeType } = __nccwpck_require__(51900)
 
 module.exports.parseMIMEType = parseMIMEType
 module.exports.serializeAMimeType = serializeAMimeType
 
-const { CloseEvent, ErrorEvent, MessageEvent } = __nccwpck_require__(5188)
-module.exports.WebSocket = __nccwpck_require__(3726).WebSocket
+const { CloseEvent, ErrorEvent, MessageEvent } = __nccwpck_require__(15188)
+module.exports.WebSocket = __nccwpck_require__(13726).WebSocket
 module.exports.CloseEvent = CloseEvent
 module.exports.ErrorEvent = ErrorEvent
 module.exports.MessageEvent = MessageEvent
@@ -39099,18 +42907,18 @@ module.exports.MockPool = MockPool
 module.exports.MockAgent = MockAgent
 module.exports.mockErrors = mockErrors
 
-const { EventSource } = __nccwpck_require__(1238)
+const { EventSource } = __nccwpck_require__(21238)
 
 module.exports.EventSource = EventSource
 
 
 /***/ }),
 
-/***/ 158:
+/***/ 80158:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const { addAbortListener } = __nccwpck_require__(3440)
-const { RequestAbortedError } = __nccwpck_require__(8707)
+const { RequestAbortedError } = __nccwpck_require__(68707)
 
 const kListener = Symbol('kListener')
 const kSignal = Symbol('kSignal')
@@ -39170,16 +42978,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2279:
+/***/ 34660:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const assert = __nccwpck_require__(4589)
-const { AsyncResource } = __nccwpck_require__(6698)
-const { InvalidArgumentError, SocketError } = __nccwpck_require__(8707)
+const assert = __nccwpck_require__(34589)
+const { AsyncResource } = __nccwpck_require__(16698)
+const { InvalidArgumentError, SocketError } = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
+const { addSignal, removeSignal } = __nccwpck_require__(80158)
 
 class ConnectHandler extends AsyncResource {
   constructor (opts, callback) {
@@ -39285,7 +43093,7 @@ module.exports = connect
 
 /***/ }),
 
-/***/ 6862:
+/***/ 76862:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -39294,16 +43102,16 @@ const {
   Readable,
   Duplex,
   PassThrough
-} = __nccwpck_require__(7075)
+} = __nccwpck_require__(57075)
 const {
   InvalidArgumentError,
   InvalidReturnValueError,
   RequestAbortedError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
-const { AsyncResource } = __nccwpck_require__(6698)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
-const assert = __nccwpck_require__(4589)
+const { AsyncResource } = __nccwpck_require__(16698)
+const { addSignal, removeSignal } = __nccwpck_require__(80158)
+const assert = __nccwpck_require__(34589)
 
 const kResume = Symbol('resume')
 
@@ -39543,17 +43351,17 @@ module.exports = pipeline
 
 /***/ }),
 
-/***/ 4043:
+/***/ 14043:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const assert = __nccwpck_require__(4589)
-const { Readable } = __nccwpck_require__(9927)
-const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(8707)
+const assert = __nccwpck_require__(34589)
+const { Readable } = __nccwpck_require__(49927)
+const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
-const { getResolveErrorBodyCallback } = __nccwpck_require__(7655)
-const { AsyncResource } = __nccwpck_require__(6698)
+const { getResolveErrorBodyCallback } = __nccwpck_require__(87655)
+const { AsyncResource } = __nccwpck_require__(16698)
 
 class RequestHandler extends AsyncResource {
   constructor (opts, callback) {
@@ -39769,13 +43577,13 @@ module.exports.RequestHandler = RequestHandler
 
 
 
-const assert = __nccwpck_require__(4589)
-const { finished, PassThrough } = __nccwpck_require__(7075)
-const { InvalidArgumentError, InvalidReturnValueError } = __nccwpck_require__(8707)
+const assert = __nccwpck_require__(34589)
+const { finished, PassThrough } = __nccwpck_require__(57075)
+const { InvalidArgumentError, InvalidReturnValueError } = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
-const { getResolveErrorBodyCallback } = __nccwpck_require__(7655)
-const { AsyncResource } = __nccwpck_require__(6698)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
+const { getResolveErrorBodyCallback } = __nccwpck_require__(87655)
+const { AsyncResource } = __nccwpck_require__(16698)
+const { addSignal, removeSignal } = __nccwpck_require__(80158)
 
 class StreamHandler extends AsyncResource {
   constructor (opts, factory, callback) {
@@ -39991,16 +43799,16 @@ module.exports = stream
 
 /***/ }),
 
-/***/ 1882:
+/***/ 61882:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { InvalidArgumentError, SocketError } = __nccwpck_require__(8707)
-const { AsyncResource } = __nccwpck_require__(6698)
+const { InvalidArgumentError, SocketError } = __nccwpck_require__(68707)
+const { AsyncResource } = __nccwpck_require__(16698)
 const util = __nccwpck_require__(3440)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
-const assert = __nccwpck_require__(4589)
+const { addSignal, removeSignal } = __nccwpck_require__(80158)
+const assert = __nccwpck_require__(34589)
 
 class UpgradeHandler extends AsyncResource {
   constructor (opts, callback) {
@@ -40106,30 +43914,30 @@ module.exports = upgrade
 
 /***/ }),
 
-/***/ 6615:
+/***/ 56615:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-module.exports.request = __nccwpck_require__(4043)
+module.exports.request = __nccwpck_require__(14043)
 module.exports.stream = __nccwpck_require__(3560)
-module.exports.pipeline = __nccwpck_require__(6862)
-module.exports.upgrade = __nccwpck_require__(1882)
-module.exports.connect = __nccwpck_require__(2279)
+module.exports.pipeline = __nccwpck_require__(76862)
+module.exports.upgrade = __nccwpck_require__(61882)
+module.exports.connect = __nccwpck_require__(34660)
 
 
 /***/ }),
 
-/***/ 9927:
+/***/ 49927:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Ported from https://github.com/nodejs/undici/pull/907
 
 
 
-const assert = __nccwpck_require__(4589)
-const { Readable } = __nccwpck_require__(7075)
-const { RequestAbortedError, NotSupportedError, InvalidArgumentError, AbortError } = __nccwpck_require__(8707)
+const assert = __nccwpck_require__(34589)
+const { Readable } = __nccwpck_require__(57075)
+const { RequestAbortedError, NotSupportedError, InvalidArgumentError, AbortError } = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
 const { ReadableStreamFrom } = __nccwpck_require__(3440)
 
@@ -40512,15 +44320,15 @@ module.exports = { Readable: BodyReadable, chunksDecode }
 
 /***/ }),
 
-/***/ 7655:
+/***/ 87655:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const assert = __nccwpck_require__(4589)
+const assert = __nccwpck_require__(34589)
 const {
   ResponseStatusCodeError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(68707)
 
-const { chunksDecode } = __nccwpck_require__(9927)
+const { chunksDecode } = __nccwpck_require__(49927)
 const CHUNK_LIMIT = 128 * 1024
 
 async function getResolveErrorBodyCallback ({ callback, body, contentType, statusCode, statusMessage, headers }) {
@@ -40612,16 +44420,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9136:
+/***/ 59136:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const net = __nccwpck_require__(7030)
-const assert = __nccwpck_require__(4589)
+const net = __nccwpck_require__(77030)
+const assert = __nccwpck_require__(34589)
 const util = __nccwpck_require__(3440)
-const { InvalidArgumentError, ConnectTimeoutError } = __nccwpck_require__(8707)
-const timers = __nccwpck_require__(6603)
+const { InvalidArgumentError, ConnectTimeoutError } = __nccwpck_require__(68707)
+const timers = __nccwpck_require__(96603)
 
 function noop () {}
 
@@ -40706,7 +44514,7 @@ function buildConnector ({ allowH2, maxCachedSessions, socketPath, timeout, sess
     let socket
     if (protocol === 'https:') {
       if (!tls) {
-        tls = __nccwpck_require__(1692)
+        tls = __nccwpck_require__(41692)
       }
       servername = servername || options.servername || util.getServerName(host) || null
 
@@ -40859,7 +44667,7 @@ module.exports = buildConnector
 
 /***/ }),
 
-/***/ 735:
+/***/ 10735:
 /***/ ((module) => {
 
 
@@ -40984,12 +44792,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2414:
+/***/ 42414:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-const diagnosticsChannel = __nccwpck_require__(3053)
-const util = __nccwpck_require__(7975)
+const diagnosticsChannel = __nccwpck_require__(53053)
+const util = __nccwpck_require__(57975)
 
 const undiciDebugLog = util.debuglog('undici')
 const fetchDebuglog = util.debuglog('fetch')
@@ -41193,7 +45001,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8707:
+/***/ 68707:
 /***/ ((module) => {
 
 
@@ -41625,7 +45433,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4655:
+/***/ 44655:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -41633,8 +45441,8 @@ module.exports = {
 const {
   InvalidArgumentError,
   NotSupportedError
-} = __nccwpck_require__(8707)
-const assert = __nccwpck_require__(4589)
+} = __nccwpck_require__(68707)
+const assert = __nccwpck_require__(34589)
 const {
   isValidHTTPToken,
   isValidHeaderValue,
@@ -41649,8 +45457,8 @@ const {
   getServerName,
   normalizedMethodRecords
 } = __nccwpck_require__(3440)
-const { channels } = __nccwpck_require__(2414)
-const { headerNameLowerCasedRecord } = __nccwpck_require__(735)
+const { channels } = __nccwpck_require__(42414)
+const { headerNameLowerCasedRecord } = __nccwpck_require__(10735)
 
 // Verifies that a given path is valid does not contain control chars \x00 to \x20
 const invalidPathRegex = /[^\u0021-\u00ff]/
@@ -42114,7 +45922,7 @@ module.exports = Request
 
 /***/ }),
 
-/***/ 6443:
+/***/ 36443:
 /***/ ((module) => {
 
 module.exports = {
@@ -42188,7 +45996,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7752:
+/***/ 67752:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -42196,7 +46004,7 @@ module.exports = {
 const {
   wellknownHeaderNames,
   headerNameLowerCasedRecord
-} = __nccwpck_require__(735)
+} = __nccwpck_require__(10735)
 
 class TstNode {
   /** @type {any} */
@@ -42352,18 +46160,18 @@ module.exports = {
 
 
 
-const assert = __nccwpck_require__(4589)
-const { kDestroyed, kBodyUsed, kListeners, kBody } = __nccwpck_require__(6443)
-const { IncomingMessage } = __nccwpck_require__(7067)
-const stream = __nccwpck_require__(7075)
-const net = __nccwpck_require__(7030)
+const assert = __nccwpck_require__(34589)
+const { kDestroyed, kBodyUsed, kListeners, kBody } = __nccwpck_require__(36443)
+const { IncomingMessage } = __nccwpck_require__(37067)
+const stream = __nccwpck_require__(57075)
+const net = __nccwpck_require__(77030)
 const { Blob } = __nccwpck_require__(4573)
-const nodeUtil = __nccwpck_require__(7975)
-const { stringify } = __nccwpck_require__(1792)
-const { EventEmitter: EE } = __nccwpck_require__(8474)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const { headerNameLowerCasedRecord } = __nccwpck_require__(735)
-const { tree } = __nccwpck_require__(7752)
+const nodeUtil = __nccwpck_require__(57975)
+const { stringify } = __nccwpck_require__(41792)
+const { EventEmitter: EE } = __nccwpck_require__(78474)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
+const { headerNameLowerCasedRecord } = __nccwpck_require__(10735)
+const { tree } = __nccwpck_require__(67752)
 
 const [nodeMajor, nodeMinor] = process.versions.node.split('.').map(v => Number(v))
 
@@ -43073,18 +46881,18 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7405:
+/***/ 57405:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(6443)
-const DispatcherBase = __nccwpck_require__(1841)
-const Pool = __nccwpck_require__(628)
-const Client = __nccwpck_require__(3701)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
+const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(36443)
+const DispatcherBase = __nccwpck_require__(21841)
+const Pool = __nccwpck_require__(30628)
+const Client = __nccwpck_require__(23701)
 const util = __nccwpck_require__(3440)
-const createRedirectInterceptor = __nccwpck_require__(5092)
+const createRedirectInterceptor = __nccwpck_require__(25092)
 
 const kOnConnect = Symbol('onConnect')
 const kOnDisconnect = Symbol('onDisconnect')
@@ -43221,7 +47029,7 @@ module.exports = Agent
 const {
   BalancedPoolMissingUpstreamError,
   InvalidArgumentError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(68707)
 const {
   PoolBase,
   kClients,
@@ -43229,9 +47037,9 @@ const {
   kAddClient,
   kRemoveClient,
   kGetDispatcher
-} = __nccwpck_require__(2128)
-const Pool = __nccwpck_require__(628)
-const { kUrl, kInterceptors } = __nccwpck_require__(6443)
+} = __nccwpck_require__(42128)
+const Pool = __nccwpck_require__(30628)
+const { kUrl, kInterceptors } = __nccwpck_require__(36443)
 const { parseOrigin } = __nccwpck_require__(3440)
 const kFactory = Symbol('factory')
 
@@ -43436,10 +47244,10 @@ module.exports = BalancedPool
 
 /* global WebAssembly */
 
-const assert = __nccwpck_require__(4589)
+const assert = __nccwpck_require__(34589)
 const util = __nccwpck_require__(3440)
-const { channels } = __nccwpck_require__(2414)
-const timers = __nccwpck_require__(6603)
+const { channels } = __nccwpck_require__(42414)
+const timers = __nccwpck_require__(96603)
 const {
   RequestContentLengthMismatchError,
   ResponseContentLengthMismatchError,
@@ -43452,7 +47260,7 @@ const {
   BodyTimeoutError,
   HTTPParserError,
   ResponseExceededMaxSizeError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(68707)
 const {
   kUrl,
   kReset,
@@ -43485,9 +47293,9 @@ const {
   kOnError,
   kResume,
   kHTTPContext
-} = __nccwpck_require__(6443)
+} = __nccwpck_require__(36443)
 
-const constants = __nccwpck_require__(2824)
+const constants = __nccwpck_require__(52824)
 const EMPTY_BUF = Buffer.alloc(0)
 const FastBuffer = Buffer[Symbol.species]
 const addListener = util.addListener
@@ -43499,11 +47307,11 @@ const kSocketUsed = Symbol('kSocketUsed')
 let extractBody
 
 async function lazyllhttp () {
-  const llhttpWasmData = process.env.JEST_WORKER_ID ? __nccwpck_require__(3870) : undefined
+  const llhttpWasmData = process.env.JEST_WORKER_ID ? __nccwpck_require__(63870) : undefined
 
   let mod
   try {
-    mod = await WebAssembly.compile(__nccwpck_require__(3434))
+    mod = await WebAssembly.compile(__nccwpck_require__(53434))
   } catch (e) {
     /* istanbul ignore next */
 
@@ -43511,7 +47319,7 @@ async function lazyllhttp () {
     // being enabled, but the occurring of this other error
     // * https://github.com/emscripten-core/emscripten/issues/11495
     // got me to remove that check to avoid breaking Node 12.
-    mod = await WebAssembly.compile(llhttpWasmData || __nccwpck_require__(3870))
+    mod = await WebAssembly.compile(llhttpWasmData || __nccwpck_require__(63870))
   }
 
   return await WebAssembly.instantiate(mod, {
@@ -44426,7 +48234,7 @@ function writeH1 (client, request) {
 
   if (util.isFormDataLike(body)) {
     if (!extractBody) {
-      extractBody = (__nccwpck_require__(4492).extractBody)
+      extractBody = (__nccwpck_require__(84492).extractBody)
     }
 
     const [bodyStream, contentType] = extractBody(body)
@@ -44949,21 +48757,21 @@ module.exports = connectH1
 
 /***/ }),
 
-/***/ 8788:
+/***/ 88788:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const assert = __nccwpck_require__(4589)
-const { errorMonitor } = __nccwpck_require__(8474)
-const { pipeline } = __nccwpck_require__(7075)
+const assert = __nccwpck_require__(34589)
+const { errorMonitor } = __nccwpck_require__(78474)
+const { pipeline } = __nccwpck_require__(57075)
 const util = __nccwpck_require__(3440)
 const {
   RequestContentLengthMismatchError,
   RequestAbortedError,
   SocketError,
   InformationalError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(68707)
 const {
   kUrl,
   kReset,
@@ -44982,7 +48790,7 @@ const {
   kResume,
   kSize,
   kHTTPContext
-} = __nccwpck_require__(6443)
+} = __nccwpck_require__(36443)
 
 const kOpenStreams = Symbol('open streams')
 
@@ -44994,7 +48802,7 @@ let h2ExperimentalWarned = false
 /** @type {import('http2')} */
 let http2
 try {
-  http2 = __nccwpck_require__(2467)
+  http2 = __nccwpck_require__(32467)
 } catch {
   // @ts-ignore
   http2 = { constants: {} }
@@ -45388,7 +49196,7 @@ function writeH2 (client, request) {
   let contentLength = util.bodyLength(body)
 
   if (util.isFormDataLike(body)) {
-    extractBody ??= (__nccwpck_require__(4492).extractBody)
+    extractBody ??= (__nccwpck_require__(84492).extractBody)
 
     const [bodyStream, contentType] = extractBody(body)
     headers['content-type'] = contentType
@@ -45748,26 +49556,26 @@ module.exports = connectH2
 
 /***/ }),
 
-/***/ 3701:
+/***/ 23701:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // @ts-check
 
 
 
-const assert = __nccwpck_require__(4589)
-const net = __nccwpck_require__(7030)
-const http = __nccwpck_require__(7067)
+const assert = __nccwpck_require__(34589)
+const net = __nccwpck_require__(77030)
+const http = __nccwpck_require__(37067)
 const util = __nccwpck_require__(3440)
-const { channels } = __nccwpck_require__(2414)
-const Request = __nccwpck_require__(4655)
-const DispatcherBase = __nccwpck_require__(1841)
+const { channels } = __nccwpck_require__(42414)
+const Request = __nccwpck_require__(44655)
+const DispatcherBase = __nccwpck_require__(21841)
 const {
   InvalidArgumentError,
   InformationalError,
   ClientDestroyedError
-} = __nccwpck_require__(8707)
-const buildConnector = __nccwpck_require__(9136)
+} = __nccwpck_require__(68707)
+const buildConnector = __nccwpck_require__(59136)
 const {
   kUrl,
   kServerName,
@@ -45809,9 +49617,9 @@ const {
   kHTTPContext,
   kMaxConcurrentStreams,
   kResume
-} = __nccwpck_require__(6443)
+} = __nccwpck_require__(36443)
 const connectH1 = __nccwpck_require__(637)
-const connectH2 = __nccwpck_require__(8788)
+const connectH2 = __nccwpck_require__(88788)
 let deprecatedInterceptorWarned = false
 
 const kClosedResolve = Symbol('kClosedResolve')
@@ -46119,7 +49927,7 @@ class Client extends DispatcherBase {
   }
 }
 
-const createRedirectInterceptor = __nccwpck_require__(5092)
+const createRedirectInterceptor = __nccwpck_require__(25092)
 
 function onError (client, err) {
   if (
@@ -46379,19 +50187,19 @@ module.exports = Client
 
 /***/ }),
 
-/***/ 1841:
+/***/ 21841:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 const buffer = __nccwpck_require__(4573)
-const Dispatcher = __nccwpck_require__(883)
+const Dispatcher = __nccwpck_require__(30883)
 const {
   ClientDestroyedError,
   ClientClosedError,
   InvalidArgumentError
-} = __nccwpck_require__(8707)
-const { kDestroy, kClose, kClosed, kDestroyed, kDispatch, kInterceptors } = __nccwpck_require__(6443)
+} = __nccwpck_require__(68707)
+const { kDestroy, kClose, kClosed, kDestroyed, kDispatch, kInterceptors } = __nccwpck_require__(36443)
 
 const kOnDestroyed = Symbol('onDestroyed')
 const kOnClosed = Symbol('onClosed')
@@ -46594,11 +50402,11 @@ module.exports = DispatcherBase
 
 /***/ }),
 
-/***/ 883:
+/***/ 30883:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-const EventEmitter = __nccwpck_require__(8474)
+const EventEmitter = __nccwpck_require__(78474)
 
 class Dispatcher extends EventEmitter {
   dispatch () {
@@ -46666,15 +50474,15 @@ module.exports = Dispatcher
 
 /***/ }),
 
-/***/ 3137:
+/***/ 53137:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const DispatcherBase = __nccwpck_require__(1841)
-const { kClose, kDestroy, kClosed, kDestroyed, kDispatch, kNoProxyAgent, kHttpProxyAgent, kHttpsProxyAgent } = __nccwpck_require__(6443)
-const ProxyAgent = __nccwpck_require__(6672)
-const Agent = __nccwpck_require__(7405)
+const DispatcherBase = __nccwpck_require__(21841)
+const { kClose, kDestroy, kClosed, kDestroyed, kDispatch, kNoProxyAgent, kHttpProxyAgent, kHttpsProxyAgent } = __nccwpck_require__(36443)
+const ProxyAgent = __nccwpck_require__(76672)
+const Agent = __nccwpck_require__(57405)
 
 const DEFAULT_PORTS = {
   'http:': 80,
@@ -46833,7 +50641,7 @@ module.exports = EnvHttpProxyAgent
 
 /***/ }),
 
-/***/ 4660:
+/***/ 64660:
 /***/ ((module) => {
 
 /* eslint-disable */
@@ -46957,15 +50765,15 @@ module.exports = class FixedQueue {
 
 /***/ }),
 
-/***/ 2128:
+/***/ 42128:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const DispatcherBase = __nccwpck_require__(1841)
-const FixedQueue = __nccwpck_require__(4660)
-const { kConnected, kSize, kRunning, kPending, kQueued, kBusy, kFree, kUrl, kClose, kDestroy, kDispatch } = __nccwpck_require__(6443)
-const PoolStats = __nccwpck_require__(3246)
+const DispatcherBase = __nccwpck_require__(21841)
+const FixedQueue = __nccwpck_require__(64660)
+const { kConnected, kSize, kRunning, kPending, kQueued, kBusy, kFree, kUrl, kClose, kDestroy, kDispatch } = __nccwpck_require__(36443)
+const PoolStats = __nccwpck_require__(43246)
 
 const kClients = Symbol('clients')
 const kNeedDrain = Symbol('needDrain')
@@ -47158,10 +50966,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3246:
+/***/ 43246:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { kFree, kConnected, kPending, kQueued, kRunning, kSize } = __nccwpck_require__(6443)
+const { kFree, kConnected, kPending, kQueued, kRunning, kSize } = __nccwpck_require__(36443)
 const kPool = Symbol('pool')
 
 class PoolStats {
@@ -47199,7 +51007,7 @@ module.exports = PoolStats
 
 /***/ }),
 
-/***/ 628:
+/***/ 30628:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -47210,14 +51018,14 @@ const {
   kNeedDrain,
   kAddClient,
   kGetDispatcher
-} = __nccwpck_require__(2128)
-const Client = __nccwpck_require__(3701)
+} = __nccwpck_require__(42128)
+const Client = __nccwpck_require__(23701)
 const {
   InvalidArgumentError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(68707)
 const util = __nccwpck_require__(3440)
-const { kUrl, kInterceptors } = __nccwpck_require__(6443)
-const buildConnector = __nccwpck_require__(9136)
+const { kUrl, kInterceptors } = __nccwpck_require__(36443)
+const buildConnector = __nccwpck_require__(59136)
 
 const kOptions = Symbol('options')
 const kConnections = Symbol('connections')
@@ -47313,19 +51121,19 @@ module.exports = Pool
 
 /***/ }),
 
-/***/ 6672:
+/***/ 76672:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { kProxy, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(6443)
-const { URL } = __nccwpck_require__(3136)
-const Agent = __nccwpck_require__(7405)
-const Pool = __nccwpck_require__(628)
-const DispatcherBase = __nccwpck_require__(1841)
-const { InvalidArgumentError, RequestAbortedError, SecureProxyConnectionError } = __nccwpck_require__(8707)
-const buildConnector = __nccwpck_require__(9136)
-const Client = __nccwpck_require__(3701)
+const { kProxy, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(36443)
+const { URL } = __nccwpck_require__(73136)
+const Agent = __nccwpck_require__(57405)
+const Pool = __nccwpck_require__(30628)
+const DispatcherBase = __nccwpck_require__(21841)
+const { InvalidArgumentError, RequestAbortedError, SecureProxyConnectionError } = __nccwpck_require__(68707)
+const buildConnector = __nccwpck_require__(59136)
+const Client = __nccwpck_require__(23701)
 
 const kAgent = Symbol('proxy agent')
 const kClient = Symbol('proxy client')
@@ -47594,13 +51402,13 @@ module.exports = ProxyAgent
 
 /***/ }),
 
-/***/ 50:
+/***/ 30050:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const Dispatcher = __nccwpck_require__(883)
-const RetryHandler = __nccwpck_require__(7816)
+const Dispatcher = __nccwpck_require__(30883)
+const RetryHandler = __nccwpck_require__(17816)
 
 class RetryAgent extends Dispatcher {
   #agent = null
@@ -47636,7 +51444,7 @@ module.exports = RetryAgent
 
 /***/ }),
 
-/***/ 2581:
+/***/ 32581:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -47644,8 +51452,8 @@ module.exports = RetryAgent
 // We include a version number for the Dispatcher API. In case of breaking changes,
 // this version number must be increased to avoid conflicts.
 const globalDispatcher = Symbol.for('undici.globalDispatcher.1')
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const Agent = __nccwpck_require__(7405)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
+const Agent = __nccwpck_require__(57405)
 
 if (getGlobalDispatcher() === undefined) {
   setGlobalDispatcher(new Agent())
@@ -47675,7 +51483,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8155:
+/***/ 58155:
 /***/ ((module) => {
 
 
@@ -47732,10 +51540,10 @@ module.exports = class DecoratorHandler {
 
 
 const util = __nccwpck_require__(3440)
-const { kBodyUsed } = __nccwpck_require__(6443)
-const assert = __nccwpck_require__(4589)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const EE = __nccwpck_require__(8474)
+const { kBodyUsed } = __nccwpck_require__(36443)
+const assert = __nccwpck_require__(34589)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
+const EE = __nccwpck_require__(78474)
 
 const redirectableStatusCodes = [300, 301, 302, 303, 307, 308]
 
@@ -47965,14 +51773,14 @@ module.exports = RedirectHandler
 
 /***/ }),
 
-/***/ 7816:
+/***/ 17816:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-const assert = __nccwpck_require__(4589)
+const assert = __nccwpck_require__(34589)
 
-const { kRetryHandlerDefaultRetry } = __nccwpck_require__(6443)
-const { RequestRetryError } = __nccwpck_require__(8707)
+const { kRetryHandlerDefaultRetry } = __nccwpck_require__(36443)
+const { RequestRetryError } = __nccwpck_require__(68707)
 const {
   isDisturbed,
   parseHeaders,
@@ -48409,14 +52217,14 @@ module.exports = RetryHandler
 
 /***/ }),
 
-/***/ 379:
+/***/ 70379:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-const { isIP } = __nccwpck_require__(7030)
-const { lookup } = __nccwpck_require__(610)
-const DecoratorHandler = __nccwpck_require__(8155)
-const { InvalidArgumentError, InformationalError } = __nccwpck_require__(8707)
+const { isIP } = __nccwpck_require__(77030)
+const { lookup } = __nccwpck_require__(40610)
+const DecoratorHandler = __nccwpck_require__(58155)
+const { InvalidArgumentError, InformationalError } = __nccwpck_require__(68707)
 const maxInt = Math.pow(2, 31) - 1
 
 class DNSInstance {
@@ -48791,14 +52599,14 @@ module.exports = interceptorOpts => {
 
 /***/ }),
 
-/***/ 8060:
+/***/ 88060:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 const util = __nccwpck_require__(3440)
-const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(8707)
-const DecoratorHandler = __nccwpck_require__(8155)
+const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(68707)
+const DecoratorHandler = __nccwpck_require__(58155)
 
 class DumpHandler extends DecoratorHandler {
   #maxSize = 1024 * 1024
@@ -48921,7 +52729,7 @@ module.exports = createDumpInterceptor
 
 /***/ }),
 
-/***/ 5092:
+/***/ 25092:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -48949,7 +52757,7 @@ module.exports = createRedirectInterceptor
 
 /***/ }),
 
-/***/ 1514:
+/***/ 21514:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -48980,11 +52788,11 @@ module.exports = opts => {
 
 /***/ }),
 
-/***/ 2026:
+/***/ 92026:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
-const RetryHandler = __nccwpck_require__(7816)
+const RetryHandler = __nccwpck_require__(17816)
 
 module.exports = globalOpts => {
   return dispatch => {
@@ -49006,13 +52814,13 @@ module.exports = globalOpts => {
 
 /***/ }),
 
-/***/ 2824:
+/***/ 52824:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
-const utils_1 = __nccwpck_require__(172);
+const utils_1 = __nccwpck_require__(50172);
 // C headers
 var ERROR;
 (function (ERROR) {
@@ -49290,7 +53098,7 @@ exports.SPECIAL_HEADERS = {
 
 /***/ }),
 
-/***/ 3870:
+/***/ 63870:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -49302,7 +53110,7 @@ module.exports = Buffer.from('AGFzbQEAAAABJwdgAX8Bf2ADf39/AX9gAX8AYAJ/fwBgBH9/f3
 
 /***/ }),
 
-/***/ 3434:
+/***/ 53434:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -49314,7 +53122,7 @@ module.exports = Buffer.from('AGFzbQEAAAABJwdgAX8Bf2ADf39/AX9gAX8AYAJ/fwBgBH9/f3
 
 /***/ }),
 
-/***/ 172:
+/***/ 50172:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -49335,13 +53143,13 @@ exports.enumToMap = enumToMap;
 
 /***/ }),
 
-/***/ 7501:
+/***/ 47501:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { kClients } = __nccwpck_require__(6443)
-const Agent = __nccwpck_require__(7405)
+const { kClients } = __nccwpck_require__(36443)
+const Agent = __nccwpck_require__(57405)
 const {
   kAgent,
   kMockAgentSet,
@@ -49352,14 +53160,14 @@ const {
   kGetNetConnect,
   kOptions,
   kFactory
-} = __nccwpck_require__(1117)
-const MockClient = __nccwpck_require__(7365)
-const MockPool = __nccwpck_require__(4004)
-const { matchValue, buildMockOptions } = __nccwpck_require__(3397)
-const { InvalidArgumentError, UndiciError } = __nccwpck_require__(8707)
-const Dispatcher = __nccwpck_require__(883)
-const Pluralizer = __nccwpck_require__(1529)
-const PendingInterceptorsFormatter = __nccwpck_require__(6142)
+} = __nccwpck_require__(91117)
+const MockClient = __nccwpck_require__(47365)
+const MockPool = __nccwpck_require__(94004)
+const { matchValue, buildMockOptions } = __nccwpck_require__(53397)
+const { InvalidArgumentError, UndiciError } = __nccwpck_require__(68707)
+const Dispatcher = __nccwpck_require__(30883)
+const Pluralizer = __nccwpck_require__(91529)
+const PendingInterceptorsFormatter = __nccwpck_require__(56142)
 
 class MockAgent extends Dispatcher {
   constructor (opts) {
@@ -49502,14 +53310,14 @@ module.exports = MockAgent
 
 /***/ }),
 
-/***/ 7365:
+/***/ 47365:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { promisify } = __nccwpck_require__(7975)
-const Client = __nccwpck_require__(3701)
-const { buildMockDispatch } = __nccwpck_require__(3397)
+const { promisify } = __nccwpck_require__(57975)
+const Client = __nccwpck_require__(23701)
+const { buildMockDispatch } = __nccwpck_require__(53397)
 const {
   kDispatches,
   kMockAgent,
@@ -49518,10 +53326,10 @@ const {
   kOrigin,
   kOriginalDispatch,
   kConnected
-} = __nccwpck_require__(1117)
-const { MockInterceptor } = __nccwpck_require__(1511)
-const Symbols = __nccwpck_require__(6443)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
+} = __nccwpck_require__(91117)
+const { MockInterceptor } = __nccwpck_require__(31511)
+const Symbols = __nccwpck_require__(36443)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
 
 /**
  * MockClient provides an API that extends the Client to influence the mockDispatches.
@@ -49568,12 +53376,12 @@ module.exports = MockClient
 
 /***/ }),
 
-/***/ 2429:
+/***/ 52429:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { UndiciError } = __nccwpck_require__(8707)
+const { UndiciError } = __nccwpck_require__(68707)
 
 const kMockNotMatchedError = Symbol.for('undici.error.UND_MOCK_ERR_MOCK_NOT_MATCHED')
 
@@ -49603,12 +53411,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1511:
+/***/ 31511:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(3397)
+const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(53397)
 const {
   kDispatches,
   kDispatchKey,
@@ -49616,8 +53424,8 @@ const {
   kDefaultTrailers,
   kContentLength,
   kMockDispatch
-} = __nccwpck_require__(1117)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
+} = __nccwpck_require__(91117)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
 const { buildURL } = __nccwpck_require__(3440)
 
 /**
@@ -49817,14 +53625,14 @@ module.exports.MockScope = MockScope
 
 /***/ }),
 
-/***/ 4004:
+/***/ 94004:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { promisify } = __nccwpck_require__(7975)
-const Pool = __nccwpck_require__(628)
-const { buildMockDispatch } = __nccwpck_require__(3397)
+const { promisify } = __nccwpck_require__(57975)
+const Pool = __nccwpck_require__(30628)
+const { buildMockDispatch } = __nccwpck_require__(53397)
 const {
   kDispatches,
   kMockAgent,
@@ -49833,10 +53641,10 @@ const {
   kOrigin,
   kOriginalDispatch,
   kConnected
-} = __nccwpck_require__(1117)
-const { MockInterceptor } = __nccwpck_require__(1511)
-const Symbols = __nccwpck_require__(6443)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
+} = __nccwpck_require__(91117)
+const { MockInterceptor } = __nccwpck_require__(31511)
+const Symbols = __nccwpck_require__(36443)
+const { InvalidArgumentError } = __nccwpck_require__(68707)
 
 /**
  * MockPool provides an API that extends the Pool to influence the mockDispatches.
@@ -49883,7 +53691,7 @@ module.exports = MockPool
 
 /***/ }),
 
-/***/ 1117:
+/***/ 91117:
 /***/ ((module) => {
 
 
@@ -49913,26 +53721,26 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3397:
+/***/ 53397:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { MockNotMatchedError } = __nccwpck_require__(2429)
+const { MockNotMatchedError } = __nccwpck_require__(52429)
 const {
   kDispatches,
   kMockAgent,
   kOriginalDispatch,
   kOrigin,
   kGetNetConnect
-} = __nccwpck_require__(1117)
+} = __nccwpck_require__(91117)
 const { buildURL } = __nccwpck_require__(3440)
-const { STATUS_CODES } = __nccwpck_require__(7067)
+const { STATUS_CODES } = __nccwpck_require__(37067)
 const {
   types: {
     isPromise
   }
-} = __nccwpck_require__(7975)
+} = __nccwpck_require__(57975)
 
 function matchValue (match, value) {
   if (typeof match === 'string') {
@@ -50287,13 +54095,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6142:
+/***/ 56142:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { Transform } = __nccwpck_require__(7075)
-const { Console } = __nccwpck_require__(7540)
+const { Transform } = __nccwpck_require__(57075)
+const { Console } = __nccwpck_require__(37540)
 
 const PERSISTENT = process.versions.icu ? '✅' : 'Y '
 const NOT_PERSISTENT = process.versions.icu ? '❌' : 'N '
@@ -50337,7 +54145,7 @@ module.exports = class PendingInterceptorsFormatter {
 
 /***/ }),
 
-/***/ 1529:
+/***/ 91529:
 /***/ ((module) => {
 
 
@@ -50373,7 +54181,7 @@ module.exports = class Pluralizer {
 
 /***/ }),
 
-/***/ 6603:
+/***/ 96603:
 /***/ ((module) => {
 
 
@@ -50803,21 +54611,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9634:
+/***/ 89634:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { kConstruct } = __nccwpck_require__(109)
-const { urlEquals, getFieldValues } = __nccwpck_require__(6798)
+const { kConstruct } = __nccwpck_require__(20109)
+const { urlEquals, getFieldValues } = __nccwpck_require__(76798)
 const { kEnumerableProperty, isDisturbed } = __nccwpck_require__(3440)
-const { webidl } = __nccwpck_require__(5893)
-const { Response, cloneResponse, fromInnerResponse } = __nccwpck_require__(9051)
+const { webidl } = __nccwpck_require__(45893)
+const { Response, cloneResponse, fromInnerResponse } = __nccwpck_require__(99051)
 const { Request, fromInnerRequest } = __nccwpck_require__(9967)
-const { kState } = __nccwpck_require__(3627)
-const { fetching } = __nccwpck_require__(4398)
-const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = __nccwpck_require__(3168)
-const assert = __nccwpck_require__(4589)
+const { kState } = __nccwpck_require__(93627)
+const { fetching } = __nccwpck_require__(54398)
+const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = __nccwpck_require__(73168)
+const assert = __nccwpck_require__(34589)
 
 /**
  * @see https://w3c.github.io/ServiceWorker/#dfn-cache-batch-operation
@@ -51674,9 +55482,9 @@ module.exports = {
 
 
 
-const { kConstruct } = __nccwpck_require__(109)
-const { Cache } = __nccwpck_require__(9634)
-const { webidl } = __nccwpck_require__(5893)
+const { kConstruct } = __nccwpck_require__(20109)
+const { Cache } = __nccwpck_require__(89634)
+const { webidl } = __nccwpck_require__(45893)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
 
 class CacheStorage {
@@ -51828,26 +55636,26 @@ module.exports = {
 
 /***/ }),
 
-/***/ 109:
+/***/ 20109:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 module.exports = {
-  kConstruct: (__nccwpck_require__(6443).kConstruct)
+  kConstruct: (__nccwpck_require__(36443).kConstruct)
 }
 
 
 /***/ }),
 
-/***/ 6798:
+/***/ 76798:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const assert = __nccwpck_require__(4589)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { isValidHeaderName } = __nccwpck_require__(3168)
+const assert = __nccwpck_require__(34589)
+const { URLSerializer } = __nccwpck_require__(51900)
+const { isValidHeaderName } = __nccwpck_require__(73168)
 
 /**
  * @see https://url.spec.whatwg.org/#concept-url-equals
@@ -51892,7 +55700,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1276:
+/***/ 71276:
 /***/ ((module) => {
 
 
@@ -51911,15 +55719,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9061:
+/***/ 79061:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { parseSetCookie } = __nccwpck_require__(1978)
-const { stringify } = __nccwpck_require__(7797)
-const { webidl } = __nccwpck_require__(5893)
-const { Headers } = __nccwpck_require__(660)
+const { parseSetCookie } = __nccwpck_require__(11978)
+const { stringify } = __nccwpck_require__(57797)
+const { webidl } = __nccwpck_require__(45893)
+const { Headers } = __nccwpck_require__(60660)
 
 /**
  * @typedef {Object} Cookie
@@ -52102,15 +55910,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1978:
+/***/ 11978:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(1276)
-const { isCTLExcludingHtab } = __nccwpck_require__(7797)
-const { collectASequenceOfCodePointsFast } = __nccwpck_require__(1900)
-const assert = __nccwpck_require__(4589)
+const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(71276)
+const { isCTLExcludingHtab } = __nccwpck_require__(57797)
+const { collectASequenceOfCodePointsFast } = __nccwpck_require__(51900)
+const assert = __nccwpck_require__(34589)
 
 /**
  * @description Parses the field-value attributes of a set-cookie header string.
@@ -52419,7 +56227,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7797:
+/***/ 57797:
 /***/ ((module) => {
 
 
@@ -52778,13 +56586,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4031:
+/***/ 24031:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 const buffer = __nccwpck_require__(4573)
-const { Transform } = __nccwpck_require__(7075)
-const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(4811)
+const { Transform } = __nccwpck_require__(57075)
+const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(94811)
 
 /**
  * @type {number[]} BOM
@@ -53359,23 +57167,23 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1238:
+/***/ 21238:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { pipeline } = __nccwpck_require__(7075)
-const { fetching } = __nccwpck_require__(4398)
+const { pipeline } = __nccwpck_require__(57075)
+const { fetching } = __nccwpck_require__(54398)
 const { makeRequest } = __nccwpck_require__(9967)
-const { webidl } = __nccwpck_require__(5893)
-const { EventSourceStream } = __nccwpck_require__(4031)
-const { parseMIMEType } = __nccwpck_require__(1900)
-const { createFastMessageEvent } = __nccwpck_require__(5188)
-const { isNetworkError } = __nccwpck_require__(9051)
-const { delay } = __nccwpck_require__(4811)
+const { webidl } = __nccwpck_require__(45893)
+const { EventSourceStream } = __nccwpck_require__(24031)
+const { parseMIMEType } = __nccwpck_require__(51900)
+const { createFastMessageEvent } = __nccwpck_require__(15188)
+const { isNetworkError } = __nccwpck_require__(99051)
+const { delay } = __nccwpck_require__(94811)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
-const { environmentSettingsObject } = __nccwpck_require__(3168)
-const { getGlobalDispatcher } = __nccwpck_require__(2581)
+const { environmentSettingsObject } = __nccwpck_require__(73168)
+const { getGlobalDispatcher } = __nccwpck_require__(32581)
 
 let experimentalWarned = false
 
@@ -53849,7 +57657,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4811:
+/***/ 94811:
 /***/ ((module) => {
 
 
@@ -53893,7 +57701,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4492:
+/***/ 84492:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -53908,20 +57716,20 @@ const {
   fullyReadBody,
   extractMimeType,
   utf8DecodeBytes
-} = __nccwpck_require__(3168)
-const { FormData } = __nccwpck_require__(5910)
-const { kState } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
+} = __nccwpck_require__(73168)
+const { FormData } = __nccwpck_require__(35910)
+const { kState } = __nccwpck_require__(93627)
+const { webidl } = __nccwpck_require__(45893)
 const { Blob } = __nccwpck_require__(4573)
-const assert = __nccwpck_require__(4589)
-const { isErrored, isDisturbed } = __nccwpck_require__(7075)
-const { isArrayBuffer } = __nccwpck_require__(3429)
-const { serializeAMimeType } = __nccwpck_require__(1900)
-const { multipartFormDataParser } = __nccwpck_require__(116)
+const assert = __nccwpck_require__(34589)
+const { isErrored, isDisturbed } = __nccwpck_require__(57075)
+const { isArrayBuffer } = __nccwpck_require__(73429)
+const { serializeAMimeType } = __nccwpck_require__(51900)
+const { multipartFormDataParser } = __nccwpck_require__(50116)
 let random
 
 try {
-  const crypto = __nccwpck_require__(7598)
+  const crypto = __nccwpck_require__(77598)
   random = (max) => crypto.randomInt(0, max)
 } catch {
   random = (max) => Math.floor(Math.random(max))
@@ -54560,12 +58368,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1900:
+/***/ 51900:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const assert = __nccwpck_require__(4589)
+const assert = __nccwpck_require__(34589)
 
 const encoder = new TextEncoder()
 
@@ -55311,12 +59119,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6653:
+/***/ 66653:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { kConnected, kSize } = __nccwpck_require__(6443)
+const { kConnected, kSize } = __nccwpck_require__(36443)
 
 class CompatWeakRef {
   constructor (value) {
@@ -55364,14 +59172,14 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 7114:
+/***/ 27114:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 const { Blob, File } = __nccwpck_require__(4573)
-const { kState } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
+const { kState } = __nccwpck_require__(93627)
+const { webidl } = __nccwpck_require__(45893)
 
 // TODO(@KhafraDev): remove
 class FileLike {
@@ -55497,17 +59305,17 @@ module.exports = { FileLike, isFileLike }
 
 /***/ }),
 
-/***/ 116:
+/***/ 50116:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 const { isUSVString, bufferToLowerCasedHeaderName } = __nccwpck_require__(3440)
-const { utf8DecodeBytes } = __nccwpck_require__(3168)
-const { HTTP_TOKEN_CODEPOINTS, isomorphicDecode } = __nccwpck_require__(1900)
-const { isFileLike } = __nccwpck_require__(7114)
-const { makeEntry } = __nccwpck_require__(5910)
-const assert = __nccwpck_require__(4589)
+const { utf8DecodeBytes } = __nccwpck_require__(73168)
+const { HTTP_TOKEN_CODEPOINTS, isomorphicDecode } = __nccwpck_require__(51900)
+const { isFileLike } = __nccwpck_require__(27114)
+const { makeEntry } = __nccwpck_require__(35910)
+const assert = __nccwpck_require__(34589)
 const { File: NodeFile } = __nccwpck_require__(4573)
 
 const File = globalThis.File ?? NodeFile
@@ -55978,18 +59786,18 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5910:
+/***/ 35910:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { isBlobLike, iteratorMixin } = __nccwpck_require__(3168)
-const { kState } = __nccwpck_require__(3627)
+const { isBlobLike, iteratorMixin } = __nccwpck_require__(73168)
+const { kState } = __nccwpck_require__(93627)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
-const { FileLike, isFileLike } = __nccwpck_require__(7114)
-const { webidl } = __nccwpck_require__(5893)
+const { FileLike, isFileLike } = __nccwpck_require__(27114)
+const { webidl } = __nccwpck_require__(45893)
 const { File: NativeFile } = __nccwpck_require__(4573)
-const nodeUtil = __nccwpck_require__(7975)
+const nodeUtil = __nccwpck_require__(57975)
 
 /** @type {globalThis['File']} */
 const File = globalThis.File ?? NativeFile
@@ -56237,7 +60045,7 @@ module.exports = { FormData, makeEntry }
 
 /***/ }),
 
-/***/ 1059:
+/***/ 51059:
 /***/ ((module) => {
 
 
@@ -56284,23 +60092,23 @@ module.exports = {
 
 /***/ }),
 
-/***/ 660:
+/***/ 60660:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // https://github.com/Ethan-Arrowood/undici-fetch
 
 
 
-const { kConstruct } = __nccwpck_require__(6443)
+const { kConstruct } = __nccwpck_require__(36443)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
 const {
   iteratorMixin,
   isValidHeaderName,
   isValidHeaderValue
-} = __nccwpck_require__(3168)
-const { webidl } = __nccwpck_require__(5893)
-const assert = __nccwpck_require__(4589)
-const util = __nccwpck_require__(7975)
+} = __nccwpck_require__(73168)
+const { webidl } = __nccwpck_require__(45893)
+const assert = __nccwpck_require__(34589)
+const util = __nccwpck_require__(57975)
 
 const kHeadersMap = Symbol('headers map')
 const kHeadersSortedMap = Symbol('headers map sorted')
@@ -56978,7 +60786,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4398:
+/***/ 54398:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // https://github.com/Ethan-Arrowood/undici-fetch
@@ -56991,10 +60799,10 @@ const {
   filterResponse,
   makeResponse,
   fromInnerResponse
-} = __nccwpck_require__(9051)
-const { HeadersList } = __nccwpck_require__(660)
+} = __nccwpck_require__(99051)
+const { HeadersList } = __nccwpck_require__(60660)
 const { Request, cloneRequest } = __nccwpck_require__(9967)
-const zlib = __nccwpck_require__(8522)
+const zlib = __nccwpck_require__(38522)
 const {
   bytesMatch,
   makePolicyContainer,
@@ -57029,10 +60837,10 @@ const {
   buildContentRange,
   createInflate,
   extractMimeType
-} = __nccwpck_require__(3168)
-const { kState, kDispatcher } = __nccwpck_require__(3627)
-const assert = __nccwpck_require__(4589)
-const { safelyExtractBody, extractBody } = __nccwpck_require__(4492)
+} = __nccwpck_require__(73168)
+const { kState, kDispatcher } = __nccwpck_require__(93627)
+const assert = __nccwpck_require__(34589)
+const { safelyExtractBody, extractBody } = __nccwpck_require__(84492)
 const {
   redirectStatusSet,
   nullBodyStatus,
@@ -57040,13 +60848,13 @@ const {
   requestBodyHeader,
   subresourceSet
 } = __nccwpck_require__(4495)
-const EE = __nccwpck_require__(8474)
-const { Readable, pipeline, finished } = __nccwpck_require__(7075)
+const EE = __nccwpck_require__(78474)
+const { Readable, pipeline, finished } = __nccwpck_require__(57075)
 const { addAbortListener, isErrored, isReadable, bufferToLowerCasedHeaderName } = __nccwpck_require__(3440)
-const { dataURLProcessor, serializeAMimeType, minimizeSupportedMimeType } = __nccwpck_require__(1900)
-const { getGlobalDispatcher } = __nccwpck_require__(2581)
-const { webidl } = __nccwpck_require__(5893)
-const { STATUS_CODES } = __nccwpck_require__(7067)
+const { dataURLProcessor, serializeAMimeType, minimizeSupportedMimeType } = __nccwpck_require__(51900)
+const { getGlobalDispatcher } = __nccwpck_require__(32581)
+const { webidl } = __nccwpck_require__(45893)
+const { STATUS_CODES } = __nccwpck_require__(37067)
 const GET_OR_HEAD = ['GET', 'HEAD']
 
 const defaultUserAgent = typeof __UNDICI_IS_NODE__ !== 'undefined' || typeof esbuildDetection !== 'undefined'
@@ -59262,16 +63070,16 @@ module.exports = {
 
 
 
-const { extractBody, mixinBody, cloneBody, bodyUnusable } = __nccwpck_require__(4492)
-const { Headers, fill: fillHeaders, HeadersList, setHeadersGuard, getHeadersGuard, setHeadersList, getHeadersList } = __nccwpck_require__(660)
-const { FinalizationRegistry } = __nccwpck_require__(6653)()
+const { extractBody, mixinBody, cloneBody, bodyUnusable } = __nccwpck_require__(84492)
+const { Headers, fill: fillHeaders, HeadersList, setHeadersGuard, getHeadersGuard, setHeadersList, getHeadersList } = __nccwpck_require__(60660)
+const { FinalizationRegistry } = __nccwpck_require__(66653)()
 const util = __nccwpck_require__(3440)
-const nodeUtil = __nccwpck_require__(7975)
+const nodeUtil = __nccwpck_require__(57975)
 const {
   isValidHTTPToken,
   sameOrigin,
   environmentSettingsObject
-} = __nccwpck_require__(3168)
+} = __nccwpck_require__(73168)
 const {
   forbiddenMethodsSet,
   corsSafeListedMethodsSet,
@@ -59283,12 +63091,12 @@ const {
   requestDuplex
 } = __nccwpck_require__(4495)
 const { kEnumerableProperty, normalizedMethodRecordsBase, normalizedMethodRecords } = util
-const { kHeaders, kSignal, kState, kDispatcher } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { kConstruct } = __nccwpck_require__(6443)
-const assert = __nccwpck_require__(4589)
-const { getMaxListeners, setMaxListeners, getEventListeners, defaultMaxListeners } = __nccwpck_require__(8474)
+const { kHeaders, kSignal, kState, kDispatcher } = __nccwpck_require__(93627)
+const { webidl } = __nccwpck_require__(45893)
+const { URLSerializer } = __nccwpck_require__(51900)
+const { kConstruct } = __nccwpck_require__(36443)
+const assert = __nccwpck_require__(34589)
+const { getMaxListeners, setMaxListeners, getEventListeners, defaultMaxListeners } = __nccwpck_require__(78474)
 
 const kAbortController = Symbol('abortController')
 
@@ -60299,15 +64107,15 @@ module.exports = { Request, makeRequest, fromInnerRequest, cloneRequest }
 
 /***/ }),
 
-/***/ 9051:
+/***/ 99051:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { Headers, HeadersList, fill, getHeadersGuard, setHeadersGuard, setHeadersList } = __nccwpck_require__(660)
-const { extractBody, cloneBody, mixinBody, hasFinalizationRegistry, streamRegistry, bodyUnusable } = __nccwpck_require__(4492)
+const { Headers, HeadersList, fill, getHeadersGuard, setHeadersGuard, setHeadersList } = __nccwpck_require__(60660)
+const { extractBody, cloneBody, mixinBody, hasFinalizationRegistry, streamRegistry, bodyUnusable } = __nccwpck_require__(84492)
 const util = __nccwpck_require__(3440)
-const nodeUtil = __nccwpck_require__(7975)
+const nodeUtil = __nccwpck_require__(57975)
 const { kEnumerableProperty } = util
 const {
   isValidReasonPhrase,
@@ -60318,18 +64126,18 @@ const {
   isErrorLike,
   isomorphicEncode,
   environmentSettingsObject: relevantRealm
-} = __nccwpck_require__(3168)
+} = __nccwpck_require__(73168)
 const {
   redirectStatusSet,
   nullBodyStatus
 } = __nccwpck_require__(4495)
-const { kState, kHeaders } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
-const { FormData } = __nccwpck_require__(5910)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { kConstruct } = __nccwpck_require__(6443)
-const assert = __nccwpck_require__(4589)
-const { types } = __nccwpck_require__(7975)
+const { kState, kHeaders } = __nccwpck_require__(93627)
+const { webidl } = __nccwpck_require__(45893)
+const { FormData } = __nccwpck_require__(35910)
+const { URLSerializer } = __nccwpck_require__(51900)
+const { kConstruct } = __nccwpck_require__(36443)
+const assert = __nccwpck_require__(34589)
+const { types } = __nccwpck_require__(57975)
 
 const textEncoder = new TextEncoder('utf-8')
 
@@ -60916,7 +64724,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3627:
+/***/ 93627:
 /***/ ((module) => {
 
 
@@ -60932,21 +64740,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3168:
+/***/ 73168:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { Transform } = __nccwpck_require__(7075)
-const zlib = __nccwpck_require__(8522)
+const { Transform } = __nccwpck_require__(57075)
+const zlib = __nccwpck_require__(38522)
 const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(4495)
-const { getGlobalOrigin } = __nccwpck_require__(1059)
-const { collectASequenceOfCodePoints, collectAnHTTPQuotedString, removeChars, parseMIMEType } = __nccwpck_require__(1900)
+const { getGlobalOrigin } = __nccwpck_require__(51059)
+const { collectASequenceOfCodePoints, collectAnHTTPQuotedString, removeChars, parseMIMEType } = __nccwpck_require__(51900)
 const { performance } = __nccwpck_require__(643)
 const { isBlobLike, ReadableStreamFrom, isValidHTTPToken, normalizedMethodRecordsBase } = __nccwpck_require__(3440)
-const assert = __nccwpck_require__(4589)
-const { isUint8Array } = __nccwpck_require__(3429)
-const { webidl } = __nccwpck_require__(5893)
+const assert = __nccwpck_require__(34589)
+const { isUint8Array } = __nccwpck_require__(73429)
+const { webidl } = __nccwpck_require__(45893)
 
 let supportedHashes = []
 
@@ -60954,7 +64762,7 @@ let supportedHashes = []
 /** @type {import('crypto')} */
 let crypto
 try {
-  crypto = __nccwpck_require__(7598)
+  crypto = __nccwpck_require__(77598)
   const possibleRelevantHashes = ['sha256', 'sha384', 'sha512']
   supportedHashes = crypto.getHashes().filter((hash) => possibleRelevantHashes.includes(hash))
 /* c8 ignore next 3 */
@@ -62571,13 +66379,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5893:
+/***/ 45893:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { types, inspect } = __nccwpck_require__(7975)
-const { markAsUncloneable } = __nccwpck_require__(5919)
+const { types, inspect } = __nccwpck_require__(57975)
+const { markAsUncloneable } = __nccwpck_require__(75919)
 const { toUSVString } = __nccwpck_require__(3440)
 
 /** @type {import('../../../types/webidl').Webidl} */
@@ -63273,7 +67081,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2607:
+/***/ 22607:
 /***/ ((module) => {
 
 
@@ -63570,7 +67378,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8355:
+/***/ 48355:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -63579,15 +67387,15 @@ const {
   staticPropertyDescriptors,
   readOperation,
   fireAProgressEvent
-} = __nccwpck_require__(3610)
+} = __nccwpck_require__(53610)
 const {
   kState,
   kError,
   kResult,
   kEvents,
   kAborted
-} = __nccwpck_require__(961)
-const { webidl } = __nccwpck_require__(5893)
+} = __nccwpck_require__(20961)
+const { webidl } = __nccwpck_require__(45893)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
 
 class FileReader extends EventTarget {
@@ -63921,12 +67729,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8573:
+/***/ 88573:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { webidl } = __nccwpck_require__(5893)
+const { webidl } = __nccwpck_require__(45893)
 
 const kState = Symbol('ProgressEvent state')
 
@@ -64006,7 +67814,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 961:
+/***/ 20961:
 /***/ ((module) => {
 
 
@@ -64023,7 +67831,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3610:
+/***/ 53610:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -64034,12 +67842,12 @@ const {
   kResult,
   kAborted,
   kLastProgressEventFired
-} = __nccwpck_require__(961)
-const { ProgressEvent } = __nccwpck_require__(8573)
-const { getEncoding } = __nccwpck_require__(2607)
-const { serializeAMimeType, parseMIMEType } = __nccwpck_require__(1900)
-const { types } = __nccwpck_require__(7975)
-const { StringDecoder } = __nccwpck_require__(3193)
+} = __nccwpck_require__(20961)
+const { ProgressEvent } = __nccwpck_require__(88573)
+const { getEncoding } = __nccwpck_require__(22607)
+const { serializeAMimeType, parseMIMEType } = __nccwpck_require__(51900)
+const { types } = __nccwpck_require__(57975)
+const { StringDecoder } = __nccwpck_require__(13193)
 const { btoa } = __nccwpck_require__(4573)
 
 /** @type {PropertyDescriptor} */
@@ -64421,32 +68229,32 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6897:
+/***/ 86897:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { uid, states, sentCloseFrameState, emptyBuffer, opcodes } = __nccwpck_require__(736)
+const { uid, states, sentCloseFrameState, emptyBuffer, opcodes } = __nccwpck_require__(20736)
 const {
   kReadyState,
   kSentClose,
   kByteParser,
   kReceivedClose,
   kResponse
-} = __nccwpck_require__(1216)
-const { fireEvent, failWebsocketConnection, isClosing, isClosed, isEstablished, parseExtensions } = __nccwpck_require__(8625)
-const { channels } = __nccwpck_require__(2414)
-const { CloseEvent } = __nccwpck_require__(5188)
+} = __nccwpck_require__(61216)
+const { fireEvent, failWebsocketConnection, isClosing, isClosed, isEstablished, parseExtensions } = __nccwpck_require__(98625)
+const { channels } = __nccwpck_require__(42414)
+const { CloseEvent } = __nccwpck_require__(15188)
 const { makeRequest } = __nccwpck_require__(9967)
-const { fetching } = __nccwpck_require__(4398)
-const { Headers, getHeadersList } = __nccwpck_require__(660)
-const { getDecodeSplit } = __nccwpck_require__(3168)
+const { fetching } = __nccwpck_require__(54398)
+const { Headers, getHeadersList } = __nccwpck_require__(60660)
+const { getDecodeSplit } = __nccwpck_require__(73168)
 const { WebsocketFrameSend } = __nccwpck_require__(3264)
 
 /** @type {import('crypto')} */
 let crypto
 try {
-  crypto = __nccwpck_require__(7598)
+  crypto = __nccwpck_require__(77598)
 /* c8 ignore next 3 */
 } catch {
 
@@ -64799,7 +68607,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 736:
+/***/ 20736:
 /***/ ((module) => {
 
 
@@ -64872,15 +68680,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5188:
+/***/ 15188:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { webidl } = __nccwpck_require__(5893)
+const { webidl } = __nccwpck_require__(45893)
 const { kEnumerableProperty } = __nccwpck_require__(3440)
-const { kConstruct } = __nccwpck_require__(6443)
-const { MessagePort } = __nccwpck_require__(5919)
+const { kConstruct } = __nccwpck_require__(36443)
+const { MessagePort } = __nccwpck_require__(75919)
 
 /**
  * @see https://html.spec.whatwg.org/multipage/comms.html#messageevent
@@ -65213,7 +69021,7 @@ module.exports = {
 
 
 
-const { maxUnsigned16Bit } = __nccwpck_require__(736)
+const { maxUnsigned16Bit } = __nccwpck_require__(20736)
 
 const BUFFER_SIZE = 16386
 
@@ -65223,7 +69031,7 @@ let buffer = null
 let bufIdx = BUFFER_SIZE
 
 try {
-  crypto = __nccwpck_require__(7598)
+  crypto = __nccwpck_require__(77598)
 /* c8 ignore next 3 */
 } catch {
   crypto = {
@@ -65311,14 +69119,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9469:
+/***/ 19469:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { createInflateRaw, Z_DEFAULT_WINDOWBITS } = __nccwpck_require__(8522)
-const { isValidClientWindowBits } = __nccwpck_require__(8625)
-const { MessageSizeExceededError } = __nccwpck_require__(8707)
+const { createInflateRaw, Z_DEFAULT_WINDOWBITS } = __nccwpck_require__(38522)
+const { isValidClientWindowBits } = __nccwpck_require__(98625)
+const { MessageSizeExceededError } = __nccwpck_require__(68707)
 
 const tail = Buffer.from([0x00, 0x00, 0xff, 0xff])
 const kBuffer = Symbol('kBuffer')
@@ -65423,16 +69231,16 @@ module.exports = { PerMessageDeflate }
 
 /***/ }),
 
-/***/ 1652:
+/***/ 81652:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { Writable } = __nccwpck_require__(7075)
-const assert = __nccwpck_require__(4589)
-const { parserStates, opcodes, states, emptyBuffer, sentCloseFrameState } = __nccwpck_require__(736)
-const { kReadyState, kSentClose, kResponse, kReceivedClose } = __nccwpck_require__(1216)
-const { channels } = __nccwpck_require__(2414)
+const { Writable } = __nccwpck_require__(57075)
+const assert = __nccwpck_require__(34589)
+const { parserStates, opcodes, states, emptyBuffer, sentCloseFrameState } = __nccwpck_require__(20736)
+const { kReadyState, kSentClose, kResponse, kReceivedClose } = __nccwpck_require__(61216)
+const { channels } = __nccwpck_require__(42414)
 const {
   isValidStatusCode,
   isValidOpcode,
@@ -65442,11 +69250,11 @@ const {
   isControlFrame,
   isTextBinaryFrame,
   isContinuationFrame
-} = __nccwpck_require__(8625)
+} = __nccwpck_require__(98625)
 const { WebsocketFrameSend } = __nccwpck_require__(3264)
-const { closeWebSocketConnection } = __nccwpck_require__(6897)
-const { PerMessageDeflate } = __nccwpck_require__(9469)
-const { MessageSizeExceededError } = __nccwpck_require__(8707)
+const { closeWebSocketConnection } = __nccwpck_require__(86897)
+const { PerMessageDeflate } = __nccwpck_require__(19469)
+const { MessageSizeExceededError } = __nccwpck_require__(68707)
 
 function failWebsocketConnectionWithCode (ws, code, reason) {
   closeWebSocketConnection(ws, code, reason, Buffer.byteLength(reason))
@@ -65957,14 +69765,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3900:
+/***/ 13900:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 const { WebsocketFrameSend } = __nccwpck_require__(3264)
-const { opcodes, sendHints } = __nccwpck_require__(736)
-const FixedQueue = __nccwpck_require__(4660)
+const { opcodes, sendHints } = __nccwpck_require__(20736)
+const FixedQueue = __nccwpck_require__(64660)
 
 /** @type {typeof Uint8Array} */
 const FastBuffer = Buffer[Symbol.species]
@@ -66068,7 +69876,7 @@ module.exports = { SendQueue }
 
 /***/ }),
 
-/***/ 1216:
+/***/ 61216:
 /***/ ((module) => {
 
 
@@ -66087,16 +69895,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8625:
+/***/ 98625:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(1216)
-const { states, opcodes } = __nccwpck_require__(736)
-const { ErrorEvent, createFastMessageEvent } = __nccwpck_require__(5188)
+const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(61216)
+const { states, opcodes } = __nccwpck_require__(20736)
+const { ErrorEvent, createFastMessageEvent } = __nccwpck_require__(15188)
 const { isUtf8 } = __nccwpck_require__(4573)
-const { collectASequenceOfCodePointsFast, removeHTTPWhitespace } = __nccwpck_require__(1900)
+const { collectASequenceOfCodePointsFast, removeHTTPWhitespace } = __nccwpck_require__(51900)
 
 /* globals Blob */
 
@@ -66416,15 +70224,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3726:
+/***/ 13726:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const { webidl } = __nccwpck_require__(5893)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { environmentSettingsObject } = __nccwpck_require__(3168)
-const { staticPropertyDescriptors, states, sentCloseFrameState, sendHints } = __nccwpck_require__(736)
+const { webidl } = __nccwpck_require__(45893)
+const { URLSerializer } = __nccwpck_require__(51900)
+const { environmentSettingsObject } = __nccwpck_require__(73168)
+const { staticPropertyDescriptors, states, sentCloseFrameState, sendHints } = __nccwpck_require__(20736)
 const {
   kWebSocketURL,
   kReadyState,
@@ -66433,21 +70241,21 @@ const {
   kResponse,
   kSentClose,
   kByteParser
-} = __nccwpck_require__(1216)
+} = __nccwpck_require__(61216)
 const {
   isConnecting,
   isEstablished,
   isClosing,
   isValidSubprotocol,
   fireEvent
-} = __nccwpck_require__(8625)
-const { establishWebSocketConnection, closeWebSocketConnection } = __nccwpck_require__(6897)
-const { ByteParser } = __nccwpck_require__(1652)
+} = __nccwpck_require__(98625)
+const { establishWebSocketConnection, closeWebSocketConnection } = __nccwpck_require__(86897)
+const { ByteParser } = __nccwpck_require__(81652)
 const { kEnumerableProperty, isBlobLike } = __nccwpck_require__(3440)
-const { getGlobalDispatcher } = __nccwpck_require__(2581)
-const { types } = __nccwpck_require__(7975)
-const { ErrorEvent, CloseEvent } = __nccwpck_require__(5188)
-const { SendQueue } = __nccwpck_require__(3900)
+const { getGlobalDispatcher } = __nccwpck_require__(32581)
+const { types } = __nccwpck_require__(57975)
+const { ErrorEvent, CloseEvent } = __nccwpck_require__(15188)
+const { SendQueue } = __nccwpck_require__(13900)
 
 // https://websockets.spec.whatwg.org/#interface-definition
 class WebSocket extends EventTarget {
@@ -67018,13 +70826,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5389:
+/***/ 45389:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
 var stream = __nccwpck_require__(2203);
-var inherits = (__nccwpck_require__(9023).inherits);
+var inherits = (__nccwpck_require__(39023).inherits);
 
 function Entry() {
     if (!(this instanceof Entry)) {
@@ -67051,12 +70859,12 @@ module.exports = Entry;
 /***/ 5700:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var fs = __nccwpck_require__(9896);
-var path = __nccwpck_require__(6928);
-var util = __nccwpck_require__(9023);
+var fs = __nccwpck_require__(79896);
+var path = __nccwpck_require__(16928);
+var util = __nccwpck_require__(39023);
 var mkdirp = __nccwpck_require__(4469);
 var Transform = (__nccwpck_require__(2203).Transform);
-var UnzipStream = __nccwpck_require__(5580);
+var UnzipStream = __nccwpck_require__(85580);
 
 function Extract (opts) {
     if (!(this instanceof Extract))
@@ -67151,11 +70959,11 @@ module.exports = Extract;
 
 /***/ }),
 
-/***/ 2092:
+/***/ 42092:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var Transform = (__nccwpck_require__(2203).Transform);
-var util = __nccwpck_require__(9023);
+var util = __nccwpck_require__(39023);
 
 function MatcherStream(patternDesc, matchFn) {
     if (!(this instanceof MatcherStream)) {
@@ -67251,12 +71059,12 @@ module.exports = MatcherStream;
 
 /***/ }),
 
-/***/ 1879:
+/***/ 41879:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 var Transform = (__nccwpck_require__(2203).Transform);
-var util = __nccwpck_require__(9023);
-var UnzipStream = __nccwpck_require__(5580);
+var util = __nccwpck_require__(39023);
+var UnzipStream = __nccwpck_require__(85580);
 
 function ParserStream(opts) {
     if (!(this instanceof ParserStream)) {
@@ -67309,17 +71117,17 @@ module.exports = ParserStream;
 
 /***/ }),
 
-/***/ 5580:
+/***/ 85580:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-var binary = __nccwpck_require__(8769);
+var binary = __nccwpck_require__(58769);
 var stream = __nccwpck_require__(2203);
-var util = __nccwpck_require__(9023);
-var zlib = __nccwpck_require__(725);
-var MatcherStream = __nccwpck_require__(2092);
-var Entry = __nccwpck_require__(5389);
+var util = __nccwpck_require__(39023);
+var zlib = __nccwpck_require__(43106);
+var MatcherStream = __nccwpck_require__(42092);
+var Entry = __nccwpck_require__(45389);
 
 const states = {
     STREAM_START:                         0,
@@ -68056,17 +71864,17 @@ module.exports = UnzipStream;
 
 /***/ }),
 
-/***/ 3991:
+/***/ 33991:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-exports.Parse = __nccwpck_require__(1879);
+exports.Parse = __nccwpck_require__(41879);
 exports.Extract = __nccwpck_require__(5700);
 
 /***/ }),
 
-/***/ 4488:
+/***/ 24488:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -68074,12 +71882,362 @@ exports.Extract = __nccwpck_require__(5700);
  * For Node.js, simply re-export the core `util.deprecate` function.
  */
 
-module.exports = __nccwpck_require__(9023).deprecate;
+module.exports = __nccwpck_require__(39023).deprecate;
 
 
 /***/ }),
 
-/***/ 1622:
+/***/ 70516:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var isString = __nccwpck_require__(57970);
+var isNumber = __nccwpck_require__(33670);
+var isBoolean = __nccwpck_require__(10823);
+var isSymbol = __nccwpck_require__(63927);
+var isBigInt = __nccwpck_require__(17788);
+
+/** @type {import('.')} */
+// eslint-disable-next-line consistent-return
+module.exports = function whichBoxedPrimitive(value) {
+	// eslint-disable-next-line eqeqeq
+	if (value == null || (typeof value !== 'object' && typeof value !== 'function')) {
+		return null;
+	}
+	if (isString(value)) {
+		return 'String';
+	}
+	if (isNumber(value)) {
+		return 'Number';
+	}
+	if (isBoolean(value)) {
+		return 'Boolean';
+	}
+	if (isSymbol(value)) {
+		return 'Symbol';
+	}
+	if (isBigInt(value)) {
+		return 'BigInt';
+	}
+};
+
+
+/***/ }),
+
+/***/ 45330:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var whichBoxedPrimitive = __nccwpck_require__(70516);
+var whichCollection = __nccwpck_require__(16260);
+var whichTypedArray = __nccwpck_require__(54768);
+var isArray = __nccwpck_require__(82513);
+var isDate = __nccwpck_require__(86253);
+var isRegex = __nccwpck_require__(86622);
+var isWeakRef = __nccwpck_require__(92880);
+var isFinalizationRegistry = __nccwpck_require__(93816);
+var name = __nccwpck_require__(82069);
+var isGeneratorFunction = __nccwpck_require__(55659);
+var isAsyncFunction = __nccwpck_require__(14856);
+var callBound = __nccwpck_require__(23105);
+var hasToStringTag = __nccwpck_require__(85479)();
+var toStringTag = hasToStringTag && Symbol.toStringTag;
+
+var $Object = Object;
+
+/** @type {undefined | ((value: ThisParameterType<typeof Promise.prototype.then>, ...args: Parameters<typeof Promise.prototype.then>) => ReturnType<typeof Promise.prototype.then>)} */
+var promiseThen = callBound('Promise.prototype.then', true);
+/** @type {<T = unknown>(value: unknown) => value is Promise<T>} */
+var isPromise = function isPromise(value) {
+	if (!value || typeof value !== 'object' || !promiseThen) {
+		return false;
+	}
+	try {
+		promiseThen(value, null, function () {});
+		return true;
+	} catch (e) {}
+	return false;
+};
+
+/** @type {(builtinName: unknown) => boolean} */
+var isKnownBuiltin = function isKnownBuiltin(builtinName) {
+	return !!builtinName
+		// primitives
+		&& builtinName !== 'BigInt'
+		&& builtinName !== 'Boolean'
+		&& builtinName !== 'Null'
+		&& builtinName !== 'Number'
+		&& builtinName !== 'String'
+		&& builtinName !== 'Symbol'
+		&& builtinName !== 'Undefined'
+		// namespaces
+		&& builtinName !== 'Math'
+		&& builtinName !== 'JSON'
+		&& builtinName !== 'Reflect'
+		&& builtinName !== 'Atomics'
+		// collections
+		&& builtinName !== 'Map'
+		&& builtinName !== 'Set'
+		&& builtinName !== 'WeakMap'
+		&& builtinName !== 'WeakSet'
+		// typed arrays
+		&& builtinName !== 'BigInt64Array'
+		&& builtinName !== 'BigUint64Array'
+		&& builtinName !== 'Float32Array'
+		&& builtinName !== 'Float64Array'
+		&& builtinName !== 'Int16Array'
+		&& builtinName !== 'Int32Array'
+		&& builtinName !== 'Int8Array'
+		&& builtinName !== 'Uint16Array'
+		&& builtinName !== 'Uint32Array'
+		&& builtinName !== 'Uint8Array'
+		&& builtinName !== 'Uint8ClampedArray'
+		// checked explicitly
+		&& builtinName !== 'Array'
+		&& builtinName !== 'Date'
+		&& builtinName !== 'FinalizationRegistry'
+		&& builtinName !== 'Promise'
+		&& builtinName !== 'RegExp'
+		&& builtinName !== 'WeakRef'
+		// functions
+		&& builtinName !== 'Function'
+		&& builtinName !== 'GeneratorFunction'
+		&& builtinName !== 'AsyncFunction';
+};
+
+/** @type {import('.')} */
+module.exports = function whichBuiltinType(value) {
+	if (value == null) {
+		return value;
+	}
+	// covers: primitives, {,Weak}Map/Set, typed arrays
+	var which = whichBoxedPrimitive($Object(value)) || whichCollection(value) || whichTypedArray(value);
+	if (which) {
+		return which;
+	}
+	if (isArray(value)) {
+		return 'Array';
+	}
+	if (isDate(value)) {
+		return 'Date';
+	}
+	if (isRegex(value)) {
+		return 'RegExp';
+	}
+	if (isWeakRef(value)) {
+		return 'WeakRef';
+	}
+	if (isFinalizationRegistry(value)) {
+		return 'FinalizationRegistry';
+	}
+	if (typeof value === 'function') {
+		if (isGeneratorFunction(value)) {
+			return 'GeneratorFunction';
+		}
+		if (isAsyncFunction(value)) {
+			return 'AsyncFunction';
+		}
+		return 'Function';
+	}
+	if (isPromise(value)) {
+		return 'Promise';
+	}
+	// @ts-expect-error TS can't figure out that `value` is an `object` after the `which` check above
+	if (toStringTag && toStringTag in value) {
+		var tag = value[toStringTag];
+		if (isKnownBuiltin(tag)) {
+			return tag;
+		}
+	}
+	if (typeof value.constructor === 'function') {
+		// eslint-disable-next-line no-extra-parens
+		var constructorName = name(/** @type {Parameters<name>[0]} */ (value.constructor));
+		if (isKnownBuiltin(constructorName)) {
+			return constructorName;
+		}
+	}
+	return 'Object';
+};
+
+
+/***/ }),
+
+/***/ 16260:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var isMap = __nccwpck_require__(69311);
+var isSet = __nccwpck_require__(6513);
+var isWeakMap = __nccwpck_require__(33955);
+var isWeakSet = __nccwpck_require__(22237);
+
+/** @type {import('.')} */
+module.exports = function whichCollection(/** @type {unknown} */ value) {
+	if (value && typeof value === 'object') {
+		if (isMap(value)) {
+			return 'Map';
+		}
+		if (isSet(value)) {
+			return 'Set';
+		}
+		if (isWeakMap(value)) {
+			return 'WeakMap';
+		}
+		if (isWeakSet(value)) {
+			return 'WeakSet';
+		}
+	}
+	return false;
+};
+
+
+/***/ }),
+
+/***/ 54768:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var forEach = __nccwpck_require__(14963);
+var availableTypedArrays = __nccwpck_require__(51506);
+var callBind = __nccwpck_require__(53844);
+var callBound = __nccwpck_require__(23105);
+var gOPD = __nccwpck_require__(33170);
+var getProto = __nccwpck_require__(81967);
+
+var $toString = callBound('Object.prototype.toString');
+var hasToStringTag = __nccwpck_require__(85479)();
+
+var g = typeof globalThis === 'undefined' ? global : globalThis;
+var typedArrays = availableTypedArrays();
+
+var $slice = callBound('String.prototype.slice');
+
+/** @import { BoundSet, BoundSlice, Cache, Getter } from './types' */
+/** @import { TypedArrayName } from '.' */
+
+/** @type {<T = unknown>(array: readonly T[], value: unknown) => number} */
+var $indexOf = callBound('Array.prototype.indexOf', true) || function indexOf(array, value) {
+	for (var i = 0; i < array.length; i += 1) {
+		if (array[i] === value) {
+			return i;
+		}
+	}
+	return -1;
+};
+
+/** @type {Cache} */
+var cache = { __proto__: null };
+if (hasToStringTag && gOPD && getProto) {
+	forEach(typedArrays, function (typedArray) {
+		var arr = new g[typedArray]();
+		if (Symbol.toStringTag in arr && getProto) {
+			var proto = getProto(arr);
+			// @ts-expect-error TS won't narrow inside a closure
+			var descriptor = gOPD(proto, Symbol.toStringTag);
+			if (!descriptor && proto) {
+				var superProto = getProto(proto);
+				// @ts-expect-error TS won't narrow inside a closure
+				descriptor = gOPD(superProto, Symbol.toStringTag);
+			}
+			if (descriptor && descriptor.get) {
+				var bound = callBind(descriptor.get);
+				cache[
+					/** @type {`$${TypedArrayName}`} */
+					('$' + typedArray)
+				] = bound;
+			}
+		}
+	});
+} else {
+	forEach(typedArrays, function (typedArray) {
+		var arr = new g[typedArray]();
+		var fn = arr.slice || arr.set;
+		if (fn) {
+			var bound = /** @type {typeof BoundSlice | typeof BoundSet} */ (
+				// @ts-expect-error TODO FIXME
+				callBind(fn)
+			);
+			cache[
+				/** @type {`$${TypedArrayName}`} */
+				('$' + typedArray)
+			] = bound;
+		}
+	});
+}
+
+/** @type {(value: object) => false | TypedArrayName} */
+function tryTypedArrays(value) {
+	/** @type {ReturnType<typeof tryTypedArrays>} */ var found = false;
+	forEach(
+		/** @type {Record<`$${TypedArrayName}`, Getter>} */ (cache),
+		/** @param {Getter} getter @param {`$${TypedArrayName}`} typedArray */
+		function (getter, typedArray) {
+			if (!found) {
+				try {
+					// @ts-expect-error a throw is fine here
+					if ('$' + getter(value) === typedArray) {
+						found = /** @type {TypedArrayName} */ ($slice(typedArray, 1));
+					}
+				} catch (e) { /**/ }
+			}
+		}
+	);
+	return found;
+}
+
+/** @type {(value: object) => false | TypedArrayName} */
+function trySlices(value) {
+	/** @type {ReturnType<typeof trySlices>} */ var found = false;
+	forEach(
+		/** @type {Record<`$${TypedArrayName}`, Getter>} */(cache),
+		/** @param {Getter} getter @param {`$${TypedArrayName}`} name */ function (getter, name) {
+			if (!found) {
+				try {
+					// @ts-expect-error a throw is fine here
+					getter(value);
+					found = /** @type {TypedArrayName} */ ($slice(name, 1));
+				} catch (e) { /**/ }
+			}
+		}
+	);
+	return found;
+}
+
+/** @type {(tag: unknown) => tag is typeof typedArrays[number]} */
+function isTATag(tag) {
+	return $indexOf(typedArrays, tag) > -1;
+}
+
+/** @type {(value: unknown) => ReturnType<typeof import('.')>} */
+function whichTypedArray(value) {
+	if (!value || typeof value !== 'object') {
+		return false;
+	}
+	if (!hasToStringTag) {
+		var tag = $slice($toString(value), 8, -1);
+		if (isTATag(tag)) {
+			return tag;
+		}
+		if (tag !== 'Object') {
+			return false;
+		}
+		// node < 0.6 hits here on real Typed Arrays
+		return trySlices(value);
+	}
+	if (!gOPD) { return null; } // unknown engine
+	return tryTypedArrays(value);
+}
+
+module.exports = whichTypedArray;
+
+
+/***/ }),
+
+/***/ 41622:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
@@ -68089,12 +72247,12 @@ module.exports = __nccwpck_require__(9023).deprecate;
  * @license [MIT]{@link https://github.com/archiverjs/node-zip-stream/blob/master/LICENSE}
  * @copyright (c) 2014 Chris Talkington, contributors.
  */
-var inherits = (__nccwpck_require__(9023).inherits);
+var inherits = (__nccwpck_require__(39023).inherits);
 
-var ZipArchiveOutputStream = (__nccwpck_require__(7544).ZipArchiveOutputStream);
-var ZipArchiveEntry = (__nccwpck_require__(7544).ZipArchiveEntry);
+var ZipArchiveOutputStream = (__nccwpck_require__(47544).ZipArchiveOutputStream);
+var ZipArchiveEntry = (__nccwpck_require__(47544).ZipArchiveEntry);
 
-var util = __nccwpck_require__(3296);
+var util = __nccwpck_require__(53296);
 
 /**
  * @constructor
@@ -68273,7 +72431,7 @@ ZipStream.prototype.finalize = function() {
 
 /***/ }),
 
-/***/ 75:
+/***/ 60075:
 /***/ ((module) => {
 
 module.exports = eval("require")("supports-color");
@@ -68281,70 +72439,70 @@ module.exports = eval("require")("supports-color");
 
 /***/ }),
 
-/***/ 2613:
+/***/ 42613:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("assert");
 
 /***/ }),
 
-/***/ 181:
+/***/ 20181:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("buffer");
 
 /***/ }),
 
-/***/ 9140:
+/***/ 49140:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("constants");
 
 /***/ }),
 
-/***/ 4434:
+/***/ 24434:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("events");
 
 /***/ }),
 
-/***/ 9896:
+/***/ 79896:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs");
 
 /***/ }),
 
-/***/ 8611:
+/***/ 58611:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("http");
 
 /***/ }),
 
-/***/ 5692:
+/***/ 65692:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("https");
 
 /***/ }),
 
-/***/ 9278:
+/***/ 69278:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("net");
 
 /***/ }),
 
-/***/ 4589:
+/***/ 34589:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:assert");
 
 /***/ }),
 
-/***/ 6698:
+/***/ 16698:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:async_hooks");
@@ -68358,77 +72516,77 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:buffer"
 
 /***/ }),
 
-/***/ 7540:
+/***/ 37540:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:console");
 
 /***/ }),
 
-/***/ 7598:
+/***/ 77598:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:crypto");
 
 /***/ }),
 
-/***/ 3053:
+/***/ 53053:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:diagnostics_channel");
 
 /***/ }),
 
-/***/ 610:
+/***/ 40610:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:dns");
 
 /***/ }),
 
-/***/ 8474:
+/***/ 78474:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:events");
 
 /***/ }),
 
-/***/ 3024:
+/***/ 73024:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:fs");
 
 /***/ }),
 
-/***/ 1455:
+/***/ 51455:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:fs/promises");
 
 /***/ }),
 
-/***/ 7067:
+/***/ 37067:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:http");
 
 /***/ }),
 
-/***/ 2467:
+/***/ 32467:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:http2");
 
 /***/ }),
 
-/***/ 7030:
+/***/ 77030:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:net");
 
 /***/ }),
 
-/***/ 6760:
+/***/ 76760:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
@@ -68442,70 +72600,70 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:perf_ho
 
 /***/ }),
 
-/***/ 1792:
+/***/ 41792:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:querystring");
 
 /***/ }),
 
-/***/ 7075:
+/***/ 57075:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:stream");
 
 /***/ }),
 
-/***/ 6193:
+/***/ 46193:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:string_decoder");
 
 /***/ }),
 
-/***/ 1692:
+/***/ 41692:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:tls");
 
 /***/ }),
 
-/***/ 3136:
+/***/ 73136:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:url");
 
 /***/ }),
 
-/***/ 7975:
+/***/ 57975:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:util");
 
 /***/ }),
 
-/***/ 3429:
+/***/ 73429:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:util/types");
 
 /***/ }),
 
-/***/ 5919:
+/***/ 75919:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:worker_threads");
 
 /***/ }),
 
-/***/ 8522:
+/***/ 38522:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:zlib");
 
 /***/ }),
 
-/***/ 6928:
+/***/ 16928:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("path");
@@ -68519,49 +72677,42 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("stream");
 
 /***/ }),
 
-/***/ 3193:
+/***/ 13193:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("string_decoder");
 
 /***/ }),
 
-/***/ 4756:
+/***/ 64756:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("tls");
 
 /***/ }),
 
-/***/ 2018:
+/***/ 52018:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("tty");
 
 /***/ }),
 
-/***/ 7016:
-/***/ ((module) => {
-
-module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("url");
-
-/***/ }),
-
-/***/ 9023:
+/***/ 39023:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
 
 /***/ }),
 
-/***/ 725:
+/***/ 43106:
 /***/ ((module) => {
 
 module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("zlib");
 
 /***/ }),
 
-/***/ 30:
+/***/ 70030:
 /***/ ((__unused_webpack_module, exports) => {
 
 var __webpack_unused_export__;
@@ -68580,7 +72731,7 @@ exports.w = {
 
 /***/ }),
 
-/***/ 8914:
+/***/ 39437:
 /***/ ((__unused_webpack_module, exports) => {
 
 var __webpack_unused_export__;
@@ -68597,11 +72748,1049 @@ exports.w = void 0;
 exports.w = {
     instrumenterImplementation: undefined,
 };
-//# sourceMappingURL=state-cjs.cjs.map
+//# sourceMappingURL=state-cjs.js.map
 
 /***/ }),
 
-/***/ 2649:
+/***/ 11738:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Matcher = void 0;
+const numeric_range_js_1 = __nccwpck_require__(33521);
+const parse_class_js_1 = __nccwpck_require__(97816);
+// the end of the pattern, or of a negated sub-pattern
+const MATCH = { t: 'match', id: 0 };
+const extTypes = '!?+*@';
+const lit = (ch) => ({ t: 'lit', ch });
+const reEscape = (s) => s.replace(/[\\^$.*+?()[\]{}|/]/g, '\\$&');
+// a RegExp that only matches `s`, with unicode case folding
+const newFoldRe = (s) => new RegExp(`^${reEscape(s)}$`, 'iu');
+// foldRe for one literal char. The same chars are in most patterns,
+// so keep them. A RegExp without the `g` or `y` flag has no state to
+// share.
+const foldCache = new Map();
+const foldRe = (ch) => {
+    let re = foldCache.get(ch);
+    if (!re) {
+        re = newFoldRe(ch);
+        if (foldCache.size >= 1000)
+            foldCache.clear();
+        foldCache.set(ch, re);
+    }
+    return re;
+};
+const litMatch = (l, c) => {
+    if (c === l.ch)
+        return true;
+    if (!l.re)
+        return false;
+    const code = c.charCodeAt(0);
+    if (code >= 128)
+        return l.re.test(c);
+    const ascii = (l.ascii ??= new Uint8Array(128));
+    ascii[code] ||= l.re.test(c) ? 1 : 2;
+    return ascii[code] === 1;
+};
+const tokenize = (p, nocase, noext, form, mark) => {
+    const toks = [];
+    for (let i = 0; i < p.length;) {
+        const c = String.fromCodePoint(p.codePointAt(i));
+        if (mark) {
+            // a \ before a range would only escape its first char
+            const m = c === '\\' && p.startsWith(mark, i + 1) ? 1 : 0;
+            if (m || c === mark) {
+                const start = i + m + mark.length;
+                const end = p.indexOf(mark, start);
+                const r = /^(-?\d+)\.\.(-?\d+)$/.exec(p.slice(start, end));
+                const alts = end !== -1 && r && (0, numeric_range_js_1.numericRange)(r[1], r[2]);
+                if (alts) {
+                    toks.push({ t: 'ext', type: '@', alts });
+                    i = end + mark.length;
+                    continue;
+                }
+            }
+        }
+        if (c === '\\') {
+            // a trailing \ is a literal \
+            const e = p.codePointAt(i + 1);
+            const ch = e === undefined ? c : String.fromCodePoint(e);
+            toks.push(lit(ch));
+            i += 1 + ch.length;
+            continue;
+        }
+        if (c === '[') {
+            const [re, consumed] = (0, parse_class_js_1.parseClass)(p, i, nocase, form);
+            if (consumed) {
+                toks.push({ t: 'class', re });
+                i += consumed;
+                continue;
+            }
+        }
+        if (!noext && extTypes.includes(c) && p[i + 1] === '(') {
+            toks.push({ t: 'open', type: c });
+            i += 2;
+            continue;
+        }
+        toks.push(!noext && c === '|' ? { t: 'bar' }
+            : !noext && c === ')' ? { t: 'close' }
+                : c === '*' ? { t: 'star' }
+                    : c === '?' ? { t: 'any' }
+                        : lit(c));
+        i += c.length;
+    }
+    return toks;
+};
+// map each open token index to the index of its close token
+const pair = (toks) => {
+    const pairs = new Map();
+    const stack = [];
+    toks.forEach((tok, i) => {
+        if (tok.t === 'open')
+            stack.push(i);
+        else if (tok.t === 'close' && stack.length)
+            pairs.set(stack.pop(), i);
+    });
+    return pairs;
+};
+// build the alternatives between start and end. An open token that
+// is not closed is never inside a closed extglob, so bar and close
+// tokens are only literal at the top level.
+const build = (toks, pairs, start, end, top) => {
+    let seq = [];
+    const alts = [seq];
+    for (let i = start; i < end; i++) {
+        const tok = toks[i];
+        const close = pairs.get(i);
+        if (tok.t === 'open' && close !== undefined) {
+            const sub = build(toks, pairs, i + 1, close, false);
+            seq.push({ t: 'ext', type: tok.type, alts: sub });
+            i = close;
+        }
+        else if (tok.t === 'bar' && !top) {
+            alts.push((seq = []));
+        }
+        else if (tok.t === 'open') {
+            seq.push(lit(tok.type), lit('('));
+        }
+        else if (tok.t === 'bar') {
+            seq.push(lit('|'));
+        }
+        else if (tok.t === 'close') {
+            seq.push(lit(')'));
+        }
+        else {
+            seq.push(tok);
+        }
+    }
+    return alts;
+};
+// normalize each run of literal chars as one string, so that a char
+// and the combining marks after it compose (or decompose) together.
+// Syntax is already parsed, so a char that normalizes to a syntax
+// char (such as full-width `＊` in NFKC) stays a literal.
+const normalize = (items, form) => {
+    const out = [];
+    let run = '';
+    const flush = () => {
+        for (const ch of run.normalize(form))
+            out.push(lit(ch));
+        run = '';
+    };
+    for (const it of items) {
+        if (it.t === 'lit') {
+            run += it.ch;
+            continue;
+        }
+        flush();
+        out.push(it.t === 'ext' ?
+            { ...it, alts: it.alts.map(a => normalize(a, form)) }
+            : it);
+    }
+    flush();
+    return out;
+};
+// the start node, and the number of node ids. Ids are dense, from 0
+// for the match node.
+const compile = (items, nocase) => {
+    let id = 1;
+    const split = (out) => ({ t: 'split', id: id++, out });
+    const seq = (items, next) => items.reduceRight((next, it) => item(it, next), next);
+    const item = (it, next) => {
+        switch (it.t) {
+            case 'lit':
+                const re = nocase ? foldRe(it.ch) : undefined;
+                return { t: 'lit', id: id++, ch: it.ch, re, next };
+            case 'any':
+            case 'star':
+                return { t: it.t, id: id++, next };
+            case 'class':
+                return { t: 'class', id: id++, re: it.re, next };
+        }
+        const alts = (next) => it.alts.map(a => seq(a, next));
+        switch (it.type) {
+            case '@':
+                return split(alts(next));
+            case '?':
+                return split([next, ...alts(next)]);
+            case '!':
+                return { t: 'neg', id: id++, sub: split(alts(MATCH)), next };
+        }
+        // * and +, loop back after each match
+        const after = split([]);
+        const entry = split(alts(after));
+        after.out.push(next, entry);
+        return it.type === '*' ? after : entry;
+    };
+    const start = seq(items, MATCH);
+    return [start, id];
+};
+// one line per node, in the order that a walk from the start
+// reaches them. Edges point to node ids. The nodes of a negated
+// sub-pattern are indented under their negation.
+const show = (start) => {
+    const lines = [];
+    const seen = new Set();
+    const ref = (n) => (n.t === 'match' ? 'match' : String(n.id));
+    const walk = (n, indent) => {
+        if (n.t === 'match' || seen.has(n))
+            return;
+        seen.add(n);
+        const line = (desc) => lines.push(`${indent}${n.id}: ${desc}`);
+        switch (n.t) {
+            case 'split':
+                line(`split -> ${n.out.map(ref).join(', ')}`);
+                for (const o of n.out)
+                    walk(o, indent);
+                return;
+            case 'neg':
+                line(`!(${ref(n.sub)}) -> ${ref(n.next)}`);
+                walk(n.sub, indent + '  ');
+                return walk(n.next, indent);
+            case 'lit':
+                line(`${JSON.stringify(n.ch)} -> ${ref(n.next)}`);
+                break;
+            case 'class':
+                line(`${n.re} -> ${ref(n.next)}`);
+                break;
+            default:
+                line(`${n.t === 'any' ? '?' : '*'} -> ${ref(n.next)}`);
+        }
+        walk(n.next, indent);
+    };
+    walk(start, '');
+    return [`start -> ${ref(start)}`, ...lines].join('\n');
+};
+// The threads at one position in the string. Each node thread is
+// only kept once, and runs with the same state are only kept once,
+// so that identical threads merge. The match node is not in
+// `threads`, because it can not step. It sets `match` instead.
+class State {
+    // set by the Sim, to mark the nodes that this state has
+    gen;
+    threads = [];
+    match = false;
+    runs = [];
+    // the sorted ids of the threads, with 0 for a match, once the
+    // state is done
+    ids = [];
+    constructor(gen) {
+        this.gen = gen;
+    }
+    // no threads, so nothing more can match
+    get dead() {
+        return !this.threads.length && !this.match && !this.runs.length;
+    }
+}
+// true if the two states hold the same threads
+const sameState = (a, b) => {
+    if (a.ids.length !== b.ids.length)
+        return false;
+    if (a.runs.length !== b.runs.length)
+        return false;
+    if (a.ids.some((id, i) => id !== b.ids[i]))
+        return false;
+    return a.runs.every(r => b.runs.some(o => o.neg === r.neg && sameState(o.state, r.state)));
+};
+const marks = (size) => ({
+    has: new Float64Array(size),
+    seen: new Float64Array(size),
+    gen: 0,
+});
+class Sim {
+    // `.` and `..` only match literal dots, even with `dot:true`
+    dots;
+    // the string starts with `.`, and `dot:true` is not set
+    dotStart;
+    #marks;
+    constructor(dots, dotStart, marks) {
+        this.dots = dots;
+        this.dotStart = dotStart;
+        this.#marks = marks;
+    }
+    state() {
+        return new State(++this.#marks.gen);
+    }
+    // sort the ids of a state, once it has all of its threads
+    done(state) {
+        state.ids = state.threads.map(n => n.id).sort((a, b) => a - b);
+        if (state.match)
+            state.ids.unshift(MATCH.id);
+        return state;
+    }
+    // true the first time that the state walks through the node, so
+    // that loops in the graph stop
+    #visit(state, node) {
+        const { seen } = this.#marks;
+        if (seen[node.id] === state.gen)
+            return false;
+        seen[node.id] = state.gen;
+        return true;
+    }
+    #addThread(state, node) {
+        const { has } = this.#marks;
+        if (has[node.id] === state.gen)
+            return false;
+        has[node.id] = state.gen;
+        state.threads.push(node);
+        return true;
+    }
+    // wildcards only match a leading dot if `dot:true`. In a negated
+    // sub-pattern, this does not apply, because the negation itself
+    // can not match a leading dot.
+    restricted(i, top) {
+        return top && (this.dots || (this.dotStart && i === 0));
+    }
+    add(state, node, i, top) {
+        switch (node.t) {
+            case 'split':
+                if (!this.#visit(state, node))
+                    return;
+                for (const o of node.out)
+                    this.add(state, o, i, top);
+                return;
+            case 'neg':
+                if (!this.#visit(state, node))
+                    return;
+                const sub = this.state();
+                this.add(sub, node.sub, i, false);
+                this.done(sub);
+                return this.addRun(state, { t: 'run', neg: node, state: sub }, i, top);
+            case 'star':
+                // a * can not start a dotfile, even if it matches nothing
+                if (this.restricted(i, top))
+                    return;
+                if (this.#addThread(state, node))
+                    this.add(state, node.next, i, top);
+                return;
+            case 'match':
+                state.match = true;
+                return;
+            default:
+                this.#addThread(state, node);
+        }
+    }
+    addRun(state, run, i, top) {
+        for (const r of state.runs) {
+            if (r.neg === run.neg && sameState(r.state, run.state))
+                return;
+        }
+        state.runs.push(run);
+        if (!run.state.match) {
+            this.add(state, run.neg.next, i, top);
+        }
+    }
+    // the threads after char `c`, at index `i`
+    step(state, c, i, top) {
+        const next = this.state();
+        for (const th of state.threads) {
+            switch (th.t) {
+                case 'lit':
+                    if (litMatch(th, c)) {
+                        this.add(next, th.next, i + 1, top);
+                    }
+                    break;
+                case 'any':
+                    if (!this.restricted(i, top))
+                        this.add(next, th.next, i + 1, top);
+                    break;
+                case 'class':
+                    if (!this.restricted(i, top) && th.re.test(c)) {
+                        this.add(next, th.next, i + 1, top);
+                    }
+                    break;
+                case 'star':
+                    if (!this.restricted(i, top))
+                        this.add(next, th, i + 1, top);
+            }
+        }
+        if (!this.restricted(i, top)) {
+            for (const run of state.runs) {
+                // a sub-pattern with no threads can not match again, so the
+                // run stays the same
+                if (run.state.dead) {
+                    this.addRun(next, run, i + 1, top);
+                    continue;
+                }
+                const sub = this.step(run.state, c, i, false);
+                this.addRun(next, { t: 'run', neg: run.neg, state: sub }, i + 1, top);
+            }
+        }
+        return this.done(next);
+    }
+}
+// A canonical key for the threads in a state. States with the same
+// key hold the same threads, so they match the same strings.
+const stateKey = (state) => {
+    const ids = state.ids.join();
+    if (!state.runs.length)
+        return ids;
+    const runs = state.runs.map(r => `${r.neg.id}(${stateKey(r.state)})`);
+    return `${ids}|${runs.sort().join('|')}`;
+};
+// The cache can hold about this many chars of state keys and
+// transitions. When it is full, it is cleared, so that a pattern
+// can not use an unbounded amount of memory.
+const DFA_BUDGET = 1 << 18;
+// A cache of the states that the simulation reaches, built as the
+// matcher is used. Each char of a string is then one Map lookup,
+// once the states that it leads to are known.
+//
+// The dot rules only restrict the first char of a dotfile (strings
+// that are only `.` or `..` do not use the cache). So a dotfile
+// starts at its own state, which takes its first step with the
+// restriction, and every other state takes steps without it.
+class Dfa {
+    #start;
+    #states = new Map();
+    #size = 0;
+    #plain;
+    #dotStart;
+    #sim;
+    #dotSim;
+    constructor(start, marks) {
+        this.#start = start;
+        this.#sim = new Sim(false, false, marks);
+        this.#dotSim = new Sim(false, true, marks);
+    }
+    #make(state) {
+        return {
+            state,
+            match: state.match,
+            dead: state.dead,
+            next: new Map(),
+        };
+    }
+    #intern(state) {
+        const key = stateKey(state);
+        const found = this.#states.get(key);
+        if (found)
+            return found;
+        if (this.#size > DFA_BUDGET)
+            this.#clear();
+        const d = this.#make(state);
+        this.#states.set(key, d);
+        this.#size += key.length + 1;
+        return d;
+    }
+    #clear() {
+        this.#states.clear();
+        this.#size = 0;
+        this.#plain = undefined;
+        this.#dotStart = undefined;
+    }
+    start(dotStart) {
+        if (dotStart) {
+            if (this.#dotStart)
+                return this.#dotStart;
+            const state = this.#dotSim.state();
+            this.#dotSim.add(state, this.#start, 0, true);
+            return (this.#dotStart = this.#make(this.#dotSim.done(state)));
+        }
+        if (this.#plain)
+            return this.#plain;
+        const state = this.#sim.state();
+        this.#sim.add(state, this.#start, 0, true);
+        return (this.#plain = this.#intern(this.#sim.done(state)));
+    }
+    // the next state, after a miss in `d.ascii`
+    next(d, c) {
+        const code = c.charCodeAt(0);
+        const found = code < 128 ? undefined : d.next.get(c);
+        if (found)
+            return found;
+        // the dotfile start is not in the cache, so it is never shared
+        const n = d === this.#dotStart ?
+            this.#intern(this.#dotSim.step(d.state, c, 0, true))
+            : this.#intern(this.#sim.step(d.state, c, 1, true));
+        if (code < 128) {
+            if (!d.ascii) {
+                d.ascii = new Array(128);
+                this.#size += 128;
+            }
+            d.ascii[code] = n;
+        }
+        else {
+            d.next.set(c, n);
+        }
+        this.#size++;
+        return n;
+    }
+}
+// the nodes in order, if the graph is a single chain
+const linear = (start) => {
+    const nodes = [];
+    for (let n = start; n.t !== 'match'; n = n.next) {
+        if (n.t === 'split' || n.t === 'neg')
+            return undefined;
+        nodes.push(n);
+    }
+    return nodes;
+};
+// Match a chain of nodes. Each node other than `*` matches exactly
+// one char, so on a failure it is enough to go back to the last `*`
+// and let it match one more char. This takes at most
+// nodes.length * chars.length steps.
+const testLinear = (nodes, chars, start, end) => {
+    let ni = 0;
+    let ci = start;
+    let starNi = -1;
+    let starCi = 0;
+    while (ci < end) {
+        const n = nodes[ni];
+        if (n?.t === 'star') {
+            starNi = ni++;
+            starCi = ci;
+            continue;
+        }
+        const c = chars[ci];
+        if (n &&
+            (n.t === 'any' ||
+                (n.t === 'lit' && litMatch(n, c)) ||
+                (n.t === 'class' && n.re.test(c)))) {
+            ni++;
+            ci++;
+            continue;
+        }
+        if (starNi === -1)
+            return false;
+        ni = starNi + 1;
+        ci = ++starCi;
+    }
+    while (nodes[ni]?.t === 'star')
+        ni++;
+    return ni === nodes.length;
+};
+// The least and most chars that the items can match. These are only
+// bounds: a negation can match a string of any length, so it counts
+// as 0 to Infinity.
+const lengths = (items) => {
+    let min = 0;
+    let max = 0;
+    for (const it of items) {
+        const [lo, hi] = itemLengths(it);
+        min += lo;
+        max += hi;
+    }
+    return [min, max];
+};
+const itemLengths = (it) => {
+    if (it.t === 'star')
+        return [0, Infinity];
+    if (it.t !== 'ext')
+        return [1, 1];
+    if (it.type === '!')
+        return [0, Infinity];
+    const alts = it.alts.map(lengths);
+    const min = Math.min(...alts.map(a => a[0]));
+    const max = Math.max(...alts.map(a => a[1]));
+    // a loop of alternatives that only match the empty string is empty
+    const loop = max === 0 ? 0 : Infinity;
+    return (it.type === '@' ? [min, max]
+        : it.type === '?' ? [0, max]
+            : it.type === '*' ? [0, loop]
+                : [min, loop]);
+};
+// true if the chars from `start` match the literals
+const hasAffix = (lits, chars, start) => {
+    for (let j = 0; j < lits.length; j++) {
+        if (!litMatch(lits[j], chars[start + j]))
+            return false;
+    }
+    return true;
+};
+// a `/`, or half of a surrogate pair
+const slashOrSurrogate = /[/\ud800-\udfff]/;
+const surrogate = /[\ud800-\udfff]/;
+// a string can be indexed by code point, unless it has surrogate
+// pairs
+const codePoints = (s) => surrogate.test(s) ? [...s] : s;
+const noSlash = (s) => {
+    if (s.includes('/')) {
+        throw new Error('can only match a single path portion, got: ' + s);
+    }
+};
+class Matcher {
+    pattern;
+    options;
+    #start;
+    // the number of node ids
+    #size;
+    #marks;
+    // the Sim for strings that are only `.` or `..`
+    #dotsSim;
+    // the string to compare, if the pattern has no magic. With
+    // `nocase:true`, the RegExp that folds case is made when it is
+    // first used.
+    #literal;
+    #literalFold = false;
+    #literalRe;
+    // the nodes between the prefix and suffix, if the graph is a
+    // single chain
+    #linear;
+    // the linear nodes are only `*` and `?`, so the length bounds and
+    // the prefix and suffix decide the match
+    #wild = false;
+    // the least and most chars that a match can have
+    #min = 0;
+    #max = Infinity;
+    // the literals that a match must start and end with. Each one
+    // matches exactly one char, and they are distinct items in the
+    // pattern, so a string that does not have them can not match.
+    #prefix = [];
+    #suffix = [];
+    // the prefix and suffix as strings, if they do not fold case
+    #prefixStr;
+    #suffixStr;
+    // there is a prefix or suffix to check
+    #affix = false;
+    #dfa;
+    #form;
+    constructor(pattern, options = {}) {
+        if (pattern.includes('/')) {
+            throw new Error('can only match a single path portion, got pattern: ' + pattern);
+        }
+        this.pattern = pattern;
+        this.options = options;
+        const { nocase = false, noext = false, normalize: n } = options;
+        this.#form = n === true ? 'NFC' : n || undefined;
+        // a pattern that is only an empty extglob is a literal string,
+        // except for `!()`, which matches any non-empty string
+        const literal = /^[?*+@]\(\)$/.test(pattern);
+        const toks = tokenize(pattern, nocase, noext || literal, this.#form, options.rangeMark);
+        let [items] = build(toks, pair(toks), 0, toks.length, true);
+        if (this.#form)
+            items = normalize(items, this.#form);
+        const [start, size] = compile(items, nocase);
+        this.#start = start;
+        this.#size = size;
+        if (items.every(it => it.t === 'lit')) {
+            this.#literal = items.map(it => it.ch).join('');
+            this.#literalFold = nocase;
+        }
+        else {
+            const lit = (it) => it.t !== 'lit' ? undefined
+                : nocase ? { ch: it.ch, re: foldRe(it.ch) }
+                    : { ch: it.ch };
+            for (const it of items) {
+                const l = lit(it);
+                if (!l)
+                    break;
+                this.#prefix.push(l);
+            }
+            for (let j = items.length - 1; j >= 0; j--) {
+                const l = lit(items[j]);
+                if (!l)
+                    break;
+                this.#suffix.unshift(l);
+            }
+            this.#affix = !!(this.#prefix.length || this.#suffix.length);
+            if (!nocase) {
+                this.#prefixStr = this.#prefix.map(l => l.ch).join('');
+                this.#suffixStr = this.#suffix.map(l => l.ch).join('');
+            }
+            this.#linear = linear(this.#start)?.slice(this.#prefix.length, -this.#suffix.length || undefined);
+            this.#wild = !!this.#linear?.every(n => n.t === 'star' || n.t === 'any');
+            const [min, max] = lengths(items);
+            this.#min = min;
+            this.#max = max;
+        }
+    }
+    test(s) {
+        // The `/` check uses the string as given, so with normalization it
+        // is a separate step. Otherwise, one scan finds both a `/` and the
+        // surrogate pairs that stop the string being indexed by code point.
+        if (this.#form) {
+            noSlash(s);
+            return this.#test(s.normalize(this.#form));
+        }
+        if (slashOrSurrogate.test(s)) {
+            noSlash(s);
+            return this.#test(s, [...s]);
+        }
+        return this.#test(s, s);
+    }
+    /**
+     * The same as {@link Matcher#test}, but the string is not checked
+     * for `/` chars, so the result for a string that has one is not
+     * defined. Only use it for a string that is known to be one path
+     * portion, such as a part of a path that was split on `/`. It can
+     * be faster, because some patterns do not need to look at each char
+     * of the string.
+     */
+    testUnchecked(s) {
+        return this.#test(this.#form ? s.normalize(this.#form) : s);
+    }
+    // Test a string that has no `/`. `chars` indexes it by code point.
+    // If it is not given, it is only found if a step needs it.
+    #test(s, chars) {
+        if (this.#literal !== undefined) {
+            return this.#literalFold ?
+                (this.#literalRe ??= newFoldRe(this.#literal)).test(s)
+                : s === this.#literal;
+        }
+        // the length check means that the prefix and suffix do not
+        // overlap. Without the chars, the length in code points is from
+        // half of the UTF-16 length (if each one is a surrogate pair) to
+        // all of it, which is often enough to know.
+        const min = this.#min;
+        const max = this.#max;
+        if (chars === undefined) {
+            const most = s.length;
+            const least = (most + 1) >> 1;
+            if (most < min || least > max)
+                return false;
+            if (least < min || most > max)
+                chars = codePoints(s);
+        }
+        if (chars !== undefined &&
+            (chars.length < min || chars.length > max)) {
+            return false;
+        }
+        const prefix = this.#prefix.length;
+        if (this.#affix) {
+            if (this.#prefixStr !== undefined && this.#suffixStr !== undefined) {
+                if (!s.startsWith(this.#prefixStr) ||
+                    !s.endsWith(this.#suffixStr)) {
+                    return false;
+                }
+            }
+            else {
+                chars ??= codePoints(s);
+                const end = chars.length - this.#suffix.length;
+                if (!hasAffix(this.#prefix, chars, 0) ||
+                    !hasAffix(this.#suffix, chars, end)) {
+                    return false;
+                }
+            }
+        }
+        const dotStart = !this.options.dot && s.startsWith('.');
+        if (this.#linear) {
+            // `.` and `..` only match literal dots, even with `dot:true`
+            if (s === '.' || s === '..')
+                return false;
+            // only a literal can match the leading dot. A `*` can not
+            // start a dotfile, even if it matches nothing.
+            if (dotStart && !prefix)
+                return false;
+            if (this.#wild)
+                return true;
+            chars ??= codePoints(s);
+            const end = chars.length - this.#suffix.length;
+            return testLinear(this.#linear, chars, prefix, end);
+        }
+        chars ??= codePoints(s);
+        if (s === '.' || s === '..') {
+            this.#marks ??= marks(this.#size);
+            const sim = (this.#dotsSim ??= new Sim(true, false, this.#marks));
+            const start = sim.state();
+            sim.add(start, this.#start, 0, true);
+            let state = sim.done(start);
+            for (let i = 0; i < chars.length; i++) {
+                state = sim.step(state, chars[i], i, true);
+            }
+            return state.match;
+        }
+        this.#marks ??= marks(this.#size);
+        const dfa = (this.#dfa ??= new Dfa(this.#start, this.#marks));
+        let d = dfa.start(dotStart);
+        // read char codes from the string, so that a one-char string is
+        // only made for a cache miss
+        const str = chars === s;
+        for (let i = 0; i < chars.length; i++) {
+            if (d.dead)
+                return false;
+            const code = str ? s.charCodeAt(i) : chars[i].charCodeAt(0);
+            d = d.ascii?.[code] ?? dfa.next(d, chars[i]);
+        }
+        return d.match;
+    }
+    /** a readable listing of the state machine */
+    toString() {
+        return show(this.#start);
+    }
+}
+exports.Matcher = Matcher;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 33521:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.numericRange = void 0;
+// One digit, or a class of digits from a to b.
+const digit = (a, b) => a === b ?
+    { t: 'lit', ch: String(a) }
+    : { t: 'class', re: new RegExp(`^[${a}-${b}]$`) };
+const prefix = (d, alts) => alts.map(s => [digit(d, d), ...s]);
+// The digit strings from a to b, which have the same length.
+const fixed = (a, b) => {
+    if (!a)
+        return [[]];
+    let lo = +a[0];
+    let hi = +b[0];
+    const ra = a.slice(1);
+    const rb = b.slice(1);
+    if (lo === hi)
+        return prefix(lo, fixed(ra, rb));
+    const zeros = '0'.repeat(ra.length);
+    const nines = '9'.repeat(ra.length);
+    const out = [];
+    if (ra !== zeros)
+        out.push(...prefix(lo++, fixed(ra, nines)));
+    const last = rb === nines ? [] : prefix(hi--, fixed(zeros, rb));
+    if (lo <= hi) {
+        out.push([digit(lo, hi), ...Array.from(ra, () => digit(0, 9))]);
+    }
+    out.push(...last);
+    return out;
+};
+// The numbers from a to b, where 0 <= a <= b. If width is set, each
+// one has leading zeros to make it that many digits.
+const nonneg = (a, b, width) => {
+    if (width) {
+        return fixed(String(a).padStart(width, '0'), String(b).padStart(width, '0'));
+    }
+    const out = [];
+    for (let len = String(a).length; len <= String(b).length; len++) {
+        const lo = Math.max(a, len === 1 ? 0 : 10 ** (len - 1));
+        const hi = Math.min(b, 10 ** len - 1);
+        out.push(...fixed(String(lo), String(hi)));
+    }
+    return out;
+};
+/**
+ * The strings that the bash brace expansion `{lo..hi}` makes, as
+ * the alternatives of an `@(...)` extglob. Each one is a sequence of
+ * digits and digit classes, so there are only a few of them, even for
+ * a large range.
+ *
+ * If either end has a leading zero, such as `{01..10}`, each number
+ * has leading zeros to make it as long as the longer end, counting a
+ * `-` sign. So `{-05..3}` makes `-05` to `-01`, then `000` to `003`.
+ *
+ * Returns undefined if either end is not a safe integer.
+ */
+const numericRange = (loStr, hiStr) => {
+    let lo = Number(loStr);
+    let hi = Number(hiStr);
+    if (!Number.isSafeInteger(lo) || !Number.isSafeInteger(hi))
+        return;
+    if (lo > hi)
+        [lo, hi] = [hi, lo];
+    const padded = /^-?0\d/.test(loStr) || /^-?0\d/.test(hiStr);
+    const width = padded ? Math.max(loStr.length, hiStr.length) : 0;
+    const out = [];
+    if (lo < 0) {
+        const neg = nonneg(Math.max(-hi, 1), -lo, width && width - 1);
+        out.push(...neg.map(s => [{ t: 'lit', ch: '-' }, ...s]));
+    }
+    if (hi >= 0)
+        out.push(...nonneg(Math.max(lo, 0), hi, width));
+    return out;
+};
+exports.numericRange = numericRange;
+//# sourceMappingURL=numeric-range.js.map
+
+/***/ }),
+
+/***/ 97816:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+// translate the various posix character classes into unicode properties
+// this works across all unicode locales
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.parseClass = void 0;
+// { <posix class>: [<translation>, negated]
+const posixClasses = {
+    '[:alnum:]': ['\\p{L}\\p{Nl}\\p{Nd}'],
+    '[:alpha:]': ['\\p{L}\\p{Nl}'],
+    '[:ascii:]': ['\\x' + '00-\\x' + '7f'],
+    '[:blank:]': ['\\p{Zs}\\t'],
+    '[:cntrl:]': ['\\p{Cc}'],
+    '[:digit:]': ['\\p{Nd}'],
+    '[:graph:]': ['\\p{Z}\\p{C}', true],
+    '[:lower:]': ['\\p{Ll}'],
+    '[:print:]': ['\\p{C}', true],
+    '[:punct:]': ['\\p{P}\\p{S}'],
+    '[:space:]': ['\\p{Z}\\t\\r\\n\\v\\f'],
+    '[:upper:]': ['\\p{Lu}'],
+    '[:word:]': ['\\p{L}\\p{Nl}\\p{Nd}\\p{Pc}'],
+    '[:xdigit:]': ['A-Fa-f0-9'],
+};
+// only need to escape a few things inside of brace expressions
+// escapes: [ \ ] -
+const braceEscape = (s) => s.replace(/[[\]\\-]/g, '\\$&');
+const noMatch = /$./;
+// Takes a glob string at a posix brace expression. Returns a RegExp
+// that tests one character, and the number of glob chars consumed.
+// If the class is not closed, consumed is 0, and the `[` must be
+// treated as a literal character.
+// Out of order ranges are removed. If nothing is left, the RegExp
+// is `/$./`, and the rest of the glob is consumed, so that the
+// whole glob cannot match.
+const parseClass = (glob, position, nocase = false, form) => {
+    // normalize one class member, if it stays one code point
+    const norm = (c) => {
+        const n = form ? c.normalize(form) : c;
+        return [...n].length === 1 ? n : c;
+    };
+    const pos = position;
+    /* c8 ignore start */
+    if (glob.charAt(pos) !== '[') {
+        throw new Error('not in a brace expression');
+    }
+    /* c8 ignore stop */
+    const ranges = [];
+    const negs = [];
+    let i = pos + 1;
+    let sawStart = false;
+    let escaping = false;
+    let negate = false;
+    let endPos = pos;
+    let rangeStart = '';
+    WHILE: while (i < glob.length) {
+        const c = String.fromCodePoint(glob.codePointAt(i));
+        if ((c === '!' || c === '^') && i === pos + 1) {
+            negate = true;
+            i++;
+            continue;
+        }
+        if (c === ']' && sawStart && !escaping) {
+            endPos = i + 1;
+            break;
+        }
+        sawStart = true;
+        if (c === '\\') {
+            if (!escaping) {
+                escaping = true;
+                i++;
+                continue;
+            }
+            // escaped \ char, fall through and treat like normal char
+        }
+        if (c === '[' && !escaping) {
+            // either a posix class, a collation equivalent, or just a [
+            for (const [cls, [unip, neg]] of Object.entries(posixClasses)) {
+                if (glob.startsWith(cls, i)) {
+                    // invalid, [a-[] is fine, but not [a-[:alpha]]
+                    if (rangeStart) {
+                        return [noMatch, glob.length - pos];
+                    }
+                    i += cls.length;
+                    if (neg)
+                        negs.push(unip);
+                    else
+                        ranges.push(unip);
+                    continue WHILE;
+                }
+            }
+        }
+        // now it's just a normal character, effectively
+        escaping = false;
+        const n = norm(c);
+        if (rangeStart) {
+            // throw this range away if it's not valid, but others
+            // can still match.
+            if (n.codePointAt(0) > rangeStart.codePointAt(0)) {
+                ranges.push(braceEscape(rangeStart) + '-' + braceEscape(n));
+            }
+            else if (n === rangeStart) {
+                ranges.push(braceEscape(n));
+            }
+            rangeStart = '';
+            i += c.length;
+            continue;
+        }
+        // now might be the start of a range.
+        // can be either c-d or c-] or c<more...>] or c] at this point
+        if (glob.startsWith('-]', i + c.length)) {
+            ranges.push(braceEscape(n + '-'));
+            i += c.length + 1;
+            continue;
+        }
+        if (glob.startsWith('-', i + c.length)) {
+            rangeStart = n;
+            i += c.length + 1;
+            continue;
+        }
+        // not the start of a range, just a single character
+        ranges.push(braceEscape(n));
+        i += c.length;
+    }
+    if (endPos < i) {
+        // didn't see the end of the class, not a valid class,
+        // but might still be valid as a literal match.
+        return [noMatch, 0];
+    }
+    // if we got no ranges and no negates, then we have a range that
+    // cannot possibly match anything, and that poisons the whole glob
+    if (!ranges.length && !negs.length) {
+        return [noMatch, glob.length - pos];
+    }
+    const sranges = '[' + (negate ? '^' : '') + ranges.join('') + ']';
+    const snegs = '[' + (negate ? '' : '^') + negs.join('') + ']';
+    const comb = '^' +
+        (ranges.length && negs.length ? '(' + sranges + '|' + snegs + ')'
+            : ranges.length ? sranges
+                : snegs);
+    return [new RegExp(comb, nocase ? 'iu' : 'u'), endPos - pos];
+};
+exports.parseClass = parseClass;
+//# sourceMappingURL=parse-class.js.map
+
+/***/ }),
+
+/***/ 51506:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var possibleNames = __nccwpck_require__(18879);
+
+var g = typeof globalThis === 'undefined' ? global : globalThis;
+
+/** @type {import('.')} */
+module.exports = function availableTypedArrays() {
+	var /** @type {ReturnType<typeof availableTypedArrays>} */ out = [];
+	for (var i = 0; i < possibleNames.length; i++) {
+		if (typeof g[possibleNames[i]] === 'function') {
+			// @ts-expect-error
+			out[out.length] = possibleNames[i];
+		}
+	}
+	return out;
+};
+
+
+/***/ }),
+
+/***/ 62649:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -68666,14 +73855,14 @@ exports.range = range;
 
 /***/ }),
 
-/***/ 8968:
+/***/ 38968:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EXPANSION_MAX_REWRITES = exports.EXPANSION_MAX_DEPTH = exports.EXPANSION_MAX_LENGTH = exports.EXPANSION_MAX = void 0;
 exports.expand = expand;
-const balanced_match_1 = __nccwpck_require__(2649);
+const balanced_match_1 = __nccwpck_require__(62649);
 const escSlash = '\0SLASH' + Math.random() + '\0';
 const escOpen = '\0OPEN' + Math.random() + '\0';
 const escClose = '\0CLOSE' + Math.random() + '\0';
@@ -69005,194 +74194,2864 @@ function expand_(str, max, maxLength, maxDepth, depth, maxRewrites, isTop) {
 
 /***/ }),
 
-/***/ 4649:
-/***/ ((__unused_webpack_module, exports) => {
+/***/ 57187:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var __webpack_unused_export__;
 
-/*!
- * content-type
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
-__webpack_unused_export__ = ({ value: true });
-__webpack_unused_export__ = format;
-exports.qg = parse;
-const TEXT_REGEXP = /^[\u0009\u0020-\u007e\u0080-\u00ff]*$/;
-const TOKEN_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
-/**
- * RegExp to match chars that must be quoted-pair in RFC 9110 sec 5.6.4
- */
-const QUOTE_REGEXP = /[\\"]/g;
-/**
- * RegExp to match type in RFC 9110 sec 8.3.1
- *
- * media-type = type "/" subtype
- * type       = token
- * subtype    = token
- */
-const TYPE_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
-/**
- * Null object perf optimization. Faster than `Object.create(null)` and `{ __proto__: null }`.
- */
-const NullObject = /* @__PURE__ */ (() => {
-    const C = function () { };
-    C.prototype = Object.create(null);
-    return C;
-})();
-/**
- * Format an object into a `Content-Type` header.
- */
-function format(obj) {
-    const { type, parameters } = obj;
-    if (!type || !TYPE_REGEXP.test(type)) {
-        throw new TypeError(`Invalid type: ${type}`);
-    }
-    let result = type;
-    if (parameters) {
-        for (const param of Object.keys(parameters)) {
-            if (!TOKEN_REGEXP.test(param)) {
-                throw new TypeError(`Invalid parameter name: ${param}`);
-            }
-            result += `; ${param}=${qstring(parameters[param])}`;
-        }
-    }
-    return result;
-}
-/**
- * Parse a `Content-Type` header.
- */
-function parse(header, options) {
-    const len = header.length;
-    let index = skipOWS(header, 0, len);
-    const valueStart = index;
-    index = skipValue(header, index, len);
-    const valueEnd = trailingOWS(header, valueStart, index);
-    const type = header.slice(valueStart, valueEnd).toLowerCase();
-    const parameters = options?.parameters === false
-        ? new NullObject()
-        : parseParameters(header, index, len);
-    return { type, parameters };
-}
-const SP = 32; // " "
-const HTAB = 9; // "\t"
-const SEMI = 59; // ";"
-const EQ = 61; // "="
-const DQUOTE = 34; // '"'
-const BSLASH = 92; // "\\"
-/**
- * Parses the parameters of a `Content-Type` header starting at the given index.
- */
-function parseParameters(header, index, len) {
-    const parameters = new NullObject();
-    parameter: while (index < len) {
-        index = skipOWS(header, index + 1 /* Skip over ; */, len);
-        const keyStart = index;
-        while (index < len) {
-            const code = header.charCodeAt(index);
-            if (code === SEMI)
-                continue parameter;
-            if (code === EQ) {
-                const keyEnd = trailingOWS(header, keyStart, index);
-                const key = header.slice(keyStart, keyEnd).toLowerCase();
-                index = skipOWS(header, index + 1, len);
-                if (index < len && header.charCodeAt(index) === DQUOTE) {
-                    index++;
-                    let value = "";
-                    while (index < len) {
-                        const code = header.charCodeAt(index++);
-                        if (code === DQUOTE) {
-                            index = skipValue(header, index, len);
-                            if (parameters[key] === undefined)
-                                parameters[key] = value;
-                            break;
-                        }
-                        if (code === BSLASH && index < len) {
-                            value += header[index++];
-                            continue;
-                        }
-                        value += String.fromCharCode(code);
-                    }
-                    continue parameter;
-                }
-                const valueStart = index;
-                index = skipValue(header, index, len);
-                if (parameters[key] === undefined) {
-                    const valueEnd = trailingOWS(header, valueStart, index);
-                    parameters[key] = header.slice(valueStart, valueEnd);
-                }
-                continue parameter;
-            }
-            index++;
-        }
-    }
-    return parameters;
-}
-/**
- * Skip over characters until a semicolon.
- */
-function skipValue(str, index, len) {
-    while (index < len) {
-        const char = str.charCodeAt(index);
-        if (char === SEMI)
-            break;
-        index++;
-    }
-    return index;
-}
-/**
- * Skip optional whitespace (OWS) in an HTTP header value.
- *
- * OWS is defined in RFC 9110 sec 5.6.3 as SP (" ") or HTAB ("\t").
- */
-function skipOWS(header, index, len) {
-    while (index < len) {
-        const char = header.charCodeAt(index);
-        if (char !== SP && char !== HTAB)
-            break;
-        index++;
-    }
-    return index;
-}
-/**
- * Trim optional whitespace (OWS) from the end of a substring.
- *
- * OWS is defined in RFC 9110 sec 5.6.3 as SP (" ") or HTAB ("\t").
- */
-function trailingOWS(header, start, end) {
-    while (end > start) {
-        const char = header.charCodeAt(end - 1);
-        if (char !== SP && char !== HTAB)
-            break;
-        end--;
-    }
-    return end;
-}
-/**
- * Serialize a parameter value.
- */
-function qstring(str) {
-    if (TOKEN_REGEXP.test(str))
-        return str;
-    if (TEXT_REGEXP.test(str))
-        return `"${str.replace(QUOTE_REGEXP, "\\$&")}"`;
-    throw new TypeError(`Invalid parameter value: ${str}`);
-}
-//# sourceMappingURL=index.js.map
+
+// http://262.ecma-international.org/5.1/#sec-9.11
+
+module.exports = __nccwpck_require__(69203);
+
 
 /***/ }),
 
-/***/ 2981:
+/***/ 90265:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+// https://262.ecma-international.org/15.0/#sec-arraybufferbytelength
+
+var IsDetachedBuffer = __nccwpck_require__(26650);
+
+var isArrayBuffer = __nccwpck_require__(96429);
+var isSharedArrayBuffer = __nccwpck_require__(12403);
+var arrayBufferByteLength = __nccwpck_require__(49290);
+
+var callBound = __nccwpck_require__(23105);
+var $sabByteLength = callBound('SharedArrayBuffer.prototype.byteLength', true);
+
+var isGrowable = false; // TODO: support this
+
+module.exports = function ArrayBufferByteLength(arrayBuffer, order) {
+	var isSAB = isSharedArrayBuffer(arrayBuffer);
+	if (!isArrayBuffer(arrayBuffer) && !isSAB) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` must be an ArrayBuffer or a SharedArrayBuffer');
+	}
+	if (order !== 'SEQ-CST' && order !== 'UNORDERED') {
+		throw new $TypeError('Assertion failed: `order` must be ~SEQ-CST~ or ~UNORDERED~');
+	}
+
+	// 1. If IsSharedArrayBuffer(arrayBuffer) is true and arrayBuffer has an [[ArrayBufferByteLengthData]] internal slot, then
+	// TODO: see if IsFixedLengthArrayBuffer can be used here in the spec instead
+	if (isSAB && isGrowable) { // step 1
+		// a. Let bufferByteLengthBlock be arrayBuffer.[[ArrayBufferByteLengthData]].
+		// b. Let rawLength be GetRawBytesFromSharedBlock(bufferByteLengthBlock, 0, BIGUINT64, true, order).
+		// c. Let isLittleEndian be the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+		// d. Return ℝ(RawBytesToNumeric(BIGUINT64, rawLength, isLittleEndian)).
+	}
+
+	if (IsDetachedBuffer(arrayBuffer)) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` must not be detached'); // step 2
+	}
+
+	return isSAB ? $sabByteLength(arrayBuffer) : arrayBufferByteLength(arrayBuffer);
+};
+
+
+/***/ }),
+
+/***/ 4597:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $BigInt = GetIntrinsic('%BigInt%', true);
+var $RangeError = __nccwpck_require__(14585);
+var $TypeError = __nccwpck_require__(73314);
+
+var zero = $BigInt && $BigInt(0);
+
+// https://262.ecma-international.org/11.0/#sec-numeric-types-bigint-remainder
+
+module.exports = function BigIntRemainder(n, d) {
+	if (typeof n !== 'bigint' || typeof d !== 'bigint') {
+		throw new $TypeError('Assertion failed: `n` and `d` arguments must be BigInts');
+	}
+
+	if (d === zero) {
+		throw new $RangeError('Division by zero');
+	}
+
+	if (n === zero) {
+		return zero;
+	}
+
+	// shortcut for the actual spec mechanics
+	return n % d;
+};
+
+
+/***/ }),
+
+/***/ 64273:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+var isObject = __nccwpck_require__(21040);
+
+var isPropertyDescriptor = __nccwpck_require__(2612);
+var DefineOwnProperty = __nccwpck_require__(62652);
+
+var FromPropertyDescriptor = __nccwpck_require__(1154);
+var IsDataDescriptor = __nccwpck_require__(21423);
+var isPropertyKey = __nccwpck_require__(7084);
+var SameValue = __nccwpck_require__(7311);
+var ToPropertyDescriptor = __nccwpck_require__(54679);
+
+// https://262.ecma-international.org/6.0/#sec-definepropertyorthrow
+
+module.exports = function DefinePropertyOrThrow(O, P, desc) {
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: Type(O) is not Object');
+	}
+
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: P is not a Property Key');
+	}
+
+	var Desc = isPropertyDescriptor(desc) ? desc : ToPropertyDescriptor(desc);
+	if (!isPropertyDescriptor(Desc)) {
+		throw new $TypeError('Assertion failed: Desc is not a valid Property Descriptor');
+	}
+
+	return DefineOwnProperty(
+		IsDataDescriptor,
+		SameValue,
+		FromPropertyDescriptor,
+		O,
+		P,
+		Desc
+	);
+};
+
+
+/***/ }),
+
+/***/ 1154:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var isPropertyDescriptor = __nccwpck_require__(2612);
+var fromPropertyDescriptor = __nccwpck_require__(29890);
+
+// https://262.ecma-international.org/6.0/#sec-frompropertydescriptor
+
+module.exports = function FromPropertyDescriptor(Desc) {
+	if (typeof Desc !== 'undefined' && !isPropertyDescriptor(Desc)) {
+		throw new $TypeError('Assertion failed: `Desc` must be a Property Descriptor');
+	}
+
+	return fromPropertyDescriptor(Desc);
+};
+
+
+/***/ }),
+
+/***/ 68036:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var inspect = __nccwpck_require__(60506);
+
+var isPropertyKey = __nccwpck_require__(7084);
+
+var isObject = __nccwpck_require__(21040);
+
+// https://262.ecma-international.org/6.0/#sec-get-o-p
+
+module.exports = function Get(O, P) {
+	// 7.3.1.1
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: Type(O) is not Object');
+	}
+	// 7.3.1.2
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: P is not a Property Key, got ' + inspect(P));
+	}
+	// 7.3.1.3
+	return O[P];
+};
+
+
+/***/ }),
+
+/***/ 18329:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+var callBound = __nccwpck_require__(23105);
+var isInteger = __nccwpck_require__(3647);
+var $Uint8Array = GetIntrinsic('%Uint8Array%', true);
+
+var $slice = callBound('Array.prototype.slice');
+
+var IsDetachedBuffer = __nccwpck_require__(26650);
+var RawBytesToNumeric = __nccwpck_require__(27011);
+
+var isArrayBuffer = __nccwpck_require__(96429);
+var isSharedArrayBuffer = __nccwpck_require__(12403);
+var safeConcat = __nccwpck_require__(22524);
+
+var tableTAO = __nccwpck_require__(41821);
+
+var defaultEndianness = __nccwpck_require__(19289);
+
+// https://262.ecma-international.org/15.0/#sec-getvaluefrombuffer
+
+module.exports = function GetValueFromBuffer(arrayBuffer, byteIndex, type, isTypedArray, order) {
+	var isSAB = isSharedArrayBuffer(arrayBuffer);
+	if (!isArrayBuffer(arrayBuffer) && !isSAB) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` must be an ArrayBuffer or a SharedArrayBuffer');
+	}
+
+	if (!isInteger(byteIndex)) {
+		throw new $TypeError('Assertion failed: `byteIndex` must be an integer');
+	}
+
+	if (typeof type !== 'string' || typeof tableTAO.size['$' + type] !== 'number') {
+		throw new $TypeError('Assertion failed: `type` must be one of ' + tableTAO.choices);
+	}
+
+	if (typeof isTypedArray !== 'boolean') {
+		throw new $TypeError('Assertion failed: `isTypedArray` must be a boolean');
+	}
+
+	if (order !== 'SEQ-CST' && order !== 'UNORDERED') {
+		throw new $TypeError('Assertion failed: `order` must be either `SEQ-CST` or `UNORDERED`');
+	}
+
+	if (arguments.length > 5 && typeof arguments[5] !== 'boolean') {
+		throw new $TypeError('Assertion failed: `isLittleEndian` must be a boolean, if present');
+	}
+
+	if (IsDetachedBuffer(arrayBuffer)) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` is detached'); // step 1
+	}
+
+	// 2. Assert: There are sufficient bytes in arrayBuffer starting at byteIndex to represent a value of type.
+
+	if (byteIndex < 0) {
+		throw new $TypeError('Assertion failed: `byteIndex` must be non-negative'); // step 3
+	}
+
+	// 4. Let block be arrayBuffer.[[ArrayBufferData]].
+
+	var elementSize = tableTAO.size['$' + type]; // step 5
+	if (!elementSize) {
+		throw new $TypeError('Assertion failed: `type` must be one of ' + tableTAO.choices);
+	}
+
+	var rawValue;
+	if (isSAB) { // step 6
+		/*
+		a. Let execution be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+		b. Let eventList be the [[EventList]] field of the element in execution.[[EventLists]] whose [[AgentSignifier]] is AgentSignifier().
+		c. If isTypedArray is true and type is "Int8", "Uint8", "Int16", "Uint16", "Int32", or "Uint32", let noTear be true; otherwise let noTear be false.
+		d. Let rawValue be a List of length elementSize of nondeterministically chosen byte values.
+		e. NOTE: In implementations, rawValue is the result of a non-atomic or atomic read instruction on the underlying hardware. The nondeterminism is a semantic prescription of the memory model to describe observable behaviour of hardware with weak consistency.
+		f. Let readEvent be ReadSharedMemory{ [[Order]]: order, [[NoTear]]: noTear, [[Block]]: block, [[ByteIndex]]: byteIndex, [[ElementSize]]: elementSize }.
+		g. Append readEvent to eventList.
+		h. Append Chosen Value Record { [[Event]]: readEvent, [[ChosenValue]]: rawValue } to execution.[[ChosenValues]].
+		*/
+		throw new $SyntaxError('SharedArrayBuffer is not supported by this implementation');
+	} else {
+		// 7. Let rawValue be a List of elementSize containing, in order, the elementSize sequence of bytes starting with block[byteIndex].
+		rawValue = $slice(new $Uint8Array(arrayBuffer, byteIndex), 0, elementSize); // step 6
+	}
+
+	// 8. If isLittleEndian is not present, set isLittleEndian to either true or false. The choice is implementation dependent and should be the alternative that is most efficient for the implementation. An implementation must use the same value each time this step is executed and the same value must be used for the corresponding step in the SetValueInBuffer abstract operation.
+	var isLittleEndian = arguments.length > 5 ? arguments[5] : defaultEndianness === 'little'; // step 8
+
+	var bytes = isLittleEndian
+		? $slice(safeConcat([0, 0, 0, 0, 0, 0, 0, 0], rawValue), -elementSize)
+		: $slice(safeConcat(rawValue, [0, 0, 0, 0, 0, 0, 0, 0]), 0, elementSize);
+
+	return RawBytesToNumeric(type, bytes, isLittleEndian);
+};
+
+
+/***/ }),
+
+/***/ 94327:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var hasOwn = __nccwpck_require__(54076);
+var isObject = __nccwpck_require__(21040);
+
+var isPropertyKey = __nccwpck_require__(7084);
+
+// https://262.ecma-international.org/6.0/#sec-hasownproperty
+
+module.exports = function HasOwnProperty(O, P) {
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: `O` must be an Object');
+	}
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: `P` must be a Property Key');
+	}
+	return hasOwn(O, P);
+};
+
+
+/***/ }),
+
+/***/ 94041:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// https://262.ecma-international.org/6.0/#sec-isarray
+module.exports = __nccwpck_require__(30233);
+
+
+/***/ }),
+
+/***/ 99757:
+/***/ ((module) => {
+
+
+
+// https://262.ecma-international.org/15.0/#sec-isbigintelementtype
+
+module.exports = function IsBigIntElementType(type) {
+	return type === 'BIGUINT64' || type === 'BIGINT64';
+};
+
+
+/***/ }),
+
+/***/ 30114:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// http://262.ecma-international.org/5.1/#sec-9.11
+
+module.exports = __nccwpck_require__(69203);
+
+
+/***/ }),
+
+/***/ 69028:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(82043);
+
+var $construct = GetIntrinsic('%Reflect.construct%', true);
+
+var DefinePropertyOrThrow = __nccwpck_require__(64273);
+try {
+	DefinePropertyOrThrow({}, '', { '[[Get]]': function () {} });
+} catch (e) {
+	// Accessor properties aren't supported
+	DefinePropertyOrThrow = null;
+}
+
+// https://262.ecma-international.org/6.0/#sec-isconstructor
+
+if (DefinePropertyOrThrow && $construct) {
+	var isConstructorMarker = {};
+	var badArrayLike = {};
+	DefinePropertyOrThrow(badArrayLike, 'length', {
+		'[[Get]]': function () {
+			throw isConstructorMarker;
+		},
+		'[[Enumerable]]': true
+	});
+
+	module.exports = function IsConstructor(argument) {
+		try {
+			// `Reflect.construct` invokes `IsConstructor(target)` before `Get(args, 'length')`:
+			$construct(argument, badArrayLike);
+		} catch (err) {
+			return err === isConstructorMarker;
+		}
+	};
+} else {
+	module.exports = function IsConstructor(argument) {
+		// unfortunately there's no way to truly check this without try/catch `new argument` in old environments
+		return typeof argument === 'function' && !!argument.prototype;
+	};
+}
+
+
+/***/ }),
+
+/***/ 21423:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var hasOwn = __nccwpck_require__(54076);
+
+var isPropertyDescriptor = __nccwpck_require__(2612);
+
+// https://262.ecma-international.org/5.1/#sec-8.10.2
+
+module.exports = function IsDataDescriptor(Desc) {
+	if (typeof Desc === 'undefined') {
+		return false;
+	}
+
+	if (!isPropertyDescriptor(Desc)) {
+		throw new $TypeError('Assertion failed: `Desc` must be a Property Descriptor');
+	}
+
+	if (!hasOwn(Desc, '[[Value]]') && !hasOwn(Desc, '[[Writable]]')) {
+		return false;
+	}
+
+	return true;
+};
+
+
+/***/ }),
+
+/***/ 26650:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var $byteLength = __nccwpck_require__(49290);
+var availableTypedArrays = __nccwpck_require__(51506)();
+var callBound = __nccwpck_require__(23105);
+var isArrayBuffer = __nccwpck_require__(96429);
+var isSharedArrayBuffer = __nccwpck_require__(12403);
+
+var $sabByteLength = callBound('SharedArrayBuffer.prototype.byteLength', true);
+
+// https://262.ecma-international.org/8.0/#sec-isdetachedbuffer
+
+module.exports = function IsDetachedBuffer(arrayBuffer) {
+	var isSAB = isSharedArrayBuffer(arrayBuffer);
+	if (!isArrayBuffer(arrayBuffer) && !isSAB) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` must be an Object with an [[ArrayBufferData]] internal slot');
+	}
+	if ((isSAB ? $sabByteLength : $byteLength)(arrayBuffer) === 0) {
+		try {
+			new global[availableTypedArrays[0]](arrayBuffer); // eslint-disable-line no-new
+		} catch (error) {
+			return !!error && error.name === 'TypeError';
+		}
+	}
+	return false;
+};
+
+
+/***/ }),
+
+/***/ 91643:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var callBound = __nccwpck_require__(23105);
+
+var $arrayBufferResizable = callBound('%ArrayBuffer.prototype.resizable%', true);
+var $sharedArrayGrowable = callBound('%SharedArrayBuffer.prototype.growable%', true);
+
+var isArrayBuffer = __nccwpck_require__(96429);
+var isSharedArrayBuffer = __nccwpck_require__(12403);
+
+// https://262.ecma-international.org/15.0/#sec-isfixedlengtharraybuffer
+
+module.exports = function IsFixedLengthArrayBuffer(arrayBuffer) {
+	var isAB = isArrayBuffer(arrayBuffer);
+	var isSAB = isSharedArrayBuffer(arrayBuffer);
+	if (!isAB && !isSAB) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` must be an ArrayBuffer or SharedArrayBuffer');
+	}
+
+	if (isAB && $arrayBufferResizable) {
+		return !$arrayBufferResizable(arrayBuffer); // step 1
+	}
+	if (isSAB && $sharedArrayGrowable) {
+		return !$sharedArrayGrowable(arrayBuffer); // step 1
+	}
+	return true; // step 2
+};
+
+
+/***/ }),
+
+/***/ 12223:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var IsDetachedBuffer = __nccwpck_require__(26650);
+var IsFixedLengthArrayBuffer = __nccwpck_require__(91643);
+var TypedArrayElementSize = __nccwpck_require__(18866);
+
+var isTypedArrayWithBufferWitnessRecord = __nccwpck_require__(53937);
+
+var typedArrayBuffer = __nccwpck_require__(58489);
+var typedArrayByteOffset = __nccwpck_require__(23363);
+var typedArrayLength = __nccwpck_require__(53655);
+
+// https://262.ecma-international.org/15.0/#sec-istypedarrayoutofbounds
+
+module.exports = function IsTypedArrayOutOfBounds(taRecord) {
+	if (!isTypedArrayWithBufferWitnessRecord(taRecord)) {
+		throw new $TypeError('Assertion failed: `taRecord` must be a TypedArray With Buffer Witness Record');
+	}
+
+	var O = taRecord['[[Object]]']; // step 1
+
+	var bufferByteLength = taRecord['[[CachedBufferByteLength]]']; // step 2
+
+	if (IsDetachedBuffer(typedArrayBuffer(O)) && bufferByteLength !== 'DETACHED') {
+		throw new $TypeError('Assertion failed: typed array is detached only if the byte length is ~DETACHED~'); // step 3
+	}
+
+	if (bufferByteLength === 'DETACHED') {
+		return true; // step 4
+	}
+
+	var byteOffsetStart = typedArrayByteOffset(O); // step 5
+
+	var isFixed = IsFixedLengthArrayBuffer(typedArrayBuffer(O));
+
+	var byteOffsetEnd;
+	var length = isFixed ? typedArrayLength(O) : 'AUTO';
+	// TODO: probably use package for array length
+	// seems to apply when TA is backed by a resizable/growable AB
+	if (length === 'AUTO') { // step 6
+		byteOffsetEnd = bufferByteLength; // step 6.a
+	} else {
+		var elementSize = TypedArrayElementSize(O); // step 7.a
+
+		byteOffsetEnd = byteOffsetStart + (length * elementSize); // step 7.b
+	}
+
+	if (byteOffsetStart > bufferByteLength || byteOffsetEnd > bufferByteLength) {
+		return true; // step 8
+	}
+
+	// 9. NOTE: 0-length TypedArrays are not considered out-of-bounds.
+
+	return false; // step 10
+};
+
+
+/***/ }),
+
+/***/ 52297:
+/***/ ((module) => {
+
+
+
+// https://262.ecma-international.org/15.0/#sec-isunsignedelementtype
+
+module.exports = function IsUnsignedElementType(type) {
+	return type === 'UINT8'
+		|| type === 'UINT8C'
+		|| type === 'UINT16'
+		|| type === 'UINT32'
+		|| type === 'BIGUINT64';
+};
+
+
+/***/ }),
+
+/***/ 93117:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var ArrayBufferByteLength = __nccwpck_require__(90265);
+var IsDetachedBuffer = __nccwpck_require__(26650);
+
+var isTypedArray = __nccwpck_require__(6405);
+var typedArrayBuffer = __nccwpck_require__(58489);
+
+// https://262.ecma-international.org/15.0/#sec-maketypedarraywithbufferwitnessrecord
+
+module.exports = function MakeTypedArrayWithBufferWitnessRecord(obj, order) {
+	if (!isTypedArray(obj)) {
+		throw new $TypeError('Assertion failed: `obj` must be a Typed Array');
+	}
+	if (order !== 'SEQ-CST' && order !== 'UNORDERED') {
+		throw new $TypeError('Assertion failed: `order` must be ~SEQ-CST~ or ~UNORDERED~');
+	}
+
+	var buffer = typedArrayBuffer(obj); // step 1
+
+	var byteLength = IsDetachedBuffer(buffer) ? 'DETACHED' : ArrayBufferByteLength(buffer, order); // steps 2 - 3
+
+	return { '[[Object]]': obj, '[[CachedBufferByteLength]]': byteLength }; // step 4
+};
+
+
+/***/ }),
+
+/***/ 53795:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var hasOwnProperty = __nccwpck_require__(94327);
+var ToBigInt64 = __nccwpck_require__(88586);
+var ToBigUint64 = __nccwpck_require__(82531);
+var ToInt16 = __nccwpck_require__(25089);
+var ToInt32 = __nccwpck_require__(64543);
+var ToInt8 = __nccwpck_require__(63836);
+var ToUint16 = __nccwpck_require__(32712);
+var ToUint32 = __nccwpck_require__(89942);
+var ToUint8 = __nccwpck_require__(41075);
+var ToUint8Clamp = __nccwpck_require__(26304);
+
+var valueToFloat16Bytes = __nccwpck_require__(15592);
+var valueToFloat32Bytes = __nccwpck_require__(44558);
+var valueToFloat64Bytes = __nccwpck_require__(66951);
+var integerToNBytes = __nccwpck_require__(27854);
+
+var tableTAO = __nccwpck_require__(41821);
+
+// https://262.ecma-international.org/15.0/#table-the-typedarray-constructors
+var TypeToAO = {
+	__proto__: null,
+	$INT8: ToInt8,
+	$UINT8: ToUint8,
+	$UINT8C: ToUint8Clamp,
+	$INT16: ToInt16,
+	$UINT16: ToUint16,
+	$INT32: ToInt32,
+	$UINT32: ToUint32,
+	$BIGINT64: ToBigInt64,
+	$BIGUINT64: ToBigUint64
+};
+
+// https://262.ecma-international.org/16.0/#sec-numerictorawbytes
+
+module.exports = function NumericToRawBytes(type, value, isLittleEndian) {
+	if (typeof type !== 'string' || !hasOwnProperty(tableTAO.size, '$' + type)) {
+		throw new $TypeError('Assertion failed: `type` must be a TypedArray element type');
+	}
+	if (typeof value !== 'number' && typeof value !== 'bigint') {
+		throw new $TypeError('Assertion failed: `value` must be a Number or a BigInt');
+	}
+	if (typeof isLittleEndian !== 'boolean') {
+		throw new $TypeError('Assertion failed: `isLittleEndian` must be a Boolean');
+	}
+
+	if (type === 'FLOAT16') { // step 1
+		return valueToFloat16Bytes(value, isLittleEndian);
+	} else if (type === 'FLOAT32') { // step 2
+		return valueToFloat32Bytes(value, isLittleEndian);
+	} else if (type === 'FLOAT64') { // step 3
+		return valueToFloat64Bytes(value, isLittleEndian);
+	} // step 4
+
+	var n = tableTAO.size['$' + type]; // step 4.a
+
+	var convOp = TypeToAO['$' + type]; // step 4.b
+
+	var intValue = convOp(value); // step 4.c
+
+	return integerToNBytes(intValue, n, isLittleEndian); // step 4.d, 4.e, 5
+};
+
+
+/***/ }),
+
+/***/ 27011:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+var callBound = __nccwpck_require__(23105);
+
+var $RangeError = __nccwpck_require__(14585);
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+var $BigInt = GetIntrinsic('%BigInt%', true);
+
+var hasOwnProperty = __nccwpck_require__(94327);
+var IsArray = __nccwpck_require__(94041);
+var IsBigIntElementType = __nccwpck_require__(99757);
+var IsUnsignedElementType = __nccwpck_require__(52297);
+
+var bytesAsFloat16 = __nccwpck_require__(91914);
+var bytesAsFloat32 = __nccwpck_require__(77524);
+var bytesAsFloat64 = __nccwpck_require__(86051);
+var bytesAsInteger = __nccwpck_require__(74593);
+var every = __nccwpck_require__(89835);
+var isByteValue = __nccwpck_require__(51315);
+
+var $reverse = callBound('Array.prototype.reverse');
+var $slice = callBound('Array.prototype.slice');
+
+var tableTAO = __nccwpck_require__(41821);
+
+// https://262.ecma-international.org/15.0/#sec-rawbytestonumeric
+
+module.exports = function RawBytesToNumeric(type, rawBytes, isLittleEndian) {
+	if (!hasOwnProperty(tableTAO.size, '$' + type)) {
+		throw new $TypeError('Assertion failed: `type` must be a TypedArray element type');
+	}
+	if (!IsArray(rawBytes) || !every(rawBytes, isByteValue)) {
+		throw new $TypeError('Assertion failed: `rawBytes` must be an Array of bytes');
+	}
+	if (typeof isLittleEndian !== 'boolean') {
+		throw new $TypeError('Assertion failed: `isLittleEndian` must be a Boolean');
+	}
+
+	var elementSize = tableTAO.size['$' + type]; // step 1
+
+	if (rawBytes.length !== elementSize) {
+		// this assertion is not in the spec, but it'd be an editorial error if it were ever violated
+		throw new $RangeError('Assertion failed: `rawBytes` must have a length of ' + elementSize + ' for type ' + type);
+	}
+
+	var isBigInt = IsBigIntElementType(type);
+	if (isBigInt && !$BigInt) {
+		throw new $SyntaxError('this environment does not support BigInts');
+	}
+
+	// eslint-disable-next-line no-param-reassign
+	rawBytes = $slice(rawBytes, 0, elementSize);
+	if (!isLittleEndian) {
+		$reverse(rawBytes); // step 2
+	}
+
+	if (type === 'FLOAT16') { // step 3
+		return bytesAsFloat16(rawBytes);
+	}
+
+	if (type === 'FLOAT32') { // step 4
+		return bytesAsFloat32(rawBytes);
+	}
+
+	if (type === 'FLOAT64') { // step 5
+		return bytesAsFloat64(rawBytes);
+	}
+
+	return bytesAsInteger(rawBytes, elementSize, IsUnsignedElementType(type), isBigInt);
+};
+
+
+/***/ }),
+
+/***/ 7311:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $isNaN = __nccwpck_require__(77044);
+
+// http://262.ecma-international.org/5.1/#sec-9.12
+
+module.exports = function SameValue(x, y) {
+	if (x === y) { // 0 === -0, but they are not identical.
+		if (x === 0) { return 1 / x === 1 / y; }
+		return true;
+	}
+	return $isNaN(x) && $isNaN(y);
+};
+
+
+/***/ }),
+
+/***/ 51328:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+var isObject = __nccwpck_require__(21040);
+
+var isPropertyKey = __nccwpck_require__(7084);
+var SameValue = __nccwpck_require__(7311);
+
+// IE 9 does not throw in strict mode when writability/configurability/extensibility is violated
+var noThrowOnStrictViolation = (function () {
+	try {
+		delete [].length;
+		return true;
+	} catch (e) {
+		return false;
+	}
+}());
+
+// https://262.ecma-international.org/6.0/#sec-set-o-p-v-throw
+
+module.exports = function Set(O, P, V, Throw) {
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: `O` must be an Object');
+	}
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: `P` must be a Property Key');
+	}
+	if (typeof Throw !== 'boolean') {
+		throw new $TypeError('Assertion failed: `Throw` must be a Boolean');
+	}
+	if (Throw) {
+		O[P] = V; // eslint-disable-line no-param-reassign
+		if (noThrowOnStrictViolation && !SameValue(O[P], V)) {
+			throw new $TypeError('Attempted to assign to readonly property.');
+		}
+		return true;
+	}
+	try {
+		O[P] = V; // eslint-disable-line no-param-reassign
+		return noThrowOnStrictViolation ? SameValue(O[P], V) : true;
+	} catch (e) {
+		return false;
+	}
+
+};
+
+
+/***/ }),
+
+/***/ 85758:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+var isInteger = __nccwpck_require__(3647);
+var $Uint8Array = GetIntrinsic('%Uint8Array%', true);
+
+var IsBigIntElementType = __nccwpck_require__(99757);
+var IsDetachedBuffer = __nccwpck_require__(26650);
+var NumericToRawBytes = __nccwpck_require__(53795);
+
+var isArrayBuffer = __nccwpck_require__(96429);
+var isSharedArrayBuffer = __nccwpck_require__(12403);
+var hasOwn = __nccwpck_require__(54076);
+
+var tableTAO = __nccwpck_require__(41821);
+
+var defaultEndianness = __nccwpck_require__(19289);
+var forEach = __nccwpck_require__(64930);
+
+// https://262.ecma-international.org/15.0/#sec-setvalueinbuffer
+
+/* eslint max-params: 0 */
+
+module.exports = function SetValueInBuffer(arrayBuffer, byteIndex, type, value, isTypedArray, order) {
+	var isSAB = isSharedArrayBuffer(arrayBuffer);
+	if (!isArrayBuffer(arrayBuffer) && !isSAB) {
+		throw new $TypeError('Assertion failed: `arrayBuffer` must be an ArrayBuffer or a SharedArrayBuffer');
+	}
+
+	if (!isInteger(byteIndex) || byteIndex < 0) {
+		throw new $TypeError('Assertion failed: `byteIndex` must be a non-negative integer');
+	}
+
+	if (typeof type !== 'string' || !hasOwn(tableTAO.size, '$' + type)) {
+		throw new $TypeError('Assertion failed: `type` must be one of ' + tableTAO.choices);
+	}
+
+	if (typeof value !== 'number' && typeof value !== 'bigint') {
+		throw new $TypeError('Assertion failed: `value` must be a Number or a BigInt');
+	}
+
+	if (typeof isTypedArray !== 'boolean') {
+		throw new $TypeError('Assertion failed: `isTypedArray` must be a boolean');
+	}
+	if (order !== 'SEQ-CST' && order !== 'UNORDERED' && order !== 'INIT') {
+		throw new $TypeError('Assertion failed: `order` must be `"SEQ-CST"`, `"UNORDERED"`, or `"INIT"`');
+	}
+
+	if (arguments.length > 6 && typeof arguments[6] !== 'boolean') {
+		throw new $TypeError('Assertion failed: `isLittleEndian` must be a boolean, if present');
+	}
+
+	if (IsDetachedBuffer(arrayBuffer)) {
+		throw new $TypeError('Assertion failed: ArrayBuffer is detached'); // step 1
+	}
+
+	// 2. Assert: There are sufficient bytes in arrayBuffer starting at byteIndex to represent a value of type.
+
+	if (IsBigIntElementType(type) ? typeof value !== 'bigint' : typeof value !== 'number') { // step 3
+		throw new $TypeError('Assertion failed: `value` must be a BigInt if type is ~BIGINT64~ or ~BIGUINT64~, otherwise a Number');
+	}
+
+	// 4. Let block be arrayBuffer’s [[ArrayBufferData]] internal slot.
+
+	var elementSize = tableTAO.size['$' + type]; // step 5
+
+	// 6. If isLittleEndian is not present, set isLittleEndian to either true or false. The choice is implementation dependent and should be the alternative that is most efficient for the implementation. An implementation must use the same value each time this step is executed and the same value must be used for the corresponding step in the GetValueFromBuffer abstract operation.
+	var isLittleEndian = arguments.length > 6 ? arguments[6] : defaultEndianness === 'little'; // step 6
+
+	var rawBytes = NumericToRawBytes(type, value, isLittleEndian); // step 7
+
+	if (isSAB) { // step 8
+		/*
+			Let execution be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+			Let eventList be the [[EventList]] field of the element in execution.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+			If isTypedArray is true and IsNoTearConfiguration(type, order) is true, let noTear be true; otherwise let noTear be false.
+			Append WriteSharedMemory { [[Order]]: order, [[NoTear]]: noTear, [[Block]]: block, [[ByteIndex]]: byteIndex, [[ElementSize]]: elementSize, [[Payload]]: rawBytes } to eventList.
+		*/
+		throw new $SyntaxError('SharedArrayBuffer is not supported by this implementation');
+	} else {
+		// 9. Store the individual bytes of rawBytes into block, in order, starting at block[byteIndex].
+		var arr = new $Uint8Array(arrayBuffer, byteIndex, elementSize);
+		forEach(rawBytes, function (rawByte, i) {
+			arr[i] = rawByte;
+		});
+	}
+
+	// 10. Return NormalCompletion(undefined).
+};
+
+
+/***/ }),
+
+/***/ 98080:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $species = GetIntrinsic('%Symbol.species%', true);
+var $TypeError = __nccwpck_require__(73314);
+var isObject = __nccwpck_require__(21040);
+
+var IsConstructor = __nccwpck_require__(69028);
+
+// https://262.ecma-international.org/6.0/#sec-speciesconstructor
+
+module.exports = function SpeciesConstructor(O, defaultConstructor) {
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: Type(O) is not Object');
+	}
+	var C = O.constructor;
+	if (typeof C === 'undefined') {
+		return defaultConstructor;
+	}
+	if (!isObject(C)) {
+		throw new $TypeError('O.constructor is not an Object');
+	}
+	var S = $species ? C[$species] : void 0;
+	if (S == null) {
+		return defaultConstructor;
+	}
+	if (IsConstructor(S)) {
+		return S;
+	}
+	throw new $TypeError('no constructor found');
+};
+
+
+/***/ }),
+
+/***/ 47129:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $BigInt = GetIntrinsic('%BigInt%', true);
+var $TypeError = __nccwpck_require__(73314);
+var $SyntaxError = __nccwpck_require__(80105);
+
+// https://262.ecma-international.org/14.0/#sec-stringtobigint
+
+module.exports = function StringToBigInt(argument) {
+	if (typeof argument !== 'string') {
+		throw new $TypeError('`argument` must be a string');
+	}
+	if (!$BigInt) {
+		throw new $SyntaxError('BigInts are not supported in this environment');
+	}
+	try {
+		return $BigInt(argument);
+	} catch (e) {
+		return void undefined;
+	}
+};
+
+
+/***/ }),
+
+/***/ 5819:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $RegExp = GetIntrinsic('%RegExp%');
+var $TypeError = __nccwpck_require__(73314);
+var $parseInteger = GetIntrinsic('%parseInt%');
+
+var callBound = __nccwpck_require__(23105);
+var regexTester = __nccwpck_require__(93470);
+
+var $strSlice = callBound('String.prototype.slice');
+var isBinary = regexTester(/^0b[01]+$/i);
+var isOctal = regexTester(/^0o[0-7]+$/i);
+var isInvalidHexLiteral = regexTester(/^[-+]0x[0-9a-f]+$/i);
+var nonWS = ['\u0085', '\u200b', '\ufffe'].join('');
+var nonWSregex = new $RegExp('[' + nonWS + ']', 'g');
+var hasNonWS = regexTester(nonWSregex);
+
+var $trim = __nccwpck_require__(20941);
+
+// https://262.ecma-international.org/13.0/#sec-stringtonumber
+
+module.exports = function StringToNumber(argument) {
+	if (typeof argument !== 'string') {
+		throw new $TypeError('Assertion failed: `argument` is not a String');
+	}
+	if (isBinary(argument)) {
+		return +$parseInteger($strSlice(argument, 2), 2);
+	}
+	if (isOctal(argument)) {
+		return +$parseInteger($strSlice(argument, 2), 8);
+	}
+	if (hasNonWS(argument) || isInvalidHexLiteral(argument)) {
+		return NaN;
+	}
+	var trimmed = $trim(argument);
+	if (trimmed !== argument) {
+		return StringToNumber(trimmed);
+	}
+	return +argument;
+};
+
+
+/***/ }),
+
+/***/ 7512:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $BigInt = GetIntrinsic('%BigInt%', true);
+var $Number = GetIntrinsic('%Number%');
+var $TypeError = __nccwpck_require__(73314);
+var $SyntaxError = __nccwpck_require__(80105);
+
+var StringToBigInt = __nccwpck_require__(47129);
+var ToPrimitive = __nccwpck_require__(42678);
+
+// https://262.ecma-international.org/13.0/#sec-tobigint
+
+module.exports = function ToBigInt(argument) {
+	if (!$BigInt) {
+		throw new $SyntaxError('BigInts are not supported in this environment');
+	}
+
+	var prim = ToPrimitive(argument, $Number);
+
+	if (prim == null) {
+		throw new $TypeError('Cannot convert null or undefined to a BigInt');
+	}
+
+	if (typeof prim === 'boolean') {
+		return prim ? $BigInt(1) : $BigInt(0);
+	}
+
+	if (typeof prim === 'number') {
+		throw new $TypeError('Cannot convert a Number value to a BigInt');
+	}
+
+	if (typeof prim === 'string') {
+		var n = StringToBigInt(prim);
+		if (typeof n === 'undefined') {
+			throw new $TypeError('Failed to parse String to BigInt');
+		}
+		return n;
+	}
+
+	if (typeof prim === 'symbol') {
+		throw new $TypeError('Cannot convert a Symbol value to a BigInt');
+	}
+
+	if (typeof prim !== 'bigint') {
+		throw new $SyntaxError('Assertion failed: unknown primitive type');
+	}
+
+	return prim;
+};
+
+
+/***/ }),
+
+/***/ 88586:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $BigInt = GetIntrinsic('%BigInt%', true);
+var $pow = __nccwpck_require__(56947);
+
+var ToBigInt = __nccwpck_require__(7512);
+var BigIntRemainder = __nccwpck_require__(4597);
+
+var modBigInt = __nccwpck_require__(49843);
+
+// BigInt(2**63), but node v10.4-v10.8 have a bug where you can't `BigInt(x)` anything larger than MAX_SAFE_INTEGER
+var twoSixtyThree = $BigInt && (BigInt($pow(2, 32)) * BigInt($pow(2, 31)));
+
+// BigInt(2**64), but node v10.4-v10.8 have a bug where you can't `BigInt(x)` anything larger than MAX_SAFE_INTEGER
+var twoSixtyFour = $BigInt && (BigInt($pow(2, 32)) * BigInt($pow(2, 32)));
+
+// https://262.ecma-international.org/11.0/#sec-tobigint64
+
+module.exports = function ToBigInt64(argument) {
+	var n = ToBigInt(argument);
+	var int64bit = modBigInt(BigIntRemainder, n, twoSixtyFour);
+	return int64bit >= twoSixtyThree ? int64bit - twoSixtyFour : int64bit;
+};
+
+
+/***/ }),
+
+/***/ 82531:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $BigInt = GetIntrinsic('%BigInt%', true);
+
+var $pow = __nccwpck_require__(56947);
+
+var ToBigInt = __nccwpck_require__(7512);
+var BigIntRemainder = __nccwpck_require__(4597);
+
+var modBigInt = __nccwpck_require__(49843);
+
+// BigInt(2**64), but node v10.4-v10.8 have a bug where you can't `BigInt(x)` anything larger than MAX_SAFE_INTEGER
+var twoSixtyFour = $BigInt && (BigInt($pow(2, 32)) * BigInt($pow(2, 32)));
+
+// https://262.ecma-international.org/11.0/#sec-tobiguint64
+
+module.exports = function ToBigUint64(argument) {
+	var n = ToBigInt(argument);
+	var int64bit = modBigInt(BigIntRemainder, n, twoSixtyFour);
+	return int64bit;
+};
+
+
+/***/ }),
+
+/***/ 11967:
+/***/ ((module) => {
+
+
+
+// http://262.ecma-international.org/5.1/#sec-9.2
+
+module.exports = function ToBoolean(value) { return !!value; };
+
+
+/***/ }),
+
+/***/ 25089:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var modulo = __nccwpck_require__(90460);
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+var isFinite = __nccwpck_require__(3766);
+
+// https://262.ecma-international.org/14.0/#sec-toint16
+
+var two16 = 0x10000; // Math.pow(2, 16);
+
+module.exports = function ToInt16(argument) {
+	var number = ToNumber(argument);
+	if (!isFinite(number) || number === 0) {
+		return 0;
+	}
+	var int = truncate(number);
+	var int16bit = modulo(int, two16);
+	return int16bit >= 0x8000 ? int16bit - two16 : int16bit;
+};
+
+
+/***/ }),
+
+/***/ 64543:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var modulo = __nccwpck_require__(90460);
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+var isFinite = __nccwpck_require__(3766);
+
+// https://262.ecma-international.org/14.0/#sec-toint32
+
+var two31 = 0x80000000; // Math.pow(2, 31);
+var two32 = 0x100000000; // Math.pow(2, 32);
+
+module.exports = function ToInt32(argument) {
+	var number = ToNumber(argument);
+	if (!isFinite(number) || number === 0) {
+		return 0;
+	}
+	var int = truncate(number);
+	var int32bit = modulo(int, two32);
+	var result = int32bit >= two31 ? int32bit - two32 : int32bit;
+	return result === 0 ? 0 : result; // in the spec, these are math values, so we filter out -0 here
+};
+
+
+/***/ }),
+
+/***/ 63836:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var modulo = __nccwpck_require__(90460);
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+var isFinite = __nccwpck_require__(3766);
+
+// https://262.ecma-international.org/14.0/#sec-toint8
+
+module.exports = function ToInt8(argument) {
+	var number = ToNumber(argument);
+	if (!isFinite(number) || number === 0) {
+		return 0;
+	}
+	var int = truncate(number);
+	var int8bit = modulo(int, 0x100);
+	return int8bit >= 0x80 ? int8bit - 0x100 : int8bit;
+};
+
+
+/***/ }),
+
+/***/ 57568:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+var $isNaN = __nccwpck_require__(77044);
+var $isFinite = __nccwpck_require__(3766);
+
+// https://262.ecma-international.org/14.0/#sec-tointegerorinfinity
+
+module.exports = function ToIntegerOrInfinity(value) {
+	var number = ToNumber(value);
+	if ($isNaN(number) || number === 0) { return 0; }
+	if (!$isFinite(number)) { return number; }
+	return truncate(number);
+};
+
+
+/***/ }),
+
+/***/ 49094:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $TypeError = __nccwpck_require__(73314);
+var $Number = GetIntrinsic('%Number%');
+var isPrimitive = __nccwpck_require__(67369);
+
+var ToPrimitive = __nccwpck_require__(42678);
+var StringToNumber = __nccwpck_require__(5819);
+
+// https://262.ecma-international.org/13.0/#sec-tonumber
+
+module.exports = function ToNumber(argument) {
+	var value = isPrimitive(argument) ? argument : ToPrimitive(argument, $Number);
+	if (typeof value === 'symbol') {
+		throw new $TypeError('Cannot convert a Symbol value to a number');
+	}
+	if (typeof value === 'bigint') {
+		throw new $TypeError('Conversion from \'BigInt\' to \'number\' is not allowed.');
+	}
+	if (typeof value === 'string') {
+		return StringToNumber(value);
+	}
+	return +value;
+};
+
+
+/***/ }),
+
+/***/ 42678:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var toPrimitive = __nccwpck_require__(75604);
+
+// https://262.ecma-international.org/6.0/#sec-toprimitive
+
+module.exports = function ToPrimitive(input) {
+	if (arguments.length > 1) {
+		return toPrimitive(input, arguments[1]);
+	}
+	return toPrimitive(input);
+};
+
+
+/***/ }),
+
+/***/ 54679:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var hasOwn = __nccwpck_require__(54076);
+
+var $TypeError = __nccwpck_require__(73314);
+var isObject = __nccwpck_require__(21040);
+
+var IsCallable = __nccwpck_require__(30114);
+var ToBoolean = __nccwpck_require__(11967);
+
+// https://262.ecma-international.org/5.1/#sec-8.10.5
+
+module.exports = function ToPropertyDescriptor(Obj) {
+	if (!isObject(Obj)) {
+		throw new $TypeError('ToPropertyDescriptor requires an object');
+	}
+
+	var desc = {};
+	if (hasOwn(Obj, 'enumerable')) {
+		desc['[[Enumerable]]'] = ToBoolean(Obj.enumerable);
+	}
+	if (hasOwn(Obj, 'configurable')) {
+		desc['[[Configurable]]'] = ToBoolean(Obj.configurable);
+	}
+	if (hasOwn(Obj, 'value')) {
+		desc['[[Value]]'] = Obj.value;
+	}
+	if (hasOwn(Obj, 'writable')) {
+		desc['[[Writable]]'] = ToBoolean(Obj.writable);
+	}
+	if (hasOwn(Obj, 'get')) {
+		var getter = Obj.get;
+		if (typeof getter !== 'undefined' && !IsCallable(getter)) {
+			throw new $TypeError('getter must be a function');
+		}
+		desc['[[Get]]'] = getter;
+	}
+	if (hasOwn(Obj, 'set')) {
+		var setter = Obj.set;
+		if (typeof setter !== 'undefined' && !IsCallable(setter)) {
+			throw new $TypeError('setter must be a function');
+		}
+		desc['[[Set]]'] = setter;
+	}
+
+	if ((hasOwn(desc, '[[Get]]') || hasOwn(desc, '[[Set]]')) && (hasOwn(desc, '[[Value]]') || hasOwn(desc, '[[Writable]]'))) {
+		throw new $TypeError('Invalid property descriptor. Cannot both specify accessors and a value or writable attribute');
+	}
+	return desc;
+};
+
+
+/***/ }),
+
+/***/ 35038:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $String = GetIntrinsic('%String%');
+var $TypeError = __nccwpck_require__(73314);
+
+// https://262.ecma-international.org/6.0/#sec-tostring
+
+module.exports = function ToString(argument) {
+	if (typeof argument === 'symbol') {
+		throw new $TypeError('Cannot convert a Symbol value to a string');
+	}
+	return $String(argument);
+};
+
+
+/***/ }),
+
+/***/ 32712:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var modulo = __nccwpck_require__(90460);
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+var isFinite = __nccwpck_require__(3766);
+
+// https://262.ecma-international.org/14.0/#sec-touint16
+
+var two16 = 0x10000; // Math.pow(2, 16)
+
+module.exports = function ToUint16(argument) {
+	var number = ToNumber(argument);
+	if (!isFinite(number) || number === 0) {
+		return 0;
+	}
+	var int = truncate(number);
+	var int16bit = modulo(int, two16);
+	return int16bit === 0 ? 0 : int16bit; // in the spec, these are math values, so we filter out -0 here
+};
+
+
+/***/ }),
+
+/***/ 89942:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var modulo = __nccwpck_require__(90460);
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+var isFinite = __nccwpck_require__(3766);
+
+// https://262.ecma-international.org/14.0/#sec-touint32
+
+var two32 = 0x100000000; // Math.pow(2, 32);
+
+module.exports = function ToUint32(argument) {
+	var number = ToNumber(argument);
+	if (!isFinite(number) || number === 0) {
+		return 0;
+	}
+	var int = truncate(number);
+	var int32bit = modulo(int, two32);
+	return int32bit === 0 ? 0 : int32bit; // in the spec, these are math values, so we filter out -0 here
+};
+
+
+/***/ }),
+
+/***/ 41075:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var isFinite = __nccwpck_require__(3766);
+
+var modulo = __nccwpck_require__(90460);
+var ToNumber = __nccwpck_require__(49094);
+var truncate = __nccwpck_require__(60700);
+
+// https://262.ecma-international.org/14.0/#sec-touint8
+
+module.exports = function ToUint8(argument) {
+	var number = ToNumber(argument);
+	if (!isFinite(number) || number === 0) {
+		return 0;
+	}
+	var int = truncate(number);
+	var int8bit = modulo(int, 0x100);
+	return int8bit;
+};
+
+
+/***/ }),
+
+/***/ 26304:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var clamp = __nccwpck_require__(95835);
+
+var ToNumber = __nccwpck_require__(49094);
+var floor = __nccwpck_require__(85638);
+
+var $isNaN = __nccwpck_require__(77044);
+
+// https://262.ecma-international.org/15.0/#sec-touint8clamp
+
+module.exports = function ToUint8Clamp(argument) {
+	var number = ToNumber(argument); // step 1
+
+	if ($isNaN(number)) { return 0; } // step 2
+
+	var clamped = clamp(number, 0, 255); // step 4
+
+	var f = floor(clamped); // step 5
+
+	if (clamped < (f + 0.5)) { return f; } // step 6
+
+	if (clamped > (f + 0.5)) { return f + 1; } // step 7
+
+	return f % 2 === 0 ? f : f + 1; // step 8
+};
+
+
+/***/ }),
+
+/***/ 43623:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+
+var IsArray = __nccwpck_require__(94041);
+var IsConstructor = __nccwpck_require__(69028);
+var IsTypedArrayOutOfBounds = __nccwpck_require__(12223);
+var TypedArrayLength = __nccwpck_require__(57571);
+var ValidateTypedArray = __nccwpck_require__(77425);
+
+var availableTypedArrays = __nccwpck_require__(51506)();
+
+// https://262.ecma-international.org/15.0/#typedarraycreatefromconstructor
+
+module.exports = function TypedArrayCreateFromConstructor(constructor, argumentList) {
+	if (!IsConstructor(constructor)) {
+		throw new $TypeError('Assertion failed: `constructor` must be a constructor');
+	}
+	if (!IsArray(argumentList)) {
+		throw new $TypeError('Assertion failed: `argumentList` must be a List');
+	}
+	if (availableTypedArrays.length === 0) {
+		throw new $SyntaxError('Assertion failed: Typed Arrays are not supported in this environment');
+	}
+
+	// var newTypedArray = Construct(constructor, argumentList); // step 1
+	var newTypedArray;
+	if (argumentList.length === 0) {
+		newTypedArray = new constructor();
+	} else if (argumentList.length === 1) {
+		newTypedArray = new constructor(argumentList[0]);
+	} else if (argumentList.length === 2) {
+		newTypedArray = new constructor(argumentList[0], argumentList[1]);
+	} else {
+		newTypedArray = new constructor(argumentList[0], argumentList[1], argumentList[2]);
+	}
+
+	var taRecord = ValidateTypedArray(newTypedArray, 'SEQ-CST'); // step 2
+
+	if (argumentList.length === 1 && typeof argumentList[0] === 'number') { // step 3
+		if (IsTypedArrayOutOfBounds(taRecord)) {
+			throw new $TypeError('new Typed Array is out of bounds'); // step 3.a
+		}
+		var length = TypedArrayLength(taRecord); // step 3.b
+		if (length < argumentList[0]) {
+			throw new $TypeError('`argumentList[0]` must be <= `newTypedArray.length`'); // step 3.c
+		}
+	}
+
+	return newTypedArray; // step 4
+};
+
+
+/***/ }),
+
+/***/ 18866:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+var isInteger = __nccwpck_require__(3647);
+var whichTypedArray = __nccwpck_require__(54768);
+
+// https://262.ecma-international.org/13.0/#sec-typedarrayelementsize
+
+var tableTAO = __nccwpck_require__(41821);
+
+module.exports = function TypedArrayElementSize(O) {
+	var type = whichTypedArray(O);
+	if (!type) {
+		throw new $TypeError('Assertion failed: `O` must be a TypedArray');
+	}
+	var size = tableTAO.size['$' + tableTAO.name['$' + type]];
+	if (!isInteger(size) || size < 0) {
+		throw new $SyntaxError('Assertion failed: Unknown TypedArray type `' + type + '`');
+	}
+
+	return size;
+};
+
+
+/***/ }),
+
+/***/ 19927:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+
+var whichTypedArray = __nccwpck_require__(54768);
+
+// https://262.ecma-international.org/13.0/#sec-typedarrayelementtype
+
+var tableTAO = __nccwpck_require__(41821);
+
+module.exports = function TypedArrayElementType(O) {
+	var type = whichTypedArray(O);
+	if (!type) {
+		throw new $TypeError('Assertion failed: `O` must be a TypedArray');
+	}
+	var result = tableTAO.name['$' + type];
+	if (typeof result !== 'string') {
+		throw new $SyntaxError('Assertion failed: Unknown TypedArray type `' + type + '`');
+	}
+
+	return result;
+};
+
+
+/***/ }),
+
+/***/ 57571:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var floor = __nccwpck_require__(85638);
+var IsFixedLengthArrayBuffer = __nccwpck_require__(91643);
+var IsTypedArrayOutOfBounds = __nccwpck_require__(12223);
+var TypedArrayElementSize = __nccwpck_require__(18866);
+
+var isTypedArrayWithBufferWitnessRecord = __nccwpck_require__(53937);
+
+var typedArrayBuffer = __nccwpck_require__(58489);
+var typedArrayByteOffset = __nccwpck_require__(23363);
+var typedArrayLength = __nccwpck_require__(53655);
+
+// https://www.ecma-international.org/ecma-262/15.0/#sec-typedarraylength
+
+module.exports = function TypedArrayLength(taRecord) {
+	if (!isTypedArrayWithBufferWitnessRecord(taRecord)) {
+		throw new $TypeError('Assertion failed: `taRecord` must be a TypedArray With Buffer Witness Record');
+	}
+
+	if (IsTypedArrayOutOfBounds(taRecord)) {
+		throw new $TypeError('Assertion failed: `taRecord` is out of bounds'); // step 1
+	}
+
+	var O = taRecord['[[Object]]']; // step 2
+
+	var isFixed = IsFixedLengthArrayBuffer(typedArrayBuffer(O));
+
+	var length = isFixed ? typedArrayLength(O) : 'AUTO';
+	if (length !== 'AUTO') {
+		return length; // step 3
+	}
+
+	if (isFixed) {
+		throw new $TypeError('Assertion failed: array buffer is not fixed length'); // step 4
+	}
+
+	var byteOffset = typedArrayByteOffset(O); // step 5
+
+	var elementSize = TypedArrayElementSize(O); // step 6
+
+	var byteLength = taRecord['[[CachedBufferByteLength]]']; // step 7
+
+	if (byteLength === 'DETACHED') {
+		throw new $TypeError('Assertion failed: typed array is detached'); // step 8
+	}
+
+	return floor((byteLength - byteOffset) / elementSize); // step 9
+};
+
+
+/***/ }),
+
+/***/ 49733:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $SyntaxError = __nccwpck_require__(80105);
+var $TypeError = __nccwpck_require__(73314);
+
+var whichTypedArray = __nccwpck_require__(54768);
+var availableTypedArrays = __nccwpck_require__(51506)();
+
+var IsArray = __nccwpck_require__(94041);
+var SpeciesConstructor = __nccwpck_require__(98080);
+var TypedArrayCreateFromConstructor = __nccwpck_require__(43623);
+
+var getConstructor = __nccwpck_require__(34414);
+
+// https://262.ecma-international.org/15.0/#typedarray-species-create
+
+module.exports = function TypedArraySpeciesCreate(exemplar, argumentList) {
+	if (availableTypedArrays.length === 0) {
+		throw new $SyntaxError('Assertion failed: Typed Arrays are not supported in this environment');
+	}
+
+	var kind = whichTypedArray(exemplar);
+	if (!kind) {
+		throw new $TypeError('Assertion failed: exemplar must be a TypedArray'); // step 1
+	}
+	if (!IsArray(argumentList)) {
+		throw new $TypeError('Assertion failed: `argumentList` must be a List'); // step 1
+	}
+
+	var defaultConstructor = getConstructor(kind); // step 2
+	if (typeof defaultConstructor !== 'function') {
+		throw new $SyntaxError('Assertion failed: `constructor` of `exemplar` (' + kind + ') must exist. Please report this!');
+	}
+	var constructor = SpeciesConstructor(exemplar, defaultConstructor); // step 3
+
+	return TypedArrayCreateFromConstructor(constructor, argumentList); // step 4
+};
+
+
+/***/ }),
+
+/***/ 77425:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+var isObject = __nccwpck_require__(21040);
+
+var IsTypedArrayOutOfBounds = __nccwpck_require__(12223);
+var MakeTypedArrayWithBufferWitnessRecord = __nccwpck_require__(93117);
+
+var isTypedArray = __nccwpck_require__(6405);
+
+// https://262.ecma-international.org/15.0/#sec-validatetypedarray
+
+module.exports = function ValidateTypedArray(O, order) {
+	if (order !== 'SEQ-CST' && order !== 'UNORDERED') {
+		throw new $TypeError('Assertion failed: `order` must be ~SEQ-CST~ or ~UNORDERED~');
+	}
+
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: `O` must be an Object'); // step 1
+	}
+	if (!isTypedArray(O)) {
+		throw new $TypeError('Assertion failed: `O` must be a Typed Array'); // steps 1 - 2
+	}
+
+	var taRecord = MakeTypedArrayWithBufferWitnessRecord(O, order); // step 3
+
+	if (IsTypedArrayOutOfBounds(taRecord)) {
+		throw new $TypeError('`O` must be in-bounds and backed by a non-detached buffer'); // step 4
+	}
+
+	return taRecord; // step 5
+};
+
+
+/***/ }),
+
+/***/ 95835:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+var max = __nccwpck_require__(57147);
+var min = __nccwpck_require__(41017);
+
+// https://262.ecma-international.org/12.0/#clamping
+
+module.exports = function clamp(x, lower, upper) {
+	if (typeof x !== 'number' || typeof lower !== 'number' || typeof upper !== 'number' || !(lower <= upper)) {
+		throw new $TypeError('Assertion failed: all three arguments must be MVs, and `lower` must be `<= upper`');
+	}
+	return min(max(lower, x), upper);
+};
+
+
+/***/ }),
+
+/***/ 85638:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// var modulo = require('./modulo');
+var $floor = __nccwpck_require__(96171);
+
+// http://262.ecma-international.org/11.0/#eqn-floor
+
+module.exports = function floor(x) {
+	// return x - modulo(x, 1);
+	if (typeof x === 'bigint') {
+		return x;
+	}
+	return $floor(x);
+};
+
+
+/***/ }),
+
+/***/ 90460:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var mod = __nccwpck_require__(94248);
+
+// https://262.ecma-international.org/5.1/#sec-5.2
+
+module.exports = function modulo(x, y) {
+	return mod(x, y);
+};
+
+
+/***/ }),
+
+/***/ 41821:
+/***/ ((module) => {
+
+
+
+// https://262.ecma-international.org/16.0/#table-the-typedarray-constructors
+
+module.exports = {
+	__proto__: null,
+	name: {
+		__proto__: null,
+		$Int8Array: 'INT8',
+		$Uint8Array: 'UINT8',
+		$Uint8ClampedArray: 'UINT8C',
+		$Int16Array: 'INT16',
+		$Uint16Array: 'UINT16',
+		$Int32Array: 'INT32',
+		$Uint32Array: 'UINT32',
+		$BigInt64Array: 'BIGINT64',
+		$BigUint64Array: 'BIGUINT64',
+		$Float16Array: 'FLOAT16',
+		$Float32Array: 'FLOAT32',
+		$Float64Array: 'FLOAT64'
+	},
+	size: {
+		__proto__: null,
+		$INT8: 1,
+		$UINT8: 1,
+		$UINT8C: 1,
+		$INT16: 2,
+		$UINT16: 2,
+		$INT32: 4,
+		$UINT32: 4,
+		$BIGINT64: 8,
+		$BIGUINT64: 8,
+		$FLOAT16: 2,
+		$FLOAT32: 4,
+		$FLOAT64: 8
+	},
+	choices: '"INT8", "UINT8", "UINT8C", "INT16", "UINT16", "INT32", "UINT32", "BIGINT64", "BIGUINT64", "FLOAT16", "FLOAT32", or "FLOAT64"'
+};
+
+
+/***/ }),
+
+/***/ 60700:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var floor = __nccwpck_require__(85638);
+
+var $TypeError = __nccwpck_require__(73314);
+
+// https://262.ecma-international.org/14.0/#eqn-truncate
+
+module.exports = function truncate(x) {
+	if (typeof x !== 'number' && typeof x !== 'bigint') {
+		throw new $TypeError('argument must be a Number or a BigInt');
+	}
+	var result = x < 0 ? -floor(-x) : floor(x);
+	return result === 0 ? 0 : result; // in the spec, these are math values, so we filter out -0 here
+};
+
+
+/***/ }),
+
+/***/ 82043:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// TODO: remove, semver-major
+
+module.exports = __nccwpck_require__(60470);
+
+
+/***/ }),
+
+/***/ 62652:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var hasPropertyDescriptors = __nccwpck_require__(60497);
+
+var $defineProperty = __nccwpck_require__(79094);
+
+var hasArrayLengthDefineBug = hasPropertyDescriptors.hasArrayLengthDefineBug();
+
+// eslint-disable-next-line global-require
+var isArray = hasArrayLengthDefineBug && __nccwpck_require__(30233);
+
+var callBound = __nccwpck_require__(23105);
+
+var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
+
+// eslint-disable-next-line max-params
+module.exports = function DefineOwnProperty(IsDataDescriptor, SameValue, FromPropertyDescriptor, O, P, desc) {
+	if (!$defineProperty) {
+		if (!IsDataDescriptor(desc)) {
+			// ES3 does not support getters/setters
+			return false;
+		}
+		if (!desc['[[Configurable]]'] || !desc['[[Writable]]']) {
+			return false;
+		}
+
+		// fallback for ES3
+		if (P in O && $isEnumerable(O, P) !== !!desc['[[Enumerable]]']) {
+			// a non-enumerable existing property
+			return false;
+		}
+
+		// property does not exist at all, or exists but is enumerable
+		var V = desc['[[Value]]'];
+		// eslint-disable-next-line no-param-reassign
+		O[P] = V; // will use [[Define]]
+		return SameValue(O[P], V);
+	}
+	if (
+		hasArrayLengthDefineBug
+		&& P === 'length'
+		&& '[[Value]]' in desc
+		&& isArray(O)
+		&& O.length !== desc['[[Value]]']
+	) {
+		// eslint-disable-next-line no-param-reassign
+		O.length = desc['[[Value]]'];
+		return O.length === desc['[[Value]]'];
+	}
+
+	$defineProperty(O, P, FromPropertyDescriptor(desc));
+	return true;
+};
+
+
+/***/ }),
+
+/***/ 30233:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $Array = GetIntrinsic('%Array%');
+
+// eslint-disable-next-line global-require
+var toStr = !$Array.isArray && __nccwpck_require__(23105)('Object.prototype.toString');
+
+module.exports = $Array.isArray || function IsArray(argument) {
+	return toStr(argument) === '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ 91914:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $pow = __nccwpck_require__(56947);
+
+module.exports = function bytesAsFloat32(rawBytes) {
+	// return new $Float16Array(new $Uint8Array(rawBytes).buffer)[0];
+	/*
+        Let value be the byte elements of rawBytes concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2019 binary16 value.
+        If value is a NaN, return NaN.
+        Return the Number value that corresponds to value.
+    */
+
+	var bits = (rawBytes[1] << 8) | rawBytes[0];
+
+	// extract sign, exponent, mantissa
+	var sign = bits & 0x8000 ? -1 : 1;
+	var exponent = (bits & 0x7C00) >> 10;
+	var mantissa = bits & 0x03FF;
+
+	// zero (±0)
+	if (exponent === 0 && mantissa === 0) {
+		return sign === 1 ? 0 : -0;
+	}
+
+	// infinities
+	if (exponent === 0x1F && mantissa === 0) {
+		return sign === 1 ? Infinity : -Infinity;
+	}
+
+	// NaN
+	if (exponent === 0x1F && mantissa !== 0) {
+		return NaN;
+	}
+
+	// remove bias (15)
+	exponent -= 15;
+
+	// subnormals
+	if (exponent === -15) {
+		// value = sign * (mantissa) * 2^(1-bias-10) = mantissa * 2^(-14-10)
+		return sign * mantissa * $pow(2, -24);
+	}
+
+	// normals
+	// value = sign * (1 + mantissa/2^10) * 2^exponent
+	return sign * (1 + (mantissa * $pow(2, -10))) * $pow(2, exponent);
+};
+
+
+/***/ }),
+
+/***/ 77524:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $pow = __nccwpck_require__(56947);
+
+module.exports = function bytesAsFloat32(rawBytes) {
+	// return new $Float32Array(new $Uint8Array(rawBytes).buffer)[0];
+
+	/*
+        Let value be the byte elements of rawBytes concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2008 binary32 value.
+If value is an IEEE 754-2008 binary32 NaN value, return the NaN Number value.
+Return the Number value that corresponds to value.
+        */
+	var sign = rawBytes[3] & 0x80 ? -1 : 1; // Check the sign bit
+	var exponent = ((rawBytes[3] & 0x7F) << 1)
+		| (rawBytes[2] >> 7); // Combine bits for exponent
+	var mantissa = ((rawBytes[2] & 0x7F) << 16)
+		| (rawBytes[1] << 8)
+		| rawBytes[0]; // Combine bits for mantissa
+
+	if (exponent === 0 && mantissa === 0) {
+		return sign === 1 ? 0 : -0;
+	}
+	if (exponent === 0xFF && mantissa === 0) {
+		return sign === 1 ? Infinity : -Infinity;
+	}
+	if (exponent === 0xFF && mantissa !== 0) {
+		return NaN;
+	}
+
+	exponent -= 127; // subtract the bias
+
+	if (exponent === -127) {
+		return sign * mantissa * $pow(2, -126 - 23);
+	}
+	return sign * (1 + (mantissa * $pow(2, -23))) * $pow(2, exponent);
+};
+
+
+/***/ }),
+
+/***/ 86051:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $pow = __nccwpck_require__(56947);
+
+module.exports = function bytesAsFloat64(rawBytes) {
+	// return new $Float64Array(new $Uint8Array(rawBytes).buffer)[0];
+
+	/*
+    Let value be the byte elements of rawBytes concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2008 binary64 value.
+If value is an IEEE 754-2008 binary64 NaN value, return the NaN Number value.
+Return the Number value that corresponds to value.
+    */
+	var sign = rawBytes[7] & 0x80 ? -1 : 1; // first bit
+	var exponent = ((rawBytes[7] & 0x7F) << 4) // 7 bits from index 7
+        | ((rawBytes[6] & 0xF0) >> 4); // 4 bits from index 6
+	var mantissa = ((rawBytes[6] & 0x0F) * 0x1000000000000) // 4 bits from index 6
+        + (rawBytes[5] * 0x10000000000) // 8 bits from index 5
+        + (rawBytes[4] * 0x100000000) // 8 bits from index 4
+        + (rawBytes[3] * 0x1000000) // 8 bits from index 3
+        + (rawBytes[2] * 0x10000) // 8 bits from index 2
+        + (rawBytes[1] * 0x100) // 8 bits from index 1
+        + rawBytes[0]; // 8 bits from index 0
+
+	if (exponent === 0 && mantissa === 0) {
+		return sign * 0;
+	}
+	if (exponent === 0x7FF && mantissa !== 0) {
+		return NaN;
+	}
+	if (exponent === 0x7FF && mantissa === 0) {
+		return sign * Infinity;
+	}
+
+	exponent -= 1023; // subtract the bias
+
+	// Handle subnormal numbers
+	if (exponent === -1023) {
+		return sign * mantissa * 5e-324; // $pow(2, -1022 - 52)
+	}
+
+	return sign * (1 + (mantissa / 0x10000000000000)) * $pow(2, exponent);
+};
+
+
+/***/ }),
+
+/***/ 74593:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $pow = __nccwpck_require__(56947);
+
+var $Number = GetIntrinsic('%Number%');
+var $BigInt = GetIntrinsic('%BigInt%', true);
+
+module.exports = function bytesAsInteger(rawBytes, elementSize, isUnsigned, isBigInt) {
+	var Z = isBigInt ? $BigInt : $Number;
+
+	// this is common to both branches
+	var intValue = Z(0);
+	for (var i = 0; i < rawBytes.length; i++) {
+		intValue += Z(rawBytes[i] * $pow(2, 8 * i));
+	}
+	/*
+	Let intValue be the byte elements of rawBytes concatenated and interpreted as a bit string encoding of an unsigned little-endian binary number.
+	*/
+
+	if (!isUnsigned) { // steps 5-6
+		// Let intValue be the byte elements of rawBytes concatenated and interpreted as a bit string encoding of a binary little-endian 2's complement number of bit length elementSize × 8.
+		var bitLength = elementSize * 8;
+
+		if (rawBytes[elementSize - 1] & 0x80) {
+			intValue -= Z($pow(2, bitLength));
+		}
+	}
+
+	return intValue; // step 7
+};
+
+
+/***/ }),
+
+/***/ 19289:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $Uint8Array = GetIntrinsic('%Uint8Array%', true);
+var $Uint32Array = GetIntrinsic('%Uint32Array%', true);
+
+var typedArrayBuffer = __nccwpck_require__(58489);
+
+var uInt32 = $Uint32Array && new $Uint32Array([0x12345678]);
+var uInt8 = uInt32 && new $Uint8Array(typedArrayBuffer(uInt32));
+
+module.exports = uInt8
+	? uInt8[0] === 0x78
+		? 'little'
+		: uInt8[0] === 0x12
+			? 'big'
+			: uInt8[0] === 0x34
+				? 'mixed' // https://developer.mozilla.org/en-US/docs/Glossary/Endianness
+				: 'unknown' // ???
+	: 'indeterminate'; // no way to know
+
+
+/***/ }),
+
+/***/ 89835:
+/***/ ((module) => {
+
+
+
+module.exports = function every(array, predicate) {
+	for (var i = 0; i < array.length; i += 1) {
+		if (!predicate(array[i], i, array)) {
+			return false;
+		}
+	}
+	return true;
+};
+
+
+/***/ }),
+
+/***/ 64930:
+/***/ ((module) => {
+
+
+
+module.exports = function forEach(array, callback) {
+	for (var i = 0; i < array.length; i += 1) {
+		callback(array[i], i, array); // eslint-disable-line callback-return
+	}
+};
+
+
+/***/ }),
+
+/***/ 62293:
+/***/ ((module) => {
+
+
+
+var MAX_ITER = 1075; // 1023+52 (subnormals) => BIAS+NUM_SIGNFICAND_BITS-1
+var maxBits = 54; // only 53 bits for fraction
+
+module.exports = function fractionToBitString(x) {
+	var str = '';
+	if (x === 0) {
+		return str;
+	}
+	var j = MAX_ITER;
+
+	var y;
+	// Each time we multiply by 2 and find a ones digit, add a '1'; otherwise, add a '0'..
+	for (var i = 0; i < MAX_ITER; i += 1) {
+		y = x * 2;
+		if (y >= 1) {
+			x = y - 1; // eslint-disable-line no-param-reassign
+			str += '1';
+			if (j === MAX_ITER) {
+				j = i; // first 1
+			}
+		} else {
+			x = y; // eslint-disable-line no-param-reassign
+			str += '0';
+		}
+		// Stop when we have no more decimals to process or in the event we found a fraction which cannot be represented in a finite number of bits...
+		if (y === 1 || i - j > maxBits) {
+			return str;
+		}
+	}
+	return str;
+};
+
+
+/***/ }),
+
+/***/ 29890:
+/***/ ((module) => {
+
+
+
+module.exports = function fromPropertyDescriptor(Desc) {
+	if (typeof Desc === 'undefined') {
+		return Desc;
+	}
+	var obj = {};
+	if ('[[Value]]' in Desc) {
+		obj.value = Desc['[[Value]]'];
+	}
+	if ('[[Writable]]' in Desc) {
+		obj.writable = !!Desc['[[Writable]]'];
+	}
+	if ('[[Get]]' in Desc) {
+		obj.get = Desc['[[Get]]'];
+	}
+	if ('[[Set]]' in Desc) {
+		obj.set = Desc['[[Set]]'];
+	}
+	if ('[[Enumerable]]' in Desc) {
+		obj.enumerable = !!Desc['[[Enumerable]]'];
+	}
+	if ('[[Configurable]]' in Desc) {
+		obj.configurable = !!Desc['[[Configurable]]'];
+	}
+	return obj;
+};
+
+
+/***/ }),
+
+/***/ 21924:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $floor = __nccwpck_require__(96171);
+
+// https://runestone.academy/ns/books/published/pythonds/BasicDS/ConvertingDecimalNumberstoBinaryNumbers.html#:~:text=The%20Divide%20by%202%20algorithm,have%20a%20remainder%20of%200
+
+module.exports = function intToBinaryString(x) {
+	var str = '';
+	var y;
+
+	while (x > 0) {
+		y = x / 2;
+		x = $floor(y); // eslint-disable-line no-param-reassign
+		if (y === x) {
+			str = '0' + str;
+		} else {
+			str = '1' + str;
+		}
+	}
+	return str;
+};
+
+
+/***/ }),
+
+/***/ 27854:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $Number = GetIntrinsic('%Number%');
+var $BigInt = GetIntrinsic('%BigInt%', true);
+
+module.exports = function integerToNBytes(intValue, n, isLittleEndian) {
+	var Z = typeof intValue === 'bigint' ? $BigInt : $Number;
+	/*
+	if (intValue >= 0) { // step 3.d
+		// Let rawBytes be a List containing the n-byte binary encoding of intValue. If isLittleEndian is false, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian order.
+	} else { // step 3.e
+		// Let rawBytes be a List containing the n-byte binary 2's complement encoding of intValue. If isLittleEndian is false, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian order.
+	}
+    */
+	if (intValue < 0) {
+		intValue >>>= 0; // eslint-disable-line no-param-reassign
+	}
+
+	var rawBytes = [];
+	for (var i = 0; i < n; i++) {
+		rawBytes[isLittleEndian ? i : n - 1 - i] = $Number(intValue & Z(0xFF));
+		intValue >>= Z(8); // eslint-disable-line no-param-reassign
+	}
+
+	return rawBytes; // step 4
+};
+
+
+/***/ }),
+
+/***/ 51315:
+/***/ ((module) => {
+
+
+
+module.exports = function isByteValue(value) {
+	return typeof value === 'number' && value >= 0 && value <= 255 && (value | 0) === value;
+};
+
+
+/***/ }),
+
+/***/ 44278:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// TODO, semver-major: delete
+module.exports = __nccwpck_require__(3647);
+
+
+/***/ }),
+
+/***/ 92805:
+/***/ ((module) => {
+
+
+
+module.exports = Number.isNaN || function isNaN(a) {
+	return a !== a;
+};
+
+
+/***/ }),
+
+/***/ 46229:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// TODO: remove, semver-major
+
+module.exports = __nccwpck_require__(21040);
+
+
+/***/ }),
+
+/***/ 67369:
+/***/ ((module) => {
+
+
+
+module.exports = function isPrimitive(value) {
+	return value === null || (typeof value !== 'function' && typeof value !== 'object');
+};
+
+
+/***/ }),
+
+/***/ 7084:
+/***/ ((module) => {
+
+
+
+module.exports = function isPropertyKey(argument) {
+	return typeof argument === 'string' || typeof argument === 'symbol';
+};
+
+
+/***/ }),
+
+/***/ 94248:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+// TODO, semver-major: delete
+module.exports = __nccwpck_require__(9521);
+
+
+/***/ }),
+
+/***/ 49843:
+/***/ ((module) => {
+
+
+
+module.exports = function bigIntMod(BigIntRemainder, bigint, modulo) {
+	var remain = BigIntRemainder(bigint, modulo);
+	return remain >= 0 ? remain : remain + modulo;
+};
+
+
+/***/ }),
+
+/***/ 2612:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $TypeError = __nccwpck_require__(73314);
+
+var hasOwn = __nccwpck_require__(54076);
+
+var allowed = {
+	__proto__: null,
+	'[[Configurable]]': true,
+	'[[Enumerable]]': true,
+	'[[Get]]': true,
+	'[[Set]]': true,
+	'[[Value]]': true,
+	'[[Writable]]': true
+};
+
+// https://262.ecma-international.org/6.0/#sec-property-descriptor-specification-type
+
+module.exports = function isPropertyDescriptor(Desc) {
+	if (!Desc || typeof Desc !== 'object') {
+		return false;
+	}
+
+	for (var key in Desc) { // eslint-disable-line
+		if (hasOwn(Desc, key) && !allowed[key]) {
+			return false;
+		}
+	}
+
+	var isData = hasOwn(Desc, '[[Value]]') || hasOwn(Desc, '[[Writable]]');
+	var IsAccessor = hasOwn(Desc, '[[Get]]') || hasOwn(Desc, '[[Set]]');
+	if (isData && IsAccessor) {
+		throw new $TypeError('Property Descriptors may not be both accessor and data descriptors');
+	}
+	return true;
+};
+
+
+/***/ }),
+
+/***/ 53937:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var hasOwn = __nccwpck_require__(54076);
+var isTypedArray = __nccwpck_require__(6405);
+
+var isInteger = __nccwpck_require__(44278);
+
+module.exports = function isTypedArrayWithBufferWitnessRecord(value) {
+	return !!value
+		&& typeof value === 'object'
+		&& hasOwn(value, '[[Object]]')
+		&& hasOwn(value, '[[CachedBufferByteLength]]')
+		&& (
+			(isInteger(value['[[CachedBufferByteLength]]']) && value['[[CachedBufferByteLength]]'] >= 0)
+			|| value['[[CachedBufferByteLength]]'] === 'DETACHED'
+		)
+		&& isTypedArray(value['[[Object]]']);
+};
+
+
+/***/ }),
+
+/***/ 34414:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var constructors = {
+	__proto__: null,
+	$Int8Array: GetIntrinsic('%Int8Array%', true),
+	$Uint8Array: GetIntrinsic('%Uint8Array%', true),
+	$Uint8ClampedArray: GetIntrinsic('%Uint8ClampedArray%', true),
+	$Int16Array: GetIntrinsic('%Int16Array%', true),
+	$Uint16Array: GetIntrinsic('%Uint16Array%', true),
+	$Int32Array: GetIntrinsic('%Int32Array%', true),
+	$Uint32Array: GetIntrinsic('%Uint32Array%', true),
+	$BigInt64Array: GetIntrinsic('%BigInt64Array%', true),
+	$BigUint64Array: GetIntrinsic('%BigUint64Array%', true),
+	$Float16Array: GetIntrinsic('%Float16Array%', true),
+	$Float32Array: GetIntrinsic('%Float32Array%', true),
+	$Float64Array: GetIntrinsic('%Float64Array%', true)
+};
+
+module.exports = function getConstructor(kind) {
+	return constructors['$' + kind];
+};
+
+
+/***/ }),
+
+/***/ 15592:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $abs = __nccwpck_require__(55641);
+var $floor = __nccwpck_require__(96171);
+var $pow = __nccwpck_require__(56947);
+
+var isFinite = __nccwpck_require__(3766);
+var isNaN = __nccwpck_require__(77044);
+var isNegativeZero = __nccwpck_require__(1908);
+
+var maxFiniteFloat16 = 65504; // 2**16 - 2**5
+
+module.exports = function valueToFloat16Bytes(value, isLittleEndian) {
+	// NaN → exponent=all-ones, mantissa MSB=1 → 0x7e00
+	if (isNaN(value)) {
+		return isLittleEndian
+			? [0x00, 0x7e]
+			: [0x7e, 0x00];
+	}
+
+	var leastSig;
+
+	// ±0 → just the sign bit
+	if (value === 0) {
+		leastSig = isNegativeZero(value) ? 0x80 : 0x00;
+		return isLittleEndian
+			? [0x00, leastSig]
+			: [leastSig, 0x00];
+	}
+
+	// ±∞ → exponent=all-ones, mantissa=0 → 0x7c00 or 0xfc00
+	if ($abs(value) > maxFiniteFloat16 || !isFinite(value)) {
+		leastSig = value < 0 ? 0xfc : 0x7c;
+		return isLittleEndian
+			? [0x00, leastSig]
+			: [leastSig, 0x00];
+	}
+
+	var sign = value < 0 ? 1 : 0;
+	value = $abs(value); // eslint-disable-line no-param-reassign
+
+	// normalize to [1,2)
+	var exponent = 0;
+	while (value >= 2) {
+		exponent += 1;
+		value /= 2; // eslint-disable-line no-param-reassign
+	}
+	while (value < 1) {
+		exponent -= 1;
+		value *= 2; // eslint-disable-line no-param-reassign
+	}
+
+	// build mantissa (10 bits)
+	var mantissa = value - 1;
+	mantissa *= $pow(2, 10) + 0.5;
+	mantissa = $floor(mantissa);
+
+	// apply bias (15) and shift into place
+	exponent += 15;
+	exponent <<= 10;
+
+	// pack sign, exponent, mantissa
+	var result = (sign << 15) | exponent | mantissa;
+
+	// split into two bytes
+	var byte0 = result & 0xFF;
+	result >>= 8;
+	var byte1 = result & 0xFF;
+
+	return isLittleEndian
+		? [byte0, byte1]
+		: [byte1, byte0];
+};
+
+
+/***/ }),
+
+/***/ 44558:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var $abs = __nccwpck_require__(55641);
+var $floor = __nccwpck_require__(96171);
+var $pow = __nccwpck_require__(56947);
+
+var isFinite = __nccwpck_require__(3766);
+var isNaN = __nccwpck_require__(77044);
+var isNegativeZero = __nccwpck_require__(1908);
+
+var maxFiniteFloat32 = 3.4028234663852886e+38; // roughly 2 ** 128 - 1
+
+module.exports = function valueToFloat32Bytes(value, isLittleEndian) {
+	if (isNaN(value)) {
+		return isLittleEndian ? [0, 0, 192, 127] : [127, 192, 0, 0]; // hardcoded
+	}
+
+	var leastSig;
+
+	if (value === 0) {
+		leastSig = isNegativeZero(value) ? 0x80 : 0;
+		return isLittleEndian ? [0, 0, 0, leastSig] : [leastSig, 0, 0, 0];
+	}
+
+	if ($abs(value) > maxFiniteFloat32 || !isFinite(value)) {
+		leastSig = value < 0 ? 255 : 127;
+		return isLittleEndian ? [0, 0, 128, leastSig] : [leastSig, 128, 0, 0];
+	}
+
+	var sign = value < 0 ? 1 : 0;
+	value = $abs(value); // eslint-disable-line no-param-reassign
+
+	var exponent = 0;
+	while (value >= 2) {
+		exponent += 1;
+		value /= 2; // eslint-disable-line no-param-reassign
+	}
+
+	while (value < 1) {
+		exponent -= 1;
+		value *= 2; // eslint-disable-line no-param-reassign
+	}
+
+	var mantissa = value - 1;
+	mantissa *= $pow(2, 23) + 0.5;
+	mantissa = $floor(mantissa);
+
+	exponent += 127;
+	exponent <<= 23;
+
+	var result = (sign << 31)
+        | exponent
+        | mantissa;
+
+	var byte0 = result & 255;
+	result >>= 8;
+	var byte1 = result & 255;
+	result >>= 8;
+	var byte2 = result & 255;
+	result >>= 8;
+	var byte3 = result & 255;
+
+	if (isLittleEndian) {
+		return [byte0, byte1, byte2, byte3];
+	}
+	return [byte3, byte2, byte1, byte0];
+};
+
+
+/***/ }),
+
+/***/ 66951:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+
+var $parseInt = GetIntrinsic('%parseInt%');
+var $abs = __nccwpck_require__(55641);
+var $floor = __nccwpck_require__(96171);
+var isFinite = __nccwpck_require__(3766);
+var isNegativeZero = __nccwpck_require__(1908);
+
+var callBound = __nccwpck_require__(23105);
+
+var $strIndexOf = callBound('String.prototype.indexOf');
+var $strSlice = callBound('String.prototype.slice');
+
+var fractionToBitString = __nccwpck_require__(62293);
+var intToBinString = __nccwpck_require__(21924);
+var isNaN = __nccwpck_require__(92805);
+
+var float64bias = 1023;
+
+var elevenOnes = '11111111111';
+var elevenZeroes = '00000000000';
+var fiftyOneZeroes = elevenZeroes + elevenZeroes + elevenZeroes + elevenZeroes + '0000000';
+
+// IEEE 754-1985
+module.exports = function valueToFloat64Bytes(value, isLittleEndian) {
+	var signBit = value < 0 || isNegativeZero(value) ? '1' : '0';
+	var exponentBits;
+	var significandBits;
+
+	if (isNaN(value)) {
+		exponentBits = elevenOnes;
+		significandBits = '1' + fiftyOneZeroes;
+	} else if (!isFinite(value)) {
+		exponentBits = elevenOnes;
+		significandBits = '0' + fiftyOneZeroes;
+	} else if (value === 0) {
+		exponentBits = elevenZeroes;
+		significandBits = '0' + fiftyOneZeroes;
+	} else {
+		value = $abs(value); // eslint-disable-line no-param-reassign
+
+		// Isolate the integer part (digits before the decimal):
+		var integerPart = $floor(value);
+
+		var intBinString = intToBinString(integerPart); // bit string for integer part
+		var fracBinString = fractionToBitString(value - integerPart); // bit string for fractional part
+
+		var numberOfBits;
+		// find exponent needed to normalize integer+fractional parts
+		if (intBinString) {
+			exponentBits = intBinString.length - 1; // move the decimal to the left
+		} else {
+			var first1 = $strIndexOf(fracBinString, '1');
+			if (first1 > -1) {
+				numberOfBits = first1 + 1;
+			}
+			exponentBits = -numberOfBits; // move the decimal to the right
+		}
+
+		significandBits = intBinString + fracBinString;
+		if (exponentBits < 0) {
+			// subnormals
+			if (exponentBits <= -float64bias) {
+				numberOfBits = float64bias - 1; // limit number of removed bits
+			}
+			significandBits = $strSlice(significandBits, numberOfBits); // remove all leading 0s and the first 1 for normal values; for subnormals, remove up to `float64bias - 1` leading bits
+		} else {
+			significandBits = $strSlice(significandBits, 1); // remove the leading '1' (implicit/hidden bit)
+		}
+		exponentBits = $strSlice(elevenZeroes + intToBinString(exponentBits + float64bias), -11); // Convert the exponent to a bit string
+
+		significandBits = $strSlice(significandBits + fiftyOneZeroes + '0', 0, 52); // fill in any trailing zeros and ensure we have only 52 fraction bits
+	}
+
+	var bits = signBit + exponentBits + significandBits;
+	var rawBytes = [];
+	for (var i = 0; i < 8; i++) {
+		var targetIndex = isLittleEndian ? 8 - i - 1 : i;
+		rawBytes[targetIndex] = $parseInt($strSlice(bits, i * 8, (i + 1) * 8), 2);
+	}
+
+	return rawBytes;
+};
+
+
+/***/ }),
+
+/***/ 72981:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Glob = void 0;
-const minimatch_1 = __nccwpck_require__(6507);
-const node_url_1 = __nccwpck_require__(3136);
-const path_scurry_1 = __nccwpck_require__(8958);
-const pattern_js_1 = __nccwpck_require__(7813);
-const walker_js_1 = __nccwpck_require__(1157);
+const minimatch_1 = __nccwpck_require__(46507);
+const node_url_1 = __nccwpck_require__(73136);
+const path_scurry_1 = __nccwpck_require__(38958);
+const pattern_js_1 = __nccwpck_require__(47813);
+const walker_js_1 = __nccwpck_require__(11157);
 // if no process global, just call it linux.
 // so we default to case-sensitive, / separators
 const defaultPlatform = (typeof process === 'object' &&
@@ -69435,13 +77294,13 @@ exports.Glob = Glob;
 
 /***/ }),
 
-/***/ 5197:
+/***/ 45197:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.hasMagic = void 0;
-const minimatch_1 = __nccwpck_require__(6507);
+const minimatch_1 = __nccwpck_require__(46507);
 /**
  * Return true if the patterns provided contain any magic glob characters,
  * given the options provided.
@@ -69478,8 +77337,8 @@ exports.hasMagic = hasMagic;
 // Ignores are always parsed in dot:true mode
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Ignore = void 0;
-const minimatch_1 = __nccwpck_require__(6507);
-const pattern_js_1 = __nccwpck_require__(7813);
+const minimatch_1 = __nccwpck_require__(46507);
+const pattern_js_1 = __nccwpck_require__(47813);
 const defaultPlatform = (typeof process === 'object' &&
     process &&
     typeof process.platform === 'string') ?
@@ -69593,7 +77452,7 @@ exports.Ignore = Ignore;
 
 /***/ }),
 
-/***/ 1363:
+/***/ 21363:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -69604,15 +77463,15 @@ exports.globStream = globStream;
 exports.globSync = globSync;
 exports.globIterateSync = globIterateSync;
 exports.globIterate = globIterate;
-const minimatch_1 = __nccwpck_require__(6507);
-const glob_js_1 = __nccwpck_require__(2981);
-const has_magic_js_1 = __nccwpck_require__(5197);
-var minimatch_2 = __nccwpck_require__(6507);
+const minimatch_1 = __nccwpck_require__(46507);
+const glob_js_1 = __nccwpck_require__(72981);
+const has_magic_js_1 = __nccwpck_require__(45197);
+var minimatch_2 = __nccwpck_require__(46507);
 Object.defineProperty(exports, "escape", ({ enumerable: true, get: function () { return minimatch_2.escape; } }));
 Object.defineProperty(exports, "unescape", ({ enumerable: true, get: function () { return minimatch_2.unescape; } }));
-var glob_js_2 = __nccwpck_require__(2981);
+var glob_js_2 = __nccwpck_require__(72981);
 Object.defineProperty(exports, "Glob", ({ enumerable: true, get: function () { return glob_js_2.Glob; } }));
-var has_magic_js_2 = __nccwpck_require__(5197);
+var has_magic_js_2 = __nccwpck_require__(45197);
 Object.defineProperty(exports, "hasMagic", ({ enumerable: true, get: function () { return has_magic_js_2.hasMagic; } }));
 var ignore_js_1 = __nccwpck_require__(5637);
 Object.defineProperty(exports, "Ignore", ({ enumerable: true, get: function () { return ignore_js_1.Ignore; } }));
@@ -69667,14 +77526,14 @@ exports.glob.glob = exports.glob;
 
 /***/ }),
 
-/***/ 7813:
+/***/ 47813:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 // this is just a very light wrapper around 2 arrays with an offset index
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Pattern = void 0;
-const minimatch_1 = __nccwpck_require__(6507);
+const minimatch_1 = __nccwpck_require__(46507);
 const isPatternList = (pl) => pl.length >= 1;
 const isGlobList = (gl) => gl.length >= 1;
 /**
@@ -69892,14 +77751,14 @@ exports.Pattern = Pattern;
 
 /***/ }),
 
-/***/ 7843:
+/***/ 37843:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 // synchronous utility for filtering entries and calculating subwalks
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Processor = exports.SubWalks = exports.MatchRecord = exports.HasWalkedCache = void 0;
-const minimatch_1 = __nccwpck_require__(6507);
+const minimatch_1 = __nccwpck_require__(46507);
 /**
  * A cache of which patterns have been processed for a given Path
  */
@@ -70199,7 +78058,7 @@ exports.Processor = Processor;
 
 /***/ }),
 
-/***/ 1157:
+/***/ 11157:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -70211,9 +78070,9 @@ exports.GlobStream = exports.GlobWalker = exports.GlobUtil = void 0;
  *
  * @module
  */
-const minipass_1 = __nccwpck_require__(8275);
+const minipass_1 = __nccwpck_require__(78275);
 const ignore_js_1 = __nccwpck_require__(5637);
-const processor_js_1 = __nccwpck_require__(7843);
+const processor_js_1 = __nccwpck_require__(37843);
 const makeIgnore = (ignore, opts) => typeof ignore === 'string' ? new ignore_js_1.Ignore([ignore], opts)
     : Array.isArray(ignore) ? new ignore_js_1.Ignore(ignore, opts)
         : ignore;
@@ -70592,7 +78451,7 @@ exports.GlobStream = GlobStream;
 
 /***/ }),
 
-/***/ 2477:
+/***/ 32477:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -72144,7 +80003,7 @@ exports.LRUCache = LRUCache;
 
 /***/ }),
 
-/***/ 7305:
+/***/ 57305:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -72164,1014 +80023,7 @@ exports.assertValidPattern = assertValidPattern;
 
 /***/ }),
 
-/***/ 1803:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-
-// parse a single path portion
-var _a;
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.AST = void 0;
-const brace_expressions_js_1 = __nccwpck_require__(1090);
-const unescape_js_1 = __nccwpck_require__(851);
-const types = new Set(['!', '?', '+', '*', '@']);
-const isExtglobType = (c) => types.has(c);
-const isExtglobAST = (c) => isExtglobType(c.type);
-// Map of which extglob types can adopt the children of a nested extglob
-//
-// anything but ! can adopt a matching type:
-// +(a|+(b|c)|d) => +(a|b|c|d)
-// *(a|*(b|c)|d) => *(a|b|c|d)
-// @(a|@(b|c)|d) => @(a|b|c|d)
-// ?(a|?(b|c)|d) => ?(a|b|c|d)
-//
-// * can adopt anything, because 0 or repetition is allowed
-// *(a|?(b|c)|d) => *(a|b|c|d)
-// *(a|+(b|c)|d) => *(a|b|c|d)
-// *(a|@(b|c)|d) => *(a|b|c|d)
-//
-// + can adopt @, because 1 or repetition is allowed
-// +(a|@(b|c)|d) => +(a|b|c|d)
-//
-// + and @ CANNOT adopt *, because 0 would be allowed
-// +(a|*(b|c)|d) => would match "", on *(b|c)
-// @(a|*(b|c)|d) => would match "", on *(b|c)
-//
-// + and @ CANNOT adopt ?, because 0 would be allowed
-// +(a|?(b|c)|d) => would match "", on ?(b|c)
-// @(a|?(b|c)|d) => would match "", on ?(b|c)
-//
-// ? can adopt @, because 0 or 1 is allowed
-// ?(a|@(b|c)|d) => ?(a|b|c|d)
-//
-// ? and @ CANNOT adopt * or +, because >1 would be allowed
-// ?(a|*(b|c)|d) => would match bbb on *(b|c)
-// @(a|*(b|c)|d) => would match bbb on *(b|c)
-// ?(a|+(b|c)|d) => would match bbb on +(b|c)
-// @(a|+(b|c)|d) => would match bbb on +(b|c)
-//
-// ! CANNOT adopt ! (nothing else can either)
-// !(a|!(b|c)|d) => !(a|b|c|d) would fail to match on b (not not b|c)
-//
-// ! can adopt @
-// !(a|@(b|c)|d) => !(a|b|c|d)
-//
-// ! CANNOT adopt *
-// !(a|*(b|c)|d) => !(a|b|c|d) would match on bbb, not allowed
-//
-// ! CANNOT adopt +
-// !(a|+(b|c)|d) => !(a|b|c|d) would match on bbb, not allowed
-//
-// ! CANNOT adopt ?
-// x!(a|?(b|c)|d) => x!(a|b|c|d) would fail to match "x"
-const adoptionMap = new Map([
-    ['!', ['@']],
-    ['?', ['?', '@']],
-    ['@', ['@']],
-    ['*', ['*', '+', '?', '@']],
-    ['+', ['+', '@']],
-]);
-// nested extglobs that can be adopted in, but with the addition of
-// a blank '' element.
-const adoptionWithSpaceMap = new Map([
-    ['!', ['?']],
-    ['@', ['?']],
-    ['+', ['?', '*']],
-]);
-// union of the previous two maps
-const adoptionAnyMap = new Map([
-    ['!', ['?', '@']],
-    ['?', ['?', '@']],
-    ['@', ['?', '@']],
-    ['*', ['*', '+', '?', '@']],
-    ['+', ['+', '@', '?', '*']],
-]);
-// Extglobs that can take over their parent if they are the only child
-// the key is parent, value maps child to resulting extglob parent type
-// '@' is omitted because it's a special case. An `@` extglob with a single
-// member can always be usurped by that subpattern.
-const usurpMap = new Map([
-    ['!', new Map([['!', '@']])],
-    [
-        '?',
-        new Map([
-            ['*', '*'],
-            ['+', '*'],
-        ]),
-    ],
-    [
-        '@',
-        new Map([
-            ['!', '!'],
-            ['?', '?'],
-            ['@', '@'],
-            ['*', '*'],
-            ['+', '+'],
-        ]),
-    ],
-    [
-        '+',
-        new Map([
-            ['?', '*'],
-            ['*', '*'],
-        ]),
-    ],
-]);
-// Patterns that get prepended to bind to the start of either the
-// entire string, or just a single path portion, to prevent dots
-// and/or traversal patterns, when needed.
-// Exts don't need the ^ or / bit, because the root binds that already.
-const startNoTraversal = '(?!(?:^|/)\\.\\.?(?:$|/))';
-const startNoDot = '(?!\\.)';
-// characters that indicate a start of pattern needs the "no dots" bit,
-// because a dot *might* be matched. ( is not in the list, because in
-// the case of a child extglob, it will handle the prevention itself.
-const addPatternStart = new Set(['[', '.']);
-// cases where traversal is A-OK, no dot prevention needed
-const justDots = new Set(['..', '.']);
-const reSpecials = new Set('().*{}+?[]^$\\!');
-const regExpEscape = (s) => s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-// any single thing other than /
-const qmark = '[^/]';
-// * => any number of characters
-const star = qmark + '*?';
-// use + when we need to ensure that *something* matches, because the * is
-// the only thing in the path portion.
-const starNoEmpty = qmark + '+?';
-// remove the \ chars that we added if we end up doing a nonmagic compare
-// const deslash = (s: string) => s.replace(/\\(.)/g, '$1')
-let ID = 0;
-class AST {
-    type;
-    #root;
-    #hasMagic;
-    #uflag = false;
-    #parts = [];
-    #parent;
-    #parentIndex;
-    #negs;
-    #filledNegs = false;
-    #options;
-    #toString;
-    // set to true if it's an extglob with no children
-    // (which really means one child of '')
-    #emptyExt = false;
-    id = ++ID;
-    get depth() {
-        return (this.#parent?.depth ?? -1) + 1;
-    }
-    [Symbol.for('nodejs.util.inspect.custom')]() {
-        return {
-            '@@type': 'AST',
-            id: this.id,
-            type: this.type,
-            root: this.#root.id,
-            parent: this.#parent?.id,
-            depth: this.depth,
-            partsLength: this.#parts.length,
-            parts: this.#parts,
-        };
-    }
-    constructor(type, parent, options = {}) {
-        this.type = type;
-        // extglobs are inherently magical
-        if (type)
-            this.#hasMagic = true;
-        this.#parent = parent;
-        this.#root = this.#parent ? this.#parent.#root : this;
-        this.#options = this.#root === this ? options : this.#root.#options;
-        this.#negs = this.#root === this ? [] : this.#root.#negs;
-        if (type === '!' && !this.#root.#filledNegs)
-            this.#negs.push(this);
-        this.#parentIndex = this.#parent ? this.#parent.#parts.length : 0;
-    }
-    get hasMagic() {
-        /* c8 ignore start */
-        if (this.#hasMagic !== undefined)
-            return this.#hasMagic;
-        /* c8 ignore stop */
-        for (const p of this.#parts) {
-            if (typeof p === 'string')
-                continue;
-            if (p.type || p.hasMagic)
-                return (this.#hasMagic = true);
-        }
-        // note: will be undefined until we generate the regexp src and find out
-        return this.#hasMagic;
-    }
-    // reconstructs the pattern
-    toString() {
-        return (this.#toString !== undefined ? this.#toString
-            : !this.type ?
-                (this.#toString = this.#parts.map(p => String(p)).join(''))
-                : (this.#toString =
-                    this.type +
-                        '(' +
-                        this.#parts.map(p => String(p)).join('|') +
-                        ')'));
-    }
-    #fillNegs() {
-        /* c8 ignore start */
-        if (this !== this.#root)
-            throw new Error('should only call on root');
-        if (this.#filledNegs)
-            return this;
-        /* c8 ignore stop */
-        // call toString() once to fill this out
-        this.toString();
-        this.#filledNegs = true;
-        let n;
-        while ((n = this.#negs.pop())) {
-            if (n.type !== '!')
-                continue;
-            // walk up the tree, appending everthing that comes AFTER parentIndex
-            let p = n;
-            let pp = p.#parent;
-            while (pp) {
-                for (let i = p.#parentIndex + 1; !pp.type && i < pp.#parts.length; i++) {
-                    for (const part of n.#parts) {
-                        /* c8 ignore start */
-                        if (typeof part === 'string') {
-                            throw new Error('string part in extglob AST??');
-                        }
-                        /* c8 ignore stop */
-                        part.copyIn(pp.#parts[i]);
-                    }
-                }
-                p = pp;
-                pp = p.#parent;
-            }
-        }
-        return this;
-    }
-    push(...parts) {
-        for (const p of parts) {
-            if (p === '')
-                continue;
-            /* c8 ignore start */
-            if (typeof p !== 'string' &&
-                !(p instanceof _a && p.#parent === this)) {
-                throw new Error('invalid part: ' + p);
-            }
-            /* c8 ignore stop */
-            this.#parts.push(p);
-        }
-    }
-    toJSON() {
-        const ret = this.type === null ?
-            this.#parts
-                .slice()
-                .map(p => (typeof p === 'string' ? p : p.toJSON()))
-            : [this.type, ...this.#parts.map(p => p.toJSON())];
-        if (this.isStart() && !this.type)
-            ret.unshift([]);
-        if (this.isEnd() &&
-            (this === this.#root ||
-                (this.#root.#filledNegs && this.#parent?.type === '!'))) {
-            ret.push({});
-        }
-        return ret;
-    }
-    isStart() {
-        if (this.#root === this)
-            return true;
-        // if (this.type) return !!this.#parent?.isStart()
-        if (!this.#parent?.isStart())
-            return false;
-        if (this.#parentIndex === 0)
-            return true;
-        // if everything AHEAD of this is a negation, then it's still the "start"
-        const p = this.#parent;
-        for (let i = 0; i < this.#parentIndex; i++) {
-            const pp = p.#parts[i];
-            if (!(pp instanceof _a && pp.type === '!')) {
-                return false;
-            }
-        }
-        return true;
-    }
-    isEnd() {
-        if (this.#root === this)
-            return true;
-        if (this.#parent?.type === '!')
-            return true;
-        if (!this.#parent?.isEnd())
-            return false;
-        if (!this.type)
-            return this.#parent?.isEnd();
-        // if not root, it'll always have a parent
-        /* c8 ignore start */
-        const pl = this.#parent ? this.#parent.#parts.length : 0;
-        /* c8 ignore stop */
-        return this.#parentIndex === pl - 1;
-    }
-    copyIn(part) {
-        if (typeof part === 'string')
-            this.push(part);
-        else
-            this.push(part.clone(this));
-    }
-    clone(parent) {
-        const c = new _a(this.type, parent);
-        for (const p of this.#parts) {
-            c.copyIn(p);
-        }
-        return c;
-    }
-    static #parseAST(str, ast, pos, opt, extDepth) {
-        const maxDepth = opt.maxExtglobRecursion ?? 2;
-        let escaping = false;
-        let inBrace = false;
-        let braceStart = -1;
-        let braceNeg = false;
-        if (ast.type === null) {
-            // outside of a extglob, append until we find a start
-            let i = pos;
-            let acc = '';
-            while (i < str.length) {
-                const c = str.charAt(i++);
-                // still accumulate escapes at this point, but we do ignore
-                // starts that are escaped
-                if (escaping || c === '\\') {
-                    escaping = !escaping;
-                    acc += c;
-                    continue;
-                }
-                if (inBrace) {
-                    if (i === braceStart + 1) {
-                        if (c === '^' || c === '!') {
-                            braceNeg = true;
-                        }
-                    }
-                    else if (c === ']' && !(i === braceStart + 2 && braceNeg)) {
-                        inBrace = false;
-                    }
-                    acc += c;
-                    continue;
-                }
-                else if (c === '[') {
-                    inBrace = true;
-                    braceStart = i;
-                    braceNeg = false;
-                    acc += c;
-                    continue;
-                }
-                // we don't have to check for adoption here, because that's
-                // done at the other recursion point.
-                const doRecurse = !opt.noext &&
-                    isExtglobType(c) &&
-                    str.charAt(i) === '(' &&
-                    extDepth <= maxDepth;
-                if (doRecurse) {
-                    ast.push(acc);
-                    acc = '';
-                    const ext = new _a(c, ast);
-                    i = _a.#parseAST(str, ext, i, opt, extDepth + 1);
-                    ast.push(ext);
-                    continue;
-                }
-                acc += c;
-            }
-            ast.push(acc);
-            return i;
-        }
-        // some kind of extglob, pos is at the (
-        // find the next | or )
-        let i = pos + 1;
-        let part = new _a(null, ast);
-        const parts = [];
-        let acc = '';
-        while (i < str.length) {
-            const c = str.charAt(i++);
-            // still accumulate escapes at this point, but we do ignore
-            // starts that are escaped
-            if (escaping || c === '\\') {
-                escaping = !escaping;
-                acc += c;
-                continue;
-            }
-            if (inBrace) {
-                if (i === braceStart + 1) {
-                    if (c === '^' || c === '!') {
-                        braceNeg = true;
-                    }
-                }
-                else if (c === ']' && !(i === braceStart + 2 && braceNeg)) {
-                    inBrace = false;
-                }
-                acc += c;
-                continue;
-            }
-            else if (c === '[') {
-                inBrace = true;
-                braceStart = i;
-                braceNeg = false;
-                acc += c;
-                continue;
-            }
-            const doRecurse = !opt.noext &&
-                isExtglobType(c) &&
-                str.charAt(i) === '(' &&
-                /* c8 ignore start - the maxDepth is sufficient here */
-                (extDepth <= maxDepth || (ast && ast.#canAdoptType(c)));
-            /* c8 ignore stop */
-            if (doRecurse) {
-                const depthAdd = ast && ast.#canAdoptType(c) ? 0 : 1;
-                part.push(acc);
-                acc = '';
-                const ext = new _a(c, part);
-                part.push(ext);
-                i = _a.#parseAST(str, ext, i, opt, extDepth + depthAdd);
-                continue;
-            }
-            if (c === '|') {
-                part.push(acc);
-                acc = '';
-                parts.push(part);
-                part = new _a(null, ast);
-                continue;
-            }
-            if (c === ')') {
-                if (acc === '' && ast.#parts.length === 0) {
-                    ast.#emptyExt = true;
-                }
-                part.push(acc);
-                acc = '';
-                ast.push(...parts, part);
-                return i;
-            }
-            acc += c;
-        }
-        // unfinished extglob
-        // if we got here, it was a malformed extglob! not an extglob, but
-        // maybe something else in there.
-        ast.type = null;
-        ast.#hasMagic = undefined;
-        ast.#parts = [str.substring(pos - 1)];
-        return i;
-    }
-    #canAdoptWithSpace(child) {
-        return this.#canAdopt(child, adoptionWithSpaceMap);
-    }
-    #canAdopt(child, map = adoptionMap) {
-        if (!child ||
-            typeof child !== 'object' ||
-            child.type !== null ||
-            child.#parts.length !== 1 ||
-            this.type === null) {
-            return false;
-        }
-        const gc = child.#parts[0];
-        if (!gc || typeof gc !== 'object' || gc.type === null) {
-            return false;
-        }
-        return this.#canAdoptType(gc.type, map);
-    }
-    #canAdoptType(c, map = adoptionAnyMap) {
-        return !!map.get(this.type)?.includes(c);
-    }
-    #adoptWithSpace(child, index) {
-        const gc = child.#parts[0];
-        const blank = new _a(null, gc, this.options);
-        blank.#parts.push('');
-        gc.push(blank);
-        this.#adopt(child, index);
-    }
-    #adopt(child, index) {
-        const gc = child.#parts[0];
-        this.#parts.splice(index, 1, ...gc.#parts);
-        for (const p of gc.#parts) {
-            if (typeof p === 'object')
-                p.#parent = this;
-        }
-        this.#toString = undefined;
-    }
-    #canUsurpType(c) {
-        const m = usurpMap.get(this.type);
-        return !!m?.has(c);
-    }
-    #canUsurp(child) {
-        if (!child ||
-            typeof child !== 'object' ||
-            child.type !== null ||
-            child.#parts.length !== 1 ||
-            this.type === null ||
-            this.#parts.length !== 1) {
-            return false;
-        }
-        const gc = child.#parts[0];
-        if (!gc || typeof gc !== 'object' || gc.type === null) {
-            return false;
-        }
-        return this.#canUsurpType(gc.type);
-    }
-    #usurp(child) {
-        const m = usurpMap.get(this.type);
-        const gc = child.#parts[0];
-        const nt = m?.get(gc.type);
-        /* c8 ignore start - impossible */
-        if (!nt)
-            return false;
-        /* c8 ignore stop */
-        this.#parts = gc.#parts;
-        for (const p of this.#parts) {
-            if (typeof p === 'object') {
-                p.#parent = this;
-            }
-        }
-        this.type = nt;
-        this.#toString = undefined;
-        this.#emptyExt = false;
-    }
-    static fromGlob(pattern, options = {}) {
-        const ast = new _a(null, undefined, options);
-        _a.#parseAST(pattern, ast, 0, options, 0);
-        return ast;
-    }
-    // returns the regular expression if there's magic, or the unescaped
-    // string if not.
-    toMMPattern() {
-        // should only be called on root
-        /* c8 ignore start */
-        if (this !== this.#root)
-            return this.#root.toMMPattern();
-        /* c8 ignore stop */
-        const glob = this.toString();
-        const [re, body, hasMagic, uflag] = this.toRegExpSource();
-        // if we're in nocase mode, and not nocaseMagicOnly, then we do
-        // still need a regular expression if we have to case-insensitively
-        // match capital/lowercase characters.
-        const anyMagic = hasMagic ||
-            this.#hasMagic ||
-            (this.#options.nocase &&
-                !this.#options.nocaseMagicOnly &&
-                glob.toUpperCase() !== glob.toLowerCase());
-        if (!anyMagic) {
-            return body;
-        }
-        const flags = (this.#options.nocase ? 'i' : '') + (uflag ? 'u' : '');
-        return Object.assign(new RegExp(`^${re}$`, flags), {
-            _src: re,
-            _glob: glob,
-        });
-    }
-    get options() {
-        return this.#options;
-    }
-    // returns the string match, the regexp source, whether there's magic
-    // in the regexp (so a regular expression is required) and whether or
-    // not the uflag is needed for the regular expression (for posix classes)
-    // TODO: instead of injecting the start/end at this point, just return
-    // the BODY of the regexp, along with the start/end portions suitable
-    // for binding the start/end in either a joined full-path makeRe context
-    // (where we bind to (^|/), or a standalone matchPart context (where
-    // we bind to ^, and not /).  Otherwise slashes get duped!
-    //
-    // In part-matching mode, the start is:
-    // - if not isStart: nothing
-    // - if traversal possible, but not allowed: ^(?!\.\.?$)
-    // - if dots allowed or not possible: ^
-    // - if dots possible and not allowed: ^(?!\.)
-    // end is:
-    // - if not isEnd(): nothing
-    // - else: $
-    //
-    // In full-path matching mode, we put the slash at the START of the
-    // pattern, so start is:
-    // - if first pattern: same as part-matching mode
-    // - if not isStart(): nothing
-    // - if traversal possible, but not allowed: /(?!\.\.?(?:$|/))
-    // - if dots allowed or not possible: /
-    // - if dots possible and not allowed: /(?!\.)
-    // end is:
-    // - if last pattern, same as part-matching mode
-    // - else nothing
-    //
-    // Always put the (?:$|/) on negated tails, though, because that has to be
-    // there to bind the end of the negated pattern portion, and it's easier to
-    // just stick it in now rather than try to inject it later in the middle of
-    // the pattern.
-    //
-    // We can just always return the same end, and leave it up to the caller
-    // to know whether it's going to be used joined or in parts.
-    // And, if the start is adjusted slightly, can do the same there:
-    // - if not isStart: nothing
-    // - if traversal possible, but not allowed: (?:/|^)(?!\.\.?$)
-    // - if dots allowed or not possible: (?:/|^)
-    // - if dots possible and not allowed: (?:/|^)(?!\.)
-    //
-    // But it's better to have a simpler binding without a conditional, for
-    // performance, so probably better to return both start options.
-    //
-    // Then the caller just ignores the end if it's not the first pattern,
-    // and the start always gets applied.
-    //
-    // But that's always going to be $ if it's the ending pattern, or nothing,
-    // so the caller can just attach $ at the end of the pattern when building.
-    //
-    // So the todo is:
-    // - better detect what kind of start is needed
-    // - return both flavors of starting pattern
-    // - attach $ at the end of the pattern when creating the actual RegExp
-    //
-    // Ah, but wait, no, that all only applies to the root when the first pattern
-    // is not an extglob. If the first pattern IS an extglob, then we need all
-    // that dot prevention biz to live in the extglob portions, because eg
-    // +(*|.x*) can match .xy but not .yx.
-    //
-    // So, return the two flavors if it's #root and the first child is not an
-    // AST, otherwise leave it to the child AST to handle it, and there,
-    // use the (?:^|/) style of start binding.
-    //
-    // Even simplified further:
-    // - Since the start for a join is eg /(?!\.) and the start for a part
-    // is ^(?!\.), we can just prepend (?!\.) to the pattern (either root
-    // or start or whatever) and prepend ^ or / at the Regexp construction.
-    toRegExpSource(allowDot) {
-        const dot = allowDot ?? !!this.#options.dot;
-        if (this.#root === this) {
-            this.#flatten();
-            this.#fillNegs();
-        }
-        if (!isExtglobAST(this)) {
-            const noEmpty = this.isStart() &&
-                this.isEnd() &&
-                !this.#parts.some(s => typeof s !== 'string');
-            const src = this.#parts
-                .map(p => {
-                const [re, _, hasMagic, uflag] = typeof p === 'string' ?
-                    _a.#parseGlob(p, this.#hasMagic, noEmpty)
-                    : p.toRegExpSource(allowDot);
-                this.#hasMagic = this.#hasMagic || hasMagic;
-                this.#uflag = this.#uflag || uflag;
-                return re;
-            })
-                .join('');
-            let start = '';
-            if (this.isStart()) {
-                if (typeof this.#parts[0] === 'string') {
-                    // this is the string that will match the start of the pattern,
-                    // so we need to protect against dots and such.
-                    // '.' and '..' cannot match unless the pattern is that exactly,
-                    // even if it starts with . or dot:true is set.
-                    const dotTravAllowed = this.#parts.length === 1 && justDots.has(this.#parts[0]);
-                    if (!dotTravAllowed) {
-                        const aps = addPatternStart;
-                        // check if we have a possibility of matching . or ..,
-                        // and prevent that.
-                        const needNoTrav = 
-                        // dots are allowed, and the pattern starts with [ or .
-                        (dot && aps.has(src.charAt(0))) ||
-                            // the pattern starts with \., and then [ or .
-                            (src.startsWith('\\.') && aps.has(src.charAt(2))) ||
-                            // the pattern starts with \.\., and then [ or .
-                            (src.startsWith('\\.\\.') && aps.has(src.charAt(4)));
-                        // no need to prevent dots if it can't match a dot, or if a
-                        // sub-pattern will be preventing it anyway.
-                        const needNoDot = !dot && !allowDot && aps.has(src.charAt(0));
-                        start =
-                            needNoTrav ? startNoTraversal
-                                : needNoDot ? startNoDot
-                                    : '';
-                    }
-                }
-            }
-            // append the "end of path portion" pattern to negation tails
-            let end = '';
-            if (this.isEnd() &&
-                this.#root.#filledNegs &&
-                this.#parent?.type === '!') {
-                end = '(?:$|\\/)';
-            }
-            const final = start + src + end;
-            return [
-                final,
-                (0, unescape_js_1.unescape)(src),
-                (this.#hasMagic = !!this.#hasMagic),
-                this.#uflag,
-            ];
-        }
-        // We need to calculate the body *twice* if it's a repeat pattern
-        // at the start, once in nodot mode, then again in dot mode, so a
-        // pattern like *(?) can match 'x.y'
-        const repeated = this.type === '*' || this.type === '+';
-        // some kind of extglob
-        const start = this.type === '!' ? '(?:(?!(?:' : '(?:';
-        let body = this.#partsToRegExp(dot);
-        if (this.isStart() && this.isEnd() && !body && this.type !== '!') {
-            // invalid extglob, has to at least be *something* present, if it's
-            // the entire path portion.
-            const s = this.toString();
-            const me = this;
-            me.#parts = [s];
-            me.type = null;
-            me.#hasMagic = undefined;
-            return [s, (0, unescape_js_1.unescape)(this.toString()), false, false];
-        }
-        let bodyDotAllowed = !repeated || allowDot || dot || !startNoDot ?
-            ''
-            : this.#partsToRegExp(true);
-        if (bodyDotAllowed === body) {
-            bodyDotAllowed = '';
-        }
-        if (bodyDotAllowed) {
-            body = `(?:${body})(?:${bodyDotAllowed})*?`;
-        }
-        // an empty !() is exactly equivalent to a starNoEmpty
-        let final = '';
-        if (this.type === '!' && this.#emptyExt) {
-            final = (this.isStart() && !dot ? startNoDot : '') + starNoEmpty;
-        }
-        else {
-            const close = this.type === '!' ?
-                // !() must match something,but !(x) can match ''
-                '))' +
-                    (this.isStart() && !dot && !allowDot ? startNoDot : '') +
-                    star +
-                    ')'
-                : this.type === '@' ? ')'
-                    : this.type === '?' ? ')?'
-                        : this.type === '+' && bodyDotAllowed ? ')'
-                            : this.type === '*' && bodyDotAllowed ? `)?`
-                                : `)${this.type}`;
-            final = start + body + close;
-        }
-        return [
-            final,
-            (0, unescape_js_1.unescape)(body),
-            (this.#hasMagic = !!this.#hasMagic),
-            this.#uflag,
-        ];
-    }
-    #flatten() {
-        if (!isExtglobAST(this)) {
-            for (const p of this.#parts) {
-                if (typeof p === 'object') {
-                    p.#flatten();
-                }
-            }
-        }
-        else {
-            // do up to 10 passes to flatten as much as possible
-            let iterations = 0;
-            let done = false;
-            do {
-                done = true;
-                for (let i = 0; i < this.#parts.length; i++) {
-                    const c = this.#parts[i];
-                    if (typeof c === 'object') {
-                        c.#flatten();
-                        if (this.#canAdopt(c)) {
-                            done = false;
-                            this.#adopt(c, i);
-                        }
-                        else if (this.#canAdoptWithSpace(c)) {
-                            done = false;
-                            this.#adoptWithSpace(c, i);
-                        }
-                        else if (this.#canUsurp(c)) {
-                            done = false;
-                            this.#usurp(c);
-                        }
-                    }
-                }
-            } while (!done && ++iterations < 10);
-        }
-        this.#toString = undefined;
-    }
-    #partsToRegExp(dot) {
-        return this.#parts
-            .map(p => {
-            // extglob ASTs should only contain parent ASTs
-            /* c8 ignore start */
-            if (typeof p === 'string') {
-                throw new Error('string type in extglob ast??');
-            }
-            /* c8 ignore stop */
-            // can ignore hasMagic, because extglobs are already always magic
-            const [re, _, _hasMagic, uflag] = p.toRegExpSource(dot);
-            this.#uflag = this.#uflag || uflag;
-            return re;
-        })
-            .filter(p => !(this.isStart() && this.isEnd()) || !!p)
-            .join('|');
-    }
-    static #parseGlob(glob, hasMagic, noEmpty = false) {
-        let escaping = false;
-        let re = '';
-        let uflag = false;
-        // multiple stars that aren't globstars coalesce into one *
-        let inStar = false;
-        for (let i = 0; i < glob.length; i++) {
-            const c = glob.charAt(i);
-            if (escaping) {
-                escaping = false;
-                re += (reSpecials.has(c) ? '\\' : '') + c;
-                continue;
-            }
-            if (c === '*') {
-                if (inStar)
-                    continue;
-                inStar = true;
-                re += noEmpty && /^[*]+$/.test(glob) ? starNoEmpty : star;
-                hasMagic = true;
-                continue;
-            }
-            else {
-                inStar = false;
-            }
-            if (c === '\\') {
-                if (i === glob.length - 1) {
-                    re += '\\\\';
-                }
-                else {
-                    escaping = true;
-                }
-                continue;
-            }
-            if (c === '[') {
-                const [src, needUflag, consumed, magic] = (0, brace_expressions_js_1.parseClass)(glob, i);
-                if (consumed) {
-                    re += src;
-                    uflag = uflag || needUflag;
-                    i += consumed - 1;
-                    hasMagic = hasMagic || magic;
-                    continue;
-                }
-            }
-            if (c === '?') {
-                re += qmark;
-                hasMagic = true;
-                continue;
-            }
-            re += regExpEscape(c);
-        }
-        return [re, (0, unescape_js_1.unescape)(glob), !!hasMagic, uflag];
-    }
-}
-exports.AST = AST;
-_a = AST;
-//# sourceMappingURL=ast.js.map
-
-/***/ }),
-
-/***/ 1090:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-// translate the various posix character classes into unicode properties
-// this works across all unicode locales
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.parseClass = void 0;
-// { <posix class>: [<translation>, /u flag required, negated]
-const posixClasses = {
-    '[:alnum:]': ['\\p{L}\\p{Nl}\\p{Nd}', true],
-    '[:alpha:]': ['\\p{L}\\p{Nl}', true],
-    '[:ascii:]': ['\\x' + '00-\\x' + '7f', false],
-    '[:blank:]': ['\\p{Zs}\\t', true],
-    '[:cntrl:]': ['\\p{Cc}', true],
-    '[:digit:]': ['\\p{Nd}', true],
-    '[:graph:]': ['\\p{Z}\\p{C}', true, true],
-    '[:lower:]': ['\\p{Ll}', true],
-    '[:print:]': ['\\p{C}', true],
-    '[:punct:]': ['\\p{P}', true],
-    '[:space:]': ['\\p{Z}\\t\\r\\n\\v\\f', true],
-    '[:upper:]': ['\\p{Lu}', true],
-    '[:word:]': ['\\p{L}\\p{Nl}\\p{Nd}\\p{Pc}', true],
-    '[:xdigit:]': ['A-Fa-f0-9', false],
-};
-// only need to escape a few things inside of brace expressions
-// escapes: [ \ ] -
-const braceEscape = (s) => s.replace(/[[\]\\-]/g, '\\$&');
-// escape all regexp magic characters
-const regexpEscape = (s) => s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-// everything has already been escaped, we just have to join
-const rangesToString = (ranges) => ranges.join('');
-// takes a glob string at a posix brace expression, and returns
-// an equivalent regular expression source, and boolean indicating
-// whether the /u flag needs to be applied, and the number of chars
-// consumed to parse the character class.
-// This also removes out of order ranges, and returns ($.) if the
-// entire class just no good.
-const parseClass = (glob, position) => {
-    const pos = position;
-    /* c8 ignore start */
-    if (glob.charAt(pos) !== '[') {
-        throw new Error('not in a brace expression');
-    }
-    /* c8 ignore stop */
-    const ranges = [];
-    const negs = [];
-    let i = pos + 1;
-    let sawStart = false;
-    let uflag = false;
-    let escaping = false;
-    let negate = false;
-    let endPos = pos;
-    let rangeStart = '';
-    WHILE: while (i < glob.length) {
-        const c = glob.charAt(i);
-        if ((c === '!' || c === '^') && i === pos + 1) {
-            negate = true;
-            i++;
-            continue;
-        }
-        if (c === ']' && sawStart && !escaping) {
-            endPos = i + 1;
-            break;
-        }
-        sawStart = true;
-        if (c === '\\') {
-            if (!escaping) {
-                escaping = true;
-                i++;
-                continue;
-            }
-            // escaped \ char, fall through and treat like normal char
-        }
-        if (c === '[' && !escaping) {
-            // either a posix class, a collation equivalent, or just a [
-            for (const [cls, [unip, u, neg]] of Object.entries(posixClasses)) {
-                if (glob.startsWith(cls, i)) {
-                    // invalid, [a-[] is fine, but not [a-[:alpha]]
-                    if (rangeStart) {
-                        return ['$.', false, glob.length - pos, true];
-                    }
-                    i += cls.length;
-                    if (neg)
-                        negs.push(unip);
-                    else
-                        ranges.push(unip);
-                    uflag = uflag || u;
-                    continue WHILE;
-                }
-            }
-        }
-        // now it's just a normal character, effectively
-        escaping = false;
-        if (rangeStart) {
-            // throw this range away if it's not valid, but others
-            // can still match.
-            if (c > rangeStart) {
-                ranges.push(braceEscape(rangeStart) + '-' + braceEscape(c));
-            }
-            else if (c === rangeStart) {
-                ranges.push(braceEscape(c));
-            }
-            rangeStart = '';
-            i++;
-            continue;
-        }
-        // now might be the start of a range.
-        // can be either c-d or c-] or c<more...>] or c] at this point
-        if (glob.startsWith('-]', i + 1)) {
-            ranges.push(braceEscape(c + '-'));
-            i += 2;
-            continue;
-        }
-        if (glob.startsWith('-', i + 1)) {
-            rangeStart = c;
-            i += 2;
-            continue;
-        }
-        // not the start of a range, just a single character
-        ranges.push(braceEscape(c));
-        i++;
-    }
-    if (endPos < i) {
-        // didn't see the end of the class, not a valid class,
-        // but might still be valid as a literal match.
-        return ['', false, 0, false];
-    }
-    // if we got no ranges and no negates, then we have a range that
-    // cannot possibly match anything, and that poisons the whole glob
-    if (!ranges.length && !negs.length) {
-        return ['$.', false, glob.length - pos, true];
-    }
-    // if we got one positive range, and it's a single character, then that's
-    // not actually a magic pattern, it's just that one literal character.
-    // we should not treat that as "magic", we should just return the literal
-    // character. [_] is a perfectly valid way to escape glob magic chars.
-    if (negs.length === 0 &&
-        ranges.length === 1 &&
-        /^\\?.$/.test(ranges[0]) &&
-        !negate) {
-        const r = ranges[0].length === 2 ? ranges[0].slice(-1) : ranges[0];
-        return [regexpEscape(r), false, endPos - pos, false];
-    }
-    const sranges = '[' + (negate ? '^' : '') + rangesToString(ranges) + ']';
-    const snegs = '[' + (negate ? '' : '^') + rangesToString(negs) + ']';
-    const comb = ranges.length && negs.length ? '(' + sranges + '|' + snegs + ')'
-        : ranges.length ? sranges
-            : snegs;
-    return [comb, uflag, endPos - pos, true];
-};
-exports.parseClass = parseClass;
-//# sourceMappingURL=brace-expressions.js.map
-
-/***/ }),
-
-/***/ 800:
+/***/ 10800:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -73207,83 +80059,169 @@ exports.escape = escape;
 
 /***/ }),
 
-/***/ 6507:
+/***/ 46507:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.unescape = exports.escape = exports.AST = exports.Minimatch = exports.match = exports.makeRe = exports.braceExpand = exports.defaults = exports.filter = exports.GLOBSTAR = exports.sep = exports.minimatch = void 0;
-const brace_expansion_1 = __nccwpck_require__(8968);
-const assert_valid_pattern_js_1 = __nccwpck_require__(7305);
-const ast_js_1 = __nccwpck_require__(1803);
-const escape_js_1 = __nccwpck_require__(800);
-const unescape_js_1 = __nccwpck_require__(851);
-const minimatch = (p, pattern, options = {}) => {
+exports.unescape = exports.escape = exports.Minimatch = exports.match = exports.braceExpand = exports.defaults = exports.filter = exports.GLOBSTAR = exports.sep = exports.minimatch = void 0;
+const brace_expansion_1 = __nccwpck_require__(38968);
+const nonrecursive_glob_match_1 = __nccwpck_require__(11738);
+const assert_valid_pattern_js_1 = __nccwpck_require__(57305);
+const escape_js_1 = __nccwpck_require__(10800);
+const unescape_js_1 = __nccwpck_require__(70851);
+const DEFAULT_BRACE_EXPAND_MAX = 100_000;
+const DEFAULT_GLOB_STAR_RECURSION_MAX = 200;
+// avoid the annoying deprecation flag lol
+const AWE_KEY = ('allowWindow' + 'sEscape');
+const minimatch = (p, pattern, options) => {
     (0, assert_valid_pattern_js_1.assertValidPattern)(pattern);
     // shortcut: comments match nothing.
-    if (!options.nocomment && pattern.charAt(0) === '#') {
+    if (!options?.nocomment && pattern.charAt(0) === '#') {
         return false;
     }
-    return new Minimatch(pattern, options).match(p);
+    return cachedMinimatch(pattern, options).match(p);
 };
 exports.minimatch = minimatch;
-// Optimized checking for the most common glob patterns.
-const starDotExtRE = /^\*+([^+@!?*[(]*)$/;
-const starDotExtTest = (ext) => (f) => !f.startsWith('.') && f.endsWith(ext);
-const starDotExtTestDot = (ext) => (f) => f.endsWith(ext);
-const starDotExtTestNocase = (ext) => {
-    ext = ext.toLowerCase();
-    return (f) => !f.startsWith('.') && f.toLowerCase().endsWith(ext);
+// The Minimatch objects that minimatch() used most recently, by options
+// and then by pattern. When the cache is full, it becomes the old one,
+// and the objects used from the old one are moved back to a new one.
+// So it keeps 256 to 512 objects.
+let cache = new Map();
+let oldCache = new Map();
+let cacheSize = 0;
+const cacheMax = 256;
+// tsc fails here if a new option is in neither type. Add it to
+// optionsKey() too.
+const allOptionsKeyed = true;
+void allOptionsKeyed;
+// 0, 1 or 2 for undefined, falsy or truthy.
+const tri = (v) => v === undefined ? 0
+    : v ? 2
+        : 1;
+// The weight of each boolean option's base-3 digit in the key. The
+// weights below 24 are for optimizationLevel (1), platform (3) and
+// windowsPathsNoEscape (12). tsc fails here if a boolean option is
+// not in the list.
+const booleanWeights = new Map(Object.keys({
+    nobrace: 0,
+    nocomment: 0,
+    nonegate: 0,
+    noglobstar: 0,
+    noext: 0,
+    nonull: 0,
+    partial: 0,
+    dot: 0,
+    nocase: 0,
+    nocaseMagicOnly: 0,
+    magicalBraces: 0,
+    matchBase: 0,
+    flipNegate: 0,
+    preserveMultipleSlashes: 0,
+    windowsNoMagicRoot: 0,
+}).map((k, i) => [k, 24 * 3 ** i]));
+// The cache key for a set of options. It is a number, unless an
+// option is set to a value that the number can not show, such as
+// normalize or an uncommon platform. Then it is a JSON string.
+// The defaults give 0, the same key as no options.
+// It only reads the keys that are set, so that the speed does not
+// depend on the shape of the options object.
+const optionsKey = (o) => {
+    let n = 0;
+    let wpe = false;
+    // inherited keys too, because Minimatch reads them
+    // oxlint-disable-next-line guard-for-in
+    for (const k in o) {
+        const v = o[k];
+        switch (k) {
+            // the same test as the Minimatch constructor
+            case 'windowsPathsNoEscape':
+                if (v)
+                    wpe = true;
+                break;
+            case AWE_KEY:
+                if (v === false)
+                    wpe = true;
+                break;
+            case 'platform': {
+                // the same test as the Minimatch constructor
+                const p = v || defaultPlatform;
+                if (p === defaultPlatform)
+                    break;
+                if (p === 'darwin')
+                    n += 3;
+                else if (p === 'win32')
+                    n += 6;
+                else if (p === 'linux')
+                    n += 9;
+                else
+                    return JSON.stringify(o);
+                break;
+            }
+            case 'optimizationLevel':
+                // The same tests as Minimatch: 1 when undefined, then >= 2,
+                // >= 1, or else 0. The default level 1 adds 0.
+                if (v === undefined)
+                    break;
+                n +=
+                    v >= 2 ? 1
+                        : v >= 1 ? 0
+                            : 2;
+                break;
+            case 'braceExpandMax':
+                if (v !== undefined && v !== DEFAULT_BRACE_EXPAND_MAX) {
+                    return JSON.stringify(o);
+                }
+                break;
+            case 'maxGlobstarRecursion':
+                if (v !== undefined && v !== DEFAULT_GLOB_STAR_RECURSION_MAX) {
+                    return JSON.stringify(o);
+                }
+                break;
+            case 'normalize':
+                if (v !== undefined)
+                    return JSON.stringify(o);
+                break;
+            default:
+                // unknown keys have no weight
+                n += (booleanWeights.get(k) ?? 0) * tri(v);
+        }
+    }
+    return wpe ? n + 12 : n;
 };
-const starDotExtTestNocaseDot = (ext) => {
-    ext = ext.toLowerCase();
-    return (f) => f.toLowerCase().endsWith(ext);
+// A copy, so a later change to the options can not change it. Unlike
+// a spread, it keeps the inherited keys, which optionsKey() and the
+// Minimatch constructor also read.
+const copyOptions = (o) => {
+    const copy = {};
+    // oxlint-disable-next-line guard-for-in
+    for (const k in o)
+        copy[k] = o[k];
+    return copy;
 };
-const starDotStarRE = /^\*+\.\*+$/;
-const starDotStarTest = (f) => !f.startsWith('.') && f.includes('.');
-const starDotStarTestDot = (f) => f !== '.' && f !== '..' && f.includes('.');
-const dotStarRE = /^\.\*+$/;
-const dotStarTest = (f) => f !== '.' && f !== '..' && f.startsWith('.');
-const starRE = /^\*+$/;
-const starTest = (f) => f.length !== 0 && !f.startsWith('.');
-const starTestDot = (f) => f.length !== 0 && f !== '.' && f !== '..';
-const qmarksRE = /^\?+([^+@!?*[(]*)?$/;
-const qmarksTestNocase = ([$0, ext = '']) => {
-    const noext = qmarksTestNoExt([$0]);
-    if (!ext)
-        return noext;
-    ext = ext.toLowerCase();
-    return (f) => noext(f) && f.toLowerCase().endsWith(ext);
-};
-const qmarksTestNocaseDot = ([$0, ext = '']) => {
-    const noext = qmarksTestNoExtDot([$0]);
-    if (!ext)
-        return noext;
-    ext = ext.toLowerCase();
-    return (f) => noext(f) && f.toLowerCase().endsWith(ext);
-};
-const qmarksTestDot = ([$0, ext = '']) => {
-    const noext = qmarksTestNoExtDot([$0]);
-    return !ext ? noext : (f) => noext(f) && f.endsWith(ext);
-};
-const qmarksTest = ([$0, ext = '']) => {
-    const noext = qmarksTestNoExt([$0]);
-    return !ext ? noext : (f) => noext(f) && f.endsWith(ext);
-};
-const qmarksTestNoExt = ([$0]) => {
-    const len = $0.length;
-    return (f) => f.length === len && !f.startsWith('.');
-};
-const qmarksTestNoExtDot = ([$0]) => {
-    const len = $0.length;
-    return (f) => f.length === len && f !== '.' && f !== '..';
+const cachedMinimatch = (pattern, options) => {
+    const key = options ? optionsKey(options) : 0;
+    let mm = cache.get(key)?.get(pattern);
+    if (mm)
+        return mm;
+    mm =
+        oldCache.get(key)?.get(pattern) ??
+            new Minimatch(pattern, copyOptions(options));
+    if (cacheSize >= cacheMax) {
+        oldCache = cache;
+        cache = new Map();
+        cacheSize = 0;
+    }
+    let byPattern = cache.get(key);
+    if (!byPattern)
+        cache.set(key, (byPattern = new Map()));
+    byPattern.set(pattern, mm);
+    cacheSize++;
+    return mm;
 };
 /* c8 ignore start */
 const defaultPlatform = (typeof process === 'object' && process ?
-    (typeof process.env === 'object' &&
-        process.env &&
-        process.env.__MINIMATCH_TESTING_PLATFORM__) ||
-        process.platform
+    process.env?.__MINIMATCH_TESTING_PLATFORM__ || process.platform
     : 'posix');
 const path = {
     win32: { sep: '\\' },
@@ -73294,19 +80232,10 @@ exports.sep = defaultPlatform === 'win32' ? path.win32.sep : path.posix.sep;
 exports.minimatch.sep = exports.sep;
 exports.GLOBSTAR = Symbol('globstar **');
 exports.minimatch.GLOBSTAR = exports.GLOBSTAR;
-// any single thing other than /
-// don't need to escape / when using new RegExp()
-const qmark = '[^/]';
-// * => any number of characters
-const star = qmark + '*?';
-// ** when dots are allowed.  Anything goes, except .. and .
-// not (^ or / followed by one or two dots followed by $ or /),
-// followed by anything, any number of times.
-const twoStarDot = '(?:(?!(?:\\/|^)(?:\\.{1,2})($|\\/)).)*?';
-// not a ^ or / followed by a dot,
-// followed by anything, any number of times.
-const twoStarNoDot = '(?:(?!(?:\\/|^)\\.).)*?';
-const filter = (pattern, options = {}) => (p) => (0, exports.minimatch)(p, pattern, options);
+const filter = (pattern, options) => {
+    let mm;
+    return (p) => (mm ??= cachedMinimatch(pattern, options)).match(p);
+};
 exports.filter = filter;
 exports.minimatch.filter = exports.filter;
 const ext = (a, b = {}) => Object.assign({}, a, b);
@@ -73325,21 +80254,10 @@ const defaults = (def) => {
                 return orig.defaults(ext(def, options)).Minimatch;
             }
         },
-        AST: class AST extends orig.AST {
-            /* c8 ignore start */
-            constructor(type, parent, options = {}) {
-                super(type, parent, ext(def, options));
-            }
-            /* c8 ignore stop */
-            static fromGlob(pattern, options = {}) {
-                return orig.AST.fromGlob(pattern, ext(def, options));
-            }
-        },
         unescape: (s, options = {}) => orig.unescape(s, ext(def, options)),
         escape: (s, options = {}) => orig.escape(s, ext(def, options)),
         filter: (pattern, options = {}) => orig.filter(pattern, ext(def, options)),
         defaults: (options) => orig.defaults(ext(def, options)),
-        makeRe: (pattern, options = {}) => orig.makeRe(pattern, ext(def, options)),
         braceExpand: (pattern, options = {}) => orig.braceExpand(pattern, ext(def, options)),
         match: (list, pattern, options = {}) => orig.match(list, pattern, ext(def, options)),
         sep: orig.sep,
@@ -73370,20 +80288,12 @@ const braceExpand = (pattern, options = {}) => {
 };
 exports.braceExpand = braceExpand;
 exports.minimatch.braceExpand = exports.braceExpand;
-// parse a component of the expanded set.
-// At this point, no pattern may contain "/" in it
-// so we're going to return a 2d array, where each entry is the full
-// pattern, split on '/', and then turned into a regular expression.
-// A regexp is made at the end which joins each array with an
-// escaped /, and another full one which joins each regexp with |.
-//
-// Following the lead of Bash 4.1, note that "**" only has special meaning
-// when it is the *only* thing in a path portion.  Otherwise, any series
-// of * is equivalent to a single *.  Globstar behavior is enabled by
-// default, and can be disabled by setting options.noglobstar.
-const makeRe = (pattern, options = {}) => new Minimatch(pattern, options).makeRe();
-exports.makeRe = makeRe;
-exports.minimatch.makeRe = exports.makeRe;
+// A numeric range with at least this many values is matched as one
+// pattern portion, rather than expanded. For a glob walk, that is
+// one directory read, in place of a stat for each value.
+const RANGE_MIN = 100;
+// a {lo..hi} range that is not escaped, and not a ${...} variable
+const rangeRe = /(?<![\\$])\{(-?\d+)\.\.(-?\d+)\}/g;
 const match = (list, pattern, options = {}) => {
     const mm = new Minimatch(pattern, options);
     list = list.filter(f => mm.match(f));
@@ -73394,9 +80304,201 @@ const match = (list, pattern, options = {}) => {
 };
 exports.match = match;
 exports.minimatch.match = exports.match;
-// replace stuff like \* with *
 const globMagic = /[?*]|[+@!]\(.*?\)|\[|\]/;
-const regExpEscape = (s) => s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+// Index of the `]` that closes the class that starts at `start`,
+// or -1 if it is not closed. Posix classes such as `[:alpha:]` are
+// not skipped, so this can find a `]` before the real end. That
+// only makes a class look less like a literal.
+const classEnd = (pattern, start) => {
+    let i = start + 1;
+    if (pattern.charAt(i) === '!' || pattern.charAt(i) === '^')
+        i++;
+    let sawStart = false;
+    for (; i < pattern.length; i++) {
+        const c = pattern.charAt(i);
+        if (c === ']' && sawStart)
+            return i;
+        sawStart = true;
+        if (c === '\\')
+            i++;
+    }
+    return -1;
+};
+// If a path portion pattern has no magic, return the string it
+// matches. Otherwise, return undefined. This can report magic for
+// a pattern that is in fact literal (eg, `[]`), but never the
+// reverse, so a string result is always safe to compare directly.
+const literal = (pattern, noext) => {
+    if (!noext && (pattern === '+()' || pattern === '@()'))
+        return pattern;
+    let lit = '';
+    for (let i = 0; i < pattern.length; i++) {
+        const c = pattern.charAt(i);
+        if (c === '\\') {
+            // a trailing \ is a literal \
+            lit += pattern.charAt(++i) || c;
+        }
+        else if (c === '*' || c === '?') {
+            return undefined;
+        }
+        else if (c === '[') {
+            const close = classEnd(pattern, i);
+            if (close === -1) {
+                // not closed, so the [ is a literal
+                lit += c;
+                continue;
+            }
+            // a class of one char, such as `[*]` or `[\b]`, is a literal
+            let body = pattern.slice(i + 1, close);
+            if (body.startsWith('\\'))
+                body = body.slice(1);
+            if ([...body].length !== 1 || '!^'.includes(pattern.charAt(i + 1))) {
+                return undefined;
+            }
+            lit += body;
+            i = close;
+        }
+        else if (!noext &&
+            '+@!'.includes(c) &&
+            pattern.charAt(i + 1) === '(' &&
+            pattern.includes(')', i + 2)) {
+            return undefined;
+        }
+        else {
+            lit += c;
+        }
+    }
+    return lit;
+};
+// True if the portion pattern has the same meaning as an alternative
+// inside `@(...)`. It must not have a `|` or `)` that is not in a
+// closed extglob (those are literal at the top level), an extglob
+// that is not closed (the `)` of the `@(...)` would close it), or a
+// trailing `\` (it would escape the next `|`). A pattern that is
+// only an empty extglob, such as `?()`, is literal on its own, but
+// not in `@(...)`. Posix classes such as `[:alpha:]` can hide a `]`
+// from classEnd, so patterns with them are not merged.
+const extSafe = (pattern) => {
+    if (/^[?*+@]\(\)$/.test(pattern) || pattern.includes('[:'))
+        return false;
+    let depth = 0;
+    for (let i = 0; i < pattern.length; i++) {
+        const c = pattern.charAt(i);
+        if (c === '\\') {
+            if (++i === pattern.length)
+                return false;
+        }
+        else if (c === '[') {
+            const close = classEnd(pattern, i);
+            if (close !== -1)
+                i = close;
+        }
+        else if ('+@!?*'.includes(c) && pattern.charAt(i + 1) === '(') {
+            depth++;
+            i++;
+        }
+        else if (c === ')') {
+            if (!depth--)
+                return false;
+        }
+        else if (c === '|' && !depth) {
+            return false;
+        }
+    }
+    return !depth;
+};
+// The last path that Minimatch#match split, and its parts. A path is
+// often tested against many patterns in a row (such as a list of
+// ignore patterns), so this saves splitting it again. The parts are
+// never changed, so they can be shared.
+let lastSplit;
+// The last path that Minimatch#match checked before splitting it. If
+// the same path is checked again, it is being tested against many
+// patterns, so it is split and the parts are kept for the others.
+let lastChecked;
+// true if a pattern portion that is not ** matches a path portion.
+// An empty path portion only matches an empty pattern portion. A path
+// portion never has a `/`, so the Matcher does not need to check it.
+const portionMatch = (p, f) => typeof p === 'string' ? f === p : f !== '' && p.testUnchecked(f);
+// Where the last portion of a row matches in a path: the start of the
+// last portion of the path, or of the one before a trailing `/`. -1 if
+// it matches neither.
+const endIndex = (p, last, lastStart, prev, prevStart) => portionMatch(p, last) ? lastStart
+    : prev !== undefined && portionMatch(p, prev) ? prevStart
+        : -1;
+const isDots = (p) => p === '.' || p === '..';
+// a Windows drive letter portion, like `c:`
+const isDrive = (p) => typeof p === 'string' && /^[a-z]:$/i.test(p);
+// true for the `UNC` portion of a long UNC root, //?/UNC/host/share
+const isLongUNC = (p) => typeof p === 'string' && /^unc$/i.test(p);
+// The index of the host in a row or split path that starts with a
+// Windows UNC root: 2 for `//host/share`, and 4 for
+// `//?/UNC/host/share`. Otherwise -1. `//?/c:` is not one.
+const uncHost = (p) => {
+    if (p[0] !== '' || p[1] !== '')
+        return -1;
+    const h = p[2] !== '?' ? 2
+        : isLongUNC(p[3]) ? 4
+            : -1;
+    const host = p[h];
+    const share = p[h + 1];
+    return (h !== -1 &&
+        host !== undefined &&
+        host !== '' &&
+        host !== exports.GLOBSTAR &&
+        share !== undefined &&
+        share !== '' &&
+        share !== exports.GLOBSTAR) ?
+        h
+        : -1;
+};
+// true if ** can walk the path portion: not `.` or `..`, and not a
+// dotfile unless `dot` is set
+const walkable = (p, dot) => !isDots(p) && (dot || !p.startsWith('.'));
+// True if a portion of the path from `start` to `end` can not be
+// walked by **: one that starts with `.`, or with `dot`, one that is
+// `.` or `..`. `start` is the start of a portion, and `end` is the end
+// of the path, or just after a separator.
+const dotPortion = (f, start, end, dot, sep) => {
+    for (let k = start; k < end;) {
+        if (f.charCodeAt(k) === 46) {
+            if (!dot)
+                return true;
+            const n = f.charCodeAt(k + 1) === 46 ? k + 2 : k + 1;
+            if (n >= end || isSep(f.charCodeAt(n), sep))
+                return true;
+        }
+        // the start of the next portion, after any run of separators
+        const s = nextSep(f, k, sep);
+        if (s === -1)
+            return false;
+        k = s + 1;
+        while (k < end && isSep(f.charCodeAt(k), sep))
+            k++;
+    }
+    return false;
+};
+const isSep = (c, sep) => sep === '/' ? c === 47
+    : sep === '\\' ? c === 92
+        : c === 47 || c === 92;
+// the index of the first separator at or after `from`, or -1
+const nextSep = (f, from, sep) => {
+    if (sep !== 'both')
+        return f.indexOf(sep, from);
+    const s = f.indexOf('/', from);
+    const b = f.indexOf('\\', from);
+    return (s === -1 ? b
+        : b === -1 ? s
+            : Math.min(s, b));
+};
+// the index of the last separator at or before `from`, or -1
+const lastSep = (f, from, sep) => sep !== 'both' ?
+    f.lastIndexOf(sep, from)
+    : Math.max(f.lastIndexOf('/', from), f.lastIndexOf('\\', from));
+// What parse() returns in place of a Matcher while make() builds and
+// merges the rows. Most of the Matchers in rows that are merged would
+// never be used, so they are only made for the rows that are left.
+const PENDING = {};
 class Minimatch {
     options;
     set;
@@ -73415,24 +80517,44 @@ class Minimatch {
     platform;
     windowsNoMagicRoot;
     maxGlobstarRecursion;
-    regexp;
+    // the path can be checked against the last portion, and the string
+    // portions, of each row before it is split. See #canMatch.
+    #endCheck;
+    #literalCheck;
+    // level 2 resolves `.` and `..` portions in the path
+    #level2;
+    // the unicode normalization form, if any
+    #form;
+    // the string portions of each row in the set
+    #literals = [];
+    // the rows that #canMatch can match without splitting the path
+    #shapes = [];
+    // the rows whose last portion can be checked against the path's
+    #endRows = [];
+    // brace expansion can make the same portion in many rows, so they
+    // share one Matcher, and the states that it caches
+    #matchers = new Map();
+    // parse() returns PENDING in place of a Matcher
+    #pending = false;
+    // the char that marks numeric ranges in globSet, if any
+    #rangeMark;
+    // the GlobstarParts of each pattern row, by start index and partial
+    #globstarParts = new WeakMap();
     constructor(pattern, options = {}) {
         (0, assert_valid_pattern_js_1.assertValidPattern)(pattern);
         options = options || {};
         this.options = options;
-        this.maxGlobstarRecursion = options.maxGlobstarRecursion ?? 200;
+        this.maxGlobstarRecursion =
+            options.maxGlobstarRecursion ?? DEFAULT_GLOB_STAR_RECURSION_MAX;
         this.pattern = pattern;
         this.platform = options.platform || defaultPlatform;
         this.isWindows = this.platform === 'win32';
-        // avoid the annoying deprecation flag lol
-        const awe = ('allowWindow' + 'sEscape');
         this.windowsPathsNoEscape =
-            !!options.windowsPathsNoEscape || options[awe] === false;
+            !!options.windowsPathsNoEscape || options[AWE_KEY] === false;
         if (this.windowsPathsNoEscape) {
             this.pattern = this.pattern.replace(/\\/g, '/');
         }
         this.preserveMultipleSlashes = !!options.preserveMultipleSlashes;
-        this.regexp = null;
         this.negate = false;
         this.nonegate = !!options.nonegate;
         this.comment = false;
@@ -73446,8 +80568,81 @@ class Minimatch {
         this.globSet = [];
         this.globParts = [];
         this.set = [];
-        // make the set of regexps etc.
+        this.#endCheck = !this.preserveMultipleSlashes;
+        this.#level2 = (options.optimizationLevel ?? 1) >= 2;
+        const n = options.normalize;
+        this.#form = n === true ? 'NFC' : n || undefined;
+        // make the set of Matchers etc.
         this.make();
+        // On Windows, the portions of a row up to its drive letter or UNC
+        // share are skipped or compared without case, if the path has one
+        // too. So the checks only use the portions after it.
+        const drives = this.set.map(row => this.#rootIndex(row));
+        this.#endRows = this.set.map((row, r) => this.#endCheck && row.length - 1 > drives[r]);
+        // with the end check, the last portion is already checked
+        this.#literals = this.set.map((row, r) => {
+            const end = this.#endRows[r] ? row.length - 1 : row.length;
+            const lits = row
+                .slice(drives[r] + 1, end)
+                .filter((p) => typeof p === 'string' && !!p);
+            return [...new Set(lits)];
+        });
+        this.#literalCheck = this.#literals.some(l => l.length);
+        this.#shapes = this.set.map((row, r) => {
+            const [p0, p1, p2] = row;
+            if (this.#endRows[r] && row.length === 2) {
+                if (p0 === exports.GLOBSTAR && p1 !== exports.GLOBSTAR)
+                    return 'tail';
+            }
+            // the basename of a path that is split on / is its last portion,
+            // or the one before a trailing /, the same as the end check
+            if (this.#endRows[r] &&
+                options.matchBase &&
+                row.length === 1 &&
+                p0 !== exports.GLOBSTAR &&
+                p0 !== '') {
+                return 'base';
+            }
+            // the portion must not be a root, or '', which can be a
+            // different portion on Windows (where //x paths get an extra '')
+            if (!this.#endCheck || drives[r] !== -1)
+                return undefined;
+            if (row.length === 3 &&
+                p0 === exports.GLOBSTAR &&
+                p2 === exports.GLOBSTAR &&
+                p1 !== exports.GLOBSTAR &&
+                p1 !== '' &&
+                // the portion between is only matched below this limit
+                this.maxGlobstarRecursion > 0) {
+                return 'mid';
+            }
+            if (row.length === 2 &&
+                p1 === exports.GLOBSTAR &&
+                p0 !== exports.GLOBSTAR &&
+                p0 !== '') {
+                return 'head';
+            }
+            return undefined;
+        });
+    }
+    // a string portion of a pattern, normalized if the option is set
+    #norm(p) {
+        return this.#form ? p.normalize(this.#form) : p;
+    }
+    // On Windows, the index of the last root portion of a row, as
+    // #matchRow finds it: 0 for `c:/...`, 3 for `//?/c:/...` and
+    // `//host/share/...`, and 5 for `//?/UNC/host/share/...`. Otherwise
+    // -1.
+    #rootIndex(row) {
+        if (!this.isWindows)
+            return -1;
+        if (isDrive(row[0]))
+            return 0;
+        const uncDrive = row[0] === '' && row[1] === '' && row[2] === '?' && isDrive(row[3]);
+        if (uncDrive)
+            return 3;
+        const h = uncHost(row);
+        return h === -1 ? -1 : h + 1;
     }
     hasMagic() {
         if (this.options.magicalBraces && this.set.length > 1) {
@@ -73461,7 +80656,6 @@ class Minimatch {
         }
         return false;
     }
-    debug(..._) { }
     make() {
         const pattern = this.pattern;
         const options = this.options;
@@ -73477,46 +80671,45 @@ class Minimatch {
         // step 1: figure out negation, etc.
         this.parseNegate();
         // step 2: expand braces
-        this.globSet = [...new Set(this.braceExpand())];
-        if (options.debug) {
-            //oxlint-disable-next-line no-console
-            this.debug = (...args) => console.error(...args);
-        }
-        this.debug(this.pattern, this.globSet);
+        this.globSet = [...new Set(this.#expandBraces())];
         // step 3: now we have a set, so turn each one into a series of
         // path-portion matching patterns.
-        // These will be regexps, except in the case of "**", which is
+        // These will be Matchers, except in the case of "**", which is
         // set to the GLOBSTAR object for globstar behavior,
         // and will not contain any / characters
         //
         // First, we preprocess to make the glob pattern sets a bit simpler
         // and deduped.  There are some perf-killing patterns that can cause
         // problems with a glob walk, but we can simplify them down a bit.
-        const rawGlobParts = this.globSet.map(s => this.slashSplit(s));
+        const rawGlobParts = this.globSet.map(s => this.#slashSplit(s));
         this.globParts = this.preprocess(rawGlobParts);
-        this.debug(this.pattern, this.globParts);
-        // glob --> regexps
+        // glob --> Matchers
+        this.#pending = true;
         let set = this.globParts.map((s, _, __) => {
             if (this.isWindows && this.windowsNoMagicRoot) {
-                // check if it's a drive or unc path.
+                // check if it's a drive or unc path. The root of a long UNC
+                // path, //?/UNC/host/share, is 6 portions.
+                const n = s[2] === '?' && isLongUNC(s[3]) ? 6 : 4;
                 const isUNC = s[0] === '' &&
                     s[1] === '' &&
                     (s[2] === '?' || !globMagic.test(s[2])) &&
-                    !globMagic.test(s[3]);
+                    s.slice(3, n).every(p => !globMagic.test(p));
                 const isDrive = /^[a-z]:/i.test(s[0]);
                 if (isUNC) {
                     return [
-                        ...s.slice(0, 4),
-                        ...s.slice(4).map(ss => this.parse(ss)),
+                        ...s.slice(0, n).map(p => this.#norm(p)),
+                        ...s.slice(n).map(ss => this.parse(ss)),
                     ];
                 }
                 else if (isDrive) {
-                    return [s[0], ...s.slice(1).map(ss => this.parse(ss))];
+                    return [
+                        this.#norm(s[0]),
+                        ...s.slice(1).map(ss => this.parse(ss)),
+                    ];
                 }
             }
             return s.map(ss => this.parse(ss));
         });
-        this.debug(this.pattern, set);
         // filter out everything that didn't compile properly.
         this.set = set.filter(s => s.indexOf(false) === -1);
         // do not treat the ? in UNC paths as magic
@@ -73526,13 +80719,70 @@ class Minimatch {
                 if (p[0] === '' &&
                     p[1] === '' &&
                     this.globParts[i][2] === '?' &&
-                    typeof p[3] === 'string' &&
-                    /^[a-z]:$/i.test(p[3])) {
+                    (isDrive(p[3]) || isLongUNC(this.globParts[i][3]))) {
+                    if (isLongUNC(this.globParts[i][3]))
+                        p[3] = 'UNC';
                     p[2] = '?';
                 }
             }
         }
-        this.debug(this.pattern, this.set);
+        // with noext, `@(...)` would be literal
+        if (!options.noext)
+            this.mergeRows();
+        this.#pending = false;
+        this.set.forEach((row, i) => {
+            for (let k = 0; k < row.length; k++) {
+                if (row[k] === PENDING) {
+                    row[k] = this.parse(this.globParts[i][k]);
+                }
+            }
+        });
+    }
+    // Merge rows that only differ in one portion, where each of them
+    // is a Matcher, into one row that matches any of them with
+    // `@(a|b|...)`. Then a path is only walked once for all of them,
+    // for example with `**/*.{js,ts}`.
+    mergeRows() {
+        let merged = true;
+        while (merged) {
+            merged = false;
+            const len = Math.max(0, ...this.set.map(r => r.length));
+            for (let k = 0; k < len; k++) {
+                // the rows that are the same other than at portion k
+                const groups = new Map();
+                this.set.forEach((row, i) => {
+                    if (!(row[k] instanceof nonrecursive_glob_match_1.Matcher || row[k] === PENDING) ||
+                        !extSafe(this.globParts[i][k])) {
+                        return;
+                    }
+                    const parts = [...this.globParts[i]];
+                    parts[k] = '';
+                    const key = `${row.length}/${parts.join('/')}`;
+                    const g = groups.get(key);
+                    if (g)
+                        g.push(i);
+                    else
+                        groups.set(key, [i]);
+                });
+                const drop = new Set();
+                for (const g of groups.values()) {
+                    if (g.length < 2)
+                        continue;
+                    const [first, ...rest] = g;
+                    const alts = g.map(i => this.globParts[i][k]);
+                    const glob = `@(${alts.join('|')})`;
+                    this.globParts[first][k] = glob;
+                    this.set[first][k] = this.parse(glob);
+                    for (const i of rest)
+                        drop.add(i);
+                }
+                if (drop.size) {
+                    merged = true;
+                    this.set = this.set.filter((_, i) => !drop.has(i));
+                    this.globParts = this.globParts.filter((_, i) => !drop.has(i));
+                }
+            }
+        }
     }
     // various transforms to equivalent pattern sets that are
     // faster to process in a filesystem walk.  The goal is to
@@ -73585,13 +80835,19 @@ class Minimatch {
     // get rid of adjascent ** and resolve .. portions
     levelOneOptimize(globParts) {
         return globParts.map(parts => {
+            // .. can not remove the root of a Windows path
+            const root = this.#rootIndex(parts) + 1;
             parts = parts.reduce((set, part) => {
                 const prev = set[set.length - 1];
                 if (part === '**' && prev === '**') {
                     return set;
                 }
                 if (part === '..') {
-                    if (prev && prev !== '..' && prev !== '.' && prev !== '**') {
+                    if (set.length > root &&
+                        prev &&
+                        prev !== '..' &&
+                        prev !== '.' &&
+                        prev !== '**') {
                         set.pop();
                         return set;
                     }
@@ -73602,10 +80858,214 @@ class Minimatch {
             return parts.length === 0 ? [''] : parts;
         });
     }
-    levelTwoFileOptimize(parts) {
-        if (!Array.isArray(parts)) {
-            parts = this.slashSplit(parts);
+    // Check the path against each row before it is split. 'no' if no
+    // row can match, so it does not need to be split. 'yes' if a row of
+    // `**` and one more portion matches. 'maybe' if it must be split to
+    // know. None of this applies with partial, where the path can end
+    // before the row does.
+    //
+    // On Windows, `\` is a separator in the path too, and the portions of
+    // a row up to its drive letter or UNC share are not checked (see
+    // #rootIndex).
+    //
+    // Each string portion of a row must be a portion of the path, so the
+    // path must contain it. Level 2 can only take portions out of the
+    // path, so this is still true then.
+    //
+    // The last portion of a row must match the last portion of the path,
+    // or the one before a trailing `/` (as a/* and a/**/* match a/b/).
+    // This does not apply to rows that end in **, rows that end in a
+    // root, or preserveMultipleSlashes (which can leave more
+    // than one '' at the end). At level 2, it does not apply if that
+    // portion is `.` or `..`, which can be
+    // resolved away. Level 2 only takes other portions out of the
+    // middle of the path.
+    //
+    // A row of `**/x` then matches if the ** can walk the portions
+    // before the one that x matches, the same as #matchGlobstar. At
+    // level 2, this is only known if none of them are `.` or `..`, so
+    // that the path does not change when it is resolved.
+    #canMatch(f) {
+        const sep = !this.isWindows || !f.includes('\\') ? '/'
+            : f.includes('/') ? 'both'
+                : '\\';
+        // the portions that f.split(/\/+/) would end with, and where they
+        // start in f, found when a row needs them. `ends` is 0 until they
+        // are found, then 1, or -1 if they can not be used.
+        let ends = this.#endCheck ? 0 : -1;
+        let last = '';
+        let lastStart = 0;
+        let prev;
+        let prevStart = 0;
+        const dot = !!this.options.dot;
+        // A string compare is cheaper than includes(), and a Matcher test
+        // costs more, so the cheaper check goes first.
+        ROWS: for (let r = 0; r < this.set.length; r++) {
+            const row = this.set[r];
+            const p = row[row.length - 1];
+            let end = ends !== -1 && this.#endRows[r] && p !== exports.GLOBSTAR;
+            if (end && ends === 0) {
+                const i = lastSep(f, f.length, sep);
+                lastStart = i + 1;
+                last = f.slice(lastStart);
+                if (last === '' && i >= 0) {
+                    let j = i;
+                    while (j > 0 && isSep(f.charCodeAt(j - 1), sep))
+                        j--;
+                    prevStart = j === 0 ? 0 : lastSep(f, j - 1, sep) + 1;
+                    prev = f.slice(prevStart, j);
+                }
+                const resolves = this.#level2 &&
+                    (isDots(last) ||
+                        (last === '' && prev !== undefined && isDots(prev)));
+                ends = resolves ? -1 : 1;
+                end = !resolves;
+            }
+            let tailStart = -1;
+            if (end && typeof p === 'string') {
+                tailStart = endIndex(p, last, lastStart, prev, prevStart);
+                if (tailStart === -1)
+                    continue;
+            }
+            if (this.#literalCheck) {
+                for (const l of this.#literals[r]) {
+                    if (!f.includes(l))
+                        continue ROWS;
+                }
+            }
+            if (end && typeof p === 'object') {
+                tailStart = endIndex(p, last, lastStart, prev, prevStart);
+                if (tailStart === -1)
+                    continue;
+            }
+            const shape = this.#shapes[r];
+            if (shape === 'base' && end)
+                return 'yes';
+            if (shape === 'tail' && end) {
+                if (this.#level2 && dotPortion(f, 0, tailStart, true, sep)) {
+                    return 'maybe';
+                }
+                if (!dotPortion(f, 0, tailStart, dot, sep))
+                    return 'yes';
+                continue;
+            }
+            if (shape === 'mid' || shape === 'head') {
+                const m = this.#walk(f, row, shape === 'head', dot, sep);
+                if (m !== 'no')
+                    return m;
+                continue;
+            }
+            return 'maybe';
         }
+        return 'no';
+    }
+    // Match a row of a known shape against the split path, the same as
+    // #matchGlobstar and #matchGlobStarBodySections do. None of these
+    // rows have a drive letter, so they start at the first portion.
+    #matchShape(file, row, shape) {
+        const dot = !!this.options.dot;
+        const n = file.length;
+        if (shape === 'head') {
+            // x, then at least one portion that ** can walk
+            if (n < 2 || !portionMatch(row[0], file[0])) {
+                return false;
+            }
+            for (let i = 1; i < n; i++)
+                if (!walkable(file[i], dot))
+                    return false;
+            return true;
+        }
+        const x = row[1];
+        if (shape === 'tail') {
+            // x is the last portion, or the one before a trailing ''
+            let t = n - 1;
+            if (!portionMatch(x, file[t])) {
+                if (file[t] !== '' || n === 1 || !portionMatch(x, file[--t])) {
+                    return false;
+                }
+            }
+            for (let i = 0; i < t; i++)
+                if (!walkable(file[i], dot))
+                    return false;
+            return true;
+        }
+        // mid: the first x that ** can walk to, with a portion after it,
+        // and ** can walk all of those
+        for (let k = 0; k < n; k++) {
+            if (portionMatch(x, file[k]) && k + 1 < n) {
+                let i = k + 1;
+                while (i < n && walkable(file[i], dot))
+                    i++;
+                if (i === n)
+                    return true;
+            }
+            if (!walkable(file[k], dot))
+                return false;
+        }
+        return false;
+    }
+    // Match a row of `**/x/**` or `x/**` against the path, the same as
+    // #matchGlobstar and #matchGlobStarBodySections do once it is split.
+    // x must match a portion (the first one, for `x/**`), the ** before
+    // it must be able to walk the portions before that one, and there
+    // must be a portion after it, which the ** after it can walk. At
+    // level 2, this is only known if no portion is `.` or `..`.
+    #walk(f, row, head, dot, sep) {
+        if (this.#level2 && dotPortion(f, 0, f.length, true, sep))
+            return 'maybe';
+        const x = row[head ? 0 : 1];
+        // the last portion has none after it, so it can not be x
+        let s = 0;
+        for (let e = nextSep(f, s, sep); e !== -1; e = nextSep(f, s, sep)) {
+            // the start of the next portion
+            let next = e + 1;
+            while (next < f.length && isSep(f.charCodeAt(next), sep))
+                next++;
+            const hit = typeof x === 'string' ?
+                e - s === x.length && f.startsWith(x, s)
+                : e > s && x.testUnchecked(f.slice(s, e));
+            if (hit && !dotPortion(f, next, f.length, dot, sep))
+                return 'yes';
+            if (head || dotPortion(f, s, next, dot, sep))
+                return 'no';
+            s = next;
+        }
+        return 'no';
+    }
+    // the last split, if it was the same path with the same split
+    // settings
+    #cachedSplit(f) {
+        const last = lastSplit;
+        return (last?.f === f &&
+            last.isWindows === this.isWindows &&
+            last.preserveMultipleSlashes === this.preserveMultipleSlashes &&
+            last.normalize === this.#form) ?
+            last
+            : undefined;
+    }
+    // split a path for match(), and keep the parts for the next call
+    #split(f) {
+        const { isWindows, preserveMultipleSlashes } = this;
+        // windows: need to use /, not \
+        let parts = this.#slashSplit(isWindows ? f.split('\\').join('/') : f);
+        // normalize each portion, so that a char that normalizes to `/`
+        // does not make a new portion
+        const normalize = this.#form;
+        if (normalize)
+            parts = parts.map(p => p.normalize(normalize));
+        lastSplit = {
+            f,
+            isWindows,
+            preserveMultipleSlashes,
+            normalize,
+            parts,
+        };
+        return lastSplit;
+    }
+    // resolve `.` and `..` portions of a path, for level 2
+    #levelTwoFileOptimize(file) {
+        // work on a copy, so that the cached parts do not change
+        const parts = [...file];
         let didSomething = false;
         do {
             didSomething = false;
@@ -73630,17 +81090,15 @@ class Minimatch {
                 }
             }
             // <pre>/<p>/../<rest> -> <pre>/<rest>
-            let dd = 0;
+            // .. can not remove the root of a Windows path
+            const root = this.#rootIndex(parts) + 1;
+            let dd = root;
             while (-1 !== (dd = parts.indexOf('..', dd + 1))) {
                 const p = parts[dd - 1];
-                if (p &&
-                    p !== '.' &&
-                    p !== '..' &&
-                    p !== '**' &&
-                    !(this.isWindows && /^[a-z]:$/i.test(p))) {
+                if (p && p !== '.' && p !== '..' && p !== '**') {
                     didSomething = true;
                     parts.splice(dd - 1, 2);
-                    dd -= 2;
+                    dd = Math.max(dd - 2, root);
                 }
             }
         } while (didSomething);
@@ -73665,6 +81123,13 @@ class Minimatch {
     // **/*/<rest> -> */**/<rest> <== not valid because ** doesn't follow
     // this WOULD be allowed if ** did follow symlinks, or * didn't
     firstPhasePreProcess(globParts) {
+        // each **/.. split doubles the patterns, and adds a copy of the
+        // whole pattern. Throw if either gets too large. A partial split
+        // would match some paths and not others, depending on which rows
+        // the pass reached first.
+        const { braceExpandMax = DEFAULT_BRACE_EXPAND_MAX } = this.options;
+        let splitCells = 0;
+        const maxSplitCells = 1_000_000;
         let didSomething = false;
         do {
             didSomething = false;
@@ -73695,11 +81160,18 @@ class Minimatch {
                         p2 === '..') {
                         continue;
                     }
+                    // Check before changing parts or allocating the new row.
+                    const addedCells = parts.length - 1;
+                    if (globParts.length >= braceExpandMax ||
+                        splitCells + addedCells > maxSplitCells) {
+                        throw new RangeError(`optimizationLevel 2: too many patterns from '**/..'`);
+                    }
                     didSomething = true;
                     // edit parts in place, and push the new one
                     parts.splice(gs, 1);
                     const other = parts.slice(0);
                     other[gs] = '**';
+                    splitCells += addedCells;
                     globParts.push(other);
                     gs--;
                 }
@@ -73724,7 +81196,9 @@ class Minimatch {
                     }
                 }
                 // <pre>/<p>/../<rest> -> <pre>/<rest>
-                let dd = 0;
+                // .. can not remove the root of a Windows path
+                const root = this.#rootIndex(parts) + 1;
+                let dd = root;
                 while (-1 !== (dd = parts.indexOf('..', dd + 1))) {
                     const p = parts[dd - 1];
                     if (p && p !== '.' && p !== '..' && p !== '**') {
@@ -73734,7 +81208,7 @@ class Minimatch {
                         parts.splice(dd - 1, 2, ...splin);
                         if (parts.length === 0)
                             parts.push('');
-                        dd -= 2;
+                        dd = Math.max(dd - 2, root);
                     }
                 }
             }
@@ -73742,73 +81216,59 @@ class Minimatch {
         return globParts;
     }
     // second phase: multi-pattern dedupes
-    // {<pre>/*/<rest>,<pre>/<p>/<rest>} -> <pre>/*/<rest>
     // {<pre>/<rest>,<pre>/<rest>} -> <pre>/<rest>
-    // {<pre>/**/<rest>,<pre>/<rest>} -> <pre>/**/<rest>
-    //
-    // {<pre>/**/<rest>,<pre>/**/<p>/<rest>} -> <pre>/**/<rest>
-    // ^-- not valid because ** doens't follow symlinks
+    // {<pre>/*/<rest>,<pre>/<p>/<rest>} -> <pre>/*/<rest>
     secondPhasePreProcess(globParts) {
-        for (let i = 0; i < globParts.length - 1; i++) {
-            for (let j = i + 1; j < globParts.length; j++) {
-                const matched = this.partsMatch(globParts[i], globParts[j], !this.preserveMultipleSlashes);
-                if (matched) {
-                    globParts[i] = [];
-                    globParts[j] = matched;
-                    break;
-                }
-            }
-        }
-        return globParts.filter(gs => gs.length);
-    }
-    partsMatch(a, b, emptyGSMatch = false) {
-        let ai = 0;
-        let bi = 0;
-        let result = [];
-        let which = '';
-        while (ai < a.length && bi < b.length) {
-            if (a[ai] === b[bi]) {
-                result.push(which === 'b' ? b[bi] : a[ai]);
-                ai++;
-                bi++;
-            }
-            else if (emptyGSMatch && a[ai] === '**' && b[bi] === a[ai + 1]) {
-                result.push(a[ai]);
-                ai++;
-            }
-            else if (emptyGSMatch && b[bi] === '**' && a[ai] === b[bi + 1]) {
-                result.push(b[bi]);
-                bi++;
-            }
-            else if (a[ai] === '*' &&
-                b[bi] &&
-                (this.options.dot || !b[bi].startsWith('.')) &&
-                b[bi] !== '**') {
-                if (which === 'b')
-                    return false;
-                which = 'a';
-                result.push(a[ai]);
-                ai++;
-                bi++;
-            }
-            else if (b[bi] === '*' &&
-                a[ai] &&
-                (this.options.dot || !a[ai].startsWith('.')) &&
-                a[ai] !== '**') {
-                if (which === 'a')
-                    return false;
-                which = 'b';
-                result.push(b[bi]);
-                ai++;
-                bi++;
-            }
-            else {
+        const keys = new Set();
+        const rows = globParts.filter(parts => {
+            const key = parts.join('/');
+            if (keys.has(key))
                 return false;
+            keys.add(key);
+            return true;
+        });
+        // A row is covered by another row that has `*` at some positions,
+        // and is the same at all others. Collect each distinct set of `*`
+        // positions, then look up each row with `*` put at those positions.
+        const stars = new Map();
+        for (const parts of rows) {
+            const s = [];
+            for (let i = 0; i < parts.length; i++) {
+                if (parts[i] === '*')
+                    s.push(i);
             }
+            if (s.length)
+                stars.set(s.join(','), s);
         }
-        // if we fall out of the loop, it means they two are identical
-        // as long as their lengths match
-        return a.length === b.length && result;
+        // Each row is checked against each set of `*` positions, so skip
+        // this if there are too many. The patterns match the same paths
+        // either way.
+        if (!stars.size || rows.length * stars.size > 100_000)
+            return rows;
+        const { dot } = this.options;
+        return rows.filter(parts => {
+            for (const s of stars.values()) {
+                if (s[s.length - 1] >= parts.length)
+                    continue;
+                const c = [...parts];
+                let ok = true;
+                let changed = false;
+                for (const i of s) {
+                    const p = parts[i];
+                    if (p === '*')
+                        continue;
+                    if (!p || p === '**' || (!dot && p.startsWith('.'))) {
+                        ok = false;
+                        break;
+                    }
+                    c[i] = '*';
+                    changed = true;
+                }
+                if (ok && changed && keys.has(c.join('/')))
+                    return false;
+            }
+            return true;
+        });
     }
     parseNegate() {
         if (this.nonegate)
@@ -73824,18 +81284,36 @@ class Minimatch {
             this.pattern = pattern.slice(negateOffset);
         this.negate = negate;
     }
-    // set partial to true to test if, for example,
-    // "/a/b" matches the start of "/*/b/*/d"
-    // Partial means, if you run out of file before you run
-    // out of pattern, then that's fine, as long as all
-    // the parts match.
-    matchOne(file, pattern, partial = false) {
+    // Match the parts of a path against one row of the set. `resolved`
+    // is the parts after level 2 resolves `.` and `..` in them, or the
+    // same parts below level 2. Set partial to true to test if, for
+    // example, "/a/b" matches the start of "/*/b/*/d". Partial means, if
+    // you run out of file before you run out of pattern, then that's
+    // fine, as long as all the parts match.
+    #matchRow(file, resolved, pattern, partial) {
         let fileStartIndex = 0;
         let patternStartIndex = 0;
-        // UNC paths like //?/X:/... can match X:/... and vice versa
-        // Drive letters in absolute drive or unc paths are always compared
-        // case-insensitively.
-        if (this.isWindows) {
+        // UNC paths like //?/X:/... can match X:/... and vice versa, and
+        // //?/UNC/host/share/... can match //host/share/... and vice versa.
+        // Drive letters in absolute drive or unc paths, and the host and
+        // share of UNC paths, are always compared case-insensitively.
+        const fh = this.isWindows ? uncHost(resolved) : -1;
+        const ph = fh === -1 ? -1 : uncHost(pattern);
+        if (ph !== -1) {
+            const host = pattern[ph];
+            const share = pattern[ph + 1];
+            if (typeof host !== 'string' || typeof share !== 'string') {
+                // a host or share with magic is matched as usual
+                fileStartIndex = fh;
+                patternStartIndex = ph;
+            }
+            else if (resolved[fh].toLowerCase() === host.toLowerCase() &&
+                resolved[fh + 1].toLowerCase() === share.toLowerCase()) {
+                fileStartIndex = fh + 2;
+                patternStartIndex = ph + 2;
+            }
+        }
+        else if (this.isWindows) {
             const fileDrive = typeof file[0] === 'string' && /^[a-z]:$/i.test(file[0]);
             const fileUNC = !fileDrive &&
                 file[0] === '' &&
@@ -73860,47 +81338,27 @@ class Minimatch {
                     file[fdi],
                     pattern[pdi],
                 ];
-                // start matching at the drive letter index of each
+                // the drives match, so start matching after them
                 if (fd.toLowerCase() === pd.toLowerCase()) {
-                    pattern[pdi] = fd;
-                    patternStartIndex = pdi;
-                    fileStartIndex = fdi;
+                    patternStartIndex = pdi + 1;
+                    fileStartIndex = fdi + 1;
                 }
             }
         }
-        // resolve and reduce . and .. portions in the file as well.
-        // don't need to do the second phase, because it's only one string[]
-        const { optimizationLevel = 1 } = this.options;
-        if (optimizationLevel >= 2) {
-            file = this.levelTwoFileOptimize(file);
-        }
+        // the drive letters are found in the parts before level 2 resolves
+        // them, and the match uses the resolved parts
+        file = resolved;
         if (pattern.includes(exports.GLOBSTAR)) {
             return this.#matchGlobstar(file, pattern, partial, fileStartIndex, patternStartIndex);
         }
         return this.#matchOne(file, pattern, partial, fileStartIndex, patternStartIndex);
     }
     #matchGlobstar(file, pattern, partial, fileIndex, patternIndex) {
-        // split the pattern into head, tail, and middle of ** delimited parts
-        const firstgs = pattern.indexOf(exports.GLOBSTAR, patternIndex);
-        const lastgs = pattern.lastIndexOf(exports.GLOBSTAR);
-        // split the pattern up into globstar-delimited sections
-        // the tail has to be at the end, and the others just have
-        // to be found in order from the head.
-        const [head, body, tail] = partial ?
-            [
-                pattern.slice(patternIndex, firstgs),
-                pattern.slice(firstgs + 1),
-                [],
-            ]
-            : [
-                pattern.slice(patternIndex, firstgs),
-                pattern.slice(firstgs + 1, lastgs),
-                pattern.slice(lastgs + 1),
-            ];
+        const { head, body, tail, segments } = this.#getGlobstarParts(pattern, partial, patternIndex);
         // check the head, from the current file/pattern index.
         if (head.length) {
-            const fileHead = file.slice(fileIndex, fileIndex + head.length);
-            if (!this.#matchOne(fileHead, head, partial, 0, 0)) {
+            const headEnd = fileIndex + head.length;
+            if (!this.#matchOne(file, head, partial, fileIndex, 0, headEnd)) {
                 return false;
             }
             fileIndex += head.length;
@@ -73958,36 +81416,64 @@ class Minimatch {
         // now we know that there's one or more body sections, which can
         // be matched anywhere from the 0 index (because the head was pruned)
         // through to the length-fileTailMatch index.
-        // split the body up into sections, and note the minimum index it can
-        // be found at (start with the length of all previous segments)
-        // [section, before, after]
-        const bodySegments = [[[], 0]];
-        let currentBody = bodySegments[0];
+        return !!this.#matchGlobStarBodySections(file, segments, file.length - fileTailMatch, fileIndex, 0, partial, 0, !!fileTailMatch, new Set());
+    }
+    // Split the pattern into head, tail, and middle of ** delimited
+    // parts. The tail has to be at the end, and the others just have to
+    // be found in order from the head. These only depend on the pattern
+    // row, so they are kept for the next path.
+    #getGlobstarParts(pattern, partial, patternIndex) {
+        let byStart = this.#globstarParts.get(pattern);
+        if (!byStart) {
+            byStart = [];
+            this.#globstarParts.set(pattern, byStart);
+        }
+        const key = patternIndex * 2 + (partial ? 1 : 0);
+        const found = byStart[key];
+        if (found)
+            return found;
+        const firstgs = pattern.indexOf(exports.GLOBSTAR, patternIndex);
+        const lastgs = pattern.lastIndexOf(exports.GLOBSTAR);
+        const head = pattern.slice(patternIndex, firstgs);
+        const body = pattern.slice(firstgs + 1, partial ? undefined : lastgs);
+        const tail = partial ? [] : pattern.slice(lastgs + 1);
+        // split the body up into sections, and note the number of
+        // portions that must come after the start of each one
+        const segments = [[[], 0]];
+        let current = segments[0];
         let nonGsParts = 0;
         const nonGsPartsSums = [0];
         for (const b of body) {
             if (b === exports.GLOBSTAR) {
                 nonGsPartsSums.push(nonGsParts);
-                currentBody = [[], 0];
-                bodySegments.push(currentBody);
+                current = [[], 0];
+                segments.push(current);
             }
             else {
-                currentBody[0].push(b);
+                current[0].push(b);
                 nonGsParts++;
             }
         }
-        let i = bodySegments.length - 1;
-        const fileLength = file.length - fileTailMatch;
-        for (const b of bodySegments) {
-            b[1] = fileLength - (nonGsPartsSums[i--] + b[0].length);
-        }
-        return !!this.#matchGlobStarBodySections(file, bodySegments, fileIndex, 0, partial, 0, !!fileTailMatch);
+        // the portions in this section and the ones after it
+        segments.forEach((b, i) => {
+            b[1] = nonGsParts - nonGsPartsSums[i];
+        });
+        const parts = { head, body, tail, segments };
+        byStart[key] = parts;
+        return parts;
     }
     // return false for "nope, not matching"
     // return null for "not matching, cannot keep trying"
     #matchGlobStarBodySections(file, 
-    // pattern section, last possible position for it
-    bodySegments, fileIndex, bodyIndex, partial, globStarDepth, sawTail) {
+    // pattern section, and the portions that it and the rest need
+    bodySegments, 
+    // the end of the file portions that the body can match
+    fileLength, fileIndex, bodyIndex, partial, globStarDepth, sawTail, 
+    // the places that a walk has already tried, as
+    // bodyIndex * (file.length + 1) + fileIndex. A walk from a place
+    // does the same no matter how it got there, and it only comes back
+    // if it found no match, so a walk that gets to one stops.
+    tried) {
         // take the first body segment, and walk from fileIndex to its "after"
         // value at the end
         // If it doesn't match at that position, we increment, until we hit
@@ -73999,8 +81485,16 @@ class Minimatch {
         // can't possibly be a valid matching condition.
         const bs = bodySegments[bodyIndex];
         if (!bs) {
-            // just make sure that there's no bad dots
-            for (let i = fileIndex; i < file.length; i++) {
+            // with partial, the body is the rest of the pattern, so it
+            // matches if no portions are left, or only the '' of a trailing
+            // / (as a/* matches a/b/). A ** at the end walks them as its own
+            // empty section.
+            if (partial) {
+                return (fileIndex >= fileLength ||
+                    (fileIndex === fileLength - 1 && file[fileIndex] === ''));
+            }
+            // just make sure that there's no bad dots before the tail
+            for (let i = fileIndex; i < fileLength; i++) {
                 sawTail = true;
                 const f = file[i];
                 if (f === '.' ||
@@ -74011,19 +81505,29 @@ class Minimatch {
             }
             return sawTail;
         }
-        // have a non-globstar body section to test
-        const [body, after] = bs;
+        // have a non-globstar body section to test, up to the last index
+        // where it can start
+        const [body, need] = bs;
+        // with partial, the path can end before the body does
+        const after = partial ? fileLength : fileLength - need;
         while (fileIndex <= after) {
-            const m = this.#matchOne(file.slice(0, fileIndex + body.length), body, partial, fileIndex, 0);
+            const key = bodyIndex * (file.length + 1) + fileIndex;
+            if (tried.has(key))
+                return false;
+            tried.add(key);
+            const m = this.#matchOne(file, body, partial, fileIndex, 0, fileIndex + body.length);
             // if limit exceeded, no match. intentional false negative,
             // acceptable break in correctness for security.
             if (m && globStarDepth < this.maxGlobstarRecursion) {
                 // match! see if the rest match. if so, we're done!
-                const sub = this.#matchGlobStarBodySections(file, bodySegments, fileIndex + body.length, bodyIndex + 1, partial, globStarDepth + 1, sawTail);
+                const sub = this.#matchGlobStarBodySections(file, bodySegments, fileLength, fileIndex + body.length, bodyIndex + 1, partial, globStarDepth + 1, sawTail, tried);
                 if (sub !== false) {
                     return sub;
                 }
             }
+            // the ** does not walk past the last place the body can start
+            if (fileIndex === after)
+                break;
             const f = file[fileIndex];
             if (f === '.' ||
                 f === '..' ||
@@ -74035,21 +81539,20 @@ class Minimatch {
         // walked off. no point continuing
         return partial || null;
     }
-    #matchOne(file, pattern, partial, fileIndex, patternIndex) {
+    #matchOne(file, pattern, partial, fileIndex, patternIndex, 
+    // only match the file portions before this index
+    fileEnd = file.length) {
         let fi;
         let pi;
         let pl;
         let fl;
         for (fi = fileIndex,
             pi = patternIndex,
-            fl = file.length,
+            fl = Math.min(fileEnd, file.length),
             pl = pattern.length; fi < fl && pi < pl; fi++, pi++) {
-            this.debug('matchOne loop');
             let p = pattern[pi];
             let f = file[fi];
-            this.debug(pattern, p, f);
             // should be impossible.
-            // some invalid regexp stuff in the set.
             /* c8 ignore start */
             if (p === false || p === exports.GLOBSTAR) {
                 return false;
@@ -74057,17 +81560,8 @@ class Minimatch {
             /* c8 ignore stop */
             // something other than **
             // non-magic patterns just have to match exactly
-            // patterns with magic have been turned into regexps.
-            let hit;
-            if (typeof p === 'string') {
-                hit = f === p;
-                this.debug('string match', p, f, hit);
-            }
-            else {
-                hit = p.test(f);
-                this.debug('pattern match', p, f, hit);
-            }
-            if (!hit)
+            // patterns with magic have been turned into Matchers.
+            if (!portionMatch(p, f))
                 return false;
         }
         // Note: ending in / means that we'll get a final ""
@@ -74076,9 +81570,8 @@ class Minimatch {
         // If the file ends in /, then it can only match a
         // a pattern that ends in /, unless the pattern just
         // doesn't have any more for it. But, a/b/ should *not*
-        // match "a/b/*", even though "" matches against the
-        // [^/]*? pattern, except in partial mode, where it might
-        // simply not be reached yet.
+        // match "a/b/*", even though * can match "", except in
+        // partial mode, where it might simply not be reached yet.
         // However, a/b/ should still satisfy a/*
         // now either we fell off the end of the pattern, or we're done.
         if (fi === fl && pi === pl) {
@@ -74109,6 +81602,46 @@ class Minimatch {
     braceExpand() {
         return (0, exports.braceExpand)(this.pattern, this.options);
     }
+    // Expand braces, except numeric ranges such as {0..999} with at
+    // least RANGE_MIN values. Each of those stays in its pattern as
+    // `<mark>0..999<mark>`, for the Matcher to test. If a range might
+    // be inside a [...] class, expand all of them instead.
+    #expandBraces() {
+        const { pattern } = this;
+        if (this.options.nobrace)
+            return this.braceExpand();
+        let code = 0xe000;
+        while (pattern.includes(String.fromCharCode(code))) {
+            if (++code > 0xf8ff)
+                return this.braceExpand();
+        }
+        const mark = String.fromCharCode(code);
+        let found = false;
+        const marked = pattern.replace(rangeRe, (m, lo, hi) => {
+            const a = Number(lo);
+            const b = Number(hi);
+            if (!Number.isSafeInteger(a) ||
+                !Number.isSafeInteger(b) ||
+                Math.abs(a - b) + 1 < RANGE_MIN) {
+                return m;
+            }
+            found = true;
+            return `${mark}${lo}..${hi}${mark}`;
+        });
+        if (!found)
+            return this.braceExpand();
+        const set = (0, exports.braceExpand)(marked, this.options);
+        for (const p of set) {
+            for (const portion of p.split('/')) {
+                const c = portion.indexOf('[');
+                if (c !== -1 && c < portion.lastIndexOf(mark)) {
+                    return this.braceExpand();
+                }
+            }
+        }
+        this.#rangeMark = mark;
+        return set;
+    }
     parse(pattern) {
         (0, assert_valid_pattern_js_1.assertValidPattern)(pattern);
         const options = this.options;
@@ -74117,139 +81650,35 @@ class Minimatch {
             return exports.GLOBSTAR;
         if (pattern === '')
             return '';
-        // far and away, the most common glob pattern parts are
-        // *, *.*, and *.<ext>  Add a fast check method for those.
-        let m;
-        let fastTest = null;
-        if ((m = pattern.match(starRE))) {
-            fastTest = options.dot ? starTestDot : starTest;
+        const { nocase, nocaseMagicOnly, noext = false, dot, normalize, } = options;
+        const rangeMark = this.#rangeMark;
+        const lit = rangeMark && pattern.includes(rangeMark) ?
+            undefined
+            : literal(pattern, noext);
+        // in nocase mode, a literal with cased chars still needs a
+        // Matcher, unless nocaseMagicOnly is set.
+        if (lit !== undefined &&
+            !(nocase &&
+                !nocaseMagicOnly &&
+                pattern.toUpperCase() !== pattern.toLowerCase())) {
+            return this.#norm(lit);
         }
-        else if ((m = pattern.match(starDotExtRE))) {
-            fastTest = (options.nocase ?
-                options.dot ?
-                    starDotExtTestNocaseDot
-                    : starDotExtTestNocase
-                : options.dot ? starDotExtTestDot
-                    : starDotExtTest)(m[1]);
-        }
-        else if ((m = pattern.match(qmarksRE))) {
-            fastTest = (options.nocase ?
-                options.dot ?
-                    qmarksTestNocaseDot
-                    : qmarksTestNocase
-                : options.dot ? qmarksTestDot
-                    : qmarksTest)(m);
-        }
-        else if ((m = pattern.match(starDotStarRE))) {
-            fastTest = options.dot ? starDotStarTestDot : starDotStarTest;
-        }
-        else if ((m = pattern.match(dotStarRE))) {
-            fastTest = dotStarTest;
-        }
-        const re = ast_js_1.AST.fromGlob(pattern, this.options).toMMPattern();
-        if (fastTest && typeof re === 'object') {
-            // Avoids overriding in frozen environments
-            Reflect.defineProperty(re, 'test', { value: fastTest });
-        }
-        return re;
-    }
-    makeRe() {
-        if (this.regexp || this.regexp === false)
-            return this.regexp;
-        // at this point, this.set is a 2d array of partial
-        // pattern strings, or "**".
-        //
-        // It's better to use .match().  This function shouldn't
-        // be used, really, but it's pretty convenient sometimes,
-        // when you just want to work with a regex.
-        const set = this.set;
-        if (!set.length) {
-            this.regexp = false;
-            return this.regexp;
-        }
-        const options = this.options;
-        const twoStar = options.noglobstar ? star
-            : options.dot ? twoStarDot
-                : twoStarNoDot;
-        const flags = new Set(options.nocase ? ['i'] : []);
-        // regexpify non-globstar patterns
-        // if ** is only item, then we just do one twoStar
-        // if ** is first, and there are more, prepend (\/|twoStar\/)? to next
-        // if ** is last, append (\/twoStar|) to previous
-        // if ** is in the middle, append (\/|\/twoStar\/) to previous
-        // then filter out GLOBSTAR symbols
-        let re = set
-            .map(pattern => {
-            const pp = pattern.map(p => {
-                if (p instanceof RegExp) {
-                    for (const f of p.flags.split(''))
-                        flags.add(f);
-                }
-                return (typeof p === 'string' ? regExpEscape(p)
-                    : p === exports.GLOBSTAR ? exports.GLOBSTAR
-                        : p._src);
+        if (this.#pending)
+            return PENDING;
+        let m = this.#matchers.get(pattern);
+        if (!m) {
+            m = new nonrecursive_glob_match_1.Matcher(pattern, {
+                nocase,
+                noext,
+                dot,
+                normalize,
+                ...(rangeMark && { rangeMark }),
             });
-            pp.forEach((p, i) => {
-                const next = pp[i + 1];
-                const prev = pp[i - 1];
-                if (p !== exports.GLOBSTAR || prev === exports.GLOBSTAR) {
-                    return;
-                }
-                if (prev === undefined) {
-                    if (next !== undefined && next !== exports.GLOBSTAR) {
-                        pp[i + 1] = '(?:\\/|' + twoStar + '\\/)?' + next;
-                    }
-                    else {
-                        pp[i] = twoStar;
-                    }
-                }
-                else if (next === undefined) {
-                    pp[i - 1] = prev + '(?:\\/|\\/' + twoStar + ')?';
-                }
-                else if (next !== exports.GLOBSTAR) {
-                    pp[i - 1] = prev + '(?:\\/|\\/' + twoStar + '\\/)' + next;
-                    pp[i + 1] = exports.GLOBSTAR;
-                }
-            });
-            const filtered = pp.filter(p => p !== exports.GLOBSTAR);
-            // For partial matches, we need to make the pattern match
-            // any prefix of the full path. We do this by generating
-            // alternative patterns that match progressively longer prefixes.
-            if (this.partial && filtered.length >= 1) {
-                const prefixes = [];
-                for (let i = 1; i <= filtered.length; i++) {
-                    prefixes.push(filtered.slice(0, i).join('/'));
-                }
-                return '(?:' + prefixes.join('|') + ')';
-            }
-            return filtered.join('/');
-        })
-            .join('|');
-        // need to wrap in parens if we had more than one thing with |,
-        // otherwise only the first will be anchored to ^ and the last to $
-        const [open, close] = set.length > 1 ? ['(?:', ')'] : ['', ''];
-        // must match entire pattern
-        // ending in a * or ** will make it less strict.
-        re = '^' + open + re + close + '$';
-        // In partial mode, '/' should always match as it's a valid prefix for any pattern
-        if (this.partial) {
-            re = '^(?:\\/|' + open + re.slice(1, -1) + close + ')$';
+            this.#matchers.set(pattern, m);
         }
-        // can match anything, as long as it's not this.
-        if (this.negate)
-            re = '^(?!' + re + ').+$';
-        try {
-            this.regexp = new RegExp(re, [...flags].join(''));
-            /* c8 ignore start */
-        }
-        catch {
-            // should be impossible
-            this.regexp = false;
-        }
-        /* c8 ignore stop */
-        return this.regexp;
+        return m;
     }
-    slashSplit(p) {
+    #slashSplit(p) {
         // if p starts with // on windows, we preserve that
         // so that UNC paths aren't broken.  Otherwise, any number of
         // / characters are coalesced into one, unless
@@ -74266,7 +81695,6 @@ class Minimatch {
         }
     }
     match(f, partial = this.partial) {
-        this.debug('match', f, this.pattern);
         // short-circuit in the case of busted things.
         // comments, etc.
         if (this.comment) {
@@ -74279,19 +81707,36 @@ class Minimatch {
             return true;
         }
         const options = this.options;
-        // windows: need to use /, not \
-        if (this.isWindows) {
-            f = f.split('\\').join('/');
+        // treat the test path as a set of pathparts. If it was not just
+        // split or checked, check that it can match before splitting it.
+        let split = this.#cachedSplit(f);
+        if (!split) {
+            // the checks look at the path as given, so not if it is
+            // normalized
+            if (!partial &&
+                !this.#form &&
+                (this.#endCheck || this.#literalCheck) &&
+                lastChecked !== f) {
+                lastChecked = f;
+                const can = this.#canMatch(f);
+                if (can === 'no')
+                    return options.flipNegate ? false : this.negate;
+                if (can === 'yes')
+                    return options.flipNegate ? true : !this.negate;
+            }
+            split = this.#split(f);
         }
-        // treat the test path as a set of pathparts.
-        const ff = this.slashSplit(f);
-        this.debug(this.pattern, 'split', ff);
+        const ff = split.parts;
+        // the parts after level 2 resolves them, kept for the next pattern
+        // that tests the same path
+        const resolved = this.#level2 ?
+            (split.resolved ??= this.#levelTwoFileOptimize(ff))
+            : ff;
         // just ONE of the pattern sets in this.set needs to match
         // in order for it to be valid.  If negating, then just one
         // match means that we have failed.
         // Either way, return on the first hit.
         const set = this.set;
-        this.debug(this.pattern, 'set', set);
         // Find the basename of the path by looking for the last non-empty segment
         let filename = ff[ff.length - 1];
         if (!filename) {
@@ -74299,12 +81744,16 @@ class Minimatch {
                 filename = ff[i];
             }
         }
-        for (const pattern of set) {
-            let file = ff;
-            if (options.matchBase && pattern.length === 1) {
-                file = [filename];
-            }
-            const hit = this.matchOne(file, pattern, partial);
+        for (let r = 0; r < set.length; r++) {
+            const pattern = set[r];
+            const shape = partial ? undefined : this.#shapes[r];
+            // level 2 does not change a path of one portion
+            const hit = shape === 'base' ?
+                portionMatch(pattern[0], filename)
+                : shape ? this.#matchShape(resolved, pattern, shape)
+                    : options.matchBase && pattern.length === 1 ?
+                        this.#matchRow([filename], [filename], pattern, partial)
+                        : this.#matchRow(ff, resolved, pattern, partial);
             if (hit) {
                 if (options.flipNegate) {
                     return true;
@@ -74325,14 +81774,11 @@ class Minimatch {
 }
 exports.Minimatch = Minimatch;
 /* c8 ignore start */
-var ast_js_2 = __nccwpck_require__(1803);
-Object.defineProperty(exports, "AST", ({ enumerable: true, get: function () { return ast_js_2.AST; } }));
-var escape_js_2 = __nccwpck_require__(800);
+var escape_js_2 = __nccwpck_require__(10800);
 Object.defineProperty(exports, "escape", ({ enumerable: true, get: function () { return escape_js_2.escape; } }));
-var unescape_js_2 = __nccwpck_require__(851);
+var unescape_js_2 = __nccwpck_require__(70851);
 Object.defineProperty(exports, "unescape", ({ enumerable: true, get: function () { return unescape_js_2.unescape; } }));
 /* c8 ignore stop */
-exports.minimatch.AST = ast_js_1.AST;
 exports.minimatch.Minimatch = Minimatch;
 exports.minimatch.escape = escape_js_1.escape;
 exports.minimatch.unescape = unescape_js_1.unescape;
@@ -74340,7 +81786,7 @@ exports.minimatch.unescape = unescape_js_1.unescape;
 
 /***/ }),
 
-/***/ 851:
+/***/ 70851:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -74384,7 +81830,7 @@ exports.unescape = unescape;
 
 /***/ }),
 
-/***/ 8275:
+/***/ 78275:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -74399,9 +81845,9 @@ const proc = typeof process === 'object' && process
         stdout: null,
         stderr: null,
     };
-const node_events_1 = __nccwpck_require__(8474);
-const node_stream_1 = __importDefault(__nccwpck_require__(7075));
-const node_string_decoder_1 = __nccwpck_require__(6193);
+const node_events_1 = __nccwpck_require__(78474);
+const node_stream_1 = __importDefault(__nccwpck_require__(57075));
+const node_string_decoder_1 = __nccwpck_require__(46193);
 /**
  * Return true if the argument is a Minipass stream, Node stream, or something
  * else that Minipass can interact with.
@@ -75428,7 +82874,7 @@ exports.Minipass = Minipass;
 
 /***/ }),
 
-/***/ 8958:
+/***/ 38958:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -75457,16 +82903,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PathScurry = exports.Path = exports.PathScurryDarwin = exports.PathScurryPosix = exports.PathScurryWin32 = exports.PathScurryBase = exports.PathPosix = exports.PathWin32 = exports.PathBase = exports.ChildrenCache = exports.ResolveCache = void 0;
-const lru_cache_1 = __nccwpck_require__(2477);
-const node_path_1 = __nccwpck_require__(6760);
-const node_url_1 = __nccwpck_require__(3136);
-const fs_1 = __nccwpck_require__(9896);
-const actualFS = __importStar(__nccwpck_require__(3024));
+const lru_cache_1 = __nccwpck_require__(32477);
+const node_path_1 = __nccwpck_require__(76760);
+const node_url_1 = __nccwpck_require__(73136);
+const fs_1 = __nccwpck_require__(79896);
+const actualFS = __importStar(__nccwpck_require__(73024));
 const realpathSync = fs_1.realpathSync.native;
 // TODO: test perf of fs/promises realpath vs realpathCB,
 // since the promises one uses realpath.native
-const promises_1 = __nccwpck_require__(1455);
-const minipass_1 = __nccwpck_require__(8275);
+const promises_1 = __nccwpck_require__(51455);
+const minipass_1 = __nccwpck_require__(78275);
 const defaultFS = {
     lstatSync: fs_1.lstatSync,
     readdir: fs_1.readdir,
@@ -77448,6 +84894,74 @@ exports.PathScurry = process.platform === 'win32' ? PathScurryWin32
 
 /***/ }),
 
+/***/ 35957:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var GetIntrinsic = __nccwpck_require__(60470);
+var IsCallable = __nccwpck_require__(57187);
+var isObject = __nccwpck_require__(46229);
+var whichBuiltinType = __nccwpck_require__(45330);
+var $TypeError = __nccwpck_require__(73314);
+
+var gPO = __nccwpck_require__(81967);
+var $Object = __nccwpck_require__(95399);
+
+module.exports = function getPrototypeOf(O) {
+	if (!isObject(O)) {
+		throw new $TypeError('Reflect.getPrototypeOf called on non-object');
+	}
+
+	if (gPO) {
+		return gPO(O);
+	}
+
+	var type = whichBuiltinType(O);
+	if (type) {
+		var intrinsic = GetIntrinsic('%' + type + '.prototype%', true);
+		if (intrinsic) {
+			return intrinsic;
+		}
+	}
+	if (IsCallable(O.constructor)) {
+		return O.constructor.prototype;
+	}
+	if (O instanceof Object) {
+		return $Object.prototype;
+	}
+
+	/*
+	 * Correctly return null for Objects created with `Object.create(null)` (shammed or native) or `{ __proto__: null}`.  Also returns null for
+	 * cross-realm objects on browsers that lack `__proto__` support (like IE <11), but that's the best we can do.
+	 */
+	return null;
+};
+
+
+/***/ }),
+
+/***/ 31360:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+
+
+var implementation = __nccwpck_require__(35957);
+
+var getProto = __nccwpck_require__(81967);
+
+module.exports = function getPolyfill() {
+	if (typeof Reflect === 'object' && Reflect && Reflect.getPrototypeOf) {
+		return Reflect.getPrototypeOf;
+	}
+	return getProto
+		? function getPrototypeOf(O) { return getProto(O); }
+		: implementation;
+};
+
+
+/***/ }),
+
 /***/ 9002:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -77462,7 +84976,7 @@ module.exports = { version: packageJson.version }
 
 /***/ }),
 
-/***/ 4928:
+/***/ 84928:
 /***/ ((module) => {
 
 
@@ -77817,6 +85331,9 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"@actions/artifact","version":
 /******/ 	return module.exports;
 /******/ }
 /******/ 
+/******/ // expose the modules object (__webpack_modules__)
+/******/ __nccwpck_require__.m = __webpack_modules__;
+/******/ 
 /************************************************************************/
 /******/ /* webpack/runtime/asset-relocator-loader */
 /******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = decodeURIComponent(new URL('.', import.meta.url).pathname).slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
@@ -77863,6 +85380,28 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"@actions/artifact","version":
 /******/ 	};
 /******/ })();
 /******/ 
+/******/ /* webpack/runtime/ensure chunk */
+/******/ (() => {
+/******/ 	__nccwpck_require__.f = {};
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__nccwpck_require__.e = (chunkId) => {
+/******/ 		return Promise.all(Object.keys(__nccwpck_require__.f).reduce((promises, key) => {
+/******/ 			__nccwpck_require__.f[key](chunkId, promises);
+/******/ 			return promises;
+/******/ 		}, []));
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/get javascript chunk filename */
+/******/ (() => {
+/******/ 	// This function allow to reference async chunks
+/******/ 	__nccwpck_require__.u = (chunkId) => {
+/******/ 		// return url for filenames based on template
+/******/ 		return "" + chunkId + ".index.js";
+/******/ 	};
+/******/ })();
+/******/ 
 /******/ /* webpack/runtime/hasOwnProperty shorthand */
 /******/ (() => {
 /******/ 	__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -77886,6 +85425,69 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"@actions/artifact","version":
 /******/ 		if (!module.children) module.children = [];
 /******/ 		return module;
 /******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/import chunk loading */
+/******/ (() => {
+/******/ 	// no baseURI
+/******/ 	
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// [resolve, Promise] = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		792: 0
+/******/ 	};
+/******/ 	
+/******/ 	var installChunk = (data) => {
+/******/ 		var {ids, modules, runtime} = data;
+/******/ 		// add "modules" to the modules object,
+/******/ 		// then flag all "ids" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0;
+/******/ 		for(moduleId in modules) {
+/******/ 			if(__nccwpck_require__.o(modules, moduleId)) {
+/******/ 				__nccwpck_require__.m[moduleId] = modules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(runtime) runtime(__nccwpck_require__);
+/******/ 		for(;i < ids.length; i++) {
+/******/ 			chunkId = ids[i];
+/******/ 			if(__nccwpck_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				installedChunks[chunkId][0]();
+/******/ 			}
+/******/ 			installedChunks[ids[i]] = 0;
+/******/ 		}
+/******/ 	
+/******/ 	}
+/******/ 	
+/******/ 	__nccwpck_require__.f.j = (chunkId, promises) => {
+/******/ 			// import() chunk loading for javascript
+/******/ 			var installedChunkData = __nccwpck_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 			if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 	
+/******/ 				// a Promise means "currently loading".
+/******/ 				if(installedChunkData) {
+/******/ 					promises.push(installedChunkData[1]);
+/******/ 				} else {
+/******/ 					if(true) { // all chunks have JS
+/******/ 						// setup Promise in chunk cache
+/******/ 						var promise = import("./" + __nccwpck_require__.u(chunkId)).then(installChunk, (e) => {
+/******/ 							if(installedChunks[chunkId] !== 0) installedChunks[chunkId] = undefined;
+/******/ 							throw e;
+/******/ 						});
+/******/ 						var promise = Promise.race([promise, new Promise((resolve) => (installedChunkData = installedChunks[chunkId] = [resolve]))])
+/******/ 						promises.push(installedChunkData[1] = promise);
+/******/ 					}
+/******/ 				}
+/******/ 			}
+/******/ 	};
+/******/ 	
+/******/ 	// no prefetching
+/******/ 	
+/******/ 	// no preloaded
+/******/ 	
+/******/ 	// no external install chunk
+/******/ 	
+/******/ 	// no on chunks loaded
 /******/ })();
 /******/ 
 /************************************************************************/
@@ -78006,8 +85608,12 @@ __nccwpck_require__.d(mappers_namespaceObject, {
   ContainerGetPropertiesExceptionHeaders: () => (ContainerGetPropertiesExceptionHeaders),
   ContainerGetPropertiesHeaders: () => (ContainerGetPropertiesHeaders),
   ContainerItem: () => (ContainerItem),
+  ContainerListBlobFlatSegmentApacheArrowExceptionHeaders: () => (ContainerListBlobFlatSegmentApacheArrowExceptionHeaders),
+  ContainerListBlobFlatSegmentApacheArrowHeaders: () => (ContainerListBlobFlatSegmentApacheArrowHeaders),
   ContainerListBlobFlatSegmentExceptionHeaders: () => (ContainerListBlobFlatSegmentExceptionHeaders),
   ContainerListBlobFlatSegmentHeaders: () => (ContainerListBlobFlatSegmentHeaders),
+  ContainerListBlobHierarchySegmentApacheArrowExceptionHeaders: () => (ContainerListBlobHierarchySegmentApacheArrowExceptionHeaders),
+  ContainerListBlobHierarchySegmentApacheArrowHeaders: () => (ContainerListBlobHierarchySegmentApacheArrowHeaders),
   ContainerListBlobHierarchySegmentExceptionHeaders: () => (ContainerListBlobHierarchySegmentExceptionHeaders),
   ContainerListBlobHierarchySegmentHeaders: () => (ContainerListBlobHierarchySegmentHeaders),
   ContainerProperties: () => (ContainerProperties),
@@ -78084,15 +85690,15 @@ __nccwpck_require__.d(mappers_namespaceObject, {
 });
 
 // EXTERNAL MODULE: external "node:fs"
-var external_node_fs_ = __nccwpck_require__(3024);
+var external_node_fs_ = __nccwpck_require__(73024);
 // EXTERNAL MODULE: external "node:path"
-var external_node_path_ = __nccwpck_require__(6760);
+var external_node_path_ = __nccwpck_require__(76760);
 ;// CONCATENATED MODULE: external "node:child_process"
 const external_node_child_process_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:child_process");
 ;// CONCATENATED MODULE: external "node:timers/promises"
 const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:timers/promises");
 // EXTERNAL MODULE: external "node:url"
-var external_node_url_ = __nccwpck_require__(3136);
+var external_node_url_ = __nccwpck_require__(73136);
 ;// CONCATENATED MODULE: external "os"
 const external_os_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("os");
 ;// CONCATENATED MODULE: ./node_modules/@actions/core/lib/utils.js
@@ -78226,7 +85832,7 @@ function escapeProperty(s) {
 ;// CONCATENATED MODULE: external "crypto"
 const external_crypto_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("crypto");
 // EXTERNAL MODULE: external "fs"
-var external_fs_ = __nccwpck_require__(9896);
+var external_fs_ = __nccwpck_require__(79896);
 ;// CONCATENATED MODULE: ./node_modules/@actions/core/lib/file-command.js
 // For internal use, subject to change.
 // We use any as a valid input type
@@ -78263,12 +85869,12 @@ function file_command_prepareKeyValueMessage(key, value) {
 }
 //# sourceMappingURL=file-command.js.map
 // EXTERNAL MODULE: external "path"
-var external_path_ = __nccwpck_require__(6928);
+var external_path_ = __nccwpck_require__(16928);
 // EXTERNAL MODULE: external "http"
-var external_http_ = __nccwpck_require__(8611);
+var external_http_ = __nccwpck_require__(58611);
 var external_http_namespaceObject = /*#__PURE__*/__nccwpck_require__.t(external_http_, 2);
 // EXTERNAL MODULE: external "https"
-var external_https_ = __nccwpck_require__(5692);
+var external_https_ = __nccwpck_require__(65692);
 var external_https_namespaceObject = /*#__PURE__*/__nccwpck_require__.t(external_https_, 2);
 ;// CONCATENATED MODULE: ./node_modules/@actions/http-client/lib/proxy.js
 function getProxyUrl(reqUrl) {
@@ -78362,9 +85968,9 @@ class DecodedURL extends URL {
 }
 //# sourceMappingURL=proxy.js.map
 // EXTERNAL MODULE: ./node_modules/tunnel/index.js
-var tunnel = __nccwpck_require__(770);
+var tunnel = __nccwpck_require__(20770);
 // EXTERNAL MODULE: ./node_modules/undici/index.js
-var undici = __nccwpck_require__(6752);
+var undici = __nccwpck_require__(46752);
 ;// CONCATENATED MODULE: ./node_modules/@actions/http-client/lib/index.js
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -79528,13 +87134,13 @@ function toPlatformPath(pth) {
 }
 //# sourceMappingURL=path-utils.js.map
 // EXTERNAL MODULE: external "string_decoder"
-var external_string_decoder_ = __nccwpck_require__(3193);
+var external_string_decoder_ = __nccwpck_require__(13193);
 // EXTERNAL MODULE: external "events"
-var external_events_ = __nccwpck_require__(4434);
+var external_events_ = __nccwpck_require__(24434);
 ;// CONCATENATED MODULE: external "child_process"
 const external_child_process_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("child_process");
 // EXTERNAL MODULE: external "assert"
-var external_assert_ = __nccwpck_require__(2613);
+var external_assert_ = __nccwpck_require__(42613);
 ;// CONCATENATED MODULE: ./node_modules/@actions/io/lib/io-util.js
 var io_util_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -81125,7 +88731,7 @@ function getMaxArtifactListCount() {
 }
 //# sourceMappingURL=config.js.map
 // EXTERNAL MODULE: ./node_modules/@protobuf-ts/runtime/build/commonjs/index.js
-var commonjs = __nccwpck_require__(8886);
+var commonjs = __nccwpck_require__(68886);
 ;// CONCATENATED MODULE: ./node_modules/@actions/artifact/lib/generated/google/protobuf/timestamp.js
 
 
@@ -81868,7 +89474,7 @@ class BytesValue$Type extends commonjs.MessageType {
 const BytesValue = new BytesValue$Type();
 //# sourceMappingURL=wrappers.js.map
 // EXTERNAL MODULE: ./node_modules/@protobuf-ts/runtime-rpc/build/commonjs/index.js
-var build_commonjs = __nccwpck_require__(4420);
+var build_commonjs = __nccwpck_require__(44420);
 ;// CONCATENATED MODULE: ./node_modules/@actions/artifact/lib/generated/results/api/v1/artifact.js
 // @generated by protobuf-ts 2.9.1 with parameter long_type_string,client_none,generate_dependencies
 // @generated from protobuf file "results/api/v1/artifact.proto" (package "github.actions.results.api.v1", syntax proto3)
@@ -83335,7 +90941,7 @@ class AbortError extends Error {
 ;// CONCATENATED MODULE: external "node:os"
 const external_node_os_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:os");
 // EXTERNAL MODULE: external "node:util"
-var external_node_util_ = __nccwpck_require__(7975);
+var external_node_util_ = __nccwpck_require__(57975);
 ;// CONCATENATED MODULE: external "node:process"
 const external_node_process_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:process");
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/logger/log.js
@@ -83819,7 +91425,7 @@ function httpHeaders_createHttpHeaders(rawHeaders) {
  * @returns RFC4122 v4 UUID.
  */
 function randomUUID() {
-    return crypto.randomUUID();
+    return globalThis.crypto.randomUUID();
 }
 //# sourceMappingURL=uuidUtils.js.map
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/pipelineRequest.js
@@ -84195,6 +91801,7 @@ const defaultAllowedHeaderNames = [
     "ms-cv",
     "return-client-request-id",
     "traceparent",
+    "azure-deprecating",
     "Access-Control-Allow-Credentials",
     "Access-Control-Allow-Headers",
     "Access-Control-Allow-Methods",
@@ -84419,6 +92026,10 @@ class restError_RestError extends Error {
  * @param e - Something caught by a catch clause.
  */
 function restError_isRestError(e) {
+    // This package declares RestError, so there is exactly one constructor that can produce it
+    // here and the cross-package `instanceof` restriction does not apply. The `name` check below
+    // is the fallback for a RestError built by a second copy of this package.
+    // eslint-disable-next-line no-restricted-syntax
     if (e instanceof restError_RestError) {
         return true;
     }
@@ -84426,19 +92037,497 @@ function restError_isRestError(e) {
 }
 //# sourceMappingURL=restError.js.map
 // EXTERNAL MODULE: external "node:http"
-var external_node_http_ = __nccwpck_require__(7067);
+var external_node_http_ = __nccwpck_require__(37067);
 ;// CONCATENATED MODULE: external "node:https"
 const external_node_https_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:https");
 // EXTERNAL MODULE: external "node:zlib"
-var external_node_zlib_ = __nccwpck_require__(8522);
+var external_node_zlib_ = __nccwpck_require__(38522);
 // EXTERNAL MODULE: external "node:stream"
-var external_node_stream_ = __nccwpck_require__(7075);
+var external_node_stream_ = __nccwpck_require__(57075);
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/log.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
 const log_logger = createClientLogger("ts-http-runtime");
 //# sourceMappingURL=log.js.map
+;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/util/requestBodyHeaders.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+/**
+ * Converts a flat `[name, value, ...]` raw header array to `[name, value]` pairs,
+ * or returns an existing pair array unchanged, preserving order and duplicates.
+ *
+ * @param headers - Header names and values in either array format.
+ * @returns The header pairs in their original order.
+ * @see https://nodejs.org/api/http.html#messagerawheaders
+ */
+function getHeaderPairs(headers) {
+    return Array.isArray(headers[0])
+        ? headers
+        : Array.from({ length: Math.ceil(headers.length / 2) }, (_, index) => [
+            headers[index * 2],
+            headers[index * 2 + 1],
+        ]);
+}
+function isIterable(value) {
+    return Symbol.iterator in value && typeof value[Symbol.iterator] === "function";
+}
+function removeContinueToken(value) {
+    if (typeof value === "string") {
+        const tokens = value.split(",");
+        const remaining = tokens.filter((token) => token.trim().toLowerCase() !== "100-continue");
+        if (remaining.length === tokens.length) {
+            return value;
+        }
+        return (remaining
+            .map((token) => token.trim())
+            .filter(Boolean)
+            .join(", ") || undefined);
+    }
+    if (Array.isArray(value)) {
+        const remaining = value.map(removeContinueToken).filter((entry) => entry !== undefined);
+        return remaining.length > 0 ? remaining : undefined;
+    }
+    return value;
+}
+function stripRequestBodyHeaders(request, removeFraming) {
+    const stripHeaderValue = (name, value) => {
+        const lowerName = name.toLowerCase();
+        if (removeFraming &&
+            (lowerName === "content-length" ||
+                lowerName === "transfer-encoding" ||
+                lowerName === "trailer")) {
+            return undefined;
+        }
+        return lowerName === "expect" ? removeContinueToken(value) : value;
+    };
+    const stripHeaderPairs = (pairs) => pairs.flatMap(([name, value]) => {
+        const updated = typeof name === "string" ? stripHeaderValue(name, value) : value;
+        return updated === undefined ? [] : [[name, updated]];
+    });
+    for (const [name, value] of request.headers) {
+        const updated = stripHeaderValue(name, value);
+        if (updated === undefined) {
+            request.headers.delete(name);
+        }
+        else if (typeof updated === "string" && updated !== value) {
+            request.headers.set(name, updated);
+        }
+    }
+    const overrides = request.requestOverrides;
+    if (!overrides || !("headers" in overrides)) {
+        return;
+    }
+    const headers = overrides.headers;
+    if (Array.isArray(headers)) {
+        const updatedPairs = stripHeaderPairs(getHeaderPairs(headers));
+        request.requestOverrides = {
+            ...overrides,
+            headers: Array.isArray(headers[0]) ? updatedPairs : updatedPairs.flat(),
+        };
+    }
+    else if (headers && typeof headers === "object" && isIterable(headers)) {
+        const pairs = Array.from(headers, (entry) => {
+            if (!Array.isArray(entry) || entry.length !== 2) {
+                throw new TypeError("Header entry must be a name/value pair");
+            }
+            return entry;
+        });
+        request.requestOverrides = { ...overrides, headers: stripHeaderPairs(pairs) };
+    }
+    else if (headers && typeof headers === "object") {
+        const updatedHeaders = {};
+        for (const [name, value] of Object.entries(headers)) {
+            const updated = stripHeaderValue(name, value);
+            if (updated !== undefined) {
+                updatedHeaders[name] = updated;
+            }
+        }
+        request.requestOverrides = { ...overrides, headers: updatedHeaders };
+    }
+}
+/**
+ * Removes only the 100-continue expectation from pipeline and replacement headers.
+ * Raw header arrays retain their shape, and caller-supplied override headers are not mutated.
+ * Iterable override collections are materialized as reusable name/value pairs.
+ *
+ * @param request - The request whose body is known to be empty.
+ */
+function removeExpectContinueHeader(request) {
+    stripRequestBodyHeaders(request, false);
+}
+/**
+ * Removes obsolete body framing, trailer declarations, and the 100-continue expectation
+ * after discarding a body.
+ *
+ * @param request - The request whose body has been discarded.
+ */
+function removeRequestBodyHeaders(request) {
+    stripRequestBodyHeaders(request, true);
+}
+//# sourceMappingURL=requestBodyHeaders.js.map
+;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/util/nodeExpectContinue.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+const EXPECT_CONTINUE_TIMEOUT_IN_MS = 1000;
+function getHeaderValues(headers, name) {
+    if (Array.isArray(headers)) {
+        return getHeaderPairs(headers)
+            .filter(([key]) => typeof key === "string" && key.toLowerCase() === name)
+            .flatMap(([, value]) => (Array.isArray(value) ? value : [value]));
+    }
+    if (headers && typeof headers === "object") {
+        if ("get" in headers && typeof headers.get === "function") {
+            const value = headers.get(name);
+            return value === undefined || value === null ? [] : [value];
+        }
+        let value;
+        for (const [key, entry] of Object.entries(headers)) {
+            if (key.toLowerCase() === name) {
+                value = entry;
+            }
+        }
+        return value === undefined ? [] : Array.isArray(value) ? value : [value];
+    }
+    return [];
+}
+function getEffectiveHeaderValues(request, name) {
+    const headers = request.requestOverrides && "headers" in request.requestOverrides
+        ? request.requestOverrides.headers
+        : request.headers;
+    return getHeaderValues(headers, name.toLowerCase());
+}
+function hasExpectContinue(request) {
+    return getEffectiveHeaderValues(request, "expect").some((value) => typeof value === "string" &&
+        value.split(",").some((token) => token.trim().toLowerCase() === "100-continue"));
+}
+function addHeader(headers, name, value) {
+    if (!Array.isArray(headers)) {
+        return { ...headers, [name]: value };
+    }
+    return Array.isArray(headers[0]) ? [...headers, [name, value]] : [...headers, name, value];
+}
+function hasHeader(headers, name) {
+    if (Array.isArray(headers)) {
+        return getHeaderPairs(headers).some(([key]) => typeof key === "string" && key.toLowerCase() === name);
+    }
+    return Object.keys(headers ?? {}).some((key) => key.toLowerCase() === name);
+}
+function addExpectContinueFraming(options, bodyLength) {
+    if (hasHeader(options.headers, "content-length") ||
+        hasHeader(options.headers, "transfer-encoding")) {
+        return;
+    }
+    options.headers = addHeader(options.headers, bodyLength === null ? "Transfer-Encoding" : "Content-Length", bodyLength === null ? "chunked" : String(bodyLength));
+}
+function createExpectContinueRequest(options) {
+    let fallback;
+    let waiting = true;
+    let bodyStarted = false;
+    let errorReported = false;
+    let request;
+    let bodyError;
+    const bodyStream = options.bodyStream;
+    // Error observation must not consume a caller-owned source before upload permission.
+    bodyStream?.once("error", onBodyError);
+    if (bodyStream && "errored" in bodyStream && bodyStream.errored instanceof Error) {
+        // destroy(error) may still have its error event queued on the next tick.
+        process.nextTick(onBodyError, bodyStream.errored);
+        return;
+    }
+    try {
+        request = options.createRequest(onResponse);
+    }
+    catch (error) {
+        onError(error);
+        return;
+    }
+    function stopWaiting(keepBodyObserved = false) {
+        waiting = false;
+        if (fallback !== undefined) {
+            clearTimeout(fallback);
+            fallback = undefined;
+        }
+        request?.removeListener("continue", sendBody);
+        request?.removeListener("socket", onSocket);
+        if (!keepBodyObserved) {
+            bodyStream?.removeListener("error", onBodyError);
+        }
+    }
+    function onError(error) {
+        const requestError = error instanceof Error ? error : new Error(String(error));
+        // destroy() may emit no error on a closed request, or emit this error again on a live one.
+        if (!errorReported) {
+            errorReported = true;
+            stopWaiting();
+            options.onError(requestError);
+        }
+        return requestError;
+    }
+    function onBodyError(error) {
+        if (errorReported || (!waiting && !bodyStarted)) {
+            return;
+        }
+        errorReported = true;
+        bodyError = error instanceof Error ? error : new Error(String(error));
+        stopWaiting();
+        options.onBodyError(error);
+        request?.destroy(bodyError);
+    }
+    function sendBody() {
+        if (!waiting) {
+            return;
+        }
+        bodyStarted = true;
+        stopWaiting(true);
+        try {
+            options.sendBody(request);
+        }
+        catch (error) {
+            onBodyError(error);
+        }
+        finally {
+            // The upload path now observes the source, including synchronous failures while piping.
+            bodyStream?.removeListener("error", onBodyError);
+        }
+    }
+    function onAbort() {
+        stopWaiting();
+        options.onAbort(request);
+    }
+    function onSocket() {
+        if (!waiting) {
+            return;
+        }
+        try {
+            request.flushHeaders();
+            if (!waiting) {
+                return;
+            }
+            // This ordered write excludes connection setup and preceding header writes from the timeout.
+            request.write("", (error) => {
+                if (error) {
+                    request.destroy(onError(error));
+                }
+                else if (waiting) {
+                    fallback = setTimeout(sendBody, EXPECT_CONTINUE_TIMEOUT_IN_MS);
+                }
+            });
+        }
+        catch (error) {
+            request.destroy(onError(error));
+        }
+    }
+    function onResponse(response) {
+        stopWaiting();
+        if (!bodyStarted) {
+            request.shouldKeepAlive = false;
+            const destroyRequest = () => {
+                response.removeListener("end", destroyRequest);
+                response.removeListener("close", destroyRequest);
+                request.destroy();
+            };
+            response.once("end", destroyRequest);
+            response.once("close", destroyRequest);
+            if (response.readableEnded || response.destroyed) {
+                destroyRequest();
+            }
+        }
+        options.onResponse(response);
+    }
+    request.once("error", onError);
+    if (bodyError) {
+        request.destroy(bodyError);
+        return;
+    }
+    if (options.abortSignal.aborted) {
+        onAbort();
+        return;
+    }
+    options.abortSignal.addEventListener("abort", onAbort, { once: true });
+    // Request close can precede consumption of buffered response data.
+    // Keep private abort forwarding until sendRequest's outer lifecycle disconnects the caller.
+    request.once("close", () => stopWaiting());
+    if (request.destroyed || request.closed) {
+        stopWaiting();
+    }
+    if (!waiting) {
+        return;
+    }
+    request.once("continue", sendBody);
+    if (request.socket) {
+        onSocket();
+    }
+    else {
+        request.once("socket", onSocket);
+    }
+}
+//# sourceMappingURL=nodeExpectContinue.js.map
+;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/util/responseBody.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+const responseBodySources = new WeakMap();
+const responseBodyDisposers = new WeakMap();
+const requestCompletions = new WeakMap();
+const responseBodyCompletions = new WeakMap();
+function setRequestCompletion(response, completion) {
+    requestCompletions.set(response, completion);
+    completion
+        .then(() => requestCompletions.get(response) === completion && requestCompletions.delete(response))
+        .catch((error) => {
+        log_logger.warning("Error tracking request completion", error);
+    });
+}
+/**
+ * Returns a promise that resolves when the response's outgoing request has completed.
+ *
+ * @param response - The response whose request completion should be observed.
+ * @returns The request completion promise, if the transport provides one.
+ */
+function getRequestCompletion(response) {
+    return requestCompletions.get(response);
+}
+function setResponseBodyCompletion(response, completion) {
+    responseBodyCompletions.set(response, completion);
+    completion
+        .then(() => responseBodyCompletions.get(response) === completion &&
+        responseBodyCompletions.delete(response))
+        .catch((error) => {
+        logger.warning("Error tracking response body completion", error);
+    });
+}
+/**
+ * Returns a promise that resolves when the response body has completed, errored, or been canceled.
+ *
+ * @param response - The response whose body completion should be observed.
+ * @returns The response body completion promise, if the transport provides one.
+ */
+function getResponseBodyCompletion(response) {
+    return responseBodyCompletions.get(response);
+}
+function isNodeResponseBody(value) {
+    return (typeof value === "object" &&
+        value !== null &&
+        "resume" in value &&
+        typeof value.resume === "function");
+}
+function isNodeEventEmitterBody(value) {
+    return ("on" in value &&
+        typeof value.on === "function" &&
+        "once" in value &&
+        typeof value.once === "function" &&
+        "removeListener" in value &&
+        typeof value.removeListener === "function");
+}
+function isBrowserResponseBody(value) {
+    return (typeof value === "object" &&
+        value !== null &&
+        "cancel" in value &&
+        typeof value.cancel === "function");
+}
+function setResponseBodySource(body, source) {
+    if (isNodeResponseBody(body) && isNodeResponseBody(source)) {
+        responseBodySources.set(body, source);
+    }
+}
+function setResponseBodyDisposer(response, dispose) {
+    responseBodyDisposers.set(response, dispose);
+    return () => {
+        if (responseBodyDisposers.get(response) === dispose) {
+            responseBodyDisposers.delete(response);
+        }
+    };
+}
+/**
+ * Destroys a Node stream, or drains it if destruction is unavailable,
+ * and recursively disposes its tracked upstream sources.
+ */
+function disposeNodeResponseBody(readableStream, disposed = new Set()) {
+    // Avoid disposing a stream twice if the source chain contains a cycle.
+    if (disposed.has(readableStream)) {
+        return;
+    }
+    disposed.add(readableStream);
+    const source = responseBodySources.get(readableStream);
+    responseBodySources.delete(readableStream);
+    if (readableStream.closed !== true) {
+        if (readableStream.destroy) {
+            if (isNodeEventEmitterBody(readableStream)) {
+                const onError = (error) => {
+                    log_logger.warning("Error disposing Node stream", error);
+                };
+                const onClose = () => {
+                    readableStream.removeListener("error", onError);
+                };
+                readableStream.on("error", onError);
+                readableStream.once("close", onClose);
+                try {
+                    readableStream.destroy();
+                }
+                catch (error) {
+                    readableStream.removeListener("error", onError);
+                    readableStream.removeListener("close", onClose);
+                    throw error;
+                }
+            }
+            else {
+                readableStream.destroy();
+            }
+        }
+        else {
+            readableStream.resume();
+        }
+    }
+    if (source) {
+        disposeNodeResponseBody(source, disposed);
+    }
+}
+/**
+ * Disposes a raw Node stream and its tracked upstream sources without throwing.
+ *
+ * @param stream - The stream to destroy, or drain if destruction is unavailable.
+ */
+function disposeNodeStream(stream) {
+    try {
+        disposeNodeResponseBody(stream);
+    }
+    catch (error) {
+        log_logger.warning("Error disposing Node stream", error);
+    }
+}
+/**
+ * Releases the body of a response that will not be read, so the underlying connection can be
+ * reused or closed. Handles Node readable streams and browser web streams, and never throws:
+ * disposal failures are logged as warnings.
+ *
+ * @param response - The response whose `readableStreamBody` or `browserStreamBody` should be disposed.
+ */
+async function disposeResponseBody(response) {
+    try {
+        const dispose = responseBodyDisposers.get(response);
+        responseBodyDisposers.delete(response);
+        try {
+            const readableStream = response.readableStreamBody;
+            if (isNodeResponseBody(readableStream)) {
+                disposeNodeStream(readableStream);
+                return;
+            }
+            const browserStream = response.browserStreamBody;
+            if (isBrowserResponseBody(browserStream)) {
+                await browserStream.cancel();
+            }
+        }
+        finally {
+            dispose?.();
+        }
+    }
+    catch (error) {
+        log_logger.warning("Error disposing response body", error);
+    }
+}
+//# sourceMappingURL=responseBody.js.map
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/nodeHttpClient.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -84451,9 +92540,13 @@ const log_logger = createClientLogger("ts-http-runtime");
 
 
 
+
+
+
+
 const DEFAULT_TLS_SETTINGS = {};
 function nodeHttpClient_isReadableStream(body) {
-    return body && typeof body.pipe === "function";
+    return (typeof body === "object" && body !== null && "pipe" in body && typeof body.pipe === "function");
 }
 function isStreamComplete(stream) {
     if (stream.readable === false) {
@@ -84472,7 +92565,15 @@ function isStreamComplete(stream) {
     });
 }
 function isArrayBuffer(body) {
-    return body && typeof body.byteLength === "number";
+    return external_node_util_.types.isArrayBuffer(body) || ArrayBuffer.isView(body);
+}
+function arrayBufferToBuffer(body) {
+    if (Buffer.isBuffer(body)) {
+        return body;
+    }
+    return ArrayBuffer.isView(body)
+        ? Buffer.from(body.buffer, body.byteOffset, body.byteLength)
+        : Buffer.from(body);
 }
 class ReportTransform extends external_node_stream_.Transform {
     loadedBytes = 0;
@@ -84494,6 +92595,108 @@ class ReportTransform extends external_node_stream_.Transform {
         this.progressCallback = progressCallback;
     }
 }
+function createRequestLifecycle(request, options, isInsecure, resolve, reject) {
+    let clientRequest;
+    let response;
+    let requestDone = false;
+    let resolveRequestComplete;
+    const requestComplete = new Promise((_resolve) => {
+        resolveRequestComplete = _resolve;
+    });
+    const onComplete = () => {
+        requestDone = true;
+        clientRequest.removeListener("finish", onComplete);
+        clientRequest.removeListener("close", onComplete);
+        resolveRequestComplete();
+    };
+    const onResponse = (incomingResponse) => {
+        response = incomingResponse;
+        resolve({
+            response: incomingResponse,
+            requestComplete,
+            isRequestComplete: () => requestDone,
+            disposeRequest: () => {
+                if (!requestDone) {
+                    clientRequest.destroy();
+                }
+            },
+        });
+    };
+    return {
+        createRequest: (onResponseCallback = onResponse) => {
+            clientRequest = isInsecure
+                ? external_node_http_.request(options, onResponseCallback)
+                : external_node_https_namespaceObject.request(options, onResponseCallback);
+            clientRequest.once("finish", onComplete);
+            clientRequest.once("close", onComplete);
+            return clientRequest;
+        },
+        onResponse,
+        rejectRequest: (error) => {
+            reject(toRequestSendError(error, request));
+        },
+        abortRequest: (req) => {
+            const abortError = new AbortError("The operation was aborted. Rejecting from abort signal callback while making request.");
+            response?.destroy(abortError);
+            req.destroy(abortError);
+            reject(abortError);
+        },
+    };
+}
+function toRequestSendError(error, request) {
+    if (restError_isRestError(error)) {
+        return error;
+    }
+    const prematureClose = error.code === "ERR_STREAM_PREMATURE_CLOSE";
+    return new restError_RestError(prematureClose ? "Request body stream closed before ending" : error.message, {
+        code: prematureClose
+            ? restError_RestError.REQUEST_SEND_ERROR
+            : (error.code ?? restError_RestError.REQUEST_SEND_ERROR),
+        request,
+    });
+}
+function sendRequestBody(clientRequest, body, request, onError) {
+    if (body && nodeHttpClient_isReadableStream(body)) {
+        pipeUploadStream(body, clientRequest, request, onError);
+    }
+    else if (body) {
+        if (typeof body === "string" || Buffer.isBuffer(body)) {
+            clientRequest.end(body);
+        }
+        else {
+            log_logger.error("Unrecognized body type", body);
+            throw new restError_RestError("Unrecognized body type", { request });
+        }
+    }
+    else {
+        clientRequest.end();
+    }
+}
+function prepareRequestBody(request, useExpectContinue) {
+    const requestBody = request.body;
+    const resolvedBody = typeof requestBody === "function" ? requestBody() : requestBody;
+    const body = resolvedBody && isArrayBuffer(resolvedBody) ? arrayBufferToBuffer(resolvedBody) : resolvedBody;
+    if (!useExpectContinue && body && !request.headers.has("Content-Length")) {
+        const bodyLength = getBodyLength(body);
+        if (bodyLength !== null) {
+            request.headers.set("Content-Length", bodyLength);
+        }
+    }
+    if (!body || !request.onUploadProgress) {
+        return body;
+    }
+    const uploadReportStream = new ReportTransform(request.onUploadProgress);
+    uploadReportStream.on("error", (e) => {
+        log_logger.error("Error in upload progress", e);
+    });
+    if (nodeHttpClient_isReadableStream(body)) {
+        pipeUploadStream(body, uploadReportStream, request);
+    }
+    else {
+        uploadReportStream.end(body);
+    }
+    return uploadReportStream;
+}
 /**
  * A HttpClient implementation that uses Node's "https" module to send HTTPS requests.
  * @internal
@@ -84506,10 +92709,12 @@ class NodeHttpClient {
      * @param request - The request to be made.
      */
     async sendRequest(request) {
+        const requestBody = request.body;
         const abortController = new AbortController();
         let abortListener;
-        if (request.abortSignal) {
-            if (request.abortSignal.aborted) {
+        const requestAbortSignal = request.abortSignal;
+        if (requestAbortSignal) {
+            if (requestAbortSignal.aborted) {
                 throw new AbortError("The operation was aborted. Request has already been canceled.");
             }
             abortListener = (event) => {
@@ -84517,7 +92722,7 @@ class NodeHttpClient {
                     abortController.abort();
                 }
             };
-            request.abortSignal.addEventListener("abort", abortListener);
+            requestAbortSignal.addEventListener("abort", abortListener);
         }
         let timeoutId;
         if (request.timeout > 0) {
@@ -84529,33 +92734,31 @@ class NodeHttpClient {
         }
         const acceptEncoding = request.headers.get("Accept-Encoding");
         const shouldDecompress = acceptEncoding?.includes("gzip") || acceptEncoding?.includes("deflate");
-        let body = typeof request.body === "function" ? request.body() : request.body;
-        if (body && !request.headers.has("Content-Length")) {
-            const bodyLength = getBodyLength(body);
-            if (bodyLength !== null) {
-                request.headers.set("Content-Length", bodyLength);
-            }
-        }
+        // Keep input separate from the prepared upload. Even a direct stream must leave body
+        // undefined until preparation starts, so early rejection does not transfer its ownership.
+        let body;
         let responseStream;
+        let requestComplete = Promise.resolve();
         try {
-            if (body && request.onUploadProgress) {
-                const onUploadProgress = request.onUploadProgress;
-                const uploadReportStream = new ReportTransform(onUploadProgress);
-                uploadReportStream.on("error", (e) => {
-                    log_logger.error("Error in upload progress", e);
-                });
-                if (nodeHttpClient_isReadableStream(body)) {
-                    body.pipe(uploadReportStream);
-                }
-                else {
-                    uploadReportStream.end(body);
-                }
-                body = uploadReportStream;
+            let useExpectContinue = hasExpectContinue(request);
+            const knownBodyLength = useExpectContinue && typeof requestBody !== "function"
+                ? getBodyLength(requestBody ?? null)
+                : null;
+            if (knownBodyLength === 0) {
+                removeExpectContinueHeader(request);
+                useExpectContinue = false;
             }
-            const res = await this.makeRequest(request, abortController, body);
-            if (timeoutId !== undefined) {
-                clearTimeout(timeoutId);
+            if (!useExpectContinue) {
+                body = prepareRequestBody(request, false);
             }
+            const result = useExpectContinue
+                ? await this.makeRequestWithExpectContinue(request, abortController, () => {
+                    body = prepareRequestBody(request, true);
+                    return body;
+                }, knownBodyLength)
+                : await this.makeRequest(request, abortController, body);
+            requestComplete = result.requestComplete;
+            const res = result.response;
             const headers = getResponseHeaders(res);
             const status = res.statusCode ?? 0;
             const response = {
@@ -84563,23 +92766,34 @@ class NodeHttpClient {
                 headers,
                 request,
             };
+            if (!result.isRequestComplete()) {
+                setRequestCompletion(response, result.requestComplete);
+                const clearDisposer = setResponseBodyDisposer(response, result.disposeRequest);
+                result.requestComplete.then(clearDisposer).catch((error) => {
+                    log_logger.warning("Error disposing request", error);
+                });
+            }
             // Responses to HEAD must not have a body.
             // If they do return a body, that body must be ignored.
-            if (request.method === "HEAD") {
+            const method = typeof request.requestOverrides?.method === "string"
+                ? request.requestOverrides.method.toUpperCase()
+                : request.method;
+            if (method === "HEAD") {
                 // call resume() and not destroy() to avoid closing the socket
                 // and losing keep alive
                 res.resume();
                 return response;
             }
-            responseStream = shouldDecompress ? getDecodedResponseStream(res, headers) : res;
+            responseStream = shouldDecompress
+                ? getDecodedResponseStream(res, headers, abortController.signal)
+                : res;
             const onDownloadProgress = request.onDownloadProgress;
             if (onDownloadProgress) {
                 const downloadReportStream = new ReportTransform(onDownloadProgress);
                 downloadReportStream.on("error", (e) => {
                     log_logger.error("Error in download progress", e);
                 });
-                responseStream.pipe(downloadReportStream);
-                responseStream = downloadReportStream;
+                responseStream = pipeResponseStream(responseStream, downloadReportStream, abortController.signal);
             }
             if (
             // Value of POSITIVE_INFINITY in streamResponseStatusCodes is considered as any status code
@@ -84592,10 +92806,26 @@ class NodeHttpClient {
             }
             return response;
         }
+        catch (error) {
+            // Dispose only the prepared upload. If preparation never ran, body is undefined
+            // and the caller's untouched input stream is left alone.
+            if (nodeHttpClient_isReadableStream(body)) {
+                disposeNodeStream(body);
+            }
+            if (responseStream) {
+                disposeNodeStream(responseStream);
+            }
+            throw error;
+        }
         finally {
-            // clean up event listener
-            if (request.abortSignal && abortListener) {
+            if (timeoutId !== undefined) {
+                clearTimeout(timeoutId);
+            }
+            // Keep abort forwarding until the outgoing request and response have both completed.
+            if (requestAbortSignal && abortListener) {
                 let uploadStreamDone = Promise.resolve();
+                // Wait only for a prepared upload. If preparation never ran, body is undefined,
+                // so the caller's untouched input stream cannot block abort-listener cleanup.
                 if (nodeHttpClient_isReadableStream(body)) {
                     uploadStreamDone = isStreamComplete(body);
                 }
@@ -84603,11 +92833,11 @@ class NodeHttpClient {
                 if (nodeHttpClient_isReadableStream(responseStream)) {
                     downloadStreamDone = isStreamComplete(responseStream);
                 }
-                Promise.all([uploadStreamDone, downloadStreamDone])
+                Promise.all([requestComplete, uploadStreamDone, downloadStreamDone])
                     .then(() => {
                     // eslint-disable-next-line promise/always-return
                     if (abortListener) {
-                        request.abortSignal?.removeEventListener("abort", abortListener);
+                        requestAbortSignal.removeEventListener("abort", abortListener);
                     }
                 })
                     .catch((e) => {
@@ -84617,53 +92847,54 @@ class NodeHttpClient {
         }
     }
     makeRequest(request, abortController, body) {
+        const { options, isInsecure } = this.getRequestOptions(request);
+        return new Promise((resolve, reject) => {
+            const { createRequest, rejectRequest, abortRequest } = createRequestLifecycle(request, options, isInsecure, resolve, reject);
+            const req = createRequest();
+            req.once("error", rejectRequest);
+            abortController.signal.addEventListener("abort", () => abortRequest(req));
+            sendRequestBody(req, body, request, rejectRequest);
+        });
+    }
+    makeRequestWithExpectContinue(request, abortController, prepareBody, knownBodyLength) {
+        const { options, isInsecure } = this.getRequestOptions(request);
+        addExpectContinueFraming(options, knownBodyLength);
+        return new Promise((resolve, reject) => {
+            const { createRequest, onResponse, rejectRequest, abortRequest } = createRequestLifecycle(request, options, isInsecure, resolve, reject);
+            createExpectContinueRequest({
+                abortSignal: abortController.signal,
+                bodyStream: nodeHttpClient_isReadableStream(request.body) ? request.body : undefined,
+                createRequest,
+                onAbort: abortRequest,
+                onError: rejectRequest,
+                onBodyError: reject,
+                onResponse,
+                sendBody: (clientRequest) => {
+                    const body = prepareBody();
+                    sendRequestBody(clientRequest, body, request, rejectRequest);
+                },
+            });
+        });
+    }
+    getRequestOptions(request) {
         const url = new URL(request.url);
         const isInsecure = url.protocol !== "https:";
         if (isInsecure && !request.allowInsecureConnection) {
             throw new Error(`Cannot connect to ${request.url} while allowInsecureConnection is false.`);
         }
         const agent = request.agent ?? this.getOrCreateAgent(request, isInsecure);
-        const options = {
-            agent,
-            hostname: url.hostname,
-            path: `${url.pathname}${url.search}`,
-            port: url.port,
-            method: request.method,
-            headers: request.headers.toJSON({ preserveCase: true }),
-            ...request.requestOverrides,
+        return {
+            isInsecure,
+            options: {
+                agent,
+                hostname: url.hostname,
+                path: `${url.pathname}${url.search}`,
+                port: url.port,
+                method: request.method,
+                headers: request.headers.toJSON({ preserveCase: true }),
+                ...request.requestOverrides,
+            },
         };
-        return new Promise((resolve, reject) => {
-            const req = isInsecure ? external_node_http_.request(options, resolve) : external_node_https_namespaceObject.request(options, resolve);
-            req.once("error", (err) => {
-                reject(new restError_RestError(err.message, { code: err.code ?? restError_RestError.REQUEST_SEND_ERROR, request }));
-            });
-            abortController.signal.addEventListener("abort", () => {
-                const abortError = new AbortError("The operation was aborted. Rejecting from abort signal callback while making request.");
-                req.destroy(abortError);
-                reject(abortError);
-            });
-            if (body && nodeHttpClient_isReadableStream(body)) {
-                body.pipe(req);
-            }
-            else if (body) {
-                if (typeof body === "string" || Buffer.isBuffer(body)) {
-                    req.end(body);
-                }
-                else if (isArrayBuffer(body)) {
-                    req.end(ArrayBuffer.isView(body)
-                        ? Buffer.from(body.buffer, body.byteOffset, body.byteLength)
-                        : Buffer.from(body));
-                }
-                else {
-                    log_logger.error("Unrecognized body type", body);
-                    reject(new restError_RestError("Unrecognized body type"));
-                }
-            }
-            else {
-                // streams don't like "undefined" being passed as data
-                req.end();
-            }
-        });
     }
     getOrCreateAgent(request, isInsecure) {
         const disableKeepAlive = request.disableKeepAlive;
@@ -84720,44 +92951,85 @@ function getResponseHeaders(res) {
     }
     return headers;
 }
-function getDecodedResponseStream(stream, headers) {
+function getDecodedResponseStream(stream, headers, abortSignal) {
     const contentEncoding = headers.get("Content-Encoding");
     if (contentEncoding === "gzip") {
-        const unzip = external_node_zlib_.createGunzip();
-        stream.pipe(unzip);
-        return unzip;
+        return pipeResponseStream(stream, external_node_zlib_.createGunzip(), abortSignal);
     }
     else if (contentEncoding === "deflate") {
-        const inflate = external_node_zlib_.createInflate();
-        stream.pipe(inflate);
-        return inflate;
+        return pipeResponseStream(stream, external_node_zlib_.createInflate(), abortSignal);
     }
     return stream;
+}
+function pipeUploadStream(source, destination, request, onError) {
+    let tearingDown = false;
+    const cleanupFinished = (0,external_node_stream_.finished)(source, { writable: false }, onSourceComplete);
+    function onSourceComplete(error) {
+        cleanupFinished();
+        destination.removeListener("close", onDestinationClose);
+        if (error && !tearingDown) {
+            const requestError = toRequestSendError(error, request);
+            destination.destroy(requestError);
+            onError?.(requestError);
+        }
+    }
+    function onDestinationClose() {
+        // Keep observing the source, but do not forward failures caused by intentional teardown.
+        tearingDown = true;
+        source.unpipe(destination);
+        disposeNodeStream(source);
+    }
+    destination.once("close", onDestinationClose);
+    source.pipe(destination);
+}
+function pipeResponseStream(source, destination, abortSignal) {
+    setResponseBodySource(destination, source);
+    let cleanupSource = () => { };
+    let cleanupDestination = () => { };
+    cleanupSource = (0,external_node_stream_.finished)(source, { writable: false }, (error) => {
+        cleanupSource();
+        if (error) {
+            destination.destroy(abortSignal.aborted ? new AbortError() : error);
+        }
+    });
+    cleanupDestination = (0,external_node_stream_.finished)(destination, { writable: false }, () => {
+        cleanupDestination();
+        // Keep the source observer until its own completion, including any queued error.
+        source.unpipe(destination);
+        if (source.readable) {
+            disposeNodeStream(source);
+        }
+    });
+    return source.pipe(destination);
 }
 function streamToText(stream) {
     return new Promise((resolve, reject) => {
         const buffer = [];
-        stream.on("data", (chunk) => {
+        const cleanupFinished = (0,external_node_stream_.finished)(stream, { writable: false }, onComplete);
+        function onData(chunk) {
             if (Buffer.isBuffer(chunk)) {
                 buffer.push(chunk);
             }
             else {
                 buffer.push(Buffer.from(chunk));
             }
-        });
-        stream.on("end", () => {
-            resolve(Buffer.concat(buffer).toString("utf8"));
-        });
-        stream.on("error", (e) => {
-            if (e && e?.name === "AbortError") {
-                reject(e);
+        }
+        function onComplete(error) {
+            cleanupFinished();
+            stream.removeListener("data", onData);
+            if (error?.name === "AbortError") {
+                reject(error);
             }
-            else {
-                reject(new restError_RestError(`Error reading response as text: ${e.message}`, {
+            else if (error) {
+                reject(new restError_RestError(`Error reading response as text: ${error.message}`, {
                     code: restError_RestError.PARSE_ERROR,
                 }));
             }
-        });
+            else {
+                resolve(Buffer.concat(buffer).toString("utf8"));
+            }
+        }
+        stream.on("data", onData);
     });
 }
 /** @internal */
@@ -84775,7 +93047,7 @@ function getBodyLength(body) {
         return body.byteLength;
     }
     else if (typeof body === "string") {
-        return Buffer.from(body).length;
+        return Buffer.byteLength(body);
     }
     else {
         return null;
@@ -84828,7 +93100,7 @@ function logPolicy_logPolicy(options = {}) {
             logger(`Request: ${sanitizer.sanitize(request)}`);
             const response = await next(request);
             logger(`Response status code: ${response.status}`);
-            logger(`Headers: ${sanitizer.sanitize(response.headers)}`);
+            logger(`Headers: ${sanitizer.sanitize({ headers: response.headers })}`);
             return response;
         },
     };
@@ -84933,7 +93205,7 @@ function userAgentPolicy_userAgentPolicy(options = {}) {
  * @param min - The smallest integer value allowed.
  * @param max - The largest integer value allowed.
  */
-function random_getRandomIntegerInclusive(min, max) {
+function getRandomIntegerInclusive(min, max) {
     // Make sure inputs are integers.
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -84961,7 +93233,7 @@ function calculateRetryDelay(retryAttempt, config) {
     const clampedDelay = Math.min(config.maxRetryDelayInMs, exponentialDelay);
     // Allow the final value to have some "jitter" (within 50% of the delay size) so
     // that retries across multiple clients don't occur simultaneously.
-    const retryAfterInMs = clampedDelay / 2 + random_getRandomIntegerInclusive(0, clampedDelay / 2);
+    const retryAfterInMs = clampedDelay / 2 + getRandomIntegerInclusive(0, clampedDelay / 2);
     return { retryAfterInMs };
 }
 //# sourceMappingURL=delay.js.map
@@ -85166,12 +93438,13 @@ function isSystemError(err) {
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/constants.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-const constants_SDK_VERSION = "0.3.6";
+const constants_SDK_VERSION = "0.3.10";
 const constants_DEFAULT_RETRY_POLICY_COUNT = 3;
 //# sourceMappingURL=constants.js.map
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/policies/retryPolicy.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
+
 
 
 
@@ -85195,7 +93468,6 @@ function retryPolicy_retryPolicy(strategies, options = { maxRetries: constants_D
             let retryCount = -1;
             retryRequest: while (true) {
                 retryCount += 1;
-                response = undefined;
                 responseError = undefined;
                 try {
                     logger.info(`Retry ${retryCount}: Attempting to send request`, request.requestId);
@@ -85250,11 +93522,17 @@ function retryPolicy_retryPolicy(strategies, options = { maxRetries: constants_D
                     }
                     if (retryAfterInMs || retryAfterInMs === 0) {
                         strategyLogger.info(`Retry ${retryCount}: Retry strategy ${strategy.name} retries after ${retryAfterInMs}`);
+                        if (response) {
+                            await disposeResponseBody(response);
+                        }
                         await helpers_delay(retryAfterInMs, undefined, { abortSignal: request.abortSignal });
                         continue retryRequest;
                     }
                     if (redirectTo) {
                         strategyLogger.info(`Retry ${retryCount}: Retry strategy ${strategy.name} redirects to ${redirectTo}`);
+                        if (response) {
+                            await disposeResponseBody(response);
+                        }
                         request.url = redirectTo;
                         continue retryRequest;
                     }
@@ -85440,10 +93718,698 @@ async function prepareFormData(formData, request) {
     request.multipartBody = { parts };
 }
 //# sourceMappingURL=formDataPolicy.js.map
-// EXTERNAL MODULE: ./node_modules/https-proxy-agent/dist/index.js
-var dist = __nccwpck_require__(3669);
-// EXTERNAL MODULE: ./node_modules/http-proxy-agent/dist/index.js
-var http_proxy_agent_dist = __nccwpck_require__(1970);
+// EXTERNAL MODULE: external "net"
+var external_net_ = __nccwpck_require__(69278);
+// EXTERNAL MODULE: external "tls"
+var external_tls_ = __nccwpck_require__(64756);
+// EXTERNAL MODULE: ./node_modules/debug/src/index.js
+var src = __nccwpck_require__(2830);
+;// CONCATENATED MODULE: ./node_modules/agent-base/dist/helpers.js
+
+
+async function toBuffer(stream) {
+    let length = 0;
+    const chunks = [];
+    for await (const chunk of stream) {
+        length += chunk.length;
+        chunks.push(chunk);
+    }
+    return Buffer.concat(chunks, length);
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function json(stream) {
+    const buf = await toBuffer(stream);
+    const str = buf.toString('utf8');
+    try {
+        return JSON.parse(str);
+    }
+    catch (_err) {
+        const err = _err;
+        err.message += ` (input: ${str})`;
+        throw err;
+    }
+}
+function req(url, opts = {}) {
+    const href = typeof url === 'string' ? url : url.href;
+    const req = (href.startsWith('https:') ? https : http).request(url, opts);
+    const promise = new Promise((resolve, reject) => {
+        req
+            .once('response', resolve)
+            .once('error', reject)
+            .end();
+    });
+    req.then = promise.then.bind(promise);
+    return req;
+}
+//# sourceMappingURL=helpers.js.map
+;// CONCATENATED MODULE: ./node_modules/agent-base/dist/index.js
+
+
+
+
+const INTERNAL = Symbol('AgentBaseInternalState');
+class Agent extends external_http_.Agent {
+    constructor(opts) {
+        super(opts);
+        this[INTERNAL] = {};
+    }
+    /**
+     * Determine whether this is an `http` or `https` request.
+     */
+    isSecureEndpoint(options) {
+        if (options) {
+            // First check the `secureEndpoint` property explicitly, since this
+            // means that a parent `Agent` is "passing through" to this instance.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            if (typeof options.secureEndpoint === 'boolean') {
+                return options.secureEndpoint;
+            }
+            // If no explicit `secure` endpoint, check if `protocol` property is
+            // set. This will usually be the case since using a full string URL
+            // or `URL` instance should be the most common usage.
+            if (typeof options.protocol === 'string') {
+                return options.protocol === 'https:';
+            }
+        }
+        // Finally, if no `protocol` property was set, then fall back to
+        // checking the stack trace of the current call stack, and try to
+        // detect the "https" module.
+        const { stack } = new Error();
+        if (typeof stack !== 'string')
+            return false;
+        return stack
+            .split('\n')
+            .some((l) => l.indexOf('(https.js:') !== -1 ||
+            l.indexOf('node:https:') !== -1);
+    }
+    // In order to support async signatures in `connect()` and Node's native
+    // connection pooling in `http.Agent`, the array of sockets for each origin
+    // has to be updated synchronously. This is so the length of the array is
+    // accurate when `addRequest()` is next called. We achieve this by creating a
+    // fake socket and adding it to `sockets[origin]` and incrementing
+    // `totalSocketCount`.
+    incrementSockets(name) {
+        // If `maxSockets` and `maxTotalSockets` are both Infinity then there is no
+        // need to create a fake socket because Node.js native connection pooling
+        // will never be invoked.
+        if (this.maxSockets === Infinity && this.maxTotalSockets === Infinity) {
+            return null;
+        }
+        // All instances of `sockets` are expected TypeScript errors. The
+        // alternative is to add it as a private property of this class but that
+        // will break TypeScript subclassing.
+        if (!this.sockets[name]) {
+            // @ts-expect-error `sockets` is readonly in `@types/node`
+            this.sockets[name] = [];
+        }
+        const fakeSocket = new external_net_.Socket({ writable: false });
+        this.sockets[name].push(fakeSocket);
+        // @ts-expect-error `totalSocketCount` isn't defined in `@types/node`
+        this.totalSocketCount++;
+        return fakeSocket;
+    }
+    decrementSockets(name, socket) {
+        if (!this.sockets[name] || socket === null) {
+            return;
+        }
+        const sockets = this.sockets[name];
+        const index = sockets.indexOf(socket);
+        if (index !== -1) {
+            sockets.splice(index, 1);
+            // @ts-expect-error  `totalSocketCount` isn't defined in `@types/node`
+            this.totalSocketCount--;
+            if (sockets.length === 0) {
+                // @ts-expect-error `sockets` is readonly in `@types/node`
+                delete this.sockets[name];
+            }
+        }
+    }
+    // In order to properly update the socket pool, we need to call `getName()` on
+    // the core `https.Agent` if it is a secureEndpoint.
+    getName(options) {
+        const secureEndpoint = this.isSecureEndpoint(options);
+        if (secureEndpoint) {
+            return external_https_.Agent.prototype.getName.call(this, options);
+        }
+        return super.getName(options);
+    }
+    createSocket(req, options, cb) {
+        const connectOpts = {
+            ...options,
+            secureEndpoint: this.isSecureEndpoint(options),
+        };
+        const name = this.getName(connectOpts);
+        const fakeSocket = this.incrementSockets(name);
+        Promise.resolve()
+            .then(() => this.connect(req, connectOpts))
+            .then((socket) => {
+            this.decrementSockets(name, fakeSocket);
+            if (typeof socket
+                .addRequest === 'function') {
+                try {
+                    return socket.addRequest(req, connectOpts);
+                }
+                catch (err) {
+                    return cb(err);
+                }
+            }
+            this[INTERNAL].currentSocket = socket;
+            // @ts-expect-error `createSocket()` isn't defined in `@types/node`
+            super.createSocket(req, options, cb);
+        }, (err) => {
+            this.decrementSockets(name, fakeSocket);
+            cb(err);
+        });
+    }
+    createConnection() {
+        const socket = this[INTERNAL].currentSocket;
+        this[INTERNAL].currentSocket = undefined;
+        if (!socket) {
+            throw new Error('No socket was returned in the `connect()` function');
+        }
+        return socket;
+    }
+    get defaultPort() {
+        return (this[INTERNAL].defaultPort ??
+            (this.protocol === 'https:' ? 443 : 80));
+    }
+    set defaultPort(v) {
+        if (this[INTERNAL]) {
+            this[INTERNAL].defaultPort = v;
+        }
+    }
+    get protocol() {
+        return (this[INTERNAL].protocol ??
+            (this.isSecureEndpoint() ? 'https:' : 'http:'));
+    }
+    set protocol(v) {
+        if (this[INTERNAL]) {
+            this[INTERNAL].protocol = v;
+        }
+    }
+}
+//# sourceMappingURL=index.js.map
+;// CONCATENATED MODULE: external "url"
+const external_url_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("url");
+;// CONCATENATED MODULE: ./node_modules/https-proxy-agent/dist/parse-proxy-response.js
+
+const parse_proxy_response_debug = src('https-proxy-agent:parse-proxy-response');
+function parseProxyResponse(socket) {
+    return new Promise((resolve, reject) => {
+        // we need to buffer any HTTP traffic that happens with the proxy before we get
+        // the CONNECT response, so that if the response is anything other than an "200"
+        // response code, then we can re-play the "data" events on the socket once the
+        // HTTP parser is hooked up...
+        let buffersLength = 0;
+        const buffers = [];
+        function read() {
+            const b = socket.read();
+            if (b)
+                ondata(b);
+            else
+                socket.once('readable', read);
+        }
+        function cleanup() {
+            socket.removeListener('end', onend);
+            socket.removeListener('error', onerror);
+            socket.removeListener('readable', read);
+        }
+        function onend() {
+            cleanup();
+            parse_proxy_response_debug('onend');
+            reject(new Error('Proxy connection ended before receiving CONNECT response'));
+        }
+        function onerror(err) {
+            cleanup();
+            parse_proxy_response_debug('onerror %o', err);
+            reject(err);
+        }
+        function ondata(b) {
+            buffers.push(b);
+            buffersLength += b.length;
+            const buffered = Buffer.concat(buffers, buffersLength);
+            const endOfHeaders = buffered.indexOf('\r\n\r\n');
+            if (endOfHeaders === -1) {
+                // keep buffering
+                parse_proxy_response_debug('have not received end of HTTP headers yet...');
+                read();
+                return;
+            }
+            const headerParts = buffered
+                .slice(0, endOfHeaders)
+                .toString('ascii')
+                .split('\r\n');
+            const firstLine = headerParts.shift();
+            if (!firstLine) {
+                socket.destroy();
+                return reject(new Error('No header received from proxy CONNECT response'));
+            }
+            const firstLineParts = firstLine.split(' ');
+            const statusCode = +firstLineParts[1];
+            const statusText = firstLineParts.slice(2).join(' ');
+            const headers = {};
+            for (const header of headerParts) {
+                if (!header)
+                    continue;
+                const firstColon = header.indexOf(':');
+                if (firstColon === -1) {
+                    socket.destroy();
+                    return reject(new Error(`Invalid header from proxy CONNECT response: "${header}"`));
+                }
+                const key = header.slice(0, firstColon).toLowerCase();
+                const value = header.slice(firstColon + 1).trimStart();
+                const current = headers[key];
+                if (typeof current === 'string') {
+                    headers[key] = [current, value];
+                }
+                else if (Array.isArray(current)) {
+                    current.push(value);
+                }
+                else {
+                    headers[key] = value;
+                }
+            }
+            parse_proxy_response_debug('got proxy server response: %o %o', firstLine, headers);
+            cleanup();
+            resolve({
+                connect: {
+                    statusCode,
+                    statusText,
+                    headers,
+                },
+                buffered,
+            });
+        }
+        socket.on('error', onerror);
+        socket.on('end', onend);
+        read();
+    });
+}
+//# sourceMappingURL=parse-proxy-response.js.map
+;// CONCATENATED MODULE: ./node_modules/proxy-agent-negotiate/dist/index.js
+function createNegotiateAuth() {
+    return async ({ response, scheme }) => {
+        if (scheme.toLowerCase() !== 'negotiate') {
+            throw new Error(`Expected Negotiate scheme but got "${scheme}"`);
+        }
+        let kerberos;
+        try {
+            kerberos = await __nccwpck_require__.e(/* import() */ 50).then(__nccwpck_require__.t.bind(__nccwpck_require__, 98050, 19));
+        }
+        catch {
+            throw new Error('The "kerberos" package is required for Negotiate proxy authentication. ' +
+                'Install it with: npm install kerberos');
+        }
+        const proxyAuthenticate = response.headers['proxy-authenticate'] || '';
+        const challengeHeader = Array.isArray(proxyAuthenticate)
+            ? proxyAuthenticate[0]
+            : proxyAuthenticate;
+        const serverToken = typeof challengeHeader === 'string' && challengeHeader.includes(' ')
+            ? challengeHeader.split(' ').slice(1).join(' ')
+            : undefined;
+        const client = await kerberos.initializeClient('HTTP@proxy', {
+            mechOID: kerberos.GSS_MECH_OID_SPNEGO,
+        });
+        const token = await client.step(serverToken || '');
+        if (!token) {
+            throw new Error('Kerberos client.step() returned no token');
+        }
+        return {
+            headers: {
+                'Proxy-Authorization': `Negotiate ${token}`,
+            },
+        };
+    };
+}
+//# sourceMappingURL=index.js.map
+;// CONCATENATED MODULE: ./node_modules/https-proxy-agent/dist/index.js
+
+
+
+
+
+
+
+
+const dist_debug = src('https-proxy-agent');
+const setServernameFromNonIpHost = (options) => {
+    if (options.servername === undefined &&
+        options.host &&
+        !external_net_.isIP(options.host)) {
+        return {
+            ...options,
+            servername: options.host,
+        };
+    }
+    return options;
+};
+/**
+ * The `HttpsProxyAgent` implements an HTTP Agent subclass that connects to
+ * the specified "HTTP(s) proxy server" in order to proxy HTTPS requests.
+ *
+ * Outgoing HTTP requests are first tunneled through the proxy server using the
+ * `CONNECT` HTTP request method to establish a connection to the proxy server,
+ * and then the proxy server connects to the destination target and issues the
+ * HTTP request from the proxy server.
+ *
+ * `https:` requests have their socket connection upgraded to TLS once
+ * the connection to the proxy server has been established.
+ */
+class HttpsProxyAgent extends Agent {
+    constructor(proxy, opts) {
+        super(opts);
+        this.options = { path: undefined };
+        this.proxy = typeof proxy === 'string' ? new external_url_namespaceObject.URL(proxy) : proxy;
+        this.proxyHeaders = opts?.headers ?? {};
+        dist_debug('Creating new HttpsProxyAgent instance: %o', this.proxy.href);
+        if (opts?.negotiate) {
+            this.onProxyAuth = createNegotiateAuth();
+        }
+        else if (opts?.onProxyAuth) {
+            this.onProxyAuth = opts.onProxyAuth;
+        }
+        // Trim off the brackets from IPv6 addresses
+        const host = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, '');
+        const port = this.proxy.port
+            ? parseInt(this.proxy.port, 10)
+            : this.proxy.protocol === 'https:'
+                ? 443
+                : 80;
+        this.connectOpts = {
+            // Attempt to negotiate http/1.1 for proxy servers that support http/2
+            ALPNProtocols: ['http/1.1'],
+            ...(opts
+                ? omit(opts, 'headers', 'onProxyAuth', 'negotiate')
+                : null),
+            host,
+            port,
+        };
+    }
+    /**
+     * Called when the node-core HTTP client library is creating a
+     * new HTTP request.
+     */
+    async connect(req, opts) {
+        const { proxy } = this;
+        if (!opts.host) {
+            throw new TypeError('No "host" provided');
+        }
+        // Create a socket connection to the proxy server.
+        let socket;
+        if (proxy.protocol === 'https:') {
+            dist_debug('Creating `tls.Socket`: %o', this.connectOpts);
+            socket = external_tls_.connect(setServernameFromNonIpHost(this.connectOpts));
+        }
+        else {
+            dist_debug('Creating `net.Socket`: %o', this.connectOpts);
+            socket = external_net_.connect(this.connectOpts);
+        }
+        const headers = typeof this.proxyHeaders === 'function'
+            ? this.proxyHeaders()
+            : { ...this.proxyHeaders };
+        const host = external_net_.isIPv6(opts.host) ? `[${opts.host}]` : opts.host;
+        let payload = `CONNECT ${host}:${opts.port} HTTP/1.1\r\n`;
+        // Inject the `Proxy-Authorization` header if necessary.
+        if (proxy.username || proxy.password) {
+            const auth = `${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password)}`;
+            headers['Proxy-Authorization'] = `Basic ${Buffer.from(auth).toString('base64')}`;
+        }
+        headers.Host = `${host}:${opts.port}`;
+        if (!headers['Proxy-Connection']) {
+            headers['Proxy-Connection'] = this.keepAlive
+                ? 'Keep-Alive'
+                : 'close';
+        }
+        for (const name of Object.keys(headers)) {
+            payload += `${name}: ${headers[name]}\r\n`;
+        }
+        const proxyResponsePromise = parseProxyResponse(socket);
+        socket.write(`${payload}\r\n`);
+        const { connect, buffered } = await proxyResponsePromise;
+        req.emit('proxyConnect', connect);
+        this.emit('proxyConnect', connect, req);
+        req.emit('proxy', { proxy: this.proxy.href, socket });
+        if (connect.statusCode === 200) {
+            req.once('socket', resume);
+            if (opts.secureEndpoint) {
+                // The proxy is connecting to a TLS server, so upgrade
+                // this socket connection to a TLS connection.
+                dist_debug('Upgrading socket connection to TLS');
+                return external_tls_.connect({
+                    ...omit(setServernameFromNonIpHost(opts), 'host', 'path', 'port'),
+                    socket,
+                });
+            }
+            return socket;
+        }
+        // Handle 407 Proxy Authentication Required
+        if (connect.statusCode === 407 && this.onProxyAuth) {
+            dist_debug('Got 407 response, invoking onProxyAuth callback');
+            socket.destroy();
+            const proxyAuthenticate = connect.headers['proxy-authenticate'] || '';
+            const scheme = Array.isArray(proxyAuthenticate)
+                ? proxyAuthenticate[0].split(/\s/)[0]
+                : proxyAuthenticate.split(/\s/)[0];
+            const authResponse = await this.onProxyAuth({
+                response: connect,
+                scheme,
+            });
+            // Retry with the auth headers
+            return this._connectWithAuth(req, opts, authResponse.headers);
+        }
+        // Some other status code that's not 200... need to re-play the HTTP
+        // header "data" events onto the socket once the HTTP machinery is
+        // attached so that the node core `http` can parse and handle the
+        // error status code.
+        // Close the original socket, and a new "fake" socket is returned
+        // instead, so that the proxy doesn't get the HTTP request
+        // written to it (which may contain `Authorization` headers or other
+        // sensitive data).
+        //
+        // See: https://hackerone.com/reports/541502
+        socket.destroy();
+        const fakeSocket = new external_net_.Socket({ writable: false });
+        fakeSocket.readable = true;
+        // Need to wait for the "socket" event to re-play the "data" events.
+        req.once('socket', (s) => {
+            dist_debug('Replaying proxy buffer for failed request');
+            external_assert_(s.listenerCount('data') > 0);
+            // Replay the "buffered" Buffer onto the fake `socket`, since at
+            // this point the HTTP module machinery has been hooked up for
+            // the user.
+            s.push(buffered);
+            s.push(null);
+        });
+        return fakeSocket;
+    }
+    /**
+     * Retry a CONNECT request with additional auth headers.
+     */
+    async _connectWithAuth(req, opts, authHeaders) {
+        const { proxy } = this;
+        let socket;
+        if (proxy.protocol === 'https:') {
+            socket = external_tls_.connect(setServernameFromNonIpHost(this.connectOpts));
+        }
+        else {
+            socket = external_net_.connect(this.connectOpts);
+        }
+        const headers = typeof this.proxyHeaders === 'function'
+            ? this.proxyHeaders()
+            : { ...this.proxyHeaders };
+        const host = external_net_.isIPv6(opts.host) ? `[${opts.host}]` : opts.host;
+        let payload = `CONNECT ${host}:${opts.port} HTTP/1.1\r\n`;
+        if (proxy.username || proxy.password) {
+            const auth = `${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password)}`;
+            headers['Proxy-Authorization'] = `Basic ${Buffer.from(auth).toString('base64')}`;
+        }
+        // Merge auth headers (overrides existing)
+        Object.assign(headers, authHeaders);
+        headers.Host = `${host}:${opts.port}`;
+        if (!headers['Proxy-Connection']) {
+            headers['Proxy-Connection'] = this.keepAlive
+                ? 'Keep-Alive'
+                : 'close';
+        }
+        for (const name of Object.keys(headers)) {
+            payload += `${name}: ${headers[name]}\r\n`;
+        }
+        const proxyResponsePromise = parseProxyResponse(socket);
+        socket.write(`${payload}\r\n`);
+        const { connect } = await proxyResponsePromise;
+        req.emit('proxyConnect', connect);
+        this.emit('proxyConnect', connect, req);
+        if (connect.statusCode === 200) {
+            req.once('socket', resume);
+            if (opts.secureEndpoint) {
+                dist_debug('Upgrading socket connection to TLS');
+                return external_tls_.connect({
+                    ...omit(setServernameFromNonIpHost(opts), 'host', 'path', 'port'),
+                    socket,
+                });
+            }
+            return socket;
+        }
+        // If still not 200, throw
+        socket.destroy();
+        throw new Error(`Proxy authentication failed with status ${connect.statusCode} after retry`);
+    }
+}
+HttpsProxyAgent.protocols = ['http', 'https'];
+function resume(socket) {
+    // Defer the resume so that all 'socket' event handlers have a chance
+    // to attach their listeners (e.g. the HTTP client's 'data' handler)
+    // before data starts flowing. Without this, buffered proxy-response
+    // data can be emitted synchronously before listeners are ready.
+    // See: https://github.com/nicolo-ribaudo/tc39-proposal-await-dictionary/issues/7
+    setImmediate(() => {
+        socket.resume();
+    });
+}
+function omit(obj, ...keys) {
+    const ret = {};
+    let key;
+    for (key in obj) {
+        if (!keys.includes(key)) {
+            ret[key] = obj[key];
+        }
+    }
+    return ret;
+}
+//# sourceMappingURL=index.js.map
+;// CONCATENATED MODULE: ./node_modules/http-proxy-agent/dist/index.js
+
+
+
+
+
+
+
+const http_proxy_agent_dist_debug = src('http-proxy-agent');
+/**
+ * The `HttpProxyAgent` implements an HTTP Agent subclass that connects
+ * to the specified "HTTP proxy server" in order to proxy HTTP requests.
+ */
+class HttpProxyAgent extends Agent {
+    constructor(proxy, opts) {
+        super(opts);
+        this.proxy = typeof proxy === 'string' ? new external_url_namespaceObject.URL(proxy) : proxy;
+        this.proxyHeaders = opts?.headers ?? {};
+        http_proxy_agent_dist_debug('Creating new HttpProxyAgent instance: %o', this.proxy.href);
+        if (opts?.negotiate) {
+            this.onProxyAuth = createNegotiateAuth();
+        }
+        else if (opts?.onProxyAuth) {
+            this.onProxyAuth = opts.onProxyAuth;
+        }
+        // Trim off the brackets from IPv6 addresses
+        const host = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, '');
+        const port = this.proxy.port
+            ? parseInt(this.proxy.port, 10)
+            : this.proxy.protocol === 'https:'
+                ? 443
+                : 80;
+        this.connectOpts = {
+            ...(opts
+                ? dist_omit(opts, 'headers', 'onProxyAuth', 'negotiate')
+                : null),
+            host,
+            port,
+        };
+    }
+    addRequest(req, opts) {
+        req._header = null;
+        this.setRequestProps(req, opts);
+        // @ts-expect-error `addRequest()` isn't defined in `@types/node`
+        super.addRequest(req, opts);
+    }
+    setRequestProps(req, opts) {
+        const { proxy } = this;
+        const protocol = opts.secureEndpoint ? 'https:' : 'http:';
+        const hostname = req.getHeader('host') || 'localhost';
+        const base = `${protocol}//${hostname}`;
+        const url = new external_url_namespaceObject.URL(req.path, base);
+        if (opts.port !== 80) {
+            url.port = String(opts.port);
+        }
+        // Change the `http.ClientRequest` instance's "path" field
+        // to the absolute path of the URL that will be requested.
+        req.path = String(url);
+        // Inject the `Proxy-Authorization` header if necessary.
+        const headers = typeof this.proxyHeaders === 'function'
+            ? this.proxyHeaders()
+            : { ...this.proxyHeaders };
+        if (proxy.username || proxy.password) {
+            const auth = `${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password)}`;
+            headers['Proxy-Authorization'] = `Basic ${Buffer.from(auth).toString('base64')}`;
+        }
+        if (!headers['Proxy-Connection']) {
+            headers['Proxy-Connection'] = this.keepAlive
+                ? 'Keep-Alive'
+                : 'close';
+        }
+        for (const name of Object.keys(headers)) {
+            const value = headers[name];
+            if (value) {
+                req.setHeader(name, value);
+            }
+        }
+    }
+    async connect(req, opts) {
+        req._header = null;
+        if (!req.path.includes('://')) {
+            this.setRequestProps(req, opts);
+        }
+        // At this point, the http ClientRequest's internal `_header` field
+        // might have already been set. If this is the case then we'll need
+        // to re-generate the string since we just changed the `req.path`.
+        let first;
+        let endOfHeaders;
+        http_proxy_agent_dist_debug('Regenerating stored HTTP header string for request');
+        req._implicitHeader();
+        if (req.outputData && req.outputData.length > 0) {
+            http_proxy_agent_dist_debug('Patching connection write() output buffer with updated header');
+            first = req.outputData[0].data;
+            endOfHeaders = first.indexOf('\r\n\r\n') + 4;
+            req.outputData[0].data =
+                req._header + first.substring(endOfHeaders);
+            http_proxy_agent_dist_debug('Output buffer: %o', req.outputData[0].data);
+        }
+        // Create a socket connection to the proxy server.
+        let socket;
+        if (this.proxy.protocol === 'https:') {
+            http_proxy_agent_dist_debug('Creating `tls.Socket`: %o', this.connectOpts);
+            socket = external_tls_.connect(this.connectOpts);
+        }
+        else {
+            http_proxy_agent_dist_debug('Creating `net.Socket`: %o', this.connectOpts);
+            socket = external_net_.connect(this.connectOpts);
+        }
+        // Wait for the socket's `connect` event, so that this `callback()`
+        // function throws instead of the `http` request machinery. This is
+        // important for i.e. `PacProxyAgent` which determines a failed proxy
+        // connection via the `callback()` function throwing.
+        await (0,external_events_.once)(socket, 'connect');
+        // Emit the 'proxyConnect' event for parity with https-proxy-agent
+        const connect = { socket };
+        req.emit('proxyConnect', connect);
+        this.emit('proxyConnect', connect, req);
+        req.emit('proxy', { proxy: this.proxy.href, socket });
+        return socket;
+    }
+}
+HttpProxyAgent.protocols = ['http', 'https'];
+function dist_omit(obj, ...keys) {
+    const ret = {};
+    let key;
+    for (key in obj) {
+        if (!keys.includes(key)) {
+            ret[key] = obj[key];
+        }
+    }
+    return ret;
+}
+//# sourceMappingURL=index.js.map
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/policies/proxyPolicy.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -85592,13 +94558,13 @@ function setProxyAgentOnRequest(request, cachedAgents, proxyUrl) {
     }
     if (isInsecure) {
         if (!cachedAgents.httpProxyAgent) {
-            cachedAgents.httpProxyAgent = new http_proxy_agent_dist.HttpProxyAgent(proxyUrl);
+            cachedAgents.httpProxyAgent = new HttpProxyAgent(proxyUrl);
         }
         request.agent = cachedAgents.httpProxyAgent;
     }
     else {
         if (!cachedAgents.httpsProxyAgent) {
-            cachedAgents.httpsProxyAgent = new dist.HttpsProxyAgent(proxyUrl);
+            cachedAgents.httpsProxyAgent = new HttpsProxyAgent(proxyUrl);
         }
         request.agent = cachedAgents.httpsProxyAgent;
     }
@@ -85637,6 +94603,8 @@ function proxyPolicy_proxyPolicy(proxySettings, options) {
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/policies/redirectPolicy.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
+
+
 
 /**
  * The programmatic identifier of the redirectPolicy.
@@ -85686,10 +94654,14 @@ async function handleRedirect(next, response, maxRetries, allowCrossOriginRedire
         // redirected GET request if the redirect url is present in the location header
         if (status === 303) {
             request.method = "GET";
-            request.headers.delete("Content-Length");
+            if (request.requestOverrides && "method" in request.requestOverrides) {
+                request.requestOverrides = { ...request.requestOverrides, method: "GET" };
+            }
+            removeRequestBodyHeaders(request);
             delete request.body;
         }
         request.headers.delete("Authorization");
+        await disposeResponseBody(response);
         const res = await next(request);
         return handleRedirect(next, res, maxRetries, allowCrossOriginRedirects, currentRetries + 1);
     }
@@ -86370,21 +95342,6 @@ async function sendRequest_sendRequest(method, url, pipeline, options = {}, cust
     }
 }
 /**
- * Function to determine the request content type
- * @param options - request options InternalRequestParameters
- * @returns returns the content-type
- */
-function getRequestContentType(options = {}) {
-    if (options.contentType) {
-        return options.contentType;
-    }
-    const headerContentType = options.headers?.["content-type"];
-    if (typeof headerContentType === "string") {
-        return headerContentType;
-    }
-    return getContentType(options.body);
-}
-/**
  * Function to determine the content-type of a body
  * this is used if an explicit content-type is not provided
  * @param body - body in the request
@@ -86394,7 +95351,7 @@ function getContentType(body) {
     if (body === undefined) {
         return undefined;
     }
-    if (ArrayBuffer.isView(body)) {
+    if (body instanceof ArrayBuffer || ArrayBuffer.isView(body)) {
         return "application/octet-stream";
     }
     if (isBlob(body) && body.type) {
@@ -86414,16 +95371,25 @@ function getContentType(body) {
     return "application/json";
 }
 function buildPipelineRequest(method, url, options = {}) {
-    const requestContentType = getRequestContentType(options);
+    const headers = createHttpHeaders(options.headers);
+    let requestContentType = options.contentType;
+    if (!requestContentType) {
+        requestContentType = headers.get("content-type");
+    }
+    if (requestContentType === undefined) {
+        requestContentType = getContentType(options.body);
+    }
     const { body, multipartBody } = getRequestBody(options.body, requestContentType);
-    const headers = createHttpHeaders({
-        ...(options.headers ? options.headers : {}),
-        accept: options.accept ?? options.headers?.accept ?? "application/json",
-        ...(requestContentType && {
-            "content-type": requestContentType,
-        }),
-    });
-    const { allowInsecureConnection, abortSignal, onUploadProgress, onDownloadProgress, timeout, responseAsStream, url: _url, method: _method, body: _body, multipartBody: _multiBody, headers: _headers, ...rest } = options;
+    const accept = options.accept ??
+        headers.get("accept") ??
+        (options.noDefaultAcceptHeader ? undefined : "application/json");
+    if (accept !== undefined) {
+        headers.set("accept", accept);
+    }
+    if (requestContentType) {
+        headers.set("content-type", requestContentType);
+    }
+    const { allowInsecureConnection, abortSignal, onUploadProgress, onDownloadProgress, timeout, responseAsStream, noDefaultAcceptHeader: _noDefaultAcceptHeader, url: _url, method: _method, body: _body, multipartBody: _multiBody, headers: _headers, ...rest } = options;
     const request = createPipelineRequest({
         url,
         method,
@@ -86460,10 +95426,8 @@ function getRequestBody(body, contentType = "") {
     if (typeof body === "function") {
         return { body: body };
     }
-    if (ArrayBuffer.isView(body)) {
-        return {
-            body: body instanceof Uint8Array ? body : JSON.stringify(body),
-        };
+    if (body instanceof ArrayBuffer || ArrayBuffer.isView(body)) {
+        return { body };
     }
     const firstType = contentType.split(";")[0];
     switch (firstType) {
@@ -86530,8 +95494,7 @@ function createParseError(response, err) {
 /**
  * Creates a client with a default pipeline
  * @param endpoint - Base endpoint for the client
- * @param credentials - Credentials to authenticate the requests
- * @param options - Client options
+ * @param clientOptions - Client options
  */
 function getClient(endpoint, clientOptions = {}) {
     const pipeline = clientOptions.pipeline ?? createDefaultPipeline(clientOptions);
@@ -86545,34 +95508,35 @@ function getClient(endpoint, clientOptions = {}) {
             });
         }
     }
+    const noDefaultAcceptHeader = clientOptions.internal?.noDefaultAcceptHeader ?? false;
     const { allowInsecureConnection, httpClient } = clientOptions;
     const endpointUrl = clientOptions.endpoint ?? endpoint;
     const client = (path, ...args) => {
         const getUrl = (requestOptions) => buildRequestUrl(endpointUrl, path, args, { allowInsecureConnection, ...requestOptions });
         return {
             get: (requestOptions = {}) => {
-                return buildOperation("GET", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("GET", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             post: (requestOptions = {}) => {
-                return buildOperation("POST", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("POST", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             put: (requestOptions = {}) => {
-                return buildOperation("PUT", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("PUT", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             patch: (requestOptions = {}) => {
-                return buildOperation("PATCH", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("PATCH", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             delete: (requestOptions = {}) => {
-                return buildOperation("DELETE", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("DELETE", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             head: (requestOptions = {}) => {
-                return buildOperation("HEAD", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("HEAD", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             options: (requestOptions = {}) => {
-                return buildOperation("OPTIONS", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("OPTIONS", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
             trace: (requestOptions = {}) => {
-                return buildOperation("TRACE", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient);
+                return buildOperation("TRACE", getUrl(requestOptions), pipeline, requestOptions, allowInsecureConnection, httpClient, noDefaultAcceptHeader);
             },
         };
     };
@@ -86582,23 +95546,23 @@ function getClient(endpoint, clientOptions = {}) {
         pipeline,
     };
 }
-function buildOperation(method, url, pipeline, options, allowInsecureConnection, httpClient) {
+function buildOperation(method, url, pipeline, options, allowInsecureConnection, httpClient, noDefaultAcceptHeader = false) {
     allowInsecureConnection = options.allowInsecureConnection ?? allowInsecureConnection;
     return {
         then: function (onFulfilled, onrejected) {
-            return sendRequest(method, url, pipeline, { ...options, allowInsecureConnection }, httpClient).then(onFulfilled, onrejected);
+            return sendRequest(method, url, pipeline, { ...options, allowInsecureConnection, noDefaultAcceptHeader }, httpClient).then(onFulfilled, onrejected);
         },
         async asBrowserStream() {
             if (isNodeLike) {
                 throw new Error("`asBrowserStream` is supported only in the browser environment. Use `asNodeStream` instead to obtain the response body stream. If you require a Web stream of the response in Node, consider using `Readable.toWeb` on the result of `asNodeStream`.");
             }
             else {
-                return sendRequest(method, url, pipeline, { ...options, allowInsecureConnection, responseAsStream: true }, httpClient);
+                return sendRequest(method, url, pipeline, { ...options, allowInsecureConnection, noDefaultAcceptHeader, responseAsStream: true }, httpClient);
             }
         },
         async asNodeStream() {
             if (isNodeLike) {
-                return sendRequest(method, url, pipeline, { ...options, allowInsecureConnection, responseAsStream: true }, httpClient);
+                return sendRequest(method, url, pipeline, { ...options, allowInsecureConnection, noDefaultAcceptHeader, responseAsStream: true }, httpClient);
             }
             else {
                 throw new Error("`isNodeStream` is not supported in the browser environment. Use `asBrowserStream` to obtain the response body stream.");
@@ -86959,7 +95923,7 @@ async function util_userAgentPlatform_setPlatformSpecificData(map) {
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-rest-pipeline/dist/esm/constants.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-const esm_constants_SDK_VERSION = "1.24.0";
+const esm_constants_SDK_VERSION = "1.25.1";
 const esm_constants_DEFAULT_RETRY_POLICY_COUNT = 3;
 //# sourceMappingURL=constants.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-rest-pipeline/dist/esm/util/userAgent.js
@@ -87245,7 +96209,7 @@ function policies_formDataPolicy_formDataPolicy() {
 }
 //# sourceMappingURL=formDataPolicy.js.map
 // EXTERNAL MODULE: external "node:crypto"
-var external_node_crypto_ = __nccwpck_require__(7598);
+var external_node_crypto_ = __nccwpck_require__(77598);
 ;// CONCATENATED MODULE: ./node_modules/@typespec/ts-http-runtime/dist/esm/util/sha256.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -87281,23 +96245,34 @@ async function computeSha256Hash(content, encoding) {
 
 
 
+
 //# sourceMappingURL=internal.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/abort-controller/dist/esm/AbortError.js
 // Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
+// Licensed under the MIT License.
 /**
  * This error is thrown when an asynchronous operation has been aborted.
  * Check for this error by testing the `name` that the name property of the
  * error matches `"AbortError"`.
  *
  * @example
- * ```ts
+ * ```ts snippet:AbortErrorSample
+ * import { AbortError } from "@azure/abort-controller";
+ *
+ * async function doAsyncWork(options: { abortSignal: AbortSignal }): Promise<void> {
+ *   if (options.abortSignal.aborted) {
+ *     throw new AbortError();
+ *   }
+ *
+ *   // do async work
+ * }
+ *
  * const controller = new AbortController();
  * controller.abort();
  * try {
- *   doAsyncWork(controller.signal)
+ *   doAsyncWork({ abortSignal: controller.signal });
  * } catch (e) {
- *   if (e.name === 'AbortError') {
+ *   if (e instanceof Error && e.name === "AbortError") {
  *     // handle abort error here.
  *   }
  * }
@@ -87312,7 +96287,7 @@ class AbortError_AbortError extends Error {
 //# sourceMappingURL=AbortError.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/abort-controller/dist/esm/index.js
 // Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
+// Licensed under the MIT License.
 
 //# sourceMappingURL=index.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-util/dist/esm/createAbortablePromise.js
@@ -87362,7 +96337,6 @@ function createAbortablePromise(buildPromise, options) {
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-
 const delay_StandardAbortMessage = "The delay was aborted.";
 /**
  * A wrapper for setTimeout that resolves a promise after timeInMs milliseconds.
@@ -87380,22 +96354,6 @@ function delay_delay(timeInMs, options) {
         abortSignal,
         abortErrorMsg: abortErrorMsg ?? delay_StandardAbortMessage,
     });
-}
-/**
- * Calculates the delay interval for retry attempts using exponential delay with jitter.
- * @param retryAttempt - The current retry attempt number.
- * @param config - The exponential retry configuration.
- * @returns An object containing the calculated retry delay.
- */
-function delay_calculateRetryDelay(retryAttempt, config) {
-    // Exponentially increase the delay each time
-    const exponentialDelay = config.retryDelayInMs * Math.pow(2, retryAttempt);
-    // Don't let the delay exceed the maximum
-    const clampedDelay = Math.min(config.maxRetryDelayInMs, exponentialDelay);
-    // Allow the final value to have some "jitter" (within 50% of the delay size) so
-    // that retries across multiple clients don't occur simultaneously.
-    const retryAfterInMs = clampedDelay / 2 + getRandomIntegerInclusive(0, clampedDelay / 2);
-    return { retryAfterInMs };
 }
 //# sourceMappingURL=delay.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-util/dist/esm/error.js
@@ -87694,8 +96652,8 @@ class TracingContextImpl {
     }
 }
 //# sourceMappingURL=tracingContext.js.map
-// EXTERNAL MODULE: ./node_modules/@azure/core-tracing/dist/commonjs/state.js
-var commonjs_state = __nccwpck_require__(8914);
+// EXTERNAL MODULE: ./node_modules/@azure/core-tracing/dist/commonjs/state-cjs.js
+var state_cjs = __nccwpck_require__(39437);
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-tracing/dist/esm/state.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -87705,7 +96663,7 @@ var commonjs_state = __nccwpck_require__(8914);
 /**
  * Defines the shared state between CJS and ESM by re-exporting the CJS state.
  */
-const state_state = commonjs_state/* state */.w;
+const state_state = state_cjs/* state */.w;
 //# sourceMappingURL=state.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-tracing/dist/esm/instrumenter.js
 // Copyright (c) Microsoft Corporation.
@@ -87787,8 +96745,8 @@ function createTracingClient(options) {
     function startSpan(name, operationOptions, spanOptions) {
         const startSpanResult = getInstrumenter().startSpan(name, {
             ...spanOptions,
-            packageName: packageName,
-            packageVersion: packageVersion,
+            packageName,
+            packageVersion,
             tracingContext: operationOptions?.tracingOptions?.tracingContext,
         });
         let tracingContext = startSpanResult.tracingContext;
@@ -87808,7 +96766,7 @@ function createTracingClient(options) {
     async function withSpan(name, operationOptions, callback, spanOptions) {
         const { span, updatedOptions } = startSpan(name, operationOptions, spanOptions);
         try {
-            const result = await withContext(updatedOptions.tracingOptions.tracingContext, () => Promise.resolve(callback(updatedOptions, span)));
+            const result = await withContext(updatedOptions.tracingOptions.tracingContext, () => callback(updatedOptions, span));
             span.setStatus({ status: "success" });
             return result;
         }
@@ -88039,9 +96997,73 @@ function wrapAbortSignalLike(abortSignalLike) {
     return { abortSignal: controller.signal, cleanup };
 }
 //# sourceMappingURL=wrapAbortSignal.js.map
+;// CONCATENATED MODULE: ./node_modules/@azure/core-rest-pipeline/dist/esm/util/cleanupOnCompletion.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+
+/**
+ * Runs the cleanup callback associated with the response and its request once they are complete.
+ */
+function cleanupOnRequestResponseCompletion(response, cleanup) {
+    const stream = response?.readableStreamBody;
+    const requestCompletion = response ? getRequestCompletion(response) : undefined;
+    const browserResponseCompletion = response ? getResponseBodyCompletion(response) : undefined;
+    let requestDone = requestCompletion === undefined;
+    let nodeResponseDone = !stream || !stream.readable;
+    let browserResponseDone = browserResponseCompletion === undefined;
+    let cleanedUp = false;
+    const cleanupIfComplete = () => {
+        if (cleanedUp || !requestDone || !nodeResponseDone || !browserResponseDone) {
+            return;
+        }
+        cleanedUp = true;
+        cleanup();
+    };
+    const onResponseComplete = () => {
+        stream?.removeListener("end", onResponseComplete);
+        stream?.removeListener("close", onResponseComplete);
+        stream?.removeListener("error", onResponseComplete);
+        nodeResponseDone = true;
+        try {
+            cleanupIfComplete();
+        }
+        catch (error) {
+            esm_log_logger.warning("Error cleaning up after response stream completion", error);
+        }
+    };
+    if (!nodeResponseDone && stream) {
+        stream.once("end", onResponseComplete);
+        stream.once("close", onResponseComplete);
+        stream.once("error", onResponseComplete);
+    }
+    if (requestCompletion) {
+        requestCompletion
+            .then(() => {
+            requestDone = true;
+            return cleanupIfComplete();
+        })
+            .catch((error) => {
+            esm_log_logger.warning("Error cleaning up after request completion", error);
+        });
+    }
+    if (browserResponseCompletion) {
+        browserResponseCompletion
+            .then(() => {
+            browserResponseDone = true;
+            return cleanupIfComplete();
+        })
+            .catch((error) => {
+            esm_log_logger.warning("Error cleaning up after response body completion", error);
+        });
+    }
+    cleanupIfComplete();
+}
+//# sourceMappingURL=cleanupOnCompletion.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-rest-pipeline/dist/esm/policies/wrapAbortSignalLikePolicy.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
+
 
 const wrapAbortSignalLikePolicyName = "wrapAbortSignalLikePolicy";
 /**
@@ -88057,13 +97079,19 @@ function wrapAbortSignalLikePolicy() {
             if (!request.abortSignal) {
                 return next(request);
             }
-            const { abortSignal, cleanup } = wrapAbortSignalLike(request.abortSignal);
+            const originalAbortSignal = request.abortSignal;
+            const { abortSignal, cleanup } = wrapAbortSignalLike(originalAbortSignal);
             request.abortSignal = abortSignal;
+            let response;
             try {
-                return await next(request);
+                response = await next(request);
+                return response;
             }
             finally {
-                cleanup?.();
+                request.abortSignal = originalAbortSignal;
+                if (cleanup) {
+                    cleanupOnRequestResponseCompletion(response, cleanup);
+                }
             }
         },
     };
@@ -88129,6 +97157,7 @@ function esm_createPipelineFromOptions_createPipelineFromOptions(options) {
 // Licensed under the MIT License.
 
 
+
 /**
  * Create the correct HttpClient for the current environment.
  */
@@ -88138,15 +97167,21 @@ function esm_defaultHttpClient_createDefaultHttpClient() {
         async sendRequest(request) {
             // we wrap any AbortSignalLike here since the TypeSpec runtime expects a native AbortSignal.
             // 99% of the time, this should be a no-op since a native AbortSignal is passed in.
-            const { abortSignal, cleanup } = request.abortSignal
-                ? wrapAbortSignalLike(request.abortSignal)
+            const originalAbortSignal = request.abortSignal;
+            const { abortSignal, cleanup } = originalAbortSignal
+                ? wrapAbortSignalLike(originalAbortSignal)
                 : {};
+            let response;
             try {
                 request.abortSignal = abortSignal;
-                return await client.sendRequest(request);
+                response = await client.sendRequest(request);
+                return response;
             }
             finally {
-                cleanup?.();
+                request.abortSignal = originalAbortSignal;
+                if (cleanup) {
+                    cleanupOnRequestResponseCompletion(response, cleanup);
+                }
             }
         },
     };
@@ -88429,6 +97464,7 @@ function tokenCycler_createTokenCycler(credential, tokenCyclerOptions) {
 
 
 
+
 /**
  * The programmatic identifier of the bearerTokenAuthenticationPolicy.
  */
@@ -88564,6 +97600,7 @@ function bearerTokenAuthenticationPolicy(options) {
                     }, parsedClaim);
                     // Send updated request and handle response for RestError
                     if (shouldSendRequest) {
+                        await disposeResponseBody(response);
                         [response, error] = await trySendRequest(request, next);
                     }
                 }
@@ -88578,6 +97615,7 @@ function bearerTokenAuthenticationPolicy(options) {
                     });
                     // Send updated request and handle response for RestError
                     if (shouldSendRequest) {
+                        await disposeResponseBody(response);
                         [response, error] = await trySendRequest(request, next);
                     }
                     // If we get another CAE Claim, we will handle it by default and return whatever value we receive for this
@@ -88601,6 +97639,7 @@ function bearerTokenAuthenticationPolicy(options) {
                             }, parsedClaim);
                             // Send updated request and handle response for RestError
                             if (shouldSendRequest) {
+                                await disposeResponseBody(response);
                                 [response, error] = await trySendRequest(request, next);
                             }
                         }
@@ -88886,22 +97925,6 @@ function isSASCredential(credential) {
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 /**
- * @internal
- * @param accessToken - Access token
- * @returns Whether a token is bearer type or not
- */
-function isBearerToken(accessToken) {
-    return !accessToken.tokenType || accessToken.tokenType === "Bearer";
-}
-/**
- * @internal
- * @param accessToken - Access token
- * @returns Whether a token is Pop token or not
- */
-function isPopToken(accessToken) {
-    return accessToken.tokenType === "pop";
-}
-/**
  * Tests an object to determine whether it implements TokenCredential.
  *
  * @param credential - The assumed TokenCredential to be tested.
@@ -88932,7 +97955,7 @@ const disableKeepAlivePolicyName = "DisableKeepAlivePolicy";
 function createDisableKeepAlivePolicy() {
     return {
         name: disableKeepAlivePolicyName,
-        async sendRequest(request, next) {
+        sendRequest(request, next) {
             request.disableKeepAlive = true;
             return next(request);
         },
@@ -89606,7 +98629,12 @@ function serializeDictionaryType(serializer, mapper, object, objectName, isXml, 
     for (const key of Object.keys(object)) {
         const serializedValue = serializer.serialize(valueType, object[key], objectName, options);
         // If the element needs an XML namespace we need to add it within the $ property
-        tempDictionary[key] = getXmlObjectValue(valueType, serializedValue, isXml, options);
+        Object.defineProperty(tempDictionary, key, {
+            value: getXmlObjectValue(valueType, serializedValue, isXml, options),
+            enumerable: true,
+            configurable: true,
+            writable: true,
+        });
     }
     // Add the namespace to the root element if needed
     if (isXml && mapper.xmlNamespace) {
@@ -89805,7 +98833,12 @@ function deserializeCompositeType(serializer, mapper, responseBody, objectName, 
             const dictionary = {};
             for (const headerKey of Object.keys(responseBody)) {
                 if (headerKey.startsWith(headerCollectionPrefix)) {
-                    dictionary[headerKey.substring(headerCollectionPrefix.length)] = serializer.deserialize(propertyMapper.type.value, responseBody[headerKey], propertyObjectName, options);
+                    Object.defineProperty(dictionary, headerKey.substring(headerCollectionPrefix.length), {
+                        value: serializer.deserialize(propertyMapper.type.value, responseBody[headerKey], propertyObjectName, options),
+                        enumerable: true,
+                        configurable: true,
+                        writable: true,
+                    });
                 }
                 handledPropertyNames.push(headerKey);
             }
@@ -89960,7 +98993,12 @@ function deserializeDictionaryType(serializer, mapper, responseBody, objectName,
     if (responseBody) {
         const tempDictionary = {};
         for (const key of Object.keys(responseBody)) {
-            tempDictionary[key] = serializer.deserialize(value, responseBody[key], objectName, options);
+            Object.defineProperty(tempDictionary, key, {
+                value: serializer.deserialize(value, responseBody[key], objectName, options),
+                enumerable: true,
+                configurable: true,
+                writable: true,
+            });
         }
         return tempDictionary;
     }
@@ -90067,7 +99105,7 @@ const MapperTypeNames = {
 };
 //# sourceMappingURL=serializer.js.map
 // EXTERNAL MODULE: ./node_modules/@azure/core-client/dist/commonjs/state-cjs.js
-var state_cjs = __nccwpck_require__(30);
+var commonjs_state_cjs = __nccwpck_require__(70030);
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-client/dist/esm/state.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -90077,7 +99115,7 @@ var state_cjs = __nccwpck_require__(30);
 /**
  * Defines the shared state between CJS and ESM by re-exporting the CJS state.
  */
-const esm_state_state = state_cjs/* state */.w;
+const esm_state_state = commonjs_state_cjs/* state */.w;
 //# sourceMappingURL=state.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/core-client/dist/esm/operationHelpers.js
 // Copyright (c) Microsoft Corporation.
@@ -90560,7 +99598,7 @@ function serializeRequestBody(request, operationArguments, operationSpec, string
             }
         }
         catch (error) {
-            throw new Error(`Error "${error.message}" occurred in serializing the payload - ${JSON.stringify(serializedName, undefined, "  ")}.`);
+            throw new Error(`Error "${error.message}" occurred in serializing the payload - ${JSON.stringify(serializedName, undefined, "  ")}.`, { cause: error });
         }
     }
     else if (operationSpec.formDataParameters && operationSpec.formDataParameters.length > 0) {
@@ -91266,6 +100304,22 @@ const util_originalRequestSymbol = Symbol("Original PipelineRequest");
 // cloned but we need to retrieve the OperationSpec and OperationArguments from the
 // original request.
 const originalClientRequestSymbol = Symbol.for("@azure/core-client original request");
+const passThroughProps = new Set([
+    "url",
+    "method",
+    "withCredentials",
+    "timeout",
+    "requestId",
+    "abortSignal",
+    "body",
+    "formData",
+    "onDownloadProgress",
+    "onUploadProgress",
+    "proxySettings",
+    "streamResponseStatusCodes",
+    "agent",
+    "requestOverrides",
+]);
 function toPipelineRequest(webResource, options = {}) {
     const compatWebResource = webResource;
     const request = compatWebResource[util_originalRequestSymbol];
@@ -91349,23 +100403,7 @@ function toWebResourceLike(request, options) {
                 if (prop === "keepAlive") {
                     request.disableKeepAlive = !value;
                 }
-                const passThroughProps = [
-                    "url",
-                    "method",
-                    "withCredentials",
-                    "timeout",
-                    "requestId",
-                    "abortSignal",
-                    "body",
-                    "formData",
-                    "onDownloadProgress",
-                    "onUploadProgress",
-                    "proxySettings",
-                    "streamResponseStatusCodes",
-                    "agent",
-                    "requestOverrides",
-                ];
-                if (typeof prop === "string" && passThroughProps.includes(prop)) {
+                if (typeof prop === "string" && passThroughProps.has(prop)) {
                     request[prop] = value;
                 }
                 return Reflect.set(target, prop, value, receiver);
@@ -92625,19 +101663,26 @@ class Matcher {
 ;// CONCATENATED MODULE: ./node_modules/fast-xml-builder/src/util.js
 
 
+// String(val)/val.toString() drop the sign of -0 (e.g. String(-0) === '0'), silently
+// corrupting a round-tripped negative-zero value. XML has no separate int/float syntax,
+// so this is the single place every raw value gets turned into text.
+function valToStr(val) {
+  return typeof val === 'number' && Object.is(val, -0) ? '-0' : String(val)
+}
+
 function safeComment(val) {
-  return String(val)
+  return valToStr(val)
     .replace(/--/g, '- -')   // -- is illegal anywhere in comment content
     .replace(/--/g, '- -')   // handle the scenario when 2 consiucative dashes appears 
     .replace(/-$/, '- ');    // trailing - would form -- with the closing -->
 }
 
 function safeCdata(val) {
-  return String(val).replace(/\]\]>/g, ']]]]><![CDATA[>')
+  return valToStr(val).replace(/\]\]>/g, ']]]]><![CDATA[>')
 }
 
 function escapeAttribute(val) {
-  return String(val).replace(/"/g, '&quot;').replace(/'/g, '&apos;')
+  return valToStr(val).replace(/"/g, '&quot;').replace(/'/g, '&apos;')
 }
 ;// CONCATENATED MODULE: ./node_modules/xml-naming/src/index.js
 /**
@@ -92752,8 +101797,36 @@ const buildRegexes = (startChar, char, flags = '') => {
 const regexes10 = buildRegexes(nameStartChar10, nameChar10);       // no /u — BMP only
 const regexes11 = buildRegexes(nameStartChar11, nameChar11, 'u');  // /u — enables \u{10000}-\u{EFFFF}
 
-const getRegexes = (xmlVersion = '1.0') =>
-  xmlVersion === '1.1' ? regexes11 : regexes10;
+// ---------------------------------------------------------------------------
+// ASCII-only fast path (opt-in, off by default)
+//
+// The XML 1.0 vs 1.1 NameStartChar/NameChar productions differ *only* in
+// their non-ASCII ranges (merged vs split Latin-1 ranges, \u0487, and
+// supplementary planes). Restricted to ASCII, both versions collapse to the
+// same character classes, so a single regex pair covers both xmlVersion
+// values — no /u flag needed.
+//
+// Rationale: unicode-aware regexes (the /u flag, required for XML 1.1's
+// supplementary-plane range) are measurably slower in V8 than plain
+// non-unicode regexes on the same input, even when the input is pure ASCII.
+// For the common case — HTML/SVG ids, XML tags — names are ASCII, so callers
+// who know this can opt in to skip the unicode-aware matching path entirely.
+// This is a real but *conditional* win: mainly for XML 1.1 input (avoids /u),
+// or at scale where the larger unicode character classes add engine
+// overhead. It also changes behaviour (rejects legitimate non-ASCII XML
+// 1.0/1.1 names), so it must never be silently enabled — hence off by
+// default.
+// ---------------------------------------------------------------------------
+
+const nameStartCharAscii = ':A-Za-z_';
+const nameCharAscii = nameStartCharAscii + '\\-\\.\\d';
+
+const regexesAscii = buildRegexes(nameStartCharAscii, nameCharAscii); // no /u — ASCII only
+
+const getRegexes = (xmlVersion = '1.0', asciiOnly = false) => {
+  if (asciiOnly) return regexesAscii;
+  return xmlVersion === '1.1' ? regexes11 : regexes10;
+};
 
 // ---------------------------------------------------------------------------
 // Boolean validators
@@ -92763,57 +101836,131 @@ const getRegexes = (xmlVersion = '1.0') =>
  * Returns true if the string is a valid XML Name.
  * Colons are allowed anywhere (Name production).
  * Used for: DOCTYPE entity names, notation names, DTD element declarations.
+ *
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
+ *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
  */
-const src_name = (str, { xmlVersion = '1.0' } = {}) =>
-  getRegexes(xmlVersion).name.test(str);
+const src_name = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
+  getRegexes(xmlVersion, asciiOnly).name.test(str);
 
 /**
  * Returns true if the string is a valid NCName (Non-Colonized Name).
  * Colons are not permitted.
  * Used for: namespace prefixes, local names, SVG id attributes.
+ *
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
+ *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
  */
-const ncName = (str, { xmlVersion = '1.0' } = {}) =>
-  getRegexes(xmlVersion).ncName.test(str);
+const ncName = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
+  getRegexes(xmlVersion, asciiOnly).ncName.test(str);
 
 /**
  * Returns true if the string is a valid QName (Qualified Name).
  * Allows exactly one colon as a prefix separator: prefix:localName.
  * Used for: element and attribute names in namespace-aware XML/SVG.
+ *
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
+ *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
  */
-const qName = (str, { xmlVersion = '1.0' } = {}) =>
-  getRegexes(xmlVersion).qName.test(str);
+const qName = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
+  getRegexes(xmlVersion, asciiOnly).qName.test(str);
 
 /**
  * Returns true if the string is a valid NMToken.
  * Like Name but no restriction on the first character.
  * Used for: DTD NMTOKEN attribute values.
+ *
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
+ *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
  */
-const nmToken = (str, { xmlVersion = '1.0' } = {}) =>
-  getRegexes(xmlVersion).nmToken.test(str);
+const nmToken = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
+  getRegexes(xmlVersion, asciiOnly).nmToken.test(str);
 
 /**
  * Returns true if the string is a valid NMTokens value.
  * A whitespace-separated list of NMToken values.
  * Used for: DTD NMTOKENS attribute values.
+ *
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
+ *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
  */
-const nmTokens = (str, { xmlVersion = '1.0' } = {}) =>
-  getRegexes(xmlVersion).nmTokens.test(str);
+const nmTokens = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
+  getRegexes(xmlVersion, asciiOnly).nmTokens.test(str);
+
+// ---------------------------------------------------------------------------
+// Memoized validator factory
+//
+// Real documents reuse a small vocabulary of tag/attribute names across many
+// siblings (e.g. `id`, `class`, `href` repeated across hundreds of elements).
+// The plain boolean validators above re-run the regex on every call
+// regardless of repeats. `createValidator` returns a closure with a private
+// string -> boolean cache, so repeated names after the first become O(1)
+// lookups instead of regex tests.
+//
+// - opts (xmlVersion, asciiOnly) are fixed at creation time, so the regex is
+//   resolved once, not on every call.
+// - The cache is private to the returned closure — no shared/global state,
+//   no cross-caller pollution.
+// - `maxCacheSize` bounds memory: once the cache reaches this many entries,
+//   it stops accepting new ones (existing entries keep serving hits; new
+//   misses just fall through to the regex, uncached). This avoids unbounded
+//   growth against adversarial/high-cardinality input (e.g. validating
+//   attacker-supplied names with no repeats) without the cost/complexity of
+//   a full LRU, and without the perf cliff of reset-and-refill thrashing.
+// - Call `.reset()` on the returned function to clear the cache manually
+//   (e.g. between unrelated parse calls).
+// ---------------------------------------------------------------------------
+
+const PRODUCTIONS = ['name', 'ncName', 'qName', 'nmToken', 'nmTokens'];
+
+/**
+ * Returns a memoized boolean validator function for a single production,
+ * with opts fixed at creation time.
+ *
+ * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean, maxCacheSize?: number }} [opts]
+ *   maxCacheSize: max number of distinct strings to cache (default 2048).
+ *   Once reached, new strings are validated but not cached; existing cached
+ *   entries keep being served.
+ * @returns {((str: string) => boolean) & { reset: () => void }}
+ */
+const createValidator = (production, { xmlVersion = '1.0', asciiOnly = false, maxCacheSize = 2048 } = {}) => {
+  if (!PRODUCTIONS.includes(production)) {
+    throw new TypeError(
+      `Unknown production "${production}". Must be one of: ${PRODUCTIONS.join(', ')}`
+    );
+  }
+
+  const regex = getRegexes(xmlVersion, asciiOnly)[production];
+  let cache = new Map();
+
+  const validator = (str) => {
+    const cached = cache.get(str);
+    if (cached !== undefined) return cached;
+
+    const result = regex.test(str);
+    if (cache.size < maxCacheSize) cache.set(str, result);
+    return result;
+  };
+
+  validator.reset = () => { cache = new Map(); };
+
+  return validator;
+};
 
 // ---------------------------------------------------------------------------
 // Diagnostic validator
 // ---------------------------------------------------------------------------
-
-const PRODUCTIONS = (/* unused pure expression or super */ null && (['name', 'ncName', 'qName', 'nmToken', 'nmTokens']));
 
 /**
  * Validates a string against a named production and returns a detailed result.
  *
  * @param {string} str
  * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ xmlVersion?: '1.0'|'1.1' }} [opts]
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
  * @returns {{ valid: boolean, production: string, input: string, reason?: string, position?: number }}
  */
-const validate = (str, production, { xmlVersion = '1.0' } = {}) => {
+const validate = (str, production, { xmlVersion = '1.0', asciiOnly = false } = {}) => {
   if (!PRODUCTIONS.includes(production)) {
     throw new TypeError(
       `Unknown production "${production}". Must be one of: ${PRODUCTIONS.join(', ')}`
@@ -92821,12 +101968,19 @@ const validate = (str, production, { xmlVersion = '1.0' } = {}) => {
   }
 
   const validators = { name: src_name, ncName, qName, nmToken, nmTokens };
-  const isValid = validators[production](str, { xmlVersion });
+  const isValid = validators[production](str, { xmlVersion, asciiOnly });
 
   if (isValid) return { valid: true, production, input: str };
 
   let reason = 'Does not match the production rules';
   let position;
+
+  // Diagnostic fallback char checks must mirror the same character set the
+  // boolean validator above used, or the reported reason/position could
+  // contradict the `valid: false` result (e.g. flagging a char as illegal
+  // that the unicode-aware check would have accepted).
+  const startCharPattern = asciiOnly ? /^[:A-Za-z_]/ : /^[:A-Za-z_\u00C0-\uFFFD]/;
+  const namePattern = asciiOnly ? /[\w\-\\.:]/ : /[\w\-\\.:\u00B7\u00C0-\uFFFD]/;
 
   if (str.length === 0) {
     reason = 'Input is empty';
@@ -92844,13 +101998,13 @@ const validate = (str, production, { xmlVersion = '1.0' } = {}) => {
     position = str.lastIndexOf(':');
   } else if (
     ['name', 'ncName', 'qName'].includes(production) &&
-    !/^[:A-Za-z_\u00C0-\uFFFD]/.test(str[0])
+    !startCharPattern.test(str[0])
   ) {
     reason = `First character "${str[0]}" is not a valid NameStartChar`;
     position = 0;
   } else {
     for (let i = 0; i < str.length; i++) {
-      if (!/[\w\-\\.:\u00B7\u00C0-\uFFFD]/.test(str[i])) {
+      if (!namePattern.test(str[i])) {
         reason = `Character "${str[i]}" at position ${i} is not a valid NameChar`;
         position = i;
         break;
@@ -92870,7 +102024,7 @@ const validate = (str, production, { xmlVersion = '1.0' } = {}) => {
  *
  * @param {string[]} strings
  * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ xmlVersion?: '1.0'|'1.1' }} [opts]
+ * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
  * @returns {Array<{ valid: boolean, production: string, input: string, reason?: string, position?: number }>}
  */
 const validateAll = (strings, production, opts = {}) =>
@@ -92885,10 +102039,12 @@ const validateAll = (strings, production, opts = {}) =>
  *
  * @param {string} str
  * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ replacement?: string }} [opts]
+ * @param {{ replacement?: string, asciiOnly?: boolean }} [opts]
+ *   asciiOnly: also replace any non-ASCII character, not just XML-illegal
+ *   ones (default false).
  * @returns {string}
  */
-const sanitize = (str, production = 'name', { replacement = '_' } = {}) => {
+const sanitize = (str, production = 'name', { replacement = '_', asciiOnly = false } = {}) => {
   if (!str) return replacement;
 
   let result = str;
@@ -92899,7 +102055,8 @@ const sanitize = (str, production = 'name', { replacement = '_' } = {}) => {
   }
 
   // Replace illegal characters
-  result = result.replace(/[^\w\-\.:\u00B7\u00C0-\uFFFD]/g, replacement);
+  const allowedCharPattern = asciiOnly ? /[^\w\-\.:]/g : /[^\w\-\.:\u00B7\u00C0-\uFFFD]/g;
+  result = result.replace(allowedCharPattern, replacement);
 
   // Fix invalid start character for Name / NCName / QName
   if (production !== 'nmToken' && production !== 'nmTokens') {
@@ -92949,11 +102106,11 @@ function detectXmlVersionFromArray(jArray, options) {
  * @param {boolean} isAttribute - true when resolving an attribute name
  * @param {object}  options
  * @param {Matcher} matcher     - current matcher state (readonly from callback perspective)
- * @param {string}  xmlVersion  - '1.0' or '1.1', forwarded to xml-naming
+ * @param {function} qNameValidator - function to validate tag names
  */
-function resolveTagName(name, isAttribute, options, matcher, xmlVersion) {
+function resolveTagName(name, isAttribute, options, matcher, qNameValidator) {
     if (!options.sanitizeName) return name;
-    if (qName(name, { xmlVersion })) return name;
+    if (qNameValidator(name)) return name;
     return options.sanitizeName(name, { isAttribute, matcher: matcher.readOnly() });
 }
 
@@ -92983,14 +102140,14 @@ function toXml(jArray, options) {
 
     // Detect XML version for use in name validation
     const xmlVersion = detectXmlVersionFromArray(jArray, options);
-
+    const qNameValidator = createValidator('qName', { xmlVersion });
     // Initialize matcher for path tracking
     const matcher = new Matcher();
 
-    return arrToStr(jArray, options, indentation, matcher, stopNodeExpressions, xmlVersion);
+    return arrToStr(jArray, options, indentation, matcher, stopNodeExpressions, qNameValidator);
 }
 
-function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVersion) {
+function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, qNameValidator) {
     let xmlStr = "";
     let isPreviousElementTag = false;
 
@@ -93001,7 +102158,7 @@ function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVe
     if (!Array.isArray(arr)) {
         // Non-array values (e.g. string tag values) should be treated as text content
         if (arr !== undefined && arr !== null) {
-            let text = arr.toString();
+            let text = valToStr(arr);
             text = replaceEntitiesValue(text, options);
             return text;
         }
@@ -93023,7 +102180,7 @@ function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVe
         // Resolve tag name (may transform it; may throw for invalid names)
         const tagName = isSpecialName
             ? rawTagName
-            : resolveTagName(rawTagName, false, options, matcher, xmlVersion);
+            : resolveTagName(rawTagName, false, options, matcher, qNameValidator);
 
         // Extract attributes from ":@" property
         const attrValues = extractAttributeValues(tagObj[":@"], options);
@@ -93040,6 +102197,7 @@ function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVe
                 tagText = options.tagValueProcessor(tagName, tagText);
                 tagText = replaceEntitiesValue(tagText, options);
             }
+            tagText = valToStr(tagText);
             if (isPreviousElementTag) {
                 xmlStr += indentation;
             }
@@ -93065,7 +102223,7 @@ function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVe
             matcher.pop();
             continue;
         } else if (tagName[0] === "?") {
-            const attStr = attr_to_str(tagObj[":@"], options, isStopNode, matcher, xmlVersion);
+            const attStr = attr_to_str(tagObj[":@"], options, isStopNode, matcher, qNameValidator);
             const tempInd = tagName === "?xml" ? "" : indentation;
             // Text node content on PI/XML declaration tags is intentionally ignored.
             // Only attributes are valid on these tags per the XML spec.
@@ -93081,7 +102239,7 @@ function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVe
         }
 
         // Pass isStopNode to attr_to_str so attributes are also not processed for stopNodes
-        const attStr = attr_to_str(tagObj[":@"], options, isStopNode, matcher, xmlVersion);
+        const attStr = attr_to_str(tagObj[":@"], options, isStopNode, matcher, qNameValidator);
         const tagStart = indentation + `<${tagName}${attStr}`;
 
         // If this is a stopNode, get raw content without processing
@@ -93089,7 +102247,7 @@ function arrToStr(arr, options, indentation, matcher, stopNodeExpressions, xmlVe
         if (isStopNode) {
             tagValue = orderedJs2Xml_getRawContent(tagObj[rawTagName], options);
         } else {
-            tagValue = arrToStr(tagObj[rawTagName], options, newIdentation, matcher, stopNodeExpressions, xmlVersion);
+            tagValue = arrToStr(tagObj[rawTagName], options, newIdentation, matcher, stopNodeExpressions, qNameValidator);
         }
 
         if (options.unpairedTags.indexOf(tagName) !== -1) {
@@ -93148,7 +102306,7 @@ function orderedJs2Xml_getRawContent(arr, options) {
     if (!Array.isArray(arr)) {
         // Non-array values return as-is
         if (arr !== undefined && arr !== null) {
-            return arr.toString();
+            return valToStr(arr);
         }
         return "";
     }
@@ -93160,7 +102318,7 @@ function orderedJs2Xml_getRawContent(arr, options) {
 
         if (tagName === options.textNodeName) {
             // Raw text content - NO processing, NO entity replacement
-            content += item[tagName];
+            content += valToStr(item[tagName]);
         } else if (tagName === options.cdataPropName) {
             // CDATA content
             content += item[tagName][0][options.textNodeName];
@@ -93218,7 +102376,7 @@ function propName(obj) {
  * Build attribute string, resolving attribute names through sanitizeName when configured.
  * Accepts matcher so the callback has path context.
  */
-function attr_to_str(attrMap, options, isStopNode, matcher, xmlVersion) {
+function attr_to_str(attrMap, options, isStopNode, matcher, qNameValidator) {
     let attrStr = "";
     if (attrMap && !options.ignoreAttributes) {
         for (let attr in attrMap) {
@@ -93228,7 +102386,7 @@ function attr_to_str(attrMap, options, isStopNode, matcher, xmlVersion) {
             const cleanAttrName = attr.substr(options.attributeNamePrefix.length);
             const resolvedAttrName = isStopNode
                 ? cleanAttrName  // stopNodes are raw — skip sanitizeName for attr names too
-                : resolveTagName(cleanAttrName, true, options, matcher, xmlVersion);
+                : resolveTagName(cleanAttrName, true, options, matcher, qNameValidator);
 
             let attrVal;
             if (isStopNode) {
@@ -93422,11 +102580,11 @@ function detectXmlVersionFromObj(jObj, options) {
  * @param {boolean} isAttribute - true when resolving an attribute name
  * @param {object}  options
  * @param {Matcher} matcher     - current matcher state (readonly from callback perspective)
- * @param {string}  xmlVersion  - '1.0' or '1.1', forwarded to xml-naming
+ * @param {function} qNameValidator - function to validate tag names
  */
-function fxb_resolveTagName(name, isAttribute, options, matcher, xmlVersion) {
+function fxb_resolveTagName(name, isAttribute, options, matcher, qNameValidator) {
   if (!options.sanitizeName) return name;
-  if (qName(name, { xmlVersion })) return name;
+  if (qNameValidator(name)) return name;
   return options.sanitizeName(name, { isAttribute, matcher: matcher.readOnly() });
 }
 
@@ -93442,11 +102600,12 @@ Builder.prototype.build = function (jObj) {
     // Initialize matcher for path tracking
     const matcher = new Matcher();
     const xmlVersion = detectXmlVersionFromObj(jObj, this.options);
-    return this.j2x(jObj, 0, matcher, xmlVersion).val;
+    const qNameValidator = createValidator('qName', { xmlVersion });
+    return this.j2x(jObj, 0, matcher, qNameValidator).val;
   }
 };
 
-Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
+Builder.prototype.j2x = function (jObj, level, matcher, qNameValidator) {
   let attrStr = '';
   let val = '';
   if (this.options.maxNestedTags && matcher.getDepth() >= this.options.maxNestedTags) {
@@ -93474,7 +102633,7 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
 
     const resolvedKey = isSpecialKey
       ? key
-      : fxb_resolveTagName(key, false, this.options, matcher, xmlVersion);
+      : fxb_resolveTagName(key, false, this.options, matcher, qNameValidator);
 
     if (typeof jObj[key] === 'undefined') {
       // supress undefined node only if it is not an attribute
@@ -93499,12 +102658,12 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
       const attr = this.isAttribute(key);
       if (attr && !this.ignoreAttributesFn(attr, jPath)) {
         // Resolve the attribute name through sanitizeName
-        const resolvedAttr = fxb_resolveTagName(attr, true, this.options, matcher, xmlVersion);
-        attrStr += this.buildAttrPairStr(resolvedAttr, '' + jObj[key], isCurrentStopNode);
+        const resolvedAttr = fxb_resolveTagName(attr, true, this.options, matcher, qNameValidator);
+        attrStr += this.buildAttrPairStr(resolvedAttr, valToStr(jObj[key]), isCurrentStopNode);
       } else if (!attr) {
         //tag value
         if (key === this.options.textNodeName) {
-          let newval = this.options.tagValueProcessor(key, '' + jObj[key]);
+          let newval = this.options.tagValueProcessor(key, valToStr(jObj[key]));
           val += this.replaceEntitiesValue(newval);
         } else {
           // Check if this is a stopNode before building
@@ -93514,7 +102673,7 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
 
           if (isStopNode) {
             // Build as raw content without encoding
-            const textValue = '' + jObj[key];
+            const textValue = valToStr(jObj[key]);
             if (textValue === '') {
               val += this.indentate(level) + '<' + resolvedKey + this.closeTag(resolvedKey) + this.tagEndChar;
             } else {
@@ -93541,7 +102700,7 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
           if (this.options.oneListGroup) {
             // Push tag to matcher before recursive call
             matcher.push(resolvedKey);
-            const result = this.j2x(item, level + 1, matcher, xmlVersion);
+            const result = this.j2x(item, level + 1, matcher, qNameValidator);
             // Pop tag from matcher after recursive call
             matcher.pop();
 
@@ -93550,12 +102709,13 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
               listTagAttr += result.attrStr
             }
           } else {
-            listTagVal += this.processTextOrObjNode(item, resolvedKey, level, matcher, xmlVersion)
+            listTagVal += this.processTextOrObjNode(item, resolvedKey, level, matcher, qNameValidator)
           }
         } else {
           if (this.options.oneListGroup) {
             let textValue = this.options.tagValueProcessor(resolvedKey, item);
             textValue = this.replaceEntitiesValue(textValue);
+            textValue = valToStr(textValue);
             listTagVal += textValue;
           } else {
             // Check if this is a stopNode before building
@@ -93565,7 +102725,7 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
 
             if (isStopNode) {
               // Build as raw content without encoding
-              const textValue = '' + item;
+              const textValue = valToStr(item);
               if (textValue === '') {
                 listTagVal += this.indentate(level) + '<' + resolvedKey + this.closeTag(resolvedKey) + this.tagEndChar;
               } else {
@@ -93588,11 +102748,11 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
         const L = Ks.length;
         for (let j = 0; j < L; j++) {
           // Resolve attribute names inside attributesGroupName
-          const resolvedAttr = fxb_resolveTagName(Ks[j], true, this.options, matcher, xmlVersion);
-          attrStr += this.buildAttrPairStr(resolvedAttr, '' + jObj[key][Ks[j]], isCurrentStopNode);
+          const resolvedAttr = fxb_resolveTagName(Ks[j], true, this.options, matcher, qNameValidator);
+          attrStr += this.buildAttrPairStr(resolvedAttr, valToStr(jObj[key][Ks[j]]), isCurrentStopNode);
         }
       } else {
-        val += this.processTextOrObjNode(jObj[key], resolvedKey, level, matcher, xmlVersion)
+        val += this.processTextOrObjNode(jObj[key], resolvedKey, level, matcher, qNameValidator)
       }
     }
   }
@@ -93601,7 +102761,7 @@ Builder.prototype.j2x = function (jObj, level, matcher, xmlVersion) {
 
 Builder.prototype.buildAttrPairStr = function (attrName, val, isStopNode) {
   if (!isStopNode) {
-    val = this.options.attributeValueProcessor(attrName, '' + val);
+    val = this.options.attributeValueProcessor(attrName, valToStr(val));
     val = this.replaceEntitiesValue(val);
   }
   if (this.options.suppressBooleanAttributes && val === "true") {
@@ -93609,7 +102769,7 @@ Builder.prototype.buildAttrPairStr = function (attrName, val, isStopNode) {
   } else return ' ' + attrName + '="' + escapeAttribute(val) + '"';
 }
 
-function processTextOrObjNode(object, key, level, matcher, xmlVersion) {
+function processTextOrObjNode(object, key, level, matcher, qNameValidator) {
   // Extract attributes to pass to matcher
   const attrValues = this.extractAttributes(object);
 
@@ -93627,7 +102787,7 @@ function processTextOrObjNode(object, key, level, matcher, xmlVersion) {
     return this.buildObjectNode(rawContent, key, attrStr, level);
   }
 
-  const result = this.j2x(object, level + 1, matcher, xmlVersion);
+  const result = this.j2x(object, level + 1, matcher, qNameValidator);
   // Pop tag from matcher after recursion
   matcher.pop();
 
@@ -93756,7 +102916,9 @@ Builder.prototype.buildAttributesForStopNode = function (obj) {
       if (val === true && this.options.suppressBooleanAttributes) {
         attrStr += ' ' + cleanKey;
       } else {
-        attrStr += ' ' + cleanKey + '="' + val + '"'; // No encoding for stopNode
+        // stopNode content is raw, but the quote delimiter is always escaped
+        // so a quote in the value cannot break out of the attribute (see orderedJs2Xml attr_to_str)
+        attrStr += ' ' + cleanKey + '="' + escapeAttribute(val) + '"';
       }
     }
   } else {
@@ -93769,7 +102931,9 @@ Builder.prototype.buildAttributesForStopNode = function (obj) {
         if (val === true && this.options.suppressBooleanAttributes) {
           attrStr += ' ' + attr;
         } else {
-          attrStr += ' ' + attr + '="' + val + '"'; // No encoding for stopNode
+          // stopNode content is raw, but the quote delimiter is always escaped
+          // so a quote in the value cannot break out of the attribute (see orderedJs2Xml attr_to_str)
+          attrStr += ' ' + attr + '="' + escapeAttribute(val) + '"';
         }
       }
     }
@@ -93800,7 +102964,7 @@ Builder.prototype.buildObjectNode = function (val, key, attrStr, level) {
     if ((attrStr || attrStr === '') && val.indexOf('<') === -1) {
       return (this.indentate(level) + '<' + key + attrStr + piClosingChar + '>' + val + tagEndExp);
     } else if (this.options.commentPropName !== false && key === this.options.commentPropName && piClosingChar.length === 0) {
-      return this.indentate(level) + `<!--${val}-->` + this.newLine;
+      return this.indentate(level) + `<!--${safeComment(val)}-->` + this.newLine;
     } else {
       return (
         this.indentate(level) + '<' + key + attrStr + piClosingChar + this.tagEndChar +
@@ -93857,6 +103021,10 @@ Builder.prototype.buildTextValNode = function (val, key, attrStr, level, matcher
     // Normal processing: apply tagValueProcessor and entity replacement
     let textValue = this.options.tagValueProcessor(key, val);
     textValue = this.replaceEntitiesValue(textValue);
+    // tagValueProcessor may return the raw value unchanged (default is identity), and
+    // replaceEntitiesValue no-ops on non-strings, so a plain number can still reach here;
+    // stringify it now, sign-preserving, before it's implicitly ToString'd below.
+    textValue = valToStr(textValue);
 
     if (textValue === '') {
       return this.indentate(level) + '<' + key + attrStr + this.closeTag(key) + this.tagEndChar;
@@ -94271,9 +103439,102 @@ function readAttributeStr(xmlData, i) {
 }
 
 /**
- * Select all the attributes whether valid or invalid.
+ * Walk `attrStr` once, left to right, splitting it into attribute tokens.
+ *
+ * This replaces a regex that used to do the same job
+ * (`(\s*)([^\s=]+)(\s*=)?(\s*(['"])(([\s\S])*?)\5)?`). That regex led with an
+ * optional whitespace group followed by a required "non-whitespace" group.
+ * On a long run of whitespace that never resolves into an attribute name
+ * (e.g. a tag with thousands of trailing spaces before `>`), the engine
+ * backtracks the whitespace group one character at a time before giving up
+ * and moving to the next starting position — one full backtrack per
+ * position, which is quadratic in the length of the run.
+ *
+ * A single forward-only scan can never backtrack, so it can't be made slow
+ * this way no matter how much whitespace the input contains — it's always
+ * proportional to the length of the string, once.
+ *
+ * Each returned token mirrors the shape the old regex match array had, so
+ * the validation logic below (which reads token[1]..token[6]) didn't need
+ * to change:
+ *   token.startIndex - where this token begins in attrStr
+ *   token[1]          - leading whitespace before the name
+ *   token[2]          - the attribute name
+ *   token[3]          - whitespace + '=' if present, else undefined
+ *   token[4]          - marker (any defined value) if a quoted value was found
+ *   token[5]          - the quote character used ('"' or "'")
+ *   token[6]          - the value's text, without the surrounding quotes
+ *
+ * A malformed leading character (e.g. a stray '=' with no name before it)
+ * is simply skipped over, one character at a time — the same outcome the
+ * old regex produced by failing to match at that position and retrying at
+ * the next one.
  */
-const validAttrStrRegxp = new RegExp('(\\s*)([^\\s=]+)(\\s*=)?(\\s*([\'"])(([\\s\\S])*?)\\5)?', 'g');
+function scanAttributeTokens(attrStr) {
+  const tokens = [];
+  const len = attrStr.length;
+  let i = 0;
+
+  while (i < len) {
+    const tokenStart = i;
+
+    // Leading whitespace before the name.
+    while (i < len && isWhiteSpace(attrStr[i])) i++;
+    if (i >= len) break; // trailing whitespace only — nothing left to read
+
+    if (attrStr[i] === '=') {
+      // No name before this '=' — not a valid attribute start. Move past
+      // just this one character and try again from the next position.
+      i = tokenStart + 1;
+      continue;
+    }
+
+    const leadingWs = attrStr.slice(tokenStart, i);
+
+    // Attribute name — everything up to the next whitespace or '='.
+    const nameStart = i;
+    while (i < len && !isWhiteSpace(attrStr[i]) && attrStr[i] !== '=') i++;
+    const name = attrStr.slice(nameStart, i);
+
+    // Optional whitespace + '='.
+    let equalsGroup; // whitespace + '=' text, or undefined if absent
+    let j = i;
+    while (j < len && isWhiteSpace(attrStr[j])) j++;
+    if (j < len && attrStr[j] === '=') {
+      equalsGroup = attrStr.slice(i, j + 1);
+      i = j + 1;
+    }
+
+    // Optional whitespace + quoted value.
+    let quoteChar;
+    let value;
+    let k = i;
+    while (k < len && isWhiteSpace(attrStr[k])) k++;
+    if (k < len && (attrStr[k] === '"' || attrStr[k] === "'")) {
+      const valueStart = k + 1;
+      const closeIdx = attrStr.indexOf(attrStr[k], valueStart);
+      if (closeIdx !== -1) {
+        quoteChar = attrStr[k];
+        value = attrStr.slice(valueStart, closeIdx);
+        i = closeIdx + 1;
+      }
+      // No closing quote found anywhere in the rest of the string — leave
+      // quoteChar/value undefined, same as the old regex's group failing
+      // to match a backreference-less run.
+    }
+
+    const token = { startIndex: tokenStart };
+    token[1] = leadingWs;
+    token[2] = name;
+    token[3] = equalsGroup;
+    token[4] = quoteChar !== undefined ? true : undefined;
+    token[5] = quoteChar;
+    token[6] = value;
+    tokens.push(token);
+  }
+
+  return tokens;
+}
 
 //attr, ="sd", a="amit's", a="sd"b="saf", ab  cd=""
 
@@ -94282,7 +103543,7 @@ function validateAttributeString(attrStr, options) {
 
   //if(attrStr.trim().length === 0) return true; //empty string
 
-  const matches = getAllMatches(attrStr, validAttrStrRegxp);
+  const matches = scanAttributeTokens(attrStr);
   const attrNames = {};
 
   for (let i = 0; i < matches.length; i++) {
@@ -94384,7 +103645,6 @@ function getLineNumberForPosition(xmlData, index) {
 function getPositionFromMatch(match) {
   return match.startIndex + match[1].length;
 }
-
 ;// CONCATENATED MODULE: ./node_modules/fast-xml-parser/src/fxp.js
 
 
@@ -94591,10 +103851,24 @@ class XmlNode {
       this.child.push({ [node.tagname]: node.child });
     }
     // if requested, add the startIndex
+    this.addStartIndex(startIndex);
+  }
+
+  addStartIndex(startIndex) {
     if (startIndex !== undefined) {
       // Note: for now we just overwrite the metadata. If we had more complex metadata,
       // we might need to do an object append here:  metadata = { ...metadata, startIndex }
       this.child[this.child.length - 1][METADATA_SYMBOL] = { startIndex };
+    }
+  }
+
+  addEndIndex(endIndex) {
+    const lastChild = this.child[this.child.length - 1];
+    // endIndex is write-once: when updateTag drops a node, the last child is a
+    // previously completed sibling whose endIndex must not be overwritten
+    if (lastChild !== undefined && lastChild[METADATA_SYMBOL] !== undefined
+      && lastChild[METADATA_SYMBOL].endIndex === undefined) {
+      lastChild[METADATA_SYMBOL].endIndex = endIndex;
     }
   }
   /** symbol used for metadata */
@@ -94603,389 +103877,6 @@ class XmlNode {
   }
 }
 
-;// CONCATENATED MODULE: ./node_modules/fast-xml-parser/node_modules/xml-naming/src/index.js
-/**
- * xml-naming
- * Validates XML Name productions as defined in the XML 1.0 and 1.1 specifications.
- * Covers: Name, NCName, QName, NMToken, NMTokens
- *
- * XML 1.0 spec: https://www.w3.org/TR/xml/#NT-Name
- * XML 1.1 spec: https://www.w3.org/TR/xml11/#NT-NameStartChar
- * XML NS spec:  https://www.w3.org/TR/xml-names/#NT-NCName
- */
-
-// ---------------------------------------------------------------------------
-// Character class strings — XML 1.0
-//
-// NameStartChar ::= ":" | [A-Z] | "_" | [a-z]
-//   | [#xC0-#xD6]   | [#xD8-#xF6]   | [#xF8-#x2FF]
-//   | [#x370-#x37D] | [#x37F-#x1FFF]    <- split to exclude #x0487
-//   | [#x200C-#x200D]
-//   | [#x2070-#x218F] | [#x2C00-#x2FEF]
-//   | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD]
-//
-// NameChar ::= NameStartChar | "-" | "." | [0-9]
-//   | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]
-//
-// Note: \u0487 (Combining Cyrillic Millions Sign) was added in Unicode 4.0,
-// after XML 1.0 was defined against Unicode 2.0. It falls inside the range
-// \u037F-\u1FFF but must be excluded. We split that range into
-// \u037F-\u0486 and \u0488-\u1FFF to exclude it explicitly.
-// ---------------------------------------------------------------------------
-
-const src_nameStartChar10 =
-  ':A-Za-z_' +
-  '\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF' +
-  '\u0370-\u037D' +
-  '\u037F-\u0486\u0488-\u1FFF' +  // split to exclude \u0487
-  '\u200C-\u200D' +
-  '\u2070-\u218F' +
-  '\u2C00-\u2FEF' +
-  '\u3001-\uD7FF' +
-  '\uF900-\uFDCF' +
-  '\uFDF0-\uFFFD';
-
-const src_nameChar10 =
-  src_nameStartChar10 +
-  '\\-\\.\\d' +
-  '\u00B7' +
-  '\u0300-\u036F' +
-  '\u203F-\u2040';
-
-// ---------------------------------------------------------------------------
-// Character class strings — XML 1.1
-//
-// Differences from XML 1.0:
-//
-// NameStartChar:
-//   1.0 has split ranges: \u00C0-\u00D6, \u00D8-\u00F6, \u00F8-\u02FF
-//   1.1 merges them into: \u00C0-\u02FF
-//   (\u00D7 x and \u00F7 / are division symbols, excluded in both versions)
-//
-//   1.0 tops out at \uFFFD (BMP only)
-//   1.1 adds \u{10000}-\u{EFFFF} (supplementary planes)
-//   These require the /u flag on the RegExp — see buildRegexes below.
-//
-// NameChar:
-//   1.1 adds \u0487 (Combining Cyrillic Millions Sign, added in Unicode 4.0)
-// ---------------------------------------------------------------------------
-
-const src_nameStartChar11 =
-  ':A-Za-z_' +
-  '\u00C0-\u02FF' +                    // merged — 1.0 had three split ranges here
-  '\u0370-\u037D' +
-  '\u037F-\u0486\u0488-\u1FFF' +       // split to exclude \u0487 (combining mark, never a NameStartChar)
-  '\u200C-\u200D' +
-  '\u2070-\u218F' +
-  '\u2C00-\u2FEF' +
-  '\u3001-\uD7FF' +
-  '\uF900-\uFDCF' +
-  '\uFDF0-\uFFFD' +
-  '\u{10000}-\u{EFFFF}';     // supplementary planes — REQUIRES /u flag on RegExp
-
-const src_nameChar11 =
-  src_nameStartChar11 +
-  '\\-\\.\\d' +
-  '\u00B7' +
-  '\u0300-\u036F' +
-  '\u0487' +                 // Combining Cyrillic Millions Sign — valid in 1.1, not 1.0
-  '\u203F-\u2040';
-
-// ---------------------------------------------------------------------------
-// Regex builders
-//
-// XML 1.0 regexes: no flags — BMP only, standard JS regex behaviour.
-// XML 1.1 regexes: /u flag — required for \u{10000}-\u{EFFFF} to match actual
-//   supplementary code points rather than lone surrogates (which are illegal XML).
-// ---------------------------------------------------------------------------
-
-const src_buildRegexes = (startChar, char, flags = '') => {
-  const ncStart = startChar.replace(':', '');
-  const ncChar = char.replace(':', '');
-  const ncNamePat = `[${ncStart}][${ncChar}]*`;
-
-  return {
-    name: new RegExp(`^[${startChar}][${char}]*$`, flags),
-    ncName: new RegExp(`^${ncNamePat}$`, flags),
-    qName: new RegExp(`^${ncNamePat}(?::${ncNamePat})?$`, flags),
-    nmToken: new RegExp(`^[${char}]+$`, flags),
-    nmTokens: new RegExp(`^[${char}]+(?:\\s+[${char}]+)*$`, flags),
-  };
-};
-
-const src_regexes10 = src_buildRegexes(src_nameStartChar10, src_nameChar10);       // no /u — BMP only
-const src_regexes11 = src_buildRegexes(src_nameStartChar11, src_nameChar11, 'u');  // /u — enables \u{10000}-\u{EFFFF}
-
-// ---------------------------------------------------------------------------
-// ASCII-only fast path (opt-in, off by default)
-//
-// The XML 1.0 vs 1.1 NameStartChar/NameChar productions differ *only* in
-// their non-ASCII ranges (merged vs split Latin-1 ranges, \u0487, and
-// supplementary planes). Restricted to ASCII, both versions collapse to the
-// same character classes, so a single regex pair covers both xmlVersion
-// values — no /u flag needed.
-//
-// Rationale: unicode-aware regexes (the /u flag, required for XML 1.1's
-// supplementary-plane range) are measurably slower in V8 than plain
-// non-unicode regexes on the same input, even when the input is pure ASCII.
-// For the common case — HTML/SVG ids, XML tags — names are ASCII, so callers
-// who know this can opt in to skip the unicode-aware matching path entirely.
-// This is a real but *conditional* win: mainly for XML 1.1 input (avoids /u),
-// or at scale where the larger unicode character classes add engine
-// overhead. It also changes behaviour (rejects legitimate non-ASCII XML
-// 1.0/1.1 names), so it must never be silently enabled — hence off by
-// default.
-// ---------------------------------------------------------------------------
-
-const nameStartCharAscii = ':A-Za-z_';
-const nameCharAscii = nameStartCharAscii + '\\-\\.\\d';
-
-const regexesAscii = src_buildRegexes(nameStartCharAscii, nameCharAscii); // no /u — ASCII only
-
-const src_getRegexes = (xmlVersion = '1.0', asciiOnly = false) => {
-  if (asciiOnly) return regexesAscii;
-  return xmlVersion === '1.1' ? src_regexes11 : src_regexes10;
-};
-
-// ---------------------------------------------------------------------------
-// Boolean validators
-// ---------------------------------------------------------------------------
-
-/**
- * Returns true if the string is a valid XML Name.
- * Colons are allowed anywhere (Name production).
- * Used for: DOCTYPE entity names, notation names, DTD element declarations.
- *
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
- */
-const xml_naming_src_name = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
-  src_getRegexes(xmlVersion, asciiOnly).name.test(str);
-
-/**
- * Returns true if the string is a valid NCName (Non-Colonized Name).
- * Colons are not permitted.
- * Used for: namespace prefixes, local names, SVG id attributes.
- *
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
- */
-const src_ncName = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
-  src_getRegexes(xmlVersion, asciiOnly).ncName.test(str);
-
-/**
- * Returns true if the string is a valid QName (Qualified Name).
- * Allows exactly one colon as a prefix separator: prefix:localName.
- * Used for: element and attribute names in namespace-aware XML/SVG.
- *
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
- */
-const src_qName = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
-  src_getRegexes(xmlVersion, asciiOnly).qName.test(str);
-
-/**
- * Returns true if the string is a valid NMToken.
- * Like Name but no restriction on the first character.
- * Used for: DTD NMTOKEN attribute values.
- *
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
- */
-const src_nmToken = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
-  src_getRegexes(xmlVersion, asciiOnly).nmToken.test(str);
-
-/**
- * Returns true if the string is a valid NMTokens value.
- * A whitespace-separated list of NMToken values.
- * Used for: DTD NMTOKENS attribute values.
- *
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- *   asciiOnly: skip unicode-aware matching, ASCII names only (default false).
- */
-const src_nmTokens = (str, { xmlVersion = '1.0', asciiOnly = false } = {}) =>
-  src_getRegexes(xmlVersion, asciiOnly).nmTokens.test(str);
-
-// ---------------------------------------------------------------------------
-// Memoized validator factory
-//
-// Real documents reuse a small vocabulary of tag/attribute names across many
-// siblings (e.g. `id`, `class`, `href` repeated across hundreds of elements).
-// The plain boolean validators above re-run the regex on every call
-// regardless of repeats. `createValidator` returns a closure with a private
-// string -> boolean cache, so repeated names after the first become O(1)
-// lookups instead of regex tests.
-//
-// - opts (xmlVersion, asciiOnly) are fixed at creation time, so the regex is
-//   resolved once, not on every call.
-// - The cache is private to the returned closure — no shared/global state,
-//   no cross-caller pollution.
-// - `maxCacheSize` bounds memory: once the cache reaches this many entries,
-//   it stops accepting new ones (existing entries keep serving hits; new
-//   misses just fall through to the regex, uncached). This avoids unbounded
-//   growth against adversarial/high-cardinality input (e.g. validating
-//   attacker-supplied names with no repeats) without the cost/complexity of
-//   a full LRU, and without the perf cliff of reset-and-refill thrashing.
-// - Call `.reset()` on the returned function to clear the cache manually
-//   (e.g. between unrelated parse calls).
-// ---------------------------------------------------------------------------
-
-const src_PRODUCTIONS = (/* unused pure expression or super */ null && (['name', 'ncName', 'qName', 'nmToken', 'nmTokens']));
-
-/**
- * Returns a memoized boolean validator function for a single production,
- * with opts fixed at creation time.
- *
- * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean, maxCacheSize?: number }} [opts]
- *   maxCacheSize: max number of distinct strings to cache (default 2048).
- *   Once reached, new strings are validated but not cached; existing cached
- *   entries keep being served.
- * @returns {((str: string) => boolean) & { reset: () => void }}
- */
-const createValidator = (production, { xmlVersion = '1.0', asciiOnly = false, maxCacheSize = 2048 } = {}) => {
-  if (!src_PRODUCTIONS.includes(production)) {
-    throw new TypeError(
-      `Unknown production "${production}". Must be one of: ${src_PRODUCTIONS.join(', ')}`
-    );
-  }
-
-  const regex = src_getRegexes(xmlVersion, asciiOnly)[production];
-  let cache = new Map();
-
-  const validator = (str) => {
-    const cached = cache.get(str);
-    if (cached !== undefined) return cached;
-
-    const result = regex.test(str);
-    if (cache.size < maxCacheSize) cache.set(str, result);
-    return result;
-  };
-
-  validator.reset = () => { cache = new Map(); };
-
-  return validator;
-};
-
-// ---------------------------------------------------------------------------
-// Diagnostic validator
-// ---------------------------------------------------------------------------
-
-/**
- * Validates a string against a named production and returns a detailed result.
- *
- * @param {string} str
- * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- * @returns {{ valid: boolean, production: string, input: string, reason?: string, position?: number }}
- */
-const src_validate = (str, production, { xmlVersion = '1.0', asciiOnly = false } = {}) => {
-  if (!src_PRODUCTIONS.includes(production)) {
-    throw new TypeError(
-      `Unknown production "${production}". Must be one of: ${src_PRODUCTIONS.join(', ')}`
-    );
-  }
-
-  const validators = { name: xml_naming_src_name, ncName: src_ncName, qName: src_qName, nmToken: src_nmToken, nmTokens: src_nmTokens };
-  const isValid = validators[production](str, { xmlVersion, asciiOnly });
-
-  if (isValid) return { valid: true, production, input: str };
-
-  let reason = 'Does not match the production rules';
-  let position;
-
-  // Diagnostic fallback char checks must mirror the same character set the
-  // boolean validator above used, or the reported reason/position could
-  // contradict the `valid: false` result (e.g. flagging a char as illegal
-  // that the unicode-aware check would have accepted).
-  const startCharPattern = asciiOnly ? /^[:A-Za-z_]/ : /^[:A-Za-z_\u00C0-\uFFFD]/;
-  const namePattern = asciiOnly ? /[\w\-\\.:]/ : /[\w\-\\.:\u00B7\u00C0-\uFFFD]/;
-
-  if (str.length === 0) {
-    reason = 'Input is empty';
-  } else if (production === 'ncName' && str.includes(':')) {
-    position = str.indexOf(':');
-    reason = 'Colon is not allowed in NCName';
-  } else if (production === 'qName' && str.startsWith(':')) {
-    reason = 'QName cannot start with a colon';
-    position = 0;
-  } else if (production === 'qName' && str.endsWith(':')) {
-    reason = 'QName cannot end with a colon';
-    position = str.length - 1;
-  } else if (production === 'qName' && (str.match(/:/g) || []).length > 1) {
-    reason = 'QName can have at most one colon';
-    position = str.lastIndexOf(':');
-  } else if (
-    ['name', 'ncName', 'qName'].includes(production) &&
-    !startCharPattern.test(str[0])
-  ) {
-    reason = `First character "${str[0]}" is not a valid NameStartChar`;
-    position = 0;
-  } else {
-    for (let i = 0; i < str.length; i++) {
-      if (!namePattern.test(str[i])) {
-        reason = `Character "${str[i]}" at position ${i} is not a valid NameChar`;
-        position = i;
-        break;
-      }
-    }
-  }
-
-  return { valid: false, production, input: str, reason, position };
-};
-
-// ---------------------------------------------------------------------------
-// Batch validator
-// ---------------------------------------------------------------------------
-
-/**
- * Validates an array of strings against a named production.
- *
- * @param {string[]} strings
- * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ xmlVersion?: '1.0'|'1.1', asciiOnly?: boolean }} [opts]
- * @returns {Array<{ valid: boolean, production: string, input: string, reason?: string, position?: number }>}
- */
-const src_validateAll = (strings, production, opts = {}) =>
-  strings.map(str => src_validate(str, production, opts));
-
-// ---------------------------------------------------------------------------
-// Sanitizer
-// ---------------------------------------------------------------------------
-
-/**
- * Transforms an invalid string into the nearest valid XML name for the given production.
- *
- * @param {string} str
- * @param {'name'|'ncName'|'qName'|'nmToken'|'nmTokens'} production
- * @param {{ replacement?: string, asciiOnly?: boolean }} [opts]
- *   asciiOnly: also replace any non-ASCII character, not just XML-illegal
- *   ones (default false).
- * @returns {string}
- */
-const src_sanitize = (str, production = 'name', { replacement = '_', asciiOnly = false } = {}) => {
-  if (!str) return replacement;
-
-  let result = str;
-
-  // Strip colons for NCName
-  if (production === 'ncName') {
-    result = result.replace(/:/g, '');
-  }
-
-  // Replace illegal characters
-  const allowedCharPattern = asciiOnly ? /[^\w\-\.:]/g : /[^\w\-\.:\u00B7\u00C0-\uFFFD]/g;
-  result = result.replace(allowedCharPattern, replacement);
-
-  // Fix invalid start character for Name / NCName / QName
-  if (production !== 'nmToken' && production !== 'nmTokens') {
-    if (/^[\-\.\d]/.test(result)) {
-      result = replacement + result;
-    }
-  }
-
-  return result || replacement;
-};
 ;// CONCATENATED MODULE: ./node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js
 
 
@@ -95012,8 +103903,23 @@ class DocTypeReader {
             i = i + 9;
             let angleBracketsCount = 1;
             let hasBody = false, comment = false;
+            let quoteChar = null; // tracks an open SYSTEM/PUBLIC literal before the '[' body
             let exp = "";
             for (; i < xmlData.length; i++) {
+                // Inside a quoted external-identifier literal — XML allows '<'
+                // and '>' as plain data here, so they must not be interpreted
+                // as DOCTYPE structure until the matching quote closes.
+                if (quoteChar !== null) {
+                    if (xmlData[i] === quoteChar) quoteChar = null;
+                    exp += xmlData[i];
+                    continue;
+                }
+                if (!hasBody && !comment && (xmlData[i] === '"' || xmlData[i] === "'")) {
+                    quoteChar = xmlData[i];
+                    exp += xmlData[i];
+                    continue;
+                }
+
                 if (xmlData[i] === '<' && !comment) { //Determine the tag type
                     if (hasBody && hasSeq(xmlData, "!ENTITY", i)) {
                         i += 7;
@@ -95068,7 +103974,7 @@ class DocTypeReader {
                     exp += xmlData[i];
                 }
             }
-            if (angleBracketsCount !== 0) {
+            if (quoteChar !== null || angleBracketsCount !== 0) {
                 throw new Error(`Unclosed DOCTYPE`);
             }
         } else {
@@ -95219,7 +104125,7 @@ class DocTypeReader {
         let elementName = xmlData.substring(startIndex, i);
 
         // Validate element name
-        if (!this.suppressValidationErr && !src_qName(elementName, { xmlVersion: this.xmlVersion })) {
+        if (!this.suppressValidationErr && !qName(elementName, { xmlVersion: this.xmlVersion })) {
             throw new Error(`Invalid element name: "${elementName}"`);
         }
 
@@ -95393,7 +104299,7 @@ function hasSeq(data, seq, i) {
 }
 
 function validateEntityName(name, xmlVersion) {
-    if (src_qName(name, { xmlVersion: xmlVersion }))
+    if (qName(name, { xmlVersion: xmlVersion }))
         return name;
     else
         throw new Error(`Invalid entity name ${name}`);
@@ -95692,8 +104598,10 @@ function toNumber(str, options = {}) {
         return parse_int(trimmedStr, 2);
     } else if (options.octal && octRegex.test(trimmedStr)) {
         return parse_int(trimmedStr, 8);
-    } else if (!isFinite(trimmedStr)) { //Infinity
-        return handleInfinity(str, Number(trimmedStr), options);
+    } else if (!isFinite(trimmedStr)) { //Infinity or not a number
+        const num = Number(trimmedStr);
+        if (Number.isNaN(num)) return str; //not a number: always the original string
+        return handleInfinity(str, num, options); //only +/-Infinity reaches here
     } else if (trimmedStr.includes('e') || trimmedStr.includes('E')) { //eNotation
         return resolveEnotation(str, trimmedStr, options);
     } else {
@@ -95705,8 +104613,8 @@ function toNumber(str, options = {}) {
             const leadingZeros = match[2];
             let numTrimmedByZeros = trimZeros(match[3]); //complete num without leading zeros
             const decimalAdjacentToLeadingZeros = sign ? // 0., -00., 000.
-                str[leadingZeros.length + 1] === "."
-                : str[leadingZeros.length] === ".";
+                trimmedStr[leadingZeros.length + 1] === "."
+                : trimmedStr[leadingZeros.length] === ".";
 
             //trim ending zeros for floating number
             if (!options.leadingZeros //leading zeros are not allowed
@@ -95754,8 +104662,8 @@ function resolveEnotation(str, trimmedStr, options) {
         const eChar = notation[3].indexOf("e") === -1 ? "E" : "e";
         const leadingZeros = notation[2];
         const eAdjacentToLeadingZeros = sign ? // 0E.
-            str[leadingZeros.length + 1] === eChar
-            : str[leadingZeros.length] === eChar;
+            trimmedStr[leadingZeros.length + 1] === eChar
+            : trimmedStr[leadingZeros.length] === eChar;
 
         if (leadingZeros.length > 1 && eAdjacentToLeadingZeros) return str;
         else if (leadingZeros.length === 1
@@ -95764,8 +104672,7 @@ function resolveEnotation(str, trimmedStr, options) {
         } else if (leadingZeros.length > 0) {
             // Has leading zeros — only accept if leadingZeros option allows it
             if (options.leadingZeros && !eAdjacentToLeadingZeros) {
-                trimmedStr = (notation[1] || "") + notation[3];
-                return Number(trimmedStr);
+                return Number(trimmedStr); // Number() accepts leading zeros; stripping can leave a mantissa-less ".e0"
             } else return str;
         } else {
             // No leading zeros — always valid e-notation, parse it
@@ -95783,7 +104690,11 @@ function resolveEnotation(str, trimmedStr, options) {
  */
 function trimZeros(numStr) {
     if (numStr && numStr.indexOf(".") !== -1) {//float
-        numStr = numStr.replace(/0+$/, ""); //remove ending zeros
+        //remove ending zeros without the O(n^2) backtracking that /0+$/ hits
+        //when the string doesn't end in 0 but has a long internal zero-run
+        let end = numStr.length;
+        while (end > 0 && numStr.charCodeAt(end - 1) === 48 /* '0' */) end--;
+        numStr = numStr.slice(0, end);
         if (numStr === ".") numStr = "0";
         else if (numStr[0] === ".") numStr = "0" + numStr;
         else if (numStr[numStr.length - 1] === ".") numStr = numStr.substring(0, numStr.length - 1);
@@ -95824,6 +104735,7 @@ function handleInfinity(str, num, options) {
             return str; // Return original string like "1e1000"
     }
 }
+
 ;// CONCATENATED MODULE: ./node_modules/fast-xml-parser/src/ignoreAttributes.js
 function ignoreAttributes_getIgnoreAttributesFn(ignoreAttributes) {
     if (typeof ignoreAttributes === 'function') {
@@ -98001,6 +106913,56 @@ const SQL_STRICT_PATTERNS = [...sql, ...SQL_STRICT_EXTRA];
 
 /* harmony default export */ const sql_strict = (SQL_STRICT_PATTERNS);
 
+;// CONCATENATED MODULE: ./node_modules/is-unsafe/src/util/decode-entities.js
+/**
+ * Decode the HTML character references that matter for markup-context
+ * detection.
+ *
+ * Browsers decode character references in attribute values before they
+ * interpret a URL, so `javascript&#58;alert(1)` in an href is the
+ * `javascript:` scheme. The HTML/XML/SVG rules match literal characters, so
+ * without this step such payloads slip through.
+ *
+ * Deliberately NOT a full entity decoder. It decodes only:
+ *   - decimal refs  &#58;  &#058;  &#00000058;  &#58   (any leading zeros,
+ *                   trailing ; optional — browsers accept both)
+ *   - hex refs      &#x3a; &#X3A; &#x0000003a; &#x3a   (same)
+ *   - named refs    &colon;  &Tab;  &NewLine;
+ *       Named refs are CASE-SENSITIVE and REQUIRE the trailing ';', exactly
+ *       like a browser (so `&COLON;` and `&colon` are not decoded).
+ *       &Tab; / &NewLine; matter because the URL parser strips tab/newline,
+ *       so `java&Tab;script:` is still a javascript: URL.
+ *
+ * It does NOT decode &amp; (single pass only), so double-encoded text such as
+ * "&amp;lt;script&amp;gt;" stays literal — a browser renders that as text.
+ *
+ * All quantifiers are bounded; no ReDoS risk.
+ *
+ * @param {string} input
+ * @returns {string}
+ */
+const NAMED = Object.freeze({
+  colon: ':',
+  Tab: '\t',
+  NewLine: '\n',
+});
+
+const ENTITY_RE =
+  /&(?:#[xX]0*([0-9a-fA-F]{1,6});?|#0*([0-9]{1,7});?|([a-zA-Z][a-zA-Z0-9]{1,15});)/g;
+
+function decodeEntities(input) {
+  if (input.indexOf('&') === -1) return input;
+
+  return input.replace(ENTITY_RE, (match, hex, dec, name) => {
+    if (name !== undefined) {
+      return Object.prototype.hasOwnProperty.call(NAMED, name) ? NAMED[name] : match;
+    }
+    const cp = hex !== undefined ? parseInt(hex, 16) : parseInt(dec, 10);
+    if (!Number.isFinite(cp) || cp > 0x10ffff) return match;
+    return String.fromCodePoint(cp);
+  });
+}
+
 ;// CONCATENATED MODULE: ./node_modules/is-unsafe/src/contexts/html.js
 /**
  * HTML context patterns.
@@ -98164,7 +107126,8 @@ const XML_PATTERNS = [
   {
     id: 'xml-namespace-confusion',
     description: 'xmlns: attribute injection — can redefine namespaces to confuse parsers',
-    pattern: /\bxmlns\s*(?::\w{1,40})?\s*=/i,
+    // pattern: /\bxmlns\s*(?::\w{1,40})?\s*=/i,
+    pattern: /\bxmlns(?::\w{1,40})?\s*=/i,
   },
   {
     id: 'xml-comment-injection',
@@ -98683,6 +107646,11 @@ const LOG_PATTERNS = [
 
 
 
+// Markup contexts are also matched against an entity-decoded copy of the input,
+// because browsers decode HTML character references before interpreting a URL
+// scheme (e.g. javascript&#58;… is a javascript: URL).
+
+
 // ─── VALID_CONTEXTS convenience re-export ─────────────────────────────────
 // Importing this pulls in ALL contexts. Use it only when you need all of them
 // (e.g. for validation UI, tooling, or exhaustive audits).
@@ -98705,6 +107673,12 @@ const LOG_PATTERNS = [
 html.label       = 'HTML';
 xml.label        = 'XML';
 svg.label        = 'SVG';
+
+// Markup contexts: also test an entity-decoded copy (see util/decode-entities.js).
+// Non-markup contexts (SQL, SHELL, LOG, …) are matched byte-for-byte as supplied.
+html.decodeEntities = true;
+xml.decodeEntities  = true;
+svg.decodeEntities  = true;
 sql.label        = 'SQL';
 sql_strict.label = 'SQL-STRICT';
 shell.label      = 'SHELL';
@@ -98800,6 +107774,20 @@ function normalise(context) {
 }
 
 /**
+ * For markup contexts, return an entity-decoded copy of `value` to test
+ * alongside the raw input, or null when there is nothing extra to test.
+ *
+ * @param {string} value
+ * @param {Rule[]} list
+ * @returns {string|null}
+ */
+function decodedCopy(value, list) {
+  if (!list.decodeEntities) return null;
+  const decoded = decodeEntities(value);
+  return decoded === value ? null : decoded;
+}
+
+/**
  * Test value against a single PatternList. Returns the first MatchResult or null.
  *
  * @param {string} value
@@ -98808,8 +107796,9 @@ function normalise(context) {
  */
 function matchList(value, list) {
   const label = list.label ?? 'CUSTOM';
+  const decoded = decodedCopy(value, list);
   for (const rule of list) {
-    if (rule.pattern.test(value)) {
+    if (rule.pattern.test(value) || (decoded !== null && rule.pattern.test(decoded))) {
       return { context: label, id: rule.id, description: rule.description, pattern: rule.pattern };
     }
   }
@@ -98907,8 +107896,9 @@ function allUnsafe(value, context) {
 
   for (const list of lists) {
     const label = list.label ?? 'CUSTOM';
+    const decoded = decodedCopy(value, list);
     for (const rule of list) {
-      if (rule.pattern.test(value)) {
+      if (rule.pattern.test(value) || (decoded !== null && rule.pattern.test(decoded))) {
         results.push({ context: label, id: rule.id, description: rule.description, pattern: rule.pattern });
       }
     }
@@ -98918,7 +107908,7 @@ function allUnsafe(value, context) {
 }
 
 
-/* harmony default export */ const src = ((/* unused pure expression or super */ null && (isUnsafe)));
+/* harmony default export */ const is_unsafe_src = ((/* unused pure expression or super */ null && (isUnsafe)));
 
 ;// CONCATENATED MODULE: ./node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js
 
@@ -99206,7 +108196,15 @@ function buildAttributesMap(attrStr, jPath, tagName, force = false) {
   }
 }
 const parseXml = function (xmlData) {
-  xmlData = xmlData.replace(/\r\n?/g, "\n"); //TODO: remove this line
+  const options = this.options;
+  const crlfPositions = options.captureMetaData ? [] : undefined;
+  xmlData = xmlData.replace(/\r\n?/g, options.captureMetaData ? (newline, index) => {
+    if (newline.length === 2) {
+      // Store the position after earlier CRLF pairs have been normalized.
+      crlfPositions.push(index - crlfPositions.length);
+    }
+    return "\n";
+  } : "\n");
   const xmlObj = new XmlNode('!xml');
   let currentNode = xmlObj;
   let textData = "";
@@ -99219,7 +108217,6 @@ const parseXml = function (xmlData) {
   this.entityExpansionCount = 0;
   this.currentExpandedLength = 0;
   this.doctypefound = false;
-  const options = this.options;
   const docTypeReader = new DocTypeReader(options.processEntities);
   const xmlLen = xmlData.length;
   for (let i = 0; i < xmlLen; i++) {//for each char in XML data
@@ -99259,7 +108256,12 @@ const parseXml = function (xmlData) {
         this.matcher.pop();
         this.isCurrentNodeStopNode = false; // Reset flag when closing tag
 
-        currentNode = this.tagsNodeStack.pop();//avoid recursion, set the parent tag scope
+        //a closing tag with no matching opening tag leaves the stack empty
+        currentNode = this.tagsNodeStack.pop() || xmlObj;//avoid recursion, set the parent tag scope
+
+        if (options.captureMetaData && currentNode) {
+          currentNode.addEndIndex(getOriginalIndex(closeIndex + 1, crlfPositions));
+        }
         textData = "";
         i = closeIndex;
       } else if (c1 === 63) { //'?'
@@ -99284,7 +108286,13 @@ const parseXml = function (xmlData) {
           if (tagData.tagName !== tagData.tagExp && tagData.attrExpPresent && options.ignoreAttributes !== true) {
             childNode[":@"] = attsMap
           }
-          this.addChild(currentNode, childNode, this.readonlyMatcher, i);
+          const startIndex = options.captureMetaData ? getOriginalIndex(i, crlfPositions) : i;
+          this.addChild(currentNode, childNode, this.readonlyMatcher, startIndex);
+
+          if (options.captureMetaData) {
+            // closeIndex points at '?' of the closing '?>'
+            currentNode.addEndIndex(getOriginalIndex(tagData.closeIndex + 2, crlfPositions));
+          }
         }
 
 
@@ -99415,7 +108423,7 @@ const parseXml = function (xmlData) {
           this.isCurrentNodeStopNode = this.isItStopNode();
         }
 
-        const startIndex = i;
+        const startIndex = options.captureMetaData ? getOriginalIndex(i, crlfPositions) : i;
         if (this.isCurrentNodeStopNode) {
           let tagContent = "";
 
@@ -99449,6 +108457,10 @@ const parseXml = function (xmlData) {
           this.isCurrentNodeStopNode = false; // Reset flag
 
           this.addChild(currentNode, childNode, this.readonlyMatcher, startIndex);
+
+          if (options.captureMetaData) {
+            currentNode.addEndIndex(getOriginalIndex(i + 1, crlfPositions));
+          }
         } else {
           //selfClosing tag
           if (isSelfClosing) {
@@ -99459,6 +108471,10 @@ const parseXml = function (xmlData) {
               childNode[":@"] = prefixedAttrs;
             }
             this.addChild(currentNode, childNode, this.readonlyMatcher, startIndex);
+
+            if (options.captureMetaData) {
+              currentNode.addEndIndex(getOriginalIndex(closeIndex + 1, crlfPositions));
+            }
             this.matcher.pop(); // Pop self-closing tag
             this.isCurrentNodeStopNode = false; // Reset flag
           }
@@ -99468,6 +108484,10 @@ const parseXml = function (xmlData) {
               childNode[":@"] = prefixedAttrs;
             }
             this.addChild(currentNode, childNode, this.readonlyMatcher, startIndex);
+
+            if (options.captureMetaData) {
+              currentNode.addEndIndex(getOriginalIndex(result.closeIndex + 1, crlfPositions));
+            }
             this.matcher.pop(); // Pop unpaired tag
             this.isCurrentNodeStopNode = false; // Reset flag
             i = result.closeIndex;
@@ -99497,6 +108517,17 @@ const parseXml = function (xmlData) {
     }
   }
   return xmlObj.child;
+}
+
+function getOriginalIndex(index, crlfPositions) {
+  let low = 0;
+  let high = crlfPositions.length;
+  while (low < high) {
+    const middle = Math.floor((low + high) / 2);
+    if (crlfPositions[middle] < index) low = middle + 1;
+    else high = middle;
+  }
+  return index + low;
 }
 
 function addChild(currentNode, childNode, matcher, startIndex) {
@@ -99677,6 +108708,8 @@ function readStopNodeData(xmlData, tagName, i) {
   const startIndex = i;
   // Starting at 1 since we already have an open tag
   let openTagCount = 1;
+  let lenient = false; // set once a quote-aware tag scan fails
+  let nextGt = -1; // cached index of the next '>'
 
   const xmllen = xmlData.length;
   for (; i < xmllen; i++) {
@@ -99708,14 +108741,29 @@ function readStopNodeData(xmlData, tagName, i) {
         const closeIndex = findClosingIndex(xmlData, "]]>", i, "StopNode is not closed.") - 2;
         i = closeIndex;
       } else {
-        const tagData = readTagExp(xmlData, i, false)
+        const tagData = lenient ? undefined : readTagExp(xmlData, i, false);
 
         if (tagData) {
-          const openTagName = tagData && tagData.tagName;
+          const openTagName = tagData.tagName;
           if (openTagName === tagName && tagData.tagExp[tagData.tagExp.length - 1] !== "/") {
             openTagCount++;
           }
           i = tagData.closeIndex;
+        } else {
+          // no closing '>'. use lenient approach to find '<' instead of readTagExp, to avoid repeated rescans.
+          lenient = true;
+          if (nextGt < i) {
+            nextGt = xmlData.indexOf(">", i);
+            if (nextGt === -1) return; // no '>' left, so no closing tag can follow
+          }
+          const nextLt = xmlData.indexOf("<", i + 1);
+          if (nextLt === -1 || nextLt > nextGt) { // looks like a real tag
+            const exp = xmlData.substring(i + 1, nextGt);
+            const sep = exp.search(/\s/);
+            const name = sep === -1 ? exp : exp.substring(0, sep);
+            if (name === tagName && exp[exp.length - 1] !== "/") openTagCount++;
+            i = nextGt;
+          } // else: treat this '<' as plain text
         }
       }
     }
@@ -99949,6 +108997,7 @@ function isLeafTag(obj, options) {
   return false;
 }
 ;// CONCATENATED MODULE: ./node_modules/fast-xml-parser/src/xmlparser/XMLParser.js
+/* global Uint8Array */
 
 
 
@@ -99969,7 +109018,12 @@ class XMLParser {
      */
     parse(xmlData, validationOption) {
         if (typeof xmlData !== "string" && xmlData.toString) {
-            xmlData = xmlData.toString();
+            if (xmlData instanceof Uint8Array &&
+                !(typeof Buffer !== "undefined" && Buffer.isBuffer(xmlData))) {
+                xmlData = new TextDecoder("utf-8", { ignoreBOM: true }).decode(xmlData);
+            } else {
+                xmlData = xmlData.toString();
+            }
         } else if (typeof xmlData !== "string") {
             throw new Error("XML data is accepted in String or Bytes[] form.")
         }
@@ -100102,7 +109156,8 @@ async function parseXML(str, opts = {}) {
         delete parsedXml["?xml"];
     }
     if (!opts.includeRoot) {
-        for (const key of Object.keys(parsedXml)) {
+        const key = Object.keys(parsedXml)[0];
+        if (key !== undefined) {
             const value = parsedXml[key];
             return typeof value === "object" ? { ...value } : value;
         }
@@ -100594,39 +109649,12 @@ class BufferScheduler {
     }
 }
 //# sourceMappingURL=BufferScheduler.js.map
-;// CONCATENATED MODULE: external "node:module"
-const external_node_module_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:module");
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-common/dist/esm/crc64.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-// ESM-COMPAT-START (this block is stripped from dist/commonjs by copyJSFiles.cjs)
-// In ESM under Node, `require`, `__filename`, and `__dirname` are not defined.
-// Synthesize them from `import.meta.url` so the Emscripten Node branch below works as-is.
-// Specifiers are held in variables to prevent web bundlers from statically resolving `node:*`.
-// The detection check below MUST stay byte-for-byte identical to the Emscripten-generated
-// `ENVIRONMENT_IS_NODE` check later in this file; otherwise the polyfill and the Node branch
-// can disagree and the ESM `ReferenceError: require is not defined` bug returns.
-
-
-
-const __isNode__ =
-  typeof process === "object" &&
-  typeof process.versions === "object" &&
-  typeof process.versions.node === "string";
-let crc64_require;
-let crc64_filename;
-let crc64_dirname;
-if (__isNode__) {
-  crc64_require = (0,external_node_module_namespaceObject.createRequire)(import.meta.url);
-  crc64_filename = (0,external_node_url_.fileURLToPath)(import.meta.url);
-  crc64_dirname = (0,external_node_path_.dirname)(crc64_filename);
-}
-// ESM-COMPAT-END
-
 var NativeCRC64 = (() => {
   var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
-  if (typeof crc64_filename !== 'undefined') _scriptDir = _scriptDir || crc64_filename;
   return (
 function(NativeCRC64) {
   NativeCRC64 = NativeCRC64 || {};
@@ -100732,52 +109760,10 @@ function logExceptionOnExit(e) {
 
 if (ENVIRONMENT_IS_NODE) {
   if (typeof process == 'undefined' || !process.release || process.release.name !== 'node') throw new Error('not compiled for this environment (did you build to HTML and try to run it not on the web, or set ENVIRONMENT to something - like node - and run it someplace else - like on the web?)');
-// NODE-READ-START (this block is replaced with a no-op in dist/browser and dist/react-native by copyJSFiles.cjs)
-  // `require()` is no-op in an ESM module, use `createRequire()` to construct
-  // the require()` function.  This is only necessary for multi-environment
-  // builds, `-sENVIRONMENT=node` emits a static import declaration instead.
-  // TODO: Swap all `require()`'s with `import()`'s?
-  // These modules will usually be used on Node.js. Load them eagerly to avoid
-  // the complexity of lazy-loading.
-  var fs = crc64_require('fs');
-  var nodePath = crc64_require('path');
-
-  if (ENVIRONMENT_IS_WORKER) {
-    scriptDirectory = nodePath.dirname(scriptDirectory) + '/';
-  } else {
-    scriptDirectory = crc64_dirname + '/';
-  }
-
-// include: node_shell_read.js
-
-
-read_ = (filename, binary) => {
-  // We need to re-wrap `file://` strings to URLs. Normalizing isn't
-  // necessary in that case, the path should already be absolute.
-  filename = isFileURI(filename) ? new URL(filename) : nodePath.normalize(filename);
-  return fs.readFileSync(filename, binary ? undefined : 'utf8');
-};
-
-readBinary = (filename) => {
-  var ret = read_(filename, true);
-  if (!ret.buffer) {
-    ret = new Uint8Array(ret);
-  }
-  assert(ret.buffer);
-  return ret;
-};
-
-readAsync = (filename, onload, onerror) => {
-  // See the comment in the `read_` function.
-  filename = isFileURI(filename) ? new URL(filename) : nodePath.normalize(filename);
-  fs.readFile(filename, function(err, data) {
-    if (err) onerror(err);
-    else onload(data.buffer);
-  });
-};
-
-// end include: node_shell_read.js
-// NODE-READ-END
+  // The wasm is base64-embedded (see `binaryInString`) and loaded via `getBinary()`,
+  // so the Node fs/path read hooks emitted by Emscripten are never exercised and
+  // have been removed. This keeps the file free of Node built-in imports so it can be
+  // consumed as-is by web bundlers and by ESM-to-CommonJS bundlers (see issue #39057).
   if (process['argv'].length > 1) {
     thisProgram = process['argv'][1].replace(/\\/g, '/');
   }
@@ -100814,27 +109800,7 @@ readAsync = (filename, onload, onerror) => {
 } else
 if (ENVIRONMENT_IS_SHELL) {
 
-  if ((typeof process == 'object' && typeof crc64_require === 'function') || typeof window == 'object' || typeof importScripts == 'function') throw new Error('not compiled for this environment (did you build to HTML and try to run it not on the web, or set ENVIRONMENT to something - like node - and run it someplace else - like on the web?)');
-
-  if (typeof read != 'undefined') {
-    read_ = function shell_read(f) {
-      return read(f);
-    };
-  }
-
-  readBinary = function readBinary(f) {
-    let data;
-    if (typeof readbuffer == 'function') {
-      return new Uint8Array(readbuffer(f));
-    }
-    data = read(f, 'binary');
-    assert(typeof data == 'object');
-    return data;
-  };
-
-  readAsync = function readAsync(f, onload, onerror) {
-    setTimeout(() => onload(readBinary(f)), 0);
-  };
+  if ((typeof process == 'object' && typeof require === 'function') || typeof window == 'object' || typeof importScripts == 'function') throw new Error('not compiled for this environment (did you build to HTML and try to run it not on the web, or set ENVIRONMENT to something - like node - and run it someplace else - like on the web?)');
 
   if (typeof scriptArgs != 'undefined') {
     arguments_ = scriptArgs;
@@ -100862,72 +109828,9 @@ if (ENVIRONMENT_IS_SHELL) {
 // Node.js workers are detected as a combination of ENVIRONMENT_IS_WORKER and
 // ENVIRONMENT_IS_NODE.
 if (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) {
-  if (ENVIRONMENT_IS_WORKER) { // Check worker, not web, since window could be polyfilled
-    scriptDirectory = self.location.href;
-  } else if (typeof document != 'undefined' && document.currentScript) { // web
-    scriptDirectory = document.currentScript.src;
-  }
-  // When MODULARIZE, this JS may be executed later, after document.currentScript
-  // is gone, so we saved it, and we use it here instead of any other info.
-  if (_scriptDir) {
-    scriptDirectory = _scriptDir;
-  }
-  // blob urls look like blob:http://site.com/etc/etc and we cannot infer anything from them.
-  // otherwise, slice off the final part of the url to find the script directory.
-  // if scriptDirectory does not contain a slash, lastIndexOf will return -1,
-  // and scriptDirectory will correctly be replaced with an empty string.
-  // If scriptDirectory contains a query (starting with ?) or a fragment (starting with #),
-  // they are removed because they could contain a slash.
-  if (scriptDirectory.indexOf('blob:') !== 0) {
-    scriptDirectory = scriptDirectory.substr(0, scriptDirectory.replace(/[?#].*/, "").lastIndexOf('/')+1);
-  } else {
-    scriptDirectory = '';
-  }
-
   if (!(typeof window == 'object' || typeof importScripts == 'function')) throw new Error('not compiled for this environment (did you build to HTML and try to run it not on the web, or set ENVIRONMENT to something - like node - and run it someplace else - like on the web?)');
-
-  // Differentiate the Web Worker from the Node Worker case, as reading must
-  // be done differently.
-  {
-// include: web_or_worker_shell_read.js
-
-
-  read_ = (url) => {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', url, false);
-      xhr.send(null);
-      return xhr.responseText;
-  }
-
-  if (ENVIRONMENT_IS_WORKER) {
-    readBinary = (url) => {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, false);
-        xhr.responseType = 'arraybuffer';
-        xhr.send(null);
-        return new Uint8Array(/** @type{!ArrayBuffer} */(xhr.response));
-    };
-  }
-
-  readAsync = (url, onload, onerror) => {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'arraybuffer';
-    xhr.onload = () => {
-      if (xhr.status == 200 || (xhr.status == 0 && xhr.response)) { // file URLs can return 0
-        onload(xhr.response);
-        return;
-      }
-      onerror();
-    };
-    xhr.onerror = onerror;
-    xhr.send(null);
-  }
-
-// end include: web_or_worker_shell_read.js
-  }
-
-  setWindowTitle = (title) => document.title = title;
+  // The XHR-based read hooks emitted by Emscripten are unused because the wasm is
+  // base64-embedded; they have been removed so the file contains no DOM/XHR I/O.
 } else
 {
   throw new Error('environment detection error');
@@ -104220,6 +113123,27 @@ function cache_getCachedDefaultHttpClient() {
     return _defaultHttpClient;
 }
 //# sourceMappingURL=cache.js.map
+;// CONCATENATED MODULE: ./node_modules/@azure/storage-common/dist/esm/StorageResponseFormat.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+/**
+ * Specifies the format the service should use to return list results.
+ */
+const StorageResponseFormat = {
+    /**
+     * Default. Currently maps to {@link StorageResponseFormat.Xml}, but may be updated in future releases.
+     */
+    Auto: "Auto",
+    /**
+     * Use XML to return list results.
+     */
+    Xml: "Xml",
+    /**
+     * Use Apache Arrow to return list results.
+     */
+    Arrow: "Arrow",
+};
+//# sourceMappingURL=StorageResponseFormat.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-common/dist/esm/policies/RequestPolicy.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -104417,7 +113341,7 @@ class AnonymousCredential extends Credential {
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-common/dist/esm/utils/constants.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-const utils_constants_SDK_VERSION = "12.4.0";
+const utils_constants_SDK_VERSION = "12.5.0";
 const constants_URLConstants = {
     Parameters: {
         FORCE_BROWSER_NO_CACHE: "_",
@@ -105435,8 +114359,7 @@ class StorageRetryPolicy extends BaseRequestPolicy {
      */
     shouldRetry(isPrimaryRetry, attempt, response, err) {
         if (attempt >= this.retryOptions.maxTries) {
-            storage_common_dist_esm_log_logger.info(`RetryPolicy: Attempt(s) ${attempt} >= maxTries ${this.retryOptions
-                .maxTries}, no further try.`);
+            storage_common_dist_esm_log_logger.info(`RetryPolicy: Attempt(s) ${attempt} >= maxTries ${this.retryOptions.maxTries}, no further try.`);
             return false;
         }
         // Handle network failures, you may need to customize the list when you implement
@@ -105917,6 +114840,18 @@ function storageRequestFailureDetailsParserPolicy() {
         async sendRequest(request, next) {
             try {
                 const response = await next(request);
+                if (response.status === 400 &&
+                    response.bodyAsText?.includes("<Error><Code>InvalidHeaderValue</Code>") &&
+                    response.bodyAsText.includes("<HeaderName>x-ms-version</HeaderName>")) {
+                    // replace the error message with a more user-friendly one that includes a link to documentation
+                    /* example response text:
+                    `<?xml version="1.0" encoding="utf-8"?>
+          <Error><Code>InvalidHeaderValue</Code><Message>The value for one of the HTTP headers is not in the correct format.
+          RequestId:e5ea566c-101e-001c-1ec4-acf180000000
+          Time:2026-03-05T17:24:34.6688015Z</Message><HeaderName>x-ms-version</HeaderName><HeaderValue>3025-01-01</HeaderValue></Error>`
+                    */
+                    response.bodyAsText = response.bodyAsText.replace(/<Message>.*<\/Message>/s, "<Message>The provided service version is not enabled on this storage account. Please see https://learn.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services for additional information.</Message>");
+                }
                 return response;
             }
             catch (err) {
@@ -106004,6 +114939,8 @@ class UserDelegationKeyCredential {
 
 
 
+
+
 //# sourceMappingURL=indexPlatform.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-common/dist/esm/index.js
 // Copyright (c) Microsoft Corporation.
@@ -106013,8 +114950,8 @@ class UserDelegationKeyCredential {
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-blob/dist/esm/utils/constants.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-const esm_utils_constants_SDK_VERSION = "12.32.0";
-const SERVICE_VERSION = "2026-04-06";
+const esm_utils_constants_SDK_VERSION = "12.34.0";
+const SERVICE_VERSION = "2026-10-06";
 const BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES = 256 * 1024 * 1024; // 256MB
 const BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES = 4000 * 1024 * 1024; // 4000MB
 const BLOCK_BLOB_MAX_BLOCKS = 50000;
@@ -106026,6 +114963,12 @@ const REQUEST_TIMEOUT = 100 * 1000; // In ms
  * The OAuth scope to use with Azure Storage.
  */
 const StorageOAuthScopes = "https://storage.azure.com/.default";
+/**
+ * The media type returned by the List Blobs Apache Arrow operation when Apache Arrow
+ * is enabled for the account. When the response Content-Type differs from this value,
+ * the service has fallen back to XML.
+ */
+const ApacheArrowContentType = "application/vnd.apache.arrow.stream";
 const utils_constants_URLConstants = {
     Parameters: {
         FORCE_BROWSER_NO_CACHE: "_",
@@ -108097,6 +117040,7 @@ const BlobPropertiesInternal = {
                         "Cool",
                         "Archive",
                         "Cold",
+                        "Smart",
                     ],
                 },
             },
@@ -108116,6 +117060,32 @@ const BlobPropertiesInternal = {
                         "rehydrate-pending-to-hot",
                         "rehydrate-pending-to-cool",
                         "rehydrate-pending-to-cold",
+                        "rehydrate-pending-to-smart",
+                    ],
+                },
+            },
+            smartAccessTier: {
+                serializedName: "SmartAccessTier",
+                xmlName: "SmartAccessTier",
+                type: {
+                    name: "Enum",
+                    allowedValues: [
+                        "P4",
+                        "P6",
+                        "P10",
+                        "P15",
+                        "P20",
+                        "P30",
+                        "P40",
+                        "P50",
+                        "P60",
+                        "P70",
+                        "P80",
+                        "Hot",
+                        "Cool",
+                        "Archive",
+                        "Cold",
+                        "Smart",
                     ],
                 },
             },
@@ -110439,6 +119409,66 @@ const ContainerListBlobFlatSegmentExceptionHeaders = {
         },
     },
 };
+const ContainerListBlobFlatSegmentApacheArrowHeaders = {
+    serializedName: "Container_listBlobFlatSegmentApacheArrowHeaders",
+    type: {
+        name: "Composite",
+        className: "ContainerListBlobFlatSegmentApacheArrowHeaders",
+        modelProperties: {
+            contentType: {
+                serializedName: "content-type",
+                xmlName: "content-type",
+                type: {
+                    name: "String",
+                },
+            },
+            clientRequestId: {
+                serializedName: "x-ms-client-request-id",
+                xmlName: "x-ms-client-request-id",
+                type: {
+                    name: "String",
+                },
+            },
+            requestId: {
+                serializedName: "x-ms-request-id",
+                xmlName: "x-ms-request-id",
+                type: {
+                    name: "String",
+                },
+            },
+            version: {
+                serializedName: "x-ms-version",
+                xmlName: "x-ms-version",
+                type: {
+                    name: "String",
+                },
+            },
+            date: {
+                serializedName: "date",
+                xmlName: "date",
+                type: {
+                    name: "DateTimeRfc1123",
+                },
+            },
+        },
+    },
+};
+const ContainerListBlobFlatSegmentApacheArrowExceptionHeaders = {
+    serializedName: "Container_listBlobFlatSegmentApacheArrowExceptionHeaders",
+    type: {
+        name: "Composite",
+        className: "ContainerListBlobFlatSegmentApacheArrowExceptionHeaders",
+        modelProperties: {
+            errorCode: {
+                serializedName: "x-ms-error-code",
+                xmlName: "x-ms-error-code",
+                type: {
+                    name: "String",
+                },
+            },
+        },
+    },
+};
 const ContainerListBlobHierarchySegmentHeaders = {
     serializedName: "Container_listBlobHierarchySegmentHeaders",
     type: {
@@ -110495,6 +119525,66 @@ const ContainerListBlobHierarchySegmentExceptionHeaders = {
     type: {
         name: "Composite",
         className: "ContainerListBlobHierarchySegmentExceptionHeaders",
+        modelProperties: {
+            errorCode: {
+                serializedName: "x-ms-error-code",
+                xmlName: "x-ms-error-code",
+                type: {
+                    name: "String",
+                },
+            },
+        },
+    },
+};
+const ContainerListBlobHierarchySegmentApacheArrowHeaders = {
+    serializedName: "Container_listBlobHierarchySegmentApacheArrowHeaders",
+    type: {
+        name: "Composite",
+        className: "ContainerListBlobHierarchySegmentApacheArrowHeaders",
+        modelProperties: {
+            contentType: {
+                serializedName: "content-type",
+                xmlName: "content-type",
+                type: {
+                    name: "String",
+                },
+            },
+            clientRequestId: {
+                serializedName: "x-ms-client-request-id",
+                xmlName: "x-ms-client-request-id",
+                type: {
+                    name: "String",
+                },
+            },
+            requestId: {
+                serializedName: "x-ms-request-id",
+                xmlName: "x-ms-request-id",
+                type: {
+                    name: "String",
+                },
+            },
+            version: {
+                serializedName: "x-ms-version",
+                xmlName: "x-ms-version",
+                type: {
+                    name: "String",
+                },
+            },
+            date: {
+                serializedName: "date",
+                xmlName: "date",
+                type: {
+                    name: "DateTimeRfc1123",
+                },
+            },
+        },
+    },
+};
+const ContainerListBlobHierarchySegmentApacheArrowExceptionHeaders = {
+    serializedName: "Container_listBlobHierarchySegmentApacheArrowExceptionHeaders",
+    type: {
+        name: "Composite",
+        className: "ContainerListBlobHierarchySegmentApacheArrowExceptionHeaders",
         modelProperties: {
             errorCode: {
                 serializedName: "x-ms-error-code",
@@ -110934,6 +120024,34 @@ const BlobDownloadHeaders = {
                     name: "Number",
                 },
             },
+            accessTier: {
+                serializedName: "x-ms-access-tier",
+                xmlName: "x-ms-access-tier",
+                type: {
+                    name: "String",
+                },
+            },
+            accessTierInferred: {
+                serializedName: "x-ms-access-tier-inferred",
+                xmlName: "x-ms-access-tier-inferred",
+                type: {
+                    name: "Boolean",
+                },
+            },
+            accessTierChangedOn: {
+                serializedName: "x-ms-access-tier-change-time",
+                xmlName: "x-ms-access-tier-change-time",
+                type: {
+                    name: "DateTimeRfc1123",
+                },
+            },
+            smartAccessTier: {
+                serializedName: "x-ms-smart-access-tier",
+                xmlName: "x-ms-smart-access-tier",
+                type: {
+                    name: "String",
+                },
+            },
             errorCode: {
                 serializedName: "x-ms-error-code",
                 xmlName: "x-ms-error-code",
@@ -111259,6 +120377,13 @@ const BlobGetPropertiesHeaders = {
                 xmlName: "x-ms-access-tier-change-time",
                 type: {
                     name: "DateTimeRfc1123",
+                },
+            },
+            smartAccessTier: {
+                serializedName: "x-ms-smart-access-tier",
+                xmlName: "x-ms-smart-access-tier",
+                type: {
+                    name: "String",
                 },
             },
             versionId: {
@@ -114542,6 +123667,13 @@ const BlockBlobUploadHeaders = {
                     name: "ByteArray",
                 },
             },
+            xMsContentCrc64: {
+                serializedName: "x-ms-content-crc64",
+                xmlName: "x-ms-content-crc64",
+                type: {
+                    name: "ByteArray",
+                },
+            },
             clientRequestId: {
                 serializedName: "x-ms-client-request-id",
                 xmlName: "x-ms-client-request-id",
@@ -114654,6 +123786,13 @@ const BlockBlobPutBlobFromUrlHeaders = {
             contentMD5: {
                 serializedName: "content-md5",
                 xmlName: "content-md5",
+                type: {
+                    name: "ByteArray",
+                },
+            },
+            xMsContentCrc64: {
+                serializedName: "x-ms-content-crc64",
+                xmlName: "x-ms-content-crc64",
                 type: {
                     name: "ByteArray",
                 },
@@ -115255,7 +124394,7 @@ const timeoutInSeconds = {
 const version = {
     parameterPath: "version",
     mapper: {
-        defaultValue: "2026-04-06",
+        defaultValue: "2026-10-06",
         isConstant: true,
         serializedName: "x-ms-version",
         type: {
@@ -115800,6 +124939,27 @@ const startFrom = {
         },
     },
 };
+const accept2 = {
+    parameterPath: "accept",
+    mapper: {
+        defaultValue: "application/vnd.apache.arrow.stream,application/xml",
+        isConstant: true,
+        serializedName: "Accept",
+        type: {
+            name: "String",
+        },
+    },
+};
+const endBefore = {
+    parameterPath: ["options", "endBefore"],
+    mapper: {
+        serializedName: "endBefore",
+        xmlName: "endBefore",
+        type: {
+            name: "String",
+        },
+    },
+};
 const delimiter = {
     parameterPath: "delimiter",
     mapper: {
@@ -116162,6 +125322,7 @@ const tier = {
                 "Cool",
                 "Archive",
                 "Cold",
+                "Smart",
             ],
         },
     },
@@ -116400,6 +125561,7 @@ const tier1 = {
                 "Cool",
                 "Archive",
                 "Cold",
+                "Smart",
             ],
         },
     },
@@ -116553,7 +125715,7 @@ const body1 = {
         },
     },
 };
-const accept2 = {
+const accept3 = {
     parameterPath: "accept",
     mapper: {
         defaultValue: "application/xml",
@@ -117396,6 +126558,14 @@ class ContainerImpl {
         return this.client.sendOperationRequest({ options }, listBlobFlatSegmentOperationSpec);
     }
     /**
+     * The List Blobs operation returns a list of the blobs under the specified container. This operation
+     * is for Apache Arrow use case so response is returned as raw to be deserialized by the client.
+     * @param options The options parameters.
+     */
+    listBlobFlatSegmentApacheArrow(options) {
+        return this.client.sendOperationRequest({ options }, listBlobFlatSegmentApacheArrowOperationSpec);
+    }
+    /**
      * [Update] The List Blobs operation returns a list of the blobs under the specified container
      * @param delimiter When the request includes this parameter, the operation returns a BlobPrefix
      *                  element in the response body that acts as a placeholder for all blobs whose names begin with the
@@ -117405,6 +126575,19 @@ class ContainerImpl {
      */
     listBlobHierarchySegment(delimiter, options) {
         return this.client.sendOperationRequest({ delimiter, options }, listBlobHierarchySegmentOperationSpec);
+    }
+    /**
+     * [Update] The List Blobs operation returns a list of the blobs under the specified container. This
+     * operation is for Apache Arrow use case so response is returned as raw to be deserialized by the
+     * client.
+     * @param delimiter When the request includes this parameter, the operation returns a BlobPrefix
+     *                  element in the response body that acts as a placeholder for all blobs whose names begin with the
+     *                  same substring up to the appearance of the delimiter character. The delimiter may be a single
+     *                  character or a string.
+     * @param options The options parameters.
+     */
+    listBlobHierarchySegmentApacheArrow(delimiter, options) {
+        return this.client.sendOperationRequest({ delimiter, options }, listBlobHierarchySegmentApacheArrowOperationSpec);
     }
     /**
      * Returns the sku name and account kind
@@ -117897,6 +127080,42 @@ const listBlobFlatSegmentOperationSpec = {
     isXML: true,
     serializer: container_xmlSerializer,
 };
+const listBlobFlatSegmentApacheArrowOperationSpec = {
+    path: "/{containerName}",
+    httpMethod: "GET",
+    responses: {
+        200: {
+            bodyMapper: {
+                type: { name: "Stream" },
+                serializedName: "parsedResponse",
+            },
+            headersMapper: ContainerListBlobFlatSegmentApacheArrowHeaders,
+        },
+        default: {
+            bodyMapper: StorageError,
+            headersMapper: ContainerListBlobFlatSegmentApacheArrowExceptionHeaders,
+        },
+    },
+    queryParameters: [
+        timeoutInSeconds,
+        comp2,
+        prefix,
+        marker,
+        maxPageSize,
+        restype2,
+        include1,
+        startFrom,
+        endBefore,
+    ],
+    urlParameters: [url],
+    headerParameters: [
+        version,
+        requestId,
+        accept2,
+    ],
+    isXML: true,
+    serializer: container_xmlSerializer,
+};
 const listBlobHierarchySegmentOperationSpec = {
     path: "/{containerName}",
     httpMethod: "GET",
@@ -117926,6 +127145,43 @@ const listBlobHierarchySegmentOperationSpec = {
         version,
         requestId,
         accept1,
+    ],
+    isXML: true,
+    serializer: container_xmlSerializer,
+};
+const listBlobHierarchySegmentApacheArrowOperationSpec = {
+    path: "/{containerName}",
+    httpMethod: "GET",
+    responses: {
+        200: {
+            bodyMapper: {
+                type: { name: "Stream" },
+                serializedName: "parsedResponse",
+            },
+            headersMapper: ContainerListBlobHierarchySegmentApacheArrowHeaders,
+        },
+        default: {
+            bodyMapper: StorageError,
+            headersMapper: ContainerListBlobHierarchySegmentApacheArrowExceptionHeaders,
+        },
+    },
+    queryParameters: [
+        timeoutInSeconds,
+        comp2,
+        prefix,
+        marker,
+        maxPageSize,
+        restype2,
+        include1,
+        startFrom,
+        endBefore,
+        delimiter,
+    ],
+    urlParameters: [url],
+    headerParameters: [
+        version,
+        requestId,
+        accept2,
     ],
     isXML: true,
     serializer: container_xmlSerializer,
@@ -119188,7 +128444,7 @@ const uploadPagesOperationSpec = {
         transactionalContentMD5,
         transactionalContentCrc64,
         contentType1,
-        accept2,
+        accept3,
         pageWrite,
         ifSequenceNumberLessThanOrEqualTo,
         ifSequenceNumberLessThan,
@@ -119596,7 +128852,7 @@ const appendBlockOperationSpec = {
         transactionalContentMD5,
         transactionalContentCrc64,
         contentType1,
-        accept2,
+        accept3,
         structuredContentLength,
         maxSize,
         appendPosition,
@@ -119830,7 +129086,7 @@ const uploadOperationSpec = {
         transactionalContentMD5,
         transactionalContentCrc64,
         contentType1,
-        accept2,
+        accept3,
         structuredContentLength,
         blobType2,
     ],
@@ -119929,7 +129185,7 @@ const stageBlockOperationSpec = {
         transactionalContentMD5,
         transactionalContentCrc64,
         contentType1,
-        accept2,
+        accept3,
         structuredContentLength,
     ],
     isXML: true,
@@ -120108,7 +129364,7 @@ class StorageClient extends ExtendedServiceClient {
         const defaults = {
             requestContentType: "application/json; charset=utf-8",
         };
-        const packageDetails = `azsdk-js-azure-storage-blob/12.32.0`;
+        const packageDetails = `azsdk-js-azure-storage-blob/12.34.0`;
         const userAgentPrefix = options.userAgentOptions && options.userAgentOptions.userAgentPrefix
             ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
             : `${packageDetails}`;
@@ -120124,7 +129380,7 @@ class StorageClient extends ExtendedServiceClient {
         // Parameter assignments
         this.url = url;
         // Assigning values to Constant parameters
-        this.version = options.version || "2026-04-06";
+        this.version = options.version || "2026-10-06";
         this.service = new ServiceImpl(this);
         this.container = new ContainerImpl(this);
         this.blob = new BlobImpl(this);
@@ -120177,6 +129433,14 @@ class StorageContextClient extends StorageClient {
 
 
 
+
+const accountNameSuffixes = [
+    "-secondary-ipv6",
+    "-secondary-dualstack",
+    "-ipv6",
+    "-dualstack",
+    "-secondary",
+];
 /**
  * Reserved URL characters must be properly escaped for Storage services like Blob or File.
  *
@@ -120653,7 +129917,15 @@ function utils_common_getAccountNameFromUrl(url) {
     try {
         if (parsedUrl.hostname.split(".")[1] === "blob") {
             // `${defaultEndpointsProtocol}://${accountName}.blob.${endpointSuffix}`;
+            // `${defaultEndpointsProtocol}://${accountName}-suffix.blob.${endpointSuffix}`;
             accountName = parsedUrl.hostname.split(".")[0];
+            for (let i = 0; i < accountNameSuffixes.length; ++i) {
+                const suffix = accountNameSuffixes[i];
+                if (accountName.endsWith(suffix)) {
+                    accountName = accountName.substring(0, accountName.length - suffix.length);
+                    break;
+                }
+            }
         }
         else if (utils_common_isIpEndpointStyle(parsedUrl)) {
             // IPv4/IPv6 address hosts... Example - http://192.0.0.10:10001/devstoreaccount1/
@@ -120821,6 +130093,18 @@ function parseObjectReplicationRecord(objectReplicationRecord) {
     return orProperties;
 }
 /**
+ * Resolves a {@link StorageResponseFormat} to the concrete format the client should use.
+ * `Auto` currently resolves to `Xml`; this mapping may change in a future service version.
+ *
+ * @param responseFormat - The requested response format, or undefined to use the default.
+ */
+function resolveResponseFormat(responseFormat) {
+    if (responseFormat === undefined || responseFormat === StorageResponseFormat.Auto) {
+        return StorageResponseFormat.Xml;
+    }
+    return responseFormat;
+}
+/**
  * Attach a TokenCredential to an object.
  *
  * @param thing -
@@ -120929,6 +130213,45 @@ function utils_common_EscapePath(blobName) {
     return split.join("/");
 }
 /**
+ * Reads a raw response body (a Node.js readable stream or a browser Blob) into a
+ * single byte array. Shared by the Apache Arrow or XML List Blobs response parsers.
+ */
+async function readResponseBodyToBytes(response) {
+    if (response.blobBody) {
+        const blob = await response.blobBody;
+        return new Uint8Array(await blob.arrayBuffer());
+    }
+    if (response.readableStreamBody) {
+        return readNodeStreamToBytes(response.readableStreamBody);
+    }
+    throw new RangeError("List Blobs response body is empty or unavailable.");
+}
+/**
+ * Reads a Node.js readable stream to completion, concatenating its chunks into a
+ * single byte array.
+ */
+function readNodeStreamToBytes(stream) {
+    return new Promise((resolve, reject) => {
+        const chunks = [];
+        let totalLength = 0;
+        stream.on("data", (chunk) => {
+            const bytes = typeof chunk === "string" ? new TextEncoder().encode(chunk) : chunk;
+            chunks.push(bytes);
+            totalLength += bytes.byteLength;
+        });
+        stream.on("end", () => {
+            const result = new Uint8Array(totalLength);
+            let offset = 0;
+            for (const chunk of chunks) {
+                result.set(chunk, offset);
+                offset += chunk.byteLength;
+            }
+            resolve(result);
+        });
+        stream.on("error", reject);
+    });
+}
+/**
  * A typesafe helper for ensuring that a given response object has
  * the original _response attached.
  * @param response - A response object from calling a client operation
@@ -121034,6 +130357,229 @@ const tracingClient = createTracingClient({
     namespace: "Microsoft.Storage",
 });
 //# sourceMappingURL=tracing.js.map
+;// CONCATENATED MODULE: ./node_modules/@azure/storage-blob/dist/esm/utils/blobListArrowParser.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+
+/**
+ * Reads the raw body of an Apache Arrow List Blobs response (a Node.js readable
+ * stream or a browser Blob) and parses it into blob items and prefixes.
+ *
+ * @param response - The raw stream response returned by the Apache Arrow list operation.
+ */
+async function parseBlobListArrowResponse(response) {
+    // Load apache-arrow lazily so it is only pulled in when the Arrow format is requested.
+    const { tableFromIPC } = await __nccwpck_require__.e(/* import() */ 835).then(__nccwpck_require__.bind(__nccwpck_require__, 91835));
+    // Node streams the body into apache-arrow so record batches are read incrementally;
+    // the browser reads the whole Blob.
+    const table = response.readableStreamBody
+        ? await tableFromIPC(response.readableStreamBody)
+        : tableFromIPC(await readResponseBodyToBytes(response));
+    return projectArrowTable(table);
+}
+/**
+ * Reconstructs blob items and prefixes from a decoded Apache Arrow table.
+ *
+ * The Arrow data is columnar: each field (e.g. `Name`, `Content-Length`) is a
+ * separate column. We reconstruct one {@link BlobItemInternal} row per row by reading
+ * each column at that row index; the caller projects those to public models. The
+ * continuation token travels in the schema metadata (a page-level value, not a column).
+ */
+function projectArrowTable(table) {
+    const nextMarker = table.schema.metadata?.get("NextMarker") ?? undefined;
+    const getColumn = (columnName) => table.getChild(columnName);
+    const cell = (rowIndex, columnName) => getColumn(columnName)?.get(rowIndex);
+    const asString = (rowIndex, columnName) => {
+        const value = cell(rowIndex, columnName);
+        return value === undefined || value === null ? undefined : String(value);
+    };
+    const asBoolean = (rowIndex, columnName) => {
+        const value = cell(rowIndex, columnName);
+        return value === undefined || value === null ? undefined : Boolean(value);
+    };
+    const asNumber = (rowIndex, columnName) => {
+        const value = cell(rowIndex, columnName);
+        return value === undefined || value === null ? undefined : Number(value);
+    };
+    const asDate = (rowIndex, columnName) => {
+        const value = cell(rowIndex, columnName);
+        if (value === undefined || value === null) {
+            return undefined;
+        }
+        // apache-arrow normalizes every Timestamp unit to epoch milliseconds when a
+        // cell is read (SECOND x1000, MICROSECOND /1000, NANOSECOND /1e6), so the
+        // value is already in the milliseconds a Date expects and must not be scaled
+        // again. Fall back to string parsing if a column ever arrives non-numeric.
+        const millis = Number(value);
+        if (Number.isNaN(millis)) {
+            const parsed = Date.parse(String(value));
+            return Number.isNaN(parsed) ? undefined : new Date(parsed);
+        }
+        return new Date(millis);
+    };
+    const asBytesFromBase64 = (rowIndex, columnName) => {
+        const value = asString(rowIndex, columnName);
+        return value === undefined ? undefined : esm_stringToUint8Array(value, "base64");
+    };
+    const asMap = (rowIndex, columnName) => toRecord(cell(rowIndex, columnName));
+    const blobItems = [];
+    const blobPrefixes = [];
+    for (let i = 0; i < table.numRows; i++) {
+        // BlobPrefix rows only populate the `Name` column; all others are null.
+        const resourceType = asString(i, "ResourceType");
+        if (resourceType !== undefined && resourceType.toLowerCase() === "blobprefix") {
+            blobPrefixes.push({ name: { content: asString(i, "Name") ?? "" } });
+            continue;
+        }
+        const properties = {
+            createdOn: asDate(i, "Creation-Time"),
+            lastModified: asDate(i, "Last-Modified") ?? new Date(0),
+            etag: asString(i, "Etag") ?? "",
+            contentLength: asNumber(i, "Content-Length"),
+            contentType: asString(i, "Content-Type"),
+            contentEncoding: asString(i, "Content-Encoding"),
+            contentLanguage: asString(i, "Content-Language"),
+            contentMD5: asBytesFromBase64(i, "Content-MD5"),
+            contentDisposition: asString(i, "Content-Disposition"),
+            cacheControl: asString(i, "Cache-Control"),
+            blobSequenceNumber: asNumber(i, "x-ms-blob-sequence-number"),
+            blobType: asString(i, "BlobType"),
+            leaseStatus: asString(i, "LeaseStatus"),
+            leaseState: asString(i, "LeaseState"),
+            leaseDuration: asString(i, "LeaseDuration"),
+            copyId: asString(i, "CopyId"),
+            copyStatus: asString(i, "CopyStatus"),
+            copySource: asString(i, "CopySource"),
+            copyProgress: asString(i, "CopyProgress"),
+            copyCompletedOn: asDate(i, "CopyCompletionTime"),
+            copyStatusDescription: asString(i, "CopyStatusDescription"),
+            serverEncrypted: asBoolean(i, "ServerEncrypted"),
+            incrementalCopy: asBoolean(i, "IncrementalCopy"),
+            destinationSnapshot: asString(i, "CopyDestinationSnapshot"),
+            deletedOn: asDate(i, "DeletedTime"),
+            remainingRetentionDays: asNumber(i, "RemainingRetentionDays"),
+            accessTier: asString(i, "AccessTier"),
+            accessTierInferred: asBoolean(i, "AccessTierInferred"),
+            archiveStatus: asString(i, "ArchiveStatus"),
+            smartAccessTier: asString(i, "SmartAccessTier"),
+            customerProvidedKeySha256: asString(i, "CustomerProvidedKeySha256"),
+            encryptionScope: asString(i, "EncryptionScope"),
+            accessTierChangedOn: asDate(i, "AccessTierChangeTime"),
+            tagCount: asNumber(i, "TagCount"),
+            expiresOn: asDate(i, "Expiry-Time"),
+            isSealed: asBoolean(i, "Sealed"),
+            rehydratePriority: asString(i, "RehydratePriority"),
+            lastAccessedOn: asDate(i, "LastAccessTime"),
+            immutabilityPolicyExpiresOn: asDate(i, "ImmutabilityPolicyUntilDate"),
+            immutabilityPolicyMode: asString(i, "ImmutabilityPolicyMode"),
+            legalHold: asBoolean(i, "LegalHold"),
+        };
+        blobItems.push({
+            name: { content: asString(i, "Name") ?? "" },
+            deleted: asBoolean(i, "Deleted") ?? false,
+            snapshot: asString(i, "Snapshot") ?? "",
+            versionId: asString(i, "VersionId"),
+            isCurrentVersion: asBoolean(i, "IsCurrentVersion"),
+            properties,
+            metadata: asMap(i, "Metadata"),
+            blobTags: blobListArrowParser_toBlobTags(asMap(i, "Tags")),
+            objectReplicationMetadata: asMap(i, "OrMetadata"),
+            hasVersionsOnly: asBoolean(i, "HasVersionsOnly"),
+        });
+    }
+    return { nextMarker, blobItems, blobPrefixes };
+}
+/**
+ * Converts an Apache Arrow map cell (a plain string dictionary) into the generated
+ * {@link BlobTags} shape, so the shared projection layer can flatten it exactly like
+ * the XML path does.
+ */
+function blobListArrowParser_toBlobTags(map) {
+    return map === undefined
+        ? undefined
+        : { blobTagSet: Object.entries(map).map(([key, value]) => ({ key, value })) };
+}
+/**
+ * Converts an Apache Arrow map cell into a plain string dictionary. Handles the
+ * possible shapes an arrow map value can take (iterable of `[key, value]` pairs,
+ * iterable of `{ key, value }` structs, or a plain object).
+ */
+function toRecord(value) {
+    if (value === undefined || value === null) {
+        return undefined;
+    }
+    const entries = [];
+    const asText = (v) => (v === undefined || v === null ? "" : String(v));
+    if (typeof value[Symbol.iterator] === "function") {
+        for (const entry of value) {
+            if (Array.isArray(entry)) {
+                entries.push([String(entry[0]), asText(entry[1])]);
+            }
+            else if (entry && typeof entry === "object" && "key" in entry) {
+                const { key, value: entryValue } = entry;
+                entries.push([String(key), asText(entryValue)]);
+            }
+        }
+    }
+    else if (typeof value === "object") {
+        for (const [key, entryValue] of Object.entries(value)) {
+            entries.push([key, asText(entryValue)]);
+        }
+    }
+    return Object.fromEntries(entries);
+}
+//# sourceMappingURL=blobListArrowParser.js.map
+;// CONCATENATED MODULE: ./node_modules/@azure/storage-blob/dist/esm/utils/blobListXmlParser.js
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+
+
+
+const listBlobsXmlSerializer = createSerializer(mappers_namespaceObject, /* isXml */ true);
+/**
+ * Reads a raw response body (a Node.js readable stream or a browser Blob) as text,
+ * used for the XML fallback path.
+ */
+async function readResponseBodyToText(response) {
+    const bytes = await readResponseBodyToBytes(response);
+    return new TextDecoder().decode(bytes);
+}
+/**
+ * Deserializes a List Blobs (flat) XML response body. Used when the service falls
+ * back to XML for an account that does not support Apache Arrow; parses the
+ * already-received stream instead of issuing a second request.
+ *
+ * @param response - The raw stream response from the list operation, with an XML body.
+ */
+async function deserializeListBlobFlatSegmentXml(response) {
+    const bodyAsText = await readResponseBodyToText(response);
+    const parsedXml = (await parseXML(bodyAsText, {
+        includeRoot: true,
+    }));
+    return {
+        parsed: listBlobsXmlSerializer.deserialize(ListBlobsFlatSegmentResponse, parsedXml.EnumerationResults ?? parsedXml, "EnumerationResults"),
+        bodyAsText,
+    };
+}
+/**
+ * Deserializes a List Blobs by hierarchy XML response body (see
+ * {@link deserializeListBlobFlatSegmentXml}).
+ *
+ * @param response - The raw stream response from the list operation, with an XML body.
+ */
+async function deserializeListBlobHierarchySegmentXml(response) {
+    const bodyAsText = await readResponseBodyToText(response);
+    const parsedXml = (await parseXML(bodyAsText, {
+        includeRoot: true,
+    }));
+    return {
+        parsed: listBlobsXmlSerializer.deserialize(ListBlobsHierarchySegmentResponse, parsedXml.EnumerationResults ?? parsedXml, "EnumerationResults"),
+        bodyAsText,
+    };
+}
+//# sourceMappingURL=blobListXmlParser.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-blob/dist/esm/sas/BlobSASPermissions.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -121627,6 +131173,10 @@ class SASQueryParameters {
      * Keys for request query parameters required in the SAS token
      */
     requestQueryParameterKeys;
+    /** To indicate the depth of the virtual blob directory specified
+     * in the canonicalizedresource field of the string-to-sign.
+     */
+    directoryDepth;
     /**
      * Optional. IP range allowed for this SAS.
      *
@@ -121641,7 +131191,7 @@ class SASQueryParameters {
         }
         return undefined;
     }
-    constructor(version, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn, ipRange, identifier, resource, cacheControl, contentDisposition, contentEncoding, contentLanguage, contentType, userDelegationKey, preauthorizedAgentObjectId, correlationId, encryptionScope, delegatedUserObjectId, requestHeaderKeys, requestQueryParameterKeys) {
+    constructor(version, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn, ipRange, identifier, resource, cacheControl, contentDisposition, contentEncoding, contentLanguage, contentType, userDelegationKey, preauthorizedAgentObjectId, correlationId, encryptionScope, delegatedUserObjectId, requestHeaderKeys, requestQueryParameterKeys, directoryDepth) {
         this.version = version;
         this.signature = signature;
         if (permissionsOrOptions !== undefined && typeof permissionsOrOptions !== "string") {
@@ -121664,6 +131214,7 @@ class SASQueryParameters {
             this.contentType = permissionsOrOptions.contentType;
             this.requestHeaderKeys = permissionsOrOptions.requestHeaderKeys;
             this.requestQueryParameterKeys = permissionsOrOptions.requestQueryParameterKeys;
+            this.directoryDepth = permissionsOrOptions.directoryDepth;
             if (permissionsOrOptions.userDelegationKey) {
                 this.signedOid = permissionsOrOptions.userDelegationKey.signedObjectId;
                 this.signedTenantId = permissionsOrOptions.userDelegationKey.signedTenantId;
@@ -121696,6 +131247,7 @@ class SASQueryParameters {
             this.contentType = contentType;
             this.requestHeaderKeys = requestHeaderKeys;
             this.requestQueryParameterKeys = requestQueryParameterKeys;
+            this.directoryDepth = directoryDepth;
             if (userDelegationKey) {
                 this.signedOid = userDelegationKey.signedObjectId;
                 this.signedTenantId = userDelegationKey.signedTenantId;
@@ -121739,6 +131291,7 @@ class SASQueryParameters {
             "rsct",
             "saoid",
             "scid",
+            "sdd",
             "sduoid", // Signed key user delegation object ID
             "skdutid", // Signed key user delegation tenant ID
             "srh", // Request Headers
@@ -121835,6 +131388,9 @@ class SASQueryParameters {
                 case "srq": // Request headers
                     this.tryAppendQueryParameter(queries, param, this.requestQueryParameterKeys);
                     break;
+                case "sdd": // Directory depth
+                    this.tryAppendQueryParameter(queries, param, this.directoryDepth !== undefined ? this.directoryDepth.toString() : "");
+                    break;
             }
         }
         return queries.join("&");
@@ -121906,7 +131462,13 @@ function generateBlobSASQueryParametersInternal(blobSASSignatureValues, sharedKe
     // https://learn.microsoft.com/rest/api/storageservices/constructing-a-service-sas#constructing-the-signature-string
     if (version >= "2018-11-09") {
         if (sharedKeyCredential !== undefined) {
-            return generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKeyCredential);
+            // Version 2020-02-10 delegation SAS signature construction supports blob name as a virtual directory.
+            if (version >= "2020-02-10") {
+                return generateBlobSASQueryParameters20200210(blobSASSignatureValues, sharedKeyCredential);
+            }
+            else {
+                return generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKeyCredential);
+            }
         }
         else {
             // Version 2020-02-10 delegation SAS signature construction includes preauthorizedAgentObjectId, agentObjectId, correlationId.
@@ -122064,6 +131626,85 @@ function generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKe
 }
 /**
  * ONLY AVAILABLE IN NODE.JS RUNTIME.
+ * IMPLEMENTATION FOR API VERSION FROM 2020-02-10.
+ *
+ * Creates an instance of SASQueryParameters.
+ *
+ * Only accepts required settings needed to create a SAS. For optional settings please
+ * set corresponding properties directly, such as permissions, startsOn and identifier.
+ *
+ * WARNING: When identifier is not provided, permissions and expiresOn are required.
+ * You MUST assign value to identifier or expiresOn & permissions manually if you initial with
+ * this constructor.
+ *
+ * @param blobSASSignatureValues -
+ * @param sharedKeyCredential -
+ */
+function generateBlobSASQueryParameters20200210(blobSASSignatureValues, sharedKeyCredential) {
+    blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
+    if (!blobSASSignatureValues.identifier &&
+        !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
+        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
+    }
+    let resource = "c";
+    let timestamp = blobSASSignatureValues.snapshotTime;
+    let directoryDepth = undefined;
+    if (blobSASSignatureValues.blobName) {
+        if (blobSASSignatureValues.isDirectory === true) {
+            resource = "d";
+            directoryDepth = trimBlobName(blobSASSignatureValues.blobName).split("/").length;
+        }
+        else {
+            resource = "b";
+            if (blobSASSignatureValues.snapshotTime) {
+                resource = "bs";
+            }
+            else if (blobSASSignatureValues.versionId) {
+                resource = "bv";
+                timestamp = blobSASSignatureValues.versionId;
+            }
+        }
+    }
+    // Calling parse and toString guarantees the proper ordering and throws on invalid characters.
+    let verifiedPermissions;
+    if (blobSASSignatureValues.permissions) {
+        if (blobSASSignatureValues.blobName) {
+            verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        }
+        else {
+            verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        }
+    }
+    // Signature is generated on the un-url-encoded values.
+    const stringToSign = [
+        verifiedPermissions ? verifiedPermissions : "",
+        blobSASSignatureValues.startsOn
+            ? utils_common_truncatedISO8061Date(blobSASSignatureValues.startsOn, false)
+            : "",
+        blobSASSignatureValues.expiresOn
+            ? utils_common_truncatedISO8061Date(blobSASSignatureValues.expiresOn, false)
+            : "",
+        getCanonicalName(sharedKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
+        blobSASSignatureValues.identifier,
+        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
+        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
+        blobSASSignatureValues.version,
+        resource,
+        timestamp,
+        blobSASSignatureValues.cacheControl ? blobSASSignatureValues.cacheControl : "",
+        blobSASSignatureValues.contentDisposition ? blobSASSignatureValues.contentDisposition : "",
+        blobSASSignatureValues.contentEncoding ? blobSASSignatureValues.contentEncoding : "",
+        blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
+        blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : "",
+    ].join("\n");
+    const signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
+    return {
+        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, undefined, undefined, undefined, undefined, undefined, undefined, undefined, directoryDepth),
+        stringToSign: stringToSign,
+    };
+}
+/**
+ * ONLY AVAILABLE IN NODE.JS RUNTIME.
  * IMPLEMENTATION FOR API VERSION FROM 2020-12-06.
  *
  * Creates an instance of SASQueryParameters.
@@ -122086,14 +131727,21 @@ function generateBlobSASQueryParameters20201206(blobSASSignatureValues, sharedKe
     }
     let resource = "c";
     let timestamp = blobSASSignatureValues.snapshotTime;
+    let directoryDepth = undefined;
     if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-            resource = "bs";
+        if (blobSASSignatureValues.isDirectory === true) {
+            resource = "d";
+            directoryDepth = trimBlobName(blobSASSignatureValues.blobName).split("/").length;
         }
-        else if (blobSASSignatureValues.versionId) {
-            resource = "bv";
-            timestamp = blobSASSignatureValues.versionId;
+        else {
+            resource = "b";
+            if (blobSASSignatureValues.snapshotTime) {
+                resource = "bs";
+            }
+            else if (blobSASSignatureValues.versionId) {
+                resource = "bv";
+                timestamp = blobSASSignatureValues.versionId;
+            }
         }
     }
     // Calling parse and toString guarantees the proper ordering and throws on invalid characters.
@@ -122131,7 +131779,7 @@ function generateBlobSASQueryParameters20201206(blobSASSignatureValues, sharedKe
     ].join("\n");
     const signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
     return {
-        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, undefined, undefined, undefined, blobSASSignatureValues.encryptionScope),
+        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, undefined, undefined, undefined, blobSASSignatureValues.encryptionScope, undefined, undefined, undefined, directoryDepth),
         stringToSign: stringToSign,
     };
 }
@@ -122236,14 +131884,21 @@ function generateBlobSASQueryParametersUDK20200210(blobSASSignatureValues, userD
     }
     let resource = "c";
     let timestamp = blobSASSignatureValues.snapshotTime;
+    let directoryDepth = undefined;
     if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-            resource = "bs";
+        if (blobSASSignatureValues.isDirectory === true) {
+            resource = "d";
+            directoryDepth = trimBlobName(blobSASSignatureValues.blobName).split("/").length;
         }
-        else if (blobSASSignatureValues.versionId) {
-            resource = "bv";
-            timestamp = blobSASSignatureValues.versionId;
+        else {
+            resource = "b";
+            if (blobSASSignatureValues.snapshotTime) {
+                resource = "bs";
+            }
+            else if (blobSASSignatureValues.versionId) {
+                resource = "bv";
+                timestamp = blobSASSignatureValues.versionId;
+            }
         }
     }
     // Calling parse and toString guarantees the proper ordering and throws on invalid characters.
@@ -122292,7 +131947,7 @@ function generateBlobSASQueryParametersUDK20200210(blobSASSignatureValues, userD
     ].join("\n");
     const signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
     return {
-        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId),
+        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, undefined, undefined, undefined, undefined, directoryDepth),
         stringToSign: stringToSign,
     };
 }
@@ -122318,14 +131973,21 @@ function generateBlobSASQueryParametersUDK20201206(blobSASSignatureValues, userD
     }
     let resource = "c";
     let timestamp = blobSASSignatureValues.snapshotTime;
+    let directoryDepth = undefined;
     if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-            resource = "bs";
+        if (blobSASSignatureValues.isDirectory === true) {
+            resource = "d";
+            directoryDepth = trimBlobName(blobSASSignatureValues.blobName).split("/").length;
         }
-        else if (blobSASSignatureValues.versionId) {
-            resource = "bv";
-            timestamp = blobSASSignatureValues.versionId;
+        else {
+            resource = "b";
+            if (blobSASSignatureValues.snapshotTime) {
+                resource = "bs";
+            }
+            else if (blobSASSignatureValues.versionId) {
+                resource = "bv";
+                timestamp = blobSASSignatureValues.versionId;
+            }
         }
     }
     // Calling parse and toString guarantees the proper ordering and throws on invalid characters.
@@ -122375,7 +132037,7 @@ function generateBlobSASQueryParametersUDK20201206(blobSASSignatureValues, userD
     ].join("\n");
     const signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
     return {
-        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, blobSASSignatureValues.encryptionScope),
+        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, blobSASSignatureValues.encryptionScope, undefined, undefined, undefined, directoryDepth),
         stringToSign: stringToSign,
     };
 }
@@ -122401,14 +132063,21 @@ function generateBlobSASQueryParametersUDK20250705(blobSASSignatureValues, userD
     }
     let resource = "c";
     let timestamp = blobSASSignatureValues.snapshotTime;
+    let directoryDepth = undefined;
     if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-            resource = "bs";
+        if (blobSASSignatureValues.isDirectory === true) {
+            resource = "d";
+            directoryDepth = trimBlobName(blobSASSignatureValues.blobName).split("/").length;
         }
-        else if (blobSASSignatureValues.versionId) {
-            resource = "bv";
-            timestamp = blobSASSignatureValues.versionId;
+        else {
+            resource = "b";
+            if (blobSASSignatureValues.snapshotTime) {
+                resource = "bs";
+            }
+            else if (blobSASSignatureValues.versionId) {
+                resource = "bv";
+                timestamp = blobSASSignatureValues.versionId;
+            }
         }
     }
     // Calling parse and toString guarantees the proper ordering and throws on invalid characters.
@@ -122460,7 +132129,7 @@ function generateBlobSASQueryParametersUDK20250705(blobSASSignatureValues, userD
     ].join("\n");
     const signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
     return {
-        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, blobSASSignatureValues.encryptionScope, blobSASSignatureValues.delegatedUserObjectId),
+        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, blobSASSignatureValues.encryptionScope, blobSASSignatureValues.delegatedUserObjectId, undefined, undefined, directoryDepth),
         stringToSign: stringToSign,
     };
 }
@@ -122486,14 +132155,21 @@ function generateBlobSASQueryParametersUDK20260406(blobSASSignatureValues, userD
     }
     let resource = "c";
     let timestamp = blobSASSignatureValues.snapshotTime;
+    let directoryDepth = undefined;
     if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-            resource = "bs";
+        if (blobSASSignatureValues.isDirectory === true) {
+            resource = "d";
+            directoryDepth = trimBlobName(blobSASSignatureValues.blobName).split("/").length;
         }
-        else if (blobSASSignatureValues.versionId) {
-            resource = "bv";
-            timestamp = blobSASSignatureValues.versionId;
+        else {
+            resource = "b";
+            if (blobSASSignatureValues.snapshotTime) {
+                resource = "bs";
+            }
+            else if (blobSASSignatureValues.versionId) {
+                resource = "bv";
+                timestamp = blobSASSignatureValues.versionId;
+            }
         }
     }
     // Calling parse and toString guarantees the proper ordering and throws on invalid characters.
@@ -122547,7 +132223,7 @@ function generateBlobSASQueryParametersUDK20260406(blobSASSignatureValues, userD
     ].join("\n");
     const signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
     return {
-        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, blobSASSignatureValues.encryptionScope, blobSASSignatureValues.delegatedUserObjectId, getKeysOfRequestHeaders(blobSASSignatureValues.requestHeaders), getKeysOfRequestHeaders(blobSASSignatureValues.requestQueryParameters)),
+        sasQueryParameters: new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, undefined, undefined, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId, blobSASSignatureValues.encryptionScope, blobSASSignatureValues.delegatedUserObjectId, getKeysOfRequestHeaders(blobSASSignatureValues.requestHeaders), getKeysOfRequestHeaders(blobSASSignatureValues.requestQueryParameters), directoryDepth),
         stringToSign: stringToSign,
     };
 }
@@ -122654,6 +132330,16 @@ function SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues) {
     }
     blobSASSignatureValues.version = version;
     return blobSASSignatureValues;
+}
+function trimBlobName(blobName) {
+    let internalName = blobName;
+    while (internalName.startsWith("/")) {
+        internalName = internalName.substring(1);
+    }
+    while (internalName.endsWith("/")) {
+        internalName = internalName.substring(0, internalName.length - 1);
+    }
+    return internalName;
 }
 //# sourceMappingURL=BlobSASSignatureValues.js.map
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-blob/dist/esm/BlobLeaseClient.js
@@ -123411,6 +133097,43 @@ class BlobDownloadResponse {
     get legalHold() {
         return this.originalResponse.legalHold;
     }
+    /**
+     * The access tier of the blob. Values include premium page-blob tiers and block-blob tiers
+     * such as Hot, Cool, Cold, Archive, and Smart. See
+     * https://learn.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers.
+     *
+     * @readonly
+     */
+    get accessTier() {
+        return this.originalResponse.accessTier;
+    }
+    /**
+     * For page blobs on a premium storage account only. If the access tier is not explicitly set on
+     * the blob, the tier is inferred based on its content length and this header will be returned
+     * with true value.
+     *
+     * @readonly
+     */
+    get accessTierInferred() {
+        return this.originalResponse.accessTierInferred;
+    }
+    /**
+     * The time the tier was changed on the object. This is only returned if the tier on the block
+     * blob was ever set.
+     *
+     * @readonly
+     */
+    get accessTierChangedOn() {
+        return this.originalResponse.accessTierChangedOn;
+    }
+    /**
+     * The underlying tier of a smart tier blob. Only returned if the blob is in Smart tier.
+     *
+     * @readonly
+     */
+    get smartAccessTier() {
+        return this.originalResponse.smartAccessTier;
+    }
     get structuredBodyType() {
         return this.originalResponse.structuredBodyType;
     }
@@ -123933,7 +133656,7 @@ class AvroReadable {
 }
 //# sourceMappingURL=AvroReadable.js.map
 // EXTERNAL MODULE: external "buffer"
-var external_buffer_ = __nccwpck_require__(181);
+var external_buffer_ = __nccwpck_require__(20181);
 ;// CONCATENATED MODULE: ./node_modules/@azure/storage-blob/dist/esm/internal-avro/AvroReadableFromStream.js
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -126507,6 +136230,7 @@ class BlobClient extends StorageClient_StorageClient {
      * ```ts snippet:ReadmeSampleDownloadBlob_Node
      * import { BlobServiceClient } from "@azure/storage-blob";
      * import { DefaultAzureCredential } from "@azure/identity";
+     * import { buffer } from "node:stream/consumers";
      *
      * const account = "<account>";
      * const blobServiceClient = new BlobServiceClient(
@@ -126523,22 +136247,10 @@ class BlobClient extends StorageClient_StorageClient {
      * // In Node.js, get downloaded data by accessing downloadBlockBlobResponse.readableStreamBody
      * const downloadBlockBlobResponse = await blobClient.download();
      * if (downloadBlockBlobResponse.readableStreamBody) {
-     *   const downloaded = await streamToString(downloadBlockBlobResponse.readableStreamBody);
-     *   console.log(`Downloaded blob content: ${downloaded}`);
-     * }
-     *
-     * async function streamToString(stream: NodeJS.ReadableStream): Promise<string> {
-     *   const result = await new Promise<Buffer<ArrayBuffer>>((resolve, reject) => {
-     *     const chunks: Buffer[] = [];
-     *     stream.on("data", (data) => {
-     *       chunks.push(Buffer.isBuffer(data) ? data : Buffer.from(data));
-     *     });
-     *     stream.on("end", () => {
-     *       resolve(Buffer.concat(chunks));
-     *     });
-     *     stream.on("error", reject);
-     *   });
-     *   return result.toString();
+     *   // Download the raw bytes of the blob. Use `text` from "node:stream/consumers"
+     *   // instead if you want to read the content as a string directly.
+     *   const downloaded = await buffer(downloadBlockBlobResponse.readableStreamBody);
+     *   console.log(`Downloaded blob content: ${downloaded.toString()}`);
      * }
      * ```
      *
@@ -127910,6 +137622,7 @@ class BlockBlobClient extends BlobClient {
      * ```ts snippet:ClientsQuery
      * import { BlobServiceClient } from "@azure/storage-blob";
      * import { DefaultAzureCredential } from "@azure/identity";
+     * import { buffer } from "node:stream/consumers";
      *
      * const account = "<account>";
      * const blobServiceClient = new BlobServiceClient(
@@ -127925,22 +137638,10 @@ class BlockBlobClient extends BlobClient {
      * // Query and convert a blob to a string
      * const queryBlockBlobResponse = await blockBlobClient.query("select from BlobStorage");
      * if (queryBlockBlobResponse.readableStreamBody) {
-     *   const downloadedBuffer = await streamToBuffer(queryBlockBlobResponse.readableStreamBody);
-     *   const downloaded = downloadedBuffer.toString();
-     *   console.log(`Query blob content: ${downloaded}`);
-     * }
-     *
-     * async function streamToBuffer(readableStream: NodeJS.ReadableStream): Promise<Buffer> {
-     *   return new Promise((resolve, reject) => {
-     *     const chunks: Buffer[] = [];
-     *     readableStream.on("data", (data) => {
-     *       chunks.push(data instanceof Buffer ? data : Buffer.from(data));
-     *     });
-     *     readableStream.on("end", () => {
-     *       resolve(Buffer.concat(chunks));
-     *     });
-     *     readableStream.on("error", reject);
-     *   });
+     *   // Read the response bytes. Use `text` from "node:stream/consumers" instead
+     *   // if you want the response as a string directly.
+     *   const downloadedBuffer = await buffer(queryBlockBlobResponse.readableStreamBody);
+     *   console.log(`Query blob content: ${downloadedBuffer.toString()}`);
      * }
      * ```
      *
@@ -129921,6 +139622,69 @@ class BlobBatchClient {
 
 
 
+
+
+
+/**
+ * Maps a generated internal blob item (with a structured `name`) to the public
+ * {@link BlobItem} shape, decoding the name and parsing tags / object-replication
+ * metadata. Shared by the XML and Apache Arrow list paths so they cannot drift.
+ */
+function mapBlobItemInternal(blobItemInternal) {
+    const blobItem = {
+        ...blobItemInternal,
+        name: BlobNameToString(blobItemInternal.name),
+        tags: toTags(blobItemInternal.blobTags),
+        objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInternal.objectReplicationMetadata),
+    };
+    return blobItem;
+}
+/**
+ * Maps a generated internal blob prefix (with a structured `name`) to the public
+ * {@link BlobPrefix} shape. Shared by the XML and Apache Arrow list paths.
+ */
+function mapBlobPrefixInternal(blobPrefixInternal) {
+    const blobPrefix = {
+        ...blobPrefixInternal,
+        name: BlobNameToString(blobPrefixInternal.name),
+    };
+    return blobPrefix;
+}
+/**
+ * Returns true when a raw List Blobs response was actually returned as Apache Arrow.
+ * The service falls back to XML for accounts that do not support Apache Arrow, so the
+ * Content-Type header (ignoring parameters such as charset) is how the two are told apart.
+ */
+function isApacheArrow(contentType) {
+    return (contentType ?? "").split(";")[0].trim().toLowerCase() === ApacheArrowContentType;
+}
+/**
+ * Attaches the response metadata common to every List Blobs segment response - the
+ * request IDs, service version, date, content-type, and `_response` - so the
+ * flat/hierarchy and Apache Arrow/XML paths don't each repeat it.
+ *
+ * The raw stream body has already been consumed by the caller, so the stream
+ * operation's `_response` carries only headers/status. To honor the
+ * `ContainerListBlob*SegmentResponse` contract (whose `_response.parsedBody` is
+ * non-optional), the caller passes the segment it just parsed as `parsedBody`, which
+ * mirrors what the XML path exposes. `bodyAsText` carries the decoded XML for the
+ * XML-fallback path, or `""` for a native Apache Arrow body (binary, no text form).
+ */
+function withListSegmentResponseMetadata(base, rawResponse, parsedBody, bodyAsText = "") {
+    return {
+        ...base,
+        clientRequestId: rawResponse.clientRequestId,
+        requestId: rawResponse.requestId,
+        version: rawResponse.version,
+        date: rawResponse.date,
+        contentType: rawResponse.contentType,
+        _response: {
+            ...rawResponse._response,
+            bodyAsText,
+            parsedBody,
+        },
+    };
+}
 /**
  * A ContainerClient represents a URL to the Azure Storage container allowing you to manipulate its blobs.
  */
@@ -130419,6 +140183,12 @@ class ContainerClient extends StorageClient_StorageClient {
      */
     async listBlobFlatSegment(marker, options = {}) {
         return tracingClient.withSpan("ContainerClient-listBlobFlatSegment", options, async (updatedOptions) => {
+            if (resolveResponseFormat(options.responseFormat) === StorageResponseFormat.Arrow) {
+                return this.listBlobFlatSegmentApacheArrow(marker, {
+                    ...options,
+                    tracingOptions: updatedOptions.tracingOptions,
+                });
+            }
             const response = utils_common_assertResponse(await this.containerContext.listBlobFlatSegment({
                 marker,
                 ...options,
@@ -130432,19 +140202,66 @@ class ContainerClient extends StorageClient_StorageClient {
                 }, // _response is made non-enumerable
                 segment: {
                     ...response.segment,
-                    blobItems: response.segment.blobItems.map((blobItemInternal) => {
-                        const blobItem = {
-                            ...blobItemInternal,
-                            name: BlobNameToString(blobItemInternal.name),
-                            tags: toTags(blobItemInternal.blobTags),
-                            objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInternal.objectReplicationMetadata),
-                        };
-                        return blobItem;
-                    }),
+                    blobItems: response.segment.blobItems.map(mapBlobItemInternal),
                 },
             };
             return wrappedResponse;
         });
+    }
+    /**
+     * Lists a single segment of blobs using the Apache Arrow response format. The service
+     * returns a raw stream that is either Apache Arrow or XML (when the account does not
+     * support Apache Arrow); both formats are parsed here and produce the same result.
+     *
+     * @param marker - A string value that identifies the portion of the list to be returned with the next list operation.
+     * @param options - Options to Container List Blob Flat Segment operation.
+     */
+    async listBlobFlatSegmentApacheArrow(marker, options) {
+        const rawResponse = utils_common_assertResponse(await this.containerContext.listBlobFlatSegmentApacheArrow({
+            marker,
+            ...options,
+        }));
+        // The service falls back to XML for accounts that do not support Apache Arrow.
+        // The Content-Type header indicates which format we actually received. When it
+        // is not Apache Arrow, parse the already-received XML stream in place
+        // instead of issuing a second request.
+        if (!isApacheArrow(rawResponse.contentType)) {
+            const { parsed: internalResponse, bodyAsText } = await deserializeListBlobFlatSegmentXml(rawResponse);
+            return withListSegmentResponseMetadata({
+                ...internalResponse,
+                segment: {
+                    ...internalResponse.segment,
+                    blobItems: (internalResponse.segment?.blobItems ?? []).map(mapBlobItemInternal),
+                },
+            }, rawResponse, ConvertInternalResponseOfListBlobFlat(internalResponse), bodyAsText);
+        }
+        const parsed = await parseBlobListArrowResponse(rawResponse);
+        const serviceUrl = new URL(this.url);
+        const containerPath = serviceUrl.pathname.replace(/\/+$/, "");
+        serviceUrl.pathname = containerPath.slice(0, containerPath.lastIndexOf("/") + 1);
+        serviceUrl.search = "";
+        serviceUrl.hash = "";
+        const serviceEndpoint = serviceUrl.toString();
+        const internalResponse = {
+            serviceEndpoint,
+            containerName: this.containerName,
+            prefix: options.prefix,
+            marker,
+            maxPageSize: options.maxPageSize,
+            segment: { blobItems: parsed.blobItems },
+            continuationToken: parsed.nextMarker,
+        };
+        return withListSegmentResponseMetadata({
+            serviceEndpoint,
+            containerName: this.containerName,
+            prefix: options.prefix,
+            marker,
+            maxPageSize: options.maxPageSize,
+            segment: {
+                blobItems: parsed.blobItems.map(mapBlobItemInternal),
+            },
+            continuationToken: parsed.nextMarker,
+        }, rawResponse, ConvertInternalResponseOfListBlobFlat(internalResponse));
     }
     /**
      * listBlobHierarchySegment returns a single segment of blobs starting from
@@ -130459,6 +140276,12 @@ class ContainerClient extends StorageClient_StorageClient {
      */
     async listBlobHierarchySegment(delimiter, marker, options = {}) {
         return tracingClient.withSpan("ContainerClient-listBlobHierarchySegment", options, async (updatedOptions) => {
+            if (resolveResponseFormat(options.responseFormat) === StorageResponseFormat.Arrow) {
+                return this.listBlobHierarchySegmentApacheArrow(delimiter, marker, {
+                    ...options,
+                    tracingOptions: updatedOptions.tracingOptions,
+                });
+            }
             const response = utils_common_assertResponse(await this.containerContext.listBlobHierarchySegment(delimiter, {
                 marker,
                 ...options,
@@ -130472,26 +140295,72 @@ class ContainerClient extends StorageClient_StorageClient {
                 }, // _response is made non-enumerable
                 segment: {
                     ...response.segment,
-                    blobItems: response.segment.blobItems.map((blobItemInternal) => {
-                        const blobItem = {
-                            ...blobItemInternal,
-                            name: BlobNameToString(blobItemInternal.name),
-                            tags: toTags(blobItemInternal.blobTags),
-                            objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInternal.objectReplicationMetadata),
-                        };
-                        return blobItem;
-                    }),
-                    blobPrefixes: response.segment.blobPrefixes?.map((blobPrefixInternal) => {
-                        const blobPrefix = {
-                            ...blobPrefixInternal,
-                            name: BlobNameToString(blobPrefixInternal.name),
-                        };
-                        return blobPrefix;
-                    }),
+                    blobItems: response.segment.blobItems.map(mapBlobItemInternal),
+                    blobPrefixes: response.segment.blobPrefixes?.map(mapBlobPrefixInternal),
                 },
             };
             return wrappedResponse;
         });
+    }
+    /**
+     * Lists a single segment of blobs by hierarchy using the Apache Arrow response format.
+     * The service returns a raw stream that is either Apache Arrow or XML (when the account
+     * does not support Apache Arrow); both formats are parsed here and produce the same result.
+     *
+     * @param delimiter - The character or string used to define the virtual hierarchy
+     * @param marker - A string value that identifies the portion of the list to be returned with the next list operation.
+     * @param options - Options to Container List Blob Hierarchy Segment operation.
+     */
+    async listBlobHierarchySegmentApacheArrow(delimiter, marker, options) {
+        const rawResponse = utils_common_assertResponse(await this.containerContext.listBlobHierarchySegmentApacheArrow(delimiter, {
+            marker,
+            ...options,
+        }));
+        // The service falls back to XML for accounts that do not support Apache Arrow.
+        // The Content-Type header indicates which format we actually received. When it
+        // is not Apache Arrow, parse the already-received XML stream in place instead of
+        // issuing a second request.
+        if (!isApacheArrow(rawResponse.contentType)) {
+            const { parsed: internalResponse, bodyAsText } = await deserializeListBlobHierarchySegmentXml(rawResponse);
+            return withListSegmentResponseMetadata({
+                ...internalResponse,
+                segment: {
+                    ...internalResponse.segment,
+                    blobItems: (internalResponse.segment?.blobItems ?? []).map(mapBlobItemInternal),
+                    blobPrefixes: internalResponse.segment?.blobPrefixes?.map(mapBlobPrefixInternal),
+                },
+            }, rawResponse, ConvertInternalResponseOfListBlobHierarchy(internalResponse), bodyAsText);
+        }
+        const parsed = await parseBlobListArrowResponse(rawResponse);
+        const serviceUrl = new URL(this.url);
+        const containerPath = serviceUrl.pathname.replace(/\/+$/, "");
+        serviceUrl.pathname = containerPath.slice(0, containerPath.lastIndexOf("/") + 1);
+        serviceUrl.search = "";
+        serviceUrl.hash = "";
+        const serviceEndpoint = serviceUrl.toString();
+        const internalResponse = {
+            serviceEndpoint,
+            containerName: this.containerName,
+            prefix: options.prefix,
+            marker,
+            maxPageSize: options.maxPageSize,
+            delimiter,
+            segment: { blobItems: parsed.blobItems, blobPrefixes: parsed.blobPrefixes },
+            continuationToken: parsed.nextMarker,
+        };
+        return withListSegmentResponseMetadata({
+            serviceEndpoint,
+            containerName: this.containerName,
+            prefix: options.prefix,
+            marker,
+            maxPageSize: options.maxPageSize,
+            delimiter,
+            segment: {
+                blobItems: parsed.blobItems.map(mapBlobItemInternal),
+                blobPrefixes: parsed.blobPrefixes.map(mapBlobPrefixInternal),
+            },
+            continuationToken: parsed.nextMarker,
+        }, rawResponse, ConvertInternalResponseOfListBlobHierarchy(internalResponse));
     }
     /**
      * Returns an AsyncIterableIterator for ContainerListBlobFlatSegmentResponse
@@ -130596,6 +140465,10 @@ class ContainerClient extends StorageClient_StorageClient {
      * @returns An asyncIterableIterator that supports paging.
      */
     listBlobsFlat(options = {}) {
+        if (options.endBefore !== undefined &&
+            resolveResponseFormat(options.responseFormat) !== StorageResponseFormat.Arrow) {
+            throw new RangeError("The 'endBefore' option is only supported when 'responseFormat' is StorageResponseFormat.Arrow.");
+        }
         const include = [];
         if (options.includeCopy) {
             include.push("copy");
@@ -130804,6 +140677,10 @@ class ContainerClient extends StorageClient_StorageClient {
     listBlobsByHierarchy(delimiter, options = {}) {
         if (delimiter === "") {
             throw new RangeError("delimiter should contain one or more characters");
+        }
+        if (options.endBefore !== undefined &&
+            resolveResponseFormat(options.responseFormat) !== StorageResponseFormat.Arrow) {
+            throw new RangeError("The 'endBefore' option is only supported when 'responseFormat' is StorageResponseFormat.Arrow.");
         }
         const include = [];
         if (options.includeCopy) {
@@ -132429,6 +142306,7 @@ var generatedModels_KnownEncryptionAlgorithmType;
 
 
 
+
 //# sourceMappingURL=index.js.map
 ;// CONCATENATED MODULE: ./node_modules/@actions/artifact/lib/internal/upload/blob-upload.js
 var blob_upload_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -132517,7 +142395,7 @@ function uploadToBlobStorage(authenticatedUploadURL, uploadStream, contentType) 
 ;// CONCATENATED MODULE: external "fs/promises"
 const external_fs_promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs/promises");
 // EXTERNAL MODULE: ./node_modules/archiver/index.js
-var archiver = __nccwpck_require__(9392);
+var archiver = __nccwpck_require__(99392);
 ;// CONCATENATED MODULE: ./node_modules/@actions/artifact/lib/internal/upload/stream.js
 var stream_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -132884,7 +142762,7 @@ class Context {
 }
 //# sourceMappingURL=context.js.map
 // EXTERNAL MODULE: ./node_modules/@actions/github/node_modules/@actions/http-client/lib/index.js
-var lib = __nccwpck_require__(9659);
+var lib = __nccwpck_require__(89659);
 ;// CONCATENATED MODULE: ./node_modules/@actions/github/lib/internal/utils.js
 var utils_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -133216,7 +143094,7 @@ function extractUrlVariableNames(url) {
 }
 
 // pkg/dist-src/util/omit.js
-function omit(object, keysToOmit) {
+function dist_bundle_omit(object, keysToOmit) {
   const result = { __proto__: null };
   for (const key of Object.keys(object)) {
     if (keysToOmit.indexOf(key) === -1) {
@@ -133364,7 +143242,7 @@ function dist_bundle_parse(options) {
   let url = (options.url || "/").replace(/:([a-z]\w+)/g, "{$1}");
   let headers = Object.assign({}, options.headers);
   let body;
-  let parameters = omit(options, [
+  let parameters = dist_bundle_omit(options, [
     "method",
     "baseUrl",
     "url",
@@ -133378,7 +143256,7 @@ function dist_bundle_parse(options) {
     url = options.baseUrl + url;
   }
   const omittedParameters = Object.keys(options).filter((option) => urlVariableNames.includes(option)).concat("baseUrl");
-  const remainingParameters = omit(parameters, omittedParameters);
+  const remainingParameters = dist_bundle_omit(parameters, omittedParameters);
   const isBinaryRequest = /application\/octet-stream/i.test(headers.accept);
   if (!isBinaryRequest) {
     if (options.mediaType.format) {
@@ -133444,8 +143322,298 @@ function withDefaults(oldDefaults, newDefaults) {
 var endpoint = withDefaults(null, DEFAULTS);
 
 
-// EXTERNAL MODULE: ./node_modules/content-type/dist/index.js
-var content_type_dist = __nccwpck_require__(4649);
+;// CONCATENATED MODULE: ./node_modules/content-type/dist/index.js
+/*!
+ * content-type
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+const SP = 32; // " "
+const HTAB = 9; // "\t"
+const SEMI = 59; // ";"
+const EQ = 61; // "="
+const DQUOTE = 34; // '"'
+const BSLASH = 92; // "\\"
+const COMMA = 44; // ","
+const LOWER_CASE = 1;
+const OWS = 2;
+const SEMI_FLAG = 4;
+const COMMA_FLAG = 8;
+const TOKEN_FLAG = 16;
+const NON_ASCII = 0xff00;
+const CASE_FLAGS = LOWER_CASE | NON_ASCII;
+/**
+ * Character flags used to normalize HTTP field values while scanning.
+ * Out-of-range reads intentionally coerce to zero in bitwise expressions.
+ */
+const CHAR_MAP = new Uint8Array(0x100);
+CHAR_MAP[HTAB] |= OWS;
+CHAR_MAP[SP] |= OWS;
+CHAR_MAP[SEMI] |= SEMI_FLAG;
+CHAR_MAP[COMMA] |= COMMA_FLAG;
+for (let code = 0x80 /* non-ASCII */; code <= 0xff; code++) {
+    CHAR_MAP[code] |= LOWER_CASE;
+}
+for (const char of "!#$%&'*+-.^_`|~") {
+    CHAR_MAP[char.charCodeAt(0)] |= TOKEN_FLAG;
+}
+for (let code = 0x30 /* 0 */; code <= 0x39 /* 9 */; code++) {
+    CHAR_MAP[code] |= TOKEN_FLAG;
+}
+for (let code = 0x41 /* A */; code <= 0x5a /* Z */; code++) {
+    CHAR_MAP[code] |= LOWER_CASE | TOKEN_FLAG;
+}
+for (let code = 0x61 /* a */; code <= 0x7a /* z */; code++) {
+    CHAR_MAP[code] |= TOKEN_FLAG;
+}
+/**
+ * Null object perf optimization. Faster than `Object.create(null)` and `{ __proto__: null }`.
+ */
+const NullObject = /* @__PURE__ */ (() => {
+    const C = function () { };
+    C.prototype = Object.create(null);
+    return C;
+})();
+/**
+ * Validate a type string against RFC 9110.
+ */
+function isTypeValid(type, start = 0, end = type.length) {
+    let hasSlash = false;
+    for (let index = start; index < end; index++) {
+        const code = type.charCodeAt(index);
+        if (code === 47 /* / */) {
+            if (hasSlash || index === start || index >= end - 1)
+                return false;
+            hasSlash = true;
+        }
+        else if (!isTokenCode(code)) {
+            return false;
+        }
+    }
+    return hasSlash;
+}
+/**
+ * Validate a token against RFC 9110.
+ */
+function isTokenValid(token, start = 0, end = token.length) {
+    if (start >= end)
+        return false;
+    for (let index = start; index < end; index++) {
+        if (!isTokenCode(token.charCodeAt(index)))
+            return false;
+    }
+    return true;
+}
+/**
+ * Check whether a character code belongs to the token production in RFC 9110.
+ */
+function isTokenCode(code) {
+    return (CHAR_MAP[code] & TOKEN_FLAG) !== 0;
+}
+/**
+ * Serialize a parameter value.
+ */
+function parameterValue(str) {
+    const len = str.length;
+    if (len === 0)
+        return '""';
+    let index = 0;
+    while (index < len && isTokenCode(str.charCodeAt(index)))
+        index++;
+    if (index === len)
+        return str;
+    let result = '"';
+    let start = 0;
+    while (index < len) {
+        const code = str.charCodeAt(index);
+        if (code !== HTAB && (code < SP || code === 127 || code > 255)) {
+            throw new TypeError(`Invalid parameter value: ${str}`);
+        }
+        if (code === 34 /* " */ || code === 92 /* \\ */) {
+            result += `${str.slice(start, index)}\\`;
+            start = index;
+        }
+        index++;
+    }
+    return `${result}${str.slice(start)}"`;
+}
+/**
+ * Format an object into a `Content-Type` header.
+ */
+function format(obj) {
+    const { type, parameters } = obj;
+    if (!type || !isTypeValid(type)) {
+        throw new TypeError(`Invalid type: ${type}`);
+    }
+    let result = type;
+    if (parameters) {
+        for (const param of Object.keys(parameters)) {
+            if (!isTokenValid(param)) {
+                throw new TypeError(`Invalid parameter name: ${param}`);
+            }
+            result += `; ${param}=${parameterValue(parameters[param])}`;
+        }
+    }
+    return result;
+}
+/**
+ * Parse a `Content-Type` header.
+ */
+function dist_parse(header, options) {
+    const stopFlags = SEMI_FLAG | (options?.comma === true ? COMMA_FLAG : 0);
+    const len = header.length;
+    let valueStart = options?.start ?? 0;
+    while ((CHAR_MAP[header.charCodeAt(valueStart)] & OWS) !== 0) {
+        valueStart++;
+    }
+    let index = valueStart;
+    let typeFlags = 0;
+    let whitespace = -1;
+    let stop = options?.parameters === false ? COMMA_FLAG : 0;
+    while (index < len) {
+        const code = header.charCodeAt(index);
+        const flags = CHAR_MAP[code];
+        if ((flags & stopFlags) !== 0) {
+            stop |= flags & COMMA_FLAG;
+            break;
+        }
+        if ((flags & OWS) !== 0) {
+            if (whitespace === -1)
+                whitespace = index;
+        }
+        else {
+            whitespace = -1;
+        }
+        typeFlags |= (code & NON_ASCII) | flags;
+        index++;
+    }
+    const valueEnd = whitespace === -1 ? index : whitespace;
+    const value = header.slice(valueStart, valueEnd);
+    const type = (typeFlags & CASE_FLAGS) === 0 ? value : value.toLowerCase();
+    if (index === len || stop !== 0) {
+        return { type, index, parameters: new NullObject() };
+    }
+    return parseParameters(header, type, index, len, stopFlags);
+}
+/**
+ * Parses the parameters of a `Content-Type` header starting at the given index.
+ */
+function parseParameters(header, type, index, len, stopFlags) {
+    const parameters = new NullObject();
+    parameter: while (index < len) {
+        index++; // Skip over ;
+        while ((CHAR_MAP[header.charCodeAt(index)] & OWS) !== 0) {
+            index++;
+        }
+        const keyStart = index;
+        let keyFlags = 0;
+        let keyWhitespace = -1;
+        while (index < len) {
+            const code = header.charCodeAt(index);
+            const flags = CHAR_MAP[code];
+            if ((flags & stopFlags) !== 0) {
+                if ((flags & COMMA_FLAG) !== 0)
+                    break parameter;
+                continue parameter;
+            }
+            if (code === EQ) {
+                const keyEnd = keyWhitespace === -1 ? index : keyWhitespace;
+                const value = header.slice(keyStart, keyEnd);
+                const key = (keyFlags & CASE_FLAGS) === 0 ? value : value.toLowerCase();
+                index++;
+                while ((CHAR_MAP[header.charCodeAt(index)] & OWS) !== 0) {
+                    index++;
+                }
+                if (index < len && header.charCodeAt(index) === DQUOTE) {
+                    const quotedStart = ++index;
+                    let escaped = false;
+                    while (index < len) {
+                        const code = header.charCodeAt(index);
+                        if (code === DQUOTE) {
+                            if (parameters[key] === undefined) {
+                                parameters[key] = escaped
+                                    ? unescapeQuotedPairs(header, quotedStart, index)
+                                    : header.slice(quotedStart, index);
+                            }
+                            index++;
+                            let stop = 0;
+                            // Discard characters between quote and delimiter.
+                            while (index < len) {
+                                const code = header.charCodeAt(index);
+                                const flags = CHAR_MAP[code];
+                                if ((flags & stopFlags) !== 0) {
+                                    stop = flags & COMMA_FLAG;
+                                    break;
+                                }
+                                index++;
+                            }
+                            if (stop !== 0)
+                                break parameter;
+                            continue parameter;
+                        }
+                        if (code === BSLASH && index + 1 < len) {
+                            escaped = true;
+                            index += 2;
+                            continue;
+                        }
+                        index++;
+                    }
+                    continue parameter;
+                }
+                const valueStart = index;
+                let stop = 0;
+                let valueWhitespace = -1;
+                while (index < len) {
+                    const code = header.charCodeAt(index);
+                    const flags = CHAR_MAP[code];
+                    if ((flags & stopFlags) !== 0) {
+                        stop = flags & COMMA_FLAG;
+                        break;
+                    }
+                    if ((flags & OWS) !== 0) {
+                        if (valueWhitespace === -1)
+                            valueWhitespace = index;
+                    }
+                    else {
+                        valueWhitespace = -1;
+                    }
+                    index++;
+                }
+                if (parameters[key] === undefined) {
+                    const valueEnd = valueWhitespace === -1 ? index : valueWhitespace;
+                    parameters[key] = header.slice(valueStart, valueEnd);
+                }
+                if (stop !== 0)
+                    break parameter;
+                continue parameter;
+            }
+            if ((flags & OWS) !== 0) {
+                if (keyWhitespace === -1)
+                    keyWhitespace = index;
+            }
+            else {
+                keyWhitespace = -1;
+            }
+            keyFlags |= (code & NON_ASCII) | flags;
+            index++;
+        }
+    }
+    return { type, index, parameters };
+}
+/**
+ * Remove backslashes from quoted pairs in a known-terminated quoted string body.
+ */
+function unescapeQuotedPairs(str, start, end) {
+    let result = "";
+    for (let index = start; index < end; index++) {
+        if (str.charCodeAt(index) === BSLASH) {
+            result += str.slice(start, index);
+            start = ++index;
+        }
+    }
+    return result + str.slice(start, end);
+}
+//# sourceMappingURL=index.js.map
 ;// CONCATENATED MODULE: ./node_modules/json-with-bigint/json-with-bigint.js
 const intRegex = /^-?\d+$/;
 const noiseValue = /^-?\d+n+$/; // Noise - strings that match the custom format before being converted to it
@@ -133453,14 +143621,269 @@ const originalStringify = JSON.stringify;
 const originalParse = JSON.parse;
 const customFormat = /^-?\d+n$/;
 
-const bigIntsStringify = /([\[:])?"(-?\d+)n"($|([\\n]|\s)*(\s|[\\n])*[,\}\]])/g;
-const noiseStringify =
-  /([\[:])?("-?\d+n+)n("$|"([\\n]|\s)*(\s|[\\n])*[,\}\]])/g;
+const bigIntsStringify = /([\[:])?"(-?\d+)n"($|\s*[,\}\]])/g;
+const noiseStringify = /([\[:])?("-?\d+n+)n("$|"\s*[,\}\]])/g;
 
 /**
  * @typedef {(this: any, key: string | number | undefined, value: any) => any} Replacer
  * @typedef {(key: string | number | undefined, value: any, context?: { source: string }) => any} Reviver
  */
+
+/**
+ * Checks if a value is unstringifiable according to native JSON.stringify rules.
+ *
+ * @param {any} val The value to check.
+ * @returns {boolean} True if the value is undefined, a function, or a symbol.
+ */
+const isUnstringifiable = (val) =>
+  val === undefined || typeof val === "function" || typeof val === "symbol";
+
+/**
+ * Checks if a value is a native JSON.rawJSON object (Node.js 22+).
+ *
+ * @param {any} val The value to check.
+ * @returns {boolean} True if the value is a RawJSON instance.
+ */
+const isRawJSON = (val) =>
+  val !== null &&
+  typeof val === "object" &&
+  val.constructor &&
+  val.constructor.name === "RawJSON";
+
+/**
+ * Iteratively converts a JS value to a JSON string.
+ * Used as a fallback when the native JSON.stringify hits the Maximum Call Stack size.
+ * Fully compliant with JSON formatting (space), replacers, and toJSON behaviors.
+ *
+ * @param {any} rootValue The value to stringify.
+ * @param {Replacer | Array<string | number> | null} [replacer] User's custom replacer function.
+ * @param {string | number} [spaceParam] Indentation for pretty-printing.
+ * @returns {string | undefined} The generated JSON string.
+ */
+const stringifyIteratively = (rootValue, replacer, spaceParam) => {
+  let space = "";
+
+  if (typeof spaceParam === "number") {
+    space = " ".repeat(Math.min(10, Math.max(0, Math.floor(spaceParam))));
+  } else if (typeof spaceParam === "string") {
+    space = spaceParam.slice(0, 10);
+  }
+
+  const isFunctionReplacer = typeof replacer === "function";
+  const propertyList = Array.isArray(replacer)
+    ? new Set(replacer.map(String))
+    : null;
+
+  /**
+   * Prepares a value for stringification by resolving toJSON, handling BigInts,
+   * applying custom replacers, and unwrapping primitive objects.
+   *
+   * @param {object|Array} parent The parent object or array holding the value.
+   * @param {string} key The key associated with the value.
+   * @param {any} val The raw value to process.
+   * @returns {any} The processed value ready for stringification.
+   */
+  const prepareVal = (parent, key, val) => {
+    const isObject = val !== null && typeof val === "object";
+    const hasToJSON = isObject && typeof val.toJSON === "function";
+
+    if (hasToJSON) {
+      val = val.toJSON(key);
+    }
+
+    const isNoise = typeof val === "string" && noiseValue.test(val);
+
+    if (isNoise) return val + "n";
+
+    const isBigInt = typeof val === "bigint";
+
+    if (isBigInt) {
+      const supportsRawJSON = "rawJSON" in JSON;
+
+      if (supportsRawJSON) return JSON.rawJSON(val.toString());
+
+      return val.toString() + "n";
+    }
+
+    if (isFunctionReplacer) {
+      val = replacer.call(parent, key, val);
+    }
+
+    const isPostReplacerObject = val !== null && typeof val === "object";
+
+    if (isPostReplacerObject) {
+      const isPrimitiveWrapper =
+        val instanceof Number ||
+        val instanceof String ||
+        val instanceof Boolean;
+
+      if (isPrimitiveWrapper) {
+        val = val.valueOf();
+      }
+    }
+
+    return val;
+  };
+
+  const rootProcessed = prepareVal({ "": rootValue }, "", rootValue);
+
+  if (isUnstringifiable(rootProcessed)) {
+    return undefined;
+  }
+
+  const isRootPrimitive =
+    rootProcessed === null || typeof rootProcessed !== "object";
+  const isRootNativeRawJSON = isRawJSON(rootProcessed);
+
+  if (isRootPrimitive || isRootNativeRawJSON) {
+    return originalStringify(rootProcessed);
+  }
+
+  const chunks = [];
+  let level = 0;
+
+  const stack = [
+    {
+      parent: { "": rootProcessed },
+      key: "",
+      val: rootProcessed,
+      isArray: Array.isArray(rootProcessed),
+      keys: Array.isArray(rootProcessed) ? null : Object.keys(rootProcessed),
+      index: 0,
+      first: true,
+    },
+  ];
+
+  const visited = new WeakSet([rootProcessed]);
+
+  while (stack.length > 0) {
+    const node = stack[stack.length - 1];
+
+    if (node.index === 0) {
+      chunks.push(node.isArray ? "[" : "{");
+      level++;
+    }
+
+    let isDone = false;
+
+    if (node.isArray) {
+      if (node.index < node.val.length) {
+        if (!node.first) chunks.push(",");
+
+        if (space) chunks.push("\n" + space.repeat(level));
+
+        const childRaw = node.val[node.index];
+        const childVal = prepareVal(node.val, String(node.index), childRaw);
+
+        if (isUnstringifiable(childVal)) {
+          chunks.push("null");
+          node.first = false;
+          node.index++;
+        } else {
+          const isComplexObject =
+            childVal !== null && typeof childVal === "object";
+          const isNativeRaw = isRawJSON(childVal);
+
+          if (isComplexObject && !isNativeRaw) {
+            if (visited.has(childVal)) {
+              throw new TypeError("Converting circular structure to JSON");
+            }
+
+            visited.add(childVal);
+
+            stack.push({
+              parent: node.val,
+              key: String(node.index),
+              val: childVal,
+              isArray: Array.isArray(childVal),
+              keys: Array.isArray(childVal) ? null : Object.keys(childVal),
+              index: 0,
+              first: true,
+            });
+
+            node.first = false;
+            node.index++;
+          } else {
+            chunks.push(originalStringify(childVal));
+            node.first = false;
+            node.index++;
+          }
+        }
+      } else {
+        isDone = true;
+      }
+    } else {
+      while (node.index < node.keys.length) {
+        const k = node.keys[node.index++];
+
+        const isFilteredOutByArray = propertyList && !propertyList.has(k);
+
+        if (isFilteredOutByArray) continue;
+
+        const childRaw = node.val[k];
+        const childVal = prepareVal(node.val, k, childRaw);
+
+        if (isUnstringifiable(childVal)) continue;
+
+        if (!node.first) chunks.push(",");
+
+        if (space) {
+          chunks.push("\n" + space.repeat(level) + originalStringify(k) + ": ");
+        } else {
+          chunks.push(originalStringify(k) + ":");
+        }
+
+        const isComplexObject =
+          childVal !== null && typeof childVal === "object";
+        const isNativeRaw = isRawJSON(childVal);
+
+        if (isComplexObject && !isNativeRaw) {
+          if (visited.has(childVal)) {
+            throw new TypeError("Converting circular structure to JSON");
+          }
+
+          visited.add(childVal);
+
+          stack.push({
+            parent: node.val,
+            key: k,
+            val: childVal,
+            isArray: Array.isArray(childVal),
+            keys: Array.isArray(childVal) ? null : Object.keys(childVal),
+            index: 0,
+            first: true,
+          });
+
+          node.first = false;
+
+          break; // Stop current loop level to process the newly pushed stack node
+        } else {
+          chunks.push(originalStringify(childVal));
+          node.first = false;
+        }
+      }
+
+      const isNodeFullyProcessed =
+        node.index >= node.keys.length && stack[stack.length - 1] === node;
+
+      if (isNodeFullyProcessed) {
+        isDone = true;
+      }
+    }
+
+    if (isDone) {
+      level--;
+
+      if (!node.first && space) chunks.push("\n" + space.repeat(level));
+
+      chunks.push(node.isArray ? "]" : "}");
+      visited.delete(node.val);
+      stack.pop();
+    }
+  }
+
+  return chunks.join("");
+};
 
 /**
  * Converts a JavaScript value to a JSON string.
@@ -133473,55 +143896,87 @@ const noiseStringify =
  *
  * @param {*} value The value to convert to a JSON string.
  * @param {Replacer | Array<string | number> | null} [replacer]
- *   A function that alters the behavior of the stringification process,
- *   or an array of strings/numbers to indicate properties to exclude.
+ * A function that alters the behavior of the stringification process,
+ * or an array of strings/numbers to indicate properties to exclude.
  * @param {string | number} [space]
- *   A string or number to specify indentation or pretty-printing.
+ * A string or number to specify indentation or pretty-printing.
  * @returns {string} The JSON string representation.
  */
 const JSONStringify = (value, replacer, space) => {
-  if ("rawJSON" in JSON) {
-    return originalStringify(
+  try {
+    const supportsRawJSON = "rawJSON" in JSON;
+
+    if (supportsRawJSON) {
+      return originalStringify(
+        value,
+        (key, val) => {
+          if (typeof val === "bigint") return JSON.rawJSON(val.toString());
+
+          const hasFunctionReplacer = typeof replacer === "function";
+
+          if (hasFunctionReplacer) return replacer(key, val);
+
+          const isKeyInArrayReplacer =
+            Array.isArray(replacer) && replacer.includes(key);
+
+          if (isKeyInArrayReplacer) return val;
+
+          return val;
+        },
+        space,
+      );
+    }
+
+    if (!value) return originalStringify(value, replacer, space);
+
+    const convertedToCustomJSON = originalStringify(
       value,
-      (key, value) => {
-        if (typeof value === "bigint") return JSON.rawJSON(value.toString());
+      (key, val) => {
+        const isNoise = typeof val === "string" && noiseValue.test(val);
 
-        if (typeof replacer === "function") return replacer(key, value);
+        if (isNoise) return val.toString() + "n"; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
 
-        if (Array.isArray(replacer) && replacer.includes(key)) return value;
+        if (typeof val === "bigint") return val.toString() + "n";
 
-        return value;
+        const hasFunctionReplacer = typeof replacer === "function";
+
+        if (hasFunctionReplacer) return replacer(key, val);
+
+        const isKeyInArrayReplacer =
+          Array.isArray(replacer) && replacer.includes(key);
+
+        if (isKeyInArrayReplacer) return val;
+
+        return val;
       },
       space,
     );
+
+    const processedJSON = convertedToCustomJSON.replace(
+      bigIntsStringify,
+      "$1$2$3",
+    ); // Delete one "n" off the end of every BigInt value
+
+    const denoisedJSON = processedJSON.replace(noiseStringify, "$1$2$3"); // Remove one "n" off the end of every noisy string
+
+    return denoisedJSON;
+  } catch (error) {
+    if (error instanceof RangeError) {
+      const convertedJSON = stringifyIteratively(value, replacer, space);
+
+      if (convertedJSON === undefined) return undefined;
+
+      const supportsRawJSON = "rawJSON" in JSON;
+
+      if (supportsRawJSON) return convertedJSON;
+
+      const processedJSON = convertedJSON.replace(bigIntsStringify, "$1$2$3");
+
+      return processedJSON.replace(noiseStringify, "$1$2$3");
+    }
+
+    throw error;
   }
-
-  if (!value) return originalStringify(value, replacer, space);
-
-  const convertedToCustomJSON = originalStringify(
-    value,
-    (key, value) => {
-      const isNoise = typeof value === "string" && noiseValue.test(value);
-
-      if (isNoise) return value.toString() + "n"; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
-
-      if (typeof value === "bigint") return value.toString() + "n";
-
-      if (typeof replacer === "function") return replacer(key, value);
-
-      if (Array.isArray(replacer) && replacer.includes(key)) return value;
-
-      return value;
-    },
-    space,
-  );
-  const processedJSON = convertedToCustomJSON.replace(
-    bigIntsStringify,
-    "$1$2$3",
-  ); // Delete one "n" off the end of every BigInt value
-  const denoisedJSON = processedJSON.replace(noiseStringify, "$1$2$3"); // Remove one "n" off the end of every noisy string
-
-  return denoisedJSON;
 };
 
 const featureCache = new Map();
@@ -133569,12 +144024,15 @@ const isContextSourceSupported = () => {
 const convertMarkedBigIntsReviver = (key, value, context, userReviver) => {
   const isCustomFormatBigInt =
     typeof value === "string" && customFormat.test(value);
+
   if (isCustomFormatBigInt) return BigInt(value.slice(0, -1));
 
   const isNoiseValue = typeof value === "string" && noiseValue.test(value);
   if (isNoiseValue) return value.slice(0, -1);
 
-  if (typeof userReviver !== "function") return value;
+  const hasUserReviver = typeof userReviver === "function";
+
+  if (!hasUserReviver) return value;
 
   return userReviver(key, value, context);
 };
@@ -133592,15 +144050,18 @@ const convertMarkedBigIntsReviver = (key, value, context, userReviver) => {
  */
 const JSONParseV2 = (text, reviver) => {
   return JSON.parse(text, (key, value, context) => {
-    const isBigNumber =
-      typeof value === "number" &&
-      (value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER);
+    const isNumber = typeof value === "number";
+    const isOutOfBounds =
+      value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER;
+    const isBigNumber = isNumber && isOutOfBounds;
     const isInt = context && intRegex.test(context.source);
     const isBigInt = isBigNumber && isInt;
 
     if (isBigInt) return BigInt(context.source);
 
-    if (typeof reviver !== "function") return value;
+    const hasCustomReviver = typeof reviver === "function";
+
+    if (!hasCustomReviver) return value;
 
     return reviver(key, value, context);
   });
@@ -133609,8 +144070,107 @@ const JSONParseV2 = (text, reviver) => {
 const MAX_INT = Number.MAX_SAFE_INTEGER.toString();
 const MAX_DIGITS = MAX_INT.length;
 const stringsOrLargeNumbers =
-  /"(?:\\.|[^"])*"|-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?/g;
+  /"(?:[^"\\]|\\.)*"|-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?/g;
 const noiseValueWithQuotes = /^"-?\d+n+"$/; // Noise - strings that match the custom format before being converted to it
+
+/**
+ * Iteratively traverses the parsed object bottom-up (post-order),
+ * emulating the native JSON.parse reviver behavior.
+ * This avoids Call Stack overflows (RangeError) on deeply nested structures.
+ *
+ * @param {any} parsed The natively parsed JSON object.
+ * @param {Reviver} [userReviver] User's custom reviver function.
+ * @returns {any} The fully processed object.
+ */
+const applyReviverIteratively = (parsed, userReviver) => {
+  const rootHolder = { "": parsed };
+  const stack = [{ parent: rootHolder, key: "", visited: false }];
+
+  while (stack.length > 0) {
+    const node = stack[stack.length - 1];
+
+    if (!node.visited) {
+      node.visited = true;
+
+      const value = node.parent[node.key];
+      const isComplexObject = value !== null && typeof value === "object";
+
+      if (isComplexObject) {
+        const keys = Object.keys(value);
+
+        for (let i = keys.length - 1; i >= 0; i--) {
+          stack.push({ parent: value, key: keys[i], visited: false });
+        }
+      }
+    } else {
+      const { parent, key } = node;
+      let value = parent[key];
+
+      if (typeof value === "string") {
+        const isCustomFormatBigInt = customFormat.test(value);
+
+        if (isCustomFormatBigInt) {
+          value = BigInt(value.slice(0, -1));
+        } else {
+          const isNoise = noiseValue.test(value);
+
+          if (isNoise) value = value.slice(0, -1);
+        }
+      }
+
+      const hasUserReviver = typeof userReviver === "function";
+
+      if (hasUserReviver) {
+        value = userReviver.call(parent, key, value);
+      }
+
+      const isDeleted = value === undefined;
+
+      if (isDeleted) {
+        delete parent[key];
+      } else {
+        parent[key] = value;
+      }
+
+      stack.pop();
+    }
+  }
+
+  return rootHolder[""];
+};
+
+/**
+ * Pre-processes the JSON string to mark large numbers with an 'n' suffix.
+ *
+ * @param {string} text The raw JSON string.
+ * @returns {string} The serialized string with marked BigInts.
+ */
+const serializeBigInts = (text) => {
+  return text.replace(
+    stringsOrLargeNumbers,
+    (match, digits, fractional, exponential) => {
+      const isString = match[0] === '"';
+      const isNoise = isString && noiseValueWithQuotes.test(match);
+
+      if (isNoise) return match.substring(0, match.length - 1) + 'n"'; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
+
+      const hasFractionalOrExponential = fractional || exponential;
+
+      // With a fixed number of digits, we can correctly use lexicographical comparison to do a numeric comparison
+      const isLessThanMaxSafeInt =
+        digits &&
+        (digits.length < MAX_DIGITS ||
+          (digits.length === MAX_DIGITS && digits <= MAX_INT));
+
+      const isStandardValue =
+        isString || hasFractionalOrExponential || isLessThanMaxSafeInt;
+
+      if (isStandardValue) return match;
+
+      return '"' + match + 'n"';
+    },
+  );
+};
 
 /**
  * Converts a JSON string into a JavaScript value.
@@ -133623,42 +144183,34 @@ const noiseValueWithQuotes = /^"-?\d+n+"$/; // Noise - strings that match the cu
  *
  * @param {string} text A valid JSON string.
  * @param {Reviver} [reviver]
- *   A function that transforms the results. This function is called for each member
- *   of the object. If a member contains nested objects, the nested objects are
- *   transformed before the parent object is.
+ * A function that transforms the results. This function is called for each member
+ * of the object. If a member contains nested objects, the nested objects are
+ * transformed before the parent object is.
  * @returns {any} The parsed JavaScript value.
  * @throws {SyntaxError} If text is not valid JSON.
  */
 const JSONParse = (text, reviver) => {
   if (!text) return originalParse(text, reviver);
 
-  if (isContextSourceSupported()) return JSONParseV2(text, reviver); // Shortcut to a faster (2x) and simpler version
+  try {
+    if (isContextSourceSupported()) return JSONParseV2(text, reviver); // Shortcut to a faster (2x) and simpler version
 
-  // Find and mark big numbers with "n"
-  const serializedData = text.replace(
-    stringsOrLargeNumbers,
-    (text, digits, fractional, exponential) => {
-      const isString = text[0] === '"';
-      const isNoise = isString && noiseValueWithQuotes.test(text);
+    // Find and mark big numbers with "n"
+    const serializedData = serializeBigInts(text);
 
-      if (isNoise) return text.substring(0, text.length - 1) + 'n"'; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
+    return originalParse(serializedData, (key, value, context) =>
+      convertMarkedBigIntsReviver(key, value, context, reviver),
+    );
+  } catch (error) {
+    if (error instanceof RangeError) {
+      const serializedData = serializeBigInts(text);
+      const parsed = originalParse(serializedData);
 
-      const isFractionalOrExponential = fractional || exponential;
-      const isLessThanMaxSafeInt =
-        digits &&
-        (digits.length < MAX_DIGITS ||
-          (digits.length === MAX_DIGITS && digits <= MAX_INT)); // With a fixed number of digits, we can correctly use lexicographical comparison to do a numeric comparison
+      return applyReviverIteratively(parsed, reviver);
+    }
 
-      if (isString || isFractionalOrExponential || isLessThanMaxSafeInt)
-        return text;
-
-      return '"' + text + 'n"';
-    },
-  );
-
-  return originalParse(serializedData, (key, value, context) =>
-    convertMarkedBigIntsReviver(key, value, context, reviver),
-  );
+    throw error;
+  }
 };
 
 
@@ -133712,7 +144264,7 @@ class RequestError extends Error {
 
 
 // pkg/dist-src/version.js
-var dist_bundle_VERSION = "10.0.10";
+var dist_bundle_VERSION = "10.0.16";
 
 // pkg/dist-src/defaults.js
 var defaults_default = {
@@ -133841,7 +144393,7 @@ async function getResponseData(response) {
   if (!contentType) {
     return response.text().catch(noop);
   }
-  const mimetype = (0,content_type_dist/* parse */.qg)(contentType);
+  const mimetype = dist_parse(contentType);
   if (isJSONResponse(mimetype)) {
     let text = "";
     try {
@@ -133850,7 +144402,10 @@ async function getResponseData(response) {
     } catch (err) {
       return text;
     }
-  } else if (mimetype.type.startsWith("text/") || mimetype.parameters.charset?.toLowerCase() === "utf-8") {
+  } else if (mimetype.type.startsWith("text/") || // `application/octet-stream` is the canonical "arbitrary binary" type
+  // (RFC 2046) and must never be decoded as text, even when the response
+  // carries a (misleading) `charset=utf-8` parameter — see #751.
+  mimetype.parameters.charset?.toLowerCase() === "utf-8" && mimetype.type !== "application/octet-stream") {
     return response.text().catch(noop);
   } else {
     return response.arrayBuffer().catch(
@@ -133869,9 +144424,10 @@ function toErrorMessage(data) {
   if (data instanceof ArrayBuffer) {
     return "Unknown error";
   }
-  if ("message" in data) {
-    const suffix = "documentation_url" in data ? ` - ${data.documentation_url}` : "";
-    return Array.isArray(data.errors) ? `${data.message}: ${data.errors.map((v) => JSON.stringify(v)).join(", ")}${suffix}` : `${data.message}${suffix}`;
+  if (typeof data === "object" && data !== null && "message" in data) {
+    const objectData = data;
+    const suffix = "documentation_url" in objectData ? ` - ${objectData.documentation_url}` : "";
+    return Array.isArray(objectData.errors) ? `${objectData.message}: ${objectData.errors.map((v) => JSON.stringify(v)).join(", ")}${suffix}` : `${objectData.message}${suffix}`;
   }
   return `Unknown error: ${JSON.stringify(data)}`;
 }
@@ -133938,6 +144494,9 @@ var GraphqlResponseError = class extends Error {
       Error.captureStackTrace(this, this.constructor);
     }
   }
+  request;
+  headers;
+  response;
   name = "GraphqlResponseError";
   errors;
   data;
@@ -134033,6 +144592,7 @@ function withCustomRequest(customRequest) {
   });
 }
 
+/* v8 ignore if -- @preserve */
 
 ;// CONCATENATED MODULE: ./node_modules/@octokit/auth-token/dist-bundle/index.js
 // pkg/dist-src/is-jwt.js
@@ -134090,7 +144650,7 @@ var createTokenAuth = function createTokenAuth2(token) {
 
 
 ;// CONCATENATED MODULE: ./node_modules/@octokit/core/dist-src/version.js
-const version_VERSION = "7.0.6";
+const version_VERSION = "7.0.8";
 
 
 ;// CONCATENATED MODULE: ./node_modules/@octokit/core/dist-src/index.js
@@ -137147,7 +147707,7 @@ function getOctokit(token, options, ...additionalPlugins) {
 }
 //# sourceMappingURL=github.js.map
 // EXTERNAL MODULE: ./node_modules/unzip-stream/unzip.js
-var unzip = __nccwpck_require__(3991);
+var unzip = __nccwpck_require__(33991);
 ;// CONCATENATED MODULE: ./node_modules/@actions/artifact/lib/internal/download/download-artifact.js
 var download_artifact_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -137442,7 +148002,7 @@ requestLog.VERSION = plugin_request_log_dist_src_version_VERSION;
 
 
 // EXTERNAL MODULE: ./node_modules/bottleneck/light.js
-var light = __nccwpck_require__(3251);
+var light = __nccwpck_require__(63251);
 ;// CONCATENATED MODULE: ./node_modules/@octokit/plugin-retry/dist-bundle/index.js
 // pkg/dist-src/version.js
 var plugin_retry_dist_bundle_VERSION = "0.0.0-development";
